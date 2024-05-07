@@ -1,0 +1,28 @@
+var class_area_damage_events =
+[
+    [ "OnEnterBeginEvent", "d4/d07/class_area_damage_events.html#ab4dfc0b93f2ed09bd26ae454cd74f92c", null ],
+    [ "OnEnterClientEvent", "d4/d07/class_area_damage_events.html#aea1c1b742965aac07f934c932206fd61", null ],
+    [ "OnEnterEndEvent", "d4/d07/class_area_damage_events.html#a228d3171b7123ff926dc0dcb8f342709", null ],
+    [ "OnEnterServerEvent", "d4/d07/class_area_damage_events.html#a86c91b35995dc9a08f1a6bf3d8a6ccb1", null ],
+    [ "OnEvaluateDamage", "d4/d07/class_area_damage_events.html#acc1516eb7d6d0c588ef83708cc06196f", null ],
+    [ "OnLeaveBeginEvent", "d4/d07/class_area_damage_events.html#afcf3c2f19f69c99b47590a47819bb7db", null ],
+    [ "OnLeaveClientEvent", "d4/d07/class_area_damage_events.html#adbaeb6edf2c8097bb019f38dfe3b68eb", null ],
+    [ "OnLeaveEndEvent", "d4/d07/class_area_damage_events.html#aecc999f68fd95e726cdc966011bb2a55", null ],
+    [ "OnLeaveServerEvent", "d4/d07/class_area_damage_events.html#ab010bcf963575286cf4ac8aa577b541b", null ],
+    [ "OnStayBeginEvent", "d4/d07/class_area_damage_events.html#a3ef311f97ccccf80064d00997a58c594", null ],
+    [ "OnStayClientEvent", "d4/d07/class_area_damage_events.html#aeb01c4b6e78b7deef0c1c96acb17767b", null ],
+    [ "OnStayEndEvent", "d4/d07/class_area_damage_events.html#a020cac2e13508ed177938d79d2f4e5f9", null ],
+    [ "OnStayFinishBeginEvent", "d4/d07/class_area_damage_events.html#a54f9b70b37ff9c5162929bccc526b914", null ],
+    [ "OnStayFinishClientEvent", "d4/d07/class_area_damage_events.html#a8655070f9426c723240a60ddfdf9ce49", null ],
+    [ "OnStayFinishEndEvent", "d4/d07/class_area_damage_events.html#abf61aa4f020b33519b99c416a6001218", null ],
+    [ "OnStayFinishServerEvent", "d4/d07/class_area_damage_events.html#a3be72bfa0c875b998a571a77101befae", null ],
+    [ "OnStayServerEvent", "d4/d07/class_area_damage_events.html#ae217fbfbae541fc96eaae1edd01edea4", null ],
+    [ "OnStayStartBeginEvent", "d4/d07/class_area_damage_events.html#a970f2b14605477ffb81da9fe0110c5f8", null ],
+    [ "OnStayStartClientEvent", "d4/d07/class_area_damage_events.html#a0670f869d2814f5ee544a6d2bd96e209", null ],
+    [ "OnStayStartEndEvent", "d4/d07/class_area_damage_events.html#a34f17dda3d4265fb2bc8995995bbe3fd", null ],
+    [ "OnStayStartServerEvent", "d4/d07/class_area_damage_events.html#a1f86567540f8f4af964c2c977cf91261", null ],
+    [ "OnTriggerCreated", "d4/d07/class_area_damage_events.html#a27304666b68892d2a80bb169ef717a79", null ],
+    [ "OnTriggerDestroyed", "d4/d07/class_area_damage_events.html#aeff9958cebd7e1404e6cbb7d3c0eaccc", null ],
+    [ "PostDamageActions", "d4/d07/class_area_damage_events.html#af4a648ccbd8733da5618655cb183eeb4", null ],
+    [ "PreDamageActions", "d4/d07/class_area_damage_events.html#a4c612afb6176ad369b6b9511fcf2c341", null ]
+];

@@ -1,0 +1,27 @@
+var _flare_simulation_8c =
+[
+    [ "FlareSimulation", "d5/d09/class_flare_simulation.html", "d5/d09/class_flare_simulation" ],
+    [ "FlareSimulation_Green", "d2/d0f/class_flare_simulation___green.html", "d2/d0f/class_flare_simulation___green" ],
+    [ "CastFlareAINoise", "dd/d0b/_flare_simulation_8c.html#ac8605d93219232b363eb3825f65634cc", null ],
+    [ "FlareSimulation", "dd/d0b/_flare_simulation_8c.html#a53e70c3795f499a796b5b9e608ba62af", null ],
+    [ "FlareSimulation_Blue", "dd/d0b/_flare_simulation_8c.html#a95262aa0e14721443e0e0305d1687aa4", null ],
+    [ "FlareSimulation_Green", "dd/d0b/_flare_simulation_8c.html#aa3e2c92fdd2d9cad8124228b488d8ce6", null ],
+    [ "FlareSimulation_Red", "dd/d0b/_flare_simulation_8c.html#aaf1916021bbabe57787a140018725ce1", null ],
+    [ "OnActivation", "dd/d0b/_flare_simulation_8c.html#a490c6df292994b53a95abae645c0cb96", null ],
+    [ "OnFire", "dd/d0b/_flare_simulation_8c.html#a921352e02fe548acf3bc39d9bd3640cd", null ],
+    [ "OnTermination", "dd/d0b/_flare_simulation_8c.html#a7c19dd66e67484e32b62d9fa5e0ca004", null ],
+    [ "Simulate", "dd/d0b/_flare_simulation_8c.html#ade31e3ee6bc31463e92a024cfc753a8c", null ],
+    [ "TurnOffDistantLight", "dd/d0b/_flare_simulation_8c.html#a3bf6e42f20f1aed44417c179466deac6", null ],
+    [ "~FlareSimulation", "dd/d0b/_flare_simulation_8c.html#a8f3d1bf86d953b33c1371794f5982224", null ],
+    [ "m_BurningSound", "dd/d0b/_flare_simulation_8c.html#a4c0a738ebd9692dbcf2d727b60b7d082", null ],
+    [ "m_FlareLight", "dd/d0b/_flare_simulation_8c.html#ac12e327465d5ddfb1521408e13778d82", null ],
+    [ "m_LastNoiseTime", "dd/d0b/_flare_simulation_8c.html#a86e1f0c51d9f3f8e5fde7e2b257abc49", null ],
+    [ "m_NoisePar", "dd/d0b/_flare_simulation_8c.html#a5da08e43b3e60e582d6c7c61d0484a85", null ],
+    [ "m_NoiseTimer", "dd/d0b/_flare_simulation_8c.html#a9b026e2c5a6a467ef47e61820ebcd836", null ],
+    [ "m_ParMainFire", "dd/d0b/_flare_simulation_8c.html#aff962ac4df8a7139ae09f3182bf2f430", null ],
+    [ "m_ParticleId", "dd/d0b/_flare_simulation_8c.html#af37b84c41962cc69e198ca8287d87397", null ],
+    [ "m_ScriptedLight", "dd/d0b/_flare_simulation_8c.html#aca2614f6325c1016df9cbd94e683db42", null ],
+    [ "MAX_FARLIGHT_DIST", "dd/d0b/_flare_simulation_8c.html#ae948e8de827412cae57ea4210868b355", null ],
+    [ "MIN_FARLIGHT_DIST", "dd/d0b/_flare_simulation_8c.html#a0183e787b6c513a323e9ae44dc8cf9d7", null ],
+    [ "NOISE_DELAY", "dd/d0b/_flare_simulation_8c.html#a62b10ebe9bc403a697f6700d200d6ebe", null ]
+];
