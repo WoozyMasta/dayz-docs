@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -469,6 +466,38 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00014">14</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>  {</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a> = CargoContainer.Cast(parent);</div>
+<div class="line"><span class="lineno">   17</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="#aa7569d99a66bfeade6c2c91bac664641">m_MaxColumns</a> = 5;</div>
+<div class="line"><span class="lineno">   19</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="#aa7569d99a66bfeade6c2c91bac664641">m_MaxColumns</a> = 10;</div>
+<div class="line"><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#aa7569d99a66bfeade6c2c91bac664641">m_MaxColumns</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>      <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">iconWidget</a> = GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;Icon&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">iconWidget</a>.SetUserID(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDropReceived(<a class="code hl_class" href="../../db/d06/class_param3.html">iconWidget</a>, <span class="keyword">this</span>, <span class="stringliteral">&quot;DropReceived&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_class" href="../../db/d06/class_param3.html">iconWidget</a>, <span class="keyword">this</span>, <span class="stringliteral">&quot;DraggingOver&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="../../d1/d03/_plugin_remote_player_debug_client_8c.html#a8ba0557daf8b627a8c8f89783367a683">m_RootWidget</a>.GetScript(<a class="code hl_variable" href="#a5384d72348970523a538f83dc09d5cc4">m_Resizer1</a>);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="../../d1/d03/_plugin_remote_player_debug_client_8c.html#a8ba0557daf8b627a8c8f89783367a683">m_RootWidget</a>.FindAnyWidget(<span class="stringliteral">&quot;SpacerTop&quot;</span>).GetScript(<a class="code hl_variable" href="#a58adb1eb995eaf500e0e34b70540c936">m_Resizer2</a>);</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
+<div class="ttc" id="a_plugin_remote_player_debug_client_8c_html_a8ba0557daf8b627a8c8f89783367a683"><div class="ttname"><a href="../../d1/d03/_plugin_remote_player_debug_client_8c.html#a8ba0557daf8b627a8c8f89783367a683">m_RootWidget</a></div><div class="ttdeci">ref Widget m_RootWidget[MAX_SIMULTANIOUS_PLAYERS]</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d03/_plugin_remote_player_debug_client_8c_source.html#l00014">PluginRemotePlayerDebugClient.c:14</a></div></div>
+<div class="ttc" id="aclass_cargo_container_row_html_a5384d72348970523a538f83dc09d5cc4"><div class="ttname"><a href="#a5384d72348970523a538f83dc09d5cc4">CargoContainerRow::m_Resizer1</a></div><div class="ttdeci">ref SizeToChild m_Resizer1</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00011">CargoContainerRow.c:11</a></div></div>
+<div class="ttc" id="aclass_cargo_container_row_html_a58adb1eb995eaf500e0e34b70540c936"><div class="ttname"><a href="#a58adb1eb995eaf500e0e34b70540c936">CargoContainerRow::m_Resizer2</a></div><div class="ttdeci">ref SizeToParent m_Resizer2</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00012">CargoContainerRow.c:12</a></div></div>
+<div class="ttc" id="aclass_cargo_container_row_html_aa7569d99a66bfeade6c2c91bac664641"><div class="ttname"><a href="#aa7569d99a66bfeade6c2c91bac664641">CargoContainerRow::m_MaxColumns</a></div><div class="ttdeci">int m_MaxColumns</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00006">CargoContainerRow.c:6</a></div></div>
+<div class="ttc" id="aclass_cargo_container_row_html_abbdeec6c1e769ddec415554b1e5a2cc9"><div class="ttname"><a href="#abbdeec6c1e769ddec415554b1e5a2cc9">CargoContainerRow::m_ParentContainer</a></div><div class="ttdeci">CargoContainer m_ParentContainer</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">CargoContainerRow.c:10</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00001">WidgetEventHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html_ad2fdf38578ef5954a19cb7c97ee4f89b"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">WidgetEventHandler::GetInstance</a></div><div class="ttdeci">static WidgetEventHandler GetInstance()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler.c:22</a></div></div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="../../dd/d0a/class_widget.html">Widget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00189">EnWidgets.c:190</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler::GetInstance()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00006">m_MaxColumns</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00011">m_Resizer1</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00012">m_Resizer2</a>, and <a class="el" href="../../d1/d03/_plugin_remote_player_debug_client_8c_source.html#l00014">m_RootWidget</a>.</p>
 
 </div>
 </div>
@@ -497,6 +526,23 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00310">310</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  311</span>  {</div>
+<div class="line"><span class="lineno">  312</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  313</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 0);</div>
+<div class="line"><span class="lineno">  314</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  315</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 0, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  316</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  317</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 0, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  318</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  319</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 0, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  320</span>  }</div>
+<div class="ttc" id="a_size_to_child_8c_html_a74e413f5a164dfc9b133b21caee53379"><div class="ttname"><a href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a></div><div class="ttdeci">Widget m_Parent</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_size_to_child_8c_source.html#l00086">SizeToChild.c:86</a></div></div>
+<div class="ttc" id="aclass_attachment_categories_row_html"><div class="ttname"><a href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d04/_attachment_categories_row_8c_source.html#l00001">AttachmentCategoriesRow.c:2</a></div></div>
+<div class="ttc" id="aclass_cargo_container_row_html_a41dcc4c3624b952815faa3a25e3455ba"><div class="ttname"><a href="#a41dcc4c3624b952815faa3a25e3455ba">CargoContainerRow::m_NumberRow</a></div><div class="ttdeci">int m_NumberRow</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">CargoContainerRow.c:3</a></div></div>
+<div class="ttc" id="aclass_cargo_container_row_html_aa3e8eaeb3e68299e3b4e6aa36a0544c4"><div class="ttname"><a href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">CargoContainerRow::DropReceived</a></div><div class="ttdeci">void DropReceived(Widget w, int x, int y, Widget receiver)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">CargoContainerRow.c:164</a></div></div>
+<div class="ttc" id="aclass_hands_container_html"><div class="ttname"><a href="../../d3/d0c/class_hands_container.html">HandsContainer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0b/_hands_container_8c_source.html#l00001">HandsContainer.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -524,6 +570,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00322">322</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  323</span>  {</div>
+<div class="line"><span class="lineno">  324</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  325</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 1);</div>
+<div class="line"><span class="lineno">  326</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  327</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 1, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  328</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  329</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 1, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  330</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  331</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 1, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  332</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -551,6 +609,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00334">334</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  335</span>  {</div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  337</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 2);</div>
+<div class="line"><span class="lineno">  338</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  339</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 2, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  341</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 2, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  342</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  343</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 2, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  344</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -578,6 +648,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00346">346</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>  {</div>
+<div class="line"><span class="lineno">  348</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  349</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 3);</div>
+<div class="line"><span class="lineno">  350</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  351</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 3, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  352</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  353</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 3, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  354</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  355</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 3, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  356</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -605,6 +687,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00358">358</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  359</span>  {</div>
+<div class="line"><span class="lineno">  360</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  361</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 4);</div>
+<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  363</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 4, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  364</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  365</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 4, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  367</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 4, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  368</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -632,6 +726,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00370">370</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  371</span>  {</div>
+<div class="line"><span class="lineno">  372</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  373</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 5);</div>
+<div class="line"><span class="lineno">  374</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  375</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 5, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  376</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  377</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 5, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  379</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 5, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  380</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -659,6 +765,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00382">382</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  383</span>  {</div>
+<div class="line"><span class="lineno">  384</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  385</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 6);</div>
+<div class="line"><span class="lineno">  386</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  387</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 6, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  388</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  389</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 6, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  390</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  391</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 6, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  392</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -686,6 +804,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00394">394</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  395</span>  {</div>
+<div class="line"><span class="lineno">  396</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  397</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 7);</div>
+<div class="line"><span class="lineno">  398</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  399</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 7, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  400</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  401</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 7, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  402</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  403</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 7, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  404</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -713,6 +843,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00406">406</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  407</span>  {</div>
+<div class="line"><span class="lineno">  408</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  409</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 8);</div>
+<div class="line"><span class="lineno">  410</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  411</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 8, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  412</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  413</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 8, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  414</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  415</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 8, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  416</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -740,6 +882,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00418">418</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  419</span>  {</div>
+<div class="line"><span class="lineno">  420</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  421</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 9);</div>
+<div class="line"><span class="lineno">  422</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  423</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 9, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  424</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  425</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 9, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  426</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  427</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 9, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  428</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -769,6 +923,18 @@ Additional Inherited Members</h2></td></tr>
 <p>!-&mdash; </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00190">190</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>  {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  193</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  195</span>      ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  196</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  197</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  199</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  200</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -796,6 +962,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00202">202</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>  {</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  205</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 1, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  207</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 1, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  209</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 1, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  211</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 1, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  212</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -823,6 +1001,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00214">214</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>  {</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  217</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 2, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  219</span>      ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 2, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  221</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 2, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  223</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 2, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  224</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -850,6 +1040,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00226">226</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>  {</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  229</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 3, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  231</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 3, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  233</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 3, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  235</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 3, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  236</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -877,6 +1079,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00238">238</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  239</span>  {</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  241</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 4, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  243</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 4, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  245</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 4, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  247</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 4, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  248</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -904,6 +1118,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00250">250</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>  {</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  253</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 5, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  255</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 5, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  257</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 5, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  258</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  259</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 5, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  260</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -931,6 +1157,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00262">262</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  263</span>  {</div>
+<div class="line"><span class="lineno">  264</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  265</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 6, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  266</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  267</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 6, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  269</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 6, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  271</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 6, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  272</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -958,6 +1196,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00274">274</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  275</span>  {</div>
+<div class="line"><span class="lineno">  276</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  277</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 7, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  279</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 7, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  280</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  281</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 7, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  282</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  283</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 7, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  284</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -985,6 +1235,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00286">286</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>  {</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  289</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 8, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  291</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 8, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  292</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  293</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 8, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  295</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 8, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  296</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -1012,6 +1274,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00298">298</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  299</span>  {</div>
+<div class="line"><span class="lineno">  300</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  301</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 9, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  303</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 9, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  304</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  305</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 9, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  306</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  307</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, 9, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  308</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -1053,6 +1327,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00176">176</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>  {</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  179</span>      ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.GetUserID(), <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  181</span>      ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.GetUserID(), <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  183</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.GetUserID(), <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  185</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).DraggingOverGrid(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.GetUserID(), <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  186</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -1094,6 +1380,20 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">164</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>  {</div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargo))</div>
+<div class="line"><span class="lineno">  167</span>      (ContainerWithCargo.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.GetUserID());</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(ContainerWithCargoAndAttachments))</div>
+<div class="line"><span class="lineno">  169</span>      (ContainerWithCargoAndAttachments.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.GetUserID(), <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>))</div>
+<div class="line"><span class="lineno">  171</span>      (<a class="code hl_class" href="../../d3/d0c/class_hands_container.html">HandsContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.GetUserID(), <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent.IsInherited(<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>))</div>
+<div class="line"><span class="lineno">  173</span>      (<a class="code hl_class" href="../../d6/d03/class_attachment_categories_row.html">AttachmentCategoriesRow</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.m_Parent)).<a class="code hl_function" href="#aa3e8eaeb3e68299e3b4e6aa36a0544c4">DropReceived</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.GetUserID(), <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>);</div>
+<div class="line"><span class="lineno">  174</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00310">Column0()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00322">Column1()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00334">Column2()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00346">Column3()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00358">Column4()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00370">Column5()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00382">Column6()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00394">Column7()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00406">Column8()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00418">Column9()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>.</p>
 
 </div>
 </div>
@@ -1121,6 +1421,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00126">126</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>  {</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a9361c278ea869301f77c1376739b6279">m_NumberColumnFocused</a>;</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
+<div class="ttc" id="aclass_cargo_container_row_html_a9361c278ea869301f77c1376739b6279"><div class="ttname"><a href="#a9361c278ea869301f77c1376739b6279">CargoContainerRow::m_NumberColumnFocused</a></div><div class="ttdeci">int m_NumberColumnFocused</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00004">CargoContainerRow.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00004">m_NumberColumnFocused</a>.</p>
 
 </div>
 </div>
@@ -1162,6 +1468,39 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00097">97</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>  {</div>
+<div class="line"><span class="lineno">   99</span><span class="preprocessor">#ifdef PLATFORM_WINDOWS</span></div>
+<div class="line"><span class="lineno">  100</span><span class="preprocessor">#ifndef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">#ifndef SERVER_FOR_CONSOLE</span></div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_class" href="../../d2/d03/class_cargo_grid.html">CargoGrid</a> <a class="code hl_class" href="../../db/d06/class_param3.html">grid</a> = <a class="code hl_class" href="../../d2/d03/class_cargo_grid.html">CargoGrid</a>.Cast(<a class="code hl_variable" href="#a43b5be99d88b0acbb7ad9f95e64c0bcc">m_Entity</a>.GetInventory().GetCargo());</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">grid</a>)</div>
+<div class="line"><span class="lineno">  104</span>    {</div>
+<div class="line"><span class="lineno">  105</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">focused_item_new</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">grid</a>.FindEntityInCargoOn(<a class="code hl_class" href="../../db/d06/class_param3.html">row</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">column</a>);</div>
+<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">focused_item_new</a>)</div>
+<div class="line"><span class="lineno">  107</span>      {</div>
+<div class="line"><span class="lineno">  108</span>        <a class="code hl_class" href="../../db/d00/class_icon.html">Icon</a> <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a> = <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>.GetIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">focused_item_new</a>);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>)</div>
+<div class="line"><span class="lineno">  111</span>        {</div>
+<div class="line"><span class="lineno">  112</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">width</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetSizeX();</div>
+<div class="line"><span class="lineno">  113</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">height</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetSizeY();</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>          <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  116</span>        }</div>
+<div class="line"><span class="lineno">  117</span>      }</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
+<div class="line"><span class="lineno">  119</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  121</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  124</span>  }</div>
+<div class="ttc" id="aclass_cargo_container_row_html_a43b5be99d88b0acbb7ad9f95e64c0bcc"><div class="ttname"><a href="#a43b5be99d88b0acbb7ad9f95e64c0bcc">CargoContainerRow::m_Entity</a></div><div class="ttdeci">EntityAI m_Entity</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00008">CargoContainerRow.c:8</a></div></div>
+<div class="ttc" id="aclass_cargo_grid_html"><div class="ttname"><a href="../../d2/d03/class_cargo_grid.html">CargoGrid</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d09/_cargo_8c_source.html#l00168">Cargo.c:169</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_icon_html"><div class="ttname"><a href="../../db/d00/class_icon.html">Icon</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0b/_icon_8c_source.html#l00001">Icon.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00008">m_Entity</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -1189,6 +1528,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00446">446</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  447</span>  {</div>
+<div class="line"><span class="lineno">  448</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a427f4248e63aeb44ed462d81f65b2b26">m_Width</a>;</div>
+<div class="line"><span class="lineno">  449</span>  }</div>
+<div class="ttc" id="aclass_cargo_container_row_html_a427f4248e63aeb44ed462d81f65b2b26"><div class="ttname"><a href="#a427f4248e63aeb44ed462d81f65b2b26">CargoContainerRow::m_Width</a></div><div class="ttdeci">int m_Width</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_cargo_container_row_8c_source.html#l00005">CargoContainerRow.c:5</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00005">m_Width</a>.</p>
 
 </div>
 </div>
@@ -1216,7 +1561,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00436">436</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  437</span>  {</div>
+<div class="line"><span class="lineno">  438</span>    GetRootWidget().Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  439</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0f164eeacb8b4f2d91fe43d44c93dd3f" name="a0f164eeacb8b4f2d91fe43d44c93dd3f"></a>
@@ -1245,7 +1593,10 @@ Additional Inherited Members</h2></td></tr>
 <p>!-&mdash; </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00431">431</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  432</span>  {</div>
+<div class="line"><span class="lineno">  433</span>    GetRootWidget().Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  434</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8195dbe9689df96c22d432f2cffc1d57" name="a8195dbe9689df96c22d432f2cffc1d57"></a>
@@ -1272,6 +1623,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00159">159</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>  {</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_variable" href="#a43b5be99d88b0acbb7ad9f95e64c0bcc">m_Entity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>;</div>
+<div class="line"><span class="lineno">  162</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00008">m_Entity</a>.</p>
 
 </div>
 </div>
@@ -1299,6 +1655,35 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00068">68</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="#a9361c278ea869301f77c1376739b6279">m_NumberColumnFocused</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">column</a>;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="comment">//GetMainWidget().FindAnyWidget( &quot;Cursor&quot; + column ).Show( true );</span></div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="comment">// Show selector</span></div>
+<div class="line"><span class="lineno">   75</span><span class="preprocessor">#ifdef PLATFORM_WINDOWS</span></div>
+<div class="line"><span class="lineno">   76</span><span class="preprocessor">#ifndef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor">#ifndef SERVER_FOR_CONSOLE</span></div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_class" href="../../d2/d03/class_cargo_grid.html">CargoGrid</a> <a class="code hl_class" href="../../db/d06/class_param3.html">grid</a> = <a class="code hl_class" href="../../d2/d03/class_cargo_grid.html">CargoGrid</a>.Cast(<a class="code hl_variable" href="#a43b5be99d88b0acbb7ad9f95e64c0bcc">m_Entity</a>.GetInventory().GetCargo());</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">grid</a>)</div>
+<div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">focused_item_new</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">grid</a>.FindEntityInCargoOn(<a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_variable" href="#a9361c278ea869301f77c1376739b6279">m_NumberColumnFocused</a>);</div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">focused_item_new</a>)</div>
+<div class="line"><span class="lineno">   83</span>      {</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_class" href="../../db/d00/class_icon.html">Icon</a> <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a> = <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>.GetIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">focused_item_new</a>);</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>)</div>
+<div class="line"><span class="lineno">   87</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   88</span>      }</div>
+<div class="line"><span class="lineno">   89</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   90</span>        GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;Cursor&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">column</a>).Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   94</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   95</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00008">m_Entity</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00004">m_NumberColumnFocused</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -1326,6 +1711,41 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00131">131</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>  {</div>
+<div class="line"><span class="lineno">  133</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  134</span>    m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#aa7eea58db5fbaf4f9ceffee549611af4">CargoContainerRowXbox</a>;</div>
+<div class="line"><span class="lineno">  135</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">switch</span> (<a class="code hl_function" href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a>.GetWidthType())</div>
+<div class="line"><span class="lineno">  137</span>    {</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dc/d00/_inventory_menu_8c.html#a879ddd8a54b6ad307d11a1ccff69a26f">ScreenWidthType</a>.NARROW:</div>
+<div class="line"><span class="lineno">  139</span>    {</div>
+<div class="line"><span class="lineno">  140</span>      m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#a2f70b9a3189f215d816df32394d20d9d">CargoContainerRowNarrow</a>;</div>
+<div class="line"><span class="lineno">  141</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dc/d00/_inventory_menu_8c.html#a879ddd8a54b6ad307d11a1ccff69a26f">ScreenWidthType</a>.MEDIUM:</div>
+<div class="line"><span class="lineno">  144</span>    {</div>
+<div class="line"><span class="lineno">  145</span>      m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#a4e27730273bc7fd5f1ff533d61dd4ade">CargoContainerRowMedium</a>;</div>
+<div class="line"><span class="lineno">  146</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dc/d00/_inventory_menu_8c.html#a879ddd8a54b6ad307d11a1ccff69a26f">ScreenWidthType</a>.WIDE:</div>
+<div class="line"><span class="lineno">  149</span>    {</div>
+<div class="line"><span class="lineno">  150</span>      m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#a6e76cc9b1cd442d488b2919819784299">CargoContainerRowWide</a>;</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  153</span>    }</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+<div class="line"><span class="lineno">  155</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="ttc" id="a_inventory_menu_8c_html_a879ddd8a54b6ad307d11a1ccff69a26f"><div class="ttname"><a href="../../dc/d00/_inventory_menu_8c.html#a879ddd8a54b6ad307d11a1ccff69a26f">ScreenWidthType</a></div><div class="ttdeci">ScreenWidthType</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d00/_inventory_menu_8c_source.html#l00001">InventoryMenu.c:2</a></div></div>
+<div class="ttc" id="a_inventory_menu_8c_html_ad91f44597d803d249e1b96e7569f8199"><div class="ttname"><a href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a></div><div class="ttdeci">void InventoryMenu()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d00/_inventory_menu_8c_source.html#l00020">InventoryMenu.c:20</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00001">WidgetLayoutName.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_a2f70b9a3189f215d816df32394d20d9d"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#a2f70b9a3189f215d816df32394d20d9d">WidgetLayoutName::CargoContainerRowNarrow</a></div><div class="ttdeci">const string CargoContainerRowNarrow</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00023">WidgetLayoutName.c:23</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_a4e27730273bc7fd5f1ff533d61dd4ade"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#a4e27730273bc7fd5f1ff533d61dd4ade">WidgetLayoutName::CargoContainerRowMedium</a></div><div class="ttdeci">const string CargoContainerRowMedium</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00024">WidgetLayoutName.c:24</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_a6e76cc9b1cd442d488b2919819784299"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#a6e76cc9b1cd442d488b2919819784299">WidgetLayoutName::CargoContainerRowWide</a></div><div class="ttdeci">const string CargoContainerRowWide</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00025">WidgetLayoutName.c:25</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_aa7eea58db5fbaf4f9ceffee549611af4"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#aa7eea58db5fbaf4f9ceffee549611af4">WidgetLayoutName::CargoContainerRowXbox</a></div><div class="ttdeci">const string CargoContainerRowXbox</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00026">WidgetLayoutName.c:26</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00024">WidgetLayoutName::CargoContainerRowMedium</a>, <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00023">WidgetLayoutName::CargoContainerRowNarrow</a>, <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00025">WidgetLayoutName::CargoContainerRowWide</a>, <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00026">WidgetLayoutName::CargoContainerRowXbox</a>, and <a class="el" href="../../dc/d00/_inventory_menu_8c_source.html#l00020">InventoryMenu()</a>.</p>
 
 </div>
 </div>
@@ -1353,6 +1773,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00441">441</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  442</span>  {</div>
+<div class="line"><span class="lineno">  443</span>    <a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">number</a>;</div>
+<div class="line"><span class="lineno">  444</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>.</p>
 
 </div>
 </div>
@@ -1384,6 +1809,28 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00451">451</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  452</span>  {</div>
+<div class="line"><span class="lineno">  453</span>    <a class="code hl_variable" href="#a427f4248e63aeb44ed462d81f65b2b26">m_Width</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">width</a>;</div>
+<div class="line"><span class="lineno">  454</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>;</div>
+<div class="line"><span class="lineno">  455</span> </div>
+<div class="line"><span class="lineno">  456</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">width</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#aa7569d99a66bfeade6c2c91bac664641">m_MaxColumns</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  457</span>    {</div>
+<div class="line"><span class="lineno">  458</span>      GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;Icon&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).Show(<span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  459</span>      GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;Spacer&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).Show(<span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  460</span>    }</div>
+<div class="line"><span class="lineno">  461</span> </div>
+<div class="line"><span class="lineno">  462</span>    GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;Spacer10&quot;</span>).Show(<a class="code hl_variable" href="#a427f4248e63aeb44ed462d81f65b2b26">m_Width</a> != 0, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  463</span> </div>
+<div class="line"><span class="lineno">  464</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">immedUpdate</a>)</div>
+<div class="line"><span class="lineno">  465</span>    {</div>
+<div class="line"><span class="lineno">  466</span>      <a class="code hl_variable" href="#a58adb1eb995eaf500e0e34b70540c936">m_Resizer2</a>.Refresh();</div>
+<div class="line"><span class="lineno">  467</span>      GetMainWidget().Update();</div>
+<div class="line"><span class="lineno">  468</span>    }</div>
+<div class="line"><span class="lineno">  469</span> </div>
+<div class="line"><span class="lineno">  470</span>    <a class="code hl_variable" href="#a5384d72348970523a538f83dc09d5cc4">m_Resizer1</a>.ResizeParentToChild();</div>
+<div class="line"><span class="lineno">  471</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00006">m_MaxColumns</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00011">m_Resizer1</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00012">m_Resizer2</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00005">m_Width</a>.</p>
 
 </div>
 </div>
@@ -1411,6 +1858,37 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00037">37</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#aa7569d99a66bfeade6c2c91bac664641">m_MaxColumns</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>      <span class="comment">//GetMainWidget().FindAnyWidget( &quot;Cursor&quot; + i ).Show( false );</span></div>
+<div class="line"><span class="lineno">   42</span><span class="preprocessor">#ifdef PLATFORM_WINDOWS</span></div>
+<div class="line"><span class="lineno">   43</span><span class="preprocessor">#ifndef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">   44</span><span class="preprocessor">#ifndef SERVER_FOR_CONSOLE</span></div>
+<div class="line"><span class="lineno">   45</span>      <a class="code hl_class" href="../../d2/d03/class_cargo_grid.html">CargoGrid</a> <a class="code hl_class" href="../../db/d06/class_param3.html">grid</a> = <a class="code hl_class" href="../../d2/d03/class_cargo_grid.html">CargoGrid</a>.Cast(<a class="code hl_variable" href="#a43b5be99d88b0acbb7ad9f95e64c0bcc">m_Entity</a>.GetInventory().GetCargo());</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">grid</a>)</div>
+<div class="line"><span class="lineno">   47</span>      {</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>        <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">grid</a>.FindEntityInCargoOn(<a class="code hl_variable" href="#a41dcc4c3624b952815faa3a25e3455ba">m_NumberRow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>)</div>
+<div class="line"><span class="lineno">   51</span>        {</div>
+<div class="line"><span class="lineno">   52</span>          <a class="code hl_class" href="../../db/d00/class_icon.html">Icon</a> <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a> = <a class="code hl_variable" href="#abbdeec6c1e769ddec415554b1e5a2cc9">m_ParentContainer</a>.GetIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>);</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>)</div>
+<div class="line"><span class="lineno">   55</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   56</span>        }</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   58</span>          GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;Cursor&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   59</span>      }</div>
+<div class="line"><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   63</span>    }</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_variable" href="#a9361c278ea869301f77c1376739b6279">m_NumberColumnFocused</a> = 0;</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00008">m_Entity</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00006">m_MaxColumns</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00004">m_NumberColumnFocused</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">m_NumberRow</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">m_ParentContainer</a>.</p>
 
 </div>
 </div>
@@ -1437,6 +1915,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00008">8</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00097">GetIconSize()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00159">SetEntity()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00068">SetFocus()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00037">UnfocusAll()</a>.</p>
+
 </div>
 </div>
 <a id="aa7569d99a66bfeade6c2c91bac664641" name="aa7569d99a66bfeade6c2c91bac664641"></a>
@@ -1460,6 +1940,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00006">6</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00014">CargoContainerRow()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00451">SetWidth()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00037">UnfocusAll()</a>.</p>
 
 </div>
 </div>
@@ -1485,6 +1967,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00004">4</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00126">GetFocusedColumn()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00068">SetFocus()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00037">UnfocusAll()</a>.</p>
+
 </div>
 </div>
 <a id="a41dcc4c3624b952815faa3a25e3455ba" name="a41dcc4c3624b952815faa3a25e3455ba"></a>
@@ -1508,6 +1992,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00003">3</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00310">Column0()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00322">Column1()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00334">Column2()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00346">Column3()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00358">Column4()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00370">Column5()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00382">Column6()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00394">Column7()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00406">Column8()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00418">Column9()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00190">ColumnOnDraggingOver0()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00202">ColumnOnDraggingOver1()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00214">ColumnOnDraggingOver2()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00226">ColumnOnDraggingOver3()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00238">ColumnOnDraggingOver4()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00250">ColumnOnDraggingOver5()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00262">ColumnOnDraggingOver6()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00274">ColumnOnDraggingOver7()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00286">ColumnOnDraggingOver8()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00298">ColumnOnDraggingOver9()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00176">DraggingOver()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00068">SetFocus()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00441">SetNumber()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00037">UnfocusAll()</a>.</p>
 
 </div>
 </div>
@@ -1533,6 +2019,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00010">10</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00014">CargoContainerRow()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00310">Column0()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00322">Column1()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00334">Column2()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00346">Column3()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00358">Column4()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00370">Column5()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00382">Column6()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00394">Column7()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00406">Column8()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00418">Column9()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00190">ColumnOnDraggingOver0()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00202">ColumnOnDraggingOver1()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00214">ColumnOnDraggingOver2()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00226">ColumnOnDraggingOver3()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00238">ColumnOnDraggingOver4()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00250">ColumnOnDraggingOver5()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00262">ColumnOnDraggingOver6()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00274">ColumnOnDraggingOver7()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00286">ColumnOnDraggingOver8()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00298">ColumnOnDraggingOver9()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00176">DraggingOver()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00164">DropReceived()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00097">GetIconSize()</a>, <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00068">SetFocus()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00037">UnfocusAll()</a>.</p>
+
 </div>
 </div>
 <a id="a5384d72348970523a538f83dc09d5cc4" name="a5384d72348970523a538f83dc09d5cc4"></a>
@@ -1556,6 +2044,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00011">11</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00014">CargoContainerRow()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00451">SetWidth()</a>.</p>
 
 </div>
 </div>
@@ -1581,6 +2071,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00012">12</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00014">CargoContainerRow()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00451">SetWidth()</a>.</p>
+
 </div>
 </div>
 <a id="a427f4248e63aeb44ed462d81f65b2b26" name="a427f4248e63aeb44ed462d81f65b2b26"></a>
@@ -1604,6 +2096,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00005">5</a> of file <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html">CargoContainerRow.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00446">GetWidth()</a>, and <a class="el" href="../../dc/d0c/_cargo_container_row_8c_source.html#l00451">SetWidth()</a>.</p>
 
 </div>
 </div>

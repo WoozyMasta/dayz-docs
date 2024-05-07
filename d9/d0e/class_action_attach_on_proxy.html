@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -154,6 +151,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0f/_action_attach_on_proxy_8c_source.html#l00003">3</a> of file <a class="el" href="../../d2/d0f/_action_attach_on_proxy_8c_source.html">ActionAttachOnProxy.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a> = <span class="stringliteral">&quot;#attach&quot;</span>;</div>
+<div class="line"><span class="lineno">    6</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a11fc80cdcb775f018854049236528029"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a></div><div class="ttdeci">string m_Text</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00049">ActionBase.c:49</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00049">m_Text</a>.</p>
 
 </div>
 </div>
@@ -191,7 +194,27 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0f/_action_attach_on_proxy_8c_source.html#l00016">16</a> of file <a class="el" href="../../d2/d0f/_action_attach_on_proxy_8c_source.html">ActionAttachOnProxy.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a> <a class="code hl_class" href="../../db/d06/class_param3.html">targetObject</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject();</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a> <a class="code hl_class" href="../../db/d06/class_param3.html">targetParent</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetParent();</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">targetParent</a>);</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_entity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>;</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">targetParent</a>)</div>
+<div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">item_entity</a>)</div>
+<div class="line"><span class="lineno">   26</span>      {</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a>.GetInventory() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a>.GetInventory().CanAddAttachment(<a class="code hl_class" href="../../db/d06/class_param3.html">item_entity</a>))</div>
+<div class="line"><span class="lineno">   28</span>          <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   29</span>      }</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   33</span>  }</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afd7910c435100a12c8cf771b46dc3793" name="afd7910c435100a12c8cf771b46dc3793"></a>
@@ -218,6 +241,20 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0f/_action_attach_on_proxy_8c_source.html#l00008">8</a> of file <a class="el" href="../../d2/d0f/_action_attach_on_proxy_8c_source.html">ActionAttachOnProxy.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a733279ad481ba700333db91fa140e910">m_ConditionItem</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../de/d06/class_c_c_i_non_ruined.html">CCINonRuined</a>;</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a81fd8dac008261b8f2062657a645b0d4">m_ConditionTarget</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d0a/class_c_c_t_cursor.html">CCTCursor</a>;</div>
+<div class="line"><span class="lineno">   12</span>    m_CommandUID = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONMOD_ATTACHITEM;</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#ac25939d007cc07615028e1ec91815093">m_StanceMask</a> = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEMASK_ERECT | <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEMASK_CROUCH;</div>
+<div class="line"><span class="lineno">   14</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a733279ad481ba700333db91fa140e910"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a733279ad481ba700333db91fa140e910">m_ConditionItem</a></div><div class="ttdeci">ref CCIBase m_ConditionItem</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00055">ActionBase.c:55</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_a81fd8dac008261b8f2062657a645b0d4"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a81fd8dac008261b8f2062657a645b0d4">m_ConditionTarget</a></div><div class="ttdeci">ref CCTBase m_ConditionTarget</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00056">ActionBase.c:56</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_ac25939d007cc07615028e1ec91815093"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#ac25939d007cc07615028e1ec91815093">m_StanceMask</a></div><div class="ttdeci">int m_StanceMask</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00053">ActionBase.c:53</a></div></div>
+<div class="ttc" id="aclass_c_c_i_non_ruined_html"><div class="ttname"><a href="../../de/d06/class_c_c_i_non_ruined.html">CCINonRuined</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d06/_c_c_i_non_ruined_8c_source.html#l00001">CCINonRuined.c:2</a></div></div>
+<div class="ttc" id="aclass_c_c_t_cursor_html"><div class="ttname"><a href="../../d2/d0a/class_c_c_t_cursor.html">CCTCursor</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d09/_c_c_t_cursor_8c_source.html#l00001">CCTCursor.c:2</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00055">m_ConditionItem</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00056">m_ConditionTarget</a>, and <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00053">m_StanceMask</a>.</p>
 
 </div>
 </div>
@@ -245,7 +282,13 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0f/_action_attach_on_proxy_8c_source.html#l00035">35</a> of file <a class="el" href="../../d2/d0f/_action_attach_on_proxy_8c_source.html">ActionAttachOnProxy.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   36</span>  {</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExecuteClient(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.IsPlacingLocal())</div>
+<div class="line"><span class="lineno">   40</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.TogglePlacingLocal();</div>
+<div class="line"><span class="lineno">   41</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

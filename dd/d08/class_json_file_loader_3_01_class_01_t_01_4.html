@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -173,6 +170,20 @@ Static Protected Attributes</h2></td></tr>
 <p>use JsonFileLoader::LoadData instead </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html#l00149">149</a> of file <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html">JsonFileLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>;</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>)</div>
+<div class="line"><span class="lineno">  153</span>      <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d05/class_json_serializer.html">JsonSerializer</a>();</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>.ReadFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">string_data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>))</div>
+<div class="line"><span class="lineno">  156</span>      <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Cannot load data %1&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>));</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="ttc" id="aclass_json_file_loader_3_01_class_01_t_01_4_html_ab4b2b008924e1172d7eae0e7ad5a61e7"><div class="ttname"><a href="#ab4b2b008924e1172d7eae0e7ad5a61e7">JsonFileLoader&lt; Class T &gt;::m_Serializer</a></div><div class="ttdeci">static ref JsonSerializer m_Serializer</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0d/_json_file_loader_8c_source.html#l00003">JsonFileLoader.c:3</a></div></div>
+<div class="ttc" id="aclass_json_serializer_html"><div class="ttname"><a href="../../d2/d05/class_json_serializer.html">JsonSerializer</a></div><div class="ttdoc">Class for sending RPC over network.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00049">gameplay.c:50</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>.</p>
 
 </div>
 </div>
@@ -209,6 +220,37 @@ DEPRECATED</h2>
 <p>use JsonFileLoader::LoadFile instead </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html#l00105">105</a> of file <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html">JsonFileLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>))</div>
+<div class="line"><span class="lineno">  109</span>    {</div>
+<div class="line"><span class="lineno">  110</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">file_content</a>;</div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">line_content</a>;</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FileHandle</a> handle = <a class="code hl_function" href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>, <a class="code hl_enumeration" href="../../d5/d06/group___file.html#ga031770da453a180e21dcbef5cf5aeab6">FileMode</a>.READ);</div>
+<div class="line"><span class="lineno">  115</span>      <span class="keywordflow">if</span> (handle == 0)</div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>      <span class="keywordflow">while</span> (<a class="code hl_function" href="../../d5/d06/group___file.html#ga2dbf15597c7099e168801a53b4ffce82">FGets</a>(handle, <a class="code hl_class" href="../../db/d06/class_param3.html">line_content</a>) &gt;= 0)</div>
+<div class="line"><span class="lineno">  119</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">file_content</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">line_content</a>;</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>      <a class="code hl_function" href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile</a>(handle);</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>)</div>
+<div class="line"><span class="lineno">  124</span>        <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d05/class_json_serializer.html">JsonSerializer</a>();</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>.ReadFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">file_content</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>))</div>
+<div class="line"><span class="lineno">  127</span>        <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Cannot load data from \&quot;%1\&quot;:\n%2&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>));</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
+<div class="ttc" id="agroup___file_html_ga031770da453a180e21dcbef5cf5aeab6"><div class="ttname"><a href="../../d5/d06/group___file.html#ga031770da453a180e21dcbef5cf5aeab6">FileMode</a></div><div class="ttdeci">FileMode</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d04/_en_system_8c_source.html#l00382">EnSystem.c:383</a></div></div>
+<div class="ttc" id="agroup___file_html_ga0a4e75ef8b9c1089566c2fcb93c98deb"><div class="ttname"><a href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile</a></div><div class="ttdeci">proto void CloseFile(FileHandle file)</div><div class="ttdoc">Close the File.</div></div>
+<div class="ttc" id="agroup___file_html_ga2dbf15597c7099e168801a53b4ffce82"><div class="ttname"><a href="../../d5/d06/group___file.html#ga2dbf15597c7099e168801a53b4ffce82">FGets</a></div><div class="ttdeci">proto int FGets(FileHandle file, string var)</div><div class="ttdoc">Get line from file, every next call of this function returns next line.</div></div>
+<div class="ttc" id="agroup___file_html_ga3d9a79efe70e77db00da15d1355e40ce"><div class="ttname"><a href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile</a></div><div class="ttdeci">proto FileHandle OpenFile(string name, FileMode mode)</div><div class="ttdoc">Opens File.</div></div>
+<div class="ttc" id="agroup___file_html_gac8ac6334d3ec51a5537c4ea4f6c57e04"><div class="ttname"><a href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist</a></div><div class="ttdeci">proto bool FileExist(string name)</div><div class="ttdoc">Check existence of file.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile()</a>, <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../d5/d06/group___file.html#ga2dbf15597c7099e168801a53b4ffce82">FGets()</a>, <a class="el" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist()</a>, and <a class="el" href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile()</a>.</p>
 
 </div>
 </div>
@@ -238,7 +280,15 @@ DEPRECATED</h2>
 <p>use JsonFileLoader::MakeData instead </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html#l00160">160</a> of file <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html">JsonFileLoader.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  161</span>  {</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">string_data</a>;</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>)</div>
+<div class="line"><span class="lineno">  164</span>      <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d05/class_json_serializer.html">JsonSerializer</a>();</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>    <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>.WriteToString(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <span class="keyword">true</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">string_data</a>);</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">string_data</a>;</div>
+<div class="line"><span class="lineno">  168</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8906732e8892415dee801df28cdeb642" name="a8906732e8892415dee801df28cdeb642"></a>
@@ -271,6 +321,23 @@ DEPRECATED</h2>
 <p>use JsonFileLoader::SaveFile instead </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html#l00132">132</a> of file <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html">JsonFileLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>  {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">file_content</a>;</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>)</div>
+<div class="line"><span class="lineno">  136</span>      <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d05/class_json_serializer.html">JsonSerializer</a>();</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>.WriteToString(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <span class="keyword">true</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">file_content</a>);</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FileHandle</a> handle = <a class="code hl_function" href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>, <a class="code hl_enumeration" href="../../d5/d06/group___file.html#ga031770da453a180e21dcbef5cf5aeab6">FileMode</a>.WRITE);</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">if</span> (handle == 0)</div>
+<div class="line"><span class="lineno">  142</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_function" href="../../d5/d06/group___file.html#ga268788f31baab778873a7164997ef24c">FPrint</a>(handle, <a class="code hl_class" href="../../db/d06/class_param3.html">file_content</a>);</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_function" href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile</a>(handle);</div>
+<div class="line"><span class="lineno">  146</span>  }</div>
+<div class="ttc" id="agroup___file_html_ga268788f31baab778873a7164997ef24c"><div class="ttname"><a href="../../d5/d06/group___file.html#ga268788f31baab778873a7164997ef24c">FPrint</a></div><div class="ttdeci">proto void FPrint(FileHandle file, void var)</div><div class="ttdoc">Write to file.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile()</a>, <a class="el" href="../../d5/d06/group___file.html#ga268788f31baab778873a7164997ef24c">FPrint()</a>, and <a class="el" href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile()</a>.</p>
 
 </div>
 </div>
@@ -307,7 +374,21 @@ DEPRECATED</h2>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html#l00069">69</a> of file <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html">JsonFileLoader.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   70</span>  {</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>)</div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d05/class_json_serializer.html">JsonSerializer</a>();</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>.ReadFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">string_data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>))</div>
+<div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Cannot load provided JSON data (deserialization error) - check syntax: %1&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>);</div>
+<div class="line"><span class="lineno">   79</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   83</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a12b2969eb5bc31457f9a1edde511cef9" name="a12b2969eb5bc31457f9a1edde511cef9"></a>
@@ -343,6 +424,43 @@ DEPRECATED</h2>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html#l00005">5</a> of file <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html">JsonFileLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>))</div>
+<div class="line"><span class="lineno">    8</span>    {</div>
+<div class="line"><span class="lineno">    9</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FileHandle</a> handle = <a class="code hl_function" href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>, <a class="code hl_enumeration" href="../../d5/d06/group___file.html#ga031770da453a180e21dcbef5cf5aeab6">FileMode</a>.READ);</div>
+<div class="line"><span class="lineno">   10</span>      <span class="keywordflow">if</span> (handle == 0)</div>
+<div class="line"><span class="lineno">   11</span>      {</div>
+<div class="line"><span class="lineno">   12</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Cannot open file \&quot;%1\&quot; for reading&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>);</div>
+<div class="line"><span class="lineno">   13</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   14</span>      }</div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">fileContent</a>;</div>
+<div class="line"><span class="lineno">   17</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">lineContent</a>;</div>
+<div class="line"><span class="lineno">   18</span>      <span class="keywordflow">while</span> (<a class="code hl_function" href="../../d5/d06/group___file.html#ga2dbf15597c7099e168801a53b4ffce82">FGets</a>(handle, <a class="code hl_class" href="../../db/d06/class_param3.html">lineContent</a>) &gt;= 0)</div>
+<div class="line"><span class="lineno">   19</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">fileContent</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">lineContent</a>;</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>      <a class="code hl_function" href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile</a>(handle);</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>)</div>
+<div class="line"><span class="lineno">   24</span>        <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d05/class_json_serializer.html">JsonSerializer</a>();</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>;</div>
+<div class="line"><span class="lineno">   27</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>.ReadFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">fileContent</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>))</div>
+<div class="line"><span class="lineno">   28</span>      {</div>
+<div class="line"><span class="lineno">   29</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Cannot load data from \&quot;%1\&quot;:\n%2&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>);</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   31</span>      }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;File \&quot;%1\&quot; does not exist, check the provided path&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">error</a>);</div>
+<div class="line"><span class="lineno">   38</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile()</a>, <a class="el" href="../../d5/d06/group___file.html#ga2dbf15597c7099e168801a53b4ffce82">FGets()</a>, <a class="el" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist()</a>, and <a class="el" href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile()</a>.</p>
 
 </div>
 </div>
@@ -384,7 +502,19 @@ DEPRECATED</h2>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html#l00085">85</a> of file <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html">JsonFileLoader.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   86</span>  {</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>)</div>
+<div class="line"><span class="lineno">   88</span>      <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d05/class_json_serializer.html">JsonSerializer</a>();</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>.WriteToString(<a class="code hl_class" href="../../db/d06/class_param3.html">inputData</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">prettyPrint</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">outputData</a>))</div>
+<div class="line"><span class="lineno">   91</span>    {</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a> = <span class="stringliteral">&quot;Cannot create JSON from provided data (serialization error)&quot;</span>;</div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   94</span>    }</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   97</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7eb51863fff854a3bc43d6b77769443e" name="a7eb51863fff854a3bc43d6b77769443e"></a>
@@ -420,6 +550,34 @@ DEPRECATED</h2>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html#l00042">42</a> of file <a class="el" href="../../d7/d0d/_json_file_loader_8c_source.html">JsonFileLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">fileContent</a>;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a>)</div>
+<div class="line"><span class="lineno">   47</span>      <a class="code hl_variable" href="#ab4b2b008924e1172d7eae0e7ad5a61e7">m_Serializer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d05/class_json_serializer.html">JsonSerializer</a>();</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">makeDataError</a>;</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a83b038ce58195ed365bd0eecfa9e17e6">MakeData</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">fileContent</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">makeDataError</a>, <span class="keyword">true</span>))</div>
+<div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Cannot save data to file \&quot;%1\&quot;, %2&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">makeDataError</a>);</div>
+<div class="line"><span class="lineno">   53</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FileHandle</a> handle = <a class="code hl_function" href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>, <a class="code hl_enumeration" href="../../d5/d06/group___file.html#ga031770da453a180e21dcbef5cf5aeab6">FileMode</a>.WRITE);</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (handle == 0)</div>
+<div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;Cannot open file \&quot;%1\&quot; for writing&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">filename</a>);</div>
+<div class="line"><span class="lineno">   60</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_function" href="../../d5/d06/group___file.html#ga268788f31baab778873a7164997ef24c">FPrint</a>(handle, <a class="code hl_class" href="../../db/d06/class_param3.html">fileContent</a>);</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_function" href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile</a>(handle);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   67</span>  }</div>
+<div class="ttc" id="aclass_json_file_loader_3_01_class_01_t_01_4_html_a83b038ce58195ed365bd0eecfa9e17e6"><div class="ttname"><a href="#a83b038ce58195ed365bd0eecfa9e17e6">JsonFileLoader&lt; Class T &gt;::MakeData</a></div><div class="ttdeci">static bool MakeData(T inputData, out string outputData, out string errorMessage, bool prettyPrint=true)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0d/_json_file_loader_8c_source.html#l00085">JsonFileLoader.c:85</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d06/group___file.html#ga0a4e75ef8b9c1089566c2fcb93c98deb">CloseFile()</a>, <a class="el" href="../../d5/d06/group___file.html#ga268788f31baab778873a7164997ef24c">FPrint()</a>, and <a class="el" href="../../d5/d06/group___file.html#ga3d9a79efe70e77db00da15d1355e40ce">OpenFile()</a>.</p>
 
 </div>
 </div>

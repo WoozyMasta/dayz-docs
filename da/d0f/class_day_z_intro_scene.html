@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -410,6 +407,128 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">13</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">root_path</a> = <span class="stringliteral">&quot;cfgCharacterScenes &quot;</span> + <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetWorldName();</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetChildrenCount(<a class="code hl_class" href="../../db/d06/class_param3.html">root_path</a>);</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">index</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gac34f9f8daa0e311b6a6b40cc21d38226">RandomInt</a>(0, <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> - 1);</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">childName</a>;</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetChildName(<a class="code hl_class" href="../../db/d06/class_param3.html">root_path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">index</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">childName</a>);</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">root_path</a> + <span class="stringliteral">&quot; &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">childName</a>;</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="#accb142f2c4f1ad79c46cc406b5e0bbb6">m_Target</a> = <a class="code hl_function" href="#a267938d19377b422d7d1496a3344720a">SwapYZ</a>(<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetVector(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; target&quot;</span>));</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">position</a> = <a class="code hl_function" href="#a267938d19377b422d7d1496a3344720a">SwapYZ</a>(<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetVector(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; position&quot;</span>));</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_class" href="../../d2/d01/classarray.html">TIntArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">date</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d08/group___enforce.html#ga62db042ecba76039a4391153a4660c2c">TIntArray</a>;</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_class" href="../../d2/d01/classarray.html">TFloatArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">storm</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d08/group___enforce.html#ga16d7a64e09e3d0ea3b844c738952c972">TFloatArray</a>;</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetIntArray(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; date&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">date</a>);</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">fov</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetFloat(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; fov&quot;</span>);</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">overcast</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetFloat(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; overcast&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">rain</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetFloat(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; rain&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">fog</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetFloat(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; fog&quot;</span>);</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">windspeed</a> = -1;</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigIsExisting(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; windspeed&quot;</span>)) <a class="code hl_class" href="../../db/d06/class_param3.html">windspeed</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetFloat(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; windspeed&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetFloatArray(<a class="code hl_class" href="../../db/d06/class_param3.html">scene_path</a> + <span class="stringliteral">&quot; storm&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">storm</a>);</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_class" href="../../d3/d01/class_world.html">World</a> <a class="code hl_class" href="../../db/d06/class_param3.html">world</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetWorld();</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">world</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">date</a>.Count() &gt;= 5)</div>
+<div class="line"><span class="lineno">   39</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">world</a>.SetDate(<a class="code hl_class" href="../../db/d06/class_param3.html">date</a>.Get(0), <a class="code hl_class" href="../../db/d06/class_param3.html">date</a>.Get(1), <a class="code hl_class" href="../../db/d06/class_param3.html">date</a>.Get(2), <a class="code hl_class" href="../../db/d06/class_param3.html">date</a>.Get(3), <a class="code hl_class" href="../../db/d06/class_param3.html">date</a>.Get(4));</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ObjectDelete(<a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>);</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>, <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.CreateObject(<span class="stringliteral">&quot;staticcamera&quot;</span>, <a class="code hl_function" href="#acdf93a6fe5baf1c0ad32998e4241ce53">SnapToGround</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">position</a>), <span class="keyword">true</span>)); <span class="comment">//Vector(position[0] , position[1] + 1, position[2])</span></div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="../../da/d04/class_math3_d.html">Math3D</a>.<a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#gad69368d7b5e1fcc6c3c8517d43adb443">MatrixIdentity4</a>(<a class="code hl_variable" href="#aa3029090bdd6cc4e653e21145816d887">m_CameraTrans</a>);</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>)</div>
+<div class="line"><span class="lineno">   47</span>    {</div>
+<div class="line"><span class="lineno">   48</span>      <span class="comment">//m_Camera.SetPosition(Vector(m_Camera.GetPosition()[0],m_Camera.GetPosition()[1]+0,m_Camera.GetPosition()[2]));</span></div>
+<div class="line"><span class="lineno">   49</span>      <a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>.LookAt(<a class="code hl_variable" href="#accb142f2c4f1ad79c46cc406b5e0bbb6">m_Target</a>);</div>
+<div class="line"><span class="lineno">   50</span>      <a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>.SetFOV(<a class="code hl_class" href="../../db/d06/class_param3.html">fov</a>);</div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>.SetFocus(5.0, 0.0); <span class="comment">//5.0, 1.0</span></div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>      <a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>      <a class="code hl_class" href="../../da/d04/class_math3_d.html">Math3D</a>.<a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#gadc0f4c14d0d19116af8987e5f6b15dcd">DirectionAndUpMatrix</a>(<a class="code hl_variable" href="#accb142f2c4f1ad79c46cc406b5e0bbb6">m_Target</a> - <a class="code hl_function" href="#acdf93a6fe5baf1c0ad32998e4241ce53">SnapToGround</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">position</a>), <span class="stringliteral">&quot;0 1 0&quot;</span>, <a class="code hl_variable" href="#aa3029090bdd6cc4e653e21145816d887">m_CameraTrans</a>);</div>
+<div class="line"><span class="lineno">   56</span>      <a class="code hl_variable" href="#aa3029090bdd6cc4e653e21145816d887">m_CameraTrans</a>[3] = <a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>.GetPosition();</div>
+<div class="line"><span class="lineno">   57</span>      <a class="code hl_variable" href="#a23ec7127dda700a9cf7a215219a57c5e">m_CharacterPos</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0.685547, -0.988281, 3.68823).Multiply4(<a class="code hl_variable" href="#aa3029090bdd6cc4e653e21145816d887">m_CameraTrans</a>);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pos_x</a> = <a class="code hl_variable" href="#a23ec7127dda700a9cf7a215219a57c5e">m_CharacterPos</a>[0];</div>
+<div class="line"><span class="lineno">   60</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pos_z</a> = <a class="code hl_variable" href="#a23ec7127dda700a9cf7a215219a57c5e">m_CharacterPos</a>[2];</div>
+<div class="line"><span class="lineno">   61</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pos_y</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceY(<a class="code hl_class" href="../../db/d06/class_param3.html">pos_x</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pos_z</a>);</div>
+<div class="line"><span class="lineno">   62</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ground_demo_pos</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pos_x</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pos_y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pos_z</a>);</div>
+<div class="line"><span class="lineno">   63</span>      <a class="code hl_variable" href="#a23ec7127dda700a9cf7a215219a57c5e">m_CharacterPos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ground_demo_pos</a>;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">to_cam_dir</a> = <a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>.GetPosition() - <a class="code hl_variable" href="#a23ec7127dda700a9cf7a215219a57c5e">m_CharacterPos</a>;</div>
+<div class="line"><span class="lineno">   66</span>      <a class="code hl_variable" href="#aca20b3eb57094ba168df76c79e69eb34">m_CharacterRot</a>[0] = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga87cce5b3869bb15303abcbe531f50d32">Atan2</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">to_cam_dir</a>[0], <a class="code hl_class" href="../../db/d06/class_param3.html">to_cam_dir</a>[2]) * <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_variable" href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">RAD2DEG</a>;</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetWeather();</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#ad34ae2a6b8b7f398d053d4eb9edc2b29">GetOvercast</a>().SetLimits(<a class="code hl_class" href="../../db/d06/class_param3.html">overcast</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">overcast</a>);</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#ab7b05666853a2d0ac59de72d018d4202">GetRain</a>().SetLimits(<a class="code hl_class" href="../../db/d06/class_param3.html">rain</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">rain</a>);</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#a177b390af0eae7be093a2741ad079102">GetFog</a>().SetLimits(<a class="code hl_class" href="../../db/d06/class_param3.html">fog</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">fog</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#ad34ae2a6b8b7f398d053d4eb9edc2b29">GetOvercast</a>().Set(<a class="code hl_class" href="../../db/d06/class_param3.html">overcast</a>, 0, 0);</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#ab7b05666853a2d0ac59de72d018d4202">GetRain</a>().Set(<a class="code hl_class" href="../../db/d06/class_param3.html">rain</a>, 0, 0);</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#a177b390af0eae7be093a2741ad079102">GetFog</a>().Set(<a class="code hl_class" href="../../db/d06/class_param3.html">fog</a>, 0, 0);</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">storm</a>.Count() == 3)</div>
+<div class="line"><span class="lineno">   79</span>      <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#a36783835c39ed0d01d8497506354f585">SetStorm</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">storm</a>.Get(0), <a class="code hl_class" href="../../db/d06/class_param3.html">storm</a>.Get(1), <a class="code hl_class" href="../../db/d06/class_param3.html">storm</a>.Get(2));</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">windspeed</a> != -1)</div>
+<div class="line"><span class="lineno">   82</span>    {</div>
+<div class="line"><span class="lineno">   83</span>      <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#a3915c2eb6f9fb609723635d09305d552">SetWindSpeed</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">windspeed</a>);</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#af4dd6fc83a7b02fa5fcf5922268b3415">SetWindMaximumSpeed</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">windspeed</a>);</div>
+<div class="line"><span class="lineno">   85</span>      <a class="code hl_variable" href="#a58b40fc63ce3910eb425688814a17176">m_Weather</a>.<a class="code hl_function" href="../../d2/d02/class_weather.html#a774c4bbaef5579872855b14c9251afb8">SetWindFunctionParams</a>(1, 1, 1);</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="#ab86162213cd8b8a41fa088d3e55c47cf">m_Character</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../dd/d07/class_managed.html#ad46480b022122c7aca3bd3cccda8a712">IntroSceneCharacter</a>();</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_variable" href="#ab86162213cd8b8a41fa088d3e55c47cf">m_Character</a>.LoadCharacterData(<a class="code hl_variable" href="#a23ec7127dda700a9cf7a215219a57c5e">m_CharacterPos</a>, <a class="code hl_variable" href="#aca20b3eb57094ba168df76c79e69eb34">m_CharacterRot</a>);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_class" href="../../db/d03/class_p_p_effects.html">PPEffects</a>.<a class="code hl_function" href="../../db/d03/class_p_p_effects.html#a836799e1f9e832316fcf396921173689">Init</a>(); <span class="comment">//Deprecated, left in for legacy purposes only</span></div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaae15173306f94a164b31a4baea73e5eb">CALL_CATEGORY_GUI</a>).Call(<a class="code hl_function" href="#a4f5d02e513a59916e5862c8e77263e15">SetInitPostprocesses</a>);</div>
+<div class="line"><span class="lineno">   94</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03528">DayZGame.c:3528</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a23ec7127dda700a9cf7a215219a57c5e"><div class="ttname"><a href="#a23ec7127dda700a9cf7a215219a57c5e">DayZIntroScene::m_CharacterPos</a></div><div class="ttdeci">vector m_CharacterPos</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00006">DayZIntroScene.c:6</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a267938d19377b422d7d1496a3344720a"><div class="ttname"><a href="#a267938d19377b422d7d1496a3344720a">DayZIntroScene::SwapYZ</a></div><div class="ttdeci">vector SwapYZ(vector vec)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00153">DayZIntroScene.c:153</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a4f5d02e513a59916e5862c8e77263e15"><div class="ttname"><a href="#a4f5d02e513a59916e5862c8e77263e15">DayZIntroScene::SetInitPostprocesses</a></div><div class="ttdeci">void SetInitPostprocesses()</div><div class="ttdoc">Since this can get created at the same time as DayZGame, non-static postprocesses need to be deffered...</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00131">DayZIntroScene.c:131</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a58b40fc63ce3910eb425688814a17176"><div class="ttname"><a href="#a58b40fc63ce3910eb425688814a17176">DayZIntroScene::m_Weather</a></div><div class="ttdeci">Weather m_Weather</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00008">DayZIntroScene.c:8</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a7df6965e886529730bc8e7cd76813df9"><div class="ttname"><a href="#a7df6965e886529730bc8e7cd76813df9">DayZIntroScene::m_Camera</a></div><div class="ttdeci">Camera m_Camera</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00004">DayZIntroScene.c:4</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_aa3029090bdd6cc4e653e21145816d887"><div class="ttname"><a href="#aa3029090bdd6cc4e653e21145816d887">DayZIntroScene::m_CameraTrans</a></div><div class="ttdeci">vector m_CameraTrans[4]</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00005">DayZIntroScene.c:5</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_ab86162213cd8b8a41fa088d3e55c47cf"><div class="ttname"><a href="#ab86162213cd8b8a41fa088d3e55c47cf">DayZIntroScene::m_Character</a></div><div class="ttdeci">ref IntroSceneCharacter m_Character</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00003">DayZIntroScene.c:3</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_aca20b3eb57094ba168df76c79e69eb34"><div class="ttname"><a href="#aca20b3eb57094ba168df76c79e69eb34">DayZIntroScene::m_CharacterRot</a></div><div class="ttdeci">vector m_CharacterRot</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00007">DayZIntroScene.c:7</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_accb142f2c4f1ad79c46cc406b5e0bbb6"><div class="ttname"><a href="#accb142f2c4f1ad79c46cc406b5e0bbb6">DayZIntroScene::m_Target</a></div><div class="ttdeci">vector m_Target</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00009">DayZIntroScene.c:9</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_acdf93a6fe5baf1c0ad32998e4241ce53"><div class="ttname"><a href="#acdf93a6fe5baf1c0ad32998e4241ce53">DayZIntroScene::SnapToGround</a></div><div class="ttdeci">vector SnapToGround(vector pos)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00164">DayZIntroScene.c:164</a></div></div>
+<div class="ttc" id="aclass_managed_html_ad46480b022122c7aca3bd3cccda8a712"><div class="ttname"><a href="../../dd/d07/class_managed.html#ad46480b022122c7aca3bd3cccda8a712">Managed::IntroSceneCharacter</a></div><div class="ttdeci">void IntroSceneCharacter()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0d/_intro_scene_character_8c_source.html#l00019">IntroSceneCharacter.c:19</a></div></div>
+<div class="ttc" id="aclass_math3_d_html"><div class="ttname"><a href="../../da/d04/class_math3_d.html">Math3D</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/_en_math3_d_8c_source.html#l00027">EnMath3D.c:28</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_p_p_effects_html"><div class="ttname"><a href="../../db/d03/class_p_p_effects.html">PPEffects</a></div><div class="ttdoc">Deprecated; 'PPEManager' used instead.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0e/_p_p_effects_8c_source.html#l00002">PPEffects.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_effects_html_a836799e1f9e832316fcf396921173689"><div class="ttname"><a href="../../db/d03/class_p_p_effects.html#a836799e1f9e832316fcf396921173689">PPEffects::Init</a></div><div class="ttdeci">static void Init()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0e/_p_p_effects_8c_source.html#l00052">PPEffects.c:52</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_weather_html_a177b390af0eae7be093a2741ad079102"><div class="ttname"><a href="../../d2/d02/class_weather.html#a177b390af0eae7be093a2741ad079102">Weather::GetFog</a></div><div class="ttdeci">proto native Fog GetFog()</div><div class="ttdoc">Returns a fog phenomenon object.</div></div>
+<div class="ttc" id="aclass_weather_html_a36783835c39ed0d01d8497506354f585"><div class="ttname"><a href="../../d2/d02/class_weather.html#a36783835c39ed0d01d8497506354f585">Weather::SetStorm</a></div><div class="ttdeci">proto native void SetStorm(float density, float threshold, float timeOut)</div><div class="ttdoc">Sets the thunderstorm properties.</div></div>
+<div class="ttc" id="aclass_weather_html_a3915c2eb6f9fb609723635d09305d552"><div class="ttname"><a href="../../d2/d02/class_weather.html#a3915c2eb6f9fb609723635d09305d552">Weather::SetWindSpeed</a></div><div class="ttdeci">proto native void SetWindSpeed(float speed)</div><div class="ttdoc">Sets the actual wind speed in metre per second.</div></div>
+<div class="ttc" id="aclass_weather_html_a774c4bbaef5579872855b14c9251afb8"><div class="ttname"><a href="../../d2/d02/class_weather.html#a774c4bbaef5579872855b14c9251afb8">Weather::SetWindFunctionParams</a></div><div class="ttdeci">proto native void SetWindFunctionParams(float fnMin, float fnMax, float fnSpeed)</div><div class="ttdoc">Sets function parameters that controls the wind behaviour (change in time).</div></div>
+<div class="ttc" id="aclass_weather_html_ab7b05666853a2d0ac59de72d018d4202"><div class="ttname"><a href="../../d2/d02/class_weather.html#ab7b05666853a2d0ac59de72d018d4202">Weather::GetRain</a></div><div class="ttdeci">proto native Rain GetRain()</div><div class="ttdoc">Returns a rain phenomenon object.</div></div>
+<div class="ttc" id="aclass_weather_html_ad34ae2a6b8b7f398d053d4eb9edc2b29"><div class="ttname"><a href="../../d2/d02/class_weather.html#ad34ae2a6b8b7f398d053d4eb9edc2b29">Weather::GetOvercast</a></div><div class="ttdeci">proto native Overcast GetOvercast()</div><div class="ttdoc">Returns an overcast phenomenon object.</div></div>
+<div class="ttc" id="aclass_weather_html_af4dd6fc83a7b02fa5fcf5922268b3415"><div class="ttname"><a href="../../d2/d02/class_weather.html#af4dd6fc83a7b02fa5fcf5922268b3415">Weather::SetWindMaximumSpeed</a></div><div class="ttdeci">proto native void SetWindMaximumSpeed(float maxSpeed)</div><div class="ttdoc">Sets the maximal wind speed in metre per second.</div></div>
+<div class="ttc" id="aclass_world_html"><div class="ttname"><a href="../../d3/d01/class_world.html">World</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d00/_world_8c_source.html#l00001">World.c:2</a></div></div>
+<div class="ttc" id="aclassarray_html"><div class="ttname"><a href="../../d2/d01/classarray.html">array</a></div><div class="ttdoc">Result for an object found in CGame.IsBoxCollidingGeometryProxy.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0d/_is_box_colliding_geometry_proxy_classes_8c_source.html#l00027">IsBoxCollidingGeometryProxyClasses.c:28</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___enforce_html_ga16d7a64e09e3d0ea3b844c738952c972"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga16d7a64e09e3d0ea3b844c738952c972">TFloatArray</a></div><div class="ttdeci">array&lt; float &gt; TFloatArray</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00667">EnScript.c:667</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+<div class="ttc" id="agroup___enforce_html_ga62db042ecba76039a4391153a4660c2c"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga62db042ecba76039a4391153a4660c2c">TIntArray</a></div><div class="ttdeci">array&lt; int &gt; TIntArray</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00668">EnScript.c:668</a></div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga5bd1deb1c96276d94eeec6fe40955c41"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a></div><div class="ttdeci">proto native vector Vector(float x, float y, float z)</div><div class="ttdoc">Vector constructor from components.</div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_gad69368d7b5e1fcc6c3c8517d43adb443"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#gad69368d7b5e1fcc6c3c8517d43adb443">Math3D::MatrixIdentity4</a></div><div class="ttdeci">static void MatrixIdentity4(out vector mat[4])</div><div class="ttdoc">Creates identity matrix.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/_en_math3_d_8c_source.html#l00233">EnMath3D.c:233</a></div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_gadc0f4c14d0d19116af8987e5f6b15dcd"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#gadc0f4c14d0d19116af8987e5f6b15dcd">Math3D::DirectionAndUpMatrix</a></div><div class="ttdeci">static proto void DirectionAndUpMatrix(vector dir, vector up, out vector mat[4])</div><div class="ttdoc">Creates rotation matrix from direction and up vector.</div></div>
+<div class="ttc" id="agroup___math_html_ga87cce5b3869bb15303abcbe531f50d32"><div class="ttname"><a href="../../d5/d08/group___math.html#ga87cce5b3869bb15303abcbe531f50d32">Math::Atan2</a></div><div class="ttdeci">static proto float Atan2(float y, float x)</div><div class="ttdoc">Returns angle in radians from tangent.</div></div>
+<div class="ttc" id="agroup___math_html_gac34f9f8daa0e311b6a6b40cc21d38226"><div class="ttname"><a href="../../d5/d08/group___math.html#gac34f9f8daa0e311b6a6b40cc21d38226">Math::RandomInt</a></div><div class="ttdeci">static proto int RandomInt(int min, int max)</div><div class="ttdoc">Returns a random int number between and min [inclusive] and max [exclusive].</div></div>
+<div class="ttc" id="agroup___math_html_gad73851cb23a468ee6eb705d0ec76e141"><div class="ttname"><a href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">Math::RAD2DEG</a></div><div class="ttdeci">static const float RAD2DEG</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00016">EnMath.c:16</a></div></div>
+<div class="ttc" id="agroup___tools_html_gaae15173306f94a164b31a4baea73e5eb"><div class="ttname"><a href="../../d9/d03/group___tools.html#gaae15173306f94a164b31a4baea73e5eb">CALL_CATEGORY_GUI</a></div><div class="ttdeci">const int CALL_CATEGORY_GUI</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00009">tools.c:9</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga87cce5b3869bb15303abcbe531f50d32">Math::Atan2()</a>, <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00009">CALL_CATEGORY_GUI</a>, <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#gadc0f4c14d0d19116af8987e5f6b15dcd">Math3D::DirectionAndUpMatrix()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="../../d2/d02/class_weather.html#a177b390af0eae7be093a2741ad079102">Weather::GetFog()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d02/class_weather.html#ad34ae2a6b8b7f398d053d4eb9edc2b29">Weather::GetOvercast()</a>, <a class="el" href="../../d2/d02/class_weather.html#ab7b05666853a2d0ac59de72d018d4202">Weather::GetRain()</a>, <a class="el" href="../../db/d0e/_p_p_effects_8c_source.html#l00052">PPEffects::Init()</a>, <a class="el" href="../../d3/d0d/_intro_scene_character_8c_source.html#l00019">Managed::IntroSceneCharacter()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00004">m_Camera</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00005">m_CameraTrans</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00003">m_Character</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00006">m_CharacterPos</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00007">m_CharacterRot</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00009">m_Target</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00008">m_Weather</a>, <a class="el" href="../../d3/d0c/_en_math3_d_8c_source.html#l00233">Math3D::MatrixIdentity4()</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00016">Math::RAD2DEG</a>, <a class="el" href="../../d5/d08/group___math.html#gac34f9f8daa0e311b6a6b40cc21d38226">Math::RandomInt()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00131">SetInitPostprocesses()</a>, <a class="el" href="../../d2/d02/class_weather.html#a36783835c39ed0d01d8497506354f585">Weather::SetStorm()</a>, <a class="el" href="../../d2/d02/class_weather.html#a774c4bbaef5579872855b14c9251afb8">Weather::SetWindFunctionParams()</a>, <a class="el" href="../../d2/d02/class_weather.html#af4dd6fc83a7b02fa5fcf5922268b3415">Weather::SetWindMaximumSpeed()</a>, <a class="el" href="../../d2/d02/class_weather.html#a3915c2eb6f9fb609723635d09305d552">Weather::SetWindSpeed()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00164">SnapToGround()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00153">SwapYZ()</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
 
 </div>
 </div>
@@ -437,6 +556,15 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00096">96</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>  {</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d0/d09/class_p_p_e_manager_static.html">PPEManagerStatic</a>.<a class="code hl_function" href="../../d0/d09/class_p_p_e_manager_static.html#a86b3b44641655b3466eab6e2f31bfa14">GetPPEManager</a>())</div>
+<div class="line"><span class="lineno">   99</span>      <a class="code hl_class" href="../../d0/d09/class_p_p_e_manager_static.html">PPEManagerStatic</a>.<a class="code hl_function" href="../../d0/d09/class_p_p_e_manager_static.html#a86b3b44641655b3466eab6e2f31bfa14">GetPPEManager</a>().StopAllEffects(<a class="code hl_enumeration" href="../../d1/d06/_p_p_e_constants_8c.html#a4a96ca793cccaa04d0cb4f343305144b">PPERequesterCategory</a>.ALL);</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="ttc" id="a_p_p_e_constants_8c_html_a4a96ca793cccaa04d0cb4f343305144b"><div class="ttname"><a href="../../d1/d06/_p_p_e_constants_8c.html#a4a96ca793cccaa04d0cb4f343305144b">PPERequesterCategory</a></div><div class="ttdeci">PPERequesterCategory</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d06/_p_p_e_constants_8c_source.html#l00027">PPEConstants.c:28</a></div></div>
+<div class="ttc" id="aclass_p_p_e_manager_static_html"><div class="ttname"><a href="../../d0/d09/class_p_p_e_manager_static.html">PPEManagerStatic</a></div><div class="ttdoc">Static component of PPE manager, used to hold the instance.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00002">PPEManager.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_manager_static_html_a86b3b44641655b3466eab6e2f31bfa14"><div class="ttname"><a href="../../d0/d09/class_p_p_e_manager_static.html#a86b3b44641655b3466eab6e2f31bfa14">PPEManagerStatic::GetPPEManager</a></div><div class="ttdeci">static PPEManager GetPPEManager()</div><div class="ttdoc">Returns the manager instance singleton.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00027">PPEManager.c:27</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00027">PPEManagerStatic::GetPPEManager()</a>.</p>
 
 </div>
 </div>
@@ -465,6 +593,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00113">113</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>  {</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>;</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00004">m_Camera</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d02/_main_menu_consoles_8c_source.html#l00266">UIScriptedMenu::OnShow()</a>, and <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00121">ResetIntroCamera()</a>.</p>
 
 </div>
 </div>
@@ -492,6 +627,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00105">105</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab86162213cd8b8a41fa088d3e55c47cf">m_Character</a>;</div>
+<div class="line"><span class="lineno">  108</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00003">m_Character</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d04/_main_menu_8c_source.html#l00420">UIScriptedMenu::CanSaveDefaultCharacter()</a>, <a class="el" href="../../de/d04/_main_menu_8c_source.html#l00544">UIScriptedMenu::ConnectLastSession()</a>, <a class="el" href="../../de/d04/_main_menu_8c_source.html#l00437">UIScriptedMenu::NextCharacter()</a>, <a class="el" href="../../de/d04/_main_menu_8c_source.html#l00463">UIScriptedMenu::OnChangeCharacter()</a>, <a class="el" href="../../de/d04/_main_menu_8c_source.html#l00289">UIScriptedMenu::OnMouseEnter()</a>, <a class="el" href="../../d3/d02/_main_menu_consoles_8c_source.html#l00266">UIScriptedMenu::OnShow()</a>, <a class="el" href="../../de/d04/_main_menu_8c_source.html#l00450">UIScriptedMenu::PreviousCharacter()</a>, and <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00121">ResetIntroCamera()</a>.</p>
 
 </div>
 </div>
@@ -519,6 +661,27 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00136">136</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>  {</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>;</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_class" href="../../de/d03/class_bios_user_manager.html">BiosUserManager</a> <a class="code hl_class" href="../../db/d06/class_param3.html">user_manager</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetUserManager();</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">user_manager</a>)</div>
+<div class="line"><span class="lineno">  141</span>    {</div>
+<div class="line"><span class="lineno">  142</span>      <a class="code hl_class" href="../../d2/d0f/class_bios_user.html">BiosUser</a> <a class="code hl_class" href="../../db/d06/class_param3.html">user</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">user_manager</a>.GetSelectedUser();</div>
+<div class="line"><span class="lineno">  143</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">user</a>)</div>
+<div class="line"><span class="lineno">  144</span>      {</div>
+<div class="line"><span class="lineno">  145</span>        <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.SetPlayerGameName(<a class="code hl_class" href="../../db/d06/class_param3.html">user</a>.GetName());</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  147</span>      }</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.SetPlayerGameName(<a class="code hl_class" href="../../da/d05/class_game_constants.html">GameConstants</a>.<a class="code hl_variable" href="../../d2/d08/group___emote_i_ds.html#gacb3716f166feb4fe624b5db74de907dc">DEFAULT_CHARACTER_NAME</a>);</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad8c6fb88ec9295d5e3b3c7ad4854b647"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a></div><div class="ttdeci">PlayerSpawnPresetDiscreteItemSetSlotData name</div><div class="ttdoc">one set for cargo</div></div>
+<div class="ttc" id="aclass_bios_user_html"><div class="ttname"><a href="../../d2/d0f/class_bios_user.html">BiosUser</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_bios_user_manager_8c_source.html#l00008">BiosUserManager.c:9</a></div></div>
+<div class="ttc" id="aclass_bios_user_manager_html"><div class="ttname"><a href="../../de/d03/class_bios_user_manager.html">BiosUserManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_bios_user_manager_8c_source.html#l00016">BiosUserManager.c:17</a></div></div>
+<div class="ttc" id="aclass_game_constants_html"><div class="ttname"><a href="../../da/d05/class_game_constants.html">GameConstants</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00611">constants.c:612</a></div></div>
+<div class="ttc" id="agroup___emote_i_ds_html_gacb3716f166feb4fe624b5db74de907dc"><div class="ttname"><a href="../../d2/d08/group___emote_i_ds.html#gacb3716f166feb4fe624b5db74de907dc">GameConstants::DEFAULT_CHARACTER_NAME</a></div><div class="ttdeci">const string DEFAULT_CHARACTER_NAME</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00838">constants.c:838</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00838">GameConstants::DEFAULT_CHARACTER_NAME</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.</p>
 
 </div>
 </div>
@@ -546,6 +709,21 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00121">121</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>  {</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a415241fcab07297bc101763a67635480">GetIntroCharacter</a>().<a class="code hl_function" href="../../dd/d07/class_managed.html#a033542a17e776d930382cbd8fe431d95">GetCharacterObj</a>())</div>
+<div class="line"><span class="lineno">  124</span>    {</div>
+<div class="line"><span class="lineno">  125</span>      <a class="code hl_function" href="#a6e2847109b683b670ce9d2629911ecd9">GetIntroCamera</a>().LookAt(<a class="code hl_function" href="#a415241fcab07297bc101763a67635480">GetIntroCharacter</a>().<a class="code hl_function" href="../../dd/d07/class_managed.html#a33401719a873d54aa6fa163065eb0b1f">GetPosition</a>() + <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0, 1, 0));</div>
+<div class="line"><span class="lineno">  126</span>      <span class="comment">//GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater( SceneCharacterSetPos, 250 );</span></div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a415241fcab07297bc101763a67635480"><div class="ttname"><a href="#a415241fcab07297bc101763a67635480">DayZIntroScene::GetIntroCharacter</a></div><div class="ttdeci">IntroSceneCharacter GetIntroCharacter()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00105">DayZIntroScene.c:105</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a6e2847109b683b670ce9d2629911ecd9"><div class="ttname"><a href="#a6e2847109b683b670ce9d2629911ecd9">DayZIntroScene::GetIntroCamera</a></div><div class="ttdeci">Camera GetIntroCamera()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00113">DayZIntroScene.c:113</a></div></div>
+<div class="ttc" id="aclass_managed_html_a033542a17e776d930382cbd8fe431d95"><div class="ttname"><a href="../../dd/d07/class_managed.html#a033542a17e776d930382cbd8fe431d95">Managed::GetCharacterObj</a></div><div class="ttdeci">PlayerBase GetCharacterObj()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0d/_intro_scene_character_8c_source.html#l00057">IntroSceneCharacter.c:57</a></div></div>
+<div class="ttc" id="aclass_managed_html_a33401719a873d54aa6fa163065eb0b1f"><div class="ttname"><a href="../../dd/d07/class_managed.html#a33401719a873d54aa6fa163065eb0b1f">Managed::GetPosition</a></div><div class="ttdeci">vector GetPosition()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0d/_intro_scene_character_8c_source.html#l00129">IntroSceneCharacter.c:129</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0d/_intro_scene_character_8c_source.html#l00057">Managed::GetCharacterObj()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00113">GetIntroCamera()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00105">GetIntroCharacter()</a>, <a class="el" href="../../d3/d0d/_intro_scene_character_8c_source.html#l00129">Managed::GetPosition()</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d04/_main_menu_8c_source.html#l00050">UIScriptedMenu::Init()</a>.</p>
 
 </div>
 </div>
@@ -575,6 +753,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Since this can get created at the same time as DayZGame, non-static postprocesses need to be deffered. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00131">131</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>  {</div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">PPERequesterBank</a>.GetRequester(<a class="code hl_class" href="../../db/d06/class_param3.html">PPERequester_BurlapSackEffects</a>).Stop();</div>
+<div class="line"><span class="lineno">  134</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>.</p>
 
 </div>
 </div>
@@ -602,6 +785,19 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00164">164</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>  {</div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pos_x</a> = pos[0];</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pos_z</a> = pos[2];</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pos_y</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceY(<a class="code hl_class" href="../../db/d06/class_param3.html">pos_x</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pos_z</a>);</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">tmp_pos</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pos_x</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pos_y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pos_z</a>);</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">tmp_pos</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">tmp_pos</a>[1] + pos[1];</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">tmp_pos</a>;</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>.</p>
 
 </div>
 </div>
@@ -629,6 +825,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00153">153</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>  {</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a>;</div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a>[0] = <a class="code hl_class" href="../../db/d06/class_param3.html">vec</a>[0];</div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">vec</a>[2];</div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a>[2] = <a class="code hl_class" href="../../db/d06/class_param3.html">vec</a>[1];</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a>;</div>
+<div class="line"><span class="lineno">  161</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>.</p>
 
 </div>
 </div>
@@ -655,6 +861,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00004">4</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00022">DayZIntroScenePC::DayZIntroScenePC()</a>, and <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00113">GetIntroCamera()</a>.</p>
+
 </div>
 </div>
 <a id="aa3029090bdd6cc4e653e21145816d887" name="aa3029090bdd6cc4e653e21145816d887"></a>
@@ -678,6 +886,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00005">5</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>.</p>
 
 </div>
 </div>
@@ -703,6 +913,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00003">3</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00082">DayZIntroScenePC::CharacterRotate()</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00059">DayZIntroScenePC::CharacterRotationStart()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00105">GetIntroCharacter()</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00102">DayZIntroScenePC::Update()</a>.</p>
+
 </div>
 </div>
 <a id="a23ec7127dda700a9cf7a215219a57c5e" name="a23ec7127dda700a9cf7a215219a57c5e"></a>
@@ -727,6 +939,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00006">6</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00022">DayZIntroScenePC::DayZIntroScenePC()</a>.</p>
+
 </div>
 </div>
 <a id="aca20b3eb57094ba168df76c79e69eb34" name="aca20b3eb57094ba168df76c79e69eb34"></a>
@@ -750,6 +964,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00007">7</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00082">DayZIntroScenePC::CharacterRotate()</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00059">DayZIntroScenePC::CharacterRotationStart()</a>, and <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>.</p>
 
 </div>
 </div>
@@ -799,6 +1015,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00009">9</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>.</p>
+
 </div>
 </div>
 <a id="a58b40fc63ce3910eb425688814a17176" name="a58b40fc63ce3910eb425688814a17176"></a>
@@ -822,6 +1040,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00008">8</a> of file <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html">DayZIntroScene.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00013">DayZIntroScene()</a>.</p>
 
 </div>
 </div>

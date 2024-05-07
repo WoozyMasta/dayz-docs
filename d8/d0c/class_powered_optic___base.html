@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -215,6 +212,50 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00062">62</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>  {</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>();</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">from</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCurrentCameraPosition();</div>
+<div class="line"><span class="lineno">   69</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">to</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">from</a> + (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCurrentCameraDirection() * <a class="code hl_variable" href="#a6b987596582505c56d778870819c0bcf">RANGEFINDER_MAX_DISTANCE</a>);</div>
+<div class="line"><span class="lineno">   70</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">contact_pos</a>;</div>
+<div class="line"><span class="lineno">   71</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">contact_dir</a>;</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">contactComponent</a>;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_class" href="../../d3/d07/class_day_z_physics.html">DayZPhysics</a>.<a class="code hl_function" href="../../d3/d07/class_day_z_physics.html#a5b2f27b170cdb66f30cd9e3210bda40f">RaycastRV</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">from</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">to</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">contact_pos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">contact_dir</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">contactComponent</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">false</span>, <span class="keyword">false</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">ObjIntersectIFire</a>);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>      <span class="comment">// Generate result</span></div>
+<div class="line"><span class="lineno">   77</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">dist</a> = <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">Distance</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">from</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">contact_pos</a>);</div>
+<div class="line"><span class="lineno">   78</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">dist</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Round</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">dist</a>);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">dist</a> &lt; <a class="code hl_variable" href="#a6b987596582505c56d778870819c0bcf">RANGEFINDER_MAX_DISTANCE</a>)</div>
+<div class="line"><span class="lineno">   81</span>      {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">dist</a> &lt; 10)</div>
+<div class="line"><span class="lineno">   83</span>          <a class="code hl_variable" href="#ada637808790500936d92733cbb446216">m_RangeText</a>.SetText(<span class="stringliteral">&quot;00&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">dist</a>.ToString());</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">dist</a> &lt; 100)</div>
+<div class="line"><span class="lineno">   85</span>          <a class="code hl_variable" href="#ada637808790500936d92733cbb446216">m_RangeText</a>.SetText(<span class="stringliteral">&quot;0&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">dist</a>.ToString());</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   87</span>          <a class="code hl_variable" href="#ada637808790500936d92733cbb446216">m_RangeText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">dist</a>.ToString());</div>
+<div class="line"><span class="lineno">   88</span>      }</div>
+<div class="line"><span class="lineno">   89</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   90</span>        <a class="code hl_variable" href="#ada637808790500936d92733cbb446216">m_RangeText</a>.SetText(<span class="stringliteral">&quot;- - -&quot;</span>);</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00047">ModifierBase.c:47</a></div></div>
+<div class="ttc" id="aclass_day_z_physics_html"><div class="ttname"><a href="../../d3/d07/class_day_z_physics.html">DayZPhysics</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_day_z_physics_8c_source.html#l00123">DayZPhysics.c:124</a></div></div>
+<div class="ttc" id="aclass_day_z_physics_html_a5b2f27b170cdb66f30cd9e3210bda40f"><div class="ttname"><a href="../../d3/d07/class_day_z_physics.html#a5b2f27b170cdb66f30cd9e3210bda40f">DayZPhysics::RaycastRV</a></div><div class="ttdeci">static proto bool RaycastRV(vector begPos, vector endPos, out vector contactPos, out vector contactDir, out int contactComponent, set&lt; Object &gt; results=NULL, Object with=NULL, Object ignore=NULL, bool sorted=false, bool ground_only=false, int iType=ObjIntersectView, float radius=0.0, CollisionFlags flags=CollisionFlags.NEARESTCONTACT)</div><div class="ttdoc">Raycasts world by given parameters.</div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+<div class="ttc" id="aclass_powered_optic___base_html_a6b987596582505c56d778870819c0bcf"><div class="ttname"><a href="#a6b987596582505c56d778870819c0bcf">PoweredOptic_Base::RANGEFINDER_MAX_DISTANCE</a></div><div class="ttdeci">static const float RANGEFINDER_MAX_DISTANCE</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_rangefinder_8c_source.html#l00003">Rangefinder.c:3</a></div></div>
+<div class="ttc" id="aclass_powered_optic___base_html_ada637808790500936d92733cbb446216"><div class="ttname"><a href="#ada637808790500936d92733cbb446216">PoweredOptic_Base::m_RangeText</a></div><div class="ttdeci">TextWidget m_RangeText</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_rangefinder_8c_source.html#l00006">Rangefinder.c:6</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="aclassvector_html_aad57f4c847a6ad08cf88f390961dd2db"><div class="ttname"><a href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">vector::Distance</a></div><div class="ttdeci">static proto native float Distance(vector v1, vector v2)</div><div class="ttdoc">Returns the distance between tips of two 3D vectors.</div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___math_html_ga7a63fd1bc9f0c95f8021d8ece1b7500f"><div class="ttname"><a href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Math::Round</a></div><div class="ttdeci">static proto float Round(float f)</div><div class="ttdoc">Returns mathematical round of value.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">vector::Distance()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00003">RANGEFINDER_MAX_DISTANCE</a>, <a class="el" href="../../d3/d07/class_day_z_physics.html#a5b2f27b170cdb66f30cd9e3210bda40f">DayZPhysics::RaycastRV()</a>, and <a class="el" href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Math::Round()</a>.</p>
 
 </div>
 </div>
@@ -246,7 +287,16 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00021">21</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEItemAttached(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>);</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (GetCompEM().CanWork() &amp;&amp; <a class="code hl_variable" href="#a52cf5a13adc948aaf8eadbfd0735931c">m_IsLowered</a>)</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_variable" href="#aba1ee4580c0fafa2fe297fd4ee023b44">m_WorkCheckTimer</a>.Run(0.1, <span class="keyword">this</span>, <span class="stringliteral">&quot;SwitchOnNVGCheck&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   27</span>    <span class="comment">//GetCompEM().SwitchOn();</span></div>
+<div class="line"><span class="lineno">   28</span>  }</div>
+<div class="ttc" id="aclass_powered_optic___base_html_a52cf5a13adc948aaf8eadbfd0735931c"><div class="ttname"><a href="#a52cf5a13adc948aaf8eadbfd0735931c">PoweredOptic_Base::m_IsLowered</a></div><div class="ttdeci">bool m_IsLowered</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d06/_n_v_goggles_8c_source.html#l00003">NVGoggles.c:3</a></div></div>
+<div class="ttc" id="aclass_powered_optic___base_html_aba1ee4580c0fafa2fe297fd4ee023b44"><div class="ttname"><a href="#aba1ee4580c0fafa2fe297fd4ee023b44">PoweredOptic_Base::m_WorkCheckTimer</a></div><div class="ttdeci">ref Timer m_WorkCheckTimer</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d06/_n_v_goggles_8c_source.html#l00005">NVGoggles.c:5</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a51cfb95dca684ae1b6b42a3da8d01d90" name="a51cfb95dca684ae1b6b42a3da8d01d90"></a>
@@ -277,7 +327,12 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00030">30</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   31</span>  {</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEItemDetached(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>);</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    GetCompEM().SwitchOff();</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a540d8152db96a4799f97497460ee619f" name="a540d8152db96a4799f97497460ee619f"></a>
@@ -304,6 +359,30 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00160">160</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>  {</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (IsWorking())</div>
+<div class="line"><span class="lineno">  163</span>    {</div>
+<div class="line"><span class="lineno">  164</span>      <span class="comment">//m_CurrentOpticMode</span></div>
+<div class="line"><span class="lineno">  165</span>      <span class="keywordflow">switch</span> (m_CurrentOpticMode)</div>
+<div class="line"><span class="lineno">  166</span>      {</div>
+<div class="line"><span class="lineno">  167</span>      <span class="comment">/*case GameConstants.OPTICS_STATE_DAY:</span></div>
+<div class="line"><span class="lineno">  168</span><span class="comment">        return NVTypes.NV_GOGGLES_WHATEVER;</span></div>
+<div class="line"><span class="lineno">  169</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  170</span><span class="comment">        case GameConstants.OPTICS_STATE_NIGHTVISION:</span></div>
+<div class="line"><span class="lineno">  171</span><span class="comment">        return NVTypes.NV_GOGGLES;*/</span></div>
+<div class="line"><span class="lineno">  172</span>      <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d3/d08/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773">NVTypes</a>.NV_GOGGLES;</div>
+<div class="line"><span class="lineno">  174</span>      }</div>
+<div class="line"><span class="lineno">  175</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;Undefined optic mode of &quot;</span> + <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  176</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d3/d08/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773">NVTypes</a>.NONE;</div>
+<div class="line"><span class="lineno">  177</span>    }</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  179</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d3/d08/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773">NVTypes</a>.NV_GOGGLES_OFF;</div>
+<div class="line"><span class="lineno">  180</span>  }</div>
+<div class="ttc" id="a_day_z_player_camera___base_8c_html_a5fa3bf67a391c7d11b4294e056d1a773"><div class="ttname"><a href="../../d3/d08/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773">NVTypes</a></div><div class="ttdeci">NVTypes</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/_day_z_player_camera___base_8c_source.html#l00040">DayZPlayerCamera_Base.c:41</a></div></div>
+<div class="ttc" id="agroup___debug_html_ga786b160dafbe15abb829786ba345cb15"><div class="ttname"><a href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a></div><div class="ttdeci">void Error(string err)</div><div class="ttdoc">Messagebox with error message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_en_debug_8c_source.html#l00090">EnDebug.c:90</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>.</p>
 
 </div>
 </div>
@@ -331,6 +410,11 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00013">13</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> 0.5;</div>
+<div class="line"><span class="lineno">   16</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00042">StartPeriodicMeasurement()</a>.</p>
 
 </div>
 </div>
@@ -358,7 +442,10 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00182">182</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  183</span>  {</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  185</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9270fd246e023ce70605a8fd4c506991" name="a9270fd246e023ce70605a8fd4c506991"></a>
@@ -385,7 +472,11 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00125">125</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  126</span>  {</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">if</span> (GetAnimationPhase(<span class="stringliteral">&quot;rotate&quot;</span>) != <a class="code hl_variable" href="#a52cf5a13adc948aaf8eadbfd0735931c">m_IsLowered</a>)</div>
+<div class="line"><span class="lineno">  128</span>      <a class="code hl_variable" href="#a52cf5a13adc948aaf8eadbfd0735931c">m_IsLowered</a> = GetAnimationPhase(<span class="stringliteral">&quot;rotate&quot;</span>);</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aebfcb43d34475e1d598defefcbf0300c" name="aebfcb43d34475e1d598defefcbf0300c"></a>
@@ -412,6 +503,14 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00007">7</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>  {</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_function" href="#a9cd9b79660dcd374e25152f3c9a737cb">RotateGoggles</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="#aba1ee4580c0fafa2fe297fd4ee023b44">m_WorkCheckTimer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d08/class_timer.html">Timer</a>;</div>
+<div class="line"><span class="lineno">   11</span>  }</div>
+<div class="ttc" id="aclass_powered_optic___base_html_a9cd9b79660dcd374e25152f3c9a737cb"><div class="ttname"><a href="#a9cd9b79660dcd374e25152f3c9a737cb">PoweredOptic_Base::RotateGoggles</a></div><div class="ttdeci">void RotateGoggles(bool state)</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d06/_n_v_goggles_8c_source.html#l00131">NVGoggles.c:131</a></div></div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="../../d8/d08/class_timer.html">Timer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d02/_day_z_player_implement_8c_source.html#l00060">DayZPlayerImplement.c:61</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00131">RotateGoggles()</a>.</p>
 
 </div>
 </div>
@@ -439,7 +538,10 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00102">102</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    GetInventory().CreateInInventory(<span class="stringliteral">&quot;Battery9V&quot;</span>);</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7d252fe53a0a5475e1e33ad66ea3e192" name="a7d252fe53a0a5475e1e33ad66ea3e192"></a>
@@ -470,6 +572,18 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00037">37</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnWasAttached(parent, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="#a9cd9b79660dcd374e25152f3c9a737cb">RotateGoggles</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> = <a class="code hl_class" href="../../d8/d04/class_clothing.html">Clothing</a>.Cast(parent);</div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">/*if (m_Strap)</span></div>
+<div class="line"><span class="lineno">   44</span><span class="comment">      SetPlayer(PlayerBase.Cast(m_Strap.GetHierarchyParent()));*/</span></div>
+<div class="line"><span class="lineno">   45</span>  }</div>
+<div class="ttc" id="aclass_clothing_html"><div class="ttname"><a href="../../d8/d04/class_clothing.html">Clothing</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d07/_armband___color_base_8c_source.html#l00001">Armband_ColorBase.c:2</a></div></div>
+<div class="ttc" id="aclass_powered_optic___base_html_a4c99945377c8b3cc6a62cbbca82d6e6f"><div class="ttname"><a href="#a4c99945377c8b3cc6a62cbbca82d6e6f">PoweredOptic_Base::m_Strap</a></div><div class="ttdeci">Clothing m_Strap</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d06/_n_v_goggles_8c_source.html#l00004">NVGoggles.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00131">RotateGoggles()</a>.</p>
 
 </div>
 </div>
@@ -501,6 +615,22 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00047">47</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnWasDetached(parent, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_function" href="#a9cd9b79660dcd374e25152f3c9a737cb">RotateGoggles</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> == parent &amp;&amp; <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.CastTo(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, parent.GetHierarchyRootPlayer()))</div>
+<div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">if</span> (parent &amp;&amp; <a class="code hl_class" href="../../d8/d04/class_clothing.html">Clothing</a>.Cast(parent))</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_class" href="../../d8/d04/class_clothing.html">Clothing</a>.Cast(parent).UpdateNVGStatus(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">false</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment">//SetPlayer(null);</span></div>
+<div class="line"><span class="lineno">   61</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00131">RotateGoggles()</a>.</p>
 
 </div>
 </div>
@@ -528,6 +658,29 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00103">103</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>  {</div>
+<div class="line"><span class="lineno">  105</span>    <span class="comment">//adjust on load - ComponentEnergyManager stores the &#39;working&#39; state independently</span></div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a52cf5a13adc948aaf8eadbfd0735931c">m_IsLowered</a>)</div>
+<div class="line"><span class="lineno">  107</span>      <a class="code hl_function" href="#a9cd9b79660dcd374e25152f3c9a737cb">RotateGoggles</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a>;</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a>;</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> &amp;&amp; <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.CastTo(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a>.GetHierarchyParent()))</div>
+<div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.FindAttachmentBySlotName(<span class="stringliteral">&quot;Headgear&quot;</span>);</div>
+<div class="line"><span class="lineno">  115</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.FindAttachmentBySlotName(<span class="stringliteral">&quot;Eyewear&quot;</span>);</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer()) <span class="comment">// Client side</span></div>
+<div class="line"><span class="lineno">  118</span>      {</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a> == <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a> == <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsControlledPlayer())</div>
+<div class="line"><span class="lineno">  120</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.AddActiveNV(<a class="code hl_enumeration" href="../../d3/d08/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773">NVTypes</a>.NV_GOGGLES);</div>
+<div class="line"><span class="lineno">  121</span>      }</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00131">RotateGoggles()</a>.</p>
 
 </div>
 </div>
@@ -555,6 +708,28 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00063">63</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>  {</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a>;</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a>;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> &amp;&amp; <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.CastTo(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a>.GetHierarchyParent()))</div>
+<div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.FindAttachmentBySlotName(<span class="stringliteral">&quot;Headgear&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.FindAttachmentBySlotName(<span class="stringliteral">&quot;Eyewear&quot;</span>);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>      <span class="comment">//adjust on load - ComponentEnergyManager stores the &#39;working&#39; state independently</span></div>
+<div class="line"><span class="lineno">   74</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a52cf5a13adc948aaf8eadbfd0735931c">m_IsLowered</a>)</div>
+<div class="line"><span class="lineno">   75</span>        <a class="code hl_function" href="#a9cd9b79660dcd374e25152f3c9a737cb">RotateGoggles</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer()) <span class="comment">// Client side</span></div>
+<div class="line"><span class="lineno">   78</span>      {</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a> == <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a> == <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsControlledPlayer())</div>
+<div class="line"><span class="lineno">   80</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.AddActiveNV(<a class="code hl_enumeration" href="../../d3/d08/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773">NVTypes</a>.NV_GOGGLES);</div>
+<div class="line"><span class="lineno">   81</span>      }</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00131">RotateGoggles()</a>.</p>
 
 </div>
 </div>
@@ -582,6 +757,19 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00018">18</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>  {</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>      <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player_this</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">   23</span>      <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player_owner</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(GetHierarchyRootPlayer());</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player_this</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">player_owner</a>)</div>
+<div class="line"><span class="lineno">   26</span>        <a class="code hl_function" href="#abe778051d006fcdcdfc6b5c7faf80920">StartPeriodicMeasurement</a>();</div>
+<div class="line"><span class="lineno">   27</span>    }</div>
+<div class="line"><span class="lineno">   28</span>  }</div>
+<div class="ttc" id="aclass_powered_optic___base_html_abe778051d006fcdcdfc6b5c7faf80920"><div class="ttname"><a href="#abe778051d006fcdcdfc6b5c7faf80920">PoweredOptic_Base::StartPeriodicMeasurement</a></div><div class="ttdeci">void StartPeriodicMeasurement()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_rangefinder_8c_source.html#l00042">Rangefinder.c:42</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00042">StartPeriodicMeasurement()</a>.</p>
 
 </div>
 </div>
@@ -609,6 +797,24 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00085">85</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>  {</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a>;</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a>;</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> &amp;&amp; <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.CastTo(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a>.GetHierarchyParent()))</div>
+<div class="line"><span class="lineno">   91</span>    {</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.FindAttachmentBySlotName(<span class="stringliteral">&quot;Headgear&quot;</span>);</div>
+<div class="line"><span class="lineno">   93</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.FindAttachmentBySlotName(<span class="stringliteral">&quot;Eyewear&quot;</span>);</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer()) <span class="comment">// Client side</span></div>
+<div class="line"><span class="lineno">   96</span>      {</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">headgear</a> == <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">glasses</a> == <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsControlledPlayer())</div>
+<div class="line"><span class="lineno">   98</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.RemoveActiveNV(<a class="code hl_enumeration" href="../../d3/d08/_day_z_player_camera___base_8c.html#a5fa3bf67a391c7d11b4294e056d1a773">NVTypes</a>.NV_GOGGLES);</div>
+<div class="line"><span class="lineno">   99</span>      }</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -636,6 +842,19 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00030">30</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>  {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>      <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player_this</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">   35</span>      <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player_owner</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(GetHierarchyRootPlayer());</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player_this</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">player_owner</a>)</div>
+<div class="line"><span class="lineno">   38</span>        <a class="code hl_function" href="#aa9a9e18e6167feac8e35387911cdb6a4">StopPeriodicMeasurement</a>();</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+<div class="ttc" id="aclass_powered_optic___base_html_aa9a9e18e6167feac8e35387911cdb6a4"><div class="ttname"><a href="#aa9a9e18e6167feac8e35387911cdb6a4">PoweredOptic_Base::StopPeriodicMeasurement</a></div><div class="ttdeci">void StopPeriodicMeasurement()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_rangefinder_8c_source.html#l00052">Rangefinder.c:52</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00052">StopPeriodicMeasurement()</a>.</p>
 
 </div>
 </div>
@@ -663,7 +882,9 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00008">8</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
+<div class="line"><span class="lineno">   10</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9cd9b79660dcd374e25152f3c9a737cb" name="a9cd9b79660dcd374e25152f3c9a737cb"></a>
@@ -690,6 +911,27 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00131">131</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>  {</div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">//if ( GetAnimationPhase(&quot;rotate&quot;) != state ) //useless?</span></div>
+<div class="line"><span class="lineno">  134</span>    SetAnimationPhase(<span class="stringliteral">&quot;rotate&quot;</span>, !<a class="code hl_class" href="../../db/d06/class_param3.html">state</a>);</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_variable" href="#a52cf5a13adc948aaf8eadbfd0735931c">m_IsLowered</a> = !<a class="code hl_class" href="../../db/d06/class_param3.html">state</a>;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>;</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>;</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a> &amp;&amp; <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a>.GetInventory().GetCurrentAttachmentSlotInfo(<a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>) &amp;&amp; <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.CastTo(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_variable" href="#a4c99945377c8b3cc6a62cbbca82d6e6f">m_Strap</a>.GetHierarchyParent())<span class="comment">/*&amp;&amp; slot_id == InventorySlots.EYEWEAR*/</span>)</div>
+<div class="line"><span class="lineno">  141</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.SetNVGLowered(<a class="code hl_variable" href="#a52cf5a13adc948aaf8eadbfd0735931c">m_IsLowered</a>);</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">if</span> (GetCompEM())</div>
+<div class="line"><span class="lineno">  144</span>    {</div>
+<div class="line"><span class="lineno">  145</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">state</a> &amp;&amp; GetCompEM().CanWork())</div>
+<div class="line"><span class="lineno">  146</span>        GetCompEM().SwitchOn();</div>
+<div class="line"><span class="lineno">  147</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  148</span>        GetCompEM().SwitchOff();</div>
+<div class="line"><span class="lineno">  149</span>    }</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00007">NVGoggles()</a>, <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00037">OnWasAttached()</a>, <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00047">OnWasDetached()</a>, <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00103">OnWork()</a>, and <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00063">OnWorkStart()</a>.</p>
 
 </div>
 </div>
@@ -717,6 +959,18 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00013">13</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../d1/d02/class_action_view_optics.html">ActionViewOptics</a>);</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d8/d0e/class_action_view_binoculars.html">ActionViewBinoculars</a>);</div>
+<div class="line"><span class="lineno">   19</span>  }</div>
+<div class="ttc" id="a_advanced_communication_8c_html_a033d077df58807906c4dad3101d8768c"><div class="ttname"><a href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a></div><div class="ttdeci">void AddAction(typename actionName)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AdvancedCommunication.c:212</a></div></div>
+<div class="ttc" id="a_advanced_communication_8c_html_a119172381c56c8bb0a629326e9998abd"><div class="ttname"><a href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a></div><div class="ttdeci">void RemoveAction(typename actionName)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_advanced_communication_8c_source.html#l00242">AdvancedCommunication.c:242</a></div></div>
+<div class="ttc" id="aclass_action_view_binoculars_html"><div class="ttname"><a href="../../d8/d0e/class_action_view_binoculars.html">ActionViewBinoculars</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0f/_action_view_binoculars_8c_source.html#l00001">ActionViewBinoculars.c:2</a></div></div>
+<div class="ttc" id="aclass_action_view_optics_html"><div class="ttname"><a href="../../d1/d02/class_action_view_optics.html">ActionViewOptics</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0c/_action_view_optics_8c_source.html#l00001">ActionViewOptics.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00242">RemoveAction()</a>.</p>
 
 </div>
 </div>
@@ -744,6 +998,14 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00094">94</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>  {</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../d1/d02/class_action_view_optics.html">ActionViewOptics</a>);</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d8/d0e/class_action_view_binoculars.html">ActionViewBinoculars</a>);</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00242">RemoveAction()</a>.</p>
 
 </div>
 </div>
@@ -771,6 +1033,22 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00042">42</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#aa051633fbdf54869d08dc6e35b079d54">m_Timer</a>)</div>
+<div class="line"><span class="lineno">   45</span>      <a class="code hl_variable" href="#aa051633fbdf54869d08dc6e35b079d54">m_Timer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d08/class_timer.html">Timer</a>(<a class="code hl_variable" href="../../d9/d03/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a>);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="#ada637808790500936d92733cbb446216">m_RangeText</a> = <a class="code hl_class" href="../../da/d0c/class_text_widget.html">TextWidget</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/gameplay/rangefinder_hud.layout&quot;</span>));</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="#aa051633fbdf54869d08dc6e35b079d54">m_Timer</a>.Run(<a class="code hl_function" href="#adbeb07a596672a9c96b92bd292a173c8">GetMeasurementUpdateInterval</a>(), <span class="keyword">this</span>, <span class="stringliteral">&quot;DoMeasurement&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+<div class="ttc" id="aclass_powered_optic___base_html_aa051633fbdf54869d08dc6e35b079d54"><div class="ttname"><a href="#aa051633fbdf54869d08dc6e35b079d54">PoweredOptic_Base::m_Timer</a></div><div class="ttdeci">ref Timer m_Timer</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_rangefinder_8c_source.html#l00005">Rangefinder.c:5</a></div></div>
+<div class="ttc" id="aclass_powered_optic___base_html_adbeb07a596672a9c96b92bd292a173c8"><div class="ttname"><a href="#adbeb07a596672a9c96b92bd292a173c8">PoweredOptic_Base::GetMeasurementUpdateInterval</a></div><div class="ttdeci">float GetMeasurementUpdateInterval()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_rangefinder_8c_source.html#l00013">Rangefinder.c:13</a></div></div>
+<div class="ttc" id="aclass_text_widget_html"><div class="ttname"><a href="../../da/d0c/class_text_widget.html">TextWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00219">EnWidgets.c:220</a></div></div>
+<div class="ttc" id="agroup___tools_html_ga32e05515215d4ff50969513ff6d88310"><div class="ttname"><a href="../../d9/d03/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a></div><div class="ttdeci">const int CALL_CATEGORY_GAMEPLAY</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00010">tools.c:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00010">CALL_CATEGORY_GAMEPLAY</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00013">GetMeasurementUpdateInterval()</a>, and <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00675">m_Timer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00018">OnWorkStart()</a>.</p>
 
 </div>
 </div>
@@ -798,6 +1076,17 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00052">52</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>  {</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa051633fbdf54869d08dc6e35b079d54">m_Timer</a>)</div>
+<div class="line"><span class="lineno">   55</span>      <a class="code hl_variable" href="#aa051633fbdf54869d08dc6e35b079d54">m_Timer</a>.Stop();</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ada637808790500936d92733cbb446216">m_RangeText</a>)</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keyword">delete</span> <a class="code hl_variable" href="#ada637808790500936d92733cbb446216">m_RangeText</a>;</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00006">m_RangeText</a>, and <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00675">m_Timer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00030">OnWorkStop()</a>.</p>
 
 </div>
 </div>
@@ -825,7 +1114,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html#l00152">152</a> of file <a class="el" href="../../d3/d06/_n_v_goggles_8c_source.html">NVGoggles.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  153</span>  {</div>
+<div class="line"><span class="lineno">  154</span>    <span class="comment">//Print(&quot;SwitchOnNVGCheck&quot;);</span></div>
+<div class="line"><span class="lineno">  155</span>    GetCompEM().SwitchOn();</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (GetCompEM().IsSwitchedOn())</div>
+<div class="line"><span class="lineno">  157</span>      <a class="code hl_variable" href="#aba1ee4580c0fafa2fe297fd4ee023b44">m_WorkCheckTimer</a>.Stop();</div>
+<div class="line"><span class="lineno">  158</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -874,6 +1169,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00006">6</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00052">StopPeriodicMeasurement()</a>.</p>
 
 </div>
 </div>
@@ -970,6 +1267,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00003">3</a> of file <a class="el" href="../../de/d06/_rangefinder_8c_source.html">Rangefinder.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00062">DoMeasurement()</a>.</p>
 
 </div>
 </div>

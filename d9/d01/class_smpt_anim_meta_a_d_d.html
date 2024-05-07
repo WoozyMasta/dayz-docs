@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -138,6 +135,23 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0c/_smpt_anim_meta_8c_source.html#l00183">183</a> of file <a class="el" href="../../d9/d0c/_smpt_anim_meta_8c_source.html">SmptAnimMeta.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>  {</div>
+<div class="line"><span class="lineno">  185</span>    <span class="comment">//if( movement_state.m_iMovement == DayZPlayerConstants.MOVEMENTIDX_WALK || movement_state.m_iMovement == DayZPlayerConstants.MOVEMENTIDX_RUN || movement_state.m_iMovement == DayZPlayerConstants.MOVEMENTIDX_SPRINT)</span></div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">movement_state</a>.m_iMovement != <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.MOVEMENTIDX_IDLE || <a class="code hl_class" href="../../db/d06/class_param3.html">movement_state</a>.IsInProne())</div>
+<div class="line"><span class="lineno">  187</span>    {</div>
+<div class="line"><span class="lineno">  188</span>      <a class="code hl_function" href="../../d4/d0e/human_8c.html#afef3cd5755a4f0601a9edb27a051e46a">HumanCommandAdditives</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ad</a> = <a class="code hl_variable" href="../../d9/d0c/_smpt_anim_meta_8c.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>.GetCommandModifier_Additives();</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ad</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">ad</a>.IsModifierActive())</div>
+<div class="line"><span class="lineno">  190</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">ad</a>.CancelModifier();</div>
+<div class="line"><span class="lineno">  191</span>    }</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">movement_state</a>);</div>
+<div class="line"><span class="lineno">  194</span>  }</div>
+<div class="ttc" id="a_smpt_anim_meta_8c_html_a4db3d46d75d2864daed52041fe1f0973"><div class="ttname"><a href="../../d9/d0c/_smpt_anim_meta_8c.html#a4db3d46d75d2864daed52041fe1f0973">m_Player</a></div><div class="ttdeci">PlayerBase m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0c/_smpt_anim_meta_8c_source.html#l00011">SmptAnimMeta.c:11</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+<div class="ttc" id="ahuman_8c_html_afef3cd5755a4f0601a9edb27a051e46a"><div class="ttname"><a href="../../d4/d0e/human_8c.html#afef3cd5755a4f0601a9edb27a051e46a">HumanCommandAdditives</a></div><div class="ttdeci">class HumanCommandWeapons HumanCommandAdditives()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00923">human.c:1086</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d0e/human_8c_source.html#l01086">HumanCommandAdditives()</a>, and <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>.</p>
 
 </div>
 </div>

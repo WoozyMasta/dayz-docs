@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -183,6 +180,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00021">21</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_function" href="../../d8/d08/_day_z_game_8c.html#a8045e088b31fe0754fb20cb0a5ff0dc9">Init</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">   24</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a8045e088b31fe0754fb20cb0a5ff0dc9"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a8045e088b31fe0754fb20cb0a5ff0dc9">Init</a></div><div class="ttdeci">override Widget Init()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l00120">DayZGame.c:120</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00120">Init()</a>.</p>
 
 </div>
 </div>
@@ -210,7 +214,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00036">36</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   37</span>  {</div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">//if( GetGame() &amp;&amp; GetGame().IsDebugActions() ) GatherAllRecords();</span></div>
+<div class="line"><span class="lineno">   39</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -238,7 +245,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00077">77</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   78</span>  {</div>
+<div class="line"><span class="lineno">   79</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   80</span><span class="comment">      FileHandle file = OpenFile(&quot;$profile:StatRecords.log&quot;, FileMode.WRITE);</span></div>
+<div class="line"><span class="lineno">   81</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   82</span><span class="comment">      FPrintln(file, &quot;================================================================&quot;);</span></div>
+<div class="line"><span class="lineno">   83</span><span class="comment">      FPrintln(file,&quot; ================== &quot; + m_Player.ToString() +&quot; ================== &quot;);</span></div>
+<div class="line"><span class="lineno">   84</span><span class="comment">      FPrintln(file, &quot;================================================================&quot;);</span></div>
+<div class="line"><span class="lineno">   85</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   86</span><span class="comment">      for(int i = 0; i &lt; m_PlayerStats.Count(); i++)</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">   88</span><span class="comment">      array&lt;PlayerStatRecord&gt; records =  m_PlayerStats.Get(i).GetRecords();</span></div>
+<div class="line"><span class="lineno">   89</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   90</span><span class="comment">      FPrintln(file, m_PlayerStats.Get(i).GetLabel() );</span></div>
+<div class="line"><span class="lineno">   91</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   92</span><span class="comment">      for(int z = 0; z &lt; records.Count(); z++)</span></div>
+<div class="line"><span class="lineno">   93</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">   94</span><span class="comment">        PlayerStatRecord record = records.Get(z);</span></div>
+<div class="line"><span class="lineno">   95</span><span class="comment">        string output = record.GetStringOutput();</span></div>
+<div class="line"><span class="lineno">   96</span><span class="comment">        FPrintln(file, output);</span></div>
+<div class="line"><span class="lineno">   97</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">   98</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">   99</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7f9cc58b3cb18cfa5a036a6e75042d79" name="a7f9cc58b3cb18cfa5a036a6e75042d79"></a>
@@ -265,6 +295,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00062">62</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>  {</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a92c91026dc86a7722585f8a63b669f58">m_AllowLogs</a>;</div>
+<div class="line"><span class="lineno">   65</span>  }</div>
+<div class="ttc" id="aclass_player_stats_html_a92c91026dc86a7722585f8a63b669f58"><div class="ttname"><a href="#a92c91026dc86a7722585f8a63b669f58">PlayerStats::m_AllowLogs</a></div><div class="ttdeci">bool m_AllowLogs</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0a/_player_stats_8c_source.html#l00016">PlayerStats.c:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00016">m_AllowLogs</a>.</p>
 
 </div>
 </div>
@@ -296,7 +332,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00067">67</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   68</span>  {</div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   70</span><span class="comment">      for(int i = 0; i &lt; m_PlayerStats.Count(); i++)</span></div>
+<div class="line"><span class="lineno">   71</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">      m_PlayerStats.Get(i).SerializeValue(objects, flags);</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">   75</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afab204a1a44e37ee667eb69bda843193" name="afab204a1a44e37ee667eb69bda843193"></a>
@@ -323,6 +367,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00031">31</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>  {</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a8c0c17afdfb3cb8fa0c53a96304407f2">m_PCOhandler</a>.GetPCO(version);</div>
+<div class="line"><span class="lineno">   34</span>  }</div>
+<div class="ttc" id="aclass_player_stats_html_a8c0c17afdfb3cb8fa0c53a96304407f2"><div class="ttname"><a href="#a8c0c17afdfb3cb8fa0c53a96304407f2">PlayerStats::m_PCOhandler</a></div><div class="ttdeci">ref PCOHandlerStats m_PCOhandler</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0a/_player_stats_8c_source.html#l00012">PlayerStats.c:12</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00012">m_PCOhandler</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00042">GetStatObject()</a>, <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00116">LoadStats()</a>, <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00129">ResetAllStats()</a>, and <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00102">SaveStats()</a>.</p>
 
 </div>
 </div>
@@ -350,6 +402,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00042">42</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="../../da/d04/class_player_stats_p_c_o___base.html">PlayerStatsPCO_Base</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pco</a> = <a class="code hl_function" href="#afab204a1a44e37ee667eb69bda843193">GetPCO</a>();</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pco</a>)</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pco</a>.GetStatObject(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   48</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   49</span>  }</div>
+<div class="ttc" id="aclass_player_stats_html_afab204a1a44e37ee667eb69bda843193"><div class="ttname"><a href="#afab204a1a44e37ee667eb69bda843193">PlayerStats::GetPCO</a></div><div class="ttdeci">PlayerStatsPCO_Base GetPCO(int version=-1)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0a/_player_stats_8c_source.html#l00031">PlayerStats.c:31</a></div></div>
+<div class="ttc" id="aclass_player_stats_p_c_o___base_html"><div class="ttname"><a href="../../da/d04/class_player_stats_p_c_o___base.html">PlayerStatsPCO_Base</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d05/_player_stats_p_c_o_8c_source.html#l00127">PlayerStatsPCO.c:128</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00031">GetPCO()</a>.</p>
 
 </div>
 </div>
@@ -377,6 +440,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00026">26</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>  {</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#ab27dbdf79781157043aecbbd21d01007">m_Player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="aclass_player_stats_html_ab27dbdf79781157043aecbbd21d01007"><div class="ttname"><a href="#ab27dbdf79781157043aecbbd21d01007">PlayerStats::m_Player</a></div><div class="ttdeci">Man m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0a/_player_stats_8c_source.html#l00015">PlayerStats.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00015">m_Player</a>.</p>
 
 </div>
 </div>
@@ -408,6 +477,19 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00116">116</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>  {</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_class" href="../../da/d04/class_player_stats_p_c_o___base.html">PlayerStatsPCO_Base</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pco</a> = <a class="code hl_function" href="#afab204a1a44e37ee667eb69bda843193">GetPCO</a>(version);</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pco</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">pco</a>.OnStoreLoad(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>))</div>
+<div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>      <span class="comment">//Print(&quot;********* LoadStats loading version: &quot; + pco.GetVersion());</span></div>
+<div class="line"><span class="lineno">  122</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  125</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00031">GetPCO()</a>.</p>
 
 </div>
 </div>
@@ -435,6 +517,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00129">129</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_function" href="#afab204a1a44e37ee667eb69bda843193">GetPCO</a>().ResetAllStats();</div>
+<div class="line"><span class="lineno">  132</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00031">GetPCO()</a>.</p>
 
 </div>
 </div>
@@ -462,6 +549,21 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00102">102</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">current_version</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SaveVersion();</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_class" href="../../da/d04/class_player_stats_p_c_o___base.html">PlayerStatsPCO_Base</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pco</a> = <a class="code hl_function" href="#afab204a1a44e37ee667eb69bda843193">GetPCO</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">current_version</a>);</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pco</a>)</div>
+<div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pco</a>.OnStoreSave(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">  110</span>      <span class="comment">//Print(&quot;Saving stats in version: &quot;+ pco.GetVersion());</span></div>
+<div class="line"><span class="lineno">  111</span>    }</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  113</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00031">GetPCO()</a>.</p>
 
 </div>
 </div>
@@ -489,6 +591,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00057">57</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>  {</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="#a92c91026dc86a7722585f8a63b669f58">m_AllowLogs</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">enable</a>;</div>
+<div class="line"><span class="lineno">   60</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00016">m_AllowLogs</a>.</p>
 
 </div>
 </div>
@@ -515,6 +622,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00016">16</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00062">GetAllowLogs()</a>, and <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00057">SetAllowLogs()</a>.</p>
+
 </div>
 </div>
 <a id="a8c0c17afdfb3cb8fa0c53a96304407f2" name="a8c0c17afdfb3cb8fa0c53a96304407f2"></a>
@@ -539,6 +648,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00012">12</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00031">GetPCO()</a>.</p>
+
 </div>
 </div>
 <a id="ab27dbdf79781157043aecbbd21d01007" name="ab27dbdf79781157043aecbbd21d01007"></a>
@@ -562,6 +673,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00015">15</a> of file <a class="el" href="../../da/d0a/_player_stats_8c_source.html">PlayerStats.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0a/_player_stats_8c_source.html#l00026">Init()</a>.</p>
 
 </div>
 </div>

@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -412,6 +409,47 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00008">8</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d0/d0d/class_attachments_group_container.html">AttachmentsGroupContainer</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a> <a class="code hl_class" href="../../db/d06/class_param3.html">con</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">con</a>);</div>
+<div class="line"><span class="lineno">   13</span>    m_Body.Insert(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>);</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> &lt; <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a>++)</div>
+<div class="line"><span class="lineno">   15</span>    {</div>
+<div class="line"><span class="lineno">   16</span>      <a class="code hl_class" href="../../d3/d0e/class_slots_icon.html">SlotsIcon</a> <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">con</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">j</a>);</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDropReceived(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;OnDropReceivedFromIcon&quot;</span>);</div>
+<div class="line"><span class="lineno">   18</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDropReceived(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetGhostSlot(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;OnDropReceivedFromHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   19</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDropReceived(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetMainWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;OnDropReceivedFromHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverIcon&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetGhostSlot(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetMainWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDoubleClick(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;DoubleClick&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseButtonUp(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;MouseClick&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseButtonDown(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;MouseButtonDown&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">con</a>.SetColumnCount(0);</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">con</a>.SetForceShow(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDropReceived(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.GetMainWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;OnDropReceivedFromHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.GetMainWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="#ade335595ef5298e7f4827ccad266a79c">m_ShowedItems</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;EntityAI&gt;</a>;</div>
+<div class="line"><span class="lineno">   37</span>  }</div>
+<div class="ttc" id="a5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_html_a2125e1d81755555832a3216e873431e0"><div class="ttname"><a href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a></div><div class="ttdeci">const int ITEMS_IN_ROW</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00001">Attachments.c:1</a></div></div>
+<div class="ttc" id="a_size_to_child_8c_html_a74e413f5a164dfc9b133b21caee53379"><div class="ttname"><a href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a></div><div class="ttdeci">Widget m_Parent</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_size_to_child_8c_source.html#l00086">SizeToChild.c:86</a></div></div>
+<div class="ttc" id="aclass_attachments_group_container_html"><div class="ttname"><a href="../../d0/d0d/class_attachments_group_container.html">AttachmentsGroupContainer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_attachments_group_container_8c_source.html#l00001">AttachmentsGroupContainer.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_slots_container_html"><div class="ttname"><a href="../../df/d09/class_slots_container.html">SlotsContainer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d09/_slots_container_8c_source.html#l00001">SlotsContainer.c:2</a></div></div>
+<div class="ttc" id="aclass_slots_icon_html"><div class="ttname"><a href="../../d3/d0e/class_slots_icon.html">SlotsIcon</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d03/_slots_icon_8c_source.html#l00001">SlotsIcon.c:2</a></div></div>
+<div class="ttc" id="aclass_vicinity_slots_container_html_ade335595ef5298e7f4827ccad266a79c"><div class="ttname"><a href="#ade335595ef5298e7f4827ccad266a79c">VicinitySlotsContainer::m_ShowedItems</a></div><div class="ttdeci">ref array&lt; EntityAI &gt; m_ShowedItems</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00006">VicinitySlotsContainer.c:6</a></div></div>
+<div class="ttc" id="aclass_vicinity_slots_container_html_afa5385a31bbcaf1bbed7fc2ac548d710"><div class="ttname"><a href="#afa5385a31bbcaf1bbed7fc2ac548d710">VicinitySlotsContainer::m_Container</a></div><div class="ttdeci">ref AttachmentsGroupContainer m_Container</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00003">VicinitySlotsContainer.c:3</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00001">WidgetEventHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html_ad2fdf38578ef5954a19cb7c97ee4f89b"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">WidgetEventHandler::GetInstance</a></div><div class="ttdeci">static WidgetEventHandler GetInstance()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler.c:22</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler::GetInstance()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00001">ITEMS_IN_ROW</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00003">m_Container</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00006">m_ShowedItems</a>.</p>
 
 </div>
 </div>
@@ -439,6 +477,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00212">212</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>  {</div>
+<div class="line"><span class="lineno">  214</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  215</span>    {</div>
+<div class="line"><span class="lineno">  216</span>      <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a> <a class="code hl_class" href="../../db/d06/class_param3.html">c</a> = <a class="code hl_class" href="../../d7/d00/class_closable_container.html">ClosableContainer</a>.Cast(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a> / <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>));</div>
+<div class="line"><span class="lineno">  217</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">c</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">c</a>.GetMainWidget())</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keyword">delete</span> <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a> / <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>).GetMainWidget();</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span>  }</div>
+<div class="ttc" id="aclass_closable_container_html"><div class="ttname"><a href="../../d7/d00/class_closable_container.html">ClosableContainer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0a/_container_with_cargo_8c_source.html#l00001">ContainerWithCargo.c:2</a></div></div>
+<div class="ttc" id="aclass_container_html"><div class="ttname"><a href="../../d4/d0f/class_container.html">Container</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0c/_cargo_container_8c_source.html#l00002">CargoContainer.c:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00001">ITEMS_IN_ROW</a>, and <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00003">m_Container</a>.</p>
 
 </div>
 </div>
@@ -467,6 +517,26 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00076">76</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>  {</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_variable" href="../../d6/d05/_random_generator_sync_manager_8c.html#aef33c42cd9f2c3506278326238dcc9a6">m_player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>());</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetHumanInventory().GetEntityInHands());</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_class" href="../../d7/d01/class_action_manager_client.html">ActionManagerClient</a> <a class="code hl_class" href="../../db/d06/class_param3.html">amc</a>;</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">amc</a>, <a class="code hl_variable" href="../../d6/d05/_random_generator_sync_manager_8c.html#aef33c42cd9f2c3506278326238dcc9a6">m_player</a>.GetActionManager());</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">amc</a>.CanPerformActionFromInventory(<a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>) || <a class="code hl_class" href="../../db/d06/class_param3.html">amc</a>.CanSetActionFromInventory(<a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>));</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00047">ModifierBase.c:47</a></div></div>
+<div class="ttc" id="a_random_generator_sync_manager_8c_html_aef33c42cd9f2c3506278326238dcc9a6"><div class="ttname"><a href="../../d6/d05/_random_generator_sync_manager_8c.html#aef33c42cd9f2c3506278326238dcc9a6">m_player</a></div><div class="ttdeci">DayZPlayer m_player</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d05/_random_generator_sync_manager_8c_source.html#l00015">RandomGeneratorSyncManager.c:15</a></div></div>
+<div class="ttc" id="aclass_action_manager_client_html"><div class="ttname"><a href="../../d7/d01/class_action_manager_client.html">ActionManagerClient</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0e/_action_manager_client_8c_source.html#l00004">ActionManagerClient.c:5</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_container_html_a418ac073b17075fac33a02801c1efba8"><div class="ttname"><a href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">Container::GetFocusedItem</a></div><div class="ttdeci">override EntityAI GetFocusedItem()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0c/_cargo_container_8c_source.html#l00692">CargoContainer.c:692</a></div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../d6/d05/_random_generator_sync_manager_8c_source.html#l00015">m_player</a>.</p>
 
 </div>
 </div>
@@ -494,6 +564,22 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00139">139</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>  {</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>());</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetHumanInventory().GetEntityInHands());</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_class" href="../../db/d00/class_icon.html">Icon</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hands_icon</a> = <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().GetHandsPreview().GetIcon();</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">hands_icon</a>)</div>
+<div class="line"><span class="lineno">  148</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">hands_icon</a>.CombineItems(<a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>);</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+<div class="ttc" id="aclass_icon_html"><div class="ttname"><a href="../../db/d00/class_icon.html">Icon</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0b/_icon_8c_source.html#l00001">Icon.c:2</a></div></div>
+<div class="ttc" id="aclass_item_manager_html"><div class="ttname"><a href="../../dc/d01/class_item_manager.html">ItemManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_item_manager_8c_source.html#l00001">ItemManager.c:2</a></div></div>
+<div class="ttc" id="aclass_item_manager_html_af8e5f55ed6dda8c630b9b30a6597be36"><div class="ttname"><a href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">ItemManager::GetInstance</a></div><div class="ttdeci">static ItemManager GetInstance()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_item_manager_8c_source.html#l00265">ItemManager.c:265</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00265">ItemManager::GetInstance()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>.</p>
 
 </div>
 </div>
@@ -535,6 +621,65 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00326">326</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>  {</div>
+<div class="line"><span class="lineno">  328</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">button</a> == <a class="code hl_enumeration" href="../../d7/d00/group___mouse.html#ga3fe1dc281e20599dff9635c050a28b8c">MouseState</a>.LEFT &amp;&amp; !<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.IsLeftCtrlDown())</div>
+<div class="line"><span class="lineno">  329</span>    {</div>
+<div class="line"><span class="lineno">  330</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>)</div>
+<div class="line"><span class="lineno">  331</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  332</span>      <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">iw</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.FindAnyWidget(<span class="stringliteral">&quot;Render&quot;</span>));</div>
+<div class="line"><span class="lineno">  333</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">iw</a>)</div>
+<div class="line"><span class="lineno">  334</span>      {</div>
+<div class="line"><span class="lineno">  335</span>        <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName();</div>
+<div class="line"><span class="lineno">  336</span>        <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.Replace(<span class="stringliteral">&quot;PanelWidget&quot;</span>, <span class="stringliteral">&quot;Render&quot;</span>);</div>
+<div class="line"><span class="lineno">  337</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">iw</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.FindAnyWidget(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>));</div>
+<div class="line"><span class="lineno">  338</span>      }</div>
+<div class="line"><span class="lineno">  339</span> </div>
+<div class="line"><span class="lineno">  340</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">iw</a>)</div>
+<div class="line"><span class="lineno">  341</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">iw</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>);</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>      <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">iw</a>.GetItem());</div>
+<div class="line"><span class="lineno">  344</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>)</div>
+<div class="line"><span class="lineno">  345</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  346</span> </div>
+<div class="line"><span class="lineno">  347</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsTakeable())</div>
+<div class="line"><span class="lineno">  348</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  349</span> </div>
+<div class="line"><span class="lineno">  350</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetInventory().HasInventoryReservation(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>))</div>
+<div class="line"><span class="lineno">  351</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetInventory().CanRemoveEntity())</div>
+<div class="line"><span class="lineno">  354</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>      <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  357</span> </div>
+<div class="line"><span class="lineno">  358</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory().HasEntityInInventory(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>) &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetHumanInventory().CanAddEntityInHands(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>))</div>
+<div class="line"><span class="lineno">  359</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.PredictiveTakeEntityToHands(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  360</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  361</span>      {</div>
+<div class="line"><span class="lineno">  362</span>        <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  363</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory().FindFreeLocationFor(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>, <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a>.ANY, <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>);</div>
+<div class="line"><span class="lineno">  364</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>.IsValid() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory().LocationCanAddEntity(<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>))</div>
+<div class="line"><span class="lineno">  365</span>          <a class="code hl_class" href="../../df/d06/class_split_item_utils.html">SplitItemUtils</a>.<a class="code hl_function" href="../../df/d06/class_split_item_utils.html#a411fa9f7ceaf372dce08d251143a290b">TakeOrSplitToInventoryLocation</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>);</div>
+<div class="line"><span class="lineno">  366</span>      }</div>
+<div class="line"><span class="lineno">  367</span> </div>
+<div class="line"><span class="lineno">  368</span>      HideOwnedTooltip();</div>
+<div class="line"><span class="lineno">  369</span>      <a class="code hl_function" href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a> <a class="code hl_class" href="../../db/d06/class_param3.html">menu</a> = <a class="code hl_function" href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetUIManager().FindMenu(<a class="code hl_variable" href="../../d7/d0f/group___menu_i_d.html#gab1dbc0e819839e5664c9fd8bd8b31deb">MENU_INVENTORY</a>));</div>
+<div class="line"><span class="lineno">  370</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">menu</a>)</div>
+<div class="line"><span class="lineno">  371</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">menu</a>.RefreshQuickbar();</div>
+<div class="line"><span class="lineno">  372</span>    }</div>
+<div class="line"><span class="lineno">  373</span>  }</div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad8c6fb88ec9295d5e3b3c7ad4854b647"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a></div><div class="ttdeci">PlayerSpawnPresetDiscreteItemSetSlotData name</div><div class="ttdoc">one set for cargo</div></div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03528">DayZGame.c:3528</a></div></div>
+<div class="ttc" id="a_inventory_location_8c_html_a71733d54d455853550df7ae602bf23dd"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a></div><div class="ttdeci">FindInventoryLocationType</div><div class="ttdoc">flags for searching locations in inventory</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00015">InventoryLocation.c:16</a></div></div>
+<div class="ttc" id="a_inventory_menu_8c_html_ad91f44597d803d249e1b96e7569f8199"><div class="ttname"><a href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a></div><div class="ttdeci">void InventoryMenu()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d00/_inventory_menu_8c_source.html#l00020">InventoryMenu.c:20</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_item_preview_widget_html"><div class="ttname"><a href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00273">gameplay.c:274</a></div></div>
+<div class="ttc" id="aclass_split_item_utils_html"><div class="ttname"><a href="../../df/d06/class_split_item_utils.html">SplitItemUtils</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0c/_split_item_utils_8c_source.html#l00001">SplitItemUtils.c:2</a></div></div>
+<div class="ttc" id="aclass_split_item_utils_html_a411fa9f7ceaf372dce08d251143a290b"><div class="ttname"><a href="../../df/d06/class_split_item_utils.html#a411fa9f7ceaf372dce08d251143a290b">SplitItemUtils::TakeOrSplitToInventoryLocation</a></div><div class="ttdeci">static void TakeOrSplitToInventoryLocation(notnull PlayerBase player, notnull InventoryLocation dst)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0c/_split_item_utils_8c_source.html#l00030">SplitItemUtils.c:30</a></div></div>
+<div class="ttc" id="agroup___menu_i_d_html_gab1dbc0e819839e5664c9fd8bd8b31deb"><div class="ttname"><a href="../../d7/d0f/group___menu_i_d.html#gab1dbc0e819839e5664c9fd8bd8b31deb">MENU_INVENTORY</a></div><div class="ttdeci">const int MENU_INVENTORY</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00170">constants.c:170</a></div></div>
+<div class="ttc" id="agroup___mouse_html_ga3fe1dc281e20599dff9635c050a28b8c"><div class="ttname"><a href="../../d7/d00/group___mouse.html#ga3fe1dc281e20599dff9635c050a28b8c">MouseState</a></div><div class="ttdeci">MouseState</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d04/_en_system_8c_source.html#l00310">EnSystem.c:311</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../dc/d00/_inventory_menu_8c_source.html#l00020">InventoryMenu()</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00170">MENU_INVENTORY</a>, <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, and <a class="el" href="../../d5/d0c/_split_item_utils_8c_source.html#l00030">SplitItemUtils::TakeOrSplitToInventoryLocation()</a>.</p>
 
 </div>
 </div>
@@ -562,6 +707,26 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00087">87</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>  {</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (CanEquip())</div>
+<div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>();</div>
+<div class="line"><span class="lineno">   92</span>      <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">res</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>.IsInherited(<a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>))</div>
+<div class="line"><span class="lineno">   95</span>      {</div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">res</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().PredictiveTakeOrSwapAttachment(<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>);</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">res</a>)</div>
+<div class="line"><span class="lineno">   98</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">res</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().GetInventory().TakeEntityToInventory(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a>.JUNCTURE, <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a>.ATTACHMENT, <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>);</div>
+<div class="line"><span class="lineno">   99</span>      }</div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">res</a>;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+<div class="ttc" id="a3___game_2_systems_2_inventory_2_inventory_8c_html_a5073c77c5d68882860f688a9fc4cba4d"><div class="ttname"><a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a></div><div class="ttdeci">InventoryMode</div><div class="ttdoc">NOTE: PREDICTIVE is not to be used at all in multiplayer.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00021">Inventory.c:22</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>, and <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -591,6 +756,12 @@ Additional Inherited Members</h2></td></tr>
 <p>Decides on the icon visibility. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00238">238</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  239</span>  {</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mask</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetHideIconMask();</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mask</a> &amp; <a class="code hl_class" href="../../db/d06/class_param3.html">EInventoryIconVisibility</a>.HIDE_VICINITY;</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00244">ShowItemsInContainers()</a>.</p>
 
 </div>
 </div>
@@ -618,7 +789,23 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00431">431</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  432</span>  {</div>
+<div class="line"><span class="lineno">  433</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a> = 0;</div>
+<div class="line"><span class="lineno">  434</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>))</div>
+<div class="line"><span class="lineno">  435</span>    {</div>
+<div class="line"><span class="lineno">  436</span>      <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_base</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  437</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>))</div>
+<div class="line"><span class="lineno">  438</span>      {</div>
+<div class="line"><span class="lineno">  439</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a> <a class="code hl_class" href="../../db/d06/class_param3.html">magazine_item</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  440</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">magazine_item</a>.GetAmmoCount();</div>
+<div class="line"><span class="lineno">  441</span>      }</div>
+<div class="line"><span class="lineno">  442</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  443</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item_base</a>.GetQuantity();</div>
+<div class="line"><span class="lineno">  444</span>    }</div>
+<div class="line"><span class="lineno">  445</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a>;</div>
+<div class="line"><span class="lineno">  446</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_html"><div class="ttname"><a href="../../d6/d0e/class_inventory_item.html">InventoryItem</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_item_base_8c_source.html#l00013">ItemBase.c:14</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9dc831f5a2ce2f12d4c3914466bf758e" name="a9dc831f5a2ce2f12d4c3914466bf758e"></a>
@@ -645,6 +832,42 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00375">375</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  376</span>  {</div>
+<div class="line"><span class="lineno">  377</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_text</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>))</div>
+<div class="line"><span class="lineno">  379</span>    {</div>
+<div class="line"><span class="lineno">  380</span>      <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_base</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  381</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item_base</a>.GetQuantity();</div>
+<div class="line"><span class="lineno">  382</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ammo</a>;</div>
+<div class="line"><span class="lineno">  383</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>))</div>
+<div class="line"><span class="lineno">  384</span>      {</div>
+<div class="line"><span class="lineno">  385</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a> <a class="code hl_class" href="../../db/d06/class_param3.html">magazine_item</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  386</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">ammo</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">magazine_item</a>.GetAmmoCount();</div>
+<div class="line"><span class="lineno">  387</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_text</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ammo</a>.ToString();</div>
+<div class="line"><span class="lineno">  388</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_text</a>;</div>
+<div class="line"><span class="lineno">  389</span>      }</div>
+<div class="line"><span class="lineno">  390</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../db/d06/class_param3.html">ItemBook</a>))</div>
+<div class="line"><span class="lineno">  391</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  392</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">max</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetQuantityMax();</div>
+<div class="line"><span class="lineno">  393</span>      <span class="comment">//string unit = item.ConfigGetString( &quot;stackedUnit&quot; );</span></div>
+<div class="line"><span class="lineno">  394</span> </div>
+<div class="line"><span class="lineno">  395</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">max</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  396</span>      {</div>
+<div class="line"><span class="lineno">  397</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">max</a> == 1)</div>
+<div class="line"><span class="lineno">  398</span>        {</div>
+<div class="line"><span class="lineno">  399</span>          <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Round</a>((<a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a> / <a class="code hl_class" href="../../db/d06/class_param3.html">max</a>) * 100);</div>
+<div class="line"><span class="lineno">  400</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_text</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a>.ToString() + <span class="stringliteral">&quot;%&quot;</span>;</div>
+<div class="line"><span class="lineno">  401</span>        }</div>
+<div class="line"><span class="lineno">  402</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  403</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_text</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a>.ToString();</div>
+<div class="line"><span class="lineno">  404</span>      }</div>
+<div class="line"><span class="lineno">  405</span>    }</div>
+<div class="line"><span class="lineno">  406</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_text</a>;</div>
+<div class="line"><span class="lineno">  407</span>  }</div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math_html_ga7a63fd1bc9f0c95f8021d8ece1b7500f"><div class="ttname"><a href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Math::Round</a></div><div class="ttdeci">static proto float Round(float f)</div><div class="ttdoc">Returns mathematical round of value.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Math::Round()</a>.</p>
 
 </div>
 </div>
@@ -672,7 +895,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00232">232</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  233</span>  {</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">return</span> GetFocusedContainer().GetColumnCount();</div>
+<div class="line"><span class="lineno">  235</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a080aa31249ecb68ade38787e88324e3e" name="a080aa31249ecb68ade38787e88324e3e"></a>
@@ -699,6 +925,31 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00409">409</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  410</span>  {</div>
+<div class="line"><span class="lineno">  411</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>))</div>
+<div class="line"><span class="lineno">  412</span>    {</div>
+<div class="line"><span class="lineno">  413</span>      <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_base</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  414</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>))</div>
+<div class="line"><span class="lineno">  415</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/d08/group___emote_i_ds.html#gaa029a822ee810e38749d7b6d3ecd0563">QUANTITY_COUNT</a>;</div>
+<div class="line"><span class="lineno">  416</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../db/d06/class_param3.html">ItemBook</a>))</div>
+<div class="line"><span class="lineno">  417</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/d08/group___emote_i_ds.html#gabda5a64f22b35aa9e848820382397a44">QUANTITY_HIDDEN</a>;</div>
+<div class="line"><span class="lineno">  418</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">max</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetQuantityMax();</div>
+<div class="line"><span class="lineno">  419</span>      <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bar</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.ConfigGetBool(<span class="stringliteral">&quot;quantityBar&quot;</span>);</div>
+<div class="line"><span class="lineno">  420</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">max</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  421</span>      {</div>
+<div class="line"><span class="lineno">  422</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">max</a> == 1 || <a class="code hl_class" href="../../db/d06/class_param3.html">bar</a>)</div>
+<div class="line"><span class="lineno">  423</span>          <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/d08/group___emote_i_ds.html#ga12ae8c93e2c3eaf07fe1eda7633aaaad">QUANTITY_PROGRESS</a>;</div>
+<div class="line"><span class="lineno">  424</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  425</span>          <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/d08/group___emote_i_ds.html#gaa029a822ee810e38749d7b6d3ecd0563">QUANTITY_COUNT</a>;</div>
+<div class="line"><span class="lineno">  426</span>      }</div>
+<div class="line"><span class="lineno">  427</span>    }</div>
+<div class="line"><span class="lineno">  428</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d2/d08/group___emote_i_ds.html#gabda5a64f22b35aa9e848820382397a44">QUANTITY_HIDDEN</a>;</div>
+<div class="line"><span class="lineno">  429</span>  }</div>
+<div class="ttc" id="agroup___emote_i_ds_html_ga12ae8c93e2c3eaf07fe1eda7633aaaad"><div class="ttname"><a href="../../d2/d08/group___emote_i_ds.html#ga12ae8c93e2c3eaf07fe1eda7633aaaad">QUANTITY_PROGRESS</a></div><div class="ttdeci">const int QUANTITY_PROGRESS</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00484">constants.c:484</a></div></div>
+<div class="ttc" id="agroup___emote_i_ds_html_gaa029a822ee810e38749d7b6d3ecd0563"><div class="ttname"><a href="../../d2/d08/group___emote_i_ds.html#gaa029a822ee810e38749d7b6d3ecd0563">QUANTITY_COUNT</a></div><div class="ttdeci">const int QUANTITY_COUNT</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00483">constants.c:483</a></div></div>
+<div class="ttc" id="agroup___emote_i_ds_html_gabda5a64f22b35aa9e848820382397a44"><div class="ttname"><a href="../../d2/d08/group___emote_i_ds.html#gabda5a64f22b35aa9e848820382397a44">QUANTITY_HIDDEN</a></div><div class="ttdeci">const int QUANTITY_HIDDEN</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00482">constants.c:482</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00483">QUANTITY_COUNT</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00482">QUANTITY_HIDDEN</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00484">QUANTITY_PROGRESS</a>.</p>
 
 </div>
 </div>
@@ -726,6 +977,21 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00105">105</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>();</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>)</div>
+<div class="line"><span class="lineno">  110</span>    {</div>
+<div class="line"><span class="lineno">  111</span>      <a class="code hl_function" href="#ac281dccf5bf0f18a15f153151a480880">InspectItem</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>);</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="ttc" id="aclass_vicinity_slots_container_html_ac281dccf5bf0f18a15f153151a480880"><div class="ttname"><a href="#ac281dccf5bf0f18a15f153151a480880">VicinitySlotsContainer::InspectItem</a></div><div class="ttdeci">override bool InspectItem()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00105">VicinitySlotsContainer.c:105</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>, and <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00105">InspectItem()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00105">InspectItem()</a>, and <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00460">MouseClick()</a>.</p>
 
 </div>
 </div>
@@ -753,7 +1019,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00065">65</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   66</span>  {</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4f8230170a20b805715987eb6ed38d10" name="a4f8230170a20b805715987eb6ed38d10"></a>
@@ -780,6 +1049,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00058">58</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>  {</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>();</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   62</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>.</p>
 
 </div>
 </div>
@@ -807,6 +1082,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00052">52</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>  {</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>();</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> &amp;&amp; !<a class="code hl_function" href="#aafebe04c43df51fbe12fa65f22387368">IsItemWithQuantityActive</a>() &amp;&amp; !<a class="code hl_function" href="#a24edd6d85afe3dc4c0ea805792e1cccf">IsItemWithContainerActive</a>();</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+<div class="ttc" id="aclass_vicinity_slots_container_html_a24edd6d85afe3dc4c0ea805792e1cccf"><div class="ttname"><a href="#a24edd6d85afe3dc4c0ea805792e1cccf">VicinitySlotsContainer::IsItemWithContainerActive</a></div><div class="ttdeci">bool IsItemWithContainerActive()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00039">VicinitySlotsContainer.c:39</a></div></div>
+<div class="ttc" id="aclass_vicinity_slots_container_html_aafebe04c43df51fbe12fa65f22387368"><div class="ttname"><a href="#aafebe04c43df51fbe12fa65f22387368">VicinitySlotsContainer::IsItemWithQuantityActive</a></div><div class="ttdeci">override bool IsItemWithQuantityActive()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00046">VicinitySlotsContainer.c:46</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00039">IsItemWithContainerActive()</a>, and <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00046">IsItemWithQuantityActive()</a>.</p>
 
 </div>
 </div>
@@ -834,6 +1117,15 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00039">39</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>  {</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>();</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>.GetInventory().GetCargo() || (<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>.GetSlotsCountCorrect() &gt; 0 &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>.CanDisplayAnyAttachmentSlot()));</div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">//TODO: also check for cargo visibility maybe?</span></div>
+<div class="line"><span class="lineno">   44</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00052">IsItemActive()</a>.</p>
 
 </div>
 </div>
@@ -861,6 +1153,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00046">46</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>  {</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>();</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> &amp;&amp; <a class="code hl_class" href="../../d3/d09/class_quantity_conversions.html">QuantityConversions</a>.<a class="code hl_function" href="../../d3/d09/class_quantity_conversions.html#a728de33556e0d8a0f8d2582cf117ad15">HasItemQuantity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>.CanBeSplit();</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+<div class="ttc" id="aclass_quantity_conversions_html"><div class="ttname"><a href="../../d3/d09/class_quantity_conversions.html">QuantityConversions</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_quantity_conversions_8c_source.html#l00001">QuantityConversions.c:2</a></div></div>
+<div class="ttc" id="aclass_quantity_conversions_html_a728de33556e0d8a0f8d2582cf117ad15"><div class="ttname"><a href="../../d3/d09/class_quantity_conversions.html#a728de33556e0d8a0f8d2582cf117ad15">QuantityConversions::HasItemQuantity</a></div><div class="ttdeci">static int HasItemQuantity(notnull EntityAI item)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_quantity_conversions_8c_source.html#l00135">QuantityConversions.c:135</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>, and <a class="el" href="../../d4/d0f/_quantity_conversions_8c_source.html#l00135">QuantityConversions::HasItemQuantity()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00052">IsItemActive()</a>.</p>
 
 </div>
 </div>
@@ -888,6 +1190,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00070">70</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>  {</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>();</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>.IsTakeable();</div>
+<div class="line"><span class="lineno">   74</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>.</p>
 
 </div>
 </div>
@@ -929,6 +1237,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00449">449</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  450</span>  {</div>
+<div class="line"><span class="lineno">  451</span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName();</div>
+<div class="line"><span class="lineno">  452</span>    <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.Replace(<span class="stringliteral">&quot;PanelWidget&quot;</span>, <span class="stringliteral">&quot;Render&quot;</span>);</div>
+<div class="line"><span class="lineno">  453</span>    <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.FindAnyWidget(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>));</div>
+<div class="line"><span class="lineno">  454</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item_preview</a>.GetItem());</div>
+<div class="line"><span class="lineno">  455</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a> = <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().EvaluateContainerDragabilityDefault(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  456</span>    <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().SetWidgetDraggable(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a>);</div>
+<div class="line"><span class="lineno">  457</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00265">ItemManager::GetInstance()</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.</p>
 
 </div>
 </div>
@@ -970,6 +1288,48 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00460">460</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  461</span>  {</div>
+<div class="line"><span class="lineno">  462</span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName();</div>
+<div class="line"><span class="lineno">  463</span>    <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.Replace(<span class="stringliteral">&quot;PanelWidget&quot;</span>, <span class="stringliteral">&quot;Render&quot;</span>);</div>
+<div class="line"><span class="lineno">  464</span>    <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.FindAnyWidget(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>));</div>
+<div class="line"><span class="lineno">  465</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview</a>.GetItem();</div>
+<div class="line"><span class="lineno">  466</span>    <a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a> <a class="code hl_class" href="../../db/d06/class_param3.html">itemAtPos</a> = <a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  467</span>    <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a> <a class="code hl_class" href="../../db/d06/class_param3.html">conta</a>;</div>
+<div class="line"><span class="lineno">  468</span> </div>
+<div class="line"><span class="lineno">  469</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">  470</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>))</div>
+<div class="line"><span class="lineno">  471</span>    {</div>
+<div class="line"><span class="lineno">  472</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame</a>().IsLeftCtrlDown() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">button</a> == <a class="code hl_enumeration" href="../../d7/d00/group___mouse.html#ga3fe1dc281e20599dff9635c050a28b8c">MouseState</a>.RIGHT)</div>
+<div class="line"><span class="lineno">  473</span>        ShowActionMenu(<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>));</div>
+<div class="line"><span class="lineno">  474</span>    }</div>
+<div class="line"><span class="lineno">  475</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  476</span> </div>
+<div class="line"><span class="lineno">  477</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>)</div>
+<div class="line"><span class="lineno">  478</span>    {</div>
+<div class="line"><span class="lineno">  479</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ref Container&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">showed_items</a> = (<a class="code hl_class" href="../../dc/d02/class_vicinity_container.html">VicinityContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>)).m_ShowedItemsIDs;</div>
+<div class="line"><span class="lineno">  480</span> </div>
+<div class="line"><span class="lineno">  481</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">showed_items</a>)</div>
+<div class="line"><span class="lineno">  482</span>      {</div>
+<div class="line"><span class="lineno">  483</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">conta</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">showed_items</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetID());</div>
+<div class="line"><span class="lineno">  484</span> </div>
+<div class="line"><span class="lineno">  485</span>        (<a class="code hl_class" href="../../dc/d02/class_vicinity_container.html">VicinityContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>)).ToggleContainer(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  486</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">button</a> == <a class="code hl_enumeration" href="../../d7/d00/group___mouse.html#ga3fe1dc281e20599dff9635c050a28b8c">MouseState</a>.RIGHT)</div>
+<div class="line"><span class="lineno">  487</span>        {</div>
+<div class="line"><span class="lineno">  488</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">itemAtPos</a>)</div>
+<div class="line"><span class="lineno">  489</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">itemAtPos</a>.OnRightClick();</div>
+<div class="line"><span class="lineno">  490</span>        }</div>
+<div class="line"><span class="lineno">  491</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">button</a> == <a class="code hl_enumeration" href="../../d7/d00/group___mouse.html#ga3fe1dc281e20599dff9635c050a28b8c">MouseState</a>.MIDDLE)</div>
+<div class="line"><span class="lineno">  492</span>        {</div>
+<div class="line"><span class="lineno">  493</span>          <a class="code hl_function" href="#ac281dccf5bf0f18a15f153151a480880">InspectItem</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">itemAtPos</a>);</div>
+<div class="line"><span class="lineno">  494</span>          <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  495</span>        }</div>
+<div class="line"><span class="lineno">  496</span>      }</div>
+<div class="line"><span class="lineno">  497</span>    }</div>
+<div class="line"><span class="lineno">  498</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a92f5918ec5d632d5159c9d1f52fe7758"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame</a></div><div class="ttdeci">DayZGame GetDayZGame()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03530">DayZGame.c:3530</a></div></div>
+<div class="ttc" id="aclass_vicinity_container_html"><div class="ttname"><a href="../../dc/d02/class_vicinity_container.html">VicinityContainer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d06/_vicinity_container_8c_source.html#l00001">VicinityContainer.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03530">GetDayZGame()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00105">InspectItem()</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.</p>
 
 </div>
 </div>
@@ -1011,6 +1371,39 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00500">500</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  501</span>  {</div>
+<div class="line"><span class="lineno">  502</span>    <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ipw</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.FindAnyWidget(<span class="stringliteral">&quot;Render&quot;</span>));</div>
+<div class="line"><span class="lineno">  503</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ipw</a>)</div>
+<div class="line"><span class="lineno">  504</span>    {</div>
+<div class="line"><span class="lineno">  505</span>      <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName();</div>
+<div class="line"><span class="lineno">  506</span>      <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.Replace(<span class="stringliteral">&quot;PanelWidget&quot;</span>, <span class="stringliteral">&quot;Render&quot;</span>);</div>
+<div class="line"><span class="lineno">  507</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ipw</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.FindAnyWidget(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>));</div>
+<div class="line"><span class="lineno">  508</span>    }</div>
+<div class="line"><span class="lineno">  509</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ipw</a>)</div>
+<div class="line"><span class="lineno">  510</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ipw</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>);</div>
+<div class="line"><span class="lineno">  511</span> </div>
+<div class="line"><span class="lineno">  512</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ipw</a>.IsInherited(<a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>))</div>
+<div class="line"><span class="lineno">  513</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  514</span> </div>
+<div class="line"><span class="lineno">  515</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  516</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">ipw</a>.GetItem());</div>
+<div class="line"><span class="lineno">  517</span> </div>
+<div class="line"><span class="lineno">  518</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>)</div>
+<div class="line"><span class="lineno">  519</span>    {</div>
+<div class="line"><span class="lineno">  520</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetInventory().CanRemoveEntity())</div>
+<div class="line"><span class="lineno">  521</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  522</span> </div>
+<div class="line"><span class="lineno">  523</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.CanDropEntity(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>))</div>
+<div class="line"><span class="lineno">  524</span>      {</div>
+<div class="line"><span class="lineno">  525</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetTargetQuantityMax() &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetQuantity())</div>
+<div class="line"><span class="lineno">  526</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.SplitIntoStackMaxClient(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, -1);</div>
+<div class="line"><span class="lineno">  527</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  528</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.PhysicalPredictiveDropItem(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  529</span>      }</div>
+<div class="line"><span class="lineno">  530</span>    }</div>
+<div class="line"><span class="lineno">  531</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.</p>
 
 </div>
 </div>
@@ -1038,7 +1431,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00227">227</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  228</span>  {</div>
+<div class="line"><span class="lineno">  229</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnShow();</div>
+<div class="line"><span class="lineno">  230</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aeba1fe4d5a7ac48fbeed931897e2cef8" name="aeba1fe4d5a7ac48fbeed931897e2cef8"></a>
@@ -1065,6 +1461,58 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00533">533</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  534</span>  {</div>
+<div class="line"><span class="lineno">  535</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers</a> = <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.m_Body.Count();</div>
+<div class="line"><span class="lineno">  536</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers_needed</a> = (<a class="code hl_class" href="../../db/d06/class_param3.html">items</a>.Count() / <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>) + 1;</div>
+<div class="line"><span class="lineno">  537</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">difference</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers_needed</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers</a>;</div>
+<div class="line"><span class="lineno">  538</span>    <span class="keywordtype">int</span> g;</div>
+<div class="line"><span class="lineno">  539</span> </div>
+<div class="line"><span class="lineno">  540</span>    <span class="keywordflow">for</span> (g = <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers</a>; g &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers_needed</a>; g++)</div>
+<div class="line"><span class="lineno">  541</span>    {</div>
+<div class="line"><span class="lineno">  542</span>      <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a> <a class="code hl_class" href="../../db/d06/class_param3.html">con</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  543</span>      <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">con</a>, -1, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  544</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> &lt; <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a>++)</div>
+<div class="line"><span class="lineno">  545</span>      {</div>
+<div class="line"><span class="lineno">  546</span>        <a class="code hl_class" href="../../d3/d0e/class_slots_icon.html">SlotsIcon</a> <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">con</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">j</a>);</div>
+<div class="line"><span class="lineno">  547</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDropReceived(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;OnDropReceivedFromIcon&quot;</span>);</div>
+<div class="line"><span class="lineno">  548</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDropReceived(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetGhostSlot(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;OnDropReceivedFromHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">  549</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDropReceived(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetMainWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;OnDropReceivedFromHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">  550</span> </div>
+<div class="line"><span class="lineno">  551</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverIcon&quot;</span>);</div>
+<div class="line"><span class="lineno">  552</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetGhostSlot(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">  553</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetMainWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">  554</span> </div>
+<div class="line"><span class="lineno">  555</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDoubleClick(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;DoubleClick&quot;</span>);</div>
+<div class="line"><span class="lineno">  556</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseButtonUp(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;MouseClick&quot;</span>);</div>
+<div class="line"><span class="lineno">  557</span>        <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseButtonDown(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;MouseButtonDown&quot;</span>);</div>
+<div class="line"><span class="lineno">  558</span>      }</div>
+<div class="line"><span class="lineno">  559</span> </div>
+<div class="line"><span class="lineno">  560</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">con</a>.SetColumnCount(<a class="code hl_class" href="../../db/d06/class_param3.html">items</a>.Count() % <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>);</div>
+<div class="line"><span class="lineno">  561</span>    }</div>
+<div class="line"><span class="lineno">  562</span> </div>
+<div class="line"><span class="lineno">  563</span>    <span class="keywordflow">for</span> (g = <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers</a> - 1 ; g &gt;= <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers_needed</a> ; g--)</div>
+<div class="line"><span class="lineno">  564</span>    {</div>
+<div class="line"><span class="lineno">  565</span>      <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a> = <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.m_Body.Get(g).GetMainWidget();</div>
+<div class="line"><span class="lineno">  566</span>      <span class="keyword">delete</span> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>;</div>
+<div class="line"><span class="lineno">  567</span>      <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.m_Body.Remove(g);</div>
+<div class="line"><span class="lineno">  568</span>    }</div>
+<div class="line"><span class="lineno">  569</span> </div>
+<div class="line"><span class="lineno">  570</span>    <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">items</a>.Count() % <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>) == 0)</div>
+<div class="line"><span class="lineno">  571</span>      <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>.Cast(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers_needed</a> - 1)).SetColumnCount(<a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>);</div>
+<div class="line"><span class="lineno">  572</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  573</span>      <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>.Cast(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers_needed</a> - 1)).SetColumnCount(<a class="code hl_class" href="../../db/d06/class_param3.html">items</a>.Count() % <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>);</div>
+<div class="line"><span class="lineno">  574</span> </div>
+<div class="line"><span class="lineno">  575</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">number_of_containers_needed</a> - 1; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  576</span>      <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>.Cast(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)).SetColumnCount(<a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>);</div>
+<div class="line"><span class="lineno">  577</span> </div>
+<div class="line"><span class="lineno">  578</span>    RecomputeOpenedContainers();</div>
+<div class="line"><span class="lineno">  579</span>    <a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.RecomputeOpenedContainers();</div>
+<div class="line"><span class="lineno">  580</span>  }</div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="../../dd/d0a/class_widget.html">Widget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00189">EnWidgets.c:190</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler::GetInstance()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00001">ITEMS_IN_ROW</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00003">m_Container</a>, and <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00244">ShowItemsInContainers()</a>.</p>
 
 </div>
 </div>
@@ -1092,6 +1540,68 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00152">152</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>  {</div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_class" href="../../d3/d0e/class_slots_icon.html">SlotsIcon</a> <a class="code hl_class" href="../../db/d06/class_param3.html">selected_slot</a> = <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().GetSelectedIcon();</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>();</div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().GetSelectedItem());</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (!(<a class="code hl_class" href="../../db/d06/class_param3.html">selected_slot</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">selected_slot</a>.IsOutOfReach()))</div>
+<div class="line"><span class="lineno">  159</span>    {</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>)</div>
+<div class="line"><span class="lineno">  161</span>      {</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> != <a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>)</div>
+<div class="line"><span class="lineno">  163</span>        {</div>
+<div class="line"><span class="lineno">  164</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a> &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().CanDropEntity(<a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>))</div>
+<div class="line"><span class="lineno">  165</span>          {</div>
+<div class="line"><span class="lineno">  166</span>            <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>            <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  169</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a> = !<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory().HasInventoryReservation(<a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>) &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsItemsToDelete();</div>
+<div class="line"><span class="lineno">  170</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>.GetInventory().CanRemoveEntity();</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a> &amp;&amp; <a class="code hl_variable" href="#ade335595ef5298e7f4827ccad266a79c">m_ShowedItems</a>.Find(<a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>) == -1)</div>
+<div class="line"><span class="lineno">  173</span>            {</div>
+<div class="line"><span class="lineno">  174</span>              <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>.GetTargetQuantityMax() &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>.GetQuantity())</div>
+<div class="line"><span class="lineno">  175</span>                <a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>.SplitIntoStackMaxClient(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, -1);</div>
+<div class="line"><span class="lineno">  176</span>              <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  177</span>                <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.PhysicalPredictiveDropItem(<a class="code hl_class" href="../../db/d06/class_param3.html">selected_item</a>);</div>
+<div class="line"><span class="lineno">  178</span>              <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().SetSelectedItemEx(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  179</span>              <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  180</span>            }</div>
+<div class="line"><span class="lineno">  181</span>          }</div>
+<div class="line"><span class="lineno">  182</span>        }</div>
+<div class="line"><span class="lineno">  183</span>      }</div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  185</span>      {</div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>.GetInventory().CanRemoveEntity())</div>
+<div class="line"><span class="lineno">  187</span>        {</div>
+<div class="line"><span class="lineno">  188</span>          <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().GetHumanInventory().GetEntityInHands();</div>
+<div class="line"><span class="lineno">  189</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a>)</div>
+<div class="line"><span class="lineno">  190</span>          {</div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#a740ed71afc391434ebde9d09074a93ea">CanSwapEntitiesEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>))</div>
+<div class="line"><span class="lineno">  192</span>            {</div>
+<div class="line"><span class="lineno">  193</span>              <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().PredictiveSwapEntities(<a class="code hl_class" href="../../db/d06/class_param3.html">item_in_hands</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>);</div>
+<div class="line"><span class="lineno">  194</span>              <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  195</span>            }</div>
+<div class="line"><span class="lineno">  196</span>          }</div>
+<div class="line"><span class="lineno">  197</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  198</span>          {</div>
+<div class="line"><span class="lineno">  199</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetHumanInventory().CanAddEntityInHands(<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>))</div>
+<div class="line"><span class="lineno">  200</span>            {</div>
+<div class="line"><span class="lineno">  201</span>              <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().PredictiveTakeEntityToHands(<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>);</div>
+<div class="line"><span class="lineno">  202</span>              <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  203</span>            }</div>
+<div class="line"><span class="lineno">  204</span>          }</div>
+<div class="line"><span class="lineno">  205</span>        }</div>
+<div class="line"><span class="lineno">  206</span>      }</div>
+<div class="line"><span class="lineno">  207</span>    }</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  210</span>  }</div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_a740ed71afc391434ebde9d09074a93ea"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#a740ed71afc391434ebde9d09074a93ea">GameInventory::CanSwapEntitiesEx</a></div><div class="ttdeci">static bool CanSwapEntitiesEx(notnull EntityAI item1, notnull EntityAI item2)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00610">Inventory.c:610</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00610">GameInventory::CanSwapEntitiesEx()</a>, <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00265">ItemManager::GetInstance()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00006">m_ShowedItems</a>.</p>
 
 </div>
 </div>
@@ -1119,6 +1629,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00222">222</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  223</span>  {</div>
+<div class="line"><span class="lineno">  224</span>    m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#af2c945eebda1050b002aadc90acddc5e">Container</a>;</div>
+<div class="line"><span class="lineno">  225</span>  }</div>
+<div class="ttc" id="aclass_widget_layout_name_html"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00001">WidgetLayoutName.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_af2c945eebda1050b002aadc90acddc5e"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#af2c945eebda1050b002aadc90acddc5e">WidgetLayoutName::Container</a></div><div class="ttdeci">const string Container</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00047">WidgetLayoutName.c:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00047">WidgetLayoutName::Container</a>.</p>
 
 </div>
 </div>
@@ -1146,6 +1663,95 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00244">244</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>;</div>
+<div class="line"><span class="lineno">  247</span>    <a class="code hl_class" href="../../d3/d0e/class_slots_icon.html">SlotsIcon</a> <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>;</div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>;</div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">visible_items_count</a> = 0;</div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">visible_rows</a> = 0;</div>
+<div class="line"><span class="lineno">  251</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;EntityAI&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">visible_items</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;EntityAI&gt;</a>;</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">for</span> (<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a> = 0; <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">items</a>.Count(); ++<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>)</div>
+<div class="line"><span class="lineno">  254</span>    {</div>
+<div class="line"><span class="lineno">  255</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">items</a>.Get(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>);</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">null</a> || <a class="code hl_function" href="#a04f229f4621c8ec1983212671c227bf1">ExcludeFromContainer</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>))</div>
+<div class="line"><span class="lineno">  258</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">visible_items</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  261</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">visible_items_count</a>++;</div>
+<div class="line"><span class="lineno">  262</span>    }</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_function" href="#aeba1fe4d5a7ac48fbeed931897e2cef8">RecomputeNumberOfContainers</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">visible_items</a>);</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>    <span class="keywordflow">for</span> (<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a> = 0; <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">visible_items_count</a>; ++<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>)</div>
+<div class="line"><span class="lineno">  267</span>    {</div>
+<div class="line"><span class="lineno">  268</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">visible_items</a>.Get(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>);</div>
+<div class="line"><span class="lineno">  269</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">row</a> = (<a class="code hl_typedef" href="../../da/d02/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a>)<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga16e805acd55f171477bd5ca7dbaa5a18">Floor</a>(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a> / <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>);</div>
+<div class="line"><span class="lineno">  270</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">column</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a> % <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>;</div>
+<div class="line"><span class="lineno">  271</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a> = <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>.Cast(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">row</a>)).GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">column</a>);</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetMainWidget().Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  274</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget().SetUserID(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetID());</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ade335595ef5298e7f4827ccad266a79c">m_ShowedItems</a>.Find(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>) != <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>)</div>
+<div class="line"><span class="lineno">  277</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.Init(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  278</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.UpdateInterval();</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().IsDragging())</div>
+<div class="line"><span class="lineno">  281</span>        <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().SetTemperature(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetRender());</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>      <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a> = <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().EvaluateContainerDragabilityDefault(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">  284</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a> &amp;&amp; <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#gae3e58fe472ac6b87418d2b72042d4aac">GetDragWidget</a>() == <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget())</div>
+<div class="line"><span class="lineno">  285</span>        <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#gad6e48a26788776dd6ba5c8e6b64704d3">CancelWidgetDragging</a>();</div>
+<div class="line"><span class="lineno">  286</span>      <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().SetWidgetDraggable(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetPanelWidget(), <a class="code hl_class" href="../../db/d06/class_param3.html">draggable</a>);</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ref Container&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">showed_items</a> = (<a class="code hl_class" href="../../dc/d02/class_vicinity_container.html">VicinityContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>)).m_ShowedItemsIDs;</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>      <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a> <a class="code hl_class" href="../../db/d06/class_param3.html">conta</a> = <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">showed_items</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetID()));</div>
+<div class="line"><span class="lineno">  291</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">conta</a>)</div>
+<div class="line"><span class="lineno">  292</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">conta</a>.SetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>);</div>
+<div class="line"><span class="lineno">  293</span> </div>
+<div class="line"><span class="lineno">  294</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">conta</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">conta</a>.IsDisplayable())</div>
+<div class="line"><span class="lineno">  295</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">conta</a>.UpdateRadialIcon();</div>
+<div class="line"><span class="lineno">  296</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  297</span>      {</div>
+<div class="line"><span class="lineno">  298</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetRadialIconPanel().Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  299</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">conta</a>)</div>
+<div class="line"><span class="lineno">  300</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">conta</a>.OnHide();</div>
+<div class="line"><span class="lineno">  301</span>      }</div>
+<div class="line"><span class="lineno">  302</span>    }</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>    <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a> <a class="code hl_class" href="../../db/d06/class_param3.html">slots_last</a> = <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>.Cast(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">visible_items</a>.Count() / <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>));</div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">c</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">visible_items_count</a> % <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">c</a> &lt; <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">c</a>)</div>
+<div class="line"><span class="lineno">  307</span>    {</div>
+<div class="line"><span class="lineno">  308</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">slots_last</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">c</a>);</div>
+<div class="line"><span class="lineno">  309</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.GetMainWidget().Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  310</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>.Clear();</div>
+<div class="line"><span class="lineno">  311</span>    }</div>
+<div class="line"><span class="lineno">  312</span> </div>
+<div class="line"><span class="lineno">  313</span>    <span class="comment">//#ifndef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  314</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">visible_items_count</a> % <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a> == 0)</div>
+<div class="line"><span class="lineno">  315</span>    {</div>
+<div class="line"><span class="lineno">  316</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">slots_last</a> = <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>.Cast(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Get(<a class="code hl_variable" href="#afa5385a31bbcaf1bbed7fc2ac548d710">m_Container</a>.Count() - 1));</div>
+<div class="line"><span class="lineno">  317</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">slots_last</a>.GetSlotIcon(0).GetMainWidget().Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  318</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">slots_last</a>.GetSlotIcon(0).GetGhostSlot().Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  319</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">slots_last</a>.GetMainWidget().Update();</div>
+<div class="line"><span class="lineno">  320</span>    }</div>
+<div class="line"><span class="lineno">  321</span>    <span class="comment">//#endif</span></div>
+<div class="line"><span class="lineno">  322</span> </div>
+<div class="line"><span class="lineno">  323</span>    <a class="code hl_variable" href="#ade335595ef5298e7f4827ccad266a79c">m_ShowedItems</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">visible_items</a>;</div>
+<div class="line"><span class="lineno">  324</span>  }</div>
+<div class="ttc" id="a3___game_2_entities_2_entity_a_i_8c_html_a90d3e5de4aff5bb7b00ab0a384150892"><div class="ttname"><a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c.html#a90d3e5de4aff5bb7b00ab0a384150892">int</a></div><div class="ttdeci">Param3 int</div></div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="aclass_vicinity_slots_container_html_a04f229f4621c8ec1983212671c227bf1"><div class="ttname"><a href="#a04f229f4621c8ec1983212671c227bf1">VicinitySlotsContainer::ExcludeFromContainer</a></div><div class="ttdeci">bool ExcludeFromContainer(EntityAI item)</div><div class="ttdoc">Decides on the icon visibility.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00238">VicinitySlotsContainer.c:238</a></div></div>
+<div class="ttc" id="aclass_vicinity_slots_container_html_aeba1fe4d5a7ac48fbeed931897e2cef8"><div class="ttname"><a href="#aeba1fe4d5a7ac48fbeed931897e2cef8">VicinitySlotsContainer::RecomputeNumberOfContainers</a></div><div class="ttdeci">void RecomputeNumberOfContainers(array&lt; EntityAI &gt; items)</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00533">VicinitySlotsContainer.c:533</a></div></div>
+<div class="ttc" id="agroup___math_html_ga16e805acd55f171477bd5ca7dbaa5a18"><div class="ttname"><a href="../../d5/d08/group___math.html#ga16e805acd55f171477bd5ca7dbaa5a18">Math::Floor</a></div><div class="ttdeci">static proto float Floor(float f)</div><div class="ttdoc">Returns floor of value.</div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_gad6e48a26788776dd6ba5c8e6b64704d3"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#gad6e48a26788776dd6ba5c8e6b64704d3">CancelWidgetDragging</a></div><div class="ttdeci">proto native Widget CancelWidgetDragging()</div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_gae3e58fe472ac6b87418d2b72042d4aac"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#gae3e58fe472ac6b87418d2b72042d4aac">GetDragWidget</a></div><div class="ttdeci">proto native Widget GetDragWidget()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#gad6e48a26788776dd6ba5c8e6b64704d3">CancelWidgetDragging()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00238">ExcludeFromContainer()</a>, <a class="el" href="../../d5/d08/group___math.html#ga16e805acd55f171477bd5ca7dbaa5a18">Math::Floor()</a>, <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#gae3e58fe472ac6b87418d2b72042d4aac">GetDragWidget()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00265">ItemManager::GetInstance()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00001">ITEMS_IN_ROW</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00003">m_Container</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00006">m_ShowedItems</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00533">RecomputeNumberOfContainers()</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>.</p>
 
 </div>
 </div>
@@ -1173,6 +1779,28 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00117">117</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (CanTakeToInventory())</div>
+<div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>      <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ent</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d4/d0f/class_container.html#a418ac073b17075fac33a02801c1efba8">GetFocusedItem</a>());</div>
+<div class="line"><span class="lineno">  122</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>)</div>
+<div class="line"><span class="lineno">  123</span>      {</div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>.IsTakeable())</div>
+<div class="line"><span class="lineno">  125</span>        {</div>
+<div class="line"><span class="lineno">  126</span>          <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">il</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  127</span>          <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().GetInventory().FindFreeLocationFor(<a class="code hl_class" href="../../db/d06/class_param3.html">ent</a>, <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a>.CARGO, <a class="code hl_class" href="../../db/d06/class_param3.html">il</a>);</div>
+<div class="line"><span class="lineno">  128</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>.IsValid() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetInventory().LocationCanAddEntity(<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>))</div>
+<div class="line"><span class="lineno">  129</span>          {</div>
+<div class="line"><span class="lineno">  130</span>            <a class="code hl_class" href="../../df/d06/class_split_item_utils.html">SplitItemUtils</a>.<a class="code hl_function" href="../../df/d06/class_split_item_utils.html#a411fa9f7ceaf372dce08d251143a290b">TakeOrSplitToInventoryLocation</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>()), <a class="code hl_class" href="../../db/d06/class_param3.html">il</a>);</div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  132</span>          }</div>
+<div class="line"><span class="lineno">  133</span>        }</div>
+<div class="line"><span class="lineno">  134</span>      }</div>
+<div class="line"><span class="lineno">  135</span>    }</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  137</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00692">Container::GetFocusedItem()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../d5/d0c/_split_item_utils_8c_source.html#l00030">SplitItemUtils::TakeOrSplitToInventoryLocation()</a>.</p>
 
 </div>
 </div>
@@ -1198,6 +1826,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00003">3</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00533">RecomputeNumberOfContainers()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00244">ShowItemsInContainers()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00008">VicinitySlotsContainer()</a>, and <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00212">~VicinitySlotsContainer()</a>.</p>
 
 </div>
 </div>
@@ -1246,6 +1876,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00006">6</a> of file <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html">VicinitySlotsContainer.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00152">Select()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00244">ShowItemsInContainers()</a>, and <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00008">VicinitySlotsContainer()</a>.</p>
 
 </div>
 </div>

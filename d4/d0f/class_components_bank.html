@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -159,6 +156,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00006">6</a> of file <a class="el" href="../../d5/d04/_components_bank_8c_source.html">ComponentsBank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>  {</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_variable" href="#ae0796ac0e1b21fe53546686d62e029ab">m_EntityParent</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">entity_parent</a>;</div>
+<div class="line"><span class="lineno">    9</span>  }</div>
+<div class="ttc" id="aclass_components_bank_html_ae0796ac0e1b21fe53546686d62e029ab"><div class="ttname"><a href="#ae0796ac0e1b21fe53546686d62e029ab">ComponentsBank::m_EntityParent</a></div><div class="ttdeci">EntityAI m_EntityParent</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_components_bank_8c_source.html#l00003">ComponentsBank.c:3</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00003">m_EntityParent</a>.</p>
 
 </div>
 </div>
@@ -191,6 +195,48 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00036">36</a> of file <a class="el" href="../../d5/d04/_components_bank_8c_source.html">ComponentsBank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>  {</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../d2/d00/class_component.html">Component</a>.<a class="code hl_function" href="../../d2/d00/class_component.html#a87e5c52fb158bcefc8cce4c26ec45de3">IsTypeExist</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>))</div>
+<div class="line"><span class="lineno">   39</span>    {</div>
+<div class="line"><span class="lineno">   40</span>      <a class="code hl_class" href="../../d2/d00/class_component.html">Component</a>.<a class="code hl_function" href="../../d2/d00/class_component.html#a2ad7e91364a17de0273b056d7fa5dbd0">LogErrorBadCompType</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>, <span class="stringliteral">&quot;EntityAI-&gt;CreateComponent(int comp_type)&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3e54e277fe9431987c4f65e9e7c382f0">IsComponentAlreadyExist</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>))</div>
+<div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>      <a class="code hl_class" href="../../d2/d00/class_component.html">Component</a>.<a class="code hl_function" href="../../d2/d00/class_component.html#a2f666e77e1ed854010db630076beb100">LogWarningAlredyExist</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>, <span class="stringliteral">&quot;EntityAI-&gt;CreateComponent(int comp_type)&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a603c4451f442a25fb8917e761bb9a406">m_Components</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>];</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">clas_name</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">extended_class_name</a>;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">clas_name</a> == <span class="keywordtype">string</span>.<a class="code hl_variable" href="../../d3/d05/_hand___states_8c.html#ac3e3346bc6f9bb504e43495424c91a51">Empty</a>)</div>
+<div class="line"><span class="lineno">   54</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">clas_name</a> = <a class="code hl_class" href="../../d2/d00/class_component.html">Component</a>.<a class="code hl_function" href="../../d2/d00/class_component.html#a4a14e38704f3fea42a648890117ed740">GetNameByType</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_class" href="../../d2/d00/class_component.html">Component</a> <a class="code hl_class" href="../../db/d06/class_param3.html">comp</a> = <a class="code hl_class" href="../../d2/d00/class_component.html">Component</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">clas_name</a>.ToType().Spawn());</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">comp</a>.SetParentEntityAI(<a class="code hl_variable" href="#ae0796ac0e1b21fe53546686d62e029ab">m_EntityParent</a>);</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">comp</a>.Event_OnAwake();</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="#a603c4451f442a25fb8917e761bb9a406">m_Components</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>] = <a class="code hl_class" href="../../db/d06/class_param3.html">comp</a>;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">comp</a>.Event_OnInit();</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">comp</a>;</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+<div class="ttc" id="a_hand___states_8c_html_ac3e3346bc6f9bb504e43495424c91a51"><div class="ttname"><a href="../../d3/d05/_hand___states_8c.html#ac3e3346bc6f9bb504e43495424c91a51">Empty</a></div><div class="ttdeci">Empty</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d05/_hand___states_8c_source.html#l00014">Hand_States.c:14</a></div></div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="../../d2/d00/class_component.html">Component</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d01/_component_8c_source.html#l00015">Component.c:16</a></div></div>
+<div class="ttc" id="aclass_component_html_a2ad7e91364a17de0273b056d7fa5dbd0"><div class="ttname"><a href="../../d2/d00/class_component.html#a2ad7e91364a17de0273b056d7fa5dbd0">Component::LogErrorBadCompType</a></div><div class="ttdeci">static void LogErrorBadCompType(int comp_type, string fnc_name)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d01/_component_8c_source.html#l00074">Component.c:74</a></div></div>
+<div class="ttc" id="aclass_component_html_a2f666e77e1ed854010db630076beb100"><div class="ttname"><a href="../../d2/d00/class_component.html#a2f666e77e1ed854010db630076beb100">Component::LogWarningAlredyExist</a></div><div class="ttdeci">static void LogWarningAlredyExist(int comp_type, string fnc_name)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d01/_component_8c_source.html#l00083">Component.c:83</a></div></div>
+<div class="ttc" id="aclass_component_html_a4a14e38704f3fea42a648890117ed740"><div class="ttname"><a href="../../d2/d00/class_component.html#a4a14e38704f3fea42a648890117ed740">Component::GetNameByType</a></div><div class="ttdeci">static string GetNameByType(int comp_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d01/_component_8c_source.html#l00048">Component.c:48</a></div></div>
+<div class="ttc" id="aclass_component_html_a87e5c52fb158bcefc8cce4c26ec45de3"><div class="ttname"><a href="../../d2/d00/class_component.html#a87e5c52fb158bcefc8cce4c26ec45de3">Component::IsTypeExist</a></div><div class="ttdeci">static bool IsTypeExist(int comp_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d01/_component_8c_source.html#l00062">Component.c:62</a></div></div>
+<div class="ttc" id="aclass_components_bank_html_a3e54e277fe9431987c4f65e9e7c382f0"><div class="ttname"><a href="#a3e54e277fe9431987c4f65e9e7c382f0">ComponentsBank::IsComponentAlreadyExist</a></div><div class="ttdeci">bool IsComponentAlreadyExist(int comp_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_components_bank_8c_source.html#l00068">ComponentsBank.c:68</a></div></div>
+<div class="ttc" id="aclass_components_bank_html_a603c4451f442a25fb8917e761bb9a406"><div class="ttname"><a href="#a603c4451f442a25fb8917e761bb9a406">ComponentsBank::m_Components</a></div><div class="ttdeci">ref Component m_Components[COMP_TYPE_COUNT]</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_components_bank_8c_source.html#l00004">ComponentsBank.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d05/_hand___states_8c_source.html#l00014">Empty</a>, <a class="el" href="../../d1/d01/_component_8c_source.html#l00048">Component::GetNameByType()</a>, <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00068">IsComponentAlreadyExist()</a>, <a class="el" href="../../d1/d01/_component_8c_source.html#l00062">Component::IsTypeExist()</a>, <a class="el" href="../../d1/d01/_component_8c_source.html#l00074">Component::LogErrorBadCompType()</a>, <a class="el" href="../../d1/d01/_component_8c_source.html#l00083">Component::LogWarningAlredyExist()</a>, <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00004">m_Components</a>, and <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00003">m_EntityParent</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00011">GetComponent()</a>.</p>
 
 </div>
 </div>
@@ -218,6 +264,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00025">25</a> of file <a class="el" href="../../d5/d04/_components_bank_8c_source.html">ComponentsBank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>  {</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3e54e277fe9431987c4f65e9e7c382f0">IsComponentAlreadyExist</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>))</div>
+<div class="line"><span class="lineno">   28</span>    {</div>
+<div class="line"><span class="lineno">   29</span>      <a class="code hl_variable" href="#a603c4451f442a25fb8917e761bb9a406">m_Components</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>] = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">   30</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   34</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00068">IsComponentAlreadyExist()</a>, and <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00004">m_Components</a>.</p>
 
 </div>
 </div>
@@ -249,6 +306,21 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00011">11</a> of file <a class="el" href="../../d5/d04/_components_bank_8c_source.html">ComponentsBank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../d2/d00/class_component.html">Component</a>.<a class="code hl_function" href="../../d2/d00/class_component.html#a87e5c52fb158bcefc8cce4c26ec45de3">IsTypeExist</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>))</div>
+<div class="line"><span class="lineno">   14</span>    {</div>
+<div class="line"><span class="lineno">   15</span>      <a class="code hl_class" href="../../d2/d00/class_component.html">Component</a>.<a class="code hl_function" href="../../d2/d00/class_component.html#a2ad7e91364a17de0273b056d7fa5dbd0">LogErrorBadCompType</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>, <span class="stringliteral">&quot;EntityAI.GetComponent(int comp_type)&quot;</span>);</div>
+<div class="line"><span class="lineno">   16</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">   17</span>    }</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a3e54e277fe9431987c4f65e9e7c382f0">IsComponentAlreadyExist</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>))</div>
+<div class="line"><span class="lineno">   20</span>      <a class="code hl_function" href="#af246b371d6087d33944b6ff44775bc72">CreateComponent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">extended_class_name</a>);</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a603c4451f442a25fb8917e761bb9a406">m_Components</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>];</div>
+<div class="line"><span class="lineno">   23</span>  }</div>
+<div class="ttc" id="aclass_components_bank_html_af246b371d6087d33944b6ff44775bc72"><div class="ttname"><a href="#af246b371d6087d33944b6ff44775bc72">ComponentsBank::CreateComponent</a></div><div class="ttdeci">Component CreateComponent(int comp_type, string extended_class_name=&quot;&quot;)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_components_bank_8c_source.html#l00036">ComponentsBank.c:36</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00036">CreateComponent()</a>, <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00068">IsComponentAlreadyExist()</a>, <a class="el" href="../../d1/d01/_component_8c_source.html#l00062">Component::IsTypeExist()</a>, <a class="el" href="../../d1/d01/_component_8c_source.html#l00074">Component::LogErrorBadCompType()</a>, and <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00004">m_Components</a>.</p>
 
 </div>
 </div>
@@ -276,6 +348,16 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00068">68</a> of file <a class="el" href="../../d5/d04/_components_bank_8c_source.html">ComponentsBank.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a603c4451f442a25fb8917e761bb9a406">m_Components</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">comp_type</a>] != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>)</div>
+<div class="line"><span class="lineno">   71</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   74</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00004">m_Components</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00036">CreateComponent()</a>, <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00025">DeleteComponent()</a>, and <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00011">GetComponent()</a>.</p>
 
 </div>
 </div>
@@ -302,6 +384,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00004">4</a> of file <a class="el" href="../../d5/d04/_components_bank_8c_source.html">ComponentsBank.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00036">CreateComponent()</a>, <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00025">DeleteComponent()</a>, <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00011">GetComponent()</a>, and <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00068">IsComponentAlreadyExist()</a>.</p>
+
 </div>
 </div>
 <a id="ae0796ac0e1b21fe53546686d62e029ab" name="ae0796ac0e1b21fe53546686d62e029ab"></a>
@@ -325,6 +409,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00003">3</a> of file <a class="el" href="../../d5/d04/_components_bank_8c_source.html">ComponentsBank.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00006">ComponentsBank()</a>, and <a class="el" href="../../d5/d04/_components_bank_8c_source.html#l00036">CreateComponent()</a>.</p>
 
 </div>
 </div>

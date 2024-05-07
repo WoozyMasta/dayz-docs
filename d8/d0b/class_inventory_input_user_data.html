@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -164,6 +161,26 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00114">114</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>  {</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">  117</span>    {</div>
+<div class="line"><span class="lineno">  118</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8a85ff20214c9394d6b676652b127f2c">IsSyncLogEnable</a>()) <a class="code hl_function" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint</a>(<span class="stringliteral">&quot;[syncinv] SendInputUserDataDestroy src=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>));</div>
+<div class="line"><span class="lineno">  119</span>      <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a>;</div>
+<div class="line"><span class="lineno">  120</span>      <a class="code hl_function" href="#a94edf2a11d77cf3acafcfff0b1f79130">SerializeDestroy</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>);</div>
+<div class="line"><span class="lineno">  121</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Send();</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+<div class="ttc" id="a3___game_2_systems_2_inventory_2_debug_8c_html_a01a35fb2e1d460078913b5bceec5205c"><div class="ttname"><a href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint</a></div><div class="ttdeci">void syncDebugPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c_source.html#l00001">Debug.c:1</a></div></div>
+<div class="ttc" id="aclass_inventory_input_user_data_html_a94edf2a11d77cf3acafcfff0b1f79130"><div class="ttname"><a href="#a94edf2a11d77cf3acafcfff0b1f79130">InventoryInputUserData::SerializeDestroy</a></div><div class="ttdeci">static void SerializeDestroy(ParamsWriteContext ctx, notnull InventoryLocation src)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_inventory_input_user_data_8c_source.html#l00107">InventoryInputUserData.c:107</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html_a1f3b481a816f2bae9fc880483ffca408"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">InventoryLocation::DumpToStringNullSafe</a></div><div class="ttdeci">static string DumpToStringNullSafe(InventoryLocation loc)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00218">InventoryLocation.c:218</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a8a85ff20214c9394d6b676652b127f2c"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a8a85ff20214c9394d6b676652b127f2c">LogManager::IsSyncLogEnable</a></div><div class="ttdeci">static bool IsSyncLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00759">Debug.c:759</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_script_input_user_data_html"><div class="ttname"><a href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00120">gameplay.c:121</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d02/_inventory_location_8c_source.html#l00218">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00759">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00107">SerializeDestroy()</a>, and <a class="el" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c_source.html#l00001">syncDebugPrint()</a>.</p>
 
 </div>
 </div>
@@ -191,6 +208,21 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00079">79</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>  {</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">   82</span>    {</div>
+<div class="line"><span class="lineno">   83</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8a85ff20214c9394d6b676652b127f2c">IsSyncLogEnable</a>()) <a class="code hl_function" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint</a>(<span class="stringliteral">&quot;[syncinv] t=&quot;</span> + <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a8a5888c845f10608a75d9bfd5009089e">GetTime</a>() + <span class="stringliteral">&quot;ms SendInputUserDataHandEvent e=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.DumpToString());</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a>;</div>
+<div class="line"><span class="lineno">   85</span>      <a class="code hl_function" href="#aada3694498f25c7713379f01f4b0b9a7">SerializeHandEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   86</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Send();</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+<div class="line"><span class="lineno">   88</span>  }</div>
+<div class="ttc" id="a_notification_system_8c_html_a8a5888c845f10608a75d9bfd5009089e"><div class="ttname"><a href="../../d5/d04/_notification_system_8c.html#a8a5888c845f10608a75d9bfd5009089e">GetTime</a></div><div class="ttdeci">float GetTime()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00035">NotificationSystem.c:35</a></div></div>
+<div class="ttc" id="aclass_inventory_input_user_data_html_aada3694498f25c7713379f01f4b0b9a7"><div class="ttname"><a href="#aada3694498f25c7713379f01f4b0b9a7">InventoryInputUserData::SerializeHandEvent</a></div><div class="ttdeci">static void SerializeHandEvent(ParamsWriteContext ctx, HandEventBase e)</div><div class="ttdoc">hand</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_inventory_input_user_data_8c_source.html#l00072">InventoryInputUserData.c:72</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00035">GetTime()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00759">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00072">SerializeHandEvent()</a>, and <a class="el" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c_source.html#l00001">syncDebugPrint()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01992">HandleHandEvent()</a>.</p>
 
 </div>
 </div>
@@ -227,6 +259,21 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00013">13</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8a85ff20214c9394d6b676652b127f2c">IsSyncLogEnable</a>()) <a class="code hl_function" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint</a>(<span class="stringliteral">&quot;[syncinv] t=&quot;</span> + <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a8a5888c845f10608a75d9bfd5009089e">GetTime</a>() + <span class="stringliteral">&quot;ms sending cmd=&quot;</span> + <span class="keyword">typename</span>.EnumToString(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a43d2389269799752817d23aec2f7dfa3">InventoryCommandType</a>, type) + <span class="stringliteral">&quot; src=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>) + <span class="stringliteral">&quot; dst=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>));</div>
+<div class="line"><span class="lineno">   18</span>      <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a>;</div>
+<div class="line"><span class="lineno">   19</span>      <a class="code hl_function" href="#ad549c32bdc1e816040479c773417f8e2">SerializeMove</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, type, <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>);</div>
+<div class="line"><span class="lineno">   20</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Send();</div>
+<div class="line"><span class="lineno">   21</span>    }</div>
+<div class="line"><span class="lineno">   22</span>  }</div>
+<div class="ttc" id="a3___game_2_systems_2_inventory_2_inventory_8c_html_a43d2389269799752817d23aec2f7dfa3"><div class="ttname"><a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a43d2389269799752817d23aec2f7dfa3">InventoryCommandType</a></div><div class="ttdeci">InventoryCommandType</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00002">Inventory.c:3</a></div></div>
+<div class="ttc" id="aclass_inventory_input_user_data_html_ad549c32bdc1e816040479c773417f8e2"><div class="ttname"><a href="#ad549c32bdc1e816040479c773417f8e2">InventoryInputUserData::SerializeMove</a></div><div class="ttdeci">static void SerializeMove(ParamsWriteContext ctx, int type, notnull InventoryLocation src, notnull InventoryLocation dst)</div><div class="ttdoc">move</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_inventory_input_user_data_8c_source.html#l00005">InventoryInputUserData.c:5</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d02/_inventory_location_8c_source.html#l00218">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00035">GetTime()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00759">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00005">SerializeMove()</a>, and <a class="el" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c_source.html#l00001">syncDebugPrint()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01501">HandleTakeToDst()</a>.</p>
 
 </div>
 </div>
@@ -273,6 +320,20 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00048">48</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>  {</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8a85ff20214c9394d6b676652b127f2c">IsSyncLogEnable</a>()) <a class="code hl_function" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint</a>(<span class="stringliteral">&quot;[syncinv] t=&quot;</span> + <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a8a5888c845f10608a75d9bfd5009089e">GetTime</a>() + <span class="stringliteral">&quot;ms sending cmd=SWAP src1=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src1</a>) + <span class="stringliteral">&quot; src2=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src2</a>) + <span class="stringliteral">&quot; dst1=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">dst1</a>) + <span class="stringliteral">&quot; dst2=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">dst2</a>));</div>
+<div class="line"><span class="lineno">   53</span>      <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a>;</div>
+<div class="line"><span class="lineno">   54</span>      <a class="code hl_function" href="#a09edd148623fa3ab64215d32a623566f">SerializeSwap</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">src1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">src2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">skippedSwap</a>);</div>
+<div class="line"><span class="lineno">   55</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Send();</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span>  }</div>
+<div class="ttc" id="aclass_inventory_input_user_data_html_a09edd148623fa3ab64215d32a623566f"><div class="ttname"><a href="#a09edd148623fa3ab64215d32a623566f">InventoryInputUserData::SerializeSwap</a></div><div class="ttdeci">static void SerializeSwap(ParamsWriteContext ctx, notnull InventoryLocation src1, notnull InventoryLocation src2, notnull InventoryLocation dst1, notnull InventoryLocation dst2, bool skippedSwap)</div><div class="ttdoc">swap</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_inventory_input_user_data_8c_source.html#l00037">InventoryInputUserData.c:37</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d02/_inventory_location_8c_source.html#l00218">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00035">GetTime()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00759">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00037">SerializeSwap()</a>, and <a class="el" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c_source.html#l00001">syncDebugPrint()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01708">HandleForceSwapEntities()</a>, and <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01611">HandleSwapEntities()</a>.</p>
 
 </div>
 </div>
@@ -304,6 +365,27 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00090">90</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>  {</div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment">// Warning: this uses NetworkMessageInventoryCommand</span></div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.IsServerSideOnly())</div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[syncinv] SendServerHandEvent - called on server side event only, e=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.DumpToString());</div>
+<div class="line"><span class="lineno">   97</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsAlive())</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[syncinv] SendServerHandEvent - called on living thing.. server hand command is only for dead people, e=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.DumpToString());</div>
+<div class="line"><span class="lineno">   99</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8a85ff20214c9394d6b676652b127f2c">IsSyncLogEnable</a>()) <a class="code hl_function" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint</a>(<span class="stringliteral">&quot;[syncinv] SendServerHandEventViaInventoryCommand SendInputUserDataHandEvent e=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.DumpToString());</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a>;</div>
+<div class="line"><span class="lineno">  101</span>      <a class="code hl_function" href="#aada3694498f25c7713379f01f4b0b9a7">SerializeHandEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  102</span>      <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#afa01c4ad0b546b8cc90e88b629d4a0a5">ServerHandEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.GetSrcEntity(), <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span>  }</div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_afa01c4ad0b546b8cc90e88b629d4a0a5"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#afa01c4ad0b546b8cc90e88b629d4a0a5">GameInventory::ServerHandEvent</a></div><div class="ttdeci">static proto native bool ServerHandEvent(notnull Man player, notnull EntityAI item, ParamsWriteContext ctx)</div><div class="ttdoc">hand event to clients</div></div>
+<div class="ttc" id="agroup___debug_html_ga786b160dafbe15abb829786ba345cb15"><div class="ttname"><a href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a></div><div class="ttdeci">void Error(string err)</div><div class="ttdoc">Messagebox with error message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_en_debug_8c_source.html#l00090">EnDebug.c:90</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00759">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00072">SerializeHandEvent()</a>, <a class="el" href="../../dc/d01/class_game_inventory.html#afa01c4ad0b546b8cc90e88b629d4a0a5">GameInventory::ServerHandEvent()</a>, and <a class="el" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c_source.html#l00001">syncDebugPrint()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01992">HandleHandEvent()</a>.</p>
 
 </div>
 </div>
@@ -345,6 +427,20 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00024">24</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>  {</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8a85ff20214c9394d6b676652b127f2c">IsSyncLogEnable</a>()) <a class="code hl_function" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint</a>(<span class="stringliteral">&quot;[syncinv] server sending cmd=&quot;</span> + <span class="keyword">typename</span>.EnumToString(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a43d2389269799752817d23aec2f7dfa3">InventoryCommandType</a>, type) + <span class="stringliteral">&quot; src=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>) + <span class="stringliteral">&quot; dst=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>));</div>
+<div class="line"><span class="lineno">   29</span>      <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a>;</div>
+<div class="line"><span class="lineno">   30</span>      <a class="code hl_function" href="#ad549c32bdc1e816040479c773417f8e2">SerializeMove</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, type, <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>);</div>
+<div class="line"><span class="lineno">   31</span>      <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#a85ab6eb608acc0afaa8184dc8fa5461c">ServerLocationSyncMoveEntity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetItem(), <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
+<div class="line"><span class="lineno">   33</span>  }</div>
+<div class="ttc" id="aclass_game_inventory_html_a85ab6eb608acc0afaa8184dc8fa5461c"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#a85ab6eb608acc0afaa8184dc8fa5461c">GameInventory::ServerLocationSyncMoveEntity</a></div><div class="ttdeci">static proto native bool ServerLocationSyncMoveEntity(Man player, notnull EntityAI item, ParamsWriteContext ctx)</div><div class="ttdoc">synchronously removes item from current inventory location and adds it to destination + sync via inve...</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d02/_inventory_location_8c_source.html#l00218">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00759">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00005">SerializeMove()</a>, <a class="el" href="../../dc/d01/class_game_inventory.html#a85ab6eb608acc0afaa8184dc8fa5461c">GameInventory::ServerLocationSyncMoveEntity()</a>, and <a class="el" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c_source.html#l00001">syncDebugPrint()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l01030">GameInventory::TakeToDst()</a>.</p>
 
 </div>
 </div>
@@ -391,6 +487,18 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00059">59</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>  {</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8a85ff20214c9394d6b676652b127f2c">IsSyncLogEnable</a>()) <a class="code hl_function" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c.html#a01a35fb2e1d460078913b5bceec5205c">syncDebugPrint</a>(<span class="stringliteral">&quot;[syncinv] server sending cmd=SWAP src1=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src1</a>) + <span class="stringliteral">&quot; src2=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src2</a>) + <span class="stringliteral">&quot; dst1=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">dst1</a>) + <span class="stringliteral">&quot; dst2=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">dst2</a>));</div>
+<div class="line"><span class="lineno">   64</span>      <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0b/class_script_input_user_data.html">ScriptInputUserData</a>;</div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_function" href="#a09edd148623fa3ab64215d32a623566f">SerializeSwap</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">src1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">src2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">skippedSwap</a>);</div>
+<div class="line"><span class="lineno">   66</span>      <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#a3fea026ec104937dd2ea0f23b466c835">ServerLocationSwap</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">src2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+<div class="ttc" id="aclass_game_inventory_html_a3fea026ec104937dd2ea0f23b466c835"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#a3fea026ec104937dd2ea0f23b466c835">GameInventory::ServerLocationSwap</a></div><div class="ttdeci">static proto native bool ServerLocationSwap(notnull InventoryLocation src1, notnull InventoryLocation src2, notnull InventoryLocation dst1, notnull InventoryLocation dst2, ParamsWriteContext ctx)</div><div class="ttdoc">swaps two entities</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d02/_inventory_location_8c_source.html#l00218">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00759">LogManager::IsSyncLogEnable()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00037">SerializeSwap()</a>, <a class="el" href="../../dc/d01/class_game_inventory.html#a3fea026ec104937dd2ea0f23b466c835">GameInventory::ServerLocationSwap()</a>, and <a class="el" href="../../d9/d06/3___game_2_systems_2_inventory_2_debug_8c_source.html#l00001">syncDebugPrint()</a>.</p>
 
 </div>
 </div>
@@ -422,6 +530,16 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00107">107</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>  {</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_variable" href="../../d9/d07/3___game_2tools_2_component_2__constants_8c.html#a23b39fbcb50ebeb28af0c36e833b260f">INPUT_UDT_INVENTORY</a>);</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a43d2389269799752817d23aec2f7dfa3">InventoryCommandType</a>.DESTROY);</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">  112</span>  }</div>
+<div class="ttc" id="a3___game_2tools_2_component_2__constants_8c_html_a23b39fbcb50ebeb28af0c36e833b260f"><div class="ttname"><a href="../../d9/d07/3___game_2tools_2_component_2__constants_8c.html#a23b39fbcb50ebeb28af0c36e833b260f">INPUT_UDT_INVENTORY</a></div><div class="ttdeci">const int INPUT_UDT_INVENTORY</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d07/3___game_2tools_2_component_2__constants_8c_source.html#l00009">_constants.c:9</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d07/3___game_2tools_2_component_2__constants_8c_source.html#l00009">INPUT_UDT_INVENTORY</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00114">SendInputUserDataDestroy()</a>.</p>
 
 </div>
 </div>
@@ -455,6 +573,15 @@ Static Private Member Functions</h2></td></tr>
 <p>hand </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00072">72</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>  {</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_variable" href="../../d9/d07/3___game_2tools_2_component_2__constants_8c.html#a23b39fbcb50ebeb28af0c36e833b260f">INPUT_UDT_INVENTORY</a>);</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a43d2389269799752817d23aec2f7dfa3">InventoryCommandType</a>.HAND_EVENT);</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d07/3___game_2tools_2_component_2__constants_8c_source.html#l00009">INPUT_UDT_INVENTORY</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01952">HandEvent()</a>, <a class="el" href="../../d9/d01/_bot___test_spam_user_actions_8c_source.html#l00060">OnUpdate()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00079">SendInputUserDataHandEvent()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00090">SendServerHandEventViaInventoryCommand()</a>, <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01767">SendServerHandEventViaJuncture()</a>, and <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l00833">ValidateHandEvent()</a>.</p>
 
 </div>
 </div>
@@ -498,6 +625,16 @@ Static Private Member Functions</h2></td></tr>
 <p>move </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00005">5</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_variable" href="../../d9/d07/3___game_2tools_2_component_2__constants_8c.html#a23b39fbcb50ebeb28af0c36e833b260f">INPUT_UDT_INVENTORY</a>);</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(type);</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   11</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d07/3___game_2tools_2_component_2__constants_8c_source.html#l00009">INPUT_UDT_INVENTORY</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d01/_bot___test_spam_user_actions_8c_source.html#l00060">OnUpdate()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00013">SendInputUserDataMove()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00024">SendServerMove()</a>, and <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01420">TakeToDst()</a>.</p>
 
 </div>
 </div>
@@ -551,6 +688,19 @@ Static Private Member Functions</h2></td></tr>
 <p>swap </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00037">37</a> of file <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html">InventoryInputUserData.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_variable" href="../../d9/d07/3___game_2tools_2_component_2__constants_8c.html#a23b39fbcb50ebeb28af0c36e833b260f">INPUT_UDT_INVENTORY</a>);</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a43d2389269799752817d23aec2f7dfa3">InventoryCommandType</a>.SWAP);</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">src1</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">src2</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dst1</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dst2</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">skippedSwap</a>);</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d07/3___game_2tools_2_component_2__constants_8c_source.html#l00009">INPUT_UDT_INVENTORY</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00048">SendInputUserDataSwap()</a>, <a class="el" href="../../da/d03/_inventory_input_user_data_8c_source.html#l00059">SendServerSwap()</a>, and <a class="el" href="../../da/d0c/_day_z_player_inventory_8c_source.html#l01009">ValidateSwap()</a>.</p>
 
 </div>
 </div>

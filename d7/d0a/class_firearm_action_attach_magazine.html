@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -172,6 +169,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00016">16</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a> = <span class="stringliteral">&quot;#attach&quot;</span>;</div>
+<div class="line"><span class="lineno">   19</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a11fc80cdcb775f018854049236528029"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a></div><div class="ttdeci">string m_Text</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00049">ActionBase.c:49</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00049">m_Text</a>.</p>
 
 </div>
 </div>
@@ -209,7 +212,20 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00026">26</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   27</span>  {</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.ActionCondition(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>))</div>
+<div class="line"><span class="lineno">   29</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_class" href="../../da/d00/class_human_command_weapons.html">HumanCommandWeapons</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetCommandModifier_Weapons();</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject());</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a> <a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a> = <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetWeaponManager().CanAttachMagazine(<a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a>) || <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetWeaponManager().CanSwapMagazine(<a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a>)) &amp;&amp; (!<a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.GetRunningAction() != <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.RELOAD);</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
+<div class="ttc" id="aclass_human_command_weapons_html"><div class="ttname"><a href="../../da/d00/class_human_command_weapons.html">HumanCommandWeapons</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00973">human.c:974</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_weapon___base_html"><div class="ttname"><a href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a></div><div class="ttdoc">shorthand</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_bolt_action_rifle___base_8c_source.html#l00005">BoltActionRifle_Base.c:6</a></div></div>
+<div class="ttc" id="ahuman_8c_html_a70aa34d22d03160ea5e3d5248cd37093"><div class="ttname"><a href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a></div><div class="ttdeci">WeaponActions</div><div class="ttdoc">actions</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00795">human.c:796</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a551c195a2bbac1428956798d753a6708" name="a551c195a2bbac1428956798d753a6708"></a>
@@ -236,7 +252,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00037">37</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a31955c01af1aa972e72cefe8bbc8a4f9" name="a31955c01af1aa972e72cefe8bbc8a4f9"></a>
@@ -263,7 +282,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00193">193</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  194</span>  {</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  196</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab1e20e8c393ac30474d98b82cd59cae6" name="ab1e20e8c393ac30474d98b82cd59cae6"></a>
@@ -290,7 +312,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00198">198</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  199</span>  {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af1673f9ca7674f4cd580c72a82257309" name="af1673f9ca7674f4cd580c72a82257309"></a>
@@ -317,7 +342,11 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00042">42</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a>;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>;</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a97721ae6eb2cc2421689f962aa0eaa73" name="a97721ae6eb2cc2421689f962aa0eaa73"></a>
@@ -344,6 +373,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00021">21</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d01/4___world_2_classes_2_user_actions_component_2__constants_8c.html#a4eb1e98494181fa7bcd7ed24381d61e6">AC_SINGLE_USE</a>;</div>
+<div class="line"><span class="lineno">   24</span>  }</div>
+<div class="ttc" id="a4___world_2_classes_2_user_actions_component_2__constants_8c_html_a4eb1e98494181fa7bcd7ed24381d61e6"><div class="ttname"><a href="../../dd/d01/4___world_2_classes_2_user_actions_component_2__constants_8c.html#a4eb1e98494181fa7bcd7ed24381d61e6">AC_SINGLE_USE</a></div><div class="ttdeci">const int AC_SINGLE_USE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d01/4___world_2_classes_2_user_actions_component_2__constants_8c_source.html#l00002">_constants.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d01/4___world_2_classes_2_user_actions_component_2__constants_8c_source.html#l00002">AC_SINGLE_USE</a>.</p>
 
 </div>
 </div>
@@ -375,6 +410,23 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00075">75</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>  {</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_class" href="../../d5/d00/class_attach_magazine_action_recive_data.html">AttachMagazineActionReciveData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">recive_data_am</a> = <a class="code hl_class" href="../../d5/d00/class_attach_magazine_action_recive_data.html">AttachMagazineActionReciveData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>);</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_am</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem = <a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>.m_MainItem;</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>.m_Target)</div>
+<div class="line"><span class="lineno">   82</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target = <span class="keyword">new</span> <a class="code hl_variable" href="../../d2/d0f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, -1, <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_variable" href="../../d7/d0c/classvector.html#a6f6d5246e38b34f79fa2741a7e72d7e7">Zero</a>, 0);</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target = <a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>.m_Target;</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_am</a>.m_ilOldMagazine = <a class="code hl_class" href="../../db/d06/class_param3.html">recive_data_am</a>.m_ilOldMagazine;</div>
+<div class="line"><span class="lineno">   86</span>  }</div>
+<div class="ttc" id="a_action_targets_8c_html_a2ab3de6f698cb230ae0c129e3e01b341"><div class="ttname"><a href="../../d2/d0f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a></div><div class="ttdeci">class ActionTargets ActionTarget</div></div>
+<div class="ttc" id="aclass_attach_magazine_action_recive_data_html"><div class="ttname"><a href="../../d5/d00/class_attach_magazine_action_recive_data.html">AttachMagazineActionReciveData</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00001">FirearmActionAttachMagazine.c:2</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="aclassvector_html_a6f6d5246e38b34f79fa2741a7e72d7e7"><div class="ttname"><a href="../../d7/d0c/classvector.html#a6f6d5246e38b34f79fa2741a7e72d7e7">vector::Zero</a></div><div class="ttdeci">static const vector Zero</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00110">EnConvert.c:110</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0f/_action_targets_8c.html#a2ab3de6f698cb230ae0c129e3e01b341">ActionTarget</a>, and <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00110">vector::Zero</a>.</p>
 
 </div>
 </div>
@@ -402,6 +454,88 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00107">107</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>  {</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> ((<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#aa72a1414a9a27affdb25cc120cda4ad2">IsLocal</a>() || !<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a49211e993b8eec502433ac72c846049e">UseAcknowledgment</a>()) &amp;&amp; <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ac657b1c5910b40de5886f17dd025c159">IsInstant</a>())</div>
+<div class="line"><span class="lineno">  110</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">success</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">oldMagTargetInventoryLocation</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">targetInventoryLocation</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">handInventoryLocation</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player;</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a> <a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a> = <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">muzzle_index</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>.GetCurrentMuzzle();</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a> <a class="code hl_class" href="../../db/d06/class_param3.html">new_mag</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject());</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_oldMagazine)</div>
+<div class="line"><span class="lineno">  126</span>    {</div>
+<div class="line"><span class="lineno">  127</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">oldMagTargetInventoryLocation</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  128</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetInventory().HasInventoryReservation(<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_oldMagazine, <a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_ilOldMagazine))</div>
+<div class="line"><span class="lineno">  129</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">success</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  130</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  131</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory().AddInventoryReservationEx(<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_oldMagazine, <a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_ilOldMagazine, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a9ee846eef87d396aeb2b64c720677873">c_InventoryReservationTimeoutMS</a>);</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">success</a>)</div>
+<div class="line"><span class="lineno">  135</span>    {</div>
+<div class="line"><span class="lineno">  136</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">targetInventoryLocation</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  137</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">targetInventoryLocation</a>.SetAttachment(<a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_mag</a>, <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.MAGAZINE);</div>
+<div class="line"><span class="lineno">  138</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetInventory().HasInventoryReservation(<a class="code hl_class" href="../../db/d06/class_param3.html">new_mag</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">targetInventoryLocation</a>))</div>
+<div class="line"><span class="lineno">  139</span>      {</div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">success</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_oldMagazine)</div>
+<div class="line"><span class="lineno">  142</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory().ClearInventoryReservation(<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_oldMagazine, <a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_ilOldMagazine);</div>
+<div class="line"><span class="lineno">  143</span>      }</div>
+<div class="line"><span class="lineno">  144</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  145</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetInventory().AddInventoryReservationEx(<a class="code hl_class" href="../../db/d06/class_param3.html">new_mag</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">targetInventoryLocation</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a9ee846eef87d396aeb2b64c720677873">c_InventoryReservationTimeoutMS</a>);</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">success</a>)</div>
+<div class="line"><span class="lineno">  149</span>    {</div>
+<div class="line"><span class="lineno">  150</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">handInventoryLocation</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  151</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">handInventoryLocation</a>.SetHands(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player, <a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>);</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetInventory().HasInventoryReservation(<a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">handInventoryLocation</a>))</div>
+<div class="line"><span class="lineno">  154</span>      {</div>
+<div class="line"><span class="lineno">  155</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_oldMagazine)</div>
+<div class="line"><span class="lineno">  156</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory().ClearInventoryReservation(<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_oldMagazine, <a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_ilOldMagazine);</div>
+<div class="line"><span class="lineno">  157</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory().ClearInventoryReservation(<a class="code hl_class" href="../../db/d06/class_param3.html">new_mag</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">targetInventoryLocation</a>);</div>
+<div class="line"><span class="lineno">  158</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">success</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  159</span>      }</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  161</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetInventory().AddInventoryReservationEx(<a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">handInventoryLocation</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a9ee846eef87d396aeb2b64c720677873">c_InventoryReservationTimeoutMS</a>);</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">success</a>)</div>
+<div class="line"><span class="lineno">  165</span>    {</div>
+<div class="line"><span class="lineno">  166</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_ilOldMagazine)</div>
+<div class="line"><span class="lineno">  167</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_ReservedInventoryLocations.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_ilOldMagazine);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">targetInventoryLocation</a>)</div>
+<div class="line"><span class="lineno">  170</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_ReservedInventoryLocations.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">targetInventoryLocation</a>);</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">handInventoryLocation</a>)</div>
+<div class="line"><span class="lineno">  173</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_ReservedInventoryLocations.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">handInventoryLocation</a>);</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">success</a>;</div>
+<div class="line"><span class="lineno">  177</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a49211e993b8eec502433ac72c846049e"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a49211e993b8eec502433ac72c846049e">UseAcknowledgment</a></div><div class="ttdeci">bool UseAcknowledgment()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00821">ActionBase.c:821</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_aa72a1414a9a27affdb25cc120cda4ad2"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#aa72a1414a9a27affdb25cc120cda4ad2">IsLocal</a></div><div class="ttdeci">bool IsLocal()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00222">ActionBase.c:222</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_ac657b1c5910b40de5886f17dd025c159"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#ac657b1c5910b40de5886f17dd025c159">IsInstant</a></div><div class="ttdeci">bool IsInstant()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00228">ActionBase.c:228</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_a9ee846eef87d396aeb2b64c720677873"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#a9ee846eef87d396aeb2b64c720677873">GameInventory::c_InventoryReservationTimeoutMS</a></div><div class="ttdeci">const int c_InventoryReservationTimeoutMS</div><div class="ttdoc">reservations</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00687">Inventory.c:687</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html">InventorySlots</a></div><div class="ttdoc">provides access to slot configuration</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/_inventory_slots_8c_source.html#l00005">InventorySlots.c:6</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00687">GameInventory::c_InventoryReservationTimeoutMS</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00228">IsInstant()</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00222">IsLocal()</a>, and <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00821">UseAcknowledgment()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00179">Start()</a>.</p>
 
 </div>
 </div>
@@ -429,6 +563,26 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00088">88</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>  {</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   91</span>    {</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a> <a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a> = <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">muzzle_index</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>.GetCurrentMuzzle();</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   96</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_oldMagazine = <a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>.GetMagazine(<a class="code hl_class" href="../../db/d06/class_param3.html">muzzle_index</a>);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>      <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">new_il</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetWeaponManager().PrepareInventoryLocationForMagazineSwap(<a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject()), <a class="code hl_class" href="../../db/d06/class_param3.html">new_il</a>))</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  102</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">am_action_data</a>.m_ilOldMagazine = <a class="code hl_class" href="../../db/d06/class_param3.html">new_il</a>;</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -460,7 +614,22 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00058">58</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   59</span>  {</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>)</div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d5/d00/class_attach_magazine_action_recive_data.html">AttachMagazineActionReciveData</a>;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.ReadFromContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>);</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">il</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>.ReadFromContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>))</div>
+<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_class" href="../../d5/d00/class_attach_magazine_action_recive_data.html">AttachMagazineActionReciveData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">recive_data_am</a> = <a class="code hl_class" href="../../d5/d00/class_attach_magazine_action_recive_data.html">AttachMagazineActionReciveData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>);</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">recive_data_am</a>.m_ilOldMagazine = <a class="code hl_class" href="../../db/d06/class_param3.html">il</a>;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aad0be74e804d88fe890f458be08096dc" name="aad0be74e804d88fe890f458be08096dc"></a>
@@ -487,6 +656,22 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00179">179</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>  {</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Start(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_am</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a> <a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a> = <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">  184</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject());</div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a8a336c2b2c1543ef65130b3f4fdeca66">ClearInventoryReservationEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetWeaponManager().CanAttachMagazine(<a class="code hl_class" href="../../db/d06/class_param3.html">wpn</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a>, <span class="keyword">false</span>))</div>
+<div class="line"><span class="lineno">  187</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetWeaponManager().AttachMagazine(<a class="code hl_class" href="../../db/d06/class_param3.html">mag</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  189</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetWeaponManager().SwapMagazineEx(<a class="code hl_class" href="../../db/d06/class_param3.html">mag</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_am</a>.m_ilOldMagazine, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_function" href="#a52ed7d53a7e3d2722804b5ba634519e3">InventoryReservation</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  191</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a8a336c2b2c1543ef65130b3f4fdeca66"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a8a336c2b2c1543ef65130b3f4fdeca66">ClearInventoryReservationEx</a></div><div class="ttdeci">void ClearInventoryReservationEx(ActionData action_data)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00790">ActionBase.c:790</a></div></div>
+<div class="ttc" id="aclass_firearm_action_attach_magazine_html_a52ed7d53a7e3d2722804b5ba634519e3"><div class="ttname"><a href="#a52ed7d53a7e3d2722804b5ba634519e3">FirearmActionAttachMagazine::InventoryReservation</a></div><div class="ttdeci">override bool InventoryReservation(ActionData action_data)</div><div class="ttdef"><b>Definition</b> <a href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00107">FirearmActionAttachMagazine.c:107</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00790">ClearInventoryReservationEx()</a>, and <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00107">InventoryReservation()</a>.</p>
 
 </div>
 </div>
@@ -518,7 +703,14 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html#l00049">49</a> of file <a class="el" href="../../db/d02/_firearm_action_attach_magazine_8c_source.html">FirearmActionAttachMagazine.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   50</span>  {</div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_am</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">AttachMagazineActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_am</a>.m_ilOldMagazine.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

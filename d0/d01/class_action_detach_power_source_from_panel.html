@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -156,6 +153,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00004">4</a> of file <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html">ActionDetachPowerSourceFromPanel.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    5</span>  {</div>
+<div class="line"><span class="lineno">    6</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a> = <span class="stringliteral">&quot;#detach_power_source&quot;</span>;</div>
+<div class="line"><span class="lineno">    7</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a11fc80cdcb775f018854049236528029"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a></div><div class="ttdeci">string m_Text</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00049">ActionBase.c:49</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00049">m_Text</a>.</p>
 
 </div>
 </div>
@@ -193,7 +196,25 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00009">9</a> of file <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html">ActionDetachPowerSourceFromPanel.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   10</span>  {</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a> <a class="code hl_class" href="../../db/d06/class_param3.html">target_object</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject();</div>
+<div class="line"><span class="lineno">   12</span> </div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">target_object</a>)</div>
+<div class="line"><span class="lineno">   14</span>    {</div>
+<div class="line"><span class="lineno">   15</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject());</div>
+<div class="line"><span class="lineno">   16</span>      <span class="keywordtype">string</span> selection = <a class="code hl_class" href="../../db/d06/class_param3.html">target_object</a>.GetActionComponentName(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetComponentIndex());</div>
+<div class="line"><span class="lineno">   17</span> </div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a>.GetInventory() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a>.GetInventory().AttachmentCount() &gt; 0 &amp;&amp; selection == <span class="stringliteral">&quot;power_source&quot;</span>) <span class="comment">//has any power source attachment attached</span></div>
+<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   21</span>    }</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   24</span>  }</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8318c3dc7ab3ae28b4e6d7c0fc2ba9ff" name="a8318c3dc7ab3ae28b4e6d7c0fc2ba9ff"></a>
@@ -220,6 +241,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00026">26</a> of file <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html">ActionDetachPowerSourceFromPanel.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>  {</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="#a0702255f170bfa587f009867aea013a5">Process</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="aclass_action_detach_power_source_from_panel_html_a0702255f170bfa587f009867aea013a5"><div class="ttname"><a href="#a0702255f170bfa587f009867aea013a5">ActionDetachPowerSourceFromPanel::Process</a></div><div class="ttdeci">void Process(ActionData action_data)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00036">ActionDetachPowerSourceFromPanel.c:36</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00036">Process()</a>.</p>
 
 </div>
 </div>
@@ -247,6 +274,11 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00031">31</a> of file <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html">ActionDetachPowerSourceFromPanel.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>  {</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_function" href="#a0702255f170bfa587f009867aea013a5">Process</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   34</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00036">Process()</a>.</p>
 
 </div>
 </div>
@@ -274,6 +306,24 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00036">36</a> of file <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html">ActionDetachPowerSourceFromPanel.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>  {</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject());</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">attachments_count</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a>.GetInventory().AttachmentCount();</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">attachments_count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a>++) <span class="comment">//find any attached power source</span></div>
+<div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>      <span class="comment">// @TODO: vezme prvni att?</span></div>
+<div class="line"><span class="lineno">   45</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target_entity</a>.GetInventory().GetAttachmentFromIndex(<a class="code hl_class" href="../../db/d06/class_param3.html">j</a>);</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>)</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>)</div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.PredictiveTakeEntityToHands(<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>);</div>
+<div class="line"><span class="lineno">   52</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00026">OnExecuteClient()</a>, and <a class="el" href="../../dc/d09/_action_detach_power_source_from_panel_8c_source.html#l00031">OnExecuteServer()</a>.</p>
 
 </div>
 </div>

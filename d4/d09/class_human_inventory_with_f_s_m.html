@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -205,6 +202,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00011">11</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a>();</div>
+<div class="line"><span class="lineno">   14</span>  }</div>
+<div class="ttc" id="aclass_hand_f_s_m_html"><div class="ttname"><a href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a></div><div class="ttdoc">Hand finite state machine.</div></div>
+<div class="ttc" id="aclass_human_inventory_with_f_s_m_html_a0ae3cf3345eff73d4a4c1987a2c0fd73"><div class="ttname"><a href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">HumanInventoryWithFSM::m_FSM</a></div><div class="ttdeci">ref HandFSM m_FSM</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">HumanInventoryWithFSM.c:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -233,6 +237,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00090">90</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a> &amp;&amp; <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.IsRunning(); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -260,6 +267,23 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00016">16</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span>    <span class="comment">// stable states are created only if they do not exist already (for example created by derived class like DayZPlayerInventory)</span></div>
+<div class="line"><span class="lineno">   19</span>    <span class="comment">// @NOTE: this cannot be done in constructor, as there is NO owner set yet. GetManOwner() will therefore return NULL.</span></div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>)</div>
+<div class="line"><span class="lineno">   21</span>      <a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandStateEmpty</a>(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>());</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>)</div>
+<div class="line"><span class="lineno">   23</span>      <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../dc/d08/class_hand_state_equipped.html">HandStateEquipped</a>(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>());</div>
+<div class="line"><span class="lineno">   24</span>  }</div>
+<div class="ttc" id="aclass_hand_state_equipped_html"><div class="ttname"><a href="../../dc/d08/class_hand_state_equipped.html">HandStateEquipped</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d05/_hand___states_8c_source.html#l00032">Hand_States.c:33</a></div></div>
+<div class="ttc" id="aclass_human_inventory_html_a36daecfcc7e6657464d215bc431fc460"><div class="ttname"><a href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">HumanInventory::GetManOwner</a></div><div class="ttdeci">Man GetManOwner()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_human_inventory_8c_source.html#l00102">HumanInventory.c:102</a></div></div>
+<div class="ttc" id="aclass_human_inventory_with_f_s_m_html_a7005d823d3d603d07ec41626f0c22421"><div class="ttname"><a href="#a7005d823d3d603d07ec41626f0c22421">HumanInventoryWithFSM::m_Equipped</a></div><div class="ttdeci">ref HandStateBase m_Equipped</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00009">HumanInventoryWithFSM.c:9</a></div></div>
+<div class="ttc" id="aclass_human_inventory_with_f_s_m_html_a737b3c71f50bf38f14c492d305dfa519"><div class="ttname"><a href="#a737b3c71f50bf38f14c492d305dfa519">HumanInventoryWithFSM::m_Empty</a></div><div class="ttdeci">ref HandStateBase m_Empty</div><div class="ttdoc">hand slot state machine</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00008">HumanInventoryWithFSM.c:8</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_human_inventory_8c_source.html#l00102">HumanInventory::GetManOwner()</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00008">m_Empty</a>, and <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00009">m_Equipped</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00026">Init()</a>.</p>
 
 </div>
 </div>
@@ -288,6 +312,9 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>identifier of current stable state </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00152">152</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.GetCurrentStateID(); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -315,6 +342,79 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00026">26</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>  {</div>
+<div class="line"><span class="lineno">   28</span>    <span class="comment">// setup state machine</span></div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] Initializing Human Inventory FSM&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment">// basic states</span></div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="#a2d9d6450b4f686bda29cd381463b5d72">CreateStableStates</a>();</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment">// events</span></div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__T__</a> = <span class="keyword">new</span> HandEventTake;</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__D__</a> = <span class="keyword">new</span> HandEventDrop;</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Tw_</a> = <span class="keyword">new</span> HandEventThrow;</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__M__</a> = <span class="keyword">new</span> HandEventMoveTo;</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__W__</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d1/d02/class_hand_event_swap.html">HandEventSwap</a>;</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__F__</a> = <span class="keyword">new</span> HandEventForceSwap;</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__X__</a> = <span class="keyword">new</span> HandEventDestroy;</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a> = <span class="keyword">new</span> HandEventDestroyed;</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__R__</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d1/d0f/class_hand_event_destroy_and_replace_with_new.html">HandEventDestroyAndReplaceWithNew</a>;</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Re_</a> = <span class="keyword">new</span> HandEventDestroyAndReplaceWithNewElsewhere;</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Rh_</a> = <span class="keyword">new</span> HandEventDestroyElsewhereAndReplaceWithNewInHands;</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Rd_</a> = <span class="keyword">new</span> HandEventReplaced;</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Cd_</a> = <span class="keyword">new</span> HandEventCreated;</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> HandEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_abt_</a> = <span class="keyword">new</span> HandEventHumanCommandActionAborted;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    HandReplacingItemInHands <a class="code hl_class" href="../../db/d06/class_param3.html">replacing</a> = <span class="keyword">new</span> HandReplacingItemInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>());</div>
+<div class="line"><span class="lineno">   53</span>    HandReplacingItemInHands <a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere</a> = <span class="keyword">new</span> HandReplacingItemInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>());</div>
+<div class="line"><span class="lineno">   54</span>    HandReplacingItemElsewhereWithNewInHands <a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere3</a> = <span class="keyword">new</span> HandReplacingItemElsewhereWithNewInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>());</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">// setup transitions</span></div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__T__</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionTake</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d07/class_hand_guard_has_item_in_event.html">HandGuardHasItemInEvent</a>(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>())));</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Cd_</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionCreated</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d07/class_hand_guard_has_item_in_event.html">HandGuardHasItemInEvent</a>(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>())));</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__D__</a>, <a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionDrop</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Tw_</a>, <a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionThrow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__M__</a>, <a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionMoveTo</a>, <span class="keyword">new</span> HandGuardAnd(<span class="keyword">new</span> HandGuardHasItemInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>()), <span class="keyword">new</span> HandGuardCanMove(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>()))));</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__X__</a>, <a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionDestroy</a>, <span class="keyword">new</span> HandGuardHasItemInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>())));</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a>, <a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionDestroyed</a>, <span class="keyword">new</span> HandGuardHasDestroyedItemInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>())));</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionDestroyed</a>, <span class="keyword">new</span> HandGuardNot(<span class="keyword">new</span> HandGuardHasDestroyedItemInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>()))));</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__R__</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">replacing</a>));</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">replacing</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>));</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">replacing</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">replacing</a>.m_Replacing, <a class="code hl_class" href="../../db/d06/class_param3.html">_abt_</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>));</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Re_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere</a>));</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>));</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere</a>.m_Replacing, <a class="code hl_class" href="../../db/d06/class_param3.html">_abt_</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>));</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Rh_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere3</a>));</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere3</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>));</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere3</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">replacingElsewhere3</a>.m_Replacing, <a class="code hl_class" href="../../db/d06/class_param3.html">_abt_</a>, <a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>));</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Rd_</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionReplaced</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__W__</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionSwap</a>, <span class="keyword">new</span> HandGuardAnd(<span class="keyword">new</span> HandGuardHasItemInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>()), <span class="keyword">new</span> HandGuardCanSwap(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>()))));</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__F__</a>, <a class="code hl_variable" href="#a7005d823d3d603d07ec41626f0c22421">m_Equipped</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandActionForceSwap</a>, <span class="keyword">new</span> HandGuardAnd(<span class="keyword">new</span> HandGuardHasItemInHands(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>()), <span class="keyword">new</span> HandGuardCanForceSwap(<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>()))));</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <span class="comment">// start FSM</span></div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.SetInitialState(<a class="code hl_variable" href="#a737b3c71f50bf38f14c492d305dfa519">m_Empty</a>);</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.Start();</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Init();</div>
+<div class="line"><span class="lineno">   88</span>  }</div>
+<div class="ttc" id="a_hand_f_s_m_8c_html_a4d1ced2805a0b33fc2d7a5ae1300b53b"><div class="ttname"><a href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a></div><div class="ttdeci">void hndDebugPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">HandFSM.c:1</a></div></div>
+<div class="ttc" id="a_hand_f_s_m_8c_html_ababd3ce5e02c0ab66d634bd26911a833"><div class="ttname"><a href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a></div><div class="ttdeci">FSMTransition&lt; HandStateBase, HandEventBase, HandActionBase, HandGuardBase &gt; HandTransition</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00027">HandFSM.c:27</a></div></div>
+<div class="ttc" id="aclass_hand_event_base_html"><div class="ttname"><a href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a></div><div class="ttdoc">Abstracted event, not to be used, only inherited.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00190">Hand_Events.c:191</a></div></div>
+<div class="ttc" id="aclass_hand_event_destroy_and_replace_with_new_html"><div class="ttname"><a href="../../d1/d0f/class_hand_event_destroy_and_replace_with_new.html">HandEventDestroyAndReplaceWithNew</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00715">Hand_Events.c:716</a></div></div>
+<div class="ttc" id="aclass_hand_event_swap_html"><div class="ttname"><a href="../../d1/d02/class_hand_event_swap.html">HandEventSwap</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00621">Hand_Events.c:622</a></div></div>
+<div class="ttc" id="aclass_hand_guard_has_item_in_event_html"><div class="ttname"><a href="../../d6/d07/class_hand_guard_has_item_in_event.html">HandGuardHasItemInEvent</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0e/_hand___guards_8c_source.html#l00101">Hand_Guards.c:102</a></div></div>
+<div class="ttc" id="aclass_human_inventory_with_f_s_m_html_a2d9d6450b4f686bda29cd381463b5d72"><div class="ttname"><a href="#a2d9d6450b4f686bda29cd381463b5d72">HumanInventoryWithFSM::CreateStableStates</a></div><div class="ttdeci">void CreateStableStates()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00016">HumanInventoryWithFSM.c:16</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a8e070df24bcb6afaf456af7ba270294a"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">LogManager::IsInventoryHFSMLogEnable</a></div><div class="ttdeci">static bool IsInventoryHFSMLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">Debug.c:749</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00016">CreateStableStates()</a>, <a class="el" href="../../de/d07/_human_inventory_8c_source.html#l00102">HumanInventory::GetManOwner()</a>, <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00008">m_Empty</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00009">m_Equipped</a>, and <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -342,6 +442,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00154">154</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.GetCurrentState().IsIdle(); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -371,6 +474,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Engine callback - network synchronization of FSM's state. not intended to direct use. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00159">159</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>  {</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.NetSyncCurrentStateID(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  162</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -402,7 +510,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00131">131</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  132</span>  {</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnStoreLoad(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, version))</div>
+<div class="line"><span class="lineno">  134</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <span class="comment">//@TODO</span></div>
+<div class="line"><span class="lineno">  137</span>    <span class="comment">//m_FSM.OnStoreLoad(ctx, version);</span></div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  140</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aab5f1d47dc5124f33adfe92677105566" name="aab5f1d47dc5124f33adfe92677105566"></a>
@@ -429,7 +546,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00142">142</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  143</span>  {</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnStoreSave(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">  145</span>    <span class="comment">//@TODO</span></div>
+<div class="line"><span class="lineno">  146</span>    <span class="comment">//m_FSM.OnStoreSave(ctx, version);</span></div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aec89572ec17298ccf00de59435d866f5" name="aec89572ec17298ccf00de59435d866f5"></a>
@@ -456,6 +578,25 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00114">114</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>  {</div>
+<div class="line"><span class="lineno">  116</span>    <span class="comment">//SyncRemote(e);</span></div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a> <a class="code hl_class" href="../../db/d06/class_param3.html">aa</a>;</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.ProcessAbortEvent(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">aa</a>);</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">aa</a> == <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_OK)</div>
+<div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a23f33c3c89a94a825e70fa6c7178a17c">hndDebugSpam</a>(<span class="stringliteral">&quot;[hndfsm]  STS = &quot;</span> + <a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>().GetSimulationTimeStamp() + <span class="stringliteral">&quot; Processed event e=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.ToString());</div>
+<div class="line"><span class="lineno">  122</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  125</span>    {</div>
+<div class="line"><span class="lineno">  126</span>      <span class="comment">//if (LogManager.IsInventoryHFSMLogEnable()) hndDebugPrint(&quot;FSM refused to process event (no transition): src=&quot; + GetCurrentState().ToString() + &quot; event=&quot; + e.ToString());</span></div>
+<div class="line"><span class="lineno">  127</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
+<div class="ttc" id="a_f_s_m_base_8c_html_a09f6ec45b8f9309647a7b1eb893bc29f"><div class="ttname"><a href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a></div><div class="ttdeci">ProcessEventResult</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/_f_s_m_base_8c_source.html#l00040">FSMBase.c:41</a></div></div>
+<div class="ttc" id="a_hand_f_s_m_8c_html_a23f33c3c89a94a825e70fa6c7178a17c"><div class="ttname"><a href="../../d5/d0b/_hand_f_s_m_8c.html#a23f33c3c89a94a825e70fa6c7178a17c">hndDebugSpam</a></div><div class="ttdeci">void hndDebugSpam(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00009">HandFSM.c:9</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_human_inventory_8c_source.html#l00102">HumanInventory::GetManOwner()</a>, <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00009">hndDebugSpam()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, and <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -485,6 +626,26 @@ Additional Inherited Members</h2></td></tr>
 <p>hand's fsm handling of events @NOTE: warning: ProcessHandEvent can be called only within DayZPlayer::HandleInventory (or <a class="el" href="../../d3/d08/dayzplayer_8c.html#a6350a0773d57dbef4c073d8ac3ba7cdf" title="-------------— command handling ----------------------—">CommandHandler</a>) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00096">96</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>  {</div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">//SyncRemote(e);</span></div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0ae3cf3345eff73d4a4c1987a2c0fd73">m_FSM</a>.ProcessEvent(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>) == <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_OK)</div>
+<div class="line"><span class="lineno">  100</span>    {</div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  103</span>        <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#abb9ab64f7a3e90d4494a506ab5bb9738">InventoryHFSMLog</a>(<span class="stringliteral">&quot;STS = &quot;</span> + <a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a36daecfcc7e6657464d215bc431fc460">GetManOwner</a>().GetSimulationTimeStamp(), <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.ToString(), <span class="stringliteral">&quot;ProcessHandEvent&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.ToString());</div>
+<div class="line"><span class="lineno">  104</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  105</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  106</span>    }</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>      <span class="comment">//if (LogManager.IsInventoryHFSMLogEnable()) hndDebugPrint(&quot;FSM refused to process event (no transition): src=&quot; + GetCurrentState().ToString() + &quot; event=&quot; + e.ToString());</span></div>
+<div class="line"><span class="lineno">  110</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  111</span>    }</div>
+<div class="line"><span class="lineno">  112</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_abb9ab64f7a3e90d4494a506ab5bb9738"><div class="ttname"><a href="../../da/d0d/class_debug.html#abb9ab64f7a3e90d4494a506ab5bb9738">Debug::InventoryHFSMLog</a></div><div class="ttdeci">static void InventoryHFSMLog(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00183">Debug.c:183</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_human_inventory_8c_source.html#l00102">HumanInventory::GetManOwner()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00183">Debug::InventoryHFSMLog()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, and <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -513,6 +674,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00008">8</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00016">CreateStableStates()</a>, and <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00026">Init()</a>.</p>
+
 </div>
 </div>
 <a id="a7005d823d3d603d07ec41626f0c22421" name="a7005d823d3d603d07ec41626f0c22421"></a>
@@ -537,6 +700,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00009">9</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00016">CreateStableStates()</a>, and <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00026">Init()</a>.</p>
+
 </div>
 </div>
 <a id="a0ae3cf3345eff73d4a4c1987a2c0fd73" name="a0ae3cf3345eff73d4a4c1987a2c0fd73"></a>
@@ -560,6 +725,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00007">7</a> of file <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html">HumanInventoryWithFSM.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00090">CanProcessHandEvents()</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00152">GetCurrentStateID()</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00011">HumanInventoryWithFSM()</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00026">Init()</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00154">IsIdle()</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00159">NetSyncCurrentStateID()</a>, <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00114">ProcessHandAbortEvent()</a>, and <a class="el" href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00096">ProcessHandEvent()</a>.</p>
 
 </div>
 </div>

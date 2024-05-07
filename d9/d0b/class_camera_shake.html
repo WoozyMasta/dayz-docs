@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -173,6 +170,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00016">16</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2290b9779ab549f9e97303144a143aff">m_Player</a>)</div>
+<div class="line"><span class="lineno">   19</span>      <a class="code hl_variable" href="#a2290b9779ab549f9e97303144a143aff">m_Player</a>.GetAimingModel().SetCamShakeValues(0, 0);</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>  }</div>
+<div class="ttc" id="aclass_camera_shake_html_a2290b9779ab549f9e97303144a143aff"><div class="ttname"><a href="#a2290b9779ab549f9e97303144a143aff">CameraShake::m_Player</a></div><div class="ttdeci">DayZPlayerImplement m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_camera_shake_8c_source.html#l00014">CameraShake.c:14</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00014">m_Player</a>.</p>
 
 </div>
 </div>
@@ -214,6 +219,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00023">23</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>  {</div>
+<div class="line"><span class="lineno">   25</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   26</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   27</span><span class="comment">      Print(&quot;-----------ON CREATE------------&quot;);</span></div>
+<div class="line"><span class="lineno">   28</span><span class="comment">      Print(camera_offset);</span></div>
+<div class="line"><span class="lineno">   29</span><span class="comment">      Print(&quot;-----------ON CREATE END------------&quot;);</span></div>
+<div class="line"><span class="lineno">   30</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment">//m_Player = DayZPlayerImplement.Cast(player);</span></div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="#a2290b9779ab549f9e97303144a143aff">m_Player</a> = <a class="code hl_class" href="../../d3/d05/class_day_z_player_implement.html">DayZPlayerImplement</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="#aec2bf4e54f62eb3d71f5b567cbac7c79">m_StregthFactor</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">strength_factor</a>;</div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment">//m_InitLR = lr_angle;</span></div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">//m_InitUD = ud_angle;</span></div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> = radius;</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="#af8123ca68112b7fb4a697cef1ad85e01">m_RadiusDecaySpeed</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">radius_decay_speed</a>;</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="#a967b166e397de777ca42ac4e361d3c2f">m_Smoothness</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">smoothness</a>;</div>
+<div class="line"><span class="lineno">   39</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00047">ModifierBase.c:47</a></div></div>
+<div class="ttc" id="aclass_camera_shake_html_a467854da27d00585272504d079716c00"><div class="ttname"><a href="#a467854da27d00585272504d079716c00">CameraShake::m_Radius</a></div><div class="ttdeci">float m_Radius</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_camera_shake_8c_source.html#l00005">CameraShake.c:5</a></div></div>
+<div class="ttc" id="aclass_camera_shake_html_a967b166e397de777ca42ac4e361d3c2f"><div class="ttname"><a href="#a967b166e397de777ca42ac4e361d3c2f">CameraShake::m_Smoothness</a></div><div class="ttdeci">float m_Smoothness</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_camera_shake_8c_source.html#l00012">CameraShake.c:12</a></div></div>
+<div class="ttc" id="aclass_camera_shake_html_aec2bf4e54f62eb3d71f5b567cbac7c79"><div class="ttname"><a href="#aec2bf4e54f62eb3d71f5b567cbac7c79">CameraShake::m_StregthFactor</a></div><div class="ttdeci">float m_StregthFactor</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_camera_shake_8c_source.html#l00013">CameraShake.c:13</a></div></div>
+<div class="ttc" id="aclass_camera_shake_html_af8123ca68112b7fb4a697cef1ad85e01"><div class="ttname"><a href="#af8123ca68112b7fb4a697cef1ad85e01">CameraShake::m_RadiusDecaySpeed</a></div><div class="ttdeci">float m_RadiusDecaySpeed</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_camera_shake_8c_source.html#l00006">CameraShake.c:6</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_html"><div class="ttname"><a href="../../d3/d05/class_day_z_player_implement.html">DayZPlayerImplement</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0e/_man_base_8c_source.html#l00001">ManBase.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00014">m_Player</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00005">m_Radius</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00006">m_RadiusDecaySpeed</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00012">m_Smoothness</a>, and <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00013">m_StregthFactor</a>.</p>
 
 </div>
 </div>
@@ -251,6 +282,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00041">41</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>  {</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7165c5114631244591ef44c9a1b0ce45">m_ToDelete</a>)</div>
+<div class="line"><span class="lineno">   44</span>      <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> -= <a class="code hl_class" href="../../db/d06/class_param3.html">delta_time</a> * <a class="code hl_variable" href="#af8123ca68112b7fb4a697cef1ad85e01">m_RadiusDecaySpeed</a>; <span class="comment">//diminish radius each frame</span></div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a10df3c946a957446fe81c1631c860067">m_RandomAngle</a> &gt;= 0)</div>
+<div class="line"><span class="lineno">   49</span>      <a class="code hl_variable" href="#a10df3c946a957446fe81c1631c860067">m_RandomAngle</a> = -<a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> + (<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">RandomFloat</a>(-<a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> / <a class="code hl_variable" href="#a967b166e397de777ca42ac4e361d3c2f">m_Smoothness</a>, <a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> / <a class="code hl_variable" href="#a967b166e397de777ca42ac4e361d3c2f">m_Smoothness</a>));</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_variable" href="#a10df3c946a957446fe81c1631c860067">m_RandomAngle</a> = <a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> + (<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">RandomFloat</a>(-<a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> / <a class="code hl_variable" href="#a967b166e397de777ca42ac4e361d3c2f">m_Smoothness</a>, <a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> / <a class="code hl_variable" href="#a967b166e397de777ca42ac4e361d3c2f">m_Smoothness</a>));</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">x_axis</a> = <a class="code hl_variable" href="#a10df3c946a957446fe81c1631c860067">m_RandomAngle</a> * <a class="code hl_variable" href="#aec2bf4e54f62eb3d71f5b567cbac7c79">m_StregthFactor</a>;</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">y_axis</a> = <a class="code hl_variable" href="#a10df3c946a957446fe81c1631c860067">m_RandomAngle</a> * <a class="code hl_variable" href="#aec2bf4e54f62eb3d71f5b567cbac7c79">m_StregthFactor</a>;</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">//Print(x_axis);</span></div>
+<div class="line"><span class="lineno">   57</span>    <span class="comment">//Print(y_axis);</span></div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a467854da27d00585272504d079716c00">m_Radius</a> &lt; 0.01)</div>
+<div class="line"><span class="lineno">   60</span>      <a class="code hl_variable" href="#a7165c5114631244591ef44c9a1b0ce45">m_ToDelete</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   61</span>  }</div>
+<div class="ttc" id="aclass_camera_shake_html_a10df3c946a957446fe81c1631c860067"><div class="ttname"><a href="#a10df3c946a957446fe81c1631c860067">CameraShake::m_RandomAngle</a></div><div class="ttdeci">float m_RandomAngle</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_camera_shake_8c_source.html#l00007">CameraShake.c:7</a></div></div>
+<div class="ttc" id="aclass_camera_shake_html_a7165c5114631244591ef44c9a1b0ce45"><div class="ttname"><a href="#a7165c5114631244591ef44c9a1b0ce45">CameraShake::m_ToDelete</a></div><div class="ttdeci">bool m_ToDelete</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_camera_shake_8c_source.html#l00011">CameraShake.c:11</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math_html_ga892ecb1375c9b373969273223a5841f3"><div class="ttname"><a href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat</a></div><div class="ttdeci">static proto float RandomFloat(float min, float max)</div><div class="ttdoc">Returns a random float number between and min[inclusive] and max[exclusive].</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00005">m_Radius</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00006">m_RadiusDecaySpeed</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00007">m_RandomAngle</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00012">m_Smoothness</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00013">m_StregthFactor</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00011">m_ToDelete</a>, and <a class="el" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat()</a>.</p>
 
 </div>
 </div>
@@ -325,6 +382,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00014">14</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00023">CameraShake()</a>, and <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00016">~CameraShake()</a>.</p>
+
 </div>
 </div>
 <a id="a467854da27d00585272504d079716c00" name="a467854da27d00585272504d079716c00"></a>
@@ -348,6 +407,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00005">5</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00023">CameraShake()</a>, and <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00041">Update()</a>.</p>
 
 </div>
 </div>
@@ -373,6 +434,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00006">6</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00023">CameraShake()</a>, and <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00041">Update()</a>.</p>
+
 </div>
 </div>
 <a id="a10df3c946a957446fe81c1631c860067" name="a10df3c946a957446fe81c1631c860067"></a>
@@ -396,6 +459,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00007">7</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00041">Update()</a>.</p>
 
 </div>
 </div>
@@ -421,6 +486,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00012">12</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00023">CameraShake()</a>, and <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00041">Update()</a>.</p>
+
 </div>
 </div>
 <a id="aec2bf4e54f62eb3d71f5b567cbac7c79" name="aec2bf4e54f62eb3d71f5b567cbac7c79"></a>
@@ -444,6 +511,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00013">13</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00023">CameraShake()</a>, and <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00041">Update()</a>.</p>
 
 </div>
 </div>
@@ -492,6 +561,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00011">11</a> of file <a class="el" href="../../d5/d04/_camera_shake_8c_source.html">CameraShake.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00041">Update()</a>.</p>
 
 </div>
 </div>

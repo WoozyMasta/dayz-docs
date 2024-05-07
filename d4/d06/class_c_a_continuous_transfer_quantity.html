@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -176,6 +173,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00011">11</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="#a88f4de26b6dd1728da8d8ac37fcaf13e">m_QuantityFilledPerSecond</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_filled_per_second</a>;</div>
+<div class="line"><span class="lineno">   14</span>  }</div>
+<div class="ttc" id="aclass_c_a_continuous_transfer_quantity_html_a88f4de26b6dd1728da8d8ac37fcaf13e"><div class="ttname"><a href="#a88f4de26b6dd1728da8d8ac37fcaf13e">CAContinuousTransferQuantity::m_QuantityFilledPerSecond</a></div><div class="ttdeci">float m_QuantityFilledPerSecond</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00007">CAContinuousTransferQuantity.c:7</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00007">m_QuantityFilledPerSecond</a>.</p>
 
 </div>
 </div>
@@ -204,6 +208,29 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00073">73</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ae16d4656cb3d8b783cb5c9249f8007d3">m_SpentUnits</a>)</div>
+<div class="line"><span class="lineno">   78</span>      {</div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_variable" href="#ae16d4656cb3d8b783cb5c9249f8007d3">m_SpentUnits</a>.param1 = <a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a>;</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_function" href="../../d0/d00/class_c_a_base.html#a15caa3f387f97bbe79d18e4269dec382">SetACData</a>(<a class="code hl_variable" href="#ae16d4656cb3d8b783cb5c9249f8007d3">m_SpentUnits</a>);</div>
+<div class="line"><span class="lineno">   81</span>      }</div>
+<div class="line"><span class="lineno">   82</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.AddQuantity(<a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a>);</div>
+<div class="line"><span class="lineno">   83</span>      <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>;</div>
+<div class="line"><span class="lineno">   84</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject()))</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>.AddQuantity(-<a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a>, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span>  }</div>
+<div class="ttc" id="aclass_c_a_base_html_a15caa3f387f97bbe79d18e4269dec382"><div class="ttname"><a href="../../d0/d00/class_c_a_base.html#a15caa3f387f97bbe79d18e4269dec382">CABase::SetACData</a></div><div class="ttdeci">void SetACData(Param units)</div><div class="ttdef"><b>Definition</b> <a href="../../db/d00/_c_a_base_8c_source.html#l00038">CABase.c:38</a></div></div>
+<div class="ttc" id="aclass_c_a_continuous_transfer_quantity_html_a980438957599d4a23d6a03544c4bcc4b"><div class="ttname"><a href="#a980438957599d4a23d6a03544c4bcc4b">CAContinuousTransferQuantity::m_SpentQuantity</a></div><div class="ttdeci">float m_SpentQuantity</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00004">CAContinuousTransferQuantity.c:4</a></div></div>
+<div class="ttc" id="aclass_c_a_continuous_transfer_quantity_html_ae16d4656cb3d8b783cb5c9249f8007d3"><div class="ttname"><a href="#ae16d4656cb3d8b783cb5c9249f8007d3">CAContinuousTransferQuantity::m_SpentUnits</a></div><div class="ttdeci">ref Param1&lt; float &gt; m_SpentUnits</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00009">CAContinuousTransferQuantity.c:9</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00004">m_SpentQuantity</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00009">m_SpentUnits</a>, and <a class="el" href="../../db/d00/_c_a_base_8c_source.html#l00038">CABase::SetACData()</a>.</p>
 
 </div>
 </div>
@@ -231,6 +258,18 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00057">57</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>  {</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player)</div>
+<div class="line"><span class="lineno">   60</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga27cc3557ea5e3394f26701d52a0ce245">UA_ERROR</a>;</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_function" href="../../d8/d0b/_fireplace_base_8c.html#a6735f79aad084d7400dda52fcbb45b98">CalcAndSetQuantity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#gaf0a0748e044bd01fc3bb29aeba3b55e6">UA_CANCEL</a>;</div>
+<div class="line"><span class="lineno">   64</span>  }</div>
+<div class="ttc" id="a_fireplace_base_8c_html_a6735f79aad084d7400dda52fcbb45b98"><div class="ttname"><a href="../../d8/d0b/_fireplace_base_8c.html#a6735f79aad084d7400dda52fcbb45b98">CalcAndSetQuantity</a></div><div class="ttdeci">void CalcAndSetQuantity()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0b/_fireplace_base_8c_source.html#l02478">FireplaceBase.c:2478</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga27cc3557ea5e3394f26701d52a0ce245"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga27cc3557ea5e3394f26701d52a0ce245">UA_ERROR</a></div><div class="ttdeci">const int UA_ERROR</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00455">constants.c:455</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_gaf0a0748e044bd01fc3bb29aeba3b55e6"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#gaf0a0748e044bd01fc3bb29aeba3b55e6">UA_CANCEL</a></div><div class="ttdeci">const int UA_CANCEL</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00437">constants.c:437</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l02478">CalcAndSetQuantity()</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00437">UA_CANCEL</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00455">UA_ERROR</a>.</p>
 
 </div>
 </div>
@@ -258,6 +297,39 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00031">31</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>  {</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player)</div>
+<div class="line"><span class="lineno">   34</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga27cc3557ea5e3394f26701d52a0ce245">UA_ERROR</a>;</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>;</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject());</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetQuantity() &gt;= <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetQuantityMax() || <a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>.GetQuantity() == 0)</div>
+<div class="line"><span class="lineno">   38</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga1549e547ab5d53897a986482bf8fafe5">UA_FINISHED</a>;</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a> &lt; <a class="code hl_variable" href="#a78039b631085984660042fe4a31a958f">m_TargetUnits</a> &amp;&amp; <a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a> &lt; <a class="code hl_variable" href="#aa248863e73c3ffecc53f7629ce64f893">m_SourceQuantity</a>)</div>
+<div class="line"><span class="lineno">   42</span>      {</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a> += <a class="code hl_variable" href="#a88f4de26b6dd1728da8d8ac37fcaf13e">m_QuantityFilledPerSecond</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetDeltaT();</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">val</a> = <a class="code hl_variable" href="#a5686f55cd7463f0a588a220dd1de043e">m_ItemQuantity</a> - <a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a>;</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d00/class_c_a_base.html#a9a4879faa31ac2b9c34af97ea3d427af">m_Action</a>) <a class="code hl_variable" href="../../d0/d00/class_c_a_base.html#a9a4879faa31ac2b9c34af97ea3d427af">m_Action</a>.SendMessageToClient(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player, <a class="code hl_class" href="../../db/d06/class_param3.html">val</a>.ToString());</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#gaec2990f2dd7ed9f35d980856442b881b">UA_PROCESSING</a>;</div>
+<div class="line"><span class="lineno">   47</span>      }</div>
+<div class="line"><span class="lineno">   48</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   49</span>      {</div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_function" href="../../d8/d0b/_fireplace_base_8c.html#a6735f79aad084d7400dda52fcbb45b98">CalcAndSetQuantity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_function" href="../../dc/d0b/class_c_a_continuous_base.html#a0ed880c4a0919f099c2891277df04d26">OnCompletePogress</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga1549e547ab5d53897a986482bf8fafe5">UA_FINISHED</a>;</div>
+<div class="line"><span class="lineno">   53</span>      }</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="line"><span class="lineno">   55</span>  }</div>
+<div class="ttc" id="aclass_c_a_base_html_a9a4879faa31ac2b9c34af97ea3d427af"><div class="ttname"><a href="../../d0/d00/class_c_a_base.html#a9a4879faa31ac2b9c34af97ea3d427af">CABase::m_Action</a></div><div class="ttdeci">ActionBase m_Action</div><div class="ttdef"><b>Definition</b> <a href="../../db/d00/_c_a_base_8c_source.html#l00003">CABase.c:3</a></div></div>
+<div class="ttc" id="aclass_c_a_continuous_base_html_a0ed880c4a0919f099c2891277df04d26"><div class="ttname"><a href="../../dc/d0b/class_c_a_continuous_base.html#a0ed880c4a0919f099c2891277df04d26">CAContinuousBase::OnCompletePogress</a></div><div class="ttdeci">void OnCompletePogress(ActionData action_data)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d08/_c_a_continuous_base_8c_source.html#l00008">CAContinuousBase.c:8</a></div></div>
+<div class="ttc" id="aclass_c_a_continuous_transfer_quantity_html_a5686f55cd7463f0a588a220dd1de043e"><div class="ttname"><a href="#a5686f55cd7463f0a588a220dd1de043e">CAContinuousTransferQuantity::m_ItemQuantity</a></div><div class="ttdeci">float m_ItemQuantity</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00005">CAContinuousTransferQuantity.c:5</a></div></div>
+<div class="ttc" id="aclass_c_a_continuous_transfer_quantity_html_a78039b631085984660042fe4a31a958f"><div class="ttname"><a href="#a78039b631085984660042fe4a31a958f">CAContinuousTransferQuantity::m_TargetUnits</a></div><div class="ttdeci">float m_TargetUnits</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00003">CAContinuousTransferQuantity.c:3</a></div></div>
+<div class="ttc" id="aclass_c_a_continuous_transfer_quantity_html_aa248863e73c3ffecc53f7629ce64f893"><div class="ttname"><a href="#aa248863e73c3ffecc53f7629ce64f893">CAContinuousTransferQuantity::m_SourceQuantity</a></div><div class="ttdeci">float m_SourceQuantity</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00006">CAContinuousTransferQuantity.c:6</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga1549e547ab5d53897a986482bf8fafe5"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga1549e547ab5d53897a986482bf8fafe5">UA_FINISHED</a></div><div class="ttdeci">const int UA_FINISHED</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00436">constants.c:436</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_gaec2990f2dd7ed9f35d980856442b881b"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#gaec2990f2dd7ed9f35d980856442b881b">UA_PROCESSING</a></div><div class="ttdeci">const int UA_PROCESSING</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00434">constants.c:434</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l02478">CalcAndSetQuantity()</a>, <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../db/d00/_c_a_base_8c_source.html#l00003">CABase::m_Action</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00005">m_ItemQuantity</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00007">m_QuantityFilledPerSecond</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00006">m_SourceQuantity</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00004">m_SpentQuantity</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00003">m_TargetUnits</a>, <a class="el" href="../../d5/d08/_c_a_continuous_base_8c_source.html#l00008">CAContinuousBase::OnCompletePogress()</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00455">UA_ERROR</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00436">UA_FINISHED</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00434">UA_PROCESSING</a>.</p>
 
 </div>
 </div>
@@ -285,6 +357,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00066">66</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>  {</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">progress</a> = (<a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a> * <a class="code hl_variable" href="#a88f4de26b6dd1728da8d8ac37fcaf13e">m_QuantityFilledPerSecond</a>) / <a class="code hl_variable" href="#ade36a97f0efba89230c0fe805d8d1c0f">m_TimeToComplete</a>;</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a> * <a class="code hl_variable" href="#a88f4de26b6dd1728da8d8ac37fcaf13e">m_QuantityFilledPerSecond</a>) / <a class="code hl_variable" href="#ade36a97f0efba89230c0fe805d8d1c0f">m_TimeToComplete</a>;</div>
+<div class="line"><span class="lineno">   70</span>  }</div>
+<div class="ttc" id="aclass_c_a_continuous_transfer_quantity_html_ade36a97f0efba89230c0fe805d8d1c0f"><div class="ttname"><a href="#ade36a97f0efba89230c0fe805d8d1c0f">CAContinuousTransferQuantity::m_TimeToComplete</a></div><div class="ttdeci">float m_TimeToComplete</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00008">CAContinuousTransferQuantity.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00007">m_QuantityFilledPerSecond</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00004">m_SpentQuantity</a>, and <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00008">m_TimeToComplete</a>.</p>
 
 </div>
 </div>
@@ -312,6 +391,23 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00016">16</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="#a980438957599d4a23d6a03544c4bcc4b">m_SpentQuantity</a> = 0;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ae16d4656cb3d8b783cb5c9249f8007d3">m_SpentUnits</a>)</div>
+<div class="line"><span class="lineno">   20</span>      <a class="code hl_variable" href="#ae16d4656cb3d8b783cb5c9249f8007d3">m_SpentUnits</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;float&gt;</a>(0);</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   22</span>      <a class="code hl_variable" href="#ae16d4656cb3d8b783cb5c9249f8007d3">m_SpentUnits</a>.param1 = 0;</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="#a5686f55cd7463f0a588a220dd1de043e">m_ItemQuantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetQuantity();</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>;</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject()))</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_variable" href="#aa248863e73c3ffecc53f7629ce64f893">m_SourceQuantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">trg</a>.GetQuantity();</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="#a78039b631085984660042fe4a31a958f">m_TargetUnits</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetQuantityMax();</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#ade36a97f0efba89230c0fe805d8d1c0f">m_TimeToComplete</a> = (<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Min</a>((<a class="code hl_variable" href="#a78039b631085984660042fe4a31a958f">m_TargetUnits</a> - <a class="code hl_variable" href="#a5686f55cd7463f0a588a220dd1de043e">m_ItemQuantity</a>), <a class="code hl_variable" href="#aa248863e73c3ffecc53f7629ce64f893">m_SourceQuantity</a>)) / <a class="code hl_variable" href="#a88f4de26b6dd1728da8d8ac37fcaf13e">m_QuantityFilledPerSecond</a>;</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math_html_ga56eafa8f245b4dc543abbf857f1bc41a"><div class="ttname"><a href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Math::Min</a></div><div class="ttdeci">static proto float Min(float x, float y)</div><div class="ttdoc">Returns smaller of two given values.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00005">m_ItemQuantity</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00007">m_QuantityFilledPerSecond</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00006">m_SourceQuantity</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00004">m_SpentQuantity</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00009">m_SpentUnits</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00003">m_TargetUnits</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00008">m_TimeToComplete</a>, and <a class="el" href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Math::Min()</a>.</p>
 
 </div>
 </div>
@@ -338,6 +434,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00005">5</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00031">Execute()</a>, and <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00016">Setup()</a>.</p>
+
 </div>
 </div>
 <a id="a88f4de26b6dd1728da8d8ac37fcaf13e" name="a88f4de26b6dd1728da8d8ac37fcaf13e"></a>
@@ -361,6 +459,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00007">7</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00011">CAContinuousTransferQuantity()</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00031">Execute()</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00066">GetProgress()</a>, and <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00016">Setup()</a>.</p>
 
 </div>
 </div>
@@ -386,6 +486,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00006">6</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00031">Execute()</a>, and <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00016">Setup()</a>.</p>
+
 </div>
 </div>
 <a id="a980438957599d4a23d6a03544c4bcc4b" name="a980438957599d4a23d6a03544c4bcc4b"></a>
@@ -409,6 +511,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00004">4</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00073">CalcAndSetQuantity()</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00031">Execute()</a>, <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00066">GetProgress()</a>, and <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00016">Setup()</a>.</p>
 
 </div>
 </div>
@@ -434,6 +538,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00009">9</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00073">CalcAndSetQuantity()</a>, and <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00016">Setup()</a>.</p>
+
 </div>
 </div>
 <a id="a78039b631085984660042fe4a31a958f" name="a78039b631085984660042fe4a31a958f"></a>
@@ -458,6 +564,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00003">3</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00031">Execute()</a>, and <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00016">Setup()</a>.</p>
+
 </div>
 </div>
 <a id="ade36a97f0efba89230c0fe805d8d1c0f" name="ade36a97f0efba89230c0fe805d8d1c0f"></a>
@@ -481,6 +589,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00008">8</a> of file <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html">CAContinuousTransferQuantity.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00066">GetProgress()</a>, and <a class="el" href="../../da/d0e/_c_a_continuous_transfer_quantity_8c_source.html#l00016">Setup()</a>.</p>
 
 </div>
 </div>

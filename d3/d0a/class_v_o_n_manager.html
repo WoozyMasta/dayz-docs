@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -168,6 +165,16 @@ Static Private Attributes</h2></td></tr>
 <p>Uninitializes <a class="el" href="../../d3/d0a/class_v_o_n_manager.html" title="Manager class which handles Voice-over-network functionality while player is connected to a server.">VONManager</a>, runs when user disconnects from server. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00266">266</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>  {</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="#ab052cacf7fa50e767fc71255e1b0e04b">m_VONManager</a>;</div>
+<div class="line"><span class="lineno">  269</span>    <a class="code hl_variable" href="#ab052cacf7fa50e767fc71255e1b0e04b">m_VONManager</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../dd/d03/_v_o_n_manager_8c.html#aa3bb51e51a3b82da0eefd3a2f1ba9359">VONManagerBase</a>();</div>
+<div class="line"><span class="lineno">  270</span>  }</div>
+<div class="ttc" id="a_v_o_n_manager_8c_html_aa3bb51e51a3b82da0eefd3a2f1ba9359"><div class="ttname"><a href="../../dd/d03/_v_o_n_manager_8c.html#aa3bb51e51a3b82da0eefd3a2f1ba9359">VONManagerBase</a></div><div class="ttdeci">void VONManagerBase()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00031">VONManager.c:31</a></div></div>
+<div class="ttc" id="aclass_v_o_n_manager_html_ab052cacf7fa50e767fc71255e1b0e04b"><div class="ttname"><a href="#ab052cacf7fa50e767fc71255e1b0e04b">VONManager::m_VONManager</a></div><div class="ttdeci">static ref VONManagerBase m_VONManager</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00243">VONManager.c:243</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00243">m_VONManager</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00031">VONManagerBase()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0e/_global_2game_8c_source.html#l00062">CGame::~CGame()</a>.</p>
 
 </div>
 </div>
@@ -198,6 +205,13 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>Instance</code> of VONManagerImplementation if logged on to server, or <a class="el" href="../../df/d0a/class_v_o_n_manager_base.html">VONManagerBase</a> otherwise </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00249">249</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab052cacf7fa50e767fc71255e1b0e04b">m_VONManager</a>;</div>
+<div class="line"><span class="lineno">  252</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00243">m_VONManager</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l01359">CGame::OnEvent()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l00233">MissionBase::OnUpdate()</a>, and <a class="el" href="../../db/d0d/_options_menu_sounds_8c_source.html#l00036">ScriptedWidgetEventHandler::OptionsMenuSounds()</a>.</p>
 
 </div>
 </div>
@@ -227,6 +241,15 @@ Static Private Attributes</h2></td></tr>
 <p>Initializes <a class="el" href="../../d3/d0a/class_v_o_n_manager.html" title="Manager class which handles Voice-over-network functionality while player is connected to a server.">VONManager</a>, runs when user first connects to a server. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00257">257</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  258</span>  {</div>
+<div class="line"><span class="lineno">  259</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="#ab052cacf7fa50e767fc71255e1b0e04b">m_VONManager</a>;</div>
+<div class="line"><span class="lineno">  260</span>    <a class="code hl_variable" href="#ab052cacf7fa50e767fc71255e1b0e04b">m_VONManager</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../dd/d03/_v_o_n_manager_8c.html#a49bfeeb79e0404b0d5eaabae24c6a068">VONManagerImplementation</a>();</div>
+<div class="line"><span class="lineno">  261</span>  }</div>
+<div class="ttc" id="a_v_o_n_manager_8c_html_a49bfeeb79e0404b0d5eaabae24c6a068"><div class="ttname"><a href="../../dd/d03/_v_o_n_manager_8c.html#a49bfeeb79e0404b0d5eaabae24c6a068">VONManagerImplementation</a></div><div class="ttdeci">VONManagerBase Managed VONManagerImplementation()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00001">VONManager.c:26</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00243">m_VONManager</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00026">VONManagerImplementation()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0e/_global_2game_8c_source.html#l00033">CGame::CGame()</a>.</p>
 
 </div>
 </div>
@@ -257,6 +280,23 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>True</code> if threshold minimum, false otherwise </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00285">285</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  286</span>  {</div>
+<div class="line"><span class="lineno">  287</span>    <a class="code hl_class" href="../../da/d05/class_game_options.html">GameOptions</a> <a class="code hl_class" href="../../db/d06/class_param3.html">gameOptions</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../da/d05/class_game_options.html">GameOptions</a>();</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">NumericOptionsAccess</a> <a class="code hl_class" href="../../db/d06/class_param3.html">noa</a>;</div>
+<div class="line"><span class="lineno">  289</span>    <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">noa</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">gameOptions</a>.GetOptionByType(<a class="code hl_enumeration" href="../../d8/d08/gameplay_8c.html#af194843dc9b5d57ac6353cfb09cee131">OptionAccessType</a>.AT_OPTIONS_VON_THRESHOLD_SLIDER));</div>
+<div class="line"><span class="lineno">  290</span> </div>
+<div class="line"><span class="lineno">  291</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">noa</a>.ReadValue() &lt;= <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetSoundScene().GetSilenceThreshold();</div>
+<div class="line"><span class="lineno">  292</span>  }</div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_game_options_html"><div class="ttname"><a href="../../da/d05/class_game_options.html">GameOptions</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l01400">gameplay.c:1401</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agameplay_8c_html_af194843dc9b5d57ac6353cfb09cee131"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#af194843dc9b5d57ac6353cfb09cee131">OptionAccessType</a></div><div class="ttdeci">OptionAccessType</div><div class="ttdoc">C++ OptionAccessType.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l01181">gameplay.c:1182</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, and <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00167">OnEvent()</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00133">UpdateVoiceIcon()</a>.</p>
 
 </div>
 </div>
@@ -287,6 +327,11 @@ Static Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>True</code> if in Voice Activation mode, False if in Push-to-Talk mode </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00276">276</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  277</span>  {</div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab052cacf7fa50e767fc71255e1b0e04b">m_VONManager</a>.IsVonToggled();</div>
+<div class="line"><span class="lineno">  279</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00243">m_VONManager</a>.</p>
 
 </div>
 </div>
@@ -312,6 +357,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00243">243</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00266">CleanupInstance()</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00249">GetInstance()</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00257">Init()</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00276">IsVONToggled()</a>.</p>
 
 </div>
 </div>

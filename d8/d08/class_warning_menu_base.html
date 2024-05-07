@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -2128,6 +2125,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00006">6</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>  {</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">    9</span>    {</div>
+<div class="line"><span class="lineno">   10</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">   11</span> </div>
+<div class="line"><span class="lineno">   12</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   13</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   14</span>    }</div>
+<div class="line"><span class="lineno">   15</span>  }</div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -2155,6 +2164,22 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00017">17</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>  {</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   24</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a44609cd2031d23372d23cb2b814b08c9">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">   27</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a7c9bd3b6431db065f69f83b695e0c795">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="aclass_warning_menu_base_html_a44609cd2031d23372d23cb2b814b08c9"><div class="ttname"><a href="#a44609cd2031d23372d23cb2b814b08c9">WarningMenuBase::OnInputPresetChanged</a></div><div class="ttdeci">void OnInputPresetChanged()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00080">ItemDropWarningMenu.c:80</a></div></div>
+<div class="ttc" id="aclass_warning_menu_base_html_a7c9bd3b6431db065f69f83b695e0c795"><div class="ttname"><a href="#a7c9bd3b6431db065f69f83b695e0c795">WarningMenuBase::OnInputDeviceChanged</a></div><div class="ttdeci">void OnInputDeviceChanged(EInputDeviceType pInputDeviceType)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00087">ItemDropWarningMenu.c:87</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00087">OnInputDeviceChanged()</a>, and <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00080">OnInputPresetChanged()</a>.</p>
 
 </div>
 </div>
@@ -2183,6 +2208,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00052">52</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>  {</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   55</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00031">Init()</a>.</p>
 
 </div>
 </div>
@@ -2210,6 +2240,33 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00031">31</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>  {</div>
+<div class="line"><span class="lineno">   33</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="#adbb026789385a732fa594b7d52d07af9">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="#a779fee722fca04de10d84265c4f2c70f">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="#a779fee722fca04de10d84265c4f2c70f">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#ace34fcc2ee1b5150bffcbb22f0feacf5">GetText</a>());</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="#a779fee722fca04de10d84265c4f2c70f">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a44609cd2031d23372d23cb2b814b08c9">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">   44</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a7c9bd3b6431db065f69f83b695e0c795">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_function" href="#a7c9bd3b6431db065f69f83b695e0c795">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a95221c1a0eabcad6044d1c11a1f4488c"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a></div><div class="ttdeci">ActionInput GetInput()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00989">ActionBase.c:989</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_warning_menu_base_html_a779fee722fca04de10d84265c4f2c70f"><div class="ttname"><a href="#a779fee722fca04de10d84265c4f2c70f">WarningMenuBase::m_Description</a></div><div class="ttdeci">MultilineTextWidget m_Description</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00004">ItemDropWarningMenu.c:4</a></div></div>
+<div class="ttc" id="aclass_warning_menu_base_html_ace34fcc2ee1b5150bffcbb22f0feacf5"><div class="ttname"><a href="#ace34fcc2ee1b5150bffcbb22f0feacf5">WarningMenuBase::GetText</a></div><div class="ttdeci">string GetText()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00052">ItemDropWarningMenu.c:52</a></div></div>
+<div class="ttc" id="aclass_warning_menu_base_html_adbb026789385a732fa594b7d52d07af9"><div class="ttname"><a href="#adbb026789385a732fa594b7d52d07af9">WarningMenuBase::m_OkButton</a></div><div class="ttdeci">ButtonWidget m_OkButton</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00003">ItemDropWarningMenu.c:3</a></div></div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="../../dd/d0a/class_widget.html">Widget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00189">EnWidgets.c:190</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00989">GetInput()</a>, <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00052">GetText()</a>, <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00004">m_Description</a>, <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00003">m_OkButton</a>, <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00087">OnInputDeviceChanged()</a>, and <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00080">OnInputPresetChanged()</a>.</p>
 
 </div>
 </div>
@@ -2251,6 +2308,23 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00057">57</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>  {</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="a_icon_8c_html_acd41c12fe81446bff0920670641367de"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a></div><div class="ttdeci">Icon y</div></div>
+<div class="ttc" id="a_item_base_8c_html_a604074e02bcee1dc8a5ab6bdbd2e2e84"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a></div><div class="ttdeci">void Close()</div></div>
+<div class="ttc" id="agroup___u_i_html_gafd2ff576b89077f07ebac93270f2e24f"><div class="ttname"><a href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a></div><div class="ttdeci">const int IDC_OK</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00127">constants.c:127</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close()</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00127">IDC_OK</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -2278,6 +2352,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00087">87</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>  {</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="#ae0516e7a03c95b3212008beb7f67d669">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_function" href="#ae7a394c593bca9d6badf9bc0640e877b">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">   91</span>  }</div>
+<div class="ttc" id="aclass_warning_menu_base_html_ae0516e7a03c95b3212008beb7f67d669"><div class="ttname"><a href="#ae0516e7a03c95b3212008beb7f67d669">WarningMenuBase::UpdateControlsElements</a></div><div class="ttdeci">void UpdateControlsElements()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00093">ItemDropWarningMenu.c:93</a></div></div>
+<div class="ttc" id="aclass_warning_menu_base_html_ae7a394c593bca9d6badf9bc0640e877b"><div class="ttname"><a href="#ae7a394c593bca9d6badf9bc0640e877b">WarningMenuBase::UpdateControlsElementVisibility</a></div><div class="ttdeci">void UpdateControlsElementVisibility()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00101">ItemDropWarningMenu.c:101</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00093">UpdateControlsElements()</a>, and <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00101">UpdateControlsElementVisibility()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00031">Init()</a>, and <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00017">~WarningMenuBase()</a>.</p>
 
 </div>
 </div>
@@ -2305,6 +2389,15 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00080">80</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>  {</div>
+<div class="line"><span class="lineno">   82</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_function" href="#ae0516e7a03c95b3212008beb7f67d669">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">   84</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00093">UpdateControlsElements()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00031">Init()</a>, and <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00017">~WarningMenuBase()</a>.</p>
 
 </div>
 </div>
@@ -2332,6 +2425,17 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00070">70</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>  {</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   78</span>  }</div>
+<div class="ttc" id="a_u_a_input_8c_html_a616105f49c02ce570dbb5acb4b9b17f8"><div class="ttname"><a href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a></div><div class="ttdeci">proto native UAInputAPI GetUApi()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close()</a>, and <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>.</p>
 
 </div>
 </div>
@@ -2359,6 +2463,20 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00093">93</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>  {</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">   99</span>  }</div>
+<div class="ttc" id="aclass_input_utils_html"><div class="ttname"><a href="../../d8/d01/class_input_utils.html">InputUtils</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00001">InputUtils.c:2</a></div></div>
+<div class="ttc" id="aclass_input_utils_html_a795ff30103ebb2fae58995e90a07c589"><div class="ttname"><a href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">InputUtils::GetRichtextButtonIconFromInputAction</a></div><div class="ttdeci">static string GetRichtextButtonIconFromInputAction(notnull UAInput pInput, string pLocalizedDescription, int pInputDeviceType=EUAINPUT_DEVICE_CONTROLLER, float pScale=ICON_SCALE_NORMAL, bool pVertical=false)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00151">InputUtils.c:151</a></div></div>
+<div class="ttc" id="aclass_input_utils_html_ab6346bb500d2d731181d0eec5ca345a1"><div class="ttname"><a href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">InputUtils::ICON_SCALE_TOOLBAR</a></div><div class="ttdeci">static const float ICON_SCALE_TOOLBAR</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00015">InputUtils.c:15</a></div></div>
+<div class="ttc" id="aclass_rich_text_widget_html"><div class="ttname"><a href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00313">gameplay.c:314</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00151">InputUtils::GetRichtextButtonIconFromInputAction()</a>, and <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00015">InputUtils::ICON_SCALE_TOOLBAR</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00087">OnInputDeviceChanged()</a>, and <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00080">OnInputPresetChanged()</a>.</p>
 
 </div>
 </div>
@@ -2386,6 +2504,20 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00101">101</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>  {</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  104</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  106</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_variable" href="#adbb026789385a732fa594b7d52d07af9">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  110</span>  }</div>
+<div class="ttc" id="ainput_8c_html_a541a84e06cfb332b5f5d061c2dba4d86"><div class="ttname"><a href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a></div><div class="ttdeci">EInputDeviceType</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d06/input_8c_source.html#l00002">input.c:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00003">m_OkButton</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00087">OnInputDeviceChanged()</a>.</p>
 
 </div>
 </div>
@@ -2412,6 +2544,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00004">4</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00031">Init()</a>.</p>
+
 </div>
 </div>
 <a id="adbb026789385a732fa594b7d52d07af9" name="adbb026789385a732fa594b7d52d07af9"></a>
@@ -2435,6 +2569,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00003">3</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00031">Init()</a>, and <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00101">UpdateControlsElementVisibility()</a>.</p>
 
 </div>
 </div>

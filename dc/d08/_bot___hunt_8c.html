@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -139,6 +136,69 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d08/_bot___hunt_8c_source.html#l00191">191</a> of file <a class="el" href="../../dc/d08/_bot___hunt_8c_source.html">Bot_Hunt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>{</div>
+<div class="line"><span class="lineno">  193</span>  <span class="comment">/*ref array&lt;Man&gt; players = new array&lt;Man&gt;;</span></div>
+<div class="line"><span class="lineno">  194</span><span class="comment">    g_Game.GetWorld().GetPlayerList( players );</span></div>
+<div class="line"><span class="lineno">  195</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  196</span><span class="comment">    bool minimal_distance_ok = true;</span></div>
+<div class="line"><span class="lineno">  197</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  198</span><span class="comment">    float min_dist = 1234567.0;</span></div>
+<div class="line"><span class="lineno">  199</span><span class="comment">    int min_index = -1;</span></div>
+<div class="line"><span class="lineno">  200</span><span class="comment">    for ( int i = 0; i &lt; players.Count(); i++ )</span></div>
+<div class="line"><span class="lineno">  201</span><span class="comment">    {</span></div>
+<div class="line"><span class="lineno">  202</span><span class="comment">    float d = vector.Distance(players.Get(i).GetPosition(), bot.GetPosition());</span></div>
+<div class="line"><span class="lineno">  203</span><span class="comment">    if ( d &lt; min_dist )</span></div>
+<div class="line"><span class="lineno">  204</span><span class="comment">    {</span></div>
+<div class="line"><span class="lineno">  205</span><span class="comment">      min_dist = d;</span></div>
+<div class="line"><span class="lineno">  206</span><span class="comment">      min_index = i;</span></div>
+<div class="line"><span class="lineno">  207</span><span class="comment">    }</span></div>
+<div class="line"><span class="lineno">  208</span><span class="comment">    }</span></div>
+<div class="line"><span class="lineno">  209</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  210</span><span class="comment">    if (min_index != -1)</span></div>
+<div class="line"><span class="lineno">  211</span><span class="comment">    return players.Get(min_index);</span></div>
+<div class="line"><span class="lineno">  212</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  213</span><span class="comment">    return null;*/</span></div>
+<div class="line"><span class="lineno">  214</span>  <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> pos = <a class="code hl_class" href="../../db/d06/class_param3.html">bot</a>.GetPosition();</div>
+<div class="line"><span class="lineno">  215</span>  <span class="comment">//vector dir = player.GetDirection();</span></div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>  <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;Object&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">objects</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;Object&gt;</a>;</div>
+<div class="line"><span class="lineno">  218</span>  <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;CargoBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">proxyCargos</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;CargoBase&gt;</a>;</div>
+<div class="line"><span class="lineno">  219</span>  <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetObjectsAtPosition(pos, 100.0, <a class="code hl_class" href="../../db/d06/class_param3.html">objects</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">proxyCargos</a>);</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>  <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">min_dist</a> = 1234567.0;</div>
+<div class="line"><span class="lineno">  222</span>  <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">min_index</a> = -1;</div>
+<div class="line"><span class="lineno">  223</span>  <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">c</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">objects</a>.Count();</div>
+<div class="line"><span class="lineno">  224</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">c</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  225</span>  {</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a> <a class="code hl_class" href="../../db/d06/class_param3.html">o</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">objects</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>];</div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">o</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">bot</a>)</div>
+<div class="line"><span class="lineno">  228</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">d</a> = <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">Distance</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">o</a>.GetPosition(), <a class="code hl_class" href="../../db/d06/class_param3.html">bot</a>.GetPosition());</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">d</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">min_dist</a>)</div>
+<div class="line"><span class="lineno">  232</span>    {</div>
+<div class="line"><span class="lineno">  233</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">min_dist</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">d</a>;</div>
+<div class="line"><span class="lineno">  234</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">min_index</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>;</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
+<div class="line"><span class="lineno">  236</span>  }</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">min_index</a> != -1)</div>
+<div class="line"><span class="lineno">  239</span>  {</div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_function" href="../../d9/d0c/_bot_8c.html#a2cc868d5ca0b15d073aac0daefb7dfeb">botDebugPrint</a>(<span class="stringliteral">&quot;[bot] + &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">bot</a> + <span class="stringliteral">&quot; BotSelectNearestTarget idx=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">min_index</a> + <span class="stringliteral">&quot; dist=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">min_dist</a> + <span class="stringliteral">&quot; obj=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">o</a>);</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">return</span> Man.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">objects</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">min_index</a>));</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+<div class="line"><span class="lineno">  243</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  244</span>}</div>
+<div class="ttc" id="a_bot_8c_html_a2cc868d5ca0b15d073aac0daefb7dfeb"><div class="ttname"><a href="../../d9/d0c/_bot_8c.html#a2cc868d5ca0b15d073aac0daefb7dfeb">botDebugPrint</a></div><div class="ttdeci">void botDebugPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0c/_bot_8c_source.html#l00182">Bot.c:182</a></div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="aclassvector_html_aad57f4c847a6ad08cf88f390961dd2db"><div class="ttname"><a href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">vector::Distance</a></div><div class="ttdeci">static proto native float Distance(vector v1, vector v2)</div><div class="ttdoc">Returns the distance between tips of two 3D vectors.</div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0c/_bot_8c_source.html#l00182">botDebugPrint()</a>, <a class="el" href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">vector::Distance()</a>, and <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d08/_bot___hunt_8c_source.html#l00042">BotStateBase::SelectTarget()</a>.</p>
 
 </div>
 </div>

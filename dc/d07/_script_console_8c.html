@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -182,6 +179,52 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00493">493</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  494</span>  {</div>
+<div class="line"><span class="lineno">  495</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>)</div>
+<div class="line"><span class="lineno">  496</span>    {</div>
+<div class="line"><span class="lineno">  497</span>      <a class="code hl_variable" href="#ad7fef7345c89f53e476bd52d21a70fdc">m_HintWidgetRoot</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/script_console/script_console_hint.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  498</span>      <a class="code hl_variable" href="#a2513aac4525a572828df77bcc7a5d9fb">m_HintWidgetBackground</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ImageWidget</a>.Cast(<a class="code hl_variable" href="#ad7fef7345c89f53e476bd52d21a70fdc">m_HintWidgetRoot</a>.FindAnyWidget(<span class="stringliteral">&quot;Background&quot;</span>));</div>
+<div class="line"><span class="lineno">  499</span>      <a class="code hl_variable" href="#a8211d3db6608c70fc77414ddd24dacd7">m_HintWidget</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(<a class="code hl_variable" href="#ad7fef7345c89f53e476bd52d21a70fdc">m_HintWidgetRoot</a>.FindAnyWidget(<span class="stringliteral">&quot;HintText&quot;</span>));</div>
+<div class="line"><span class="lineno">  500</span> </div>
+<div class="line"><span class="lineno">  501</span>      <a class="code hl_variable" href="#ad7fef7345c89f53e476bd52d21a70fdc">m_HintWidgetRoot</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  502</span>      <a class="code hl_variable" href="#a8211d3db6608c70fc77414ddd24dacd7">m_HintWidget</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>);</div>
+<div class="line"><span class="lineno">  503</span> </div>
+<div class="line"><span class="lineno">  504</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">offsetX</a> = 0;</div>
+<div class="line"><span class="lineno">  505</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">offsetY</a> = 10;</div>
+<div class="line"><span class="lineno">  506</span> </div>
+<div class="line"><span class="lineno">  507</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">screenW</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">screenH</a>;</div>
+<div class="line"><span class="lineno">  508</span>      <a class="code hl_function" href="../../d7/d00/group___mouse.html#gad57993cbd18397876d8225455d414260">GetScreenSize</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">screenW</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">screenH</a>);</div>
+<div class="line"><span class="lineno">  509</span> </div>
+<div class="line"><span class="lineno">  510</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mouseX</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mouseY</a>;</div>
+<div class="line"><span class="lineno">  511</span>      <a class="code hl_function" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">mouseX</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mouseY</a>);</div>
+<div class="line"><span class="lineno">  512</span> </div>
+<div class="line"><span class="lineno">  513</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">relativeX</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">mouseX</a> / <a class="code hl_class" href="../../db/d06/class_param3.html">screenW</a>;</div>
+<div class="line"><span class="lineno">  514</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">relativeY</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">mouseY</a> / <a class="code hl_class" href="../../db/d06/class_param3.html">screenH</a>;</div>
+<div class="line"><span class="lineno">  515</span> </div>
+<div class="line"><span class="lineno">  516</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">width</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">height</a>;</div>
+<div class="line"><span class="lineno">  517</span>      <a class="code hl_variable" href="#a8211d3db6608c70fc77414ddd24dacd7">m_HintWidget</a>.GetTextSize(<a class="code hl_class" href="../../db/d06/class_param3.html">width</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">height</a>);</div>
+<div class="line"><span class="lineno">  518</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">relativeX</a> &gt; 0.8)</div>
+<div class="line"><span class="lineno">  519</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">offsetX</a> = -<a class="code hl_class" href="../../db/d06/class_param3.html">width</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">offsetX</a>;</div>
+<div class="line"><span class="lineno">  520</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">relativeY</a> &gt; 0.8)</div>
+<div class="line"><span class="lineno">  521</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">offsetY</a> = -<a class="code hl_class" href="../../db/d06/class_param3.html">height</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">offsetY</a>;</div>
+<div class="line"><span class="lineno">  522</span> </div>
+<div class="line"><span class="lineno">  523</span>      <a class="code hl_variable" href="#ad7fef7345c89f53e476bd52d21a70fdc">m_HintWidgetRoot</a>.SetPos(<a class="code hl_class" href="../../db/d06/class_param3.html">mouseX</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">offsetX</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mouseY</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">offsetY</a>);</div>
+<div class="line"><span class="lineno">  524</span>      <a class="code hl_variable" href="#a2513aac4525a572828df77bcc7a5d9fb">m_HintWidgetBackground</a>.SetScreenSize(<a class="code hl_class" href="../../db/d06/class_param3.html">width</a> + 5, <a class="code hl_class" href="../../db/d06/class_param3.html">height</a> + 5);</div>
+<div class="line"><span class="lineno">  525</span> </div>
+<div class="line"><span class="lineno">  526</span>    }</div>
+<div class="line"><span class="lineno">  527</span>  }</div>
+<div class="ttc" id="a_script_console_8c_html_a2513aac4525a572828df77bcc7a5d9fb"><div class="ttname"><a href="#a2513aac4525a572828df77bcc7a5d9fb">m_HintWidgetBackground</a></div><div class="ttdeci">ImageWidget m_HintWidgetBackground</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00453">ScriptConsole.c:453</a></div></div>
+<div class="ttc" id="a_script_console_8c_html_a8211d3db6608c70fc77414ddd24dacd7"><div class="ttname"><a href="#a8211d3db6608c70fc77414ddd24dacd7">m_HintWidget</a></div><div class="ttdeci">RichTextWidget m_HintWidget</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00454">ScriptConsole.c:454</a></div></div>
+<div class="ttc" id="a_script_console_8c_html_ad7fef7345c89f53e476bd52d21a70fdc"><div class="ttname"><a href="#ad7fef7345c89f53e476bd52d21a70fdc">m_HintWidgetRoot</a></div><div class="ttdeci">Widget m_HintWidgetRoot</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00452">ScriptConsole.c:452</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_rich_text_widget_html"><div class="ttname"><a href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00313">gameplay.c:314</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___mouse_html_gad57993cbd18397876d8225455d414260"><div class="ttname"><a href="../../d7/d00/group___mouse.html#gad57993cbd18397876d8225455d414260">GetScreenSize</a></div><div class="ttdeci">proto void GetScreenSize(out int x, out int y)</div></div>
+<div class="ttc" id="agroup___mouse_html_gaf2e4a5118e1e02f8cded38993c713be8"><div class="ttname"><a href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos</a></div><div class="ttdeci">proto void GetMousePos(out int x, out int y)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos()</a>, <a class="el" href="../../d7/d00/group___mouse.html#gad57993cbd18397876d8225455d414260">GetScreenSize()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00454">m_HintWidget</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00453">m_HintWidgetBackground</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00452">m_HintWidgetRoot</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00541">HoverSuccess()</a>.</p>
 
 </div>
 </div>
@@ -209,6 +252,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00536">536</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  537</span>  {</div>
+<div class="line"><span class="lineno">  538</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a9450153384ebaa33ac10e464fc8a6ee0">HintMessage</a>;</div>
+<div class="line"><span class="lineno">  539</span>  }</div>
+<div class="ttc" id="a_script_console_8c_html_a9450153384ebaa33ac10e464fc8a6ee0"><div class="ttname"><a href="#a9450153384ebaa33ac10e464fc8a6ee0">HintMessage</a></div><div class="ttdeci">class ScriptConsole extends UIScriptedMenu HintMessage</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a9450153384ebaa33ac10e464fc8a6ee0">HintMessage</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00541">HoverSuccess()</a>.</p>
 
 </div>
 </div>
@@ -236,6 +287,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00529">529</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  530</span>  {</div>
+<div class="line"><span class="lineno">  531</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad7fef7345c89f53e476bd52d21a70fdc">m_HintWidgetRoot</a>)</div>
+<div class="line"><span class="lineno">  532</span>      <a class="code hl_variable" href="#ad7fef7345c89f53e476bd52d21a70fdc">m_HintWidgetRoot</a>.Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  533</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00452">m_HintWidgetRoot</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00547">HoverInterrupt()</a>.</p>
 
 </div>
 </div>
@@ -263,6 +322,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00547">547</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  548</span>  {</div>
+<div class="line"><span class="lineno">  549</span>    <a class="code hl_variable" href="#ade208a99b4d0ba9d762ce532f7e5d709">m_Timer</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  550</span>    <a class="code hl_variable" href="#ab8edf9c574c6f549e6414c30a77c3c0f">m_HoverSuccessTriggered</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  551</span>    <a class="code hl_variable" href="#a4d803b4bd468f5f437b6bbe9b96e1f2b">m_CurrentHoverWidget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  552</span>    <a class="code hl_variable" href="#a5a945642f839376f3a767738776ffd56">m_HoverTime</a> = 0;</div>
+<div class="line"><span class="lineno">  553</span>    <a class="code hl_function" href="#aed6d7191517dc9edd5acfb406e067e18">HideHint</a>();</div>
+<div class="line"><span class="lineno">  554</span>  }</div>
+<div class="ttc" id="a_script_console_8c_html_a4d803b4bd468f5f437b6bbe9b96e1f2b"><div class="ttname"><a href="#a4d803b4bd468f5f437b6bbe9b96e1f2b">m_CurrentHoverWidget</a></div><div class="ttdeci">Widget m_CurrentHoverWidget</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00451">ScriptConsole.c:451</a></div></div>
+<div class="ttc" id="a_script_console_8c_html_a5a945642f839376f3a767738776ffd56"><div class="ttname"><a href="#a5a945642f839376f3a767738776ffd56">m_HoverTime</a></div><div class="ttdeci">float m_HoverTime</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00449">ScriptConsole.c:449</a></div></div>
+<div class="ttc" id="a_script_console_8c_html_ab8edf9c574c6f549e6414c30a77c3c0f"><div class="ttname"><a href="#ab8edf9c574c6f549e6414c30a77c3c0f">m_HoverSuccessTriggered</a></div><div class="ttdeci">bool m_HoverSuccessTriggered</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00450">ScriptConsole.c:450</a></div></div>
+<div class="ttc" id="a_script_console_8c_html_ade208a99b4d0ba9d762ce532f7e5d709"><div class="ttname"><a href="#ade208a99b4d0ba9d762ce532f7e5d709">m_Timer</a></div><div class="ttdeci">ref Timer m_Timer</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00456">ScriptConsole.c:456</a></div></div>
+<div class="ttc" id="a_script_console_8c_html_aed6d7191517dc9edd5acfb406e067e18"><div class="ttname"><a href="#aed6d7191517dc9edd5acfb406e067e18">HideHint</a></div><div class="ttdeci">void HideHint()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00529">ScriptConsole.c:529</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00529">HideHint()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00451">m_CurrentHoverWidget</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00450">m_HoverSuccessTriggered</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00449">m_HoverTime</a>, and <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00675">m_Timer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00474">OnMouseLeave()</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00480">Tick()</a>.</p>
 
 </div>
 </div>
@@ -290,6 +365,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00541">541</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  542</span>  {</div>
+<div class="line"><span class="lineno">  543</span>    <a class="code hl_variable" href="#ab8edf9c574c6f549e6414c30a77c3c0f">m_HoverSuccessTriggered</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  544</span>    <a class="code hl_function" href="#ae1128432c8e1b2bcd65ea9d7718ab867">DisplayHint</a>(<a class="code hl_function" href="#a2596177e2cd8935d00bad6da67210a42">GetMessage</a>());</div>
+<div class="line"><span class="lineno">  545</span>  }</div>
+<div class="ttc" id="a_script_console_8c_html_a2596177e2cd8935d00bad6da67210a42"><div class="ttname"><a href="#a2596177e2cd8935d00bad6da67210a42">GetMessage</a></div><div class="ttdeci">string GetMessage()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00536">ScriptConsole.c:536</a></div></div>
+<div class="ttc" id="a_script_console_8c_html_ae1128432c8e1b2bcd65ea9d7718ab867"><div class="ttname"><a href="#ae1128432c8e1b2bcd65ea9d7718ab867">DisplayHint</a></div><div class="ttdeci">void DisplayHint(string message)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00493">ScriptConsole.c:493</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00493">DisplayHint()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00536">GetMessage()</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00450">m_HoverSuccessTriggered</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00480">Tick()</a>.</p>
 
 </div>
 </div>
@@ -326,6 +411,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00465">465</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  466</span>  {</div>
+<div class="line"><span class="lineno">  467</span>    <a class="code hl_variable" href="#ade208a99b4d0ba9d762ce532f7e5d709">m_Timer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d08/class_timer.html">Timer</a>();</div>
+<div class="line"><span class="lineno">  468</span>    <a class="code hl_variable" href="#ade208a99b4d0ba9d762ce532f7e5d709">m_Timer</a>.Run(0.1, <span class="keyword">this</span>, <span class="stringliteral">&quot;Tick&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  469</span> </div>
+<div class="line"><span class="lineno">  470</span>    <a class="code hl_variable" href="#a4d803b4bd468f5f437b6bbe9b96e1f2b">m_CurrentHoverWidget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>;</div>
+<div class="line"><span class="lineno">  471</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  472</span>  }</div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="../../d8/d08/class_timer.html">Timer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d02/_day_z_player_implement_8c_source.html#l00060">DayZPlayerImplement.c:61</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00451">m_CurrentHoverWidget</a>, and <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00675">m_Timer</a>.</p>
 
 </div>
 </div>
@@ -367,6 +462,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00474">474</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  475</span>  {</div>
+<div class="line"><span class="lineno">  476</span>    <a class="code hl_function" href="#ab250b85a8ae87e518912f09551a2893a">HoverInterrupt</a>();</div>
+<div class="line"><span class="lineno">  477</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  478</span>  }</div>
+<div class="ttc" id="a_script_console_8c_html_ab250b85a8ae87e518912f09551a2893a"><div class="ttname"><a href="#ab250b85a8ae87e518912f09551a2893a">HoverInterrupt</a></div><div class="ttdeci">void HoverInterrupt()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00547">ScriptConsole.c:547</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00547">HoverInterrupt()</a>.</p>
 
 </div>
 </div>
@@ -394,6 +496,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00458">458</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  459</span>  {</div>
+<div class="line"><span class="lineno">  460</span>    <a class="code hl_variable" href="#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>;</div>
+<div class="line"><span class="lineno">  461</span>    <a class="code hl_variable" href="#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a>.SetHandler(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  462</span>    <a class="code hl_variable" href="#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a>.SetFlags(<a class="code hl_enumeration" href="../../d9/d0e/group___widget_a_p_i.html#ga22177e6e3358b5dae620056212478a75">WidgetFlags</a>.VEXACTPOS);</div>
+<div class="line"><span class="lineno">  463</span>  }</div>
+<div class="ttc" id="a_script_console_8c_html_a0ec6f740a6dab4d3340b0bb999c23a28"><div class="ttname"><a href="#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a></div><div class="ttdeci">Widget m_Root</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00446">ScriptConsole.c:446</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga22177e6e3358b5dae620056212478a75"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga22177e6e3358b5dae620056212478a75">WidgetFlags</a></div><div class="ttdeci">WidgetFlags</div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00057">EnWidgets.c:58</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00085">m_Root</a>.</p>
 
 </div>
 </div>
@@ -421,6 +532,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00480">480</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  481</span>  {</div>
+<div class="line"><span class="lineno">  482</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a>.IsVisibleHierarchy())</div>
+<div class="line"><span class="lineno">  483</span>      <a class="code hl_function" href="#ab250b85a8ae87e518912f09551a2893a">HoverInterrupt</a>();</div>
+<div class="line"><span class="lineno">  484</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4d803b4bd468f5f437b6bbe9b96e1f2b">m_CurrentHoverWidget</a> &amp;&amp; !<a class="code hl_variable" href="#ab8edf9c574c6f549e6414c30a77c3c0f">m_HoverSuccessTriggered</a>)</div>
+<div class="line"><span class="lineno">  485</span>    {</div>
+<div class="line"><span class="lineno">  486</span>      <a class="code hl_variable" href="#a5a945642f839376f3a767738776ffd56">m_HoverTime</a> += 0.1;</div>
+<div class="line"><span class="lineno">  487</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a5a945642f839376f3a767738776ffd56">m_HoverTime</a> &gt; 1)</div>
+<div class="line"><span class="lineno">  488</span>        <a class="code hl_function" href="#a6d52b0b3392496db882431947ba0c94c">HoverSuccess</a>();</div>
+<div class="line"><span class="lineno">  489</span>    }</div>
+<div class="line"><span class="lineno">  490</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  491</span>  }</div>
+<div class="ttc" id="a_script_console_8c_html_a6d52b0b3392496db882431947ba0c94c"><div class="ttname"><a href="#a6d52b0b3392496db882431947ba0c94c">HoverSuccess</a></div><div class="ttdeci">void HoverSuccess()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_script_console_8c_source.html#l00541">ScriptConsole.c:541</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00547">HoverInterrupt()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00541">HoverSuccess()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00451">m_CurrentHoverWidget</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00450">m_HoverSuccessTriggered</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00449">m_HoverTime</a>, and <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00085">m_Root</a>.</p>
 
 </div>
 </div>
@@ -436,6 +561,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00536">GetMessage()</a>.</p>
 
 </div>
 </div>
@@ -461,6 +588,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00451">451</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00172">UIScriptedMenu::GetMessage()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00547">HoverInterrupt()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00272">UIScriptedMenu::OnClick()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00325">UIScriptedMenu::OnMouseEnter()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00465">OnMouseEnter()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00480">Tick()</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00221">UIScriptedMenu::Update()</a>.</p>
+
 </div>
 </div>
 <a id="a8211d3db6608c70fc77414ddd24dacd7" name="a8211d3db6608c70fc77414ddd24dacd7"></a>
@@ -484,6 +613,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00454">454</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00392">UIScriptedMenu::DisplayHint()</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00493">DisplayHint()</a>.</p>
 
 </div>
 </div>
@@ -509,6 +640,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00453">453</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00392">UIScriptedMenu::DisplayHint()</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00493">DisplayHint()</a>.</p>
+
 </div>
 </div>
 <a id="ad7fef7345c89f53e476bd52d21a70fdc" name="ad7fef7345c89f53e476bd52d21a70fdc"></a>
@@ -532,6 +665,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00452">452</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00392">UIScriptedMenu::DisplayHint()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00493">DisplayHint()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00154">UIScriptedMenu::HideHint()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00529">HideHint()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00221">UIScriptedMenu::Update()</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00051">UIScriptedMenu::~ScriptConsole()</a>.</p>
 
 </div>
 </div>
@@ -557,6 +692,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00450">450</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00192">UIScriptedMenu::HoverInterrupt()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00547">HoverInterrupt()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00186">UIScriptedMenu::HoverSuccess()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00541">HoverSuccess()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00480">Tick()</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00221">UIScriptedMenu::Update()</a>.</p>
+
 </div>
 </div>
 <a id="a5a945642f839376f3a767738776ffd56" name="a5a945642f839376f3a767738776ffd56"></a>
@@ -580,6 +717,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00449">449</a> of file <a class="el" href="../../dc/d07/_script_console_8c_source.html">ScriptConsole.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00192">UIScriptedMenu::HoverInterrupt()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00547">HoverInterrupt()</a>, <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00480">Tick()</a>, and <a class="el" href="../../dc/d07/_script_console_8c_source.html#l00221">UIScriptedMenu::Update()</a>.</p>
 
 </div>
 </div>

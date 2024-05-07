@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -263,6 +260,16 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00034">34</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>  {</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="#aa06ef602be5e0c0eff29baa3a1ca74de">m_RAIB</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d3/d0e/class_remotely_activated_item_behaviour.html">RemotelyActivatedItemBehaviour</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    RegisterNetSyncVariableInt(<span class="stringliteral">&quot;m_RAIB.m_PairDeviceNetIdLow&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>    RegisterNetSyncVariableInt(<span class="stringliteral">&quot;m_RAIB.m_PairDeviceNetIdHigh&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+<div class="ttc" id="aclass_improvised_explosive_html_aa06ef602be5e0c0eff29baa3a1ca74de"><div class="ttname"><a href="#aa06ef602be5e0c0eff29baa3a1ca74de">ImprovisedExplosive::m_RAIB</a></div><div class="ttdeci">ref RemotelyActivatedItemBehaviour m_RAIB</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00032">ImprovisedExplosive.c:32</a></div></div>
+<div class="ttc" id="aclass_remotely_activated_item_behaviour_html"><div class="ttname"><a href="../../d3/d0e/class_remotely_activated_item_behaviour.html">RemotelyActivatedItemBehaviour</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d07/_remotely_activated_item_behaviour_8c_source.html#l00001">RemotelyActivatedItemBehaviour.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00032">m_RAIB</a>.</p>
 
 </div>
 </div>
@@ -291,6 +298,30 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00159">159</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>  {</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#a6de1fd0cb2bdb06bab78c93bc6cd5aad">GetArmed</a>())</div>
+<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a3262f896ac512261e28001eb03450607">HasLockedTriggerSlots</a>())</div>
+<div class="line"><span class="lineno">  165</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a> : <a class="code hl_variable" href="#a64bcde08e18e4b0056f401fa2815a196">SLOT_EXPLOSIVES</a>)</div>
+<div class="line"><span class="lineno">  168</span>    {</div>
+<div class="line"><span class="lineno">  169</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">explosive</a> = GetInventory().FindAttachmentByName(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>);</div>
+<div class="line"><span class="lineno">  170</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">explosive</a>)</div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  172</span>    }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  175</span>  }</div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad99b887e4b51af1a438d1fb17e5c54a3"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a></div><div class="ttdeci">PlayerSpawnPreset slotName</div></div>
+<div class="ttc" id="a_explosives_base_8c_html_a6de1fd0cb2bdb06bab78c93bc6cd5aad"><div class="ttname"><a href="../../d0/d0a/_explosives_base_8c.html#a6de1fd0cb2bdb06bab78c93bc6cd5aad">GetArmed</a></div><div class="ttdeci">bool GetArmed()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0a/_explosives_base_8c_source.html#l00222">ExplosivesBase.c:222</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a3262f896ac512261e28001eb03450607"><div class="ttname"><a href="#a3262f896ac512261e28001eb03450607">ImprovisedExplosive::HasLockedTriggerSlots</a></div><div class="ttdeci">override bool HasLockedTriggerSlots()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00048">ImprovisedExplosive.c:48</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a64bcde08e18e4b0056f401fa2815a196"><div class="ttname"><a href="#a64bcde08e18e4b0056f401fa2815a196">ImprovisedExplosive::SLOT_EXPLOSIVES</a></div><div class="ttdeci">const string SLOT_EXPLOSIVES[SLOT_EXPLOSIVE_COUNT]</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00015">ImprovisedExplosive.c:15</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00222">GetArmed()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00048">HasLockedTriggerSlots()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00015">SLOT_EXPLOSIVES</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>.</p>
 
 </div>
 </div>
@@ -318,7 +349,10 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00177">177</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  178</span>  {</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  180</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aafb64d4b3fa38b3b6f3c907d9b07971e" name="aafb64d4b3fa38b3b6f3c907d9b07971e"></a>
@@ -345,6 +379,27 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00200">200</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>  {</div>
+<div class="line"><span class="lineno">  202</span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a> = <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.<a class="code hl_function" href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">GetSlotName</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>)</div>
+<div class="line"><span class="lineno">  205</span>    {</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a30d607459bcf295b7002cd7ffde064c9">SLOT_TRIGGER_ALARM_CLOCK</a>:</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a43f185de1d9213f6e88eb622d8fc9419">SLOT_TRIGGER_KITCHEN_TIMER</a>:</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a9bd6bd9b3512c6f63d6333ff2fe9a351">SLOT_TRIGGER_REMOTE</a>:</div>
+<div class="line"><span class="lineno">  209</span>      <span class="keywordflow">return</span> FindAttachmentBySlotName(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>) != <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  210</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  211</span>    }</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  214</span>  }</div>
+<div class="ttc" id="aclass_improvised_explosive_html_a30d607459bcf295b7002cd7ffde064c9"><div class="ttname"><a href="#a30d607459bcf295b7002cd7ffde064c9">ImprovisedExplosive::SLOT_TRIGGER_ALARM_CLOCK</a></div><div class="ttdeci">static const string SLOT_TRIGGER_ALARM_CLOCK</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00007">ImprovisedExplosive.c:7</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a43f185de1d9213f6e88eb622d8fc9419"><div class="ttname"><a href="#a43f185de1d9213f6e88eb622d8fc9419">ImprovisedExplosive::SLOT_TRIGGER_KITCHEN_TIMER</a></div><div class="ttdeci">static const string SLOT_TRIGGER_KITCHEN_TIMER</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00008">ImprovisedExplosive.c:8</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a9bd6bd9b3512c6f63d6333ff2fe9a351"><div class="ttname"><a href="#a9bd6bd9b3512c6f63d6333ff2fe9a351">ImprovisedExplosive::SLOT_TRIGGER_REMOTE</a></div><div class="ttdeci">static const string SLOT_TRIGGER_REMOTE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00009">ImprovisedExplosive.c:9</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html">InventorySlots</a></div><div class="ttdoc">provides access to slot configuration</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/_inventory_slots_8c_source.html#l00005">InventorySlots.c:6</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html_a7780f9a2ed7ac70dff2d1b5e277d8f5a"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">InventorySlots::GetSlotName</a></div><div class="ttdeci">static proto native owned string GetSlotName(int id)</div><div class="ttdoc">converts slot_id to string</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">InventorySlots::GetSlotName()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00007">SLOT_TRIGGER_ALARM_CLOCK</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00008">SLOT_TRIGGER_KITCHEN_TIMER</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00009">SLOT_TRIGGER_REMOTE</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>.</p>
 
 </div>
 </div>
@@ -376,6 +431,27 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00183">183</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>  {</div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">il</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>();</div>
+<div class="line"><span class="lineno">  186</span>    GetInventory().GetCurrentInventoryLocation(<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a> : <a class="code hl_variable" href="#a6a729c65d8f1018bc5f6a049a4ce95cc">SLOT_TRIGGERS</a>)</div>
+<div class="line"><span class="lineno">  189</span>    {</div>
+<div class="line"><span class="lineno">  190</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">slotId</a> == <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.<a class="code hl_function" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">GetSlotIdFromString</a>(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>))</div>
+<div class="line"><span class="lineno">  191</span>      {</div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.HANDS)</div>
+<div class="line"><span class="lineno">  193</span>          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  194</span>      }</div>
+<div class="line"><span class="lineno">  195</span>    }</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> !<a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#a6de1fd0cb2bdb06bab78c93bc6cd5aad">GetArmed</a>();</div>
+<div class="line"><span class="lineno">  198</span>  }</div>
+<div class="ttc" id="a_inventory_location_8c_html_ad09049fb2b99c763369bfe6228aa81b3"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a></div><div class="ttdeci">InventoryLocationType</div><div class="ttdoc">types of Inventory Location</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00003">InventoryLocation.c:4</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a6a729c65d8f1018bc5f6a049a4ce95cc"><div class="ttname"><a href="#a6a729c65d8f1018bc5f6a049a4ce95cc">ImprovisedExplosive::SLOT_TRIGGERS</a></div><div class="ttdeci">const string SLOT_TRIGGERS[SLOT_TRIGGERS_COUNT]</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00021">ImprovisedExplosive.c:21</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html_afdfa2801842c135099e68d21a2e71590"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">InventorySlots::GetSlotIdFromString</a></div><div class="ttdeci">static proto native int GetSlotIdFromString(string slot_name)</div><div class="ttdoc">converts string to slot_id</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00222">GetArmed()</a>, <a class="el" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">InventorySlots::GetSlotIdFromString()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00021">SLOT_TRIGGERS</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>.</p>
 
 </div>
 </div>
@@ -412,6 +488,36 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00239">239</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  240</span>  {</div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEHealthLevelChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">oldLevel</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">zone</a>);</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">  244</span>    {</div>
+<div class="line"><span class="lineno">  245</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> == <a class="code hl_class" href="../../da/d05/class_game_constants.html">GameConstants</a>.<a class="code hl_variable" href="../../de/d05/group___item_health.html#ga3908fcde0f2e91545d7e3a51fab2d5d0">STATE_RUINED</a>)</div>
+<div class="line"><span class="lineno">  246</span>      {</div>
+<div class="line"><span class="lineno">  247</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a> &lt; GetInventory().AttachmentCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a>++)</div>
+<div class="line"><span class="lineno">  248</span>        {</div>
+<div class="line"><span class="lineno">  249</span>          <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(GetInventory().GetAttachmentFromIndex(<a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a>));</div>
+<div class="line"><span class="lineno">  250</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>)</div>
+<div class="line"><span class="lineno">  251</span>          {</div>
+<div class="line"><span class="lineno">  252</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>.UnlockFromParent();</div>
+<div class="line"><span class="lineno">  253</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>.SetHealth(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, 0.0);</div>
+<div class="line"><span class="lineno">  254</span>          }</div>
+<div class="line"><span class="lineno">  255</span>        }</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>        <a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#a2e61e94daef712ea76bb589e8968cd51">SetArmed</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  258</span>        <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a7ebe889f604229565900943d6301da6f">SetTakeable</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  259</span>      }</div>
+<div class="line"><span class="lineno">  260</span>    }</div>
+<div class="line"><span class="lineno">  261</span>  }</div>
+<div class="ttc" id="a_explosives_base_8c_html_a2e61e94daef712ea76bb589e8968cd51"><div class="ttname"><a href="../../d0/d0a/_explosives_base_8c.html#a2e61e94daef712ea76bb589e8968cd51">SetArmed</a></div><div class="ttdeci">void SetArmed(bool state)</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0a/_explosives_base_8c_source.html#l00227">ExplosivesBase.c:227</a></div></div>
+<div class="ttc" id="a_item_base_8c_html_a7ebe889f604229565900943d6301da6f"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#a7ebe889f604229565900943d6301da6f">SetTakeable</a></div><div class="ttdeci">override void SetTakeable(bool pState)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_item_base_8c_source.html#l08905">ItemBase.c:8905</a></div></div>
+<div class="ttc" id="aclass_game_constants_html"><div class="ttname"><a href="../../da/d05/class_game_constants.html">GameConstants</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00611">constants.c:612</a></div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___item_health_html_ga3908fcde0f2e91545d7e3a51fab2d5d0"><div class="ttname"><a href="../../de/d05/group___item_health.html#ga3908fcde0f2e91545d7e3a51fab2d5d0">GameConstants::STATE_RUINED</a></div><div class="ttdeci">const int STATE_RUINED</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00757">constants.c:757</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00227">SetArmed()</a>, <a class="el" href="../../df/d0e/_item_base_8c_source.html#l08905">SetTakeable()</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00757">GameConstants::STATE_RUINED</a>.</p>
 
 </div>
 </div>
@@ -443,6 +549,21 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00337">337</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  338</span>  {</div>
+<div class="line"><span class="lineno">  339</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEItemAttached(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>);</div>
+<div class="line"><span class="lineno">  340</span> </div>
+<div class="line"><span class="lineno">  341</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>)</div>
+<div class="line"><span class="lineno">  342</span>    {</div>
+<div class="line"><span class="lineno">  343</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a30d607459bcf295b7002cd7ffde064c9">SLOT_TRIGGER_ALARM_CLOCK</a>:</div>
+<div class="line"><span class="lineno">  344</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a43f185de1d9213f6e88eb622d8fc9419">SLOT_TRIGGER_KITCHEN_TIMER</a>:</div>
+<div class="line"><span class="lineno">  345</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a9bd6bd9b3512c6f63d6333ff2fe9a351">SLOT_TRIGGER_REMOTE</a>:</div>
+<div class="line"><span class="lineno">  346</span>      <a class="code hl_function" href="#ae03b415ff52beae86966f9045a11f24f">OnTriggerAttached</a>(FindAttachmentBySlotName(<a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>));</div>
+<div class="line"><span class="lineno">  347</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  348</span>    }</div>
+<div class="line"><span class="lineno">  349</span>  }</div>
+<div class="ttc" id="aclass_improvised_explosive_html_ae03b415ff52beae86966f9045a11f24f"><div class="ttname"><a href="#ae03b415ff52beae86966f9045a11f24f">ImprovisedExplosive::OnTriggerAttached</a></div><div class="ttdeci">void OnTriggerAttached(EntityAI entity)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00419">ImprovisedExplosive.c:419</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00419">OnTriggerAttached()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00007">SLOT_TRIGGER_ALARM_CLOCK</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00008">SLOT_TRIGGER_KITCHEN_TIMER</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00009">SLOT_TRIGGER_REMOTE</a>.</p>
 
 </div>
 </div>
@@ -474,6 +595,21 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00351">351</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span>  {</div>
+<div class="line"><span class="lineno">  353</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEItemDetached(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>);</div>
+<div class="line"><span class="lineno">  354</span> </div>
+<div class="line"><span class="lineno">  355</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>)</div>
+<div class="line"><span class="lineno">  356</span>    {</div>
+<div class="line"><span class="lineno">  357</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a30d607459bcf295b7002cd7ffde064c9">SLOT_TRIGGER_ALARM_CLOCK</a>:</div>
+<div class="line"><span class="lineno">  358</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a43f185de1d9213f6e88eb622d8fc9419">SLOT_TRIGGER_KITCHEN_TIMER</a>:</div>
+<div class="line"><span class="lineno">  359</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="#a9bd6bd9b3512c6f63d6333ff2fe9a351">SLOT_TRIGGER_REMOTE</a>:</div>
+<div class="line"><span class="lineno">  360</span>      <a class="code hl_function" href="#a22ccd9f103346ebc83ce1674f6e3ea49">OnTriggerDetached</a>(FindAttachmentBySlotName(<a class="code hl_class" href="../../db/d06/class_param3.html">slot_name</a>));</div>
+<div class="line"><span class="lineno">  361</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  362</span>    }</div>
+<div class="line"><span class="lineno">  363</span>  }</div>
+<div class="ttc" id="aclass_improvised_explosive_html_a22ccd9f103346ebc83ce1674f6e3ea49"><div class="ttname"><a href="#a22ccd9f103346ebc83ce1674f6e3ea49">ImprovisedExplosive::OnTriggerDetached</a></div><div class="ttdeci">void OnTriggerDetached(EntityAI entity)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00431">ImprovisedExplosive.c:431</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00431">OnTriggerDetached()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00007">SLOT_TRIGGER_ALARM_CLOCK</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00008">SLOT_TRIGGER_KITCHEN_TIMER</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00009">SLOT_TRIGGER_REMOTE</a>.</p>
 
 </div>
 </div>
@@ -505,6 +641,14 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00136">136</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>  {</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEItemLocationChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">oldLoc</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">newLoc</a>);</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa06ef602be5e0c0eff29baa3a1ca74de">m_RAIB</a>)</div>
+<div class="line"><span class="lineno">  141</span>      <a class="code hl_variable" href="#aa06ef602be5e0c0eff29baa3a1ca74de">m_RAIB</a>.Pair();</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00032">m_RAIB</a>.</p>
 
 </div>
 </div>
@@ -536,6 +680,14 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00042">42</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.IsMultiplayer())</div>
+<div class="line"><span class="lineno">   45</span>      <a class="code hl_function" href="#aac67c1af1f591fb4a676e58fd2b99dee">LockTriggerSlots</a>();</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03528">DayZGame.c:3528</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_aac67c1af1f591fb4a676e58fd2b99dee"><div class="ttname"><a href="#aac67c1af1f591fb4a676e58fd2b99dee">ImprovisedExplosive::LockTriggerSlots</a></div><div class="ttdeci">override void LockTriggerSlots()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00056">ImprovisedExplosive.c:56</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00056">LockTriggerSlots()</a>.</p>
 
 </div>
 </div>
@@ -563,7 +715,10 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00472">472</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  473</span>  {</div>
+<div class="line"><span class="lineno">  474</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;placeImprovisedExplosive_SoundSet&quot;</span>;</div>
+<div class="line"><span class="lineno">  475</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a87d9a7888ed2976deba212641bd626e2" name="a87d9a7888ed2976deba212641bd626e2"></a>
@@ -590,7 +745,10 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00477">477</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  478</span>  {</div>
+<div class="line"><span class="lineno">  479</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;improvisedexplosive_deploy_SoundSet&quot;</span>;</div>
+<div class="line"><span class="lineno">  480</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afce510791f2805364634aef58c5871fa" name="afce510791f2805364634aef58c5871fa"></a>
@@ -617,6 +775,11 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00154">154</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>  {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa06ef602be5e0c0eff29baa3a1ca74de">m_RAIB</a>.GetPairDevice();</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00032">m_RAIB</a>.</p>
 
 </div>
 </div>
@@ -644,6 +807,11 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00144">144</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa06ef602be5e0c0eff29baa3a1ca74de">m_RAIB</a>;</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00032">m_RAIB</a>.</p>
 
 </div>
 </div>
@@ -671,6 +839,16 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00048">48</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>  {</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">triggerSlot</a> : <a class="code hl_variable" href="#a6a729c65d8f1018bc5f6a049a4ce95cc">SLOT_TRIGGERS</a>)</div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">return</a> GetInventory().GetSlotLock(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.GetSlotIdFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">triggerSlot</a>));</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">InventorySlots::GetSlotIdFromString()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00021">SLOT_TRIGGERS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00159">CanBeArmed()</a>.</p>
 
 </div>
 </div>
@@ -725,6 +903,11 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00226">226</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>  {</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">return</span> !<a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#a6de1fd0cb2bdb06bab78c93bc6cd5aad">GetArmed</a>();</div>
+<div class="line"><span class="lineno">  229</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00222">GetArmed()</a>.</p>
 
 </div>
 </div>
@@ -752,6 +935,11 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00221">221</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  222</span>  {</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">return</span> !<a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#a6de1fd0cb2bdb06bab78c93bc6cd5aad">GetArmed</a>() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.IsTakeable();</div>
+<div class="line"><span class="lineno">  224</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00222">GetArmed()</a>.</p>
 
 </div>
 </div>
@@ -779,7 +967,10 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00216">216</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  217</span>  {</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  219</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1cba61fc197866770ab01374597376e4" name="a1cba61fc197866770ab01374597376e4"></a>
@@ -806,6 +997,14 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00068">68</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">explosiveSlotName</a> : <a class="code hl_variable" href="#a64bcde08e18e4b0056f401fa2815a196">SLOT_EXPLOSIVES</a>)</div>
+<div class="line"><span class="lineno">   71</span>      GetInventory().SetSlotLock(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.GetSlotIdFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">explosiveSlotName</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">true</a>);</div>
+<div class="line"><span class="lineno">   72</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">InventorySlots::GetSlotIdFromString()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00015">SLOT_EXPLOSIVES</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00419">OnTriggerAttached()</a>.</p>
 
 </div>
 </div>
@@ -833,6 +1032,14 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00056">56</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  {</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">triggerSlotName</a> : <a class="code hl_variable" href="#a6a729c65d8f1018bc5f6a049a4ce95cc">SLOT_TRIGGERS</a>)</div>
+<div class="line"><span class="lineno">   59</span>      GetInventory().SetSlotLock(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.GetSlotIdFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">triggerSlotName</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">true</a>);</div>
+<div class="line"><span class="lineno">   60</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">InventorySlots::GetSlotIdFromString()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00021">SLOT_TRIGGERS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00042">EOnInit()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00370">OnDisarmed()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00102">OnStoreSave()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00419">OnTriggerAttached()</a>.</p>
 
 </div>
 </div>
@@ -866,6 +1073,80 @@ Static Protected Attributes</h2></td></tr>
 <p>defer damage to trigger attachments to allow ringing</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00263">263</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  264</span>  {</div>
+<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() &amp;&amp; <a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#a6de1fd0cb2bdb06bab78c93bc6cd5aad">GetArmed</a>())</div>
+<div class="line"><span class="lineno">  266</span>    {</div>
+<div class="line"><span class="lineno">  267</span>      <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">isTimeTriggered</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ItemBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ItemBase&gt;</a>();</div>
+<div class="line"><span class="lineno">  270</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a> &lt; GetInventory().AttachmentCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a>++)</div>
+<div class="line"><span class="lineno">  271</span>      {</div>
+<div class="line"><span class="lineno">  272</span>        <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(GetInventory().GetAttachmentFromIndex(<a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a>));</div>
+<div class="line"><span class="lineno">  273</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>)</div>
+<div class="line"><span class="lineno">  274</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>);</div>
+<div class="line"><span class="lineno">  275</span>      }</div>
+<div class="line"><span class="lineno">  276</span> </div>
+<div class="line"><span class="lineno">  277</span>      <span class="keywordflow">foreach</span> (<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment1</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a>)</div>
+<div class="line"><span class="lineno">  278</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">attachment1</a>.<a class="code hl_function" href="../../df/d0e/_item_base_8c.html#acf1b10357a62a4fb78895f76824d3526">UnlockFromParent</a>();</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  281</span>      <span class="keywordflow">foreach</span> (<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a>)</div>
+<div class="line"><span class="lineno">  282</span>      {</div>
+<div class="line"><span class="lineno">  283</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a>.IsInherited(ClockBase))</div>
+<div class="line"><span class="lineno">  284</span>        {</div>
+<div class="line"><span class="lineno">  285</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">isTimeTriggered</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  286</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  287</span>        }</div>
+<div class="line"><span class="lineno">  288</span>      }</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  291</span>      <span class="keywordflow">foreach</span> (<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment3</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a>)</div>
+<div class="line"><span class="lineno">  292</span>      {</div>
+<div class="line"><span class="lineno">  293</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment3</a>)</div>
+<div class="line"><span class="lineno">  294</span>        {</div>
+<div class="line"><span class="lineno">  295</span>          <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dropExtents</a> = <span class="stringliteral">&quot;0.5 0.0 0.5&quot;</span>;</div>
+<div class="line"><span class="lineno">  296</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">isTimeTriggered</a>)</div>
+<div class="line"><span class="lineno">  297</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">dropExtents</a>[1] = 0.15; </div>
+<div class="line"><span class="lineno">  298</span> </div>
+<div class="line"><span class="lineno">  299</span>          GetInventory().DropEntityInBounds(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a>.SERVER, <span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">attachment3</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dropExtents</a>, 0, 0, 0);</div>
+<div class="line"><span class="lineno">  300</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">attachment3</a>.SetAnimationPhase(<a class="code hl_variable" href="../../d0/d0a/_explosives_base_8c.html#aa1c1e177c4083f8ac2b5513d12423c0b">ANIM_PHASE_VISIBILITY</a>, 1.0);</div>
+<div class="line"><span class="lineno">  301</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">attachment3</a>.SetTakeable(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  302</span>        }</div>
+<div class="line"><span class="lineno">  303</span>      }</div>
+<div class="line"><span class="lineno">  304</span> </div>
+<div class="line"><span class="lineno">  305</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">delayFor</a> = <a class="code hl_variable" href="#a5a36f914746d6bd0d1de7001239d12e6">TIME_TRIGGER_INITIAL_DELAY_SECS</a>;</div>
+<div class="line"><span class="lineno">  306</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">isTimeTriggered</a>)</div>
+<div class="line"><span class="lineno">  307</span>      {</div>
+<div class="line"><span class="lineno">  308</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">delayFor</a> = <a class="code hl_variable" href="#a5a36f914746d6bd0d1de7001239d12e6">TIME_TRIGGER_INITIAL_DELAY_SECS</a> + <a class="code hl_variable" href="#a64220bce2c07fe0dbde305fd0c92c155">TIME_TRIGGER_TIMER_BASED_DELAY_SECS</a>;</div>
+<div class="line"><span class="lineno">  310</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLater(DeleteSafe, <a class="code hl_class" href="../../db/d06/class_param3.html">delayFor</a> * 1000, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  311</span>      }</div>
+<div class="line"><span class="lineno">  312</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  313</span>        DeleteSafe();</div>
+<div class="line"><span class="lineno">  314</span> </div>
+<div class="line"><span class="lineno">  316</span>      <span class="keywordflow">foreach</span> (<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment4</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a>)</div>
+<div class="line"><span class="lineno">  317</span>      {</div>
+<div class="line"><span class="lineno">  318</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment4</a>.IsAnyInherited({RemoteDetonator, ClockBase}))</div>
+<div class="line"><span class="lineno">  319</span>        {</div>
+<div class="line"><span class="lineno">  321</span>          <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLater(<a class="code hl_class" href="../../db/d06/class_param3.html">attachment4</a>.DeleteSafe, <a class="code hl_class" href="../../db/d06/class_param3.html">delayFor</a> * 1000, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  322</span>        }</div>
+<div class="line"><span class="lineno">  323</span> </div>
+<div class="line"><span class="lineno">  324</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment4</a> &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">attachment4</a>.IsAnyInherited({RemoteDetonator, ClockBase}))</div>
+<div class="line"><span class="lineno">  325</span>        {</div>
+<div class="line"><span class="lineno">  326</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;ItemBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;ItemBase&gt;</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">attachment4</a>);</div>
+<div class="line"><span class="lineno">  327</span>          <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLaterByName(<a class="code hl_class" href="../../db/d06/class_param3.html">attachment4</a>, <span class="stringliteral">&quot;OnActivatedByItem&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">delayFor</a> * 1000, <span class="keyword">false</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>);</div>
+<div class="line"><span class="lineno">  328</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">delayFor</a> += <a class="code hl_variable" href="#a151b277928e1bff2eda75afe7e9537c6">TIME_TRIGGER_DELAY_SECS</a>;</div>
+<div class="line"><span class="lineno">  329</span>        }</div>
+<div class="line"><span class="lineno">  330</span>      }</div>
+<div class="line"><span class="lineno">  331</span>    }</div>
+<div class="line"><span class="lineno">  332</span>  }</div>
+<div class="ttc" id="a3___game_2_systems_2_inventory_2_inventory_8c_html_a5073c77c5d68882860f688a9fc4cba4d"><div class="ttname"><a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a></div><div class="ttdeci">InventoryMode</div><div class="ttdoc">NOTE: PREDICTIVE is not to be used at all in multiplayer.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00021">Inventory.c:22</a></div></div>
+<div class="ttc" id="a_explosives_base_8c_html_aa1c1e177c4083f8ac2b5513d12423c0b"><div class="ttname"><a href="../../d0/d0a/_explosives_base_8c.html#aa1c1e177c4083f8ac2b5513d12423c0b">ANIM_PHASE_VISIBILITY</a></div><div class="ttdeci">const string ANIM_PHASE_VISIBILITY</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0a/_explosives_base_8c_source.html#l00022">ExplosivesBase.c:22</a></div></div>
+<div class="ttc" id="a_item_base_8c_html_acf1b10357a62a4fb78895f76824d3526"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#acf1b10357a62a4fb78895f76824d3526">UnlockFromParent</a></div><div class="ttdeci">void UnlockFromParent()</div><div class="ttdoc">Unlocks this item from its attachment slot of its parent.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_item_base_8c_source.html#l05516">ItemBase.c:5516</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a151b277928e1bff2eda75afe7e9537c6"><div class="ttname"><a href="#a151b277928e1bff2eda75afe7e9537c6">ImprovisedExplosive::TIME_TRIGGER_DELAY_SECS</a></div><div class="ttdeci">const float TIME_TRIGGER_DELAY_SECS</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00005">ImprovisedExplosive.c:5</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a5a36f914746d6bd0d1de7001239d12e6"><div class="ttname"><a href="#a5a36f914746d6bd0d1de7001239d12e6">ImprovisedExplosive::TIME_TRIGGER_INITIAL_DELAY_SECS</a></div><div class="ttdeci">const float TIME_TRIGGER_INITIAL_DELAY_SECS</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00003">ImprovisedExplosive.c:3</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a64220bce2c07fe0dbde305fd0c92c155"><div class="ttname"><a href="#a64220bce2c07fe0dbde305fd0c92c155">ImprovisedExplosive::TIME_TRIGGER_TIMER_BASED_DELAY_SECS</a></div><div class="ttdeci">const float TIME_TRIGGER_TIMER_BASED_DELAY_SECS</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00004">ImprovisedExplosive.c:4</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agroup___tools_html_gaaf491f3ecd1d9aefb35a16bf96ca420c"><div class="ttname"><a href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a></div><div class="ttdeci">const int CALL_CATEGORY_SYSTEM</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">tools.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00022">ANIM_PHASE_VISIBILITY</a>, <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00222">GetArmed()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00005">TIME_TRIGGER_DELAY_SECS</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00003">TIME_TRIGGER_INITIAL_DELAY_SECS</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00004">TIME_TRIGGER_TIMER_BASED_DELAY_SECS</a>.</p>
 
 </div>
 </div>
@@ -893,6 +1174,12 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00365">365</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  366</span>  {</div>
+<div class="line"><span class="lineno">  367</span>    <a class="code hl_function" href="#a14c276e4338af6d41c42ec3491d6b330">UnlockExplosivesSlots</a>();</div>
+<div class="line"><span class="lineno">  368</span>  }</div>
+<div class="ttc" id="aclass_improvised_explosive_html_a14c276e4338af6d41c42ec3491d6b330"><div class="ttname"><a href="#a14c276e4338af6d41c42ec3491d6b330">ImprovisedExplosive::UnlockExplosivesSlots</a></div><div class="ttdeci">override void UnlockExplosivesSlots()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00074">ImprovisedExplosive.c:74</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00074">UnlockExplosivesSlots()</a>.</p>
 
 </div>
 </div>
@@ -921,6 +1208,48 @@ Static Protected Attributes</h2></td></tr>
 <p>attachment special handling on disarm</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00370">370</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  371</span>  {</div>
+<div class="line"><span class="lineno">  372</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnDisarmed(<a class="code hl_class" href="../../db/d06/class_param3.html">pWithTool</a>);</div>
+<div class="line"><span class="lineno">  373</span> </div>
+<div class="line"><span class="lineno">  374</span>    <a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#aabae2c5fd3871959ff0c1d57baa2d354">UnpairRemote</a>();</div>
+<div class="line"><span class="lineno">  375</span> </div>
+<div class="line"><span class="lineno">  376</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ItemBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ItemBase&gt;</a>();</div>
+<div class="line"><span class="lineno">  377</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a> &lt; GetInventory().AttachmentCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a>++)</div>
+<div class="line"><span class="lineno">  378</span>    {</div>
+<div class="line"><span class="lineno">  379</span>      <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(GetInventory().GetAttachmentFromIndex(<a class="code hl_class" href="../../db/d06/class_param3.html">attachmentIdx</a>));</div>
+<div class="line"><span class="lineno">  380</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>)</div>
+<div class="line"><span class="lineno">  381</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>);</div>
+<div class="line"><span class="lineno">  382</span>    }</div>
+<div class="line"><span class="lineno">  383</span> </div>
+<div class="line"><span class="lineno">  384</span>    <span class="keywordflow">foreach</span> (<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment1</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a>)</div>
+<div class="line"><span class="lineno">  385</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">attachment1</a>.<a class="code hl_function" href="../../df/d0e/_item_base_8c.html#acf1b10357a62a4fb78895f76824d3526">UnlockFromParent</a>();</div>
+<div class="line"><span class="lineno">  386</span> </div>
+<div class="line"><span class="lineno">  388</span>    <span class="keywordflow">foreach</span> (<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">attachmentsCache</a>)</div>
+<div class="line"><span class="lineno">  389</span>    {</div>
+<div class="line"><span class="lineno">  390</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a>.IsInherited(ClockBase))</div>
+<div class="line"><span class="lineno">  391</span>      {</div>
+<div class="line"><span class="lineno">  392</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pWithTool</a>)</div>
+<div class="line"><span class="lineno">  393</span>          GetInventory().DropEntity(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a>.SERVER, <span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a>);</div>
+<div class="line"><span class="lineno">  394</span>      }</div>
+<div class="line"><span class="lineno">  395</span> </div>
+<div class="line"><span class="lineno">  396</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a>.IsInherited(RemoteDetonator))</div>
+<div class="line"><span class="lineno">  397</span>      {</div>
+<div class="line"><span class="lineno">  398</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pWithTool</a>)</div>
+<div class="line"><span class="lineno">  399</span>        {</div>
+<div class="line"><span class="lineno">  400</span>          GetInventory().DropEntity(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a>.SERVER, <span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a>);</div>
+<div class="line"><span class="lineno">  401</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a>.SetHealth(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, 0.0);</div>
+<div class="line"><span class="lineno">  402</span>        }</div>
+<div class="line"><span class="lineno">  403</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  404</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">attachment2</a>.Delete();</div>
+<div class="line"><span class="lineno">  405</span>      }</div>
+<div class="line"><span class="lineno">  406</span>    }</div>
+<div class="line"><span class="lineno">  407</span> </div>
+<div class="line"><span class="lineno">  408</span>    <a class="code hl_function" href="#aac67c1af1f591fb4a676e58fd2b99dee">LockTriggerSlots</a>();</div>
+<div class="line"><span class="lineno">  409</span>    <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a7ebe889f604229565900943d6301da6f">SetTakeable</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  410</span>  }</div>
+<div class="ttc" id="a_explosives_base_8c_html_aabae2c5fd3871959ff0c1d57baa2d354"><div class="ttname"><a href="../../d0/d0a/_explosives_base_8c.html#aabae2c5fd3871959ff0c1d57baa2d354">UnpairRemote</a></div><div class="ttdeci">override void UnpairRemote()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0a/_explosives_base_8c_source.html#l00116">ExplosivesBase.c:116</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00056">LockTriggerSlots()</a>, <a class="el" href="../../df/d0e/_item_base_8c_source.html#l08905">SetTakeable()</a>, and <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00116">UnpairRemote()</a>.</p>
 
 </div>
 </div>
@@ -957,6 +1286,15 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00128">128</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>  {</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlacementComplete(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">position</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">orientation</a>);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">  133</span>      SetOrientation(<a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_variable" href="../../d7/d0c/classvector.html#ac187fd4c6a90da92d88737f963b03d6d">Up</a>);</div>
+<div class="line"><span class="lineno">  134</span>  }</div>
+<div class="ttc" id="aclassvector_html_ac187fd4c6a90da92d88737f963b03d6d"><div class="ttname"><a href="../../d7/d0c/classvector.html#ac187fd4c6a90da92d88737f963b03d6d">vector::Up</a></div><div class="ttdeci">static const vector Up</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00107">EnConvert.c:107</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00107">vector::Up</a>.</p>
 
 </div>
 </div>
@@ -988,6 +1326,28 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00080">80</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>  {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnStoreLoad(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, version))</div>
+<div class="line"><span class="lineno">   83</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">if</span> (version &lt;= 134) <span class="comment">// up to 1.21</span></div>
+<div class="line"><span class="lineno">   86</span>    {</div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">triggerSlotName</a> : <a class="code hl_variable" href="#a6a729c65d8f1018bc5f6a049a4ce95cc">SLOT_TRIGGERS</a>)</div>
+<div class="line"><span class="lineno">   88</span>      {</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">slotId</a> = <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.<a class="code hl_function" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">GetSlotIdFromString</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">triggerSlotName</a>);</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">locked</a> = GetInventory().GetSlotLock(<a class="code hl_class" href="../../db/d06/class_param3.html">slotId</a>);</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">while</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">locked</a>)</div>
+<div class="line"><span class="lineno">   92</span>        {</div>
+<div class="line"><span class="lineno">   93</span>          GetInventory().SetSlotLock(<a class="code hl_class" href="../../db/d06/class_param3.html">slotId</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   94</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">locked</a> = GetInventory().GetSlotLock(<a class="code hl_class" href="../../db/d06/class_param3.html">slotId</a>);</div>
+<div class="line"><span class="lineno">   95</span>        }</div>
+<div class="line"><span class="lineno">   96</span>      }</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">InventorySlots::GetSlotIdFromString()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00021">SLOT_TRIGGERS</a>.</p>
 
 </div>
 </div>
@@ -1015,6 +1375,13 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00102">102</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnStoreSave(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_function" href="#aac67c1af1f591fb4a676e58fd2b99dee">LockTriggerSlots</a>();</div>
+<div class="line"><span class="lineno">  107</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00056">LockTriggerSlots()</a>.</p>
 
 </div>
 </div>
@@ -1042,6 +1409,25 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00419">419</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  420</span>  {</div>
+<div class="line"><span class="lineno">  421</span>    <a class="code hl_function" href="../../de/d00/_construction_8c.html#a57ed5d4223f68511e3c487a0487b5573">UpdateVisuals</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>);</div>
+<div class="line"><span class="lineno">  422</span>    <a class="code hl_function" href="#af27a4162c14eb2dfcc87fbb693ebd500">UpdateLED</a>(<a class="code hl_enumeration" href="../../dc/d00/_remote_detonator_8c.html#a7804fd4e8640651942c36a208aa12c5c">ERemoteDetonatorLEDState</a>.LIT);</div>
+<div class="line"><span class="lineno">  423</span> </div>
+<div class="line"><span class="lineno">  424</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsInherited(ClockBase))</div>
+<div class="line"><span class="lineno">  425</span>      <a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#ac4cc6602780ad6cab3ca4b2b7852a78d">Arm</a>();</div>
+<div class="line"><span class="lineno">  426</span> </div>
+<div class="line"><span class="lineno">  427</span>    <a class="code hl_function" href="#aac67c1af1f591fb4a676e58fd2b99dee">LockTriggerSlots</a>();</div>
+<div class="line"><span class="lineno">  428</span>    <a class="code hl_function" href="#a1cba61fc197866770ab01374597376e4">LockExplosivesSlots</a>();</div>
+<div class="line"><span class="lineno">  429</span>  }</div>
+<div class="ttc" id="a_construction_8c_html_a57ed5d4223f68511e3c487a0487b5573"><div class="ttname"><a href="../../de/d00/_construction_8c.html#a57ed5d4223f68511e3c487a0487b5573">UpdateVisuals</a></div><div class="ttdeci">void UpdateVisuals()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d00/_construction_8c_source.html#l00184">Construction.c:184</a></div></div>
+<div class="ttc" id="a_explosives_base_8c_html_ac4cc6602780ad6cab3ca4b2b7852a78d"><div class="ttname"><a href="../../d0/d0a/_explosives_base_8c.html#ac4cc6602780ad6cab3ca4b2b7852a78d">Arm</a></div><div class="ttdeci">void Arm()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0a/_explosives_base_8c_source.html#l00193">ExplosivesBase.c:193</a></div></div>
+<div class="ttc" id="a_remote_detonator_8c_html_a7804fd4e8640651942c36a208aa12c5c"><div class="ttname"><a href="../../dc/d00/_remote_detonator_8c.html#a7804fd4e8640651942c36a208aa12c5c">ERemoteDetonatorLEDState</a></div><div class="ttdeci">ERemoteDetonatorLEDState</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d00/_remote_detonator_8c_source.html#l00001">RemoteDetonator.c:2</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a1cba61fc197866770ab01374597376e4"><div class="ttname"><a href="#a1cba61fc197866770ab01374597376e4">ImprovisedExplosive::LockExplosivesSlots</a></div><div class="ttdeci">override void LockExplosivesSlots()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00068">ImprovisedExplosive.c:68</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_af27a4162c14eb2dfcc87fbb693ebd500"><div class="ttname"><a href="#af27a4162c14eb2dfcc87fbb693ebd500">ImprovisedExplosive::UpdateLED</a></div><div class="ttdeci">override void UpdateLED(int pState)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00412">ImprovisedExplosive.c:412</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00193">Arm()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00068">LockExplosivesSlots()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00056">LockTriggerSlots()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00412">UpdateLED()</a>, and <a class="el" href="../../de/d00/_construction_8c_source.html#l00184">UpdateVisuals()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00337">EEItemAttached()</a>.</p>
 
 </div>
 </div>
@@ -1069,6 +1455,14 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00431">431</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  432</span>  {</div>
+<div class="line"><span class="lineno">  433</span>    <a class="code hl_function" href="../../de/d00/_construction_8c.html#a57ed5d4223f68511e3c487a0487b5573">UpdateVisuals</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  434</span>    <a class="code hl_function" href="#af27a4162c14eb2dfcc87fbb693ebd500">UpdateLED</a>(<a class="code hl_enumeration" href="../../dc/d00/_remote_detonator_8c.html#a7804fd4e8640651942c36a208aa12c5c">ERemoteDetonatorLEDState</a>.OFF);</div>
+<div class="line"><span class="lineno">  435</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00412">UpdateLED()</a>, and <a class="el" href="../../de/d00/_construction_8c_source.html#l00184">UpdateVisuals()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00351">EEItemDetached()</a>.</p>
 
 </div>
 </div>
@@ -1096,6 +1490,25 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00109">109</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>  {</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnVariablesSynchronized();</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa06ef602be5e0c0eff29baa3a1ca74de">m_RAIB</a>)</div>
+<div class="line"><span class="lineno">  114</span>      <a class="code hl_variable" href="#aa06ef602be5e0c0eff29baa3a1ca74de">m_RAIB</a>.OnVariableSynchronized();</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a> : <a class="code hl_variable" href="#a6a729c65d8f1018bc5f6a049a4ce95cc">SLOT_TRIGGERS</a>)</div>
+<div class="line"><span class="lineno">  118</span>    {</div>
+<div class="line"><span class="lineno">  119</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a> = GetInventory().FindAttachmentByName(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>);</div>
+<div class="line"><span class="lineno">  120</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>)</div>
+<div class="line"><span class="lineno">  121</span>      {</div>
+<div class="line"><span class="lineno">  122</span>        <a class="code hl_function" href="../../de/d00/_construction_8c.html#a57ed5d4223f68511e3c487a0487b5573">UpdateVisuals</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  124</span>      }</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00032">m_RAIB</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00021">SLOT_TRIGGERS</a>, <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>, and <a class="el" href="../../de/d00/_construction_8c_source.html#l00184">UpdateVisuals()</a>.</p>
 
 </div>
 </div>
@@ -1123,6 +1536,11 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00149">149</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_variable" href="#aa06ef602be5e0c0eff29baa3a1ca74de">m_RAIB</a>.Pair(<a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">  152</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00032">m_RAIB</a>.</p>
 
 </div>
 </div>
@@ -1150,6 +1568,16 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00231">231</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>  {</div>
+<div class="line"><span class="lineno">  233</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d8/d04/class_action_toggle_place_object.html">ActionTogglePlaceObject</a>);</div>
+<div class="line"><span class="lineno">  236</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(ActionDeployObject);</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+<div class="ttc" id="a_advanced_communication_8c_html_a033d077df58807906c4dad3101d8768c"><div class="ttname"><a href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a></div><div class="ttdeci">void AddAction(typename actionName)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AdvancedCommunication.c:212</a></div></div>
+<div class="ttc" id="aclass_action_toggle_place_object_html"><div class="ttname"><a href="../../d8/d04/class_action_toggle_place_object.html">ActionTogglePlaceObject</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0f/_action_toggle_place_object_8c_source.html#l00001">ActionTogglePlaceObject.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>.</p>
 
 </div>
 </div>
@@ -1177,6 +1605,14 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00074">74</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>  {</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">explosiveSlotName</a> : <a class="code hl_variable" href="#a64bcde08e18e4b0056f401fa2815a196">SLOT_EXPLOSIVES</a>)</div>
+<div class="line"><span class="lineno">   77</span>      GetInventory().SetSlotLock(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.GetSlotIdFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">explosiveSlotName</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">false</a>);</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">InventorySlots::GetSlotIdFromString()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00015">SLOT_EXPLOSIVES</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00365">OnBeforeDisarm()</a>.</p>
 
 </div>
 </div>
@@ -1204,6 +1640,12 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00062">62</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>  {</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">triggerSlotName</a> : <a class="code hl_variable" href="#a6a729c65d8f1018bc5f6a049a4ce95cc">SLOT_TRIGGERS</a>)</div>
+<div class="line"><span class="lineno">   65</span>      GetInventory().SetSlotLock(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.GetSlotIdFromString(<a class="code hl_class" href="../../db/d06/class_param3.html">triggerSlotName</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">false</a>);</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d06/class_inventory_slots.html#afdfa2801842c135099e68d21a2e71590">InventorySlots::GetSlotIdFromString()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00021">SLOT_TRIGGERS</a>.</p>
 
 </div>
 </div>
@@ -1231,6 +1673,16 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00412">412</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  413</span>  {</div>
+<div class="line"><span class="lineno">  414</span>    <a class="code hl_function" href="../../dc/d00/_remote_detonator_8c.html#a39646fdabc350c98a2e907027b643331">RemoteDetonatorReceiver</a> <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a> = <a class="code hl_function" href="../../dc/d00/_remote_detonator_8c.html#a39646fdabc350c98a2e907027b643331">RemoteDetonatorReceiver</a>.Cast(FindAttachmentBySlotName(<a class="code hl_variable" href="#a9bd6bd9b3512c6f63d6333ff2fe9a351">SLOT_TRIGGER_REMOTE</a>));</div>
+<div class="line"><span class="lineno">  415</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>)</div>
+<div class="line"><span class="lineno">  416</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>.UpdateLED(<a class="code hl_class" href="../../db/d06/class_param3.html">pState</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  417</span>  }</div>
+<div class="ttc" id="a_remote_detonator_8c_html_a39646fdabc350c98a2e907027b643331"><div class="ttname"><a href="../../dc/d00/_remote_detonator_8c.html#a39646fdabc350c98a2e907027b643331">RemoteDetonatorReceiver</a></div><div class="ttdeci">RemoteDetonatorTrigger RemoteDetonator RemoteDetonatorReceiver()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d00/_remote_detonator_8c_source.html#l00037">RemoteDetonator.c:219</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d00/_remote_detonator_8c_source.html#l00219">RemoteDetonatorReceiver()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00009">SLOT_TRIGGER_REMOTE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00419">OnTriggerAttached()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00431">OnTriggerDetached()</a>.</p>
 
 </div>
 </div>
@@ -1258,6 +1710,47 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00437">437</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  438</span>  {</div>
+<div class="line"><span class="lineno">  439</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>)</div>
+<div class="line"><span class="lineno">  440</span>    {</div>
+<div class="line"><span class="lineno">  441</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsInherited(RemoteDetonator))</div>
+<div class="line"><span class="lineno">  442</span>      {</div>
+<div class="line"><span class="lineno">  443</span>        SetAnimationPhase(<a class="code hl_variable" href="#a7daedef9c7d81a4b58c5af9571c88613">ANIM_PHASE_TRIGGER_EMPTY</a>, 1.0);</div>
+<div class="line"><span class="lineno">  444</span>        SetAnimationPhase(<a class="code hl_variable" href="#a96c97b3588e2b18d136fe66869817a2d">ANIM_PHASE_TRIGGER_TIMER</a>, 1.0);</div>
+<div class="line"><span class="lineno">  445</span>        SetAnimationPhase(<a class="code hl_variable" href="#a24651f08e97ef6db8f1d0c7fe9209352">ANIM_PHASE_TRIGGER_CLOCK</a>, 1.0);</div>
+<div class="line"><span class="lineno">  446</span>        SetAnimationPhase(<a class="code hl_variable" href="#a0fb4137b1a704dcf375c52d9fe52c614">ANIM_PHASE_TRIGGER_REMOTE</a>, 0.0);</div>
+<div class="line"><span class="lineno">  447</span>      }</div>
+<div class="line"><span class="lineno">  448</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsInherited(<a class="code hl_class" href="../../d4/d07/class_alarm_clock___color_base.html">AlarmClock_ColorBase</a>))</div>
+<div class="line"><span class="lineno">  449</span>      {</div>
+<div class="line"><span class="lineno">  450</span>        SetAnimationPhase(<a class="code hl_variable" href="#a7daedef9c7d81a4b58c5af9571c88613">ANIM_PHASE_TRIGGER_EMPTY</a>, 1.0);</div>
+<div class="line"><span class="lineno">  451</span>        SetAnimationPhase(<a class="code hl_variable" href="#a96c97b3588e2b18d136fe66869817a2d">ANIM_PHASE_TRIGGER_TIMER</a>, 1.0);</div>
+<div class="line"><span class="lineno">  452</span>        SetAnimationPhase(<a class="code hl_variable" href="#a24651f08e97ef6db8f1d0c7fe9209352">ANIM_PHASE_TRIGGER_CLOCK</a>, 0.0);</div>
+<div class="line"><span class="lineno">  453</span>        SetAnimationPhase(<a class="code hl_variable" href="#a0fb4137b1a704dcf375c52d9fe52c614">ANIM_PHASE_TRIGGER_REMOTE</a>, 1.0);</div>
+<div class="line"><span class="lineno">  454</span>      }</div>
+<div class="line"><span class="lineno">  455</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsInherited(<a class="code hl_class" href="../../d0/d01/class_kitchen_timer.html">KitchenTimer</a>))</div>
+<div class="line"><span class="lineno">  456</span>      {</div>
+<div class="line"><span class="lineno">  457</span>        SetAnimationPhase(<a class="code hl_variable" href="#a7daedef9c7d81a4b58c5af9571c88613">ANIM_PHASE_TRIGGER_EMPTY</a>, 1.0);</div>
+<div class="line"><span class="lineno">  458</span>        SetAnimationPhase(<a class="code hl_variable" href="#a96c97b3588e2b18d136fe66869817a2d">ANIM_PHASE_TRIGGER_TIMER</a>, 0.0);</div>
+<div class="line"><span class="lineno">  459</span>        SetAnimationPhase(<a class="code hl_variable" href="#a24651f08e97ef6db8f1d0c7fe9209352">ANIM_PHASE_TRIGGER_CLOCK</a>, 1.0);</div>
+<div class="line"><span class="lineno">  460</span>        SetAnimationPhase(<a class="code hl_variable" href="#a0fb4137b1a704dcf375c52d9fe52c614">ANIM_PHASE_TRIGGER_REMOTE</a>, 1.0);</div>
+<div class="line"><span class="lineno">  461</span>      }</div>
+<div class="line"><span class="lineno">  462</span>    }</div>
+<div class="line"><span class="lineno">  463</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  464</span>    {</div>
+<div class="line"><span class="lineno">  465</span>      SetAnimationPhase(<a class="code hl_variable" href="#a7daedef9c7d81a4b58c5af9571c88613">ANIM_PHASE_TRIGGER_EMPTY</a>, 0.0);</div>
+<div class="line"><span class="lineno">  466</span>      SetAnimationPhase(<a class="code hl_variable" href="#a96c97b3588e2b18d136fe66869817a2d">ANIM_PHASE_TRIGGER_TIMER</a>, 1.0);</div>
+<div class="line"><span class="lineno">  467</span>      SetAnimationPhase(<a class="code hl_variable" href="#a24651f08e97ef6db8f1d0c7fe9209352">ANIM_PHASE_TRIGGER_CLOCK</a>, 1.0);</div>
+<div class="line"><span class="lineno">  468</span>      SetAnimationPhase(<a class="code hl_variable" href="#a0fb4137b1a704dcf375c52d9fe52c614">ANIM_PHASE_TRIGGER_REMOTE</a>, 1.0);</div>
+<div class="line"><span class="lineno">  469</span>    }</div>
+<div class="line"><span class="lineno">  470</span>  }</div>
+<div class="ttc" id="aclass_alarm_clock___color_base_html"><div class="ttname"><a href="../../d4/d07/class_alarm_clock___color_base.html">AlarmClock_ColorBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_alarm_clock_8c_source.html#l00001">AlarmClock.c:2</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a0fb4137b1a704dcf375c52d9fe52c614"><div class="ttname"><a href="#a0fb4137b1a704dcf375c52d9fe52c614">ImprovisedExplosive::ANIM_PHASE_TRIGGER_REMOTE</a></div><div class="ttdeci">const string ANIM_PHASE_TRIGGER_REMOTE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00030">ImprovisedExplosive.c:30</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a24651f08e97ef6db8f1d0c7fe9209352"><div class="ttname"><a href="#a24651f08e97ef6db8f1d0c7fe9209352">ImprovisedExplosive::ANIM_PHASE_TRIGGER_CLOCK</a></div><div class="ttdeci">const string ANIM_PHASE_TRIGGER_CLOCK</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00029">ImprovisedExplosive.c:29</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a7daedef9c7d81a4b58c5af9571c88613"><div class="ttname"><a href="#a7daedef9c7d81a4b58c5af9571c88613">ImprovisedExplosive::ANIM_PHASE_TRIGGER_EMPTY</a></div><div class="ttdeci">const string ANIM_PHASE_TRIGGER_EMPTY</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00027">ImprovisedExplosive.c:27</a></div></div>
+<div class="ttc" id="aclass_improvised_explosive_html_a96c97b3588e2b18d136fe66869817a2d"><div class="ttname"><a href="#a96c97b3588e2b18d136fe66869817a2d">ImprovisedExplosive::ANIM_PHASE_TRIGGER_TIMER</a></div><div class="ttdeci">const string ANIM_PHASE_TRIGGER_TIMER</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00028">ImprovisedExplosive.c:28</a></div></div>
+<div class="ttc" id="aclass_kitchen_timer_html"><div class="ttname"><a href="../../d0/d01/class_kitchen_timer.html">KitchenTimer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d05/_kitchen_timer_8c_source.html#l00001">KitchenTimer.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00029">ANIM_PHASE_TRIGGER_CLOCK</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00027">ANIM_PHASE_TRIGGER_EMPTY</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00030">ANIM_PHASE_TRIGGER_REMOTE</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00028">ANIM_PHASE_TRIGGER_TIMER</a>.</p>
 
 </div>
 </div>
@@ -1285,7 +1778,10 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00482">482</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  483</span>  {</div>
+<div class="line"><span class="lineno">  484</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  485</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1311,6 +1807,8 @@ Static Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00029">29</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00437">UpdateVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="a7daedef9c7d81a4b58c5af9571c88613" name="a7daedef9c7d81a4b58c5af9571c88613"></a>
@@ -1334,6 +1832,8 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00027">27</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00437">UpdateVisuals()</a>.</p>
 
 </div>
 </div>
@@ -1359,6 +1859,8 @@ Static Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00030">30</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00437">UpdateVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="a96c97b3588e2b18d136fe66869817a2d" name="a96c97b3588e2b18d136fe66869817a2d"></a>
@@ -1383,6 +1885,8 @@ Static Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00028">28</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00437">UpdateVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="aa06ef602be5e0c0eff29baa3a1ca74de" name="aa06ef602be5e0c0eff29baa3a1ca74de"></a>
@@ -1406,6 +1910,8 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00032">32</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00136">EEItemLocationChanged()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00154">GetPairDevice()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00144">GetRemotelyActivatedItemBehaviour()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00034">ImprovisedExplosive()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00109">OnVariablesSynchronized()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00149">PairRemote()</a>.</p>
 
 </div>
 </div>
@@ -1508,6 +2014,12 @@ Static Protected Attributes</h2></td></tr>
 <div class="ttc" id="aclass_improvised_explosive_html_a9363dcc637887ba17559c0334c0db768"><div class="ttname"><a href="#a9363dcc637887ba17559c0334c0db768">ImprovisedExplosive::SLOT_EXPLOSIVE_B</a></div><div class="ttdeci">static const string SLOT_EXPLOSIVE_B</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00012">ImprovisedExplosive.c:12</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00015">15</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                                                                 {</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="#a378fea2898f380a81a46fcb4cfc86804">SLOT_EXPLOSIVE_A</a>,</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="#a9363dcc637887ba17559c0334c0db768">SLOT_EXPLOSIVE_B</a></div>
+<div class="line"><span class="lineno">   18</span>  };</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00159">CanBeArmed()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00068">LockExplosivesSlots()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00074">UnlockExplosivesSlots()</a>.</p>
 
 </div>
 </div>
@@ -1533,6 +2045,8 @@ Static Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00007">7</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00200">CanDisplayAttachmentSlot()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00337">EEItemAttached()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00351">EEItemDetached()</a>.</p>
+
 </div>
 </div>
 <a id="a43f185de1d9213f6e88eb622d8fc9419" name="a43f185de1d9213f6e88eb622d8fc9419"></a>
@@ -1557,6 +2071,8 @@ Static Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00008">8</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00200">CanDisplayAttachmentSlot()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00337">EEItemAttached()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00351">EEItemDetached()</a>.</p>
+
 </div>
 </div>
 <a id="a9bd6bd9b3512c6f63d6333ff2fe9a351" name="a9bd6bd9b3512c6f63d6333ff2fe9a351"></a>
@@ -1580,6 +2096,8 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00009">9</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00200">CanDisplayAttachmentSlot()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00337">EEItemAttached()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00351">EEItemDetached()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00412">UpdateLED()</a>.</p>
 
 </div>
 </div>
@@ -1607,11 +2125,15 @@ Static Protected Attributes</h2></td></tr>
 <div class="line">    <a class="code hl_variable" href="#a43f185de1d9213f6e88eb622d8fc9419">SLOT_TRIGGER_KITCHEN_TIMER</a>,</div>
 <div class="line">    <a class="code hl_variable" href="#a9bd6bd9b3512c6f63d6333ff2fe9a351">SLOT_TRIGGER_REMOTE</a></div>
 <div class="line">  }</div>
-<div class="ttc" id="aclass_improvised_explosive_html_a30d607459bcf295b7002cd7ffde064c9"><div class="ttname"><a href="#a30d607459bcf295b7002cd7ffde064c9">ImprovisedExplosive::SLOT_TRIGGER_ALARM_CLOCK</a></div><div class="ttdeci">static const string SLOT_TRIGGER_ALARM_CLOCK</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00007">ImprovisedExplosive.c:7</a></div></div>
-<div class="ttc" id="aclass_improvised_explosive_html_a43f185de1d9213f6e88eb622d8fc9419"><div class="ttname"><a href="#a43f185de1d9213f6e88eb622d8fc9419">ImprovisedExplosive::SLOT_TRIGGER_KITCHEN_TIMER</a></div><div class="ttdeci">static const string SLOT_TRIGGER_KITCHEN_TIMER</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00008">ImprovisedExplosive.c:8</a></div></div>
-<div class="ttc" id="aclass_improvised_explosive_html_a9bd6bd9b3512c6f63d6333ff2fe9a351"><div class="ttname"><a href="#a9bd6bd9b3512c6f63d6333ff2fe9a351">ImprovisedExplosive::SLOT_TRIGGER_REMOTE</a></div><div class="ttdeci">static const string SLOT_TRIGGER_REMOTE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_improvised_explosive_8c_source.html#l00009">ImprovisedExplosive.c:9</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00021">21</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>                                                              {</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="#a30d607459bcf295b7002cd7ffde064c9">SLOT_TRIGGER_ALARM_CLOCK</a>,</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="#a43f185de1d9213f6e88eb622d8fc9419">SLOT_TRIGGER_KITCHEN_TIMER</a>,</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="#a9bd6bd9b3512c6f63d6333ff2fe9a351">SLOT_TRIGGER_REMOTE</a></div>
+<div class="line"><span class="lineno">   25</span>  };</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00183">CanReceiveAttachment()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00048">HasLockedTriggerSlots()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00056">LockTriggerSlots()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00080">OnStoreLoad()</a>, <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00109">OnVariablesSynchronized()</a>, and <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00062">UnlockTriggerSlots()</a>.</p>
 
 </div>
 </div>
@@ -1661,6 +2183,8 @@ Static Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00005">5</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00263">OnActivatedByItem()</a>.</p>
+
 </div>
 </div>
 <a id="a5a36f914746d6bd0d1de7001239d12e6" name="a5a36f914746d6bd0d1de7001239d12e6"></a>
@@ -1685,6 +2209,8 @@ Static Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00003">3</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00263">OnActivatedByItem()</a>.</p>
+
 </div>
 </div>
 <a id="a64220bce2c07fe0dbde305fd0c92c155" name="a64220bce2c07fe0dbde305fd0c92c155"></a>
@@ -1708,6 +2234,8 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00004">4</a> of file <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html">ImprovisedExplosive.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_improvised_explosive_8c_source.html#l00263">OnActivatedByItem()</a>.</p>
 
 </div>
 </div>

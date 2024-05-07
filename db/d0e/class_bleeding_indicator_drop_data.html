@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -240,6 +237,154 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">39</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>  {</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">image</a>;</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="#a4c61ee5bea4d8ad680ae4bfe53f508c3">m_Severity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">severity</a>;</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="#ac6cec3f98df0ed2b7523c012d093e90f">m_TimeTotal</a> = 0;</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="#aa3f9095344a1a9703aab6f0fabe2ebab">m_IsRunning</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a92ece4adfb247023f813e1c09260bd0f">m_DbgUseOverrideValues</a>)</div>
+<div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   49</span>      <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a7cfe3380233c4dba1b26989f1e43edd9">m_DbgDropDurationBase</a>;</div>
+<div class="line"><span class="lineno">   50</span>      <a class="code hl_variable" href="#acd361bc5a18464519fb200e784c61474">m_ProgressBreakpointTime</a> = <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a> * <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a4181335ad1daa150cf5a882cf66b154b">m_DbgDropProgressTreshold</a>;</div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_variable" href="#ada2acf6c556c3d8d6db1e77e953cfe76">m_ProgressBreakpoint</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a4181335ad1daa150cf5a882cf66b154b">m_DbgDropProgressTreshold</a>;</div>
+<div class="line"><span class="lineno">   52</span>      <a class="code hl_variable" href="#a017ec9d1e15433944e29a5cb54630f09">m_StartSizeCoef</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a591ab4fa1323441efeb7d6241ac414cb">m_DbgDropStartSize</a>;</div>
+<div class="line"><span class="lineno">   53</span>      <a class="code hl_variable" href="#a7e8be3dae03697c8a26ddcab00456ec8">m_EndSizeCoef</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a09b4dabf7e894682d8ca6166cae7528c">m_DbgDropEndSize</a>;</div>
+<div class="line"><span class="lineno">   54</span>      <a class="code hl_variable" href="#a1b458dcd4976a3211478e578f2b65936">m_RandomSizeMin</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#af544066adff1989accc7fef6fe10c1ec">m_DbgDropSizeVariationMin</a>;</div>
+<div class="line"><span class="lineno">   55</span>      <a class="code hl_variable" href="#a6e5c2fe91ad4847a66879a2af2a6c1cf">m_RandomSizeMax</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a5830f7ba26834d889018a01bb6c88daf">m_DbgDropSizeVariationMax</a>;</div>
+<div class="line"><span class="lineno">   56</span>      <a class="code hl_variable" href="#aa378ff251d367be2660fc9af52a6b0f3">m_ScatterPx</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a8dbbd82f987006755128536de9baccaa">m_DbgDropScatter</a>;</div>
+<div class="line"><span class="lineno">   57</span>      <a class="code hl_variable" href="#aecfb235961f6b9fbe0fa27b1675cbf6b">m_SlideDistance</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a0fb7b1a70c6b2ffa27b6bf4d85ba8788">m_DbgDropSlideDistance</a>;</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>      <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a4c61ee5bea4d8ad680ae4bfe53f508c3">m_Severity</a>)</div>
+<div class="line"><span class="lineno">   63</span>      {</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">case</span> <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#ae61659fcc92de3a9123108e623add9d0">INDICATOR_SEVERITY_LOW</a>:</div>
+<div class="line"><span class="lineno">   65</span>      {</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#ad8c4fa8034fe6cdf60cf355bbe0b3523">DROP_DURATION_LOW</a>;</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_variable" href="#a017ec9d1e15433944e29a5cb54630f09">m_StartSizeCoef</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a3c1f7ffa4edd3abb7247c3b63f1457bf">DROP_SIZE_START_LOW</a>;</div>
+<div class="line"><span class="lineno">   68</span>        <a class="code hl_variable" href="#a7e8be3dae03697c8a26ddcab00456ec8">m_EndSizeCoef</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#ac637d6bb80715427d19d5c5154021bfe">DROP_SIZE_END_LOW</a>;</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="#a1b458dcd4976a3211478e578f2b65936">m_RandomSizeMin</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a255013351d46d21ea91c8025865aef70">DROP_SIZE_VARIATION_MIN_LOW</a>;</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_variable" href="#a6e5c2fe91ad4847a66879a2af2a6c1cf">m_RandomSizeMax</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#aa6091facbb9ae55d645b5db112aa4a1a">DROP_SIZE_VARIATION_MAX_LOW</a>;</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_variable" href="#aa378ff251d367be2660fc9af52a6b0f3">m_ScatterPx</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a4699a896afde9f910525dbf71054a956">DROP_SCATTER_LOW</a>;</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_variable" href="#aecfb235961f6b9fbe0fa27b1675cbf6b">m_SlideDistance</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#ae129fb36c0bf3b5fe8466565aa53f71b">DROP_SLIDE_DISTANCE_LOW</a>;</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   74</span>      }</div>
+<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">case</span> <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a67f0f7f41dbf01bd11c58816737d9098">INDICATOR_SEVERITY_MEDIUM</a>:</div>
+<div class="line"><span class="lineno">   76</span>      {</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a0b04ca13912bc873edce6cd4b78f38e1">DROP_DURATION_MEDIUM</a>;</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_variable" href="#a017ec9d1e15433944e29a5cb54630f09">m_StartSizeCoef</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a22dcdbe8f0737f3ec6222f1ce3739c0d">DROP_SIZE_START_MEDIUM</a>;</div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_variable" href="#a7e8be3dae03697c8a26ddcab00456ec8">m_EndSizeCoef</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a0494094d133974a89b62e36d00905db5">DROP_SIZE_END_MEDIUM</a>;</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_variable" href="#a1b458dcd4976a3211478e578f2b65936">m_RandomSizeMin</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a23b32637cb2c8f419d0e0dc2576956c5">DROP_SIZE_VARIATION_MIN_MEDIUM</a>;</div>
+<div class="line"><span class="lineno">   81</span>        <a class="code hl_variable" href="#a6e5c2fe91ad4847a66879a2af2a6c1cf">m_RandomSizeMax</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a2161e35845bbfb525595af9422165b07">DROP_SIZE_VARIATION_MAX_MEDIUM</a>;</div>
+<div class="line"><span class="lineno">   82</span>        <a class="code hl_variable" href="#aa378ff251d367be2660fc9af52a6b0f3">m_ScatterPx</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a5f4376ec076650577a210ca0afbb78b3">DROP_SCATTER_MEDIUM</a>;</div>
+<div class="line"><span class="lineno">   83</span>        <a class="code hl_variable" href="#aecfb235961f6b9fbe0fa27b1675cbf6b">m_SlideDistance</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#af655bba548b2062f6b236de212253857">DROP_SLIDE_DISTANCE_MEDIUM</a>;</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   85</span>      }</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">case</span> <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#af83b6ce27d4ace344ddf36606d300c76">INDICATOR_SEVERITY_HIGH</a>:</div>
+<div class="line"><span class="lineno">   87</span>      {</div>
+<div class="line"><span class="lineno">   88</span>        <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a88ac37629023d73cb821335b4d8af563">DROP_DURATION_HIGH</a>;</div>
+<div class="line"><span class="lineno">   89</span>        <a class="code hl_variable" href="#a017ec9d1e15433944e29a5cb54630f09">m_StartSizeCoef</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a715919c3925e4b9a3a76e12d262c17a2">DROP_SIZE_START_HIGH</a>;</div>
+<div class="line"><span class="lineno">   90</span>        <a class="code hl_variable" href="#a7e8be3dae03697c8a26ddcab00456ec8">m_EndSizeCoef</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a76e37bf9186dc3c5e55f12275da988d1">DROP_SIZE_END_HIGH</a>;</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="#a1b458dcd4976a3211478e578f2b65936">m_RandomSizeMin</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a259c57420bfd3d5dc32abb09c927b7cc">DROP_SIZE_VARIATION_MIN_HIGH</a>;</div>
+<div class="line"><span class="lineno">   92</span>        <a class="code hl_variable" href="#a6e5c2fe91ad4847a66879a2af2a6c1cf">m_RandomSizeMax</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a21b1127c753837b8fb28725085ea4b55">DROP_SIZE_VARIATION_MAX_HIGH</a>;</div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_variable" href="#aa378ff251d367be2660fc9af52a6b0f3">m_ScatterPx</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a83e6e945418ee676f5d1101b6bb8cdf8">DROP_SCATTER_HIGH</a>;</div>
+<div class="line"><span class="lineno">   94</span>        <a class="code hl_variable" href="#aecfb235961f6b9fbe0fa27b1675cbf6b">m_SlideDistance</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#ae311a959ae6dd9839c3ebb7cc60038f8">DROP_SLIDE_DISTANCE_HIGH</a>;</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   96</span>      }</div>
+<div class="line"><span class="lineno">   97</span>      }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>      <a class="code hl_variable" href="#acd361bc5a18464519fb200e784c61474">m_ProgressBreakpointTime</a> = <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a> * <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a7fc98809219a2224b643af2053573f69">DROP_PROGRESS_THRESHOLD</a>;</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_variable" href="#ada2acf6c556c3d8d6db1e77e953cfe76">m_ProgressBreakpoint</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a7fc98809219a2224b643af2053573f69">DROP_PROGRESS_THRESHOLD</a>;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="#aca4d3c7ff37963bc9caa140ba7423fc4">m_ProgressFadingDuration</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga0ea2cf98823125deeeb28e8c03d3d756">Max</a>(0.0001, <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a> - <a class="code hl_variable" href="#acd361bc5a18464519fb200e784c61474">m_ProgressBreakpointTime</a>);</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_variable" href="#ade5b09ae6ab0f924cdf31d5541b8e51b">m_SpeedCoef</a> = 1.0; <span class="comment">//TODO ??</span></div>
+<div class="line"><span class="lineno">  105</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a92ece4adfb247023f813e1c09260bd0f">m_DbgUseOverrideValues</a>)</div>
+<div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>      <a class="code hl_variable" href="#aae7bf72a85ef7a7f0bb269a6aa1e694a">m_ColorAlphaStart</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a39e90cca8c160d5396960462a59b9677">m_DbgDropColorAlphaStart</a> / 255;</div>
+<div class="line"><span class="lineno">  109</span>      <a class="code hl_variable" href="#a1548559ef0244c2bb3cd97f3958f3568">m_ColorAlphaEnd</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a77f94a26700b5e28b5705b8bd84be387">m_DbgDropColorAlphaEnd</a> / 255;</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  112</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>      <a class="code hl_variable" href="#aae7bf72a85ef7a7f0bb269a6aa1e694a">m_ColorAlphaStart</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a76d0c23c4b6806c5b993b6d96e9d651c">DROP_COLOR_ALPHA_START</a> / 255;</div>
+<div class="line"><span class="lineno">  115</span>      <a class="code hl_variable" href="#a1548559ef0244c2bb3cd97f3958f3568">m_ColorAlphaEnd</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a520b479482913f1677c877157db50819">DROP_COLOR_ALPHA_END</a> / 255;</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_function" href="#a179059a9c2329f76c161b4bf56d25f9c">InitImageScale</a>();</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="../../d7/d00/group___mouse.html#gad57993cbd18397876d8225455d414260">GetScreenSize</a>(<a class="code hl_variable" href="#a3936b640b0fa542a943bf80f514925b6">m_ScreenSizeX</a>, <a class="code hl_variable" href="#a8df9e180432c62408416de4fa942c3a7">m_ScreenSizeY</a>);</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="#ae7892d204f4008b84872252819818164">AdjustColorSaturation</a>();</div>
+<div class="line"><span class="lineno">  120</span>  }</div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00001">BleedingIndicationConstants.c:2</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a0494094d133974a89b62e36d00905db5"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a0494094d133974a89b62e36d00905db5">BleedingIndicationConstants::DROP_SIZE_END_MEDIUM</a></div><div class="ttdeci">static const float DROP_SIZE_END_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00043">BleedingIndicationConstants.c:43</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a0b04ca13912bc873edce6cd4b78f38e1"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a0b04ca13912bc873edce6cd4b78f38e1">BleedingIndicationConstants::DROP_DURATION_MEDIUM</a></div><div class="ttdeci">static const float DROP_DURATION_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00039">BleedingIndicationConstants.c:39</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a2161e35845bbfb525595af9422165b07"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a2161e35845bbfb525595af9422165b07">BleedingIndicationConstants::DROP_SIZE_VARIATION_MAX_MEDIUM</a></div><div class="ttdeci">static const float DROP_SIZE_VARIATION_MAX_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00045">BleedingIndicationConstants.c:45</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a21b1127c753837b8fb28725085ea4b55"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a21b1127c753837b8fb28725085ea4b55">BleedingIndicationConstants::DROP_SIZE_VARIATION_MAX_HIGH</a></div><div class="ttdeci">static const float DROP_SIZE_VARIATION_MAX_HIGH</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00058">BleedingIndicationConstants.c:58</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a22dcdbe8f0737f3ec6222f1ce3739c0d"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a22dcdbe8f0737f3ec6222f1ce3739c0d">BleedingIndicationConstants::DROP_SIZE_START_MEDIUM</a></div><div class="ttdeci">static const float DROP_SIZE_START_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00042">BleedingIndicationConstants.c:42</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a23b32637cb2c8f419d0e0dc2576956c5"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a23b32637cb2c8f419d0e0dc2576956c5">BleedingIndicationConstants::DROP_SIZE_VARIATION_MIN_MEDIUM</a></div><div class="ttdeci">static const float DROP_SIZE_VARIATION_MIN_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00044">BleedingIndicationConstants.c:44</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a255013351d46d21ea91c8025865aef70"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a255013351d46d21ea91c8025865aef70">BleedingIndicationConstants::DROP_SIZE_VARIATION_MIN_LOW</a></div><div class="ttdeci">static const float DROP_SIZE_VARIATION_MIN_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00031">BleedingIndicationConstants.c:31</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a259c57420bfd3d5dc32abb09c927b7cc"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a259c57420bfd3d5dc32abb09c927b7cc">BleedingIndicationConstants::DROP_SIZE_VARIATION_MIN_HIGH</a></div><div class="ttdeci">static const float DROP_SIZE_VARIATION_MIN_HIGH</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00057">BleedingIndicationConstants.c:57</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a3c1f7ffa4edd3abb7247c3b63f1457bf"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a3c1f7ffa4edd3abb7247c3b63f1457bf">BleedingIndicationConstants::DROP_SIZE_START_LOW</a></div><div class="ttdeci">static const float DROP_SIZE_START_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00029">BleedingIndicationConstants.c:29</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a4699a896afde9f910525dbf71054a956"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a4699a896afde9f910525dbf71054a956">BleedingIndicationConstants::DROP_SCATTER_LOW</a></div><div class="ttdeci">static const int DROP_SCATTER_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00033">BleedingIndicationConstants.c:33</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a520b479482913f1677c877157db50819"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a520b479482913f1677c877157db50819">BleedingIndicationConstants::DROP_COLOR_ALPHA_END</a></div><div class="ttdeci">static const int DROP_COLOR_ALPHA_END</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00019">BleedingIndicationConstants.c:19</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a5f4376ec076650577a210ca0afbb78b3"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a5f4376ec076650577a210ca0afbb78b3">BleedingIndicationConstants::DROP_SCATTER_MEDIUM</a></div><div class="ttdeci">static const int DROP_SCATTER_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00046">BleedingIndicationConstants.c:46</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a67f0f7f41dbf01bd11c58816737d9098"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a67f0f7f41dbf01bd11c58816737d9098">BleedingIndicationConstants::INDICATOR_SEVERITY_MEDIUM</a></div><div class="ttdeci">static const int INDICATOR_SEVERITY_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00006">BleedingIndicationConstants.c:6</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a715919c3925e4b9a3a76e12d262c17a2"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a715919c3925e4b9a3a76e12d262c17a2">BleedingIndicationConstants::DROP_SIZE_START_HIGH</a></div><div class="ttdeci">static const float DROP_SIZE_START_HIGH</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00055">BleedingIndicationConstants.c:55</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a76d0c23c4b6806c5b993b6d96e9d651c"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a76d0c23c4b6806c5b993b6d96e9d651c">BleedingIndicationConstants::DROP_COLOR_ALPHA_START</a></div><div class="ttdeci">static const int DROP_COLOR_ALPHA_START</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00018">BleedingIndicationConstants.c:18</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a76e37bf9186dc3c5e55f12275da988d1"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a76e37bf9186dc3c5e55f12275da988d1">BleedingIndicationConstants::DROP_SIZE_END_HIGH</a></div><div class="ttdeci">static const float DROP_SIZE_END_HIGH</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00056">BleedingIndicationConstants.c:56</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a7fc98809219a2224b643af2053573f69"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a7fc98809219a2224b643af2053573f69">BleedingIndicationConstants::DROP_PROGRESS_THRESHOLD</a></div><div class="ttdeci">static const float DROP_PROGRESS_THRESHOLD</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00013">BleedingIndicationConstants.c:13</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a83e6e945418ee676f5d1101b6bb8cdf8"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a83e6e945418ee676f5d1101b6bb8cdf8">BleedingIndicationConstants::DROP_SCATTER_HIGH</a></div><div class="ttdeci">static const int DROP_SCATTER_HIGH</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00059">BleedingIndicationConstants.c:59</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a88ac37629023d73cb821335b4d8af563"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a88ac37629023d73cb821335b4d8af563">BleedingIndicationConstants::DROP_DURATION_HIGH</a></div><div class="ttdeci">static const float DROP_DURATION_HIGH</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00052">BleedingIndicationConstants.c:52</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_aa6091facbb9ae55d645b5db112aa4a1a"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#aa6091facbb9ae55d645b5db112aa4a1a">BleedingIndicationConstants::DROP_SIZE_VARIATION_MAX_LOW</a></div><div class="ttdeci">static const float DROP_SIZE_VARIATION_MAX_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00032">BleedingIndicationConstants.c:32</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_ac637d6bb80715427d19d5c5154021bfe"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#ac637d6bb80715427d19d5c5154021bfe">BleedingIndicationConstants::DROP_SIZE_END_LOW</a></div><div class="ttdeci">static const float DROP_SIZE_END_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00030">BleedingIndicationConstants.c:30</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_ad8c4fa8034fe6cdf60cf355bbe0b3523"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#ad8c4fa8034fe6cdf60cf355bbe0b3523">BleedingIndicationConstants::DROP_DURATION_LOW</a></div><div class="ttdeci">static const float DROP_DURATION_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00026">BleedingIndicationConstants.c:26</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_ae129fb36c0bf3b5fe8466565aa53f71b"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#ae129fb36c0bf3b5fe8466565aa53f71b">BleedingIndicationConstants::DROP_SLIDE_DISTANCE_LOW</a></div><div class="ttdeci">static const float DROP_SLIDE_DISTANCE_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00034">BleedingIndicationConstants.c:34</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_ae311a959ae6dd9839c3ebb7cc60038f8"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#ae311a959ae6dd9839c3ebb7cc60038f8">BleedingIndicationConstants::DROP_SLIDE_DISTANCE_HIGH</a></div><div class="ttdeci">static const float DROP_SLIDE_DISTANCE_HIGH</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00060">BleedingIndicationConstants.c:60</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_ae61659fcc92de3a9123108e623add9d0"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#ae61659fcc92de3a9123108e623add9d0">BleedingIndicationConstants::INDICATOR_SEVERITY_LOW</a></div><div class="ttdeci">static const int INDICATOR_SEVERITY_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00005">BleedingIndicationConstants.c:5</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_af655bba548b2062f6b236de212253857"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#af655bba548b2062f6b236de212253857">BleedingIndicationConstants::DROP_SLIDE_DISTANCE_MEDIUM</a></div><div class="ttdeci">static const float DROP_SLIDE_DISTANCE_MEDIUM</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00047">BleedingIndicationConstants.c:47</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_af83b6ce27d4ace344ddf36606d300c76"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#af83b6ce27d4ace344ddf36606d300c76">BleedingIndicationConstants::INDICATOR_SEVERITY_HIGH</a></div><div class="ttdeci">static const int INDICATOR_SEVERITY_HIGH</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00007">BleedingIndicationConstants.c:7</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a017ec9d1e15433944e29a5cb54630f09"><div class="ttname"><a href="#a017ec9d1e15433944e29a5cb54630f09">BleedingIndicatorDropData::m_StartSizeCoef</a></div><div class="ttdeci">float m_StartSizeCoef</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00033">BleedingDrop.c:33</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a1548559ef0244c2bb3cd97f3958f3568"><div class="ttname"><a href="#a1548559ef0244c2bb3cd97f3958f3568">BleedingIndicatorDropData::m_ColorAlphaEnd</a></div><div class="ttdeci">float m_ColorAlphaEnd</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00016">BleedingDrop.c:16</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a179059a9c2329f76c161b4bf56d25f9c"><div class="ttname"><a href="#a179059a9c2329f76c161b4bf56d25f9c">BleedingIndicatorDropData::InitImageScale</a></div><div class="ttdeci">void InitImageScale()</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00126">BleedingDrop.c:126</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a1b458dcd4976a3211478e578f2b65936"><div class="ttname"><a href="#a1b458dcd4976a3211478e578f2b65936">BleedingIndicatorDropData::m_RandomSizeMin</a></div><div class="ttdeci">float m_RandomSizeMin</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00035">BleedingDrop.c:35</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a3936b640b0fa542a943bf80f514925b6"><div class="ttname"><a href="#a3936b640b0fa542a943bf80f514925b6">BleedingIndicatorDropData::m_ScreenSizeX</a></div><div class="ttdeci">int m_ScreenSizeX</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00030">BleedingDrop.c:30</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a39fc620a297aa30f3c2d8ee14482c938"><div class="ttname"><a href="#a39fc620a297aa30f3c2d8ee14482c938">BleedingIndicatorDropData::m_Widget</a></div><div class="ttdeci">ImageWidget m_Widget</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00004">BleedingDrop.c:4</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a4c61ee5bea4d8ad680ae4bfe53f508c3"><div class="ttname"><a href="#a4c61ee5bea4d8ad680ae4bfe53f508c3">BleedingIndicatorDropData::m_Severity</a></div><div class="ttdeci">int m_Severity</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00005">BleedingDrop.c:5</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a6e5c2fe91ad4847a66879a2af2a6c1cf"><div class="ttname"><a href="#a6e5c2fe91ad4847a66879a2af2a6c1cf">BleedingIndicatorDropData::m_RandomSizeMax</a></div><div class="ttdeci">float m_RandomSizeMax</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00036">BleedingDrop.c:36</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a7e8be3dae03697c8a26ddcab00456ec8"><div class="ttname"><a href="#a7e8be3dae03697c8a26ddcab00456ec8">BleedingIndicatorDropData::m_EndSizeCoef</a></div><div class="ttdeci">float m_EndSizeCoef</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00034">BleedingDrop.c:34</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a8df9e180432c62408416de4fa942c3a7"><div class="ttname"><a href="#a8df9e180432c62408416de4fa942c3a7">BleedingIndicatorDropData::m_ScreenSizeY</a></div><div class="ttdeci">int m_ScreenSizeY</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00031">BleedingDrop.c:31</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a96069851deae69ebee90f006bb07e186"><div class="ttname"><a href="#a96069851deae69ebee90f006bb07e186">BleedingIndicatorDropData::m_Duration</a></div><div class="ttdeci">float m_Duration</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00010">BleedingDrop.c:10</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_aa378ff251d367be2660fc9af52a6b0f3"><div class="ttname"><a href="#aa378ff251d367be2660fc9af52a6b0f3">BleedingIndicatorDropData::m_ScatterPx</a></div><div class="ttdeci">int m_ScatterPx</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00012">BleedingDrop.c:12</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_aa3f9095344a1a9703aab6f0fabe2ebab"><div class="ttname"><a href="#aa3f9095344a1a9703aab6f0fabe2ebab">BleedingIndicatorDropData::m_IsRunning</a></div><div class="ttdeci">bool m_IsRunning</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00028">BleedingDrop.c:28</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_aae7bf72a85ef7a7f0bb269a6aa1e694a"><div class="ttname"><a href="#aae7bf72a85ef7a7f0bb269a6aa1e694a">BleedingIndicatorDropData::m_ColorAlphaStart</a></div><div class="ttdeci">float m_ColorAlphaStart</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00015">BleedingDrop.c:15</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_ac6cec3f98df0ed2b7523c012d093e90f"><div class="ttname"><a href="#ac6cec3f98df0ed2b7523c012d093e90f">BleedingIndicatorDropData::m_TimeTotal</a></div><div class="ttdeci">float m_TimeTotal</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00006">BleedingDrop.c:6</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_aca4d3c7ff37963bc9caa140ba7423fc4"><div class="ttname"><a href="#aca4d3c7ff37963bc9caa140ba7423fc4">BleedingIndicatorDropData::m_ProgressFadingDuration</a></div><div class="ttdeci">float m_ProgressFadingDuration</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00008">BleedingDrop.c:8</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_acd361bc5a18464519fb200e784c61474"><div class="ttname"><a href="#acd361bc5a18464519fb200e784c61474">BleedingIndicatorDropData::m_ProgressBreakpointTime</a></div><div class="ttdeci">float m_ProgressBreakpointTime</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00007">BleedingDrop.c:7</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_ada2acf6c556c3d8d6db1e77e953cfe76"><div class="ttname"><a href="#ada2acf6c556c3d8d6db1e77e953cfe76">BleedingIndicatorDropData::m_ProgressBreakpoint</a></div><div class="ttdeci">float m_ProgressBreakpoint</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00009">BleedingDrop.c:9</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_ade5b09ae6ab0f924cdf31d5541b8e51b"><div class="ttname"><a href="#ade5b09ae6ab0f924cdf31d5541b8e51b">BleedingIndicatorDropData::m_SpeedCoef</a></div><div class="ttdeci">float m_SpeedCoef</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00011">BleedingDrop.c:11</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_ae7892d204f4008b84872252819818164"><div class="ttname"><a href="#ae7892d204f4008b84872252819818164">BleedingIndicatorDropData::AdjustColorSaturation</a></div><div class="ttdeci">void AdjustColorSaturation()</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00195">BleedingDrop.c:195</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_aecfb235961f6b9fbe0fa27b1675cbf6b"><div class="ttname"><a href="#aecfb235961f6b9fbe0fa27b1675cbf6b">BleedingIndicatorDropData::m_SlideDistance</a></div><div class="ttdeci">float m_SlideDistance</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00013">BleedingDrop.c:13</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a></div><div class="ttdoc">static info (non-constants)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00002">BleedingIndicationStaticInfo.c:3</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a09b4dabf7e894682d8ca6166cae7528c"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a09b4dabf7e894682d8ca6166cae7528c">DbgBleedingIndicationStaticInfo::m_DbgDropEndSize</a></div><div class="ttdeci">static float m_DbgDropEndSize</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00013">BleedingIndicationStaticInfo.c:13</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a0fb7b1a70c6b2ffa27b6bf4d85ba8788"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a0fb7b1a70c6b2ffa27b6bf4d85ba8788">DbgBleedingIndicationStaticInfo::m_DbgDropSlideDistance</a></div><div class="ttdeci">static float m_DbgDropSlideDistance</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00017">BleedingIndicationStaticInfo.c:17</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a39e90cca8c160d5396960462a59b9677"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a39e90cca8c160d5396960462a59b9677">DbgBleedingIndicationStaticInfo::m_DbgDropColorAlphaStart</a></div><div class="ttdeci">static int m_DbgDropColorAlphaStart</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00024">BleedingIndicationStaticInfo.c:24</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a4181335ad1daa150cf5a882cf66b154b"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a4181335ad1daa150cf5a882cf66b154b">DbgBleedingIndicationStaticInfo::m_DbgDropProgressTreshold</a></div><div class="ttdeci">static float m_DbgDropProgressTreshold</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00011">BleedingIndicationStaticInfo.c:11</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a5830f7ba26834d889018a01bb6c88daf"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a5830f7ba26834d889018a01bb6c88daf">DbgBleedingIndicationStaticInfo::m_DbgDropSizeVariationMax</a></div><div class="ttdeci">static float m_DbgDropSizeVariationMax</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00015">BleedingIndicationStaticInfo.c:15</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a591ab4fa1323441efeb7d6241ac414cb"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a591ab4fa1323441efeb7d6241ac414cb">DbgBleedingIndicationStaticInfo::m_DbgDropStartSize</a></div><div class="ttdeci">static float m_DbgDropStartSize</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00012">BleedingIndicationStaticInfo.c:12</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a77f94a26700b5e28b5705b8bd84be387"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a77f94a26700b5e28b5705b8bd84be387">DbgBleedingIndicationStaticInfo::m_DbgDropColorAlphaEnd</a></div><div class="ttdeci">static int m_DbgDropColorAlphaEnd</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00025">BleedingIndicationStaticInfo.c:25</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a7cfe3380233c4dba1b26989f1e43edd9"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a7cfe3380233c4dba1b26989f1e43edd9">DbgBleedingIndicationStaticInfo::m_DbgDropDurationBase</a></div><div class="ttdeci">static float m_DbgDropDurationBase</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00008">BleedingIndicationStaticInfo.c:8</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a8dbbd82f987006755128536de9baccaa"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a8dbbd82f987006755128536de9baccaa">DbgBleedingIndicationStaticInfo::m_DbgDropScatter</a></div><div class="ttdeci">static int m_DbgDropScatter</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00016">BleedingIndicationStaticInfo.c:16</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a92ece4adfb247023f813e1c09260bd0f"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a92ece4adfb247023f813e1c09260bd0f">DbgBleedingIndicationStaticInfo::m_DbgUseOverrideValues</a></div><div class="ttdeci">static bool m_DbgUseOverrideValues</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00005">BleedingIndicationStaticInfo.c:5</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_af544066adff1989accc7fef6fe10c1ec"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#af544066adff1989accc7fef6fe10c1ec">DbgBleedingIndicationStaticInfo::m_DbgDropSizeVariationMin</a></div><div class="ttdeci">static float m_DbgDropSizeVariationMin</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00014">BleedingIndicationStaticInfo.c:14</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___math_html_ga0ea2cf98823125deeeb28e8c03d3d756"><div class="ttname"><a href="../../d5/d08/group___math.html#ga0ea2cf98823125deeeb28e8c03d3d756">Math::Max</a></div><div class="ttdeci">static proto float Max(float x, float y)</div><div class="ttdoc">Returns bigger of two given values.</div></div>
+<div class="ttc" id="agroup___mouse_html_gad57993cbd18397876d8225455d414260"><div class="ttname"><a href="../../d7/d00/group___mouse.html#gad57993cbd18397876d8225455d414260">GetScreenSize</a></div><div class="ttdeci">proto void GetScreenSize(out int x, out int y)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00195">AdjustColorSaturation()</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00019">BleedingIndicationConstants::DROP_COLOR_ALPHA_END</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00018">BleedingIndicationConstants::DROP_COLOR_ALPHA_START</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00052">BleedingIndicationConstants::DROP_DURATION_HIGH</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00026">BleedingIndicationConstants::DROP_DURATION_LOW</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00039">BleedingIndicationConstants::DROP_DURATION_MEDIUM</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00013">BleedingIndicationConstants::DROP_PROGRESS_THRESHOLD</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00059">BleedingIndicationConstants::DROP_SCATTER_HIGH</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00033">BleedingIndicationConstants::DROP_SCATTER_LOW</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00046">BleedingIndicationConstants::DROP_SCATTER_MEDIUM</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00056">BleedingIndicationConstants::DROP_SIZE_END_HIGH</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00030">BleedingIndicationConstants::DROP_SIZE_END_LOW</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00043">BleedingIndicationConstants::DROP_SIZE_END_MEDIUM</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00055">BleedingIndicationConstants::DROP_SIZE_START_HIGH</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00029">BleedingIndicationConstants::DROP_SIZE_START_LOW</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00042">BleedingIndicationConstants::DROP_SIZE_START_MEDIUM</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00058">BleedingIndicationConstants::DROP_SIZE_VARIATION_MAX_HIGH</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00032">BleedingIndicationConstants::DROP_SIZE_VARIATION_MAX_LOW</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00045">BleedingIndicationConstants::DROP_SIZE_VARIATION_MAX_MEDIUM</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00057">BleedingIndicationConstants::DROP_SIZE_VARIATION_MIN_HIGH</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00031">BleedingIndicationConstants::DROP_SIZE_VARIATION_MIN_LOW</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00044">BleedingIndicationConstants::DROP_SIZE_VARIATION_MIN_MEDIUM</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00060">BleedingIndicationConstants::DROP_SLIDE_DISTANCE_HIGH</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00034">BleedingIndicationConstants::DROP_SLIDE_DISTANCE_LOW</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00047">BleedingIndicationConstants::DROP_SLIDE_DISTANCE_MEDIUM</a>, <a class="el" href="../../d7/d00/group___mouse.html#gad57993cbd18397876d8225455d414260">GetScreenSize()</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00007">BleedingIndicationConstants::INDICATOR_SEVERITY_HIGH</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00005">BleedingIndicationConstants::INDICATOR_SEVERITY_LOW</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00006">BleedingIndicationConstants::INDICATOR_SEVERITY_MEDIUM</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00016">m_ColorAlphaEnd</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00015">m_ColorAlphaStart</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00025">DbgBleedingIndicationStaticInfo::m_DbgDropColorAlphaEnd</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00024">DbgBleedingIndicationStaticInfo::m_DbgDropColorAlphaStart</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00008">DbgBleedingIndicationStaticInfo::m_DbgDropDurationBase</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00013">DbgBleedingIndicationStaticInfo::m_DbgDropEndSize</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00011">DbgBleedingIndicationStaticInfo::m_DbgDropProgressTreshold</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00016">DbgBleedingIndicationStaticInfo::m_DbgDropScatter</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00015">DbgBleedingIndicationStaticInfo::m_DbgDropSizeVariationMax</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00014">DbgBleedingIndicationStaticInfo::m_DbgDropSizeVariationMin</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00017">DbgBleedingIndicationStaticInfo::m_DbgDropSlideDistance</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00012">DbgBleedingIndicationStaticInfo::m_DbgDropStartSize</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00005">DbgBleedingIndicationStaticInfo::m_DbgUseOverrideValues</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00010">m_Duration</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00034">m_EndSizeCoef</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00028">m_IsRunning</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00009">m_ProgressBreakpoint</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00007">m_ProgressBreakpointTime</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00008">m_ProgressFadingDuration</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00036">m_RandomSizeMax</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00035">m_RandomSizeMin</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00012">m_ScatterPx</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00030">m_ScreenSizeX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00031">m_ScreenSizeY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00005">m_Severity</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00013">m_SlideDistance</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00011">m_SpeedCoef</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00033">m_StartSizeCoef</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00006">m_TimeTotal</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">m_Widget</a>, and <a class="el" href="../../d5/d08/group___math.html#ga0ea2cf98823125deeeb28e8c03d3d756">Math::Max()</a>.</p>
 
 </div>
 </div>
@@ -267,7 +412,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00122">122</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  123</span>  {</div>
+<div class="line"><span class="lineno">  124</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -295,6 +442,66 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00195">195</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>  {</div>
+<div class="line"><span class="lineno">  197</span>    <span class="comment">//color adjustment</span></div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordtype">float</span> r = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a115e4f0935ea979d3b3a6cd251c8bc49">DROP_COLOR_RED</a>;</div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordtype">float</span> g = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#aa908657a4a7a61d1352256205eedabe2">DROP_COLOR_GREEN</a>;</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordtype">float</span> b = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#a7b1e7fcfe92ed7f29fed9527a7666c81">DROP_COLOR_BLUE</a>;</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">desaturationEnd</a> = <a class="code hl_class" href="../../dc/d07/class_bleeding_indication_constants.html">BleedingIndicationConstants</a>.<a class="code hl_variable" href="../../dc/d07/class_bleeding_indication_constants.html#abcf20425e555017d97698137ee84c935">DROP_COLOR_DESATURATIONEND</a>;</div>
+<div class="line"><span class="lineno">  202</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">  203</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a92ece4adfb247023f813e1c09260bd0f">m_DbgUseOverrideValues</a>)</div>
+<div class="line"><span class="lineno">  204</span>    {</div>
+<div class="line"><span class="lineno">  205</span>      r = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a44849195ec6ea15fe1541cf22eb4287a">m_DbgDropColorRed</a>;</div>
+<div class="line"><span class="lineno">  206</span>      g = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#af3bd7adfb4a4d53dab3718170456e7f7">m_DbgDropColorGreen</a>;</div>
+<div class="line"><span class="lineno">  207</span>      b = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#ab75e9452833aa8c0b8e5230b19e2abf8">m_DbgDropColorBlue</a>;</div>
+<div class="line"><span class="lineno">  208</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">desaturationEnd</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#accf17618101c46677ed10dd1b199aa03">m_DbgDesaturationEnd</a>;</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
+<div class="line"><span class="lineno">  210</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>    <span class="comment">//saturation adjustment</span></div>
+<div class="line"><span class="lineno">  213</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">  214</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a92ece4adfb247023f813e1c09260bd0f">m_DbgUseOverrideValues</a> || (<a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a92ece4adfb247023f813e1c09260bd0f">m_DbgUseOverrideValues</a> &amp;&amp; <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#ada6917e62bd7683899f6f7077bf26e7c">m_DbgDropDesaturate</a>))</div>
+<div class="line"><span class="lineno">  215</span>    {</div>
+<div class="line"><span class="lineno">  216</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  217</span>      <a class="code hl_class" href="../../de/d00/class_param.html">Param</a> <a class="code hl_class" href="../../db/d06/class_param3.html">par</a> = <a class="code hl_class" href="../../d0/d09/class_p_p_e_manager_static.html">PPEManagerStatic</a>.<a class="code hl_function" href="../../d0/d09/class_p_p_e_manager_static.html#a86b3b44641655b3466eab6e2f31bfa14">GetPPEManager</a>().GetPostProcessCurrentValues(<a class="code hl_enumeration" href="../../dd/d02/group___camera.html#gac5442d940bdd247b908f1f02efd643ec">PostProcessEffectType</a>.Glow, <a class="code hl_class" href="../../dc/d0c/class_p_p_e_glow.html">PPEGlow</a>.<a class="code hl_variable" href="../../dc/d0c/class_p_p_e_glow.html#a01658f5b702f44d008d10e5efed6a09a">PARAM_SATURATION</a>);</div>
+<div class="line"><span class="lineno">  218</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">saturationProgress</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;float&gt;</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">par</a>).param1;</div>
+<div class="line"><span class="lineno">  219</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">saturationProgress</a> = <a class="code hl_class" href="../../dc/d00/class_easing.html">Easing</a>.<a class="code hl_function" href="../../dc/d00/class_easing.html#a21a24c43fccbaae9bba7bbc363dff439">EaseOutSine</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">saturationProgress</a>);</div>
+<div class="line"><span class="lineno">  220</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">saturationProgress</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Lerp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">desaturationEnd</a>, 1.0, <a class="code hl_class" href="../../db/d06/class_param3.html">saturationProgress</a>);</div>
+<div class="line"><span class="lineno">  221</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">lowest_channel</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Min</a>(<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Min</a>(r, g), b);</div>
+<div class="line"><span class="lineno">  222</span>      r = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Lerp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">lowest_channel</a>, r, <a class="code hl_class" href="../../db/d06/class_param3.html">saturationProgress</a>);</div>
+<div class="line"><span class="lineno">  223</span>      g = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Lerp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">lowest_channel</a>, g, <a class="code hl_class" href="../../db/d06/class_param3.html">saturationProgress</a>);</div>
+<div class="line"><span class="lineno">  224</span>      b = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Lerp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">lowest_channel</a>, b, <a class="code hl_class" href="../../db/d06/class_param3.html">saturationProgress</a>);</div>
+<div class="line"><span class="lineno">  225</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">  226</span>    }</div>
+<div class="line"><span class="lineno">  227</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">color</a> = <a class="code hl_function" href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a>(0x00, r, g, b);</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.SetColor(<a class="code hl_class" href="../../db/d06/class_param3.html">color</a>);</div>
+<div class="line"><span class="lineno">  231</span>  }</div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a115e4f0935ea979d3b3a6cd251c8bc49"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a115e4f0935ea979d3b3a6cd251c8bc49">BleedingIndicationConstants::DROP_COLOR_RED</a></div><div class="ttdeci">static const int DROP_COLOR_RED</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00015">BleedingIndicationConstants.c:15</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_a7b1e7fcfe92ed7f29fed9527a7666c81"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#a7b1e7fcfe92ed7f29fed9527a7666c81">BleedingIndicationConstants::DROP_COLOR_BLUE</a></div><div class="ttdeci">static const int DROP_COLOR_BLUE</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00017">BleedingIndicationConstants.c:17</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_aa908657a4a7a61d1352256205eedabe2"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#aa908657a4a7a61d1352256205eedabe2">BleedingIndicationConstants::DROP_COLOR_GREEN</a></div><div class="ttdeci">static const int DROP_COLOR_GREEN</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00016">BleedingIndicationConstants.c:16</a></div></div>
+<div class="ttc" id="aclass_bleeding_indication_constants_html_abcf20425e555017d97698137ee84c935"><div class="ttname"><a href="../../dc/d07/class_bleeding_indication_constants.html#abcf20425e555017d97698137ee84c935">BleedingIndicationConstants::DROP_COLOR_DESATURATIONEND</a></div><div class="ttdeci">static const float DROP_COLOR_DESATURATIONEND</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00014">BleedingIndicationConstants.c:14</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a44849195ec6ea15fe1541cf22eb4287a"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a44849195ec6ea15fe1541cf22eb4287a">DbgBleedingIndicationStaticInfo::m_DbgDropColorRed</a></div><div class="ttdeci">static int m_DbgDropColorRed</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00021">BleedingIndicationStaticInfo.c:21</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_ab75e9452833aa8c0b8e5230b19e2abf8"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#ab75e9452833aa8c0b8e5230b19e2abf8">DbgBleedingIndicationStaticInfo::m_DbgDropColorBlue</a></div><div class="ttdeci">static int m_DbgDropColorBlue</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00023">BleedingIndicationStaticInfo.c:23</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_accf17618101c46677ed10dd1b199aa03"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#accf17618101c46677ed10dd1b199aa03">DbgBleedingIndicationStaticInfo::m_DbgDesaturationEnd</a></div><div class="ttdeci">static float m_DbgDesaturationEnd</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00020">BleedingIndicationStaticInfo.c:20</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_ada6917e62bd7683899f6f7077bf26e7c"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#ada6917e62bd7683899f6f7077bf26e7c">DbgBleedingIndicationStaticInfo::m_DbgDropDesaturate</a></div><div class="ttdeci">static bool m_DbgDropDesaturate</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00019">BleedingIndicationStaticInfo.c:19</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_af3bd7adfb4a4d53dab3718170456e7f7"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#af3bd7adfb4a4d53dab3718170456e7f7">DbgBleedingIndicationStaticInfo::m_DbgDropColorGreen</a></div><div class="ttdeci">static int m_DbgDropColorGreen</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00022">BleedingIndicationStaticInfo.c:22</a></div></div>
+<div class="ttc" id="aclass_easing_html"><div class="ttname"><a href="../../dc/d00/class_easing.html">Easing</a></div><div class="ttdoc">Input value between 0 and 1, returns value adjusted by easing, no automatic clamping of input(do your...</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d00/_easing_8c_source.html#l00002">Easing.c:3</a></div></div>
+<div class="ttc" id="aclass_easing_html_a21a24c43fccbaae9bba7bbc363dff439"><div class="ttname"><a href="../../dc/d00/class_easing.html#a21a24c43fccbaae9bba7bbc363dff439">Easing::EaseOutSine</a></div><div class="ttdeci">static float EaseOutSine(float t)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d00/_easing_8c_source.html#l00009">Easing.c:9</a></div></div>
+<div class="ttc" id="aclass_p_p_e_glow_html"><div class="ttname"><a href="../../dc/d0c/class_p_p_e_glow.html">PPEGlow</a></div><div class="ttdoc">Glow - PostProcessEffectType.Glow.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d06/_p_p_e_glow_8c_source.html#l00007">PPEGlow.c:8</a></div></div>
+<div class="ttc" id="aclass_p_p_e_glow_html_a01658f5b702f44d008d10e5efed6a09a"><div class="ttname"><a href="../../dc/d0c/class_p_p_e_glow.html#a01658f5b702f44d008d10e5efed6a09a">PPEGlow::PARAM_SATURATION</a></div><div class="ttdeci">static const int PARAM_SATURATION</div><div class="ttdef"><b>Definition</b> <a href="../../df/d06/_p_p_e_glow_8c_source.html#l00031">PPEGlow.c:31</a></div></div>
+<div class="ttc" id="aclass_p_p_e_manager_static_html"><div class="ttname"><a href="../../d0/d09/class_p_p_e_manager_static.html">PPEManagerStatic</a></div><div class="ttdoc">Static component of PPE manager, used to hold the instance.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00002">PPEManager.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_manager_static_html_a86b3b44641655b3466eab6e2f31bfa14"><div class="ttname"><a href="../../d0/d09/class_p_p_e_manager_static.html#a86b3b44641655b3466eab6e2f31bfa14">PPEManagerStatic::GetPPEManager</a></div><div class="ttdeci">static PPEManager GetPPEManager()</div><div class="ttdoc">Returns the manager instance singleton.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00027">PPEManager.c:27</a></div></div>
+<div class="ttc" id="aclass_param_html"><div class="ttname"><a href="../../de/d00/class_param.html">Param</a></div><div class="ttdoc">Base Param Class with no parameters. Used as general purpose parameter overloaded with Param1 to Para...</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d05/param_8c_source.html#l00011">param.c:12</a></div></div>
+<div class="ttc" id="agroup___camera_html_gac5442d940bdd247b908f1f02efd643ec"><div class="ttname"><a href="../../dd/d02/group___camera.html#gac5442d940bdd247b908f1f02efd643ec">PostProcessEffectType</a></div><div class="ttdeci">PostProcessEffectType</div><div class="ttdoc">Post-process effect type.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d09/_en_world_8c_source.html#l00071">EnWorld.c:72</a></div></div>
+<div class="ttc" id="agroup___math_html_ga1ac33c7be3c1e52ae6b70fe58c78266c"><div class="ttname"><a href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Math::Lerp</a></div><div class="ttdeci">static proto float Lerp(float a, float b, float time)</div><div class="ttdoc">Linearly interpolates between 'a' and 'b' given 'time'.</div></div>
+<div class="ttc" id="agroup___math_html_ga56eafa8f245b4dc543abbf857f1bc41a"><div class="ttname"><a href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Math::Min</a></div><div class="ttdeci">static proto float Min(float x, float y)</div><div class="ttdoc">Returns smaller of two given values.</div></div>
+<div class="ttc" id="aproto_8c_html_a117bd706d35f6f2ae3f5db263b778704"><div class="ttname"><a href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a></div><div class="ttdeci">int ARGB(int a, int r, int g, int b)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/proto_8c_source.html#l00322">proto.c:322</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0d/proto_8c_source.html#l00322">ARGB()</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00017">BleedingIndicationConstants::DROP_COLOR_BLUE</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00014">BleedingIndicationConstants::DROP_COLOR_DESATURATIONEND</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00016">BleedingIndicationConstants::DROP_COLOR_GREEN</a>, <a class="el" href="../../d1/d09/_bleeding_indication_constants_8c_source.html#l00015">BleedingIndicationConstants::DROP_COLOR_RED</a>, <a class="el" href="../../d2/d00/_easing_8c_source.html#l00009">Easing::EaseOutSine()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00027">PPEManagerStatic::GetPPEManager()</a>, <a class="el" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Math::Lerp()</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00020">DbgBleedingIndicationStaticInfo::m_DbgDesaturationEnd</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00023">DbgBleedingIndicationStaticInfo::m_DbgDropColorBlue</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00022">DbgBleedingIndicationStaticInfo::m_DbgDropColorGreen</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00021">DbgBleedingIndicationStaticInfo::m_DbgDropColorRed</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00019">DbgBleedingIndicationStaticInfo::m_DbgDropDesaturate</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00005">DbgBleedingIndicationStaticInfo::m_DbgUseOverrideValues</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">m_Widget</a>, <a class="el" href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Math::Min()</a>, and <a class="el" href="../../df/d06/_p_p_e_glow_8c_source.html#l00031">PPEGlow::PARAM_SATURATION</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>.</p>
 
 </div>
 </div>
@@ -322,6 +529,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00190">190</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>  {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>;</div>
+<div class="line"><span class="lineno">  193</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">m_Widget</a>.</p>
 
 </div>
 </div>
@@ -349,6 +561,26 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">126</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>  {</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.GetSize(<a class="code hl_variable" href="#a700d91c8bc4cd724f52ae580bde800dd">m_ImageBaseSizeX</a>, <a class="code hl_variable" href="#a324a659c84ee9a0f3f7d6b31140e2381">m_ImageBaseSizeY</a>);</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">randomScaleCoef</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(<a class="code hl_variable" href="#a1b458dcd4976a3211478e578f2b65936">m_RandomSizeMin</a>, <a class="code hl_variable" href="#a6e5c2fe91ad4847a66879a2af2a6c1cf">m_RandomSizeMax</a>);</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_variable" href="#ae28d74cbd1e26e11dc02a334bc868f87">m_ImageStartingSizeX</a> = <a class="code hl_variable" href="#a700d91c8bc4cd724f52ae580bde800dd">m_ImageBaseSizeX</a> * <a class="code hl_variable" href="#a017ec9d1e15433944e29a5cb54630f09">m_StartSizeCoef</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">randomScaleCoef</a>;</div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_variable" href="#a7687442088e260f999482c9ec2a115d1">m_ImageEndSizeX</a> = <a class="code hl_variable" href="#a700d91c8bc4cd724f52ae580bde800dd">m_ImageBaseSizeX</a> * <a class="code hl_variable" href="#a7e8be3dae03697c8a26ddcab00456ec8">m_EndSizeCoef</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">randomScaleCoef</a>;</div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_variable" href="#a3af841222a1abfc54af886f310e210bc">m_ImageStartingSizeY</a> = <a class="code hl_variable" href="#a324a659c84ee9a0f3f7d6b31140e2381">m_ImageBaseSizeY</a> * <a class="code hl_variable" href="#a017ec9d1e15433944e29a5cb54630f09">m_StartSizeCoef</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">randomScaleCoef</a>;</div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_variable" href="#a3d1443488b37d17963047eb55ea03fa0">m_ImageEndSizeY</a> = <a class="code hl_variable" href="#a324a659c84ee9a0f3f7d6b31140e2381">m_ImageBaseSizeY</a> * <a class="code hl_variable" href="#a7e8be3dae03697c8a26ddcab00456ec8">m_EndSizeCoef</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">randomScaleCoef</a>;</div>
+<div class="line"><span class="lineno">  135</span>  }</div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a324a659c84ee9a0f3f7d6b31140e2381"><div class="ttname"><a href="#a324a659c84ee9a0f3f7d6b31140e2381">BleedingIndicatorDropData::m_ImageBaseSizeY</a></div><div class="ttdeci">float m_ImageBaseSizeY</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00020">BleedingDrop.c:20</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a3af841222a1abfc54af886f310e210bc"><div class="ttname"><a href="#a3af841222a1abfc54af886f310e210bc">BleedingIndicatorDropData::m_ImageStartingSizeY</a></div><div class="ttdeci">float m_ImageStartingSizeY</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00022">BleedingDrop.c:22</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a3d1443488b37d17963047eb55ea03fa0"><div class="ttname"><a href="#a3d1443488b37d17963047eb55ea03fa0">BleedingIndicatorDropData::m_ImageEndSizeY</a></div><div class="ttdeci">float m_ImageEndSizeY</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00024">BleedingDrop.c:24</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a700d91c8bc4cd724f52ae580bde800dd"><div class="ttname"><a href="#a700d91c8bc4cd724f52ae580bde800dd">BleedingIndicatorDropData::m_ImageBaseSizeX</a></div><div class="ttdeci">float m_ImageBaseSizeX</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00019">BleedingDrop.c:19</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a7687442088e260f999482c9ec2a115d1"><div class="ttname"><a href="#a7687442088e260f999482c9ec2a115d1">BleedingIndicatorDropData::m_ImageEndSizeX</a></div><div class="ttdeci">float m_ImageEndSizeX</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00023">BleedingDrop.c:23</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_ae28d74cbd1e26e11dc02a334bc868f87"><div class="ttname"><a href="#ae28d74cbd1e26e11dc02a334bc868f87">BleedingIndicatorDropData::m_ImageStartingSizeX</a></div><div class="ttdeci">float m_ImageStartingSizeX</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00021">BleedingDrop.c:21</a></div></div>
+<div class="ttc" id="agroup___math_html_ga3a1cf1e09030a73e70d718ee2862cac0"><div class="ttname"><a href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">Math::RandomFloatInclusive</a></div><div class="ttdeci">static float RandomFloatInclusive(float min, float max)</div><div class="ttdoc">Returns a random float number between and min [inclusive] and max [inclusive].</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00106">EnMath.c:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00034">m_EndSizeCoef</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00019">m_ImageBaseSizeX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00020">m_ImageBaseSizeY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00023">m_ImageEndSizeX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00024">m_ImageEndSizeY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00021">m_ImageStartingSizeX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00022">m_ImageStartingSizeY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00036">m_RandomSizeMax</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00035">m_RandomSizeMin</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00033">m_StartSizeCoef</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">m_Widget</a>, and <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>.</p>
 
 </div>
 </div>
@@ -376,6 +608,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00185">185</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa3f9095344a1a9703aab6f0fabe2ebab">m_IsRunning</a>;</div>
+<div class="line"><span class="lineno">  188</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00028">m_IsRunning</a>.</p>
 
 </div>
 </div>
@@ -403,6 +640,28 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00137">137</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>  {</div>
+<div class="line"><span class="lineno">  139</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a92ece4adfb247023f813e1c09260bd0f">m_DbgUseOverrideValues</a>)</div>
+<div class="line"><span class="lineno">  141</span>      <a class="code hl_variable" href="#aa378ff251d367be2660fc9af52a6b0f3">m_ScatterPx</a> = <a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a8dbbd82f987006755128536de9baccaa">m_DbgDropScatter</a>;</div>
+<div class="line"><span class="lineno">  142</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">rndRadius</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(0.0, <a class="code hl_variable" href="#aa378ff251d367be2660fc9af52a6b0f3">m_ScatterPx</a>);</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">rndPos</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(0.0, <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_variable" href="../../d5/d08/group___math.html#ga0582b8db17669551eef122dd64ca26be">PI2</a>);</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_variable" href="#a6c1bb315d742b6b61e4665d2908240fb">m_PosX</a> = pos[0];</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="#a6c1bb315d742b6b61e4665d2908240fb">m_PosX</a> = <a class="code hl_variable" href="#a6c1bb315d742b6b61e4665d2908240fb">m_PosX</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">rndRadius</a> * <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga94eedd3910334f450ef989d69ab4e4fd">Sin</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">rndPos</a>);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_variable" href="#a4695ddbb9be9c8941c68f69cf185b922">m_PosY</a> = pos[1];</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_variable" href="#a4695ddbb9be9c8941c68f69cf185b922">m_PosY</a> = <a class="code hl_variable" href="#a4695ddbb9be9c8941c68f69cf185b922">m_PosY</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">rndRadius</a> * <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga59a832dc3ede05300c969625f9c012d6">Cos</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">rndPos</a>);</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a4695ddbb9be9c8941c68f69cf185b922"><div class="ttname"><a href="#a4695ddbb9be9c8941c68f69cf185b922">BleedingIndicatorDropData::m_PosY</a></div><div class="ttdeci">float m_PosY</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00032">BleedingDrop.c:32</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a6c1bb315d742b6b61e4665d2908240fb"><div class="ttname"><a href="#a6c1bb315d742b6b61e4665d2908240fb">BleedingIndicatorDropData::m_PosX</a></div><div class="ttdeci">float m_PosX</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00032">BleedingDrop.c:32</a></div></div>
+<div class="ttc" id="agroup___math_html_ga0582b8db17669551eef122dd64ca26be"><div class="ttname"><a href="../../d5/d08/group___math.html#ga0582b8db17669551eef122dd64ca26be">Math::PI2</a></div><div class="ttdeci">static const float PI2</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00013">EnMath.c:13</a></div></div>
+<div class="ttc" id="agroup___math_html_ga59a832dc3ede05300c969625f9c012d6"><div class="ttname"><a href="../../d5/d08/group___math.html#ga59a832dc3ede05300c969625f9c012d6">Math::Cos</a></div><div class="ttdeci">static proto float Cos(float angle)</div><div class="ttdoc">Returns cosinus of angle in radians.</div></div>
+<div class="ttc" id="agroup___math_html_ga94eedd3910334f450ef989d69ab4e4fd"><div class="ttname"><a href="../../d5/d08/group___math.html#ga94eedd3910334f450ef989d69ab4e4fd">Math::Sin</a></div><div class="ttdeci">static proto float Sin(float angle)</div><div class="ttdoc">Returns sinus of angle in radians.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga59a832dc3ede05300c969625f9c012d6">Math::Cos()</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00016">DbgBleedingIndicationStaticInfo::m_DbgDropScatter</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00005">DbgBleedingIndicationStaticInfo::m_DbgUseOverrideValues</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00032">m_PosX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00032">m_PosY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00012">m_ScatterPx</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00013">Math::PI2</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>, and <a class="el" href="../../d5/d08/group___math.html#ga94eedd3910334f450ef989d69ab4e4fd">Math::Sin()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00152">StartDrop()</a>.</p>
 
 </div>
 </div>
@@ -430,6 +689,14 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00178">178</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>  {</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_variable" href="#a3b13a7ce32df95df7b94835182598865">m_BasePosition</a> = pos;</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_variable" href="#a3b13a7ce32df95df7b94835182598865">m_BasePosition</a>[0] = <a class="code hl_variable" href="#a3b13a7ce32df95df7b94835182598865">m_BasePosition</a>[0] - <a class="code hl_variable" href="#a3936b640b0fa542a943bf80f514925b6">m_ScreenSizeX</a> / 2;</div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_variable" href="#a3b13a7ce32df95df7b94835182598865">m_BasePosition</a>[1] = <a class="code hl_variable" href="#a3b13a7ce32df95df7b94835182598865">m_BasePosition</a>[1] - <a class="code hl_variable" href="#a8df9e180432c62408416de4fa942c3a7">m_ScreenSizeY</a> / 2;</div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a3b13a7ce32df95df7b94835182598865"><div class="ttname"><a href="#a3b13a7ce32df95df7b94835182598865">BleedingIndicatorDropData::m_BasePosition</a></div><div class="ttdeci">vector m_BasePosition</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00029">BleedingDrop.c:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00029">m_BasePosition</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00030">m_ScreenSizeX</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00031">m_ScreenSizeY</a>.</p>
 
 </div>
 </div>
@@ -457,6 +724,27 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00152">152</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>  {</div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_variable" href="#ac6cec3f98df0ed2b7523c012d093e90f">m_TimeTotal</a> = 0;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_function" href="#acfc7e2b03ba62f5589da46ea5f6e8dad">ScatterPosition</a>(<a class="code hl_variable" href="#a3b13a7ce32df95df7b94835182598865">m_BasePosition</a>);</div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.SetPos(<a class="code hl_variable" href="#a6c1bb315d742b6b61e4665d2908240fb">m_PosX</a>, <a class="code hl_variable" href="#a4695ddbb9be9c8941c68f69cf185b922">m_PosY</a>);</div>
+<div class="line"><span class="lineno">  158</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a92ece4adfb247023f813e1c09260bd0f">m_DbgUseOverrideValues</a> &amp;&amp; !<a class="code hl_class" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html">DbgBleedingIndicationStaticInfo</a>.<a class="code hl_variable" href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a075c7b9f9ebad83388abcdf5bc36a96a">m_DbgDropRotationRandom</a>)</div>
+<div class="line"><span class="lineno">  160</span>      <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.SetRotation(0, 0, 0);</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  162</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  163</span>    {</div>
+<div class="line"><span class="lineno">  164</span>      <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.SetRotation(0, 0, <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(0.0, 360.0));</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_variable" href="#aa3f9095344a1a9703aab6f0fabe2ebab">m_IsRunning</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  169</span>  }</div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_acfc7e2b03ba62f5589da46ea5f6e8dad"><div class="ttname"><a href="#acfc7e2b03ba62f5589da46ea5f6e8dad">BleedingIndicatorDropData::ScatterPosition</a></div><div class="ttdeci">void ScatterPosition(vector pos)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00137">BleedingDrop.c:137</a></div></div>
+<div class="ttc" id="aclass_dbg_bleeding_indication_static_info_html_a075c7b9f9ebad83388abcdf5bc36a96a"><div class="ttname"><a href="../../d6/d0c/class_dbg_bleeding_indication_static_info.html#a075c7b9f9ebad83388abcdf5bc36a96a">DbgBleedingIndicationStaticInfo::m_DbgDropRotationRandom</a></div><div class="ttdeci">static bool m_DbgDropRotationRandom</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00006">BleedingIndicationStaticInfo.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00029">m_BasePosition</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00006">DbgBleedingIndicationStaticInfo::m_DbgDropRotationRandom</a>, <a class="el" href="../../d2/d0f/_bleeding_indication_static_info_8c_source.html#l00005">DbgBleedingIndicationStaticInfo::m_DbgUseOverrideValues</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00028">m_IsRunning</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00032">m_PosX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00032">m_PosY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00006">m_TimeTotal</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">m_Widget</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00137">ScatterPosition()</a>.</p>
 
 </div>
 </div>
@@ -484,6 +772,15 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00171">171</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>  {</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_variable" href="#aa3f9095344a1a9703aab6f0fabe2ebab">m_IsRunning</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.SetSize(<a class="code hl_variable" href="#a700d91c8bc4cd724f52ae580bde800dd">m_ImageBaseSizeX</a>, <a class="code hl_variable" href="#a324a659c84ee9a0f3f7d6b31140e2381">m_ImageBaseSizeY</a>); <span class="comment">//resets image size</span></div>
+<div class="line"><span class="lineno">  175</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  176</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00019">m_ImageBaseSizeX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00020">m_ImageBaseSizeY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00028">m_IsRunning</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">m_Widget</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
 
 </div>
 </div>
@@ -511,6 +808,32 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">263</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  264</span>  {</div>
+<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa3f9095344a1a9703aab6f0fabe2ebab">m_IsRunning</a>)</div>
+<div class="line"><span class="lineno">  266</span>    {</div>
+<div class="line"><span class="lineno">  267</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">progress</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">progressFade</a>;</div>
+<div class="line"><span class="lineno">  268</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">progress</a> = <a class="code hl_variable" href="#ac6cec3f98df0ed2b7523c012d093e90f">m_TimeTotal</a> / <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a>;</div>
+<div class="line"><span class="lineno">  269</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">progressFade</a> = (<a class="code hl_variable" href="#ac6cec3f98df0ed2b7523c012d093e90f">m_TimeTotal</a> - <a class="code hl_variable" href="#acd361bc5a18464519fb200e784c61474">m_ProgressBreakpointTime</a>) / <a class="code hl_variable" href="#aca4d3c7ff37963bc9caa140ba7423fc4">m_ProgressFadingDuration</a>;</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>      <span class="comment">//alpha</span></div>
+<div class="line"><span class="lineno">  272</span>      <a class="code hl_function" href="#ac6132ea18d075fcfdc114af73543fb58">UpdateAlpha</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">progress</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">progressFade</a>);</div>
+<div class="line"><span class="lineno">  273</span>      <span class="comment">//transform + scaling</span></div>
+<div class="line"><span class="lineno">  274</span>      <a class="code hl_function" href="#af08e8cbae3f91d8d4d37e5463234dc9b">UpdateTransform</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">progress</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">progressFade</a>);</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>      <a class="code hl_variable" href="#ac6cec3f98df0ed2b7523c012d093e90f">m_TimeTotal</a> += (<a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a> * <a class="code hl_variable" href="#ade5b09ae6ab0f924cdf31d5541b8e51b">m_SpeedCoef</a>);</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac6cec3f98df0ed2b7523c012d093e90f">m_TimeTotal</a> &gt;= <a class="code hl_variable" href="#a96069851deae69ebee90f006bb07e186">m_Duration</a>)</div>
+<div class="line"><span class="lineno">  279</span>      {</div>
+<div class="line"><span class="lineno">  280</span>        <span class="comment">//deletes this;</span></div>
+<div class="line"><span class="lineno">  281</span>        <a class="code hl_function" href="#abe9c6bc31e3af503ba36ba1b7c767c43">StopDrop</a>();</div>
+<div class="line"><span class="lineno">  282</span>      }</div>
+<div class="line"><span class="lineno">  283</span>    }</div>
+<div class="line"><span class="lineno">  284</span>  }</div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_abe9c6bc31e3af503ba36ba1b7c767c43"><div class="ttname"><a href="#abe9c6bc31e3af503ba36ba1b7c767c43">BleedingIndicatorDropData::StopDrop</a></div><div class="ttdeci">void StopDrop()</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00171">BleedingDrop.c:171</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_ac6132ea18d075fcfdc114af73543fb58"><div class="ttname"><a href="#ac6132ea18d075fcfdc114af73543fb58">BleedingIndicatorDropData::UpdateAlpha</a></div><div class="ttdeci">void UpdateAlpha(float progress, float progressFade)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00233">BleedingDrop.c:233</a></div></div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_af08e8cbae3f91d8d4d37e5463234dc9b"><div class="ttname"><a href="#af08e8cbae3f91d8d4d37e5463234dc9b">BleedingIndicatorDropData::UpdateTransform</a></div><div class="ttdeci">void UpdateTransform(float progress, float progressFade)</div><div class="ttdoc">scaling and transformation</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00244">BleedingDrop.c:244</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00010">m_Duration</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00028">m_IsRunning</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00007">m_ProgressBreakpointTime</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00008">m_ProgressFadingDuration</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00011">m_SpeedCoef</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00006">m_TimeTotal</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00171">StopDrop()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00233">UpdateAlpha()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
 
 </div>
 </div>
@@ -542,6 +865,19 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00233">233</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span>  {</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">progress</a> &lt;= <a class="code hl_variable" href="#ada2acf6c556c3d8d6db1e77e953cfe76">m_ProgressBreakpoint</a>)</div>
+<div class="line"><span class="lineno">  236</span>      <a class="code hl_variable" href="#a4466955b31972474fddf7128e0a21394">m_ColorAlphaCurrent</a> = <a class="code hl_variable" href="#aae7bf72a85ef7a7f0bb269a6aa1e694a">m_ColorAlphaStart</a>;</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  238</span>      <a class="code hl_variable" href="#a4466955b31972474fddf7128e0a21394">m_ColorAlphaCurrent</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Lerp</a>(<a class="code hl_variable" href="#aae7bf72a85ef7a7f0bb269a6aa1e694a">m_ColorAlphaStart</a>, <a class="code hl_variable" href="#a1548559ef0244c2bb3cd97f3958f3568">m_ColorAlphaEnd</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">progressFade</a>);</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.SetAlpha(<a class="code hl_variable" href="#a4466955b31972474fddf7128e0a21394">m_ColorAlphaCurrent</a>);</div>
+<div class="line"><span class="lineno">  241</span>  }</div>
+<div class="ttc" id="aclass_bleeding_indicator_drop_data_html_a4466955b31972474fddf7128e0a21394"><div class="ttname"><a href="#a4466955b31972474fddf7128e0a21394">BleedingIndicatorDropData::m_ColorAlphaCurrent</a></div><div class="ttdeci">float m_ColorAlphaCurrent</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_bleeding_drop_8c_source.html#l00017">BleedingDrop.c:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Math::Lerp()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00017">m_ColorAlphaCurrent</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00016">m_ColorAlphaEnd</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00015">m_ColorAlphaStart</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00009">m_ProgressBreakpoint</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">m_Widget</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
 
 </div>
 </div>
@@ -575,6 +911,29 @@ Protected Attributes</h2></td></tr>
 <p>scaling and transformation </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">244</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">breakProgress</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Clamp</a>(<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gaa191e62ab92d20698e58e3a20950471a">InverseLerp</a>(0.0, <a class="code hl_variable" href="#ada2acf6c556c3d8d6db1e77e953cfe76">m_ProgressBreakpoint</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">progress</a>), 0, 1);</div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sizeX</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Lerp</a>(<a class="code hl_variable" href="#ae28d74cbd1e26e11dc02a334bc868f87">m_ImageStartingSizeX</a>, <a class="code hl_variable" href="#a7687442088e260f999482c9ec2a115d1">m_ImageEndSizeX</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">breakProgress</a>);</div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sizeY</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Lerp</a>(<a class="code hl_variable" href="#a3af841222a1abfc54af886f310e210bc">m_ImageStartingSizeY</a>, <a class="code hl_variable" href="#a3d1443488b37d17963047eb55ea03fa0">m_ImageEndSizeY</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">breakProgress</a>);</div>
+<div class="line"><span class="lineno">  249</span>    <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.SetSize(<a class="code hl_class" href="../../db/d06/class_param3.html">sizeX</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">sizeY</a>);</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">progress</a> &lt;= <a class="code hl_variable" href="#ada2acf6c556c3d8d6db1e77e953cfe76">m_ProgressBreakpoint</a>)</div>
+<div class="line"><span class="lineno">  252</span>    {</div>
+<div class="line"><span class="lineno">  253</span>      <span class="comment">//do stuff before breakpoint</span></div>
+<div class="line"><span class="lineno">  254</span>    }</div>
+<div class="line"><span class="lineno">  255</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  256</span>    {</div>
+<div class="line"><span class="lineno">  257</span>      <span class="comment">//do stuff after breakpoint</span></div>
+<div class="line"><span class="lineno">  258</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">posYTemp</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Lerp</a>(<a class="code hl_variable" href="#a4695ddbb9be9c8941c68f69cf185b922">m_PosY</a>, <a class="code hl_variable" href="#a4695ddbb9be9c8941c68f69cf185b922">m_PosY</a> + <a class="code hl_variable" href="#aecfb235961f6b9fbe0fa27b1675cbf6b">m_SlideDistance</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">progressFade</a>);</div>
+<div class="line"><span class="lineno">  259</span>      <a class="code hl_variable" href="#a39fc620a297aa30f3c2d8ee14482c938">m_Widget</a>.SetPos(<a class="code hl_variable" href="#a6c1bb315d742b6b61e4665d2908240fb">m_PosX</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">posYTemp</a>);</div>
+<div class="line"><span class="lineno">  260</span>    }</div>
+<div class="line"><span class="lineno">  261</span>  }</div>
+<div class="ttc" id="agroup___math_html_ga939cca08ae6c7facc9293f2dbce3def5"><div class="ttname"><a href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp</a></div><div class="ttdeci">static proto float Clamp(float value, float min, float max)</div><div class="ttdoc">Clamps 'value' to 'min' if it is lower than 'min', or to 'max' if it is higher than 'max'.</div></div>
+<div class="ttc" id="agroup___math_html_gaa191e62ab92d20698e58e3a20950471a"><div class="ttname"><a href="../../d5/d08/group___math.html#gaa191e62ab92d20698e58e3a20950471a">Math::InverseLerp</a></div><div class="ttdeci">static proto float InverseLerp(float a, float b, float value)</div><div class="ttdoc">Calculates the linear value that produces the interpolant value within the range [a,...</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp()</a>, <a class="el" href="../../d5/d08/group___math.html#gaa191e62ab92d20698e58e3a20950471a">Math::InverseLerp()</a>, <a class="el" href="../../d5/d08/group___math.html#ga1ac33c7be3c1e52ae6b70fe58c78266c">Math::Lerp()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00023">m_ImageEndSizeX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00024">m_ImageEndSizeY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00021">m_ImageStartingSizeX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00022">m_ImageStartingSizeY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00032">m_PosX</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00032">m_PosY</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00009">m_ProgressBreakpoint</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00013">m_SlideDistance</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">m_Widget</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
 
 </div>
 </div>
@@ -601,6 +960,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00029">29</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00178">SetBasePosition()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00152">StartDrop()</a>.</p>
+
 </div>
 </div>
 <a id="a4466955b31972474fddf7128e0a21394" name="a4466955b31972474fddf7128e0a21394"></a>
@@ -624,6 +985,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00017">17</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00233">UpdateAlpha()</a>.</p>
 
 </div>
 </div>
@@ -649,6 +1012,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00016">16</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00233">UpdateAlpha()</a>.</p>
+
 </div>
 </div>
 <a id="aae7bf72a85ef7a7f0bb269a6aa1e694a" name="aae7bf72a85ef7a7f0bb269a6aa1e694a"></a>
@@ -672,6 +1037,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00015">15</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00233">UpdateAlpha()</a>.</p>
 
 </div>
 </div>
@@ -697,6 +1064,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00010">10</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
+
 </div>
 </div>
 <a id="a7e8be3dae03697c8a26ddcab00456ec8" name="a7e8be3dae03697c8a26ddcab00456ec8"></a>
@@ -720,6 +1089,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00034">34</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>.</p>
 
 </div>
 </div>
@@ -769,6 +1140,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00019">19</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00171">StopDrop()</a>.</p>
+
 </div>
 </div>
 <a id="a324a659c84ee9a0f3f7d6b31140e2381" name="a324a659c84ee9a0f3f7d6b31140e2381"></a>
@@ -792,6 +1165,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00020">20</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00171">StopDrop()</a>.</p>
 
 </div>
 </div>
@@ -817,6 +1192,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00023">23</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
+
 </div>
 </div>
 <a id="a3d1443488b37d17963047eb55ea03fa0" name="a3d1443488b37d17963047eb55ea03fa0"></a>
@@ -840,6 +1217,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00024">24</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
 
 </div>
 </div>
@@ -913,6 +1292,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00021">21</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
+
 </div>
 </div>
 <a id="a3af841222a1abfc54af886f310e210bc" name="a3af841222a1abfc54af886f310e210bc"></a>
@@ -936,6 +1317,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00022">22</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
 
 </div>
 </div>
@@ -961,6 +1344,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00028">28</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00185">IsRunning()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00152">StartDrop()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00171">StopDrop()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
+
 </div>
 </div>
 <a id="a6c1bb315d742b6b61e4665d2908240fb" name="a6c1bb315d742b6b61e4665d2908240fb"></a>
@@ -984,6 +1369,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00032">32</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00137">ScatterPosition()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00152">StartDrop()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
 
 </div>
 </div>
@@ -1009,6 +1396,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00032">32</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00137">ScatterPosition()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00152">StartDrop()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
+
 </div>
 </div>
 <a id="ada2acf6c556c3d8d6db1e77e953cfe76" name="ada2acf6c556c3d8d6db1e77e953cfe76"></a>
@@ -1032,6 +1421,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00009">9</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00233">UpdateAlpha()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
 
 </div>
 </div>
@@ -1057,6 +1448,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00007">7</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
+
 </div>
 </div>
 <a id="aca4d3c7ff37963bc9caa140ba7423fc4" name="aca4d3c7ff37963bc9caa140ba7423fc4"></a>
@@ -1080,6 +1473,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00008">8</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
 
 </div>
 </div>
@@ -1105,6 +1500,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00036">36</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>.</p>
+
 </div>
 </div>
 <a id="a1b458dcd4976a3211478e578f2b65936" name="a1b458dcd4976a3211478e578f2b65936"></a>
@@ -1128,6 +1525,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00035">35</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>.</p>
 
 </div>
 </div>
@@ -1153,6 +1552,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00012">12</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00137">ScatterPosition()</a>.</p>
+
 </div>
 </div>
 <a id="a3936b640b0fa542a943bf80f514925b6" name="a3936b640b0fa542a943bf80f514925b6"></a>
@@ -1176,6 +1577,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00030">30</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00178">SetBasePosition()</a>.</p>
 
 </div>
 </div>
@@ -1201,6 +1604,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00031">31</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00178">SetBasePosition()</a>.</p>
+
 </div>
 </div>
 <a id="a4c61ee5bea4d8ad680ae4bfe53f508c3" name="a4c61ee5bea4d8ad680ae4bfe53f508c3"></a>
@@ -1224,6 +1629,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00005">5</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>.</p>
 
 </div>
 </div>
@@ -1249,6 +1656,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00013">13</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
+
 </div>
 </div>
 <a id="ade5b09ae6ab0f924cdf31d5541b8e51b" name="ade5b09ae6ab0f924cdf31d5541b8e51b"></a>
@@ -1272,6 +1681,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00011">11</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
 
 </div>
 </div>
@@ -1297,6 +1708,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00033">33</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>.</p>
+
 </div>
 </div>
 <a id="ac6cec3f98df0ed2b7523c012d093e90f" name="ac6cec3f98df0ed2b7523c012d093e90f"></a>
@@ -1321,6 +1734,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00006">6</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00152">StartDrop()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00263">Update()</a>.</p>
+
 </div>
 </div>
 <a id="a39fc620a297aa30f3c2d8ee14482c938" name="a39fc620a297aa30f3c2d8ee14482c938"></a>
@@ -1344,6 +1759,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00004">4</a> of file <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html">BleedingDrop.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00195">AdjustColorSaturation()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00039">BleedingIndicatorDropData()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00190">GetImage()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00126">InitImageScale()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00152">StartDrop()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00171">StopDrop()</a>, <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00233">UpdateAlpha()</a>, and <a class="el" href="../../da/d04/_bleeding_drop_8c_source.html#l00244">UpdateTransform()</a>.</p>
 
 </div>
 </div>

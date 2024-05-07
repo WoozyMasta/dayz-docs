@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -150,6 +147,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00043">43</a> of file <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html">StaminaHandler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>  {</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;EStaminaConsumers, ref StaminaConsumer&gt;</a>;</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_stamina_consumers_html_a9a5c8a92b1895ae48d5228a4b43d05f3"><div class="ttname"><a href="#a9a5c8a92b1895ae48d5228a4b43d05f3">StaminaConsumers::m_StaminaConsumers</a></div><div class="ttdeci">ref map&lt; EStaminaConsumers, ref StaminaConsumer &gt; m_StaminaConsumers</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_stamina_handler_8c_source.html#l00041">StaminaHandler.c:41</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00041">m_StaminaConsumers</a>.</p>
 
 </div>
 </div>
@@ -192,6 +196,49 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00061">61</a> of file <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html">StaminaHandler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>  {</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a> &amp;&amp; <a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a>.Contains(<a class="code hl_class" href="../../db/d06/class_param3.html">consumer</a>))</div>
+<div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_function" href="../../d5/d0b/_stamina_handler_8c.html#a00edf3e2038d01c3f00f242fca929a5b">StaminaConsumer</a> <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a> = <a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">consumer</a>);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">consumer</a> != <a class="code hl_enumeration" href="../../de/d07/_e_stamina_consumers_8c.html#a86d211e01b9383d8d8bc4c529cfab365">EStaminaConsumers</a>.SPRINT)</div>
+<div class="line"><span class="lineno">   68</span>      {</div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">isDepleted</a> || (<a class="code hl_class" href="../../db/d06/class_param3.html">curStamina</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.GetDrainThreshold()<span class="comment">/* &amp;&amp; curStamina &lt; cap*/</span>)))</div>
+<div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.SetState(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   72</span>          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
+<div class="line"><span class="lineno">   74</span>      }</div>
+<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   76</span>      {</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">isDepleted</a>)</div>
+<div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.GetState())</div>
+<div class="line"><span class="lineno">   80</span>          {</div>
+<div class="line"><span class="lineno">   81</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.SetState(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   83</span>          }</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   86</span>        {</div>
+<div class="line"><span class="lineno">   87</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.SetState(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   88</span>          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+<div class="line"><span class="lineno">   90</span>      }</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">curStamina</a> &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.GetDrainThreshold() || <a class="code hl_class" href="../../db/d06/class_param3.html">curStamina</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">cap</a>) <span class="comment">//Sometimes player can&#39;t go up to drain threshold</span></div>
+<div class="line"><span class="lineno">   93</span>      {</div>
+<div class="line"><span class="lineno">   94</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.SetState(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   96</span>      }</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="ttc" id="a_e_stamina_consumers_8c_html_a86d211e01b9383d8d8bc4c529cfab365"><div class="ttname"><a href="../../de/d07/_e_stamina_consumers_8c.html#a86d211e01b9383d8d8bc4c529cfab365">EStaminaConsumers</a></div><div class="ttdeci">EStaminaConsumers</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_e_stamina_consumers_8c_source.html#l00001">EStaminaConsumers.c:2</a></div></div>
+<div class="ttc" id="a_stamina_handler_8c_html_a00edf3e2038d01c3f00f242fca929a5b"><div class="ttname"><a href="../../d5/d0b/_stamina_handler_8c.html#a00edf3e2038d01c3f00f242fca929a5b">StaminaConsumer</a></div><div class="ttdeci">void StaminaConsumer(float threshold, float threshold2, bool state)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_stamina_handler_8c_source.html#l00022">StaminaHandler.c:22</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00041">m_StaminaConsumers</a>, and <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00022">StaminaConsumer()</a>.</p>
 
 </div>
 </div>
@@ -233,6 +280,27 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00102">102</a> of file <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html">StaminaHandler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a> &amp;&amp; <a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a>.Contains(<a class="code hl_class" href="../../db/d06/class_param3.html">consumer</a>))</div>
+<div class="line"><span class="lineno">  105</span>    {</div>
+<div class="line"><span class="lineno">  106</span>      <a class="code hl_function" href="../../d5/d0b/_stamina_handler_8c.html#a00edf3e2038d01c3f00f242fca929a5b">StaminaConsumer</a> <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a> = <a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">consumer</a>);</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">isDepleted</a> || (<a class="code hl_class" href="../../db/d06/class_param3.html">curStamina</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.GetActivationThreshold() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">curStamina</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">cap</a>)))</div>
+<div class="line"><span class="lineno">  109</span>      {</div>
+<div class="line"><span class="lineno">  110</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.SetState(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  112</span>      }</div>
+<div class="line"><span class="lineno">  113</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  114</span>      {</div>
+<div class="line"><span class="lineno">  115</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>.SetState(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  117</span>      }</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  121</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00041">m_StaminaConsumers</a>, and <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00022">StaminaConsumer()</a>.</p>
 
 </div>
 </div>
@@ -270,6 +338,18 @@ Protected Attributes</h2></td></tr>
 <p>init of StaminaConsumer - threshold, state</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00048">48</a> of file <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html">StaminaHandler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>  {</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">depletion_threshold</a> == -1)</div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">depletion_threshold</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">threshold</a>;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a>.Contains(<a class="code hl_class" href="../../db/d06/class_param3.html">consumer</a>))</div>
+<div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   56</span>      <a class="code hl_function" href="../../d5/d0b/_stamina_handler_8c.html#a00edf3e2038d01c3f00f242fca929a5b">StaminaConsumer</a> <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../d5/d0b/_stamina_handler_8c.html#a00edf3e2038d01c3f00f242fca929a5b">StaminaConsumer</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">threshold</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">depletion_threshold</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   57</span>      <a class="code hl_variable" href="#a9a5c8a92b1895ae48d5228a4b43d05f3">m_StaminaConsumers</a>.Set(<a class="code hl_class" href="../../db/d06/class_param3.html">consumer</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">sc</a>);</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00041">m_StaminaConsumers</a>, and <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00022">StaminaConsumer()</a>.</p>
 
 </div>
 </div>
@@ -295,6 +375,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00041">41</a> of file <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html">StaminaHandler.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00061">HasEnoughStaminaFor()</a>, <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00102">HasEnoughStaminaToStart()</a>, <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00048">RegisterConsumer()</a>, and <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00043">StaminaConsumers()</a>.</p>
 
 </div>
 </div>

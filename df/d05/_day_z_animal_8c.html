@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -257,6 +254,54 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00075">75</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>  {</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_class" href="../../d1/d09/class_cached_objects_arrays.html">CachedObjectsArrays</a>.<a class="code hl_variable" href="../../d1/d09/class_cached_objects_arrays.html#a0cd2c080d9ad88af995a8a9dee50b7ff">ARRAY_STRING</a>.Clear();</div>
+<div class="line"><span class="lineno">   78</span>    GetActionComponentNameList(<a class="code hl_class" href="../../db/d06/class_param3.html">componentIndex</a>, <a class="code hl_class" href="../../d1/d09/class_cached_objects_arrays.html">CachedObjectsArrays</a>.<a class="code hl_variable" href="../../d1/d09/class_cached_objects_arrays.html#a0cd2c080d9ad88af995a8a9dee50b7ff">ARRAY_STRING</a>, <span class="stringliteral">&quot;fire&quot;</span>);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pivot</a> = -1;</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../d1/d09/class_cached_objects_arrays.html">CachedObjectsArrays</a>.<a class="code hl_variable" href="../../d1/d09/class_cached_objects_arrays.html#a0cd2c080d9ad88af995a8a9dee50b7ff">ARRAY_STRING</a>.Count() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">pivot</a> == -1; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pivot</a> = <a class="code hl_function" href="#a97fcb2d37001b1e9aee457e3514f423f">GetBoneIndexByName</a>(<a class="code hl_class" href="../../d1/d09/class_cached_objects_arrays.html">CachedObjectsArrays</a>.<a class="code hl_variable" href="../../d1/d09/class_cached_objects_arrays.html#a0cd2c080d9ad88af995a8a9dee50b7ff">ARRAY_STRING</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>));</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">parentTransMat</a>[4];</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">arrowTransMat</a>[4];</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pivot</a> == -1)</div>
+<div class="line"><span class="lineno">   90</span>      GetTransform(<a class="code hl_class" href="../../db/d06/class_param3.html">parentTransMat</a>);</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   92</span>    {</div>
+<div class="line"><span class="lineno">   93</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">rotMatrix</a>[3];</div>
+<div class="line"><span class="lineno">   94</span>      <a class="code hl_class" href="../../da/d04/class_math3_d.html">Math3D</a>.<a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga91222ac45b26b806e50d1d77268114de">YawPitchRollMatrix</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">closeBoneRotWS</a> * <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_variable" href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">RAD2DEG</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">rotMatrix</a>);</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">parentTransMat</a>[0] = <a class="code hl_class" href="../../db/d06/class_param3.html">rotMatrix</a>[0];</div>
+<div class="line"><span class="lineno">   97</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">parentTransMat</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">rotMatrix</a>[1];</div>
+<div class="line"><span class="lineno">   98</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">parentTransMat</a>[2] = <a class="code hl_class" href="../../db/d06/class_param3.html">rotMatrix</a>[2];</div>
+<div class="line"><span class="lineno">   99</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">parentTransMat</a>[3] = <a class="code hl_class" href="../../db/d06/class_param3.html">closeBonePosWS</a>;</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">arrow</a>.GetTransform(<a class="code hl_class" href="../../db/d06/class_param3.html">arrowTransMat</a>);</div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_class" href="../../da/d04/class_math3_d.html">Math3D</a>.<a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#gacfe264ca98076511a7bf6d34d33c75b2">MatrixInvMultiply4</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">parentTransMat</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">arrowTransMat</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">arrowTransMat</a>);</div>
+<div class="line"><span class="lineno">  104</span>    <span class="comment">// orthogonalize matrix - parent might be skewed</span></div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_class" href="../../da/d04/class_math3_d.html">Math3D</a>.<a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#gade5b7cfa7130d12d1fa581c8a76d1c99">MatrixOrthogonalize4</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">arrowTransMat</a>);</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">arrow</a>.SetTransform(<a class="code hl_class" href="../../db/d06/class_param3.html">arrowTransMat</a>);</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga33e82262c3fc30a0921094432901b8d3">AddChild</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">arrow</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pivot</a>);</div>
+<div class="line"><span class="lineno">  109</span>  }</div>
+<div class="ttc" id="a_day_z_animal_8c_html_a97fcb2d37001b1e9aee457e3514f423f"><div class="ttname"><a href="#a97fcb2d37001b1e9aee457e3514f423f">GetBoneIndexByName</a></div><div class="ttdeci">proto native int GetBoneIndexByName(string pBoneName)</div><div class="ttdoc">returns bone index for a name (-1 if pBoneName doesn't exist)</div></div>
+<div class="ttc" id="aclass_cached_objects_arrays_html"><div class="ttname"><a href="../../d1/d09/class_cached_objects_arrays.html">CachedObjectsArrays</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_utility_classes_8c_source.html#l00040">UtilityClasses.c:41</a></div></div>
+<div class="ttc" id="aclass_cached_objects_arrays_html_a0cd2c080d9ad88af995a8a9dee50b7ff"><div class="ttname"><a href="../../d1/d09/class_cached_objects_arrays.html#a0cd2c080d9ad88af995a8a9dee50b7ff">CachedObjectsArrays::ARRAY_STRING</a></div><div class="ttdeci">static ref TStringArray ARRAY_STRING</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_utility_classes_8c_source.html#l00049">UtilityClasses.c:49</a></div></div>
+<div class="ttc" id="aclass_math3_d_html"><div class="ttname"><a href="../../da/d04/class_math3_d.html">Math3D</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/_en_math3_d_8c_source.html#l00027">EnMath3D.c:28</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga91222ac45b26b806e50d1d77268114de"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga91222ac45b26b806e50d1d77268114de">Math3D::YawPitchRollMatrix</a></div><div class="ttdeci">static proto void YawPitchRollMatrix(vector ang, out vector mat[3])</div><div class="ttdoc">Creates rotation matrix from angles.</div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_gacfe264ca98076511a7bf6d34d33c75b2"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#gacfe264ca98076511a7bf6d34d33c75b2">Math3D::MatrixInvMultiply4</a></div><div class="ttdeci">static proto void MatrixInvMultiply4(vector mat0[4], vector mat1[4], out vector res[4])</div><div class="ttdoc">Invert-transforms matrix.</div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_gade5b7cfa7130d12d1fa581c8a76d1c99"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#gade5b7cfa7130d12d1fa581c8a76d1c99">Math3D::MatrixOrthogonalize4</a></div><div class="ttdeci">static proto void MatrixOrthogonalize4(vector mat[4])</div><div class="ttdoc">Orthogonalizes matrix.</div></div>
+<div class="ttc" id="agroup___math_html_gad73851cb23a468ee6eb705d0ec76e141"><div class="ttname"><a href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">Math::RAD2DEG</a></div><div class="ttdeci">static const float RAD2DEG</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00016">EnMath.c:16</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga33e82262c3fc30a0921094432901b8d3"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga33e82262c3fc30a0921094432901b8d3">AddChild</a></div><div class="ttdeci">proto native void AddChild(Widget child, bool immedUpdate=true)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga33e82262c3fc30a0921094432901b8d3">AddChild()</a>, <a class="el" href="../../de/d07/_utility_classes_8c_source.html#l00049">CachedObjectsArrays::ARRAY_STRING</a>, <a class="el" href="#a97fcb2d37001b1e9aee457e3514f423f">GetBoneIndexByName()</a>, <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#gacfe264ca98076511a7bf6d34d33c75b2">Math3D::MatrixInvMultiply4()</a>, <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#gade5b7cfa7130d12d1fa581c8a76d1c99">Math3D::MatrixOrthogonalize4()</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00016">Math::RAD2DEG</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga91222ac45b26b806e50d1d77268114de">Math3D::YawPitchRollMatrix()</a>.</p>
 
 </div>
 </div>
@@ -428,7 +473,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00060">60</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   61</span>  {</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   63</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af9bd0dcc9dc998ced9ebb3d3114615d8" name="af9bd0dcc9dc998ced9ebb3d3114615d8"></a>
@@ -492,6 +540,8 @@ Variables</h2></td></tr>
 
 <p>returns bone index for a name (-1 if pBoneName doesn't exist) </p>
 
+<p class="reference">Referenced by <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00075">AddArrow()</a>, <a class="el" href="../../d4/d05/_zombie_base_8c_source.html#l01052">DayZInfected::AddArrow()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l08733">ManBase::AddArrow()</a>, <a class="el" href="../../d4/d05/_zombie_base_8c_source.html#l00997">DayZInfected::GetCenter()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l08665">ManBase::GetCenter()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l06271">ManBase::GetDrowningWaterLevelCheck()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l08384">ManBase::SetDecayEffects()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l06243">ManBase::SpawnBreathVaporEffect()</a>, and <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l01918">ManBase::SpawnDrowningBubbles()</a>.</p>
+
 </div>
 </div>
 <a id="a7ba32734393c2c4e52dbf93a1c456c24" name="a7ba32734393c2c4e52dbf93a1c456c24"></a>
@@ -527,6 +577,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00111">111</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>  {</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d2/d0c/_action_targets_cursor_8c_source.html#l00465">ActionTargetsCursor::GetOnScreenPosition()</a>.</p>
 
 </div>
 </div>
@@ -546,6 +601,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00055">55</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>  {</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   58</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_object_8c_source.html#l00773">IEntity::CanBeIgnoredByDroppedItem()</a>.</p>
 
 </div>
 </div>
@@ -599,7 +659,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00065">65</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   66</span>  {</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">return</span> IsRuined();</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adb49305b137500377ea58863a002843a" name="adb49305b137500377ea58863a002843a"></a>
@@ -618,7 +681,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00070">70</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   71</span>  {</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae12109f1ee067589a66f11b445043fc0" name="ae12109f1ee067589a66f11b445043fc0"></a>
@@ -646,6 +712,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00132">132</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>  {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  135</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00637">DayZCreatureAI::CommandHandler()</a>, <a class="el" href="../../d4/d05/_zombie_base_8c_source.html#l00190">DayZInfected::CommandHandler()</a>, and <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l01871">DayZPlayer::CommandHandler()</a>.</p>
 
 </div>
 </div>
@@ -675,6 +746,11 @@ Variables</h2></td></tr>
 <p>ModOverrides </p>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00122">122</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>  {</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00637">DayZCreatureAI::CommandHandler()</a>, <a class="el" href="../../d4/d05/_zombie_base_8c_source.html#l00190">DayZInfected::CommandHandler()</a>, and <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l01871">DayZPlayer::CommandHandler()</a>.</p>
 
 </div>
 </div>
@@ -703,6 +779,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00127">127</a> of file <a class="el" href="../../df/d05/_day_z_animal_8c_source.html">DayZAnimal.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>  {</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  130</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00637">DayZCreatureAI::CommandHandler()</a>, <a class="el" href="../../d4/d05/_zombie_base_8c_source.html#l00190">DayZInfected::CommandHandler()</a>, and <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l01871">DayZPlayer::CommandHandler()</a>.</p>
 
 </div>
 </div>
@@ -908,6 +989,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="../../d7/d0d/_action_unfold_map_8c_source.html#l00009">ActionUnfoldMapCB::ActionUnfoldMapCB()</a>, <a class="el" href="../../d5/d06/_action_continuous_base_8c_source.html#l00068">ActionContinuousBaseCB::InitActionComponent()</a>, <a class="el" href="../../d7/d00/_action_interact_base_8c_source.html#l00024">ActionInteractBaseCB::InitActionComponent()</a>, <a class="el" href="../../de/d03/_action_single_use_base_8c_source.html#l00020">ActionSingleUseBaseCB::InitActionComponent()</a>, <a class="el" href="../../df/d02/_action_activate_trap_8c_source.html#l00008">ActionActivateTrapCB::InitActionComponent()</a>, <a class="el" href="../../d9/d00/_action_arm_explosive_8c_source.html#l00008">ActionArmExplosiveCB::InitActionComponent()</a>, and <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00233">DayZCreature::RegisterAnimEvents()</a>.</p>
+
 </div>
 </div>
 <a id="aa41399d07747634d0988190dab8f12ba" name="aa41399d07747634d0988190dab8f12ba"></a>
@@ -941,6 +1024,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l00567">DayZPlayer::ResetDeathStartTime()</a>, and <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l00460">DayZPlayer::TriggerPullPlayerOutOfVehicleImpl()</a>.</p>
 
 </div>
 </div>

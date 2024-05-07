@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -155,6 +152,16 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00006">6</a> of file <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html">StanceIndicator.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>  {</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_variable" href="#af1c452530a2b9ba0577694a62b80be5c">m_State</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d0b/class_human_movement_state.html">HumanMovementState</a>();</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_variable" href="#ab508ad5e86f5f31a403c6426b6a3543e">m_Player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">   10</span>  }</div>
+<div class="ttc" id="aclass_human_movement_state_html"><div class="ttname"><a href="../../d2/d0b/class_human_movement_state.html">HumanMovementState</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l01112">human.c:1113</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_stance_indicator_html_ab508ad5e86f5f31a403c6426b6a3543e"><div class="ttname"><a href="#ab508ad5e86f5f31a403c6426b6a3543e">StanceIndicator::m_Player</a></div><div class="ttdeci">PlayerBase m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_stance_indicator_8c_source.html#l00004">StanceIndicator.c:4</a></div></div>
+<div class="ttc" id="aclass_stance_indicator_html_af1c452530a2b9ba0577694a62b80be5c"><div class="ttname"><a href="#af1c452530a2b9ba0577694a62b80be5c">StanceIndicator::m_State</a></div><div class="ttdeci">ref HumanMovementState m_State</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_stance_indicator_8c_source.html#l00003">StanceIndicator.c:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00004">m_Player</a>, and <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00003">m_State</a>.</p>
 
 </div>
 </div>
@@ -183,6 +190,20 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00030">30</a> of file <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html">StanceIndicator.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>  {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ab508ad5e86f5f31a403c6426b6a3543e">m_Player</a>)</div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>      <a class="code hl_class" href="../../d5/d0c/class_display_element_base.html">DisplayElementBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">stance_element</a> = <a class="code hl_variable" href="#ab508ad5e86f5f31a403c6426b6a3543e">m_Player</a>.GetVirtualHud().GetElement(<a class="code hl_class" href="../../db/d06/class_param3.html">eDisplayElements</a>.DELM_STANCE);</div>
+<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">stance_element</a>)</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">stance_element</a>.SetValue(<a class="code hl_class" href="../../db/d06/class_param3.html">stance</a>);</div>
+<div class="line"><span class="lineno">   37</span>      <span class="comment">//m_Player.GetVirtualHud().SetValue(eDisplayElements.DELM_STANCE, stance);</span></div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="line"><span class="lineno">   39</span>  }</div>
+<div class="ttc" id="aclass_display_element_base_html"><div class="ttname"><a href="../../d5/d0c/class_display_element_base.html">DisplayElementBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_display_element_badge_8c_source.html#l00001">DisplayElementBadge.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00004">m_Player</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00012">Update()</a>.</p>
 
 </div>
 </div>
@@ -210,6 +231,26 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00012">12</a> of file <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html">StanceIndicator.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>  {</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ab508ad5e86f5f31a403c6426b6a3543e">m_Player</a>)</div>
+<div class="line"><span class="lineno">   15</span>    {</div>
+<div class="line"><span class="lineno">   16</span>      <a class="code hl_variable" href="#ab508ad5e86f5f31a403c6426b6a3543e">m_Player</a>.GetMovementState(<a class="code hl_variable" href="#af1c452530a2b9ba0577694a62b80be5c">m_State</a>);</div>
+<div class="line"><span class="lineno">   17</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">player_stance</a> = <a class="code hl_variable" href="#af1c452530a2b9ba0577694a62b80be5c">m_State</a>.m_iStanceIdx;</div>
+<div class="line"><span class="lineno">   18</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">hud_stance_id</a> = 1;</div>
+<div class="line"><span class="lineno">   19</span>      <span class="comment">//if ( player_stance == DayZPlayerConstants.STANCEIDX_ERECT  || player_stance == DayZPlayerConstants.STANCEIDX_RAISEDERECT)  hud_stance_id = 1;</span></div>
+<div class="line"><span class="lineno">   20</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player_stance</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEIDX_CROUCH || <a class="code hl_class" href="../../db/d06/class_param3.html">player_stance</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEIDX_RAISEDCROUCH)</div>
+<div class="line"><span class="lineno">   21</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">hud_stance_id</a> = 2;</div>
+<div class="line"><span class="lineno">   22</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player_stance</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEIDX_PRONE || <a class="code hl_class" href="../../db/d06/class_param3.html">player_stance</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEIDX_RAISEDPRONE)</div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">hud_stance_id</a> = 3;</div>
+<div class="line"><span class="lineno">   24</span>      <a class="code hl_function" href="#afec9a50b96d1de99703bee41fdd215e0">DisplayStance</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">hud_stance_id</a>);</div>
+<div class="line"><span class="lineno">   25</span>      <span class="comment">//Debug</span></div>
+<div class="line"><span class="lineno">   26</span>      <span class="comment">//m_Player.MessageStatus(ToString(player) + &quot;StanceIndicator.c || stance: &quot; + ToString(player_stance));</span></div>
+<div class="line"><span class="lineno">   27</span>    }</div>
+<div class="line"><span class="lineno">   28</span>  }</div>
+<div class="ttc" id="aclass_stance_indicator_html_afec9a50b96d1de99703bee41fdd215e0"><div class="ttname"><a href="#afec9a50b96d1de99703bee41fdd215e0">StanceIndicator::DisplayStance</a></div><div class="ttdeci">void DisplayStance(int stance)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_stance_indicator_8c_source.html#l00030">StanceIndicator.c:30</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00030">DisplayStance()</a>, <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00004">m_Player</a>, and <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00003">m_State</a>.</p>
 
 </div>
 </div>
@@ -236,6 +277,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00004">4</a> of file <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html">StanceIndicator.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00030">DisplayStance()</a>, <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00006">StanceIndicator()</a>, and <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00012">Update()</a>.</p>
+
 </div>
 </div>
 <a id="af1c452530a2b9ba0577694a62b80be5c" name="af1c452530a2b9ba0577694a62b80be5c"></a>
@@ -259,6 +302,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00003">3</a> of file <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html">StanceIndicator.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00006">StanceIndicator()</a>, and <a class="el" href="../../de/d0e/_stance_indicator_8c_source.html#l00012">Update()</a>.</p>
 
 </div>
 </div>

@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -148,7 +145,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d0c/_prepare_carp_8c_source.html#l00106">106</a> of file <a class="el" href="../../d1/d0c/_prepare_carp_8c_source.html">PrepareCarp.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  107</span>  {</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  109</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aed8d93ba43bc2c253c3a30ac84986ea8" name="aed8d93ba43bc2c253c3a30ac84986ea8"></a>
@@ -179,7 +179,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d07/_prepare_mackerel_8c_source.html#l00095">95</a> of file <a class="el" href="../../d9/d07/_prepare_mackerel_8c_source.html">PrepareMackerel.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   96</span>  {</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   98</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac49a882a2986eb97739893047f0328e1" name="ac49a882a2986eb97739893047f0328e1"></a>
@@ -206,6 +209,110 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d0c/_prepare_carp_8c_source.html#l00003">3</a> of file <a class="el" href="../../d1/d0c/_prepare_carp_8c_source.html">PrepareCarp.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_variable" href="../../db/d07/_bios_lobby_service_8c.html#a3053a6d8752e323caa7797c18a0083b0">m_Name</a> = <span class="stringliteral">&quot;#STR_gutandprepare0&quot;</span>;</div>
+<div class="line"><span class="lineno">    6</span>    m_IsInstaRecipe = <span class="keyword">false</span>;<span class="comment">//should this recipe be performed instantly without animation</span></div>
+<div class="line"><span class="lineno">    7</span>    m_AnimationLength = 1.5;<span class="comment">//animation length in relative time units</span></div>
+<div class="line"><span class="lineno">    8</span>    m_Specialty = 0.02;<span class="comment">// value &gt; 0 for roughness, value &lt; 0 for precision</span></div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="comment">//conditions</span></div>
+<div class="line"><span class="lineno">   12</span>    m_MinDamageIngredient[0] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   13</span>    m_MaxDamageIngredient[0] = 3;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    m_MinQuantityIngredient[0] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   16</span>    m_MaxQuantityIngredient[0] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   17</span> </div>
+<div class="line"><span class="lineno">   18</span>    m_MinDamageIngredient[1] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   19</span>    m_MaxDamageIngredient[1] = 3;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    m_MinQuantityIngredient[1] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   22</span>    m_MaxQuantityIngredient[1] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   23</span>    <span class="comment">//----------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <span class="comment">//INGREDIENTS</span></div>
+<div class="line"><span class="lineno">   26</span>    <span class="comment">//ingredient 1</span></div>
+<div class="line"><span class="lineno">   27</span>    InsertIngredient(0, <span class="stringliteral">&quot;Carp&quot;</span>); <span class="comment">//you can insert multiple ingredients this way</span></div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    m_IngredientAddHealth[0] = 0;<span class="comment">// 0 = do nothing</span></div>
+<div class="line"><span class="lineno">   30</span>    m_IngredientSetHealth[0] = -1; <span class="comment">// -1 = do nothing</span></div>
+<div class="line"><span class="lineno">   31</span>    m_IngredientAddQuantity[0] = 0;<span class="comment">// 0 = do nothing</span></div>
+<div class="line"><span class="lineno">   32</span>    m_IngredientDestroy[0] = <span class="keyword">true</span>;<span class="comment">//true = destroy, false = do nothing</span></div>
+<div class="line"><span class="lineno">   33</span>    m_IngredientUseSoftSkills[0] = <span class="keyword">false</span>;<span class="comment">// set &#39;true&#39; to allow modification of the values by softskills on this ingredient</span></div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">//ingredient 2</span></div>
+<div class="line"><span class="lineno">   36</span>    InsertIngredient(1, <span class="stringliteral">&quot;Sickle&quot;</span>); <span class="comment">//you can insert multiple ingredients this way</span></div>
+<div class="line"><span class="lineno">   37</span>    InsertIngredient(1, <span class="stringliteral">&quot;KukriKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>    InsertIngredient(1, <span class="stringliteral">&quot;FangeKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>    InsertIngredient(1, <span class="stringliteral">&quot;Hacksaw&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>    InsertIngredient(1, <span class="stringliteral">&quot;HandSaw&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>    InsertIngredient(1, <span class="stringliteral">&quot;KitchenKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>    InsertIngredient(1, <span class="stringliteral">&quot;SteakKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>    InsertIngredient(1, <span class="stringliteral">&quot;StoneKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>    InsertIngredient(1, <span class="stringliteral">&quot;Cleaver&quot;</span>);</div>
+<div class="line"><span class="lineno">   45</span>    InsertIngredient(1, <span class="stringliteral">&quot;CombatKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>    InsertIngredient(1, <span class="stringliteral">&quot;HuntingKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>    InsertIngredient(1, <span class="stringliteral">&quot;Machete&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>    InsertIngredient(1, <span class="stringliteral">&quot;CrudeMachete&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>    InsertIngredient(1, <span class="stringliteral">&quot;OrientalMachete&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span>    InsertIngredient(1, <span class="stringliteral">&quot;WoodAxe&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    InsertIngredient(1, <span class="stringliteral">&quot;Hatchet&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>    InsertIngredient(1, <span class="stringliteral">&quot;FirefighterAxe&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>    InsertIngredient(1, <span class="stringliteral">&quot;Sword&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>    InsertIngredient(1, <span class="stringliteral">&quot;AK_Bayonet&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>    InsertIngredient(1, <span class="stringliteral">&quot;M9A1_Bayonet&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>    InsertIngredient(1, <span class="stringliteral">&quot;SKS_Bayonet&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>    InsertIngredient(1, <span class="stringliteral">&quot;BoneKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span>    InsertIngredient(1, <span class="stringliteral">&quot;Screwdriver&quot;</span>);</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    m_IngredientAddHealth[1] = -12;<span class="comment">// 0 = do nothing</span></div>
+<div class="line"><span class="lineno">   61</span>    m_IngredientSetHealth[1] = -1; <span class="comment">// -1 = do nothing</span></div>
+<div class="line"><span class="lineno">   62</span>    m_IngredientAddQuantity[1] = 0;<span class="comment">// 0 = do nothing</span></div>
+<div class="line"><span class="lineno">   63</span>    m_IngredientDestroy[1] = <span class="keyword">false</span>;<span class="comment">// false = do nothing</span></div>
+<div class="line"><span class="lineno">   64</span>    m_IngredientUseSoftSkills[1] = <span class="keyword">true</span>;<span class="comment">// set &#39;true&#39; to allow modification of the values by softskills on this ingredient</span></div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">//----------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">//result1</span></div>
+<div class="line"><span class="lineno">   68</span>    AddResult(<span class="stringliteral">&quot;CarpFilletMeat&quot;</span>);<span class="comment">//add results here</span></div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    m_ResultSetFullQuantity[0] = <span class="keyword">false</span>;<span class="comment">//true = set full quantity, false = do nothing</span></div>
+<div class="line"><span class="lineno">   71</span>    m_ResultSetQuantity[0] = -1;<span class="comment">//-1 = do nothing</span></div>
+<div class="line"><span class="lineno">   72</span>    m_ResultSetHealth[0] = -1;<span class="comment">//-1 = do nothing</span></div>
+<div class="line"><span class="lineno">   73</span>    m_ResultInheritsHealth[0] = 0;<span class="comment">// (value) == -1 means do nothing; a (value) &gt;= 0 means this result will inherit health from ingredient number (value);(value) == -2 means this result will inherit health from all ingredients averaged(result_health = combined_health_of_ingredients / number_of_ingredients)</span></div>
+<div class="line"><span class="lineno">   74</span>    m_ResultInheritsColor[0] = -1;<span class="comment">// (value) == -1 means do nothing; a (value) &gt;= 0 means this result classname will be a composite of the name provided in AddResult method and config value &quot;color&quot; of ingredient (value)</span></div>
+<div class="line"><span class="lineno">   75</span>    m_ResultToInventory[0] = -2;<span class="comment">//(value) == -2 spawn result on the ground;(value) == -1 place anywhere in the players inventory, (value) &gt;= 0 means switch position with ingredient number(value)</span></div>
+<div class="line"><span class="lineno">   76</span>    m_ResultUseSoftSkills[0] = <span class="keyword">false</span>;<span class="comment">// set &#39;true&#39; to allow modification of the values by softskills on this result</span></div>
+<div class="line"><span class="lineno">   77</span>    m_ResultReplacesIngredient[0] = 0;<span class="comment">// value == -1 means do nothing; a value &gt;= 0 means this result will transfer item propertiesvariables, attachments etc.. from an ingredient value</span></div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <span class="comment">//result2</span></div>
+<div class="line"><span class="lineno">   80</span>    AddResult(<span class="stringliteral">&quot;CarpFilletMeat&quot;</span>);<span class="comment">//add results here</span></div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    m_ResultSetFullQuantity[1] = <span class="keyword">false</span>;<span class="comment">//true = set full quantity, false = do nothing</span></div>
+<div class="line"><span class="lineno">   83</span>    m_ResultSetQuantity[1] = -1;<span class="comment">//-1 = do nothing</span></div>
+<div class="line"><span class="lineno">   84</span>    m_ResultSetHealth[1] = -1;<span class="comment">//-1 = do nothing</span></div>
+<div class="line"><span class="lineno">   85</span>    m_ResultInheritsHealth[1] = 0;<span class="comment">// (value) == -1 means do nothing; a (value) &gt;= 0 means this result will inherit health from ingredient number (value);(value) == -2 means this result will inherit health from all ingredients averaged(result_health = combined_health_of_ingredients / number_of_ingredients)</span></div>
+<div class="line"><span class="lineno">   86</span>    m_ResultInheritsColor[1] = -1;<span class="comment">// (value) == -1 means do nothing; a (value) &gt;= 0 means this result classname will be a composite of the name provided in AddResult method and config value &quot;color&quot; of ingredient (value)</span></div>
+<div class="line"><span class="lineno">   87</span>    m_ResultToInventory[1] = -2;<span class="comment">//(value) == -2 spawn result on the ground;(value) == -1 place anywhere in the players inventory, (value) &gt;= 0 means switch position with ingredient number(value)</span></div>
+<div class="line"><span class="lineno">   88</span>    m_ResultUseSoftSkills[1] = <span class="keyword">false</span>;<span class="comment">// set &#39;true&#39; to allow modification of the values by softskills on this result</span></div>
+<div class="line"><span class="lineno">   89</span>    m_ResultReplacesIngredient[1] = 0;<span class="comment">// value == -1 means do nothing; a value &gt;= 0 means this result will transfer item propertiesvariables, attachments etc.. from an ingredient value</span></div>
+<div class="line"><span class="lineno">   90</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   91</span><span class="comment">        //result3</span></div>
+<div class="line"><span class="lineno">   92</span><span class="comment">        AddResult(&quot;SmallGuts&quot;);//add results here</span></div>
+<div class="line"><span class="lineno">   93</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   94</span><span class="comment">        m_ResultSetFullQuantity[2] = true;//true = set full quantity, false = do nothing</span></div>
+<div class="line"><span class="lineno">   95</span><span class="comment">        m_ResultSetQuantity[2] = -1;// -1 = do nothing</span></div>
+<div class="line"><span class="lineno">   96</span><span class="comment">        m_ResultSetHealth[2] = -1;// -1 = do nothing</span></div>
+<div class="line"><span class="lineno">   97</span><span class="comment">        m_ResultInheritsHealth[2] = 0;// (value) == -1 means do nothing; a (value) &gt;= 0 means this result will inherit health from ingredient number (value);(value) == -2 means this result will inherit health from all ingredients averaged(result_health = combined_health_of_ingredients / number_of_ingredients)</span></div>
+<div class="line"><span class="lineno">   98</span><span class="comment">        m_ResultInheritsColor[2] = -1;// (value) == -1 means do nothing; a (value) &gt;= 0 means this result classname will be a composite of the name provided in AddResult method and config value &quot;color&quot; of ingredient (value)</span></div>
+<div class="line"><span class="lineno">   99</span><span class="comment">        m_ResultToInventory[2] = -2;//(value) == -2 spawn result on the ground;(value) == -1 place anywhere in the players inventory, (value) &gt;= 0 means switch position with ingredient number(value)</span></div>
+<div class="line"><span class="lineno">  100</span><span class="comment">        m_ResultUseSoftSkills[2] = false;// set &#39;true&#39; to allow modification of the values by softskills on this result</span></div>
+<div class="line"><span class="lineno">  101</span><span class="comment">        m_ResultReplacesIngredient[2] = 0;// value == -1 means do nothing; a value &gt;= 0 means this result will transfer item propertiesvariables, attachments etc.. from an ingredient value</span></div>
+<div class="line"><span class="lineno">  102</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">  103</span>    <span class="comment">//----------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="lineno">  104</span>  }</div>
+<div class="ttc" id="a_bios_lobby_service_8c_html_a3053a6d8752e323caa7797c18a0083b0"><div class="ttname"><a href="../../db/d07/_bios_lobby_service_8c.html#a3053a6d8752e323caa7797c18a0083b0">m_Name</a></div><div class="ttdeci">string m_Name</div><div class="ttdef"><b>Definition</b> <a href="../../db/d07/_bios_lobby_service_8c_source.html#l00035">BiosLobbyService.c:35</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d07/_bios_lobby_service_8c_source.html#l00035">m_Name</a>.</p>
 
 </div>
 </div>
@@ -233,6 +340,98 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d07/_prepare_mackerel_8c_source.html#l00003">3</a> of file <a class="el" href="../../d9/d07/_prepare_mackerel_8c_source.html">PrepareMackerel.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_variable" href="../../db/d07/_bios_lobby_service_8c.html#a3053a6d8752e323caa7797c18a0083b0">m_Name</a> = <span class="stringliteral">&quot;#STR_gutandprepare0&quot;</span>;</div>
+<div class="line"><span class="lineno">    6</span>    m_IsInstaRecipe = <span class="keyword">false</span>;<span class="comment">//should this recipe be performed instantly without animation</span></div>
+<div class="line"><span class="lineno">    7</span>    m_AnimationLength = 1.5;<span class="comment">//animation length in relative time units</span></div>
+<div class="line"><span class="lineno">    8</span>    m_Specialty = 0.02;<span class="comment">// value &gt; 0 for roughness, value &lt; 0 for precision</span></div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="comment">//conditions</span></div>
+<div class="line"><span class="lineno">   12</span>    m_MinDamageIngredient[0] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   13</span>    m_MaxDamageIngredient[0] = 3;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    m_MinQuantityIngredient[0] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   16</span>    m_MaxQuantityIngredient[0] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   17</span> </div>
+<div class="line"><span class="lineno">   18</span>    m_MinDamageIngredient[1] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   19</span>    m_MaxDamageIngredient[1] = 3;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    m_MinQuantityIngredient[1] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   22</span>    m_MaxQuantityIngredient[1] = -1;<span class="comment">//-1 = disable check</span></div>
+<div class="line"><span class="lineno">   23</span>    <span class="comment">//----------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <span class="comment">//INGREDIENTS</span></div>
+<div class="line"><span class="lineno">   26</span>    <span class="comment">//ingredient 1</span></div>
+<div class="line"><span class="lineno">   27</span>    InsertIngredient(0, <span class="stringliteral">&quot;Mackerel&quot;</span>); <span class="comment">//you can insert multiple ingredients this way</span></div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    m_IngredientAddHealth[0] = 0;<span class="comment">// 0 = do nothing</span></div>
+<div class="line"><span class="lineno">   30</span>    m_IngredientSetHealth[0] = -1; <span class="comment">// -1 = do nothing</span></div>
+<div class="line"><span class="lineno">   31</span>    m_IngredientAddQuantity[0] = 0;<span class="comment">// 0 = do nothing</span></div>
+<div class="line"><span class="lineno">   32</span>    m_IngredientDestroy[0] = <span class="keyword">true</span>;<span class="comment">//true = destroy, false = do nothing</span></div>
+<div class="line"><span class="lineno">   33</span>    m_IngredientUseSoftSkills[0] = <span class="keyword">false</span>;<span class="comment">// set &#39;true&#39; to allow modification of the values by softskills on this ingredient</span></div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">//ingredient 2</span></div>
+<div class="line"><span class="lineno">   36</span>    InsertIngredient(1, <span class="stringliteral">&quot;Sickle&quot;</span>); <span class="comment">//you can insert multiple ingredients this way</span></div>
+<div class="line"><span class="lineno">   37</span>    InsertIngredient(1, <span class="stringliteral">&quot;KukriKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>    InsertIngredient(1, <span class="stringliteral">&quot;FangeKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>    InsertIngredient(1, <span class="stringliteral">&quot;Hacksaw&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>    InsertIngredient(1, <span class="stringliteral">&quot;HandSaw&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>    InsertIngredient(1, <span class="stringliteral">&quot;KitchenKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>    InsertIngredient(1, <span class="stringliteral">&quot;SteakKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>    InsertIngredient(1, <span class="stringliteral">&quot;StoneKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>    InsertIngredient(1, <span class="stringliteral">&quot;Cleaver&quot;</span>);</div>
+<div class="line"><span class="lineno">   45</span>    InsertIngredient(1, <span class="stringliteral">&quot;CombatKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>    InsertIngredient(1, <span class="stringliteral">&quot;HuntingKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>    InsertIngredient(1, <span class="stringliteral">&quot;Machete&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>    InsertIngredient(1, <span class="stringliteral">&quot;CrudeMachete&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>    InsertIngredient(1, <span class="stringliteral">&quot;OrientalMachete&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span>    InsertIngredient(1, <span class="stringliteral">&quot;WoodAxe&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    InsertIngredient(1, <span class="stringliteral">&quot;Hatchet&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>    InsertIngredient(1, <span class="stringliteral">&quot;FirefighterAxe&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>    InsertIngredient(1, <span class="stringliteral">&quot;Sword&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>    InsertIngredient(1, <span class="stringliteral">&quot;AK_Bayonet&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>    InsertIngredient(1, <span class="stringliteral">&quot;M9A1_Bayonet&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>    InsertIngredient(1, <span class="stringliteral">&quot;SKS_Bayonet&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>    InsertIngredient(1, <span class="stringliteral">&quot;BoneKnife&quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span>    InsertIngredient(1, <span class="stringliteral">&quot;Screwdriver&quot;</span>);</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    m_IngredientAddHealth[1] = -12;<span class="comment">// 0 = do nothing</span></div>
+<div class="line"><span class="lineno">   61</span>    m_IngredientSetHealth[1] = -1; <span class="comment">// -1 = do nothing</span></div>
+<div class="line"><span class="lineno">   62</span>    m_IngredientAddQuantity[1] = 0;<span class="comment">// 0 = do nothing</span></div>
+<div class="line"><span class="lineno">   63</span>    m_IngredientDestroy[1] = <span class="keyword">false</span>;<span class="comment">// false = do nothing</span></div>
+<div class="line"><span class="lineno">   64</span>    m_IngredientUseSoftSkills[1] = <span class="keyword">true</span>;<span class="comment">// set &#39;true&#39; to allow modification of the values by softskills on this ingredient</span></div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">//----------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">//result1</span></div>
+<div class="line"><span class="lineno">   68</span>    AddResult(<span class="stringliteral">&quot;MackerelFilletMeat&quot;</span>);<span class="comment">//add results here</span></div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    m_ResultSetFullQuantity[0] = <span class="keyword">false</span>;<span class="comment">//true = set full quantity, false = do nothing</span></div>
+<div class="line"><span class="lineno">   71</span>    m_ResultSetQuantity[0] = -1;<span class="comment">//-1 = do nothing</span></div>
+<div class="line"><span class="lineno">   72</span>    m_ResultSetHealth[0] = -1;<span class="comment">//-1 = do nothing</span></div>
+<div class="line"><span class="lineno">   73</span>    m_ResultInheritsHealth[0] = 0;<span class="comment">// (value) == -1 means do nothing; a (value) &gt;= 0 means this result will inherit health from ingredient number (value);(value) == -2 means this result will inherit health from all ingredients averaged(result_health = combined_health_of_ingredients / number_of_ingredients)</span></div>
+<div class="line"><span class="lineno">   74</span>    m_ResultInheritsColor[0] = -1;<span class="comment">// (value) == -1 means do nothing; a (value) &gt;= 0 means this result classname will be a composite of the name provided in AddResult method and config value &quot;color&quot; of ingredient (value)</span></div>
+<div class="line"><span class="lineno">   75</span>    m_ResultToInventory[0] = -2;<span class="comment">//(value) == -2 spawn result on the ground;(value) == -1 place anywhere in the players inventory, (value) &gt;= 0 means switch position with ingredient number(value)</span></div>
+<div class="line"><span class="lineno">   76</span>    m_ResultUseSoftSkills[0] = <span class="keyword">false</span>;<span class="comment">// set &#39;true&#39; to allow modification of the values by softskills on this result</span></div>
+<div class="line"><span class="lineno">   77</span>    m_ResultReplacesIngredient[0] = 0;<span class="comment">// value == -1 means do nothing; a value &gt;= 0 means this result will transfer item propertiesvariables, attachments etc.. from an ingredient value</span></div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="comment">//result2</span></div>
+<div class="line"><span class="lineno">   81</span>    AddResult(<span class="stringliteral">&quot;MackerelFilletMeat&quot;</span>);<span class="comment">//add results here</span></div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    m_ResultSetFullQuantity[1] = <span class="keyword">false</span>;<span class="comment">//true = set full quantity, false = do nothing</span></div>
+<div class="line"><span class="lineno">   84</span>    m_ResultSetQuantity[1] = -1;<span class="comment">// -1 = do nothing</span></div>
+<div class="line"><span class="lineno">   85</span>    m_ResultSetHealth[1] = -1;<span class="comment">// -1 = do nothing</span></div>
+<div class="line"><span class="lineno">   86</span>    m_ResultInheritsHealth[1] = 0;<span class="comment">// (value) == -1 means do nothing; a (value) &gt;= 0 means this result will inherit health from ingredient number (value);(value) == -2 means this result will inherit health from all ingredients averaged(result_health = combined_health_of_ingredients / number_of_ingredients)</span></div>
+<div class="line"><span class="lineno">   87</span>    m_ResultInheritsColor[1] = -1;<span class="comment">// (value) == -1 means do nothing; a (value) &gt;= 0 means this result classname will be a composite of the name provided in AddResult method and config value &quot;color&quot; of ingredient (value)</span></div>
+<div class="line"><span class="lineno">   88</span>    m_ResultToInventory[1] = -2;<span class="comment">//(value) == -2 spawn result on the ground;(value) == -1 place anywhere in the players inventory, (value) &gt;= 0 means switch position with ingredient number(value)</span></div>
+<div class="line"><span class="lineno">   89</span>    m_ResultUseSoftSkills[1] = <span class="keyword">false</span>;<span class="comment">// set &#39;true&#39; to allow modification of the values by softskills on this result</span></div>
+<div class="line"><span class="lineno">   90</span>    m_ResultReplacesIngredient[1] = 0;<span class="comment">// value == -1 means do nothing; a value &gt;= 0 means this result will transfer item propertiesvariables, attachments etc.. from an ingredient value</span></div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment">//----------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d07/_bios_lobby_service_8c_source.html#l00035">m_Name</a>.</p>
 
 </div>
 </div>

@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -215,7 +212,8 @@ Private Attributes</h2></td></tr>
 <p>DEPRECATED. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0d/_bonfire_8c_source.html#l00095">95</a> of file <a class="el" href="../../d6/d0d/_bonfire_8c_source.html">Bonfire.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a778a88d521550f1d1b99ab5019ad3570" name="a778a88d521550f1d1b99ab5019ad3570"></a>
@@ -242,7 +240,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d01/_building_with_fireplace_8c_source.html#l00003">3</a> of file <a class="el" href="../../d1/d01/_building_with_fireplace_8c_source.html">BuildingWithFireplace.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae430408cd19f423e21ca5e7300919550" name="ae430408cd19f423e21ca5e7300919550"></a>
@@ -269,6 +269,42 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0d/_bonfire_8c_source.html#l00067">67</a> of file <a class="el" href="../../d6/d0d/_bonfire_8c_source.html">Bonfire.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>  {</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEDelete(parent);</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span><span class="preprocessor">#ifndef SERVER</span></div>
+<div class="line"><span class="lineno">   72</span>    <span class="comment">// outside of bubble - do effects cleanup (light, particles, sound)</span></div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="comment">// light</span></div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>)</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>.FadeOut();</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="comment">// particles</span></div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a418a38b26e5e0adc0b5c1e8224e1a508">m_ParticleSmoke</a>)</div>
+<div class="line"><span class="lineno">   80</span>      <a class="code hl_variable" href="#a418a38b26e5e0adc0b5c1e8224e1a508">m_ParticleSmoke</a>.<a class="code hl_function" href="../../de/d05/class_particle.html#ae9d5642dc992c942c1ae2f221e064921">Stop</a>();</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac527b8cec484bace98d61013953829a3">m_ParticleFire</a>)</div>
+<div class="line"><span class="lineno">   83</span>      <a class="code hl_variable" href="#ac527b8cec484bace98d61013953829a3">m_ParticleFire</a>.<a class="code hl_function" href="../../de/d05/class_particle.html#ae9d5642dc992c942c1ae2f221e064921">Stop</a>();</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">// sounds</span></div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad318ecf5c4e8024c0cbf24a929944e75">m_SoundFireLoop</a>)</div>
+<div class="line"><span class="lineno">   87</span>      <a class="code hl_variable" href="#ad318ecf5c4e8024c0cbf24a929944e75">m_SoundFireLoop</a>.<a class="code hl_function" href="../../d9/d09/class_effect_sound.html#afb3e761198a4167f611442d60925e1e7">SoundStop</a>();</div>
+<div class="line"><span class="lineno">   88</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_variable" href="#a6f83089b13a530d1ef15d43181b5cd5c">m_UTSource</a>.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   92</span>  }</div>
+<div class="ttc" id="aclass_building_super_html_a418a38b26e5e0adc0b5c1e8224e1a508"><div class="ttname"><a href="#a418a38b26e5e0adc0b5c1e8224e1a508">BuildingSuper::m_ParticleSmoke</a></div><div class="ttdeci">Particle m_ParticleSmoke</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00011">Bonfire.c:11</a></div></div>
+<div class="ttc" id="aclass_building_super_html_a54c757af49102760f660520a40694c91"><div class="ttname"><a href="#a54c757af49102760f660520a40694c91">BuildingSuper::m_Light</a></div><div class="ttdeci">BonfireLight m_Light</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00009">Bonfire.c:9</a></div></div>
+<div class="ttc" id="aclass_building_super_html_a6f83089b13a530d1ef15d43181b5cd5c"><div class="ttname"><a href="#a6f83089b13a530d1ef15d43181b5cd5c">BuildingSuper::m_UTSource</a></div><div class="ttdeci">ref UniversalTemperatureSource m_UTSource</div><div class="ttdoc">DEPRECATED.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00018">Bonfire.c:18</a></div></div>
+<div class="ttc" id="aclass_building_super_html_ac527b8cec484bace98d61013953829a3"><div class="ttname"><a href="#ac527b8cec484bace98d61013953829a3">BuildingSuper::m_ParticleFire</a></div><div class="ttdeci">Particle m_ParticleFire</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00010">Bonfire.c:10</a></div></div>
+<div class="ttc" id="aclass_building_super_html_ad318ecf5c4e8024c0cbf24a929944e75"><div class="ttname"><a href="#ad318ecf5c4e8024c0cbf24a929944e75">BuildingSuper::m_SoundFireLoop</a></div><div class="ttdeci">EffectSound m_SoundFireLoop</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00012">Bonfire.c:12</a></div></div>
+<div class="ttc" id="aclass_effect_sound_html_afb3e761198a4167f611442d60925e1e7"><div class="ttname"><a href="../../d9/d09/class_effect_sound.html#afb3e761198a4167f611442d60925e1e7">EffectSound::SoundStop</a></div><div class="ttdeci">void SoundStop()</div><div class="ttdoc">Stops sound.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d00/_effect_sound_8c_source.html#l00208">EffectSound.c:208</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_particle_html_ae9d5642dc992c942c1ae2f221e064921"><div class="ttname"><a href="../../de/d05/class_particle.html#ae9d5642dc992c942c1ae2f221e064921">Particle::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Legacy function for backwards compatibility with 1.14 and below.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00262">Particle.c:262</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00031">m_Light</a>, <a class="el" href="../../d4/d0f/_smoke_grenade_base_8c_source.html#l00023">m_ParticleSmoke</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00142">m_SoundFireLoop</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00224">m_UTSource</a>, <a class="el" href="../../d4/d00/_effect_sound_8c_source.html#l00208">EffectSound::SoundStop()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00262">Particle::Stop()</a>.</p>
 
 </div>
 </div>
@@ -296,6 +332,66 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0d/_bonfire_8c_source.html#l00022">22</a> of file <a class="el" href="../../d6/d0d/_bonfire_8c_source.html">Bonfire.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>  {</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span><span class="preprocessor">#ifndef SERVER</span></div>
+<div class="line"><span class="lineno">   27</span>    <span class="comment">// object creation - create effects (light, particles, sound)</span></div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">// light</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>)</div>
+<div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>      <a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a> = BonfireLight.Cast(<a class="code hl_class" href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a>.CreateLight(BonfireLight, <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0, 0, 0), 1));</div>
+<div class="line"><span class="lineno">   33</span>      <a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>.AttachOnMemoryPoint(<span class="keyword">this</span>, <a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>.m_MemoryPoint);</div>
+<div class="line"><span class="lineno">   34</span>      <a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>.FadeBrightnessTo(<a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>.m_FireBrightness, 0);</div>
+<div class="line"><span class="lineno">   35</span>      <a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>.FadeRadiusTo(<a class="code hl_variable" href="#a54c757af49102760f660520a40694c91">m_Light</a>.m_FireRadius, 0);</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">// particles</span></div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a418a38b26e5e0adc0b5c1e8224e1a508">m_ParticleSmoke</a>)</div>
+<div class="line"><span class="lineno">   40</span>      <a class="code hl_variable" href="#a418a38b26e5e0adc0b5c1e8224e1a508">m_ParticleSmoke</a> = <a class="code hl_function" href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a>.GetInstance().PlayOnObject(<a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#ac9399510195f8fd4c823eddb4ae1375a">BONFIRE_SMOKE</a>, <span class="keyword">this</span>, GetMemoryPointPos(<span class="stringliteral">&quot;bonfire_smoke&quot;</span>), <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0, 0, 0), <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ac527b8cec484bace98d61013953829a3">m_ParticleFire</a>)</div>
+<div class="line"><span class="lineno">   43</span>      <a class="code hl_variable" href="#ac527b8cec484bace98d61013953829a3">m_ParticleFire</a> = <a class="code hl_function" href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a>.GetInstance().PlayOnObject(<a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#aedf18ef77d7b7956d39f8d5edca2450e">BONFIRE_FIRE</a>, <span class="keyword">this</span>, GetMemoryPointPos(<span class="stringliteral">&quot;bonfire_fire&quot;</span>), <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0, 0, 0), <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">// sounds</span></div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ad318ecf5c4e8024c0cbf24a929944e75">m_SoundFireLoop</a>)</div>
+<div class="line"><span class="lineno">   47</span>      PlaySoundSetLoop(<a class="code hl_variable" href="#ad318ecf5c4e8024c0cbf24a929944e75">m_SoundFireLoop</a>, <span class="stringliteral">&quot;HeavyFire_SoundSet&quot;</span>, 1.0, 2.0);</div>
+<div class="line"><span class="lineno">   48</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>      <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d09/class_universal_temperature_source_settings.html">UniversalTemperatureSourceSettings</a>();</div>
+<div class="line"><span class="lineno">   53</span>      <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a>.m_UpdateInterval = <a class="code hl_variable" href="#a6def0f2fd03eec81f7712f4f53a1f01e">TIMER_HEATING_UPDATE_INTERVAL</a>;</div>
+<div class="line"><span class="lineno">   54</span>      <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a>.m_Updateable = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   55</span>      <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a>.m_TemperatureMin = 0;</div>
+<div class="line"><span class="lineno">   56</span>      <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a>.m_TemperatureMax = <a class="code hl_variable" href="#a15ecc94a804c24c5526918e4872de156">CONST_FIRE_TEMP</a>;</div>
+<div class="line"><span class="lineno">   57</span>      <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a>.m_TemperatureCap = <a class="code hl_variable" href="#a3dc31dacea011ce9bb76f0de6c481e7a">PARAM_MAX_TRANSFERED_TEMPERATURE</a>;</div>
+<div class="line"><span class="lineno">   58</span>      <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a>.m_RangeFull = <a class="code hl_variable" href="#ac695de1352a3f893ed2b16d9041cddf0">PARAM_FULL_HEAT_RADIUS</a>;</div>
+<div class="line"><span class="lineno">   59</span>      <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a>.m_RangeMax = <a class="code hl_variable" href="#a9bf960337a9b3ccebe028c956de14a97">PARAM_HEAT_RADIUS</a>;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_variable" href="#a70a51f4f92523effb89b48953a567c9c">m_UTSLBonfire</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">UniversalTemperatureSourceLambdaConstant</a>();</div>
+<div class="line"><span class="lineno">   62</span>      <a class="code hl_variable" href="#a6f83089b13a530d1ef15d43181b5cd5c">m_UTSource</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d09/class_universal_temperature_source.html">UniversalTemperatureSource</a>(<span class="keyword">this</span>, <a class="code hl_variable" href="#afdcd087397db9752b80a7bde12eabf15">m_UTSSettings</a>, <a class="code hl_variable" href="#a70a51f4f92523effb89b48953a567c9c">m_UTSLBonfire</a>);</div>
+<div class="line"><span class="lineno">   63</span>      <a class="code hl_variable" href="#a6f83089b13a530d1ef15d43181b5cd5c">m_UTSource</a>.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>  }</div>
+<div class="ttc" id="a_particle_manager_8c_html_a93ef360e8fc315d276eb8cc256dc3ef8"><div class="ttname"><a href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a></div><div class="ttdeci">void ParticleManager(ParticleManagerSettings settings)</div><div class="ttdoc">Constructor (ctor)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager.c:84</a></div></div>
+<div class="ttc" id="aclass_building_super_html_a15ecc94a804c24c5526918e4872de156"><div class="ttname"><a href="#a15ecc94a804c24c5526918e4872de156">BuildingSuper::CONST_FIRE_TEMP</a></div><div class="ttdeci">const float CONST_FIRE_TEMP</div><div class="ttdoc">maximum value for temperature that will be transfered to player (environment)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00007">Bonfire.c:7</a></div></div>
+<div class="ttc" id="aclass_building_super_html_a3dc31dacea011ce9bb76f0de6c481e7a"><div class="ttname"><a href="#a3dc31dacea011ce9bb76f0de6c481e7a">BuildingSuper::PARAM_MAX_TRANSFERED_TEMPERATURE</a></div><div class="ttdeci">const float PARAM_MAX_TRANSFERED_TEMPERATURE</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00006">Bonfire.c:6</a></div></div>
+<div class="ttc" id="aclass_building_super_html_a6def0f2fd03eec81f7712f4f53a1f01e"><div class="ttname"><a href="#a6def0f2fd03eec81f7712f4f53a1f01e">BuildingSuper::TIMER_HEATING_UPDATE_INTERVAL</a></div><div class="ttdeci">const float TIMER_HEATING_UPDATE_INTERVAL</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00003">Bonfire.c:3</a></div></div>
+<div class="ttc" id="aclass_building_super_html_a70a51f4f92523effb89b48953a567c9c"><div class="ttname"><a href="#a70a51f4f92523effb89b48953a567c9c">BuildingSuper::m_UTSLBonfire</a></div><div class="ttdeci">ref UniversalTemperatureSourceLambdaConstant m_UTSLBonfire</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00020">Bonfire.c:20</a></div></div>
+<div class="ttc" id="aclass_building_super_html_a9bf960337a9b3ccebe028c956de14a97"><div class="ttname"><a href="#a9bf960337a9b3ccebe028c956de14a97">BuildingSuper::PARAM_HEAT_RADIUS</a></div><div class="ttdeci">const float PARAM_HEAT_RADIUS</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00004">Bonfire.c:4</a></div></div>
+<div class="ttc" id="aclass_building_super_html_ac695de1352a3f893ed2b16d9041cddf0"><div class="ttname"><a href="#ac695de1352a3f893ed2b16d9041cddf0">BuildingSuper::PARAM_FULL_HEAT_RADIUS</a></div><div class="ttdeci">const float PARAM_FULL_HEAT_RADIUS</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00005">Bonfire.c:5</a></div></div>
+<div class="ttc" id="aclass_building_super_html_afdcd087397db9752b80a7bde12eabf15"><div class="ttname"><a href="#afdcd087397db9752b80a7bde12eabf15">BuildingSuper::m_UTSSettings</a></div><div class="ttdeci">ref UniversalTemperatureSourceSettings m_UTSSettings</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_bonfire_8c_source.html#l00019">Bonfire.c:19</a></div></div>
+<div class="ttc" id="aclass_particle_list_html"><div class="ttname"><a href="../../dd/d02/class_particle_list.html">ParticleList</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00011">ParticleList.c:12</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_ac9399510195f8fd4c823eddb4ae1375a"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#ac9399510195f8fd4c823eddb4ae1375a">ParticleList::BONFIRE_SMOKE</a></div><div class="ttdeci">static const int BONFIRE_SMOKE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00272">ParticleList.c:272</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_aedf18ef77d7b7956d39f8d5edca2450e"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#aedf18ef77d7b7956d39f8d5edca2450e">ParticleList::BONFIRE_FIRE</a></div><div class="ttdeci">static const int BONFIRE_FIRE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00271">ParticleList.c:271</a></div></div>
+<div class="ttc" id="aclass_scripted_light_base_html"><div class="ttname"><a href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_point_light_base_8c_source.html#l00001">PointLightBase.c:2</a></div></div>
+<div class="ttc" id="aclass_universal_temperature_source_html"><div class="ttname"><a href="../../db/d09/class_universal_temperature_source.html">UniversalTemperatureSource</a></div><div class="ttdoc">original Timer deletes m_params which is unwanted</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0b/_universal_temperature_source_8c_source.html#l00025">UniversalTemperatureSource.c:26</a></div></div>
+<div class="ttc" id="aclass_universal_temperature_source_settings_html"><div class="ttname"><a href="../../db/d09/class_universal_temperature_source_settings.html">UniversalTemperatureSourceSettings</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0b/_universal_temperature_source_8c_source.html#l00001">UniversalTemperatureSource.c:2</a></div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga5bd1deb1c96276d94eeec6fe40955c41"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a></div><div class="ttdeci">proto native vector Vector(float x, float y, float z)</div><div class="ttdoc">Vector constructor from components.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00271">ParticleList::BONFIRE_FIRE</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00272">ParticleList::BONFIRE_SMOKE</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dd/d00/_bonfire_light_8c_source.html#l00004">PointLightBase::m_FireBrightness</a>, <a class="el" href="../../dd/d00/_bonfire_light_8c_source.html#l00003">PointLightBase::m_FireRadius</a>, <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00031">m_Light</a>, <a class="el" href="../../dd/d00/_bonfire_light_8c_source.html#l00005">PointLightBase::m_MemoryPoint</a>, <a class="el" href="../../d4/d0f/_smoke_grenade_base_8c_source.html#l00023">m_ParticleSmoke</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00142">m_SoundFireLoop</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00224">m_UTSource</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00225">m_UTSSettings</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00060">PARAM_FULL_HEAT_RADIUS</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00061">PARAM_HEAT_RADIUS</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00063">PARAM_MAX_TRANSFERED_TEMPERATURE</a>, <a class="el" href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager()</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l00083">TIMER_HEATING_UPDATE_INTERVAL</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
 
 </div>
 </div>
@@ -323,6 +419,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_fuel_station_8c_source.html#l00013">13</a> of file <a class="el" href="../../dc/d09/_fuel_station_8c_source.html">FuelStation.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d05/group___liquid_throughputs.html#ga023f1f63f440101fa57a68df0cbc3fa2">LIQUID_THROUGHPUT_FUELSTATION</a>;</div>
+<div class="line"><span class="lineno">   16</span>  }</div>
+<div class="ttc" id="agroup___liquid_throughputs_html_ga023f1f63f440101fa57a68df0cbc3fa2"><div class="ttname"><a href="../../da/d05/group___liquid_throughputs.html#ga023f1f63f440101fa57a68df0cbc3fa2">LIQUID_THROUGHPUT_FUELSTATION</a></div><div class="ttdeci">const float LIQUID_THROUGHPUT_FUELSTATION</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00528">constants.c:528</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00528">LIQUID_THROUGHPUT_FUELSTATION</a>.</p>
 
 </div>
 </div>
@@ -350,6 +452,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d04/_well_8c_source.html#l00018">18</a> of file <a class="el" href="../../dc/d04/_well_8c_source.html">Well.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>  {</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../da/d05/group___liquid_throughputs.html#ga42629bdad1bc8f6bf877bc028d303f7a">LIQUID_THROUGHPUT_WELL</a>;</div>
+<div class="line"><span class="lineno">   21</span>  }</div>
+<div class="ttc" id="agroup___liquid_throughputs_html_ga42629bdad1bc8f6bf877bc028d303f7a"><div class="ttname"><a href="../../da/d05/group___liquid_throughputs.html#ga42629bdad1bc8f6bf877bc028d303f7a">LIQUID_THROUGHPUT_WELL</a></div><div class="ttdeci">const float LIQUID_THROUGHPUT_WELL</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00529">constants.c:529</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00529">LIQUID_THROUGHPUT_WELL</a>.</p>
 
 </div>
 </div>
@@ -377,7 +485,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d04/_well_8c_source.html#l00013">13</a> of file <a class="el" href="../../dc/d04/_well_8c_source.html">Well.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d3/d07/_e_water_source_object_type_8c.html#af6a5f93692a424eb17de4efcf13c206b">EWaterSourceObjectType</a>.WELL;</div>
+<div class="line"><span class="lineno">   16</span>  }</div>
+<div class="ttc" id="a_e_water_source_object_type_8c_html_af6a5f93692a424eb17de4efcf13c206b"><div class="ttname"><a href="../../d3/d07/_e_water_source_object_type_8c.html#af6a5f93692a424eb17de4efcf13c206b">EWaterSourceObjectType</a></div><div class="ttdeci">EWaterSourceObjectType</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d07/_e_water_source_object_type_8c_source.html#l00001">EWaterSourceObjectType.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a61b1321843747f27299e5927b7f87309" name="a61b1321843747f27299e5927b7f87309"></a>
@@ -404,7 +516,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_fuel_station_8c_source.html#l00003">3</a> of file <a class="el" href="../../dc/d09/_fuel_station_8c_source.html">FuelStation.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">    6</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a61b1321843747f27299e5927b7f87309" name="a61b1321843747f27299e5927b7f87309"></a>
@@ -431,7 +546,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d04/_well_8c_source.html#l00003">3</a> of file <a class="el" href="../../dc/d04/_well_8c_source.html">Well.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">    6</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a38452525d35c4f903d3e92cae1dddd4c" name="a38452525d35c4f903d3e92cae1dddd4c"></a>
@@ -458,7 +576,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_fuel_station_8c_source.html#l00008">8</a> of file <a class="el" href="../../dc/d09/_fuel_station_8c_source.html">FuelStation.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   11</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afbb66ef666404e0c4f4a610285185890" name="afbb66ef666404e0c4f4a610285185890"></a>
@@ -485,7 +606,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d04/_well_8c_source.html#l00008">8</a> of file <a class="el" href="../../dc/d04/_well_8c_source.html">Well.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a66c9a9f9a986430e8a2b15f5035c3a5d">GetWaterSourceObjectType</a>() == <a class="code hl_enumeration" href="../../d3/d07/_e_water_source_object_type_8c.html#af6a5f93692a424eb17de4efcf13c206b">EWaterSourceObjectType</a>.WELL;</div>
+<div class="line"><span class="lineno">   11</span>  }</div>
+<div class="ttc" id="aclass_building_super_html_a66c9a9f9a986430e8a2b15f5035c3a5d"><div class="ttname"><a href="#a66c9a9f9a986430e8a2b15f5035c3a5d">BuildingSuper::GetWaterSourceObjectType</a></div><div class="ttdeci">override EWaterSourceObjectType GetWaterSourceObjectType()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d04/_well_8c_source.html#l00013">Well.c:13</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afa53d5f51fed68e53df92121c2be988b" name="afa53d5f51fed68e53df92121c2be988b"></a>
@@ -512,7 +637,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_land___misc___greenhouse_8c_source.html#l00003">3</a> of file <a class="el" href="../../de/d0e/_land___misc___greenhouse_8c_source.html">Land_Misc_Greenhouse.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span> </div>
+<div class="line"><span class="lineno">    6</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0fc5ceecefbf64869dcc2d5ca0e63c03" name="a0fc5ceecefbf64869dcc2d5ca0e63c03"></a>
@@ -539,6 +667,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d04/_well_8c_source.html#l00023">23</a> of file <a class="el" href="../../dc/d04/_well_8c_source.html">Well.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>  {</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_function" href="../../d4/d00/_action_wash_hands_well_8c.html#af604ab40f987412dfa4037c2a0316cf7">ActionWashHandsWell</a>);</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_function" href="../../d3/d08/_action_drink_well_continuous_8c.html#a376a5d84b00750acea54bcada6add690">ActionDrinkWellContinuous</a>);</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="a_action_drink_well_continuous_8c_html_a376a5d84b00750acea54bcada6add690"><div class="ttname"><a href="../../d3/d08/_action_drink_well_continuous_8c.html#a376a5d84b00750acea54bcada6add690">ActionDrinkWellContinuous</a></div><div class="ttdeci">ActionDrinkWellContinuousCB ActionContinuousBaseCB ActionDrinkWellContinuous()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/_action_drink_well_continuous_8c_source.html#l00001">ActionDrinkWellContinuous.c:11</a></div></div>
+<div class="ttc" id="a_action_wash_hands_well_8c_html_af604ab40f987412dfa4037c2a0316cf7"><div class="ttname"><a href="../../d4/d00/_action_wash_hands_well_8c.html#af604ab40f987412dfa4037c2a0316cf7">ActionWashHandsWell</a></div><div class="ttdeci">ActionWashHandsWellCB ActionContinuousBaseCB ActionWashHandsWell()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d00/_action_wash_hands_well_8c_source.html#l00001">ActionWashHandsWell.c:11</a></div></div>
+<div class="ttc" id="a_advanced_communication_8c_html_a033d077df58807906c4dad3101d8768c"><div class="ttname"><a href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a></div><div class="ttdeci">void AddAction(typename actionName)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AdvancedCommunication.c:212</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d08/_action_drink_well_continuous_8c_source.html#l00011">ActionDrinkWellContinuous()</a>, <a class="el" href="../../d4/d00/_action_wash_hands_well_8c_source.html#l00011">ActionWashHandsWell()</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>.</p>
 
 </div>
 </div>

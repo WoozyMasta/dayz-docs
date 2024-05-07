@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -166,7 +163,41 @@ Enumerations</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d06/_connect_error_client_module_8c_source.html#l00001">1</a> of file <a class="el" href="../../da/d06/_connect_error_client_module_8c_source.html">ConnectErrorClientModule.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    2</span>{</div>
+<div class="line"><span class="lineno">    3</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a6ce26a62afab55d7606ad4e92428b30c">UNKNOWN</a> = -1, <span class="comment">// -1 must always be UNKNOWN</span></div>
+<div class="line"><span class="lineno">    4</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a> = 0, <span class="comment">// 0 must always be OK</span></div>
+<div class="line"><span class="lineno">    5</span> </div>
+<div class="line"><span class="lineno">    6</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a724663616e20bd2ad7e196c7e271516c">SERVER_UNREACHABLE</a>, <span class="comment">// Could not connect to server because it is not reachable (offline, restarting, ..)</span></div>
+<div class="line"><span class="lineno">    7</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a27791dfb1f2dafcaa3f254cc2fdfc587">ALREADY_CONNECTING</a>, <span class="comment">// Client is already attempting to join a server</span></div>
+<div class="line"><span class="lineno">    8</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a59d6d2068087b19ff990dc34f2ef238a">ERROR_MSG_SHOWED</a>, <span class="comment">// Indicates there is an error on screen that has yet to be confirmed</span></div>
+<div class="line"><span class="lineno">    9</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a6cb1555724a28acf44a5160d21b8a485">INCORRECT_CLIENT_STATE</a>, <span class="comment">// The client is already connected or is connecting to a server</span></div>
+<div class="line"><span class="lineno">   10</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a492150679209559fe78671f21ea66bbe">INVALID_SESSION</a>, <span class="comment">// The guid of the session is empty</span></div>
+<div class="line"><span class="lineno">   11</span> </div>
+<div class="line"><span class="lineno">   12</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a746b7d27d7150aa9997d41abeab1144d">VERSION_MISMATCH</a>, <span class="comment">// Mismatch between server and client version</span></div>
+<div class="line"><span class="lineno">   13</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593aec3eb868a7f7cabc09f2546845ca84da">VERSION_MISMATCH_RB</a>, <span class="comment">// Client build is lower than &quot;requiredBuild&quot; (server config)</span></div>
+<div class="line"><span class="lineno">   14</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a68f5be09b28089e051fed7794ea5e41d">VERSION_MISMATCH_AB</a>, <span class="comment">// Client build is higher than &quot;allowedBuild&quot; (server config)</span></div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a7921d7940e343d1862be904b31100827">DLC_CHECK_FAILED</a>, <span class="comment">// Client does not have required DLC</span></div>
+<div class="line"><span class="lineno">   17</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a4712cb64f64b315736aaea8d419e6209">EMPTY_PASSWORD</a>, <span class="comment">// Player input an empty password</span></div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a0763974ac198d8ead8dd2112dadfb216">PASSWORD</a>, <span class="comment">// Server is password protected</span></div>
+<div class="line"><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a362b93e14edc783d1156cd84956240aa">BE_LICENCE</a>, <span class="comment">// Server is using BE and it has not yet been agreed to</span></div>
+<div class="line"><span class="lineno">   21</span>};</div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a0763974ac198d8ead8dd2112dadfb216"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a0763974ac198d8ead8dd2112dadfb216">PASSWORD</a></div><div class="ttdeci">@ PASSWORD</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00019">ConnectErrorClientModule.c:19</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a27791dfb1f2dafcaa3f254cc2fdfc587"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a27791dfb1f2dafcaa3f254cc2fdfc587">ALREADY_CONNECTING</a></div><div class="ttdeci">@ ALREADY_CONNECTING</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00007">ConnectErrorClientModule.c:7</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a2bc49ec37d6a5715dd23e85f1ff5bb59"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00004">ConnectErrorClientModule.c:4</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a362b93e14edc783d1156cd84956240aa"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a362b93e14edc783d1156cd84956240aa">BE_LICENCE</a></div><div class="ttdeci">@ BE_LICENCE</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00020">ConnectErrorClientModule.c:20</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a4712cb64f64b315736aaea8d419e6209"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a4712cb64f64b315736aaea8d419e6209">EMPTY_PASSWORD</a></div><div class="ttdeci">@ EMPTY_PASSWORD</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00017">ConnectErrorClientModule.c:17</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a492150679209559fe78671f21ea66bbe"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a492150679209559fe78671f21ea66bbe">INVALID_SESSION</a></div><div class="ttdeci">@ INVALID_SESSION</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00010">ConnectErrorClientModule.c:10</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a59d6d2068087b19ff990dc34f2ef238a"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a59d6d2068087b19ff990dc34f2ef238a">ERROR_MSG_SHOWED</a></div><div class="ttdeci">@ ERROR_MSG_SHOWED</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00008">ConnectErrorClientModule.c:8</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a68f5be09b28089e051fed7794ea5e41d"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a68f5be09b28089e051fed7794ea5e41d">VERSION_MISMATCH_AB</a></div><div class="ttdeci">@ VERSION_MISMATCH_AB</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00014">ConnectErrorClientModule.c:14</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a6cb1555724a28acf44a5160d21b8a485"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a6cb1555724a28acf44a5160d21b8a485">INCORRECT_CLIENT_STATE</a></div><div class="ttdeci">@ INCORRECT_CLIENT_STATE</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00009">ConnectErrorClientModule.c:9</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a6ce26a62afab55d7606ad4e92428b30c"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a6ce26a62afab55d7606ad4e92428b30c">UNKNOWN</a></div><div class="ttdeci">@ UNKNOWN</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00003">ConnectErrorClientModule.c:3</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a724663616e20bd2ad7e196c7e271516c"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a724663616e20bd2ad7e196c7e271516c">SERVER_UNREACHABLE</a></div><div class="ttdeci">@ SERVER_UNREACHABLE</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00006">ConnectErrorClientModule.c:6</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a746b7d27d7150aa9997d41abeab1144d"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a746b7d27d7150aa9997d41abeab1144d">VERSION_MISMATCH</a></div><div class="ttdeci">@ VERSION_MISMATCH</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00012">ConnectErrorClientModule.c:12</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593a7921d7940e343d1862be904b31100827"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593a7921d7940e343d1862be904b31100827">DLC_CHECK_FAILED</a></div><div class="ttdeci">@ DLC_CHECK_FAILED</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00016">ConnectErrorClientModule.c:16</a></div></div>
+<div class="ttc" id="a_connect_error_client_module_8c_html_aa07fb8e94c63ccb8d6a7e60ab7ca3593aec3eb868a7f7cabc09f2546845ca84da"><div class="ttname"><a href="#aa07fb8e94c63ccb8d6a7e60ab7ca3593aec3eb868a7f7cabc09f2546845ca84da">VERSION_MISMATCH_RB</a></div><div class="ttdeci">@ VERSION_MISMATCH_RB</div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_connect_error_client_module_8c_source.html#l00013">ConnectErrorClientModule.c:13</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

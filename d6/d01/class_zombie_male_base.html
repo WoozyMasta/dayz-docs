@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -174,6 +171,13 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00228">228</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  229</span>  {</div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0b6603dbffb976fe92fba0a698fbd632">m_EyeLight</a>)</div>
+<div class="line"><span class="lineno">  231</span>      <a class="code hl_variable" href="#a0b6603dbffb976fe92fba0a698fbd632">m_EyeLight</a>.Destroy();</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="ttc" id="aclass_zombie_male_base_html_a0b6603dbffb976fe92fba0a698fbd632"><div class="ttname"><a href="#a0b6603dbffb976fe92fba0a698fbd632">ZombieMaleBase::m_EyeLight</a></div><div class="ttdeci">ZombieMummyLight m_EyeLight</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_zombie_male_base_8c_source.html#l00220">ZombieMaleBase.c:220</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_animal_base_8c_source.html#l00115">m_EyeLight</a>.</p>
 
 </div>
 </div>
@@ -202,7 +206,14 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00241">241</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  242</span>  {</div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">index</a> = GetHiddenSelectionIndex(<span class="stringliteral">&quot;camo&quot;</span>);</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    SetObjectMaterial(<a class="code hl_class" href="../../db/d06/class_param3.html">index</a>, <span class="stringliteral">&quot;dz\\characters\\zombies\data\\Mummy_dead.rvmat&quot;</span>);</div>
+<div class="line"><span class="lineno">  246</span>    SetObjectTexture(<a class="code hl_class" href="../../db/d06/class_param3.html">index</a>, <span class="stringliteral">&quot;dz\\characters\\zombies\\data\\Mummy_dead_CO.paa&quot;</span>);</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab26a29ae4b92c0e02c3aa54c6d110b76" name="ab26a29ae4b92c0e02c3aa54c6d110b76"></a>
@@ -229,6 +240,14 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00222">222</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  223</span>  {</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a5188ef52a6ed96b0101dcf735b7f0cff">IsDamageDestroyed</a>())<span class="comment">//walking up to or connecting to already dead zombies check</span></div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_variable" href="#a0b6603dbffb976fe92fba0a698fbd632">m_EyeLight</a> = ZombieMummyLight.Cast(<a class="code hl_class" href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a>.CreateLightAtObjMemoryPoint(ZombieMummyLight, <span class="keyword">this</span>, <span class="stringliteral">&quot;MummyLight&quot;</span>));</div>
+<div class="line"><span class="lineno">  226</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a5188ef52a6ed96b0101dcf735b7f0cff"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a5188ef52a6ed96b0101dcf735b7f0cff">IsDamageDestroyed</a></div><div class="ttdeci">bool IsDamageDestroyed(ActionTarget target)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00841">ActionBase.c:841</a></div></div>
+<div class="ttc" id="aclass_scripted_light_base_html"><div class="ttname"><a href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_point_light_base_8c_source.html#l00001">PointLightBase.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00841">IsDamageDestroyed()</a>, and <a class="el" href="../../de/d07/_animal_base_8c_source.html#l00115">m_EyeLight</a>.</p>
 
 </div>
 </div>
@@ -256,7 +275,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00130">130</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  131</span>  {</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  133</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7d6fa7592ea4032db0fb251667340e6e" name="a7d6fa7592ea4032db0fb251667340e6e"></a>
@@ -283,7 +305,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00162">162</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  163</span>  {</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7d6fa7592ea4032db0fb251667340e6e" name="a7d6fa7592ea4032db0fb251667340e6e"></a>
@@ -310,7 +335,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00170">170</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  171</span>  {</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7d6fa7592ea4032db0fb251667340e6e" name="a7d6fa7592ea4032db0fb251667340e6e"></a>
@@ -337,7 +365,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00182">182</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  183</span>  {</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  185</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7d6fa7592ea4032db0fb251667340e6e" name="a7d6fa7592ea4032db0fb251667340e6e"></a>
@@ -364,7 +395,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00211">211</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  212</span>  {</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  214</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a17c5b73834e032be6fcc650edee24020" name="a17c5b73834e032be6fcc650edee24020"></a>
@@ -391,6 +425,17 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00233">233</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span>  {</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0b6603dbffb976fe92fba0a698fbd632">m_EyeLight</a>)</div>
+<div class="line"><span class="lineno">  236</span>      <a class="code hl_variable" href="#a0b6603dbffb976fe92fba0a698fbd632">m_EyeLight</a>.FadeOut(15);</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLater(<a class="code hl_function" href="#a71872e109a237fd08e33e842e89c061d">ChangeVisual</a>, 1000);</div>
+<div class="line"><span class="lineno">  239</span>  }</div>
+<div class="ttc" id="aclass_zombie_male_base_html_a71872e109a237fd08e33e842e89c061d"><div class="ttname"><a href="#a71872e109a237fd08e33e842e89c061d">ZombieMaleBase::ChangeVisual</a></div><div class="ttdeci">void ChangeVisual()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_zombie_male_base_8c_source.html#l00241">ZombieMaleBase.c:241</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___tools_html_gaaf491f3ecd1d9aefb35a16bf96ca420c"><div class="ttname"><a href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a></div><div class="ttdeci">const int CALL_CATEGORY_SYSTEM</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">tools.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../de/d07/_animal_base_8c_source.html#l00115">m_EyeLight</a>.</p>
 
 </div>
 </div>
@@ -418,7 +463,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00198">198</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  199</span>  {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a46f9519c38b9b378022c224cfab2c005" name="a46f9519c38b9b378022c224cfab2c005"></a>
@@ -445,7 +493,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00206">206</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  207</span>  {</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  209</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a46f9519c38b9b378022c224cfab2c005" name="a46f9519c38b9b378022c224cfab2c005"></a>
@@ -472,7 +523,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html#l00250">250</a> of file <a class="el" href="../../d6/d04/_zombie_male_base_8c_source.html">ZombieMaleBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  251</span>  {</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  253</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>

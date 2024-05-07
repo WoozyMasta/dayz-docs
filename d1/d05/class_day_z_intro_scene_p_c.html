@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -240,6 +237,31 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00022">22</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>  {</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_function" href="#a9ff1a5bf5c84dc46bee505460d4f8615">SetClickEnable</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="#ae8fe58f0caaf24cca495aba2ee6fb179">m_DeltaX</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(<a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#a23ec7127dda700a9cf7a215219a57c5e">m_CharacterPos</a>[0] - <a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>.GetPosition()[0]);</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="#a0d89127e0596dc1420bf722bc4fe3131">m_DeltaZ</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(<a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#a23ec7127dda700a9cf7a215219a57c5e">m_CharacterPos</a>[2] - <a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#a7df6965e886529730bc8e7cd76813df9">m_Camera</a>.GetPosition()[2]);</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a0eb3ed5124f1bffc069eee90c9b3bc69">m_Radius</a> || <a class="code hl_variable" href="#a0eb3ed5124f1bffc069eee90c9b3bc69">m_Radius</a> == 0)</div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>      <a class="code hl_variable" href="#a0eb3ed5124f1bffc069eee90c9b3bc69">m_Radius</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3f01887a546a08f28dad75287e3fb830">Sqrt</a>(<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gab5e095de61335667a5fc38d9d538d89f">Pow</a>(<a class="code hl_variable" href="#ae8fe58f0caaf24cca495aba2ee6fb179">m_DeltaX</a>, 2) + <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gab5e095de61335667a5fc38d9d538d89f">Pow</a>(<a class="code hl_variable" href="#a0d89127e0596dc1420bf722bc4fe3131">m_DeltaZ</a>, 2));</div>
+<div class="line"><span class="lineno">   32</span>      <a class="code hl_variable" href="#ad244e884e6512dde4867aff6b4037eeb">m_Radius_original</a> = <a class="code hl_variable" href="#a0eb3ed5124f1bffc069eee90c9b3bc69">m_Radius</a>;</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+<div class="line"><span class="lineno">   34</span>  }</div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a23ec7127dda700a9cf7a215219a57c5e"><div class="ttname"><a href="../../da/d0f/class_day_z_intro_scene.html#a23ec7127dda700a9cf7a215219a57c5e">DayZIntroScene::m_CharacterPos</a></div><div class="ttdeci">vector m_CharacterPos</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00006">DayZIntroScene.c:6</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_a7df6965e886529730bc8e7cd76813df9"><div class="ttname"><a href="../../da/d0f/class_day_z_intro_scene.html#a7df6965e886529730bc8e7cd76813df9">DayZIntroScene::m_Camera</a></div><div class="ttdeci">Camera m_Camera</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00004">DayZIntroScene.c:4</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_a0d89127e0596dc1420bf722bc4fe3131"><div class="ttname"><a href="#a0d89127e0596dc1420bf722bc4fe3131">DayZIntroScenePC::m_DeltaZ</a></div><div class="ttdeci">float m_DeltaZ</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00012">DayZIntroScenePC.c:12</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_a0eb3ed5124f1bffc069eee90c9b3bc69"><div class="ttname"><a href="#a0eb3ed5124f1bffc069eee90c9b3bc69">DayZIntroScenePC::m_Radius</a></div><div class="ttdeci">float m_Radius</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00008">DayZIntroScenePC.c:8</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_a9ff1a5bf5c84dc46bee505460d4f8615"><div class="ttname"><a href="#a9ff1a5bf5c84dc46bee505460d4f8615">DayZIntroScenePC::SetClickEnable</a></div><div class="ttdeci">void SetClickEnable(bool enable)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00047">DayZIntroScenePC.c:47</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_ad244e884e6512dde4867aff6b4037eeb"><div class="ttname"><a href="#ad244e884e6512dde4867aff6b4037eeb">DayZIntroScenePC::m_Radius_original</a></div><div class="ttdeci">float m_Radius_original</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00009">DayZIntroScenePC.c:9</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_ae8fe58f0caaf24cca495aba2ee6fb179"><div class="ttname"><a href="#ae8fe58f0caaf24cca495aba2ee6fb179">DayZIntroScenePC::m_DeltaX</a></div><div class="ttdeci">float m_DeltaX</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00011">DayZIntroScenePC.c:11</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math_html_ga3f01887a546a08f28dad75287e3fb830"><div class="ttname"><a href="../../d5/d08/group___math.html#ga3f01887a546a08f28dad75287e3fb830">Math::Sqrt</a></div><div class="ttdeci">static proto float Sqrt(float val)</div><div class="ttdoc">Returns square root.</div></div>
+<div class="ttc" id="agroup___math_html_gab5e095de61335667a5fc38d9d538d89f"><div class="ttname"><a href="../../d5/d08/group___math.html#gab5e095de61335667a5fc38d9d538d89f">Math::Pow</a></div><div class="ttdeci">static proto float Pow(float v, float power)</div><div class="ttdoc">Return power of v ^ power.</div></div>
+<div class="ttc" id="agroup___math_html_gadf8820d46eee5033af2e12212c22b16e"><div class="ttname"><a href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat</a></div><div class="ttdeci">static proto float AbsFloat(float f)</div><div class="ttdoc">Returns absolute value.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00004">DayZIntroScene::m_Camera</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00006">DayZIntroScene::m_CharacterPos</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00011">m_DeltaX</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00012">m_DeltaZ</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00008">m_Radius</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00009">m_Radius_original</a>, <a class="el" href="../../d5/d08/group___math.html#gab5e095de61335667a5fc38d9d538d89f">Math::Pow()</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00047">SetClickEnable()</a>, and <a class="el" href="../../d5/d08/group___math.html#ga3f01887a546a08f28dad75287e3fb830">Math::Sqrt()</a>.</p>
 
 </div>
 </div>
@@ -268,6 +290,35 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00082">82</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#ab86162213cd8b8a41fa088d3e55c47cf">m_Character</a> &amp;&amp; <a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#ab86162213cd8b8a41fa088d3e55c47cf">m_Character</a>.GetCharacterObj())</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">actual_mouse_x</a>;</div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">actual_mouse_y</a>;</div>
+<div class="line"><span class="lineno">   88</span>      <span class="keywordtype">float</span> coef;</div>
+<div class="line"><span class="lineno">   89</span>      <a class="code hl_function" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">actual_mouse_x</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">actual_mouse_y</a>);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_variable" href="#a086fc3512660c05900b2106d0e32962d">m_DiffX</a> = <a class="code hl_variable" href="#a31985847d6590f40b8ed0b1ed826a025">m_RotatingCharacterMouseX</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">actual_mouse_x</a>;</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>      coef = (<a class="code hl_variable" href="#af3b11b74a5c0289ed5907ec2eef24fdb">m_RotatingCharacterRot</a> + (<a class="code hl_variable" href="#a086fc3512660c05900b2106d0e32962d">m_DiffX</a> * 0.5)) / 360;</div>
+<div class="line"><span class="lineno">   94</span>      coef = coef - <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga16e805acd55f171477bd5ca7dbaa5a18">Floor</a>(coef);</div>
+<div class="line"><span class="lineno">   95</span>      <a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#aca20b3eb57094ba168df76c79e69eb34">m_CharacterRot</a>[0] = coef * 360;</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>      <a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#ab86162213cd8b8a41fa088d3e55c47cf">m_Character</a>.GetCharacterObj().SetOrientation(<a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#aca20b3eb57094ba168df76c79e69eb34">m_CharacterRot</a>);</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
+<div class="line"><span class="lineno">   99</span>  }</div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_ab86162213cd8b8a41fa088d3e55c47cf"><div class="ttname"><a href="../../da/d0f/class_day_z_intro_scene.html#ab86162213cd8b8a41fa088d3e55c47cf">DayZIntroScene::m_Character</a></div><div class="ttdeci">ref IntroSceneCharacter m_Character</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00003">DayZIntroScene.c:3</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_html_aca20b3eb57094ba168df76c79e69eb34"><div class="ttname"><a href="../../da/d0f/class_day_z_intro_scene.html#aca20b3eb57094ba168df76c79e69eb34">DayZIntroScene::m_CharacterRot</a></div><div class="ttdeci">vector m_CharacterRot</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00007">DayZIntroScene.c:7</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_a086fc3512660c05900b2106d0e32962d"><div class="ttname"><a href="#a086fc3512660c05900b2106d0e32962d">DayZIntroScenePC::m_DiffX</a></div><div class="ttdeci">float m_DiffX</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00010">DayZIntroScenePC.c:10</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_a31985847d6590f40b8ed0b1ed826a025"><div class="ttname"><a href="#a31985847d6590f40b8ed0b1ed826a025">DayZIntroScenePC::m_RotatingCharacterMouseX</a></div><div class="ttdeci">int m_RotatingCharacterMouseX</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00005">DayZIntroScenePC.c:5</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_af3b11b74a5c0289ed5907ec2eef24fdb"><div class="ttname"><a href="#af3b11b74a5c0289ed5907ec2eef24fdb">DayZIntroScenePC::m_RotatingCharacterRot</a></div><div class="ttdeci">float m_RotatingCharacterRot</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00007">DayZIntroScenePC.c:7</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___math_html_ga16e805acd55f171477bd5ca7dbaa5a18"><div class="ttname"><a href="../../d5/d08/group___math.html#ga16e805acd55f171477bd5ca7dbaa5a18">Math::Floor</a></div><div class="ttdeci">static proto float Floor(float f)</div><div class="ttdoc">Returns floor of value.</div></div>
+<div class="ttc" id="agroup___mouse_html_gaf2e4a5118e1e02f8cded38993c713be8"><div class="ttname"><a href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos</a></div><div class="ttdeci">proto void GetMousePos(out int x, out int y)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga16e805acd55f171477bd5ca7dbaa5a18">Math::Floor()</a>, <a class="el" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00003">DayZIntroScene::m_Character</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00007">DayZIntroScene::m_CharacterRot</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00010">m_DiffX</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00005">m_RotatingCharacterMouseX</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00007">m_RotatingCharacterRot</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00102">Update()</a>.</p>
 
 </div>
 </div>
@@ -295,6 +346,19 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00059">59</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>  {</div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="#ac8ae22829fcba951edec2c3d813a62ff">m_RotatingCharacter</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_function" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos</a>(<a class="code hl_variable" href="#a31985847d6590f40b8ed0b1ed826a025">m_RotatingCharacterMouseX</a>, <a class="code hl_variable" href="#aa1d4e37ebba0d0e94a039cb34bdaf1ac">m_RotatingCharacterMouseY</a>);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#ab86162213cd8b8a41fa088d3e55c47cf">m_Character</a>)</div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_variable" href="#af3b11b74a5c0289ed5907ec2eef24fdb">m_RotatingCharacterRot</a> = <a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#aca20b3eb57094ba168df76c79e69eb34">m_CharacterRot</a>[0];</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_aa1d4e37ebba0d0e94a039cb34bdaf1ac"><div class="ttname"><a href="#aa1d4e37ebba0d0e94a039cb34bdaf1ac">DayZIntroScenePC::m_RotatingCharacterMouseY</a></div><div class="ttdeci">int m_RotatingCharacterMouseY</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00006">DayZIntroScenePC.c:6</a></div></div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_ac8ae22829fcba951edec2c3d813a62ff"><div class="ttname"><a href="#ac8ae22829fcba951edec2c3d813a62ff">DayZIntroScenePC::m_RotatingCharacter</a></div><div class="ttdeci">bool m_RotatingCharacter</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00004">DayZIntroScenePC.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00003">DayZIntroScene::m_Character</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00007">DayZIntroScene::m_CharacterRot</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00004">m_RotatingCharacter</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00005">m_RotatingCharacterMouseX</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00006">m_RotatingCharacterMouseY</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00007">m_RotatingCharacterRot</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d07/_character_creation_menu_8c_source.html#l00315">UIScriptedMenu::OnMouseButtonDown()</a>.</p>
 
 </div>
 </div>
@@ -322,6 +386,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00069">69</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>  {</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac8ae22829fcba951edec2c3d813a62ff">m_RotatingCharacter</a>)</div>
+<div class="line"><span class="lineno">   72</span>      <a class="code hl_variable" href="#ac8ae22829fcba951edec2c3d813a62ff">m_RotatingCharacter</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00004">m_RotatingCharacter</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d07/_character_creation_menu_8c_source.html#l00328">UIScriptedMenu::OnMouseButtonUp()</a>.</p>
 
 </div>
 </div>
@@ -349,6 +421,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00053">53</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>  {</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a22bfd5b04788b1e3f0774bb492b8cf74">m_EnableClick</a>;</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_a22bfd5b04788b1e3f0774bb492b8cf74"><div class="ttname"><a href="#a22bfd5b04788b1e3f0774bb492b8cf74">DayZIntroScenePC::m_EnableClick</a></div><div class="ttdeci">bool m_EnableClick</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00003">DayZIntroScenePC.c:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00003">m_EnableClick</a>.</p>
 
 </div>
 </div>
@@ -376,6 +454,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00076">76</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>  {</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ac8ae22829fcba951edec2c3d813a62ff">m_RotatingCharacter</a>;</div>
+<div class="line"><span class="lineno">   79</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00004">m_RotatingCharacter</a>.</p>
 
 </div>
 </div>
@@ -403,6 +486,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00047">47</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="#a22bfd5b04788b1e3f0774bb492b8cf74">m_EnableClick</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">enable</a>;</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00003">m_EnableClick</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00022">DayZIntroScenePC()</a>.</p>
 
 </div>
 </div>
@@ -430,6 +520,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00036">36</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>  {</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetInitPostprocesses();</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">PPERequester_MenuEffects</a> <a class="code hl_class" href="../../db/d06/class_param3.html">requester</a>;</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">requester</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">PPERequesterBank</a>.GetRequester(<a class="code hl_class" href="../../db/d06/class_param3.html">PPERequester_MenuEffects</a>));</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">requester</a>.SetVignetteIntensity(0.5);</div>
+<div class="line"><span class="lineno">   44</span>  }</div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>.</p>
 
 </div>
 </div>
@@ -457,6 +559,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00102">102</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../da/d0f/class_day_z_intro_scene.html#ab86162213cd8b8a41fa088d3e55c47cf">m_Character</a> &amp;&amp; <a class="code hl_variable" href="#ac8ae22829fcba951edec2c3d813a62ff">m_RotatingCharacter</a>)</div>
+<div class="line"><span class="lineno">  105</span>      <a class="code hl_function" href="#a977078e163e34d41040b014971a21e09">CharacterRotate</a>();</div>
+<div class="line"><span class="lineno">  106</span>  }</div>
+<div class="ttc" id="aclass_day_z_intro_scene_p_c_html_a977078e163e34d41040b014971a21e09"><div class="ttname"><a href="#a977078e163e34d41040b014971a21e09">DayZIntroScenePC::CharacterRotate</a></div><div class="ttdeci">void CharacterRotate()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00082">DayZIntroScenePC.c:82</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00082">CharacterRotate()</a>, <a class="el" href="../../d4/d06/_day_z_intro_scene_8c_source.html#l00003">DayZIntroScene::m_Character</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00004">m_RotatingCharacter</a>.</p>
 
 </div>
 </div>
@@ -555,6 +664,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00011">11</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00022">DayZIntroScenePC()</a>.</p>
+
 </div>
 </div>
 <a id="a0d89127e0596dc1420bf722bc4fe3131" name="a0d89127e0596dc1420bf722bc4fe3131"></a>
@@ -578,6 +689,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00012">12</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00022">DayZIntroScenePC()</a>.</p>
 
 </div>
 </div>
@@ -603,6 +716,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00010">10</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00082">CharacterRotate()</a>.</p>
+
 </div>
 </div>
 <a id="a22bfd5b04788b1e3f0774bb492b8cf74" name="a22bfd5b04788b1e3f0774bb492b8cf74"></a>
@@ -626,6 +741,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00003">3</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00053">IsClickEnabled()</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00047">SetClickEnable()</a>.</p>
 
 </div>
 </div>
@@ -723,6 +840,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00008">8</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00022">DayZIntroScenePC()</a>.</p>
+
 </div>
 </div>
 <a id="ad244e884e6512dde4867aff6b4037eeb" name="ad244e884e6512dde4867aff6b4037eeb"></a>
@@ -746,6 +865,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00009">9</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00022">DayZIntroScenePC()</a>.</p>
 
 </div>
 </div>
@@ -771,6 +892,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00004">4</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00059">CharacterRotationStart()</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00069">CharacterRotationStop()</a>, <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00076">IsRotatingCharacter()</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00102">Update()</a>.</p>
+
 </div>
 </div>
 <a id="a31985847d6590f40b8ed0b1ed826a025" name="a31985847d6590f40b8ed0b1ed826a025"></a>
@@ -794,6 +917,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00005">5</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00082">CharacterRotate()</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00059">CharacterRotationStart()</a>.</p>
 
 </div>
 </div>
@@ -819,6 +944,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00006">6</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00059">CharacterRotationStart()</a>.</p>
+
 </div>
 </div>
 <a id="af3b11b74a5c0289ed5907ec2eef24fdb" name="af3b11b74a5c0289ed5907ec2eef24fdb"></a>
@@ -842,6 +969,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00007">7</a> of file <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html">DayZIntroScenePC.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00082">CharacterRotate()</a>, and <a class="el" href="../../d2/d0a/_day_z_intro_scene_p_c_8c_source.html#l00059">CharacterRotationStart()</a>.</p>
 
 </div>
 </div>

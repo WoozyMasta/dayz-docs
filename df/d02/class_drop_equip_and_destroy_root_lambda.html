@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -216,6 +213,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l00109">109</a> of file <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html">MiscGameplayFunctions.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>  {</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_variable" href="#a9b79a60785283ef5c79349f7b53d961b">m_Player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">  112</span>  }</div>
+<div class="ttc" id="aclass_drop_equip_and_destroy_root_lambda_html_a9b79a60785283ef5c79349f7b53d961b"><div class="ttname"><a href="#a9b79a60785283ef5c79349f7b53d961b">DropEquipAndDestroyRootLambda::m_Player</a></div><div class="ttdeci">PlayerBase m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l00107">MiscGameplayFunctions.c:107</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l00107">m_Player</a>.</p>
 
 </div>
 </div>
@@ -249,6 +253,50 @@ Private Attributes</h2></td></tr>
 <p>We don't care if a valid transform couldn't be found, we just want to preferably use it instead of placing on the old item</p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l00114">114</a> of file <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html">MiscGameplayFunctions.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>  {</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.CopyOldPropertiesToNew(<a class="code hl_class" href="../../db/d06/class_param3.html">old_item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_item</a>);</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">understash_src</a> = <a class="code hl_variable" href="../../d5/d04/class_replace_item_with_new_lambda_base.html#a6a7b142d51abaa1307f65920e398d402">m_NewLocation</a>; <span class="comment">// m_NewLocation is a backup of original old_item&#39;s src before the operation started</span></div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;EntityAI&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">children</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;EntityAI&gt;</a>;</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">old_item</a>.GetInventory().EnumerateInventory(<a class="code hl_enumeration" href="../../d8/d08/gameplay_8c.html#ac5ade7a41ab88bd2906cf0b55a32492e">InventoryTraversalType</a>.LEVELORDER, <a class="code hl_class" href="../../db/d06/class_param3.html">children</a>);</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">children</a>.Count();</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  124</span>    {</div>
+<div class="line"><span class="lineno">  125</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">child</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">children</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">child</a>)</div>
+<div class="line"><span class="lineno">  127</span>      {</div>
+<div class="line"><span class="lineno">  128</span>        <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">child_src</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  129</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">child</a>.GetInventory().GetCurrentInventoryLocation(<a class="code hl_class" href="../../db/d06/class_param3.html">child_src</a>);</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>        <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">child_dst</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  132</span>        <span class="comment">//@TODO: modify _dst with place on gnd?</span></div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>        <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">m4</a>[4];</div>
+<div class="line"><span class="lineno">  135</span>        <a class="code hl_class" href="../../da/d04/class_math3_d.html">Math3D</a>.<a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#gad69368d7b5e1fcc6c3c8517d43adb443">MatrixIdentity4</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">m4</a>);</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  138</span>        <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#a6ac0c52c26ebdbd585cb7b832c5c7d81">PrepareDropEntityPos</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">old_item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">child</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">m4</a>, <span class="keyword">false</span>, -1);</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">child_dst</a>.SetGround(<a class="code hl_class" href="../../db/d06/class_param3.html">child</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">m4</a>);</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>        <a class="code hl_variable" href="#a9b79a60785283ef5c79349f7b53d961b">m_Player</a>.LocalTakeToDst(<a class="code hl_class" href="../../db/d06/class_param3.html">child_src</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">child_dst</a>);</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().RemoteObjectTreeCreate(<a class="code hl_class" href="../../db/d06/class_param3.html">child</a>); <span class="comment">// this forces server to send CreateVehicle Message to client. This is needed for preserving the appearance of network operations on client (so that DeleteObject(old) arrives before CreateVehicle(new)). @NOTE: this does not delete the object on server, only it&#39;s network representation.</span></div>
+<div class="line"><span class="lineno">  145</span>      }</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_a6ac0c52c26ebdbd585cb7b832c5c7d81"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#a6ac0c52c26ebdbd585cb7b832c5c7d81">GameInventory::PrepareDropEntityPos</a></div><div class="ttdeci">static proto native bool PrepareDropEntityPos(EntityAI owner, notnull EntityAI item, out vector mat[4], bool useValuesInMatrix=false, int conflictCheckDepth=-1)</div><div class="ttdoc">Finds a transformation for the item to be dropped to If the initial transforation overlaps with anoth...</div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_math3_d_html"><div class="ttname"><a href="../../da/d04/class_math3_d.html">Math3D</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/_en_math3_d_8c_source.html#l00027">EnMath3D.c:28</a></div></div>
+<div class="ttc" id="aclass_replace_item_with_new_lambda_base_html_a6a7b142d51abaa1307f65920e398d402"><div class="ttname"><a href="../../d5/d04/class_replace_item_with_new_lambda_base.html#a6a7b142d51abaa1307f65920e398d402">ReplaceItemWithNewLambdaBase::m_NewLocation</a></div><div class="ttdeci">ref InventoryLocation m_NewLocation</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0a/_replace_item_with_new_lambda_base_8c_source.html#l00009">ReplaceItemWithNewLambdaBase.c:9</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agameplay_8c_html_ac5ade7a41ab88bd2906cf0b55a32492e"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#ac5ade7a41ab88bd2906cf0b55a32492e">InventoryTraversalType</a></div><div class="ttdeci">InventoryTraversalType</div><div class="ttdoc">tree traversal type, for more see http://en.wikipedia.org/wiki/Tree_traversal</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00005">gameplay.c:6</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_gad69368d7b5e1fcc6c3c8517d43adb443"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#gad69368d7b5e1fcc6c3c8517d43adb443">Math3D::MatrixIdentity4</a></div><div class="ttdeci">static void MatrixIdentity4(out vector mat[4])</div><div class="ttdoc">Creates identity matrix.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/_en_math3_d_8c_source.html#l00233">EnMath3D.c:233</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d1/d0a/_replace_item_with_new_lambda_base_8c_source.html#l00009">ReplaceItemWithNewLambdaBase::m_NewLocation</a>, <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l00107">m_Player</a>, <a class="el" href="../../d3/d0c/_en_math3_d_8c_source.html#l00233">Math3D::MatrixIdentity4()</a>, and <a class="el" href="../../dc/d01/class_game_inventory.html#a6ac0c52c26ebdbd585cb7b832c5c7d81">GameInventory::PrepareDropEntityPos()</a>.</p>
 
 </div>
 </div>
@@ -274,6 +322,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l00107">107</a> of file <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html">MiscGameplayFunctions.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l00114">CopyOldPropertiesToNew()</a>, and <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l00109">DropEquipAndDestroyRootLambda()</a>.</p>
 
 </div>
 </div>

@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -244,7 +241,13 @@ Variables</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00001">1</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    2</span>{</div>
+<div class="line"><span class="lineno">    3</span>  <a class="code hl_enumvalue" href="#a0dc01e5a4cd58ba01beefe51fda109c4a6a266025b0dca2ed4af82b47c7a99040">POURING</a> = 1,</div>
+<div class="line"><span class="lineno">    4</span>  <a class="code hl_enumvalue" href="#a0dc01e5a4cd58ba01beefe51fda109c4a6c926b6470a41622ef0efe5a59444fac">EMPTYING</a> = 0,</div>
+<div class="line"><span class="lineno">    5</span>}</div>
+<div class="ttc" id="a_bottle___base_8c_html_a0dc01e5a4cd58ba01beefe51fda109c4a6a266025b0dca2ed4af82b47c7a99040"><div class="ttname"><a href="#a0dc01e5a4cd58ba01beefe51fda109c4a6a266025b0dca2ed4af82b47c7a99040">POURING</a></div><div class="ttdeci">@ POURING</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00003">Bottle_Base.c:3</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a0dc01e5a4cd58ba01beefe51fda109c4a6c926b6470a41622ef0efe5a59444fac"><div class="ttname"><a href="#a0dc01e5a4cd58ba01beefe51fda109c4a6c926b6470a41622ef0efe5a59444fac">EMPTYING</a></div><div class="ttdeci">@ EMPTYING</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00004">Bottle_Base.c:4</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -272,6 +275,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00046">46</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>  {</div>
+<div class="line"><span class="lineno">   48</span>    RegisterNetSyncVariableInt(<span class="stringliteral">&quot;m_CookingMethod&quot;</span>, <a class="code hl_enumeration" href="../../d1/d08/_cooking_8c.html#a40ebb390d457f1e0091617e091d1e39d">CookingMethodType</a>.NONE, <a class="code hl_enumeration" href="../../d1/d08/_cooking_8c.html#a40ebb390d457f1e0091617e091d1e39d">CookingMethodType</a>.COUNT);</div>
+<div class="line"><span class="lineno">   49</span>    RegisterNetSyncVariableBool(<span class="stringliteral">&quot;m_CookingIsDone&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span>    RegisterNetSyncVariableBool(<span class="stringliteral">&quot;m_CookingIsEmpty&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    RegisterNetSyncVariableBool(<span class="stringliteral">&quot;m_CookingIsBurned&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_variable" href="#a2520bbfc7e3527dd24a280e303a59201">m_LiquidEmptyRate</a> = <a class="code hl_variable" href="#a898db803bf64c353ed41026974c5431d">QUANTITY_EMPTIED_PER_SEC_DEFAULT</a>;</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a2520bbfc7e3527dd24a280e303a59201"><div class="ttname"><a href="#a2520bbfc7e3527dd24a280e303a59201">m_LiquidEmptyRate</a></div><div class="ttdeci">float m_LiquidEmptyRate</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00043">Bottle_Base.c:43</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a898db803bf64c353ed41026974c5431d"><div class="ttname"><a href="#a898db803bf64c353ed41026974c5431d">QUANTITY_EMPTIED_PER_SEC_DEFAULT</a></div><div class="ttdeci">const float QUANTITY_EMPTIED_PER_SEC_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00044">Bottle_Base.c:44</a></div></div>
+<div class="ttc" id="a_cooking_8c_html_a40ebb390d457f1e0091617e091d1e39d"><div class="ttname"><a href="../../d1/d08/_cooking_8c.html#a40ebb390d457f1e0091617e091d1e39d">CookingMethodType</a></div><div class="ttdeci">CookingMethodType</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d08/_cooking_8c_source.html#l00001">Cooking.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00043">m_LiquidEmptyRate</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00044">QUANTITY_EMPTIED_PER_SEC_DEFAULT</a>.</p>
 
 </div>
 </div>
@@ -299,7 +315,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00070">70</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   71</span>  {</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EECargoIn(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.SoakItemInsideParentContainingLiquidAboveThreshold(<a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>), <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   75</span>  }</div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a83a1e547e0d1e65ad421070058a093a9" name="a83a1e547e0d1e65ad421070058a093a9"></a>
@@ -326,6 +349,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00062">62</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>  {</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEDelete(parent);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">//remove audio visuals</span></div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="#a64a1db237bdeb3b6b006d664a45cace4">RemoveAudioVisuals</a>();</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a64a1db237bdeb3b6b006d664a45cace4"><div class="ttname"><a href="#a64a1db237bdeb3b6b006d664a45cace4">RemoveAudioVisuals</a></div><div class="ttdeci">void RemoveAudioVisuals()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00225">Bottle_Base.c:225</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00225">RemoveAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -353,6 +385,32 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00304">304</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  305</span>  {</div>
+<div class="line"><span class="lineno">  306</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> pos = <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>();</div>
+<div class="line"><span class="lineno">  307</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">surfaceType</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().GetSurfaceType();</div>
+<div class="line"><span class="lineno">  308</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  309</span> </div>
+<div class="line"><span class="lineno">  310</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">diggable</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsSurfaceDigable(<a class="code hl_class" href="../../db/d06/class_param3.html">surfaceType</a>);</div>
+<div class="line"><span class="lineno">  311</span> </div>
+<div class="line"><span class="lineno">  312</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">diggable</a>)</div>
+<div class="line"><span class="lineno">  313</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a> = <a class="code hl_function" href="#a5930e338800d07357636232da8dfb351">GetEmptyingEndSoundsetHard</a>();</div>
+<div class="line"><span class="lineno">  314</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">diggable</a>)</div>
+<div class="line"><span class="lineno">  315</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a> = <a class="code hl_function" href="#a4124c1a6282a1fa16d0401d086d8522c">GetEmptyingEndSoundsetSoft</a>();</div>
+<div class="line"><span class="lineno">  316</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceIsPond(pos[0], pos[2]) || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceIsSea(pos[0], pos[2]))</div>
+<div class="line"><span class="lineno">  317</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a> = <a class="code hl_function" href="#a5c66894879eee5df8f0f430dbe13f122">GetEmptyingEndSoundsetWater</a>();</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a>;</div>
+<div class="line"><span class="lineno">  320</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a4124c1a6282a1fa16d0401d086d8522c"><div class="ttname"><a href="#a4124c1a6282a1fa16d0401d086d8522c">GetEmptyingEndSoundsetSoft</a></div><div class="ttdeci">string GetEmptyingEndSoundsetSoft()</div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a5930e338800d07357636232da8dfb351"><div class="ttname"><a href="#a5930e338800d07357636232da8dfb351">GetEmptyingEndSoundsetHard</a></div><div class="ttdeci">string GetEmptyingEndSoundsetHard()</div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a5c66894879eee5df8f0f430dbe13f122"><div class="ttname"><a href="#a5c66894879eee5df8f0f430dbe13f122">GetEmptyingEndSoundsetWater</a></div><div class="ttdeci">string GetEmptyingEndSoundsetWater()</div></div>
+<div class="ttc" id="a_underground_area_loader_8c_html_af4b5180d61f839c99de2d15fdcda4568"><div class="ttname"><a href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a></div><div class="ttdeci">class JsonUndergroundAreaTriggerData GetPosition</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0a/_underground_area_loader_8c_source.html#l00001">UndergroundAreaLoader.c:9</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d0d/_canister_gasoline_8c_source.html#l00036">Bottle_Base::GetEmptyingEndSoundsetHard()</a>, <a class="el" href="../../d1/d0d/_canister_gasoline_8c_source.html#l00041">Bottle_Base::GetEmptyingEndSoundsetSoft()</a>, <a class="el" href="../../d1/d0d/_canister_gasoline_8c_source.html#l00046">Bottle_Base::GetEmptyingEndSoundsetWater()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d3/d0a/_underground_area_loader_8c_source.html#l00009">GetPosition</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00277">StopEmptyingLoopSound()</a>.</p>
 
 </div>
 </div>
@@ -455,6 +513,29 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00286">286</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>  {</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> pos = <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>();</div>
+<div class="line"><span class="lineno">  289</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">surfaceType</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().GetSurfaceType();</div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">diggable</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsSurfaceDigable(<a class="code hl_class" href="../../db/d06/class_param3.html">surfaceType</a>);</div>
+<div class="line"><span class="lineno">  293</span> </div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">diggable</a>)</div>
+<div class="line"><span class="lineno">  295</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a> = <a class="code hl_function" href="#a24483ced7294f139a7f3915ab8d603a2">GetEmptyingLoopSoundsetHard</a>();</div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">diggable</a>)</div>
+<div class="line"><span class="lineno">  297</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a> = <a class="code hl_function" href="#ae71dc1abff2fe4dad07fcd1f3c1315b5">GetEmptyingLoopSoundsetSoft</a>();</div>
+<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceIsPond(pos[0], pos[2]) || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceIsSea(pos[0], pos[2]))</div>
+<div class="line"><span class="lineno">  299</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a> = <a class="code hl_function" href="#a61ad640ff80eb221194b2b105c50aa64">GetEmptyingLoopSoundsetWater</a>();</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">soundSet</a>;</div>
+<div class="line"><span class="lineno">  302</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a24483ced7294f139a7f3915ab8d603a2"><div class="ttname"><a href="#a24483ced7294f139a7f3915ab8d603a2">GetEmptyingLoopSoundsetHard</a></div><div class="ttdeci">string GetEmptyingLoopSoundsetHard()</div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a61ad640ff80eb221194b2b105c50aa64"><div class="ttname"><a href="#a61ad640ff80eb221194b2b105c50aa64">GetEmptyingLoopSoundsetWater</a></div><div class="ttdeci">string GetEmptyingLoopSoundsetWater()</div></div>
+<div class="ttc" id="a_bottle___base_8c_html_ae71dc1abff2fe4dad07fcd1f3c1315b5"><div class="ttname"><a href="#ae71dc1abff2fe4dad07fcd1f3c1315b5">GetEmptyingLoopSoundsetSoft</a></div><div class="ttdeci">string GetEmptyingLoopSoundsetSoft()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d0d/_canister_gasoline_8c_source.html#l00021">Bottle_Base::GetEmptyingLoopSoundsetHard()</a>, <a class="el" href="../../d1/d0d/_canister_gasoline_8c_source.html#l00026">Bottle_Base::GetEmptyingLoopSoundsetSoft()</a>, <a class="el" href="../../d1/d0d/_canister_gasoline_8c_source.html#l00031">Bottle_Base::GetEmptyingLoopSoundsetWater()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d3/d0a/_underground_area_loader_8c_source.html#l00009">GetPosition</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00271">PlayEmptyingLoopSound()</a>.</p>
 
 </div>
 </div>
@@ -559,6 +640,11 @@ Variables</h2></td></tr>
 <p>Returns base liquid empty rate (absolute)..preferrably use the 'GetLiquidThroughputCoef' instead. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00331">331</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  332</span>  {</div>
+<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2520bbfc7e3527dd24a280e303a59201">m_LiquidEmptyRate</a>;</div>
+<div class="line"><span class="lineno">  334</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00043">m_LiquidEmptyRate</a>.</p>
 
 </div>
 </div>
@@ -611,6 +697,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00355">355</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  356</span>  {</div>
+<div class="line"><span class="lineno">  357</span>    <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a35c634598737ea5ffc27076aaceb2dda">SetQuantityMax</a>();</div>
+<div class="line"><span class="lineno">  358</span>  }</div>
+<div class="ttc" id="a_item_base_8c_html_a35c634598737ea5ffc27076aaceb2dda"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#a35c634598737ea5ffc27076aaceb2dda">SetQuantityMax</a></div><div class="ttdeci">void SetQuantityMax()</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_item_base_8c_source.html#l07905">ItemBase.c:7905</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0e/_item_base_8c_source.html#l07905">SetQuantityMax()</a>.</p>
 
 </div>
 </div>
@@ -647,6 +739,41 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00089">89</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>  {</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnRPC(<a class="code hl_class" href="../../db/d06/class_param3.html">sender</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">rpc_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;bool&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;bool&gt;</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">p</a>))</div>
+<div class="line"><span class="lineno">   96</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">play</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.param1;</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">rpc_type</a>)</div>
+<div class="line"><span class="lineno">  100</span>    {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a0dc01e5a4cd58ba01beefe51fda109c4">SoundTypeBottle</a>.POURING:</div>
+<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">play</a>)</div>
+<div class="line"><span class="lineno">  103</span>        <a class="code hl_function" href="#af31e2b0b37c6033702912925c8055fea">PlayPouringLoopSound</a>();</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_function" href="#a1ee18c05ea4da30d03269f0bcc244055">StopPouringLoopSound</a>();</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a0dc01e5a4cd58ba01beefe51fda109c4">SoundTypeBottle</a>.EMPTYING:</div>
+<div class="line"><span class="lineno">  110</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">play</a>)</div>
+<div class="line"><span class="lineno">  111</span>        <a class="code hl_function" href="#a90d96e5a45a5320ebf0450295e5e9c9f">PlayEmptyingLoopSound</a>();</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_function" href="#a1082850467ae686191ec6edc2743c85b">StopEmptyingLoopSound</a>();</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a0dc01e5a4cd58ba01beefe51fda109c4"><div class="ttname"><a href="#a0dc01e5a4cd58ba01beefe51fda109c4">SoundTypeBottle</a></div><div class="ttdeci">SoundTypeBottle</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00001">Bottle_Base.c:2</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a1082850467ae686191ec6edc2743c85b"><div class="ttname"><a href="#a1082850467ae686191ec6edc2743c85b">StopEmptyingLoopSound</a></div><div class="ttdeci">void StopEmptyingLoopSound()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00277">Bottle_Base.c:277</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a1ee18c05ea4da30d03269f0bcc244055"><div class="ttname"><a href="#a1ee18c05ea4da30d03269f0bcc244055">StopPouringLoopSound</a></div><div class="ttdeci">void StopPouringLoopSound()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00265">Bottle_Base.c:265</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a90d96e5a45a5320ebf0450295e5e9c9f"><div class="ttname"><a href="#a90d96e5a45a5320ebf0450295e5e9c9f">PlayEmptyingLoopSound</a></div><div class="ttdeci">void PlayEmptyingLoopSound()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00271">Bottle_Base.c:271</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_af31e2b0b37c6033702912925c8055fea"><div class="ttname"><a href="#af31e2b0b37c6033702912925c8055fea">PlayPouringLoopSound</a></div><div class="ttdeci">void PlayPouringLoopSound()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00259">Bottle_Base.c:259</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00271">PlayEmptyingLoopSound()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00259">PlayPouringLoopSound()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00277">StopEmptyingLoopSound()</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00265">StopPouringLoopSound()</a>.</p>
 
 </div>
 </div>
@@ -674,6 +801,21 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00119">119</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnVariablesSynchronized();</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aaa359414aa537106f1c3a1488acab9ad">m_CookingMethod</a> != <a class="code hl_enumeration" href="../../d1/d08/_cooking_8c.html#a40ebb390d457f1e0091617e091d1e39d">CookingMethodType</a>.NONE)</div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_function" href="#a9ce1fd4b27cf50ba9b95cc60af444c0d">RefreshAudioVisuals</a>(<a class="code hl_variable" href="#aaa359414aa537106f1c3a1488acab9ad">m_CookingMethod</a>, <a class="code hl_variable" href="#aa6645a55425be11c261165cb3bedacec">m_CookingIsDone</a>, <a class="code hl_variable" href="#a45ff9bc88ed6b23a62547f4609d4ad1e">m_CookingIsEmpty</a>, <a class="code hl_variable" href="#a3f1abd19cdb4bc98d970aec139568826">m_CookingIsBurned</a>);</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  126</span>      <a class="code hl_function" href="#a64a1db237bdeb3b6b006d664a45cace4">RemoveAudioVisuals</a>();</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a3f1abd19cdb4bc98d970aec139568826"><div class="ttname"><a href="#a3f1abd19cdb4bc98d970aec139568826">m_CookingIsBurned</a></div><div class="ttdeci">bool m_CookingIsBurned</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00034">Bottle_Base.c:34</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a45ff9bc88ed6b23a62547f4609d4ad1e"><div class="ttname"><a href="#a45ff9bc88ed6b23a62547f4609d4ad1e">m_CookingIsEmpty</a></div><div class="ttdeci">bool m_CookingIsEmpty</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00033">Bottle_Base.c:33</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a9ce1fd4b27cf50ba9b95cc60af444c0d"><div class="ttname"><a href="#a9ce1fd4b27cf50ba9b95cc60af444c0d">RefreshAudioVisuals</a></div><div class="ttdeci">void RefreshAudioVisuals(CookingMethodType cooking_method, bool is_done, bool is_empty, bool is_burned)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00146">Bottle_Base.c:146</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_aa6645a55425be11c261165cb3bedacec"><div class="ttname"><a href="#aa6645a55425be11c261165cb3bedacec">m_CookingIsDone</a></div><div class="ttdeci">bool m_CookingIsDone</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00032">Bottle_Base.c:32</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_aaa359414aa537106f1c3a1488acab9ad"><div class="ttname"><a href="#aaa359414aa537106f1c3a1488acab9ad">m_CookingMethod</a></div><div class="ttdeci">CookingMethodType m_CookingMethod</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00031">Bottle_Base.c:31</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00034">m_CookingIsBurned</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00032">m_CookingIsDone</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00033">m_CookingIsEmpty</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00031">m_CookingMethod</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00225">RemoveAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -701,6 +843,30 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00232">232</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>  {</div>
+<div class="line"><span class="lineno">  234</span><span class="preprocessor">#ifndef SERVER</span></div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aeba1dd05abb00a38136dd11ec06bb602">m_ParticlePlaying</a> != <a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>)</div>
+<div class="line"><span class="lineno">  236</span>    {</div>
+<div class="line"><span class="lineno">  237</span>      <span class="comment">//stop previous particles</span></div>
+<div class="line"><span class="lineno">  238</span>      <a class="code hl_function" href="#aef911b46f4ef2019fb9a245de9c7b414">ParticleCookingStop</a>();</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>      <span class="comment">//create new</span></div>
+<div class="line"><span class="lineno">  241</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">localPos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.GetSteamPosition(GetHierarchyParent());</div>
+<div class="line"><span class="lineno">  242</span>      <a class="code hl_variable" href="#ae83b86a8b43452472417b4198b63dff8">m_ParticleCooking</a> = <a class="code hl_function" href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a>.GetInstance().PlayInWorld(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">localPos</a>);</div>
+<div class="line"><span class="lineno">  243</span>      <a class="code hl_variable" href="#aeba1dd05abb00a38136dd11ec06bb602">m_ParticlePlaying</a> = <a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>;</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    }</div>
+<div class="line"><span class="lineno">  246</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_ae83b86a8b43452472417b4198b63dff8"><div class="ttname"><a href="#ae83b86a8b43452472417b4198b63dff8">m_ParticleCooking</a></div><div class="ttdeci">enum SoundTypeBottle m_ParticleCooking</div></div>
+<div class="ttc" id="a_bottle___base_8c_html_aeba1dd05abb00a38136dd11ec06bb602"><div class="ttname"><a href="#aeba1dd05abb00a38136dd11ec06bb602">m_ParticlePlaying</a></div><div class="ttdeci">int m_ParticlePlaying</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00011">Bottle_Base.c:11</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_aef911b46f4ef2019fb9a245de9c7b414"><div class="ttname"><a href="#aef911b46f4ef2019fb9a245de9c7b414">ParticleCookingStop</a></div><div class="ttdeci">void ParticleCookingStop()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00249">Bottle_Base.c:249</a></div></div>
+<div class="ttc" id="a_particle_manager_8c_html_a93ef360e8fc315d276eb8cc256dc3ef8"><div class="ttname"><a href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a></div><div class="ttdeci">void ParticleManager(ParticleManagerSettings settings)</div><div class="ttdoc">Constructor (ctor)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager.c:84</a></div></div>
+<div class="ttc" id="a_smoke_simulation_8c_html_a7ccc29a80f5e39e2fa08fabc79bca587"><div class="ttname"><a href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a></div><div class="ttdeci">int particle_id</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">SmokeSimulation.c:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#ae83b86a8b43452472417b4198b63dff8">m_ParticleCooking</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00011">m_ParticlePlaying</a>, <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00249">ParticleCookingStop()</a>, and <a class="el" href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -728,6 +894,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00249">249</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ae83b86a8b43452472417b4198b63dff8">m_ParticleCooking</a> &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  252</span>    {</div>
+<div class="line"><span class="lineno">  253</span>      <a class="code hl_variable" href="#ae83b86a8b43452472417b4198b63dff8">m_ParticleCooking</a>.Stop();</div>
+<div class="line"><span class="lineno">  254</span>      <a class="code hl_variable" href="#ae83b86a8b43452472417b4198b63dff8">m_ParticleCooking</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  255</span>      <a class="code hl_variable" href="#aeba1dd05abb00a38136dd11ec06bb602">m_ParticlePlaying</a> = <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#aae5be0673ab37de22de1890c98418d21">INVALID</a>;</div>
+<div class="line"><span class="lineno">  256</span>    }</div>
+<div class="line"><span class="lineno">  257</span>  }</div>
+<div class="ttc" id="aclass_particle_list_html"><div class="ttname"><a href="../../dd/d02/class_particle_list.html">ParticleList</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00011">ParticleList.c:12</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_aae5be0673ab37de22de1890c98418d21"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#aae5be0673ab37de22de1890c98418d21">ParticleList::INVALID</a></div><div class="ttdeci">static const int INVALID</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00020">ParticleList.c:20</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00020">ParticleList::INVALID</a>, <a class="el" href="#ae83b86a8b43452472417b4198b63dff8">m_ParticleCooking</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00011">m_ParticlePlaying</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00232">ParticleCookingStart()</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00225">RemoveAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -755,6 +935,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00271">271</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  272</span>  {</div>
+<div class="line"><span class="lineno">  273</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a582907eeea6aaa4babc69d10e510ddca">m_EmptyingLoopSound</a> || !<a class="code hl_variable" href="#a582907eeea6aaa4babc69d10e510ddca">m_EmptyingLoopSound</a>.<a class="code hl_function" href="../../d9/d09/class_effect_sound.html#abf2e5207cf74b01295801ff9cbc6f7cd">IsSoundPlaying</a>())</div>
+<div class="line"><span class="lineno">  274</span>      <a class="code hl_variable" href="#a582907eeea6aaa4babc69d10e510ddca">m_EmptyingLoopSound</a> = <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#a62121261c750c6174099a4879ac2f781">PlaySoundOnObject</a>(<a class="code hl_function" href="#aa3149a30ba1d954b83ee722715263cb1">GetEmptyingLoopSoundset</a>(), <span class="keyword">this</span>, 0, 0, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  275</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a582907eeea6aaa4babc69d10e510ddca"><div class="ttname"><a href="#a582907eeea6aaa4babc69d10e510ddca">m_EmptyingLoopSound</a></div><div class="ttdeci">EffectSound m_EmptyingLoopSound</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00028">Bottle_Base.c:28</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_aa3149a30ba1d954b83ee722715263cb1"><div class="ttname"><a href="#aa3149a30ba1d954b83ee722715263cb1">GetEmptyingLoopSoundset</a></div><div class="ttdeci">string GetEmptyingLoopSoundset()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00286">Bottle_Base.c:286</a></div></div>
+<div class="ttc" id="aclass_effect_sound_html_abf2e5207cf74b01295801ff9cbc6f7cd"><div class="ttname"><a href="../../d9/d09/class_effect_sound.html#abf2e5207cf74b01295801ff9cbc6f7cd">EffectSound::IsSoundPlaying</a></div><div class="ttdeci">bool IsSoundPlaying()</div><div class="ttdoc">Get whether EffectSound is currently playing.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d00/_effect_sound_8c_source.html#l00261">EffectSound.c:261</a></div></div>
+<div class="ttc" id="aclass_s_effect_manager_html"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a></div><div class="ttdoc">Manager class for managing Effect (EffectParticle, EffectSound)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00005">EffectManager.c:6</a></div></div>
+<div class="ttc" id="aclass_s_effect_manager_html_a62121261c750c6174099a4879ac2f781"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html#a62121261c750c6174099a4879ac2f781">SEffectManager::PlaySoundOnObject</a></div><div class="ttdeci">static EffectSound PlaySoundOnObject(string sound_set, Object parent_object, float play_fade_in=0, float stop_fade_out=0, bool loop=false)</div><div class="ttdoc">Create and play an EffectSound.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00233">EffectManager.c:233</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00286">GetEmptyingLoopSoundset()</a>, <a class="el" href="../../d4/d00/_effect_sound_8c_source.html#l00261">EffectSound::IsSoundPlaying()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00028">m_EmptyingLoopSound</a>, and <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00233">SEffectManager::PlaySoundOnObject()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00089">OnRPC()</a>.</p>
 
 </div>
 </div>
@@ -782,6 +975,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00259">259</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  260</span>  {</div>
+<div class="line"><span class="lineno">  261</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a1067b61da12ff833a19fb8246f0df448">m_PouringLoopSound</a> || !<a class="code hl_variable" href="#a1067b61da12ff833a19fb8246f0df448">m_PouringLoopSound</a>.<a class="code hl_function" href="../../d9/d09/class_effect_sound.html#abf2e5207cf74b01295801ff9cbc6f7cd">IsSoundPlaying</a>())</div>
+<div class="line"><span class="lineno">  262</span>      <a class="code hl_variable" href="#a1067b61da12ff833a19fb8246f0df448">m_PouringLoopSound</a> = <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#a62121261c750c6174099a4879ac2f781">PlaySoundOnObject</a>(<a class="code hl_function" href="#a15df905ba91aaf75782d1860a5d3a5d5">GetPouringSoundset</a>(), <span class="keyword">this</span>, 0, 0, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  263</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a1067b61da12ff833a19fb8246f0df448"><div class="ttname"><a href="#a1067b61da12ff833a19fb8246f0df448">m_PouringLoopSound</a></div><div class="ttdeci">EffectSound m_PouringLoopSound</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00027">Bottle_Base.c:27</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a15df905ba91aaf75782d1860a5d3a5d5"><div class="ttname"><a href="#a15df905ba91aaf75782d1860a5d3a5d5">GetPouringSoundset</a></div><div class="ttdeci">string GetPouringSoundset()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d0d/_canister_gasoline_8c_source.html#l00016">Bottle_Base::GetPouringSoundset()</a>, <a class="el" href="../../d4/d00/_effect_sound_8c_source.html#l00261">EffectSound::IsSoundPlaying()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00027">m_PouringLoopSound</a>, and <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00233">SEffectManager::PlaySoundOnObject()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00089">OnRPC()</a>.</p>
 
 </div>
 </div>
@@ -823,6 +1026,106 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">146</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>  {</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a>;</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a>;</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">//if at least one of the food items is burned</span></div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">is_burned</a>)</div>
+<div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  154</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <a class="code hl_variable" href="../../d8/d01/_edible___base_8c.html#a346053d51725a8ef1d0df3c50493c537">SOUND_BURNING_DONE</a>;</div>
+<div class="line"><span class="lineno">  155</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_variable" href="#a9dd8786e804570ddac13a4004d434221">PARTICLE_BURNING_DONE</a>;</div>
+<div class="line"><span class="lineno">  156</span>    }</div>
+<div class="line"><span class="lineno">  157</span>    <span class="comment">//proper cooking methods</span></div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  159</span>    {</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">cooking_method</a>)</div>
+<div class="line"><span class="lineno">  161</span>      {</div>
+<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d1/d08/_cooking_8c.html#a40ebb390d457f1e0091617e091d1e39d">CookingMethodType</a>.BOILING:</div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">is_empty</a>)</div>
+<div class="line"><span class="lineno">  164</span>        {</div>
+<div class="line"><span class="lineno">  165</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <a class="code hl_variable" href="#afbf55716464e1a4263929c5e02c53a00">SOUND_BOILING_EMPTY</a>;</div>
+<div class="line"><span class="lineno">  166</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_variable" href="#aaf74aa4bce038b99dae976dc43a12dcc">PARTICLE_BOILING_EMPTY</a>;</div>
+<div class="line"><span class="lineno">  167</span>        }</div>
+<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  169</span>        {</div>
+<div class="line"><span class="lineno">  170</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">is_done</a>)</div>
+<div class="line"><span class="lineno">  171</span>          {</div>
+<div class="line"><span class="lineno">  172</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <a class="code hl_variable" href="#ae39c6d6dcb9b91e7c5e3e183a07591cf">SOUND_BOILING_DONE</a>;</div>
+<div class="line"><span class="lineno">  173</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_variable" href="#a4ebe3e4c46ed8025594ef53df6306dae">PARTICLE_BOILING_DONE</a>;</div>
+<div class="line"><span class="lineno">  174</span>          }</div>
+<div class="line"><span class="lineno">  175</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  176</span>          {</div>
+<div class="line"><span class="lineno">  177</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <a class="code hl_variable" href="#ae66280a3c6f2e4f2d4628723ca613994">SOUND_BOILING_START</a>;</div>
+<div class="line"><span class="lineno">  178</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_variable" href="#af4509bca1b460bfe87eb1d111579b37f">PARTICLE_BOILING_START</a>;</div>
+<div class="line"><span class="lineno">  179</span>          }</div>
+<div class="line"><span class="lineno">  180</span>        }</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d1/d08/_cooking_8c.html#a40ebb390d457f1e0091617e091d1e39d">CookingMethodType</a>.BAKING:</div>
+<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">is_done</a>)</div>
+<div class="line"><span class="lineno">  186</span>        {</div>
+<div class="line"><span class="lineno">  187</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <a class="code hl_variable" href="../../d8/d01/_edible___base_8c.html#a701d2e029a2705e7642a3e6c81459289">SOUND_BAKING_DONE</a>;</div>
+<div class="line"><span class="lineno">  188</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_variable" href="#a0b116200bb7080daecbe716f17b728b9">PARTICLE_BAKING_DONE</a>;</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  191</span>        {</div>
+<div class="line"><span class="lineno">  192</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <a class="code hl_variable" href="../../d8/d01/_edible___base_8c.html#ab2017ffc0317f9381cc955425c1bde03">SOUND_BAKING_START</a>;</div>
+<div class="line"><span class="lineno">  193</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_variable" href="#a8737cd5f0de238dfd460f729dd75692a">PARTICLE_BAKING_START</a> ;</div>
+<div class="line"><span class="lineno">  194</span>        }</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d1/d08/_cooking_8c.html#a40ebb390d457f1e0091617e091d1e39d">CookingMethodType</a>.DRYING:</div>
+<div class="line"><span class="lineno">  199</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">is_done</a>)</div>
+<div class="line"><span class="lineno">  200</span>        {</div>
+<div class="line"><span class="lineno">  201</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <a class="code hl_variable" href="#ab9548e38287314df23d113b593f4c225">SOUND_DRYING_DONE</a>;</div>
+<div class="line"><span class="lineno">  202</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_variable" href="#a36bab50a19d03244aa980d2bbada47ab">PARTICLE_DRYING_DONE</a>;</div>
+<div class="line"><span class="lineno">  203</span>        }</div>
+<div class="line"><span class="lineno">  204</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  205</span>        {</div>
+<div class="line"><span class="lineno">  206</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <a class="code hl_variable" href="#aa59c696adae800ec1b211c45f9a5e02b">SOUND_DRYING_START</a>;</div>
+<div class="line"><span class="lineno">  207</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_variable" href="#a636c04191d2f99c1b50a5e0a19ab92ba">PARTICLE_DRYING_START</a>;</div>
+<div class="line"><span class="lineno">  208</span>        }</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  213</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  214</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a> = <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#a9d8fb481c9756198ce25ce3979fdd962">NONE</a>;</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  217</span>      }</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <span class="comment">//play effects</span></div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_function" href="#a8e124b9810d9bb7f3e92ca8df2c2dd1b">ParticleCookingStart</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">particleId</a>);</div>
+<div class="line"><span class="lineno">  222</span>    <a class="code hl_function" href="../../d8/d01/_edible___base_8c.html#aaef1892874ea901a9138f79e6b618a16">SoundCookingStart</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">soundName</a>);</div>
+<div class="line"><span class="lineno">  223</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a0b116200bb7080daecbe716f17b728b9"><div class="ttname"><a href="#a0b116200bb7080daecbe716f17b728b9">PARTICLE_BAKING_DONE</a></div><div class="ttdeci">int PARTICLE_BAKING_DONE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00019">Bottle_Base.c:19</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a36bab50a19d03244aa980d2bbada47ab"><div class="ttname"><a href="#a36bab50a19d03244aa980d2bbada47ab">PARTICLE_DRYING_DONE</a></div><div class="ttdeci">int PARTICLE_DRYING_DONE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00022">Bottle_Base.c:22</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a4ebe3e4c46ed8025594ef53df6306dae"><div class="ttname"><a href="#a4ebe3e4c46ed8025594ef53df6306dae">PARTICLE_BOILING_DONE</a></div><div class="ttdeci">int PARTICLE_BOILING_DONE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00016">Bottle_Base.c:16</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a636c04191d2f99c1b50a5e0a19ab92ba"><div class="ttname"><a href="#a636c04191d2f99c1b50a5e0a19ab92ba">PARTICLE_DRYING_START</a></div><div class="ttdeci">int PARTICLE_DRYING_START</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00021">Bottle_Base.c:21</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a8737cd5f0de238dfd460f729dd75692a"><div class="ttname"><a href="#a8737cd5f0de238dfd460f729dd75692a">PARTICLE_BAKING_START</a></div><div class="ttdeci">int PARTICLE_BAKING_START</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00018">Bottle_Base.c:18</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a8e124b9810d9bb7f3e92ca8df2c2dd1b"><div class="ttname"><a href="#a8e124b9810d9bb7f3e92ca8df2c2dd1b">ParticleCookingStart</a></div><div class="ttdeci">void ParticleCookingStart(int particle_id)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00232">Bottle_Base.c:232</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_a9dd8786e804570ddac13a4004d434221"><div class="ttname"><a href="#a9dd8786e804570ddac13a4004d434221">PARTICLE_BURNING_DONE</a></div><div class="ttdeci">int PARTICLE_BURNING_DONE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00024">Bottle_Base.c:24</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_aa59c696adae800ec1b211c45f9a5e02b"><div class="ttname"><a href="#aa59c696adae800ec1b211c45f9a5e02b">SOUND_DRYING_START</a></div><div class="ttdeci">const string SOUND_DRYING_START</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00040">Bottle_Base.c:40</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_aaf74aa4bce038b99dae976dc43a12dcc"><div class="ttname"><a href="#aaf74aa4bce038b99dae976dc43a12dcc">PARTICLE_BOILING_EMPTY</a></div><div class="ttdeci">int PARTICLE_BOILING_EMPTY</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00014">Bottle_Base.c:14</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_ab9548e38287314df23d113b593f4c225"><div class="ttname"><a href="#ab9548e38287314df23d113b593f4c225">SOUND_DRYING_DONE</a></div><div class="ttdeci">const string SOUND_DRYING_DONE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00041">Bottle_Base.c:41</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_ae39c6d6dcb9b91e7c5e3e183a07591cf"><div class="ttname"><a href="#ae39c6d6dcb9b91e7c5e3e183a07591cf">SOUND_BOILING_DONE</a></div><div class="ttdeci">const string SOUND_BOILING_DONE</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00039">Bottle_Base.c:39</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_ae66280a3c6f2e4f2d4628723ca613994"><div class="ttname"><a href="#ae66280a3c6f2e4f2d4628723ca613994">SOUND_BOILING_START</a></div><div class="ttdeci">const string SOUND_BOILING_START</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00038">Bottle_Base.c:38</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_af4509bca1b460bfe87eb1d111579b37f"><div class="ttname"><a href="#af4509bca1b460bfe87eb1d111579b37f">PARTICLE_BOILING_START</a></div><div class="ttdeci">int PARTICLE_BOILING_START</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00015">Bottle_Base.c:15</a></div></div>
+<div class="ttc" id="a_bottle___base_8c_html_afbf55716464e1a4263929c5e02c53a00"><div class="ttname"><a href="#afbf55716464e1a4263929c5e02c53a00">SOUND_BOILING_EMPTY</a></div><div class="ttdeci">const string SOUND_BOILING_EMPTY</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00037">Bottle_Base.c:37</a></div></div>
+<div class="ttc" id="a_edible___base_8c_html_a346053d51725a8ef1d0df3c50493c537"><div class="ttname"><a href="../../d8/d01/_edible___base_8c.html#a346053d51725a8ef1d0df3c50493c537">SOUND_BURNING_DONE</a></div><div class="ttdeci">const string SOUND_BURNING_DONE</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d01/_edible___base_8c_source.html#l00757">Edible_Base.c:757</a></div></div>
+<div class="ttc" id="a_edible___base_8c_html_a701d2e029a2705e7642a3e6c81459289"><div class="ttname"><a href="../../d8/d01/_edible___base_8c.html#a701d2e029a2705e7642a3e6c81459289">SOUND_BAKING_DONE</a></div><div class="ttdeci">const string SOUND_BAKING_DONE</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d01/_edible___base_8c_source.html#l00756">Edible_Base.c:756</a></div></div>
+<div class="ttc" id="a_edible___base_8c_html_aaef1892874ea901a9138f79e6b618a16"><div class="ttname"><a href="../../d8/d01/_edible___base_8c.html#aaef1892874ea901a9138f79e6b618a16">SoundCookingStart</a></div><div class="ttdeci">void SoundCookingStart(string sound_name)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d01/_edible___base_8c_source.html#l01213">Edible_Base.c:1213</a></div></div>
+<div class="ttc" id="a_edible___base_8c_html_ab2017ffc0317f9381cc955425c1bde03"><div class="ttname"><a href="../../d8/d01/_edible___base_8c.html#ab2017ffc0317f9381cc955425c1bde03">SOUND_BAKING_START</a></div><div class="ttdeci">const string SOUND_BAKING_START</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d01/_edible___base_8c_source.html#l00755">Edible_Base.c:755</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_a9d8fb481c9756198ce25ce3979fdd962"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#a9d8fb481c9756198ce25ce3979fdd962">ParticleList::NONE</a></div><div class="ttdeci">static const int NONE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00021">ParticleList.c:21</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00021">ParticleList::NONE</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00019">PARTICLE_BAKING_DONE</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00018">PARTICLE_BAKING_START</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00016">PARTICLE_BOILING_DONE</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00014">PARTICLE_BOILING_EMPTY</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00015">PARTICLE_BOILING_START</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00024">PARTICLE_BURNING_DONE</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00022">PARTICLE_DRYING_DONE</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00021">PARTICLE_DRYING_START</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00232">ParticleCookingStart()</a>, <a class="el" href="../../d8/d01/_edible___base_8c_source.html#l00756">SOUND_BAKING_DONE</a>, <a class="el" href="../../d8/d01/_edible___base_8c_source.html#l00755">SOUND_BAKING_START</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00039">SOUND_BOILING_DONE</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00037">SOUND_BOILING_EMPTY</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00038">SOUND_BOILING_START</a>, <a class="el" href="../../d8/d01/_edible___base_8c_source.html#l00757">SOUND_BURNING_DONE</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00041">SOUND_DRYING_DONE</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00040">SOUND_DRYING_START</a>, and <a class="el" href="../../d8/d01/_edible___base_8c_source.html#l01213">SoundCookingStart()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00119">OnVariablesSynchronized()</a>.</p>
 
 </div>
 </div>
@@ -864,6 +1167,17 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00136">136</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>  {</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_variable" href="#aaa359414aa537106f1c3a1488acab9ad">m_CookingMethod</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">cooking_method</a>;</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_variable" href="#aa6645a55425be11c261165cb3bedacec">m_CookingIsDone</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">is_done</a>;</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_variable" href="#a45ff9bc88ed6b23a62547f4609d4ad1e">m_CookingIsEmpty</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">is_empty</a>;</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_variable" href="#a3f1abd19cdb4bc98d970aec139568826">m_CookingIsBurned</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">is_burned</a>;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_function" href="#a7535a00699fa3e3dd2c40c256da023bd">Synchronize</a>();</div>
+<div class="line"><span class="lineno">  144</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a7535a00699fa3e3dd2c40c256da023bd"><div class="ttname"><a href="#a7535a00699fa3e3dd2c40c256da023bd">Synchronize</a></div><div class="ttdeci">override void Synchronize()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00084">Bottle_Base.c:84</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00034">m_CookingIsBurned</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00032">m_CookingIsDone</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00033">m_CookingIsEmpty</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00031">m_CookingMethod</a>, and <a class="el" href="../../d2/d01/_combination_lock_8c_source.html#l00145">Synchronize()</a>.</p>
 
 </div>
 </div>
@@ -891,6 +1205,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00225">225</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  226</span>  {</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_function" href="#aef911b46f4ef2019fb9a245de9c7b414">ParticleCookingStop</a>();</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_function" href="../../d8/d01/_edible___base_8c.html#a572065e2791633e86be51085a9d07f4b">SoundCookingStop</a>();</div>
+<div class="line"><span class="lineno">  229</span>  }</div>
+<div class="ttc" id="a_edible___base_8c_html_a572065e2791633e86be51085a9d07f4b"><div class="ttname"><a href="../../d8/d01/_edible___base_8c.html#a572065e2791633e86be51085a9d07f4b">SoundCookingStop</a></div><div class="ttdeci">void SoundCookingStop()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d01/_edible___base_8c_source.html#l01226">Edible_Base.c:1226</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00249">ParticleCookingStop()</a>, and <a class="el" href="../../d8/d01/_edible___base_8c_source.html#l01226">SoundCookingStop()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00062">EEDelete()</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00119">OnVariablesSynchronized()</a>.</p>
 
 </div>
 </div>
@@ -918,6 +1241,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00129">129</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_variable" href="#aaa359414aa537106f1c3a1488acab9ad">m_CookingMethod</a> = <a class="code hl_enumeration" href="../../d1/d08/_cooking_8c.html#a40ebb390d457f1e0091617e091d1e39d">CookingMethodType</a>.NONE;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_function" href="#a7535a00699fa3e3dd2c40c256da023bd">Synchronize</a>();</div>
+<div class="line"><span class="lineno">  134</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00031">m_CookingMethod</a>, and <a class="el" href="../../d2/d01/_combination_lock_8c_source.html#l00145">Synchronize()</a>.</p>
 
 </div>
 </div>
@@ -945,6 +1275,39 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00336">336</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  337</span>  {</div>
+<div class="line"><span class="lineno">  338</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  339</span> </div>
+<div class="line"><span class="lineno">  340</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d8/d00/class_action_fill_fuel.html">ActionFillFuel</a>);</div>
+<div class="line"><span class="lineno">  341</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../dd/d06/class_action_fill_coolant.html">ActionFillCoolant</a>);</div>
+<div class="line"><span class="lineno">  342</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d5/d03/class_action_fill_generator_tank.html">ActionFillGeneratorTank</a>);</div>
+<div class="line"><span class="lineno">  343</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_function" href="../../d2/d0d/_action_extinguish_fireplace_by_liquid_8c.html#aad7816ee307d696bcb0b792244227353">ActionExtinguishFireplaceByLiquid</a>);</div>
+<div class="line"><span class="lineno">  344</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d5/d04/class_action_fill_bottle_base.html">ActionFillBottleBase</a>);</div>
+<div class="line"><span class="lineno">  345</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d1/d09/class_action_water_garden_slot.html">ActionWaterGardenSlot</a>);</div>
+<div class="line"><span class="lineno">  346</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d4/d07/class_action_water_plant.html">ActionWaterPlant</a>);</div>
+<div class="line"><span class="lineno">  347</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d8/d00/class_action_force_drink.html">ActionForceDrink</a>);</div>
+<div class="line"><span class="lineno">  348</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d5/d00/class_action_drain_liquid.html">ActionDrainLiquid</a>);</div>
+<div class="line"><span class="lineno">  349</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d0/d09/class_action_pour_liquid.html">ActionPourLiquid</a>);</div>
+<div class="line"><span class="lineno">  350</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d5/d09/class_action_wash_hands_item_continuous.html">ActionWashHandsItemContinuous</a>);</div>
+<div class="line"><span class="lineno">  351</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d5/d01/class_action_drink.html">ActionDrink</a>);</div>
+<div class="line"><span class="lineno">  352</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d8/d0b/class_action_empty_bottle_base.html">ActionEmptyBottleBase</a>);</div>
+<div class="line"><span class="lineno">  353</span>  }</div>
+<div class="ttc" id="a_action_extinguish_fireplace_by_liquid_8c_html_aad7816ee307d696bcb0b792244227353"><div class="ttname"><a href="../../d2/d0d/_action_extinguish_fireplace_by_liquid_8c.html#aad7816ee307d696bcb0b792244227353">ActionExtinguishFireplaceByLiquid</a></div><div class="ttdeci">ActionExtinguishFireplaceByLiquidCB ActionContinuousBaseCB ActionExtinguishFireplaceByLiquid()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0d/_action_extinguish_fireplace_by_liquid_8c_source.html#l00001">ActionExtinguishFireplaceByLiquid.c:15</a></div></div>
+<div class="ttc" id="a_advanced_communication_8c_html_a033d077df58807906c4dad3101d8768c"><div class="ttname"><a href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a></div><div class="ttdeci">void AddAction(typename actionName)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AdvancedCommunication.c:212</a></div></div>
+<div class="ttc" id="aclass_action_drain_liquid_html"><div class="ttname"><a href="../../d5/d00/class_action_drain_liquid.html">ActionDrainLiquid</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d02/_action_drain_liquid_8c_source.html#l00011">ActionDrainLiquid.c:12</a></div></div>
+<div class="ttc" id="aclass_action_drink_html"><div class="ttname"><a href="../../d5/d01/class_action_drink.html">ActionDrink</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0e/_action_drink_8c_source.html#l00009">ActionDrink.c:10</a></div></div>
+<div class="ttc" id="aclass_action_empty_bottle_base_html"><div class="ttname"><a href="../../d8/d0b/class_action_empty_bottle_base.html">ActionEmptyBottleBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/_action_empty_bottle_base_8c_source.html#l00014">ActionEmptyBottleBase.c:15</a></div></div>
+<div class="ttc" id="aclass_action_fill_bottle_base_html"><div class="ttname"><a href="../../d5/d04/class_action_fill_bottle_base.html">ActionFillBottleBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d06/_action_fill_bottle_base_8c_source.html#l00018">ActionFillBottleBase.c:19</a></div></div>
+<div class="ttc" id="aclass_action_fill_coolant_html"><div class="ttname"><a href="../../dd/d06/class_action_fill_coolant.html">ActionFillCoolant</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d0a/_action_fill_coolant_8c_source.html#l00011">ActionFillCoolant.c:12</a></div></div>
+<div class="ttc" id="aclass_action_fill_fuel_html"><div class="ttname"><a href="../../d8/d00/class_action_fill_fuel.html">ActionFillFuel</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d04/_action_fill_fuel_8c_source.html#l00011">ActionFillFuel.c:12</a></div></div>
+<div class="ttc" id="aclass_action_fill_generator_tank_html"><div class="ttname"><a href="../../d5/d03/class_action_fill_generator_tank.html">ActionFillGeneratorTank</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0b/_action_fill_generator_tank_8c_source.html#l00011">ActionFillGeneratorTank.c:12</a></div></div>
+<div class="ttc" id="aclass_action_force_drink_html"><div class="ttname"><a href="../../d8/d00/class_action_force_drink.html">ActionForceDrink</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0d/_action_force_drink_8c_source.html#l00009">ActionForceDrink.c:10</a></div></div>
+<div class="ttc" id="aclass_action_pour_liquid_html"><div class="ttname"><a href="../../d0/d09/class_action_pour_liquid.html">ActionPourLiquid</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0e/_action_pour_liquid_8c_source.html#l00011">ActionPourLiquid.c:12</a></div></div>
+<div class="ttc" id="aclass_action_wash_hands_item_continuous_html"><div class="ttname"><a href="../../d5/d09/class_action_wash_hands_item_continuous.html">ActionWashHandsItemContinuous</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d06/_action_wash_hands_item_continuous_8c_source.html#l00009">ActionWashHandsItemContinuous.c:10</a></div></div>
+<div class="ttc" id="aclass_action_water_garden_slot_html"><div class="ttname"><a href="../../d1/d09/class_action_water_garden_slot.html">ActionWaterGardenSlot</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d0a/_action_water_garden_slot_8c_source.html#l00011">ActionWaterGardenSlot.c:12</a></div></div>
+<div class="ttc" id="aclass_action_water_plant_html"><div class="ttname"><a href="../../d4/d07/class_action_water_plant.html">ActionWaterPlant</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/_action_water_plant_8c_source.html#l00011">ActionWaterPlant.c:12</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0d/_action_extinguish_fireplace_by_liquid_8c_source.html#l00015">ActionExtinguishFireplaceByLiquid()</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>.</p>
 
 </div>
 </div>
@@ -972,6 +1335,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00277">277</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  278</span>  {</div>
+<div class="line"><span class="lineno">  279</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a582907eeea6aaa4babc69d10e510ddca">m_EmptyingLoopSound</a>)</div>
+<div class="line"><span class="lineno">  280</span>      <a class="code hl_variable" href="#a582907eeea6aaa4babc69d10e510ddca">m_EmptyingLoopSound</a>.<a class="code hl_function" href="../../d9/d09/class_effect_sound.html#afb3e761198a4167f611442d60925e1e7">SoundStop</a>();</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span>    <a class="code hl_class" href="../../d9/d09/class_effect_sound.html">EffectSound</a> <a class="code hl_class" href="../../db/d06/class_param3.html">sound</a> = <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#a62121261c750c6174099a4879ac2f781">PlaySoundOnObject</a>(<a class="code hl_function" href="#a537397b7a95dd3a8ff3e3a0df29cfe95">GetEmptyingEndSoundset</a>(), <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  283</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">sound</a>.SetAutodestroy(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  284</span>  }</div>
+<div class="ttc" id="a_bottle___base_8c_html_a537397b7a95dd3a8ff3e3a0df29cfe95"><div class="ttname"><a href="#a537397b7a95dd3a8ff3e3a0df29cfe95">GetEmptyingEndSoundset</a></div><div class="ttdeci">string GetEmptyingEndSoundset()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_bottle___base_8c_source.html#l00304">Bottle_Base.c:304</a></div></div>
+<div class="ttc" id="aclass_effect_sound_html"><div class="ttname"><a href="../../d9/d09/class_effect_sound.html">EffectSound</a></div><div class="ttdoc">Wrapper class for managing sound through SEffectManager.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d00/_effect_sound_8c_source.html#l00004">EffectSound.c:5</a></div></div>
+<div class="ttc" id="aclass_effect_sound_html_afb3e761198a4167f611442d60925e1e7"><div class="ttname"><a href="../../d9/d09/class_effect_sound.html#afb3e761198a4167f611442d60925e1e7">EffectSound::SoundStop</a></div><div class="ttdeci">void SoundStop()</div><div class="ttdoc">Stops sound.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d00/_effect_sound_8c_source.html#l00208">EffectSound.c:208</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00304">GetEmptyingEndSoundset()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00028">m_EmptyingLoopSound</a>, <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00233">SEffectManager::PlaySoundOnObject()</a>, and <a class="el" href="../../d4/d00/_effect_sound_8c_source.html#l00208">EffectSound::SoundStop()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00089">OnRPC()</a>.</p>
 
 </div>
 </div>
@@ -999,6 +1376,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00265">265</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  266</span>  {</div>
+<div class="line"><span class="lineno">  267</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1067b61da12ff833a19fb8246f0df448">m_PouringLoopSound</a>)</div>
+<div class="line"><span class="lineno">  268</span>      <a class="code hl_variable" href="#a1067b61da12ff833a19fb8246f0df448">m_PouringLoopSound</a>.<a class="code hl_function" href="../../d9/d09/class_effect_sound.html#afb3e761198a4167f611442d60925e1e7">SoundStop</a>();</div>
+<div class="line"><span class="lineno">  269</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00027">m_PouringLoopSound</a>, and <a class="el" href="../../d4/d00/_effect_sound_8c_source.html#l00208">EffectSound::SoundStop()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00089">OnRPC()</a>.</p>
 
 </div>
 </div>
@@ -1026,7 +1411,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00084">84</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   85</span>  {</div>
+<div class="line"><span class="lineno">   86</span>    SetSynchDirty();</div>
+<div class="line"><span class="lineno">   87</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaab54c957ecee355d5b4219de18ebebe" name="aaab54c957ecee355d5b4219de18ebebe"></a>
@@ -1053,6 +1441,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00056">56</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  {</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#aec7ef95de317ab1011f04c6c5c496248">DestroyEffect</a>(<a class="code hl_variable" href="#a1067b61da12ff833a19fb8246f0df448">m_PouringLoopSound</a>);</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#aec7ef95de317ab1011f04c6c5c496248">DestroyEffect</a>(<a class="code hl_variable" href="#a582907eeea6aaa4babc69d10e510ddca">m_EmptyingLoopSound</a>);</div>
+<div class="line"><span class="lineno">   60</span>  }</div>
+<div class="ttc" id="aclass_s_effect_manager_html_aec7ef95de317ab1011f04c6c5c496248"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html#aec7ef95de317ab1011f04c6c5c496248">SEffectManager::DestroyEffect</a></div><div class="ttdeci">static void DestroyEffect(Effect effect)</div><div class="ttdoc">Unregisters, stops and frees the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00256">EffectManager.c:256</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00256">SEffectManager::DestroyEffect()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00028">m_EmptyingLoopSound</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00027">m_PouringLoopSound</a>.</p>
 
 </div>
 </div>
@@ -1079,6 +1474,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00034">34</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00119">OnVariablesSynchronized()</a>, <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00138">Inventory_Base::OnVariablesSynchronized()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00136">RefreshAudioVisualsOnClient()</a>, and <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00156">Inventory_Base::RefreshAudioVisualsOnClient()</a>.</p>
+
 </div>
 </div>
 <a id="aa6645a55425be11c261165cb3bedacec" name="aa6645a55425be11c261165cb3bedacec"></a>
@@ -1102,6 +1499,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00032">32</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00119">OnVariablesSynchronized()</a>, <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00138">Inventory_Base::OnVariablesSynchronized()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00136">RefreshAudioVisualsOnClient()</a>, and <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00156">Inventory_Base::RefreshAudioVisualsOnClient()</a>.</p>
 
 </div>
 </div>
@@ -1127,6 +1526,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00033">33</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00119">OnVariablesSynchronized()</a>, <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00138">Inventory_Base::OnVariablesSynchronized()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00136">RefreshAudioVisualsOnClient()</a>, and <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00156">Inventory_Base::RefreshAudioVisualsOnClient()</a>.</p>
+
 </div>
 </div>
 <a id="aaa359414aa537106f1c3a1488acab9ad" name="aaa359414aa537106f1c3a1488acab9ad"></a>
@@ -1150,6 +1551,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00031">31</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00119">OnVariablesSynchronized()</a>, <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00138">Inventory_Base::OnVariablesSynchronized()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00136">RefreshAudioVisualsOnClient()</a>, <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00156">Inventory_Base::RefreshAudioVisualsOnClient()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00129">RemoveAudioVisualsOnClient()</a>, and <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00149">Inventory_Base::RemoveAudioVisualsOnClient()</a>.</p>
 
 </div>
 </div>
@@ -1175,6 +1578,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00028">28</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00271">PlayEmptyingLoopSound()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00277">StopEmptyingLoopSound()</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00056">~Bottle_Base()</a>.</p>
+
 </div>
 </div>
 <a id="a2520bbfc7e3527dd24a280e303a59201" name="a2520bbfc7e3527dd24a280e303a59201"></a>
@@ -1199,6 +1604,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00043">43</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00046">Bottle_Base()</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00331">GetLiquidEmptyRate()</a>.</p>
+
 </div>
 </div>
 <a id="ae83b86a8b43452472417b4198b63dff8" name="ae83b86a8b43452472417b4198b63dff8"></a>
@@ -1212,6 +1619,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00232">ParticleCookingStart()</a>, <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00200">Inventory_Base::ParticleCookingStart()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00249">ParticleCookingStop()</a>, and <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00218">Inventory_Base::ParticleCookingStop()</a>.</p>
 
 </div>
 </div>
@@ -1237,6 +1646,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00011">11</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00232">ParticleCookingStart()</a>, <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00200">Inventory_Base::ParticleCookingStart()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00249">ParticleCookingStop()</a>, and <a class="el" href="../../dc/d09/_frying_pan_8c_source.html#l00218">Inventory_Base::ParticleCookingStop()</a>.</p>
+
 </div>
 </div>
 <a id="a1067b61da12ff833a19fb8246f0df448" name="a1067b61da12ff833a19fb8246f0df448"></a>
@@ -1260,6 +1671,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00027">27</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00259">PlayPouringLoopSound()</a>, <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00265">StopPouringLoopSound()</a>, and <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00056">~Bottle_Base()</a>.</p>
 
 </div>
 </div>
@@ -1285,6 +1698,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00019">19</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="a8737cd5f0de238dfd460f729dd75692a" name="a8737cd5f0de238dfd460f729dd75692a"></a>
@@ -1308,6 +1723,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00018">18</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -1333,6 +1750,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00016">16</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="aaf74aa4bce038b99dae976dc43a12dcc" name="aaf74aa4bce038b99dae976dc43a12dcc"></a>
@@ -1356,6 +1775,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00014">14</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -1381,6 +1802,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00015">15</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="a9dd8786e804570ddac13a4004d434221" name="a9dd8786e804570ddac13a4004d434221"></a>
@@ -1404,6 +1827,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00024">24</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -1429,6 +1854,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00022">22</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="a636c04191d2f99c1b50a5e0a19ab92ba" name="a636c04191d2f99c1b50a5e0a19ab92ba"></a>
@@ -1452,6 +1879,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00021">21</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -1477,6 +1906,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00044">44</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00046">Bottle_Base()</a>.</p>
+
 </div>
 </div>
 <a id="ae39c6d6dcb9b91e7c5e3e183a07591cf" name="ae39c6d6dcb9b91e7c5e3e183a07591cf"></a>
@@ -1500,6 +1931,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00039">39</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -1525,6 +1958,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00037">37</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="ae66280a3c6f2e4f2d4628723ca613994" name="ae66280a3c6f2e4f2d4628723ca613994"></a>
@@ -1548,6 +1983,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00038">38</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
 
 </div>
 </div>
@@ -1573,6 +2010,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00041">41</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
+
 </div>
 </div>
 <a id="aa59c696adae800ec1b211c45f9a5e02b" name="aa59c696adae800ec1b211c45f9a5e02b"></a>
@@ -1596,6 +2035,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00040">40</a> of file <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html">Bottle_Base.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d0a/_bottle___base_8c_source.html#l00146">RefreshAudioVisuals()</a>.</p>
 
 </div>
 </div>

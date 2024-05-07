@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -152,6 +149,36 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_spooky_area_8c_source.html#l00007">7</a> of file <a class="el" href="../../d4/d06/_spooky_area_8c_source.html">SpookyArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>  {</div>
+<div class="line"><span class="lineno">    9</span>    <span class="comment">// We make sure we have the particle array</span></div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d5/d04/class_effect_area.html#a1736f7740a89aac8d9a252dff6f0d4c1">m_ToxicClouds</a>)</div>
+<div class="line"><span class="lineno">   11</span>      <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#a1736f7740a89aac8d9a252dff6f0d4c1">m_ToxicClouds</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;Particle&gt;</a>;</div>
+<div class="line"><span class="lineno">   12</span> </div>
+<div class="line"><span class="lineno">   13</span>    SetSynchDirty();</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">   16</span>    <span class="comment">// Debugs when placing entity by hand using internal tools</span></div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() &amp;&amp; !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   18</span>    {</div>
+<div class="line"><span class="lineno">   19</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;YOU CAN IGNORE THE FOLLOWING DUMP&quot;</span>);</div>
+<div class="line"><span class="lineno">   20</span>      <a class="code hl_function" href="../../d5/d04/class_effect_area.html#ab08b72b127332904e44a7d039cebd4bb">InitZone</a>();</div>
+<div class="line"><span class="lineno">   21</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;YOU CAN USE FOLLOWING DATA PROPERLY&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>    }</div>
+<div class="line"><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_function" href="../../d5/d04/class_effect_area.html#ab08b72b127332904e44a7d039cebd4bb">InitZone</a>();</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_ac759558b1dd4e820330546c994a9d840"><div class="ttname"><a href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Debug::Log</a></div><div class="ttdeci">static void Log(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdoc">Prints debug message with normal prio.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug.c:133</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_a1736f7740a89aac8d9a252dff6f0d4c1"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#a1736f7740a89aac8d9a252dff6f0d4c1">EffectArea::m_ToxicClouds</a></div><div class="ttdeci">ref array&lt; Particle &gt; m_ToxicClouds</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00072">EffectArea.c:72</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_ab08b72b127332904e44a7d039cebd4bb"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#ab08b72b127332904e44a7d039cebd4bb">EffectArea::InitZone</a></div><div class="ttdeci">void InitZone()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00168">EffectArea.c:168</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00168">EffectArea::InitZone()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug::Log()</a>, and <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00072">EffectArea::m_ToxicClouds</a>.</p>
 
 </div>
 </div>
@@ -179,6 +206,22 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_spooky_area_8c_source.html#l00040">40</a> of file <a class="el" href="../../d4/d06/_spooky_area_8c_source.html">SpookyArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>  {</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.InitZoneClient();</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment">// We spawn VFX on client</span></div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="../../d5/d04/class_effect_area.html#ad534f17c64c7bf7ef0917e316d582877">PlaceParticles</a>(GetWorldPosition(), <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#aa6ac25b73d94fbd78e1852f2e386f72b">m_Radius</a>, <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#a9a86a14d82579ce3fd2a8b3d7100429e">m_InnerRings</a>, <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#aa849efc6a3c5e2a135438dbf1b537562">m_InnerSpacing</a>, <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#a65bf055c97f56426e8c99e7bb0a5c474">m_OuterRingToggle</a>, <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#ae83226ecf844ae58155a7a3ba56aaf57">m_OuterSpacing</a>, <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#aa710307493ca81c9231204e872893452">m_OuterRingOffset</a>, <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#ac2bf3efa16e860c359013ec3485f6865">m_ParticleID</a>);</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+<div class="ttc" id="aclass_effect_area_html_a65bf055c97f56426e8c99e7bb0a5c474"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#a65bf055c97f56426e8c99e7bb0a5c474">EffectArea::m_OuterRingToggle</a></div><div class="ttdeci">bool m_OuterRingToggle</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00053">EffectArea.c:53</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_a9a86a14d82579ce3fd2a8b3d7100429e"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#a9a86a14d82579ce3fd2a8b3d7100429e">EffectArea::m_InnerRings</a></div><div class="ttdeci">int m_InnerRings</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00050">EffectArea.c:50</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_aa6ac25b73d94fbd78e1852f2e386f72b"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#aa6ac25b73d94fbd78e1852f2e386f72b">EffectArea::m_Radius</a></div><div class="ttdeci">float m_Radius</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00044">EffectArea.c:44</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_aa710307493ca81c9231204e872893452"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#aa710307493ca81c9231204e872893452">EffectArea::m_OuterRingOffset</a></div><div class="ttdeci">int m_OuterRingOffset</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00054">EffectArea.c:54</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_aa849efc6a3c5e2a135438dbf1b537562"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#aa849efc6a3c5e2a135438dbf1b537562">EffectArea::m_InnerSpacing</a></div><div class="ttdeci">int m_InnerSpacing</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00051">EffectArea.c:51</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_ac2bf3efa16e860c359013ec3485f6865"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#ac2bf3efa16e860c359013ec3485f6865">EffectArea::m_ParticleID</a></div><div class="ttdeci">int m_ParticleID</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00061">EffectArea.c:61</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_ad534f17c64c7bf7ef0917e316d582877"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#ad534f17c64c7bf7ef0917e316d582877">EffectArea::PlaceParticles</a></div><div class="ttdeci">void PlaceParticles(vector pos, float radius, int nbRings, int innerSpacing, bool outerToggle, int outerSpacing, int outerOffset, int partId)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00218">EffectArea.c:218</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_ae83226ecf844ae58155a7a3ba56aaf57"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#ae83226ecf844ae58155a7a3ba56aaf57">EffectArea::m_OuterSpacing</a></div><div class="ttdeci">int m_OuterSpacing</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00055">EffectArea.c:55</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00050">EffectArea::m_InnerRings</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00051">EffectArea::m_InnerSpacing</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00054">EffectArea::m_OuterRingOffset</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00053">EffectArea::m_OuterRingToggle</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00055">EffectArea::m_OuterSpacing</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00061">EffectArea::m_ParticleID</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00044">EffectArea::m_Radius</a>, and <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00218">EffectArea::PlaceParticles()</a>.</p>
 
 </div>
 </div>
@@ -206,6 +249,18 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_spooky_area_8c_source.html#l00031">31</a> of file <a class="el" href="../../d4/d06/_spooky_area_8c_source.html">SpookyArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>  {</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.InitZoneServer();</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">// We create the trigger on server</span></div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d5/d04/class_effect_area.html#a9636e4b5fa57211d44528c056b1d3771">m_TriggerType</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   37</span>      <a class="code hl_function" href="../../dd/d08/_trap_base_8c.html#a56e9fba9303f5e86f50ccf4c54562794">CreateTrigger</a>(<a class="code hl_variable" href="../../d5/d04/class_effect_area.html#a3d30603c54db765a450d1fa3d2eef314">m_Position</a>, <a class="code hl_variable" href="../../d5/d04/class_effect_area.html#aa6ac25b73d94fbd78e1852f2e386f72b">m_Radius</a>);</div>
+<div class="line"><span class="lineno">   38</span>  }</div>
+<div class="ttc" id="a_trap_base_8c_html_a56e9fba9303f5e86f50ccf4c54562794"><div class="ttname"><a href="../../dd/d08/_trap_base_8c.html#a56e9fba9303f5e86f50ccf4c54562794">CreateTrigger</a></div><div class="ttdeci">void CreateTrigger()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d08/_trap_base_8c_source.html#l00468">TrapBase.c:468</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_a3d30603c54db765a450d1fa3d2eef314"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#a3d30603c54db765a450d1fa3d2eef314">EffectArea::m_Position</a></div><div class="ttdeci">vector m_Position</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00041">EffectArea.c:41</a></div></div>
+<div class="ttc" id="aclass_effect_area_html_a9636e4b5fa57211d44528c056b1d3771"><div class="ttname"><a href="../../d5/d04/class_effect_area.html#a9636e4b5fa57211d44528c056b1d3771">EffectArea::m_TriggerType</a></div><div class="ttdeci">string m_TriggerType</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00069">EffectArea.c:69</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00468">CreateTrigger()</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00041">EffectArea::m_Position</a>, <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00044">EffectArea::m_Radius</a>, and <a class="el" href="../../de/d07/_effect_area_8c_source.html#l00069">EffectArea::m_TriggerType</a>.</p>
 
 </div>
 </div>

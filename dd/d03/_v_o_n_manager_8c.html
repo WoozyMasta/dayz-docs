@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -186,6 +183,39 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00103">103</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>  {</div>
+<div class="line"><span class="lineno">  105</span><span class="preprocessor">#ifdef PLATFORM_XBOX</span></div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">// ignore VON-related input if user is in an xbox party</span></div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsInPartyChat())</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  109</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">oldLevel</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetVoiceLevel();</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">oldLevel</a> == -1) <span class="comment">//VoN system not initialized!</span></div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> = -1;</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.LocalPress_ID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAVoiceDistanceUp</a>, <span class="keyword">false</span>))</div>
+<div class="line"><span class="lineno">  117</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> = (<a class="code hl_class" href="../../db/d06/class_param3.html">oldLevel</a> + 1) % (<a class="code hl_class" href="../../db/d06/class_param3.html">VoiceLevelShout</a> + 1);</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.LocalPress_ID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAVoiceDistanceDown</a>, <span class="keyword">false</span>))</div>
+<div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">oldLevel</a> - 1;</div>
+<div class="line"><span class="lineno">  122</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">VoiceLevelWhisper</a>) <span class="comment">//nah...</span></div>
+<div class="line"><span class="lineno">  123</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">VoiceLevelShout</a>;</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> &gt; -1)</div>
+<div class="line"><span class="lineno">  127</span>    {</div>
+<div class="line"><span class="lineno">  128</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SetVoiceLevel(<a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a>);</div>
+<div class="line"><span class="lineno">  129</span>      <a class="code hl_function" href="#ad4bd4a3e0ea61afc51af2a5593f8c5b2">UpdateVoiceIcon</a>();</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
+<div class="line"><span class="lineno">  131</span>  }</div>
+<div class="ttc" id="a_v_o_n_manager_8c_html_ad4bd4a3e0ea61afc51af2a5593f8c5b2"><div class="ttname"><a href="#ad4bd4a3e0ea61afc51af2a5593f8c5b2">UpdateVoiceIcon</a></div><div class="ttdeci">void UpdateVoiceIcon()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00133">VONManager.c:133</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00133">UpdateVoiceIcon()</a>.</p>
 
 </div>
 </div>
@@ -215,7 +245,19 @@ Variables</h2></td></tr>
 <p>Hides the VON notification completely and immediately. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00041">41</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   42</span>  {</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMissionMainMenu())</div>
+<div class="line"><span class="lineno">   44</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_class" href="../../db/d0d/class_mission.html">Mission</a> <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission();</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.<a class="code hl_function" href="../../db/d0d/class_mission.html#ac3af46569c226ba777bfdc23a7d923b5">GetMicrophoneIcon</a>().Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.<a class="code hl_function" href="../../db/d0d/class_mission.html#aae5294dd2b17f574d92142f27ef11021">HideVoiceLevelWidgets</a>();</div>
+<div class="line"><span class="lineno">   49</span>  }</div>
+<div class="ttc" id="a_display_status_8c_html_ab3a3bb8e635420fd40ef3c99f863c5c8"><div class="ttname"><a href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a></div><div class="ttdeci">Mission mission</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d07/_display_status_8c_source.html#l00028">DisplayStatus.c:28</a></div></div>
+<div class="ttc" id="aclass_mission_html"><div class="ttname"><a href="../../db/d0d/class_mission.html">Mission</a></div><div class="ttdoc">Mission class.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00667">gameplay.c:668</a></div></div>
+<div class="ttc" id="aclass_mission_html_aae5294dd2b17f574d92142f27ef11021"><div class="ttname"><a href="../../db/d0d/class_mission.html#aae5294dd2b17f574d92142f27ef11021">Mission::HideVoiceLevelWidgets</a></div><div class="ttdeci">void HideVoiceLevelWidgets()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00790">gameplay.c:790</a></div></div>
+<div class="ttc" id="aclass_mission_html_ac3af46569c226ba777bfdc23a7d923b5"><div class="ttname"><a href="../../db/d0d/class_mission.html#ac3af46569c226ba777bfdc23a7d923b5">Mission::GetMicrophoneIcon</a></div><div class="ttdeci">ImageWidget GetMicrophoneIcon()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00815">gameplay.c:815</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9aa447e703226f976321a5d2f8d1560d" name="a9aa447e703226f976321a5d2f8d1560d"></a>
@@ -242,6 +284,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00042">42</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>  {</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMissionMainMenu())</div>
+<div class="line"><span class="lineno">   44</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00815">Mission::GetMicrophoneIcon()</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00790">Mission::HideVoiceLevelWidgets()</a>, and <a class="el" href="../../d9/d07/_display_status_8c_source.html#l00028">mission</a>.</p>
 
 </div>
 </div>
@@ -282,6 +330,97 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00167">167</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>  {</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_class" href="../../db/d0d/class_mission.html">Mission</a> <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission();</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">eventTypeId</a>)</div>
+<div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d8/d08/gameplay_8c.html#a84b655b45195bd5f006a40e0126dc5c2">VONUserStartedTransmittingAudioEventTypeID</a>:</div>
+<div class="line"><span class="lineno">  173</span>    {</div>
+<div class="line"><span class="lineno">  174</span>      <span class="comment">// only handle this if we are in Voice Activation mode, so ignore if in PTT mode</span></div>
+<div class="line"><span class="lineno">  175</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2c5cb25959b007c55fdf7fac5ba548e5">m_VoNToggled</a>)</div>
+<div class="line"><span class="lineno">  176</span>      {</div>
+<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../d3/d0a/class_v_o_n_manager.html">VONManager</a>.<a class="code hl_function" href="../../d3/d0a/class_v_o_n_manager.html#ad1b1c96249c41ea555afba9b44be0a6d">IsVoiceThresholdMinimum</a>())</div>
+<div class="line"><span class="lineno">  178</span>          <a class="code hl_function" href="#aaeb0b3a998677a85fa9cf51a6d7cf42b">ShowVoiceNotification</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetVoiceLevel(), <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  179</span>      }</div>
+<div class="line"><span class="lineno">  180</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  181</span>    }</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d8/d08/gameplay_8c.html#a7bc74cb4a67e391b039ba2aacbd3dc7c">VONUserStoppedTransmittingAudioEventTypeID</a>:</div>
+<div class="line"><span class="lineno">  184</span>    {</div>
+<div class="line"><span class="lineno">  185</span>      <span class="comment">// only handle this if we are in Voice Activation mode, so ignore if in PTT mode</span></div>
+<div class="line"><span class="lineno">  186</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2c5cb25959b007c55fdf7fac5ba548e5">m_VoNToggled</a>)</div>
+<div class="line"><span class="lineno">  187</span>      {</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../d3/d0a/class_v_o_n_manager.html">VONManager</a>.<a class="code hl_function" href="../../d3/d0a/class_v_o_n_manager.html#ad1b1c96249c41ea555afba9b44be0a6d">IsVoiceThresholdMinimum</a>())</div>
+<div class="line"><span class="lineno">  189</span>          <a class="code hl_function" href="#a76338d8fdb3e62a99d0fb3ae1d4f6d90">HideVoiceNotification</a>();</div>
+<div class="line"><span class="lineno">  190</span>      }</div>
+<div class="line"><span class="lineno">  191</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  192</span>    }</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d8/d08/gameplay_8c.html#a73c2d0179d0219bd26b8aebe90a8412b">VONStateEventTypeID</a>:</div>
+<div class="line"><span class="lineno">  195</span>    {</div>
+<div class="line"><span class="lineno">  196</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>)</div>
+<div class="line"><span class="lineno">  197</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">VONStateEventParams</a> <a class="code hl_class" href="../../db/d06/class_param3.html">vonStateParams</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">VONStateEventParams</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">params</a>);</div>
+<div class="line"><span class="lineno">  200</span>      <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.<a class="code hl_function" href="../../db/d0d/class_mission.html#af5f0273b94a54c6ae02eb58db6b5cac0">SetVoNActive</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">vonStateParams</a>.param1);</div>
+<div class="line"><span class="lineno">  201</span>      <a class="code hl_variable" href="#a2c5cb25959b007c55fdf7fac5ba548e5">m_VoNToggled</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">vonStateParams</a>.param2;</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>      <a class="code hl_function" href="#ad4bd4a3e0ea61afc51af2a5593f8c5b2">UpdateVoiceIcon</a>();</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>      <a class="code hl_variable" href="#a998564501492bf06e24b34e1897f0980">m_OnVonStateEvent</a>.Invoke();</div>
+<div class="line"><span class="lineno">  206</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  207</span>    }</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d8/d08/gameplay_8c.html#a11a86fd63b6b5e8976eae59f74295e04">PartyChatStatusChangedEventTypeID</a>:</div>
+<div class="line"><span class="lineno">  210</span>    {</div>
+<div class="line"><span class="lineno">  211</span>      <a class="code hl_variable" href="#a49363d6c60687761be01fbb22cca5d9a">m_OnPartyChatChangedEvent</a>.Invoke();</div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  213</span>    }</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d8/d08/gameplay_8c.html#a731979b9029bed76a827dd67667f6d88">VONStartSpeakingEventTypeID</a>:</div>
+<div class="line"><span class="lineno">  216</span>    {</div>
+<div class="line"><span class="lineno">  217</span>      <a class="code hl_class" href="../../d2/d04/class_param2.html">VONStartSpeakingEventParams</a> <a class="code hl_class" href="../../db/d06/class_param3.html">vonStartParams</a>;</div>
+<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">vonStartParams</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>))</div>
+<div class="line"><span class="lineno">  219</span>        <a class="code hl_function" href="../../d8/d08/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame</a>().AddVoiceNotification(<a class="code hl_class" href="../../db/d06/class_param3.html">vonStartParams</a>);</div>
+<div class="line"><span class="lineno">  220</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  221</span>    }</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d8/d08/gameplay_8c.html#a8fadc0e7d58549b7e56e68c8b2a58ff0">VONStopSpeakingEventTypeID</a>:</div>
+<div class="line"><span class="lineno">  224</span>    {</div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_class" href="../../d2/d04/class_param2.html">VONStopSpeakingEventParams</a> <a class="code hl_class" href="../../db/d06/class_param3.html">vonStopParams</a>;</div>
+<div class="line"><span class="lineno">  226</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">vonStopParams</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>))</div>
+<div class="line"><span class="lineno">  227</span>        <a class="code hl_function" href="../../d8/d08/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame</a>().RemoveVoiceNotification(<a class="code hl_class" href="../../db/d06/class_param3.html">vonStopParams</a>);</div>
+<div class="line"><span class="lineno">  228</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  229</span>    }</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">case</span> <a class="code hl_variable" href="../../d8/d08/gameplay_8c.html#ad568213105a423031ab98eed15c27f05">MPSessionPlayerReadyEventTypeID</a>:</div>
+<div class="line"><span class="lineno">  232</span>    {</div>
+<div class="line"><span class="lineno">  233</span>      <a class="code hl_function" href="#ad4bd4a3e0ea61afc51af2a5593f8c5b2">UpdateVoiceIcon</a>();</div>
+<div class="line"><span class="lineno">  234</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
+<div class="line"><span class="lineno">  236</span>    }</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a92f5918ec5d632d5159c9d1f52fe7758"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame</a></div><div class="ttdeci">DayZGame GetDayZGame()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03530">DayZGame.c:3530</a></div></div>
+<div class="ttc" id="a_v_o_n_manager_8c_html_a2c5cb25959b007c55fdf7fac5ba548e5"><div class="ttname"><a href="#a2c5cb25959b007c55fdf7fac5ba548e5">m_VoNToggled</a></div><div class="ttdeci">bool m_VoNToggled</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00027">VONManager.c:27</a></div></div>
+<div class="ttc" id="a_v_o_n_manager_8c_html_a49363d6c60687761be01fbb22cca5d9a"><div class="ttname"><a href="#a49363d6c60687761be01fbb22cca5d9a">m_OnPartyChatChangedEvent</a></div><div class="ttdeci">ref ScriptInvoker m_OnPartyChatChangedEvent</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00029">VONManager.c:29</a></div></div>
+<div class="ttc" id="a_v_o_n_manager_8c_html_a76338d8fdb3e62a99d0fb3ae1d4f6d90"><div class="ttname"><a href="#a76338d8fdb3e62a99d0fb3ae1d4f6d90">HideVoiceNotification</a></div><div class="ttdeci">void HideVoiceNotification()</div><div class="ttdoc">Hides the VON notification completely and immediately.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00041">VONManager.c:41</a></div></div>
+<div class="ttc" id="a_v_o_n_manager_8c_html_a998564501492bf06e24b34e1897f0980"><div class="ttname"><a href="#a998564501492bf06e24b34e1897f0980">m_OnVonStateEvent</a></div><div class="ttdeci">ref ScriptInvoker m_OnVonStateEvent</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00028">VONManager.c:28</a></div></div>
+<div class="ttc" id="a_v_o_n_manager_8c_html_aaeb0b3a998677a85fa9cf51a6d7cf42b"><div class="ttname"><a href="#aaeb0b3a998677a85fa9cf51a6d7cf42b">ShowVoiceNotification</a></div><div class="ttdeci">void ShowVoiceNotification(int level, bool fading)</div><div class="ttdoc">Shows the voice notification.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00056">VONManager.c:56</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_mission_html_af5f0273b94a54c6ae02eb58db6b5cac0"><div class="ttname"><a href="../../db/d0d/class_mission.html#af5f0273b94a54c6ae02eb58db6b5cac0">Mission::SetVoNActive</a></div><div class="ttdeci">void SetVoNActive(bool active)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00792">gameplay.c:792</a></div></div>
+<div class="ttc" id="aclass_param2_html"><div class="ttname"><a href="../../d2/d04/class_param2.html">Param2&lt; string, string &gt;</a></div></div>
+<div class="ttc" id="aclass_v_o_n_manager_html"><div class="ttname"><a href="../../d3/d0a/class_v_o_n_manager.html">VONManager</a></div><div class="ttdoc">Manager class which handles Voice-over-network functionality while player is connected to a server.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00241">VONManager.c:242</a></div></div>
+<div class="ttc" id="aclass_v_o_n_manager_html_ad1b1c96249c41ea555afba9b44be0a6d"><div class="ttname"><a href="../../d3/d0a/class_v_o_n_manager.html#ad1b1c96249c41ea555afba9b44be0a6d">VONManager::IsVoiceThresholdMinimum</a></div><div class="ttdeci">static bool IsVoiceThresholdMinimum()</div><div class="ttdoc">Specifies whether user's voice activation threshold value is equal to the minimum voice activation th...</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_v_o_n_manager_8c_source.html#l00285">VONManager.c:285</a></div></div>
+<div class="ttc" id="agameplay_8c_html_a11a86fd63b6b5e8976eae59f74295e04"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#a11a86fd63b6b5e8976eae59f74295e04">PartyChatStatusChangedEventTypeID</a></div><div class="ttdeci">const EventType PartyChatStatusChangedEventTypeID</div><div class="ttdoc">no params</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00546">gameplay.c:546</a></div></div>
+<div class="ttc" id="agameplay_8c_html_a731979b9029bed76a827dd67667f6d88"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#a731979b9029bed76a827dd67667f6d88">VONStartSpeakingEventTypeID</a></div><div class="ttdeci">const EventType VONStartSpeakingEventTypeID</div><div class="ttdoc">params: VONStartSpeakingEventParams</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00536">gameplay.c:536</a></div></div>
+<div class="ttc" id="agameplay_8c_html_a73c2d0179d0219bd26b8aebe90a8412b"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#a73c2d0179d0219bd26b8aebe90a8412b">VONStateEventTypeID</a></div><div class="ttdeci">const EventType VONStateEventTypeID</div><div class="ttdoc">params: VONStateEventParams</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00534">gameplay.c:534</a></div></div>
+<div class="ttc" id="agameplay_8c_html_a7bc74cb4a67e391b039ba2aacbd3dc7c"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#a7bc74cb4a67e391b039ba2aacbd3dc7c">VONUserStoppedTransmittingAudioEventTypeID</a></div><div class="ttdeci">const EventType VONUserStoppedTransmittingAudioEventTypeID</div><div class="ttdoc">no params</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00542">gameplay.c:542</a></div></div>
+<div class="ttc" id="agameplay_8c_html_a84b655b45195bd5f006a40e0126dc5c2"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#a84b655b45195bd5f006a40e0126dc5c2">VONUserStartedTransmittingAudioEventTypeID</a></div><div class="ttdeci">const EventType VONUserStartedTransmittingAudioEventTypeID</div><div class="ttdoc">no params</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00540">gameplay.c:540</a></div></div>
+<div class="ttc" id="agameplay_8c_html_a8fadc0e7d58549b7e56e68c8b2a58ff0"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#a8fadc0e7d58549b7e56e68c8b2a58ff0">VONStopSpeakingEventTypeID</a></div><div class="ttdeci">const EventType VONStopSpeakingEventTypeID</div><div class="ttdoc">params: VONStopSpeakingEventParams</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00538">gameplay.c:538</a></div></div>
+<div class="ttc" id="agameplay_8c_html_ad568213105a423031ab98eed15c27f05"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#ad568213105a423031ab98eed15c27f05">MPSessionPlayerReadyEventTypeID</a></div><div class="ttdeci">const EventType MPSessionPlayerReadyEventTypeID</div><div class="ttdoc">no params</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00466">gameplay.c:466</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03530">GetDayZGame()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d0a/class_v_o_n_manager_base.html#a68f0dc2d1864c4d05af5b5ec8c26bb46">VONManagerBase::HideVoiceNotification()</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00285">VONManager::IsVoiceThresholdMinimum()</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00029">m_OnPartyChatChangedEvent</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00028">m_OnVonStateEvent</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00027">m_VoNToggled</a>, <a class="el" href="../../d9/d07/_display_status_8c_source.html#l00028">mission</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00466">MPSessionPlayerReadyEventTypeID</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00546">PartyChatStatusChangedEventTypeID</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00792">Mission::SetVoNActive()</a>, <a class="el" href="../../df/d0a/class_v_o_n_manager_base.html#a341f4b656a8d26205d61f07fa7ca7441">VONManagerBase::ShowVoiceNotification()</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00133">UpdateVoiceIcon()</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00536">VONStartSpeakingEventTypeID</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00534">VONStateEventTypeID</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00538">VONStopSpeakingEventTypeID</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00540">VONUserStartedTransmittingAudioEventTypeID</a>, and <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00542">VONUserStoppedTransmittingAudioEventTypeID</a>.</p>
 
 </div>
 </div>
@@ -311,6 +450,11 @@ Variables</h2></td></tr>
 <p>Fires every time VOIP threshold value changes. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00157">157</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  158</span>  {</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_function" href="#ad4bd4a3e0ea61afc51af2a5593f8c5b2">UpdateVoiceIcon</a>();</div>
+<div class="line"><span class="lineno">  160</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00133">UpdateVoiceIcon()</a>.</p>
 
 </div>
 </div>
@@ -351,6 +495,52 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00056">56</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  {</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMissionMainMenu())</div>
+<div class="line"><span class="lineno">   59</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_class" href="../../db/d0d/class_mission.html">Mission</a> <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission();</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ImageWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">micIcon</a> = <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.<a class="code hl_function" href="../../db/d0d/class_mission.html#ac3af46569c226ba777bfdc23a7d923b5">GetMicrophoneIcon</a>();</div>
+<div class="line"><span class="lineno">   63</span>    WidgetFadeTimer <a class="code hl_class" href="../../db/d06/class_param3.html">micTimer</a> = <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.<a class="code hl_function" href="../../db/d0d/class_mission.html#aaf153b4ae05b9c0e314cebcba6bb7829">GetMicWidgetFadeTimer</a>();</div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ImageWidget&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">voiceLeveWidgets</a> = <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.<a class="code hl_function" href="../../db/d0d/class_mission.html#aeecbe30a2d036feff246856a22d4d25f">GetVoiceLevelWidgets</a>();</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ref WidgetFadeTimer&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">voiceLevelTimers</a> = <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.<a class="code hl_function" href="../../db/d0d/class_mission.html#a42397839caaa08cbc6e1d25ec7b22452">GetVoiceLevelTimers</a>();</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">// microphone icon</span></div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">micTimer</a>.Stop();</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">micIcon</a>.SetAlpha(1.0);</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">micIcon</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">fading</a>)</div>
+<div class="line"><span class="lineno">   73</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">micTimer</a>.FadeOut(<a class="code hl_class" href="../../db/d06/class_param3.html">micIcon</a>, 3.0);</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="comment">// range icons</span></div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">n</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">n</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">voiceLeveWidgets</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">n</a>++)</div>
+<div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">voiceKey</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">voiceLeveWidgets</a>.GetKey(<a class="code hl_class" href="../../db/d06/class_param3.html">n</a>);</div>
+<div class="line"><span class="lineno">   79</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ImageWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">voiceWidget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">voiceLeveWidgets</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">n</a>);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>      <span class="comment">// stop fade timer since it will be refreshed</span></div>
+<div class="line"><span class="lineno">   82</span>      WidgetFadeTimer <a class="code hl_class" href="../../db/d06/class_param3.html">timer</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">voiceLevelTimers</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">n</a>);</div>
+<div class="line"><span class="lineno">   83</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">timer</a>.Stop();</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>      <span class="comment">// show widgets according to the level</span></div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">voiceKey</a> &lt;= <a class="code hl_class" href="../../db/d06/class_param3.html">level</a>)</div>
+<div class="line"><span class="lineno">   87</span>      {</div>
+<div class="line"><span class="lineno">   88</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">voiceWidget</a>.SetAlpha(1.0); <span class="comment">// reset from possible previous fade out</span></div>
+<div class="line"><span class="lineno">   89</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">voiceWidget</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">fading</a>)</div>
+<div class="line"><span class="lineno">   92</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">timer</a>.FadeOut(<a class="code hl_class" href="../../db/d06/class_param3.html">voiceWidget</a>, 3.0);</div>
+<div class="line"><span class="lineno">   93</span>      }</div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">voiceWidget</a>.Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span>  }</div>
+<div class="ttc" id="aclass_mission_html_a42397839caaa08cbc6e1d25ec7b22452"><div class="ttname"><a href="../../db/d0d/class_mission.html#a42397839caaa08cbc6e1d25ec7b22452">Mission::GetVoiceLevelTimers</a></div><div class="ttdeci">map&lt; int, ref WidgetFadeTimer &gt; GetVoiceLevelTimers()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00826">gameplay.c:826</a></div></div>
+<div class="ttc" id="aclass_mission_html_aaf153b4ae05b9c0e314cebcba6bb7829"><div class="ttname"><a href="../../db/d0d/class_mission.html#aaf153b4ae05b9c0e314cebcba6bb7829">Mission::GetMicWidgetFadeTimer</a></div><div class="ttdeci">WidgetFadeTimer GetMicWidgetFadeTimer()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00820">gameplay.c:820</a></div></div>
+<div class="ttc" id="aclass_mission_html_aeecbe30a2d036feff246856a22d4d25f"><div class="ttname"><a href="../../db/d0d/class_mission.html#aeecbe30a2d036feff246856a22d4d25f">Mission::GetVoiceLevelWidgets</a></div><div class="ttdeci">map&lt; int, ImageWidget &gt; GetVoiceLevelWidgets()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00824">gameplay.c:824</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00815">Mission::GetMicrophoneIcon()</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00820">Mission::GetMicWidgetFadeTimer()</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00826">Mission::GetVoiceLevelTimers()</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00824">Mission::GetVoiceLevelWidgets()</a>, and <a class="el" href="../../d9/d07/_display_status_8c_source.html#l00028">mission</a>.</p>
 
 </div>
 </div>
@@ -378,6 +568,30 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00133">133</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_class" href="../../db/d0d/class_mission.html">Mission</a> <a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission();</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">rangeLevel</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetVoiceLevel();</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d9/d07/_display_status_8c.html#ab3a3bb8e635420fd40ef3c99f863c5c8">mission</a>.<a class="code hl_function" href="../../db/d0d/class_mission.html#add17fa02f8a237dbb9187c181c8a2e02">IsVoNActive</a>())</div>
+<div class="line"><span class="lineno">  139</span>    {</div>
+<div class="line"><span class="lineno">  140</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2c5cb25959b007c55fdf7fac5ba548e5">m_VoNToggled</a>)</div>
+<div class="line"><span class="lineno">  141</span>      {</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d3/d0a/class_v_o_n_manager.html">VONManager</a>.<a class="code hl_function" href="../../d3/d0a/class_v_o_n_manager.html#ad1b1c96249c41ea555afba9b44be0a6d">IsVoiceThresholdMinimum</a>())</div>
+<div class="line"><span class="lineno">  143</span>          <a class="code hl_function" href="#aaeb0b3a998677a85fa9cf51a6d7cf42b">ShowVoiceNotification</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">rangeLevel</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  145</span>          <a class="code hl_function" href="#aaeb0b3a998677a85fa9cf51a6d7cf42b">ShowVoiceNotification</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">rangeLevel</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  146</span>      }</div>
+<div class="line"><span class="lineno">  147</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  148</span>        <a class="code hl_function" href="#aaeb0b3a998677a85fa9cf51a6d7cf42b">ShowVoiceNotification</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">rangeLevel</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  149</span>    }</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  151</span>      <a class="code hl_function" href="#a76338d8fdb3e62a99d0fb3ae1d4f6d90">HideVoiceNotification</a>();</div>
+<div class="line"><span class="lineno">  152</span>  }</div>
+<div class="ttc" id="aclass_mission_html_add17fa02f8a237dbb9187c181c8a2e02"><div class="ttname"><a href="../../db/d0d/class_mission.html#add17fa02f8a237dbb9187c181c8a2e02">Mission::IsVoNActive</a></div><div class="ttdeci">bool IsVoNActive()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00791">gameplay.c:791</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d0a/class_v_o_n_manager_base.html#a68f0dc2d1864c4d05af5b5ec8c26bb46">VONManagerBase::HideVoiceNotification()</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00285">VONManager::IsVoiceThresholdMinimum()</a>, <a class="el" href="../../d8/d08/gameplay_8c_source.html#l00791">Mission::IsVoNActive()</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00027">m_VoNToggled</a>, <a class="el" href="../../d9/d07/_display_status_8c_source.html#l00028">mission</a>, and <a class="el" href="../../df/d0a/class_v_o_n_manager_base.html#a341f4b656a8d26205d61f07fa7ca7441">VONManagerBase::ShowVoiceNotification()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00103">HandleInput()</a>, <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00167">OnEvent()</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00157">OnVOIPThresholdChanged()</a>.</p>
 
 </div>
 </div>
@@ -405,6 +619,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00031">31</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>  {</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="#a998564501492bf06e24b34e1897f0980">m_OnVonStateEvent</a>.Clear();</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00266">VONManager::CleanupInstance()</a>.</p>
 
 </div>
 </div>
@@ -424,6 +642,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00001">1</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>  {</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#a998564501492bf06e24b34e1897f0980">m_OnVonStateEvent</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0d/class_script_invoker.html">ScriptInvoker</a>();</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="#a49363d6c60687761be01fbb22cca5d9a">m_OnPartyChatChangedEvent</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0d/class_script_invoker.html">ScriptInvoker</a>();</div>
+<div class="line"><span class="lineno">   30</span>  }</div>
+<div class="ttc" id="aclass_script_invoker_html"><div class="ttname"><a href="../../d4/d0d/class_script_invoker.html">ScriptInvoker</a></div><div class="ttdoc">ScriptInvoker Class provide list of callbacks   usage:</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/2___game_lib_2tools_8c_source.html#l00115">tools.c:116</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00257">VONManager::Init()</a>.</p>
 
 </div>
 </div>
@@ -443,6 +668,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00032">32</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>  {</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="#a998564501492bf06e24b34e1897f0980">m_OnVonStateEvent</a>.Clear();</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="#a49363d6c60687761be01fbb22cca5d9a">m_OnPartyChatChangedEvent</a>.Clear();</div>
+<div class="line"><span class="lineno">   36</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00029">m_OnPartyChatChangedEvent</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00028">m_OnVonStateEvent</a>.</p>
 
 </div>
 </div>
@@ -469,6 +700,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00029">29</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00167">OnEvent()</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00032">~VONManagerImplementation()</a>.</p>
+
 </div>
 </div>
 <a id="a998564501492bf06e24b34e1897f0980" name="a998564501492bf06e24b34e1897f0980"></a>
@@ -493,6 +726,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00028">28</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00167">OnEvent()</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00032">~VONManagerImplementation()</a>.</p>
+
 </div>
 </div>
 <a id="a2c5cb25959b007c55fdf7fac5ba548e5" name="a2c5cb25959b007c55fdf7fac5ba548e5"></a>
@@ -516,6 +751,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00027">27</a> of file <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html">VONManager.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00167">OnEvent()</a>, and <a class="el" href="../../dd/d03/_v_o_n_manager_8c_source.html#l00133">UpdateVoiceIcon()</a>.</p>
 
 </div>
 </div>

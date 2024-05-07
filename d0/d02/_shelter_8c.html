@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -175,7 +172,146 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00113">113</a> of file <a class="el" href="../../d0/d02/_shelter_8c_source.html">Shelter.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
+<div class="line"><span class="lineno">  115</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a> = <span class="stringliteral">&quot;ShelterSite&quot;</span>;</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#afeb42335dd0df4c5d0113a0a9e6908b9">ShelterBase</a>()</div>
+<div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>    m_ShowAnimationsWhenPitched.Insert(<span class="stringliteral">&quot;Body&quot;</span>);</div>
+<div class="line"><span class="lineno">  120</span>    m_ShowAnimationsWhenPacked.Insert(<span class="stringliteral">&quot;Body&quot;</span>);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_variable" href="../../df/d04/_container___base_8c.html#a9e41f81c9147ef4376714c6c3cc1795b">m_HalfExtents</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0.8, 0.15, 1.3);</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aab4baa2626a77acb38c41286a3dac7b6">SetActions</a>()</div>
+<div class="line"><span class="lineno">  126</span>  {</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../d8/d04/class_action_toggle_place_object.html">ActionTogglePlaceObject</a>);</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../db/d0e/class_action_toggle_tent_open.html">ActionToggleTentOpen</a>);</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_function" href="../../dd/d00/_action_pack_tent_8c.html#abab4d644e31488cfcfce0d9b941efe02">ActionPackTent</a>);</div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(ActionDeployObject);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d6/d0e/class_action_deconstruct_shelter.html">ActionDeconstructShelter</a>);</div>
+<div class="line"><span class="lineno">  135</span>  }</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aaaebd4f39421efd8824a11a3d21e3d17">EEInit</a>()</div>
+<div class="line"><span class="lineno">  138</span>  {</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    TryPitch(<span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a7cdcc69423ecd9679aaca3f59be3d4eb">Deconstruct</a>()</div>
+<div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_class" href="../../d6/d08/class_static_construction_methods.html">StaticConstructionMethods</a>.<a class="code hl_function" href="../../d6/d08/class_static_construction_methods.html#a04e7985f478ee1fe7e086b573c9c5837">SpawnConstructionMaterialPiles</a>(<span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_function" href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a>(), <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>());</div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_function" href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a>();</div>
+<div class="line"><span class="lineno">  148</span>    Delete();</div>
+<div class="line"><span class="lineno">  149</span>  }</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a>()</div>
+<div class="line"><span class="lineno">  152</span>  {</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">return</span> <span class="keywordtype">string</span>.<a class="code hl_function" href="../../d5/d02/group___strings.html#gaec7e49a1dcfd0bc429834f29bc0d35c1">Format</a>(<span class="stringliteral">&quot;%1 %2 Construction site %3 Materials&quot;</span>, <a class="code hl_variable" href="../../d7/d0f/group___menu_i_d.html#ga4eefa6610d914e19744cb7e377171479">CFG_VEHICLESPATH</a>, <a class="code hl_variable" href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a>, <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>());</div>
+<div class="line"><span class="lineno">  154</span>  }</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  157</span>  {</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a>()</div>
+<div class="line"><span class="lineno">  162</span>  {</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">constructionKit</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;ShelterKit&quot;</span>, <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>(), <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>));</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">constructionKit</a>.SetHealth01(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, GetHealth01());</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a2686b9d03bc43044bc5553db18f4e8c2">IsPlayerInside</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keywordtype">string</span> selection)</div>
+<div class="line"><span class="lineno">  168</span>  {</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player_pos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetPosition();</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">shelter_pos</a> = <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>();</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a> = GetDirection();</div>
+<div class="line"><span class="lineno">  172</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>[1] = 0;</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>.Normalize();</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[2];</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a>;</div>
+<div class="line"><span class="lineno">  177</span>    GetCollisionBox(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>);</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[0];</div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[1];</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">shelter_pos</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">player_pos</a>;</div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>[1] = 0;</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">len</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.Length();</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.Normalize();</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir_angle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter_angle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">test_angles</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter_angle</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir_angle</a>;</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">test_angles</a>.AnglesToVector() * <a class="code hl_class" href="../../db/d06/class_param3.html">len</a>;</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[0] &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a>[0] || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[0] &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a>[0] || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[2] &lt; 0.2 || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[2] &gt; 2.2)</div>
+<div class="line"><span class="lineno">  194</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  196</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  197</span>  }</div>
+<div class="line"><span class="lineno">  198</span>}</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterFabric</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  201</span>{</div>
+<div class="line"><span class="lineno">  202</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  203</span>  {</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;fabric&quot;</span>;</div>
+<div class="line"><span class="lineno">  205</span>  }</div>
+<div class="line"><span class="lineno">  206</span>}</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterLeather</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  209</span>{</div>
+<div class="line"><span class="lineno">  210</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  211</span>  {</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;leather&quot;</span>;</div>
+<div class="line"><span class="lineno">  213</span>  }</div>
+<div class="line"><span class="lineno">  214</span>}</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterStick</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  217</span>{</div>
+<div class="line"><span class="lineno">  218</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  219</span>  {</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;stick&quot;</span>;</div>
+<div class="line"><span class="lineno">  221</span>  }</div>
+<div class="line"><span class="lineno">  222</span>}</div>
+<div class="ttc" id="a_action_pack_tent_8c_html_abab4d644e31488cfcfce0d9b941efe02"><div class="ttname"><a href="../../dd/d00/_action_pack_tent_8c.html#abab4d644e31488cfcfce0d9b941efe02">ActionPackTent</a></div><div class="ttdeci">ActionPackTentCB ActionContinuousBaseCB ActionPackTent()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d00/_action_pack_tent_8c_source.html#l00001">ActionPackTent.c:11</a></div></div>
+<div class="ttc" id="a_advanced_communication_8c_html_a033d077df58807906c4dad3101d8768c"><div class="ttname"><a href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a></div><div class="ttdeci">void AddAction(typename actionName)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AdvancedCommunication.c:212</a></div></div>
+<div class="ttc" id="a_advanced_communication_8c_html_a119172381c56c8bb0a629326e9998abd"><div class="ttname"><a href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a></div><div class="ttdeci">void RemoveAction(typename actionName)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_advanced_communication_8c_source.html#l00242">AdvancedCommunication.c:242</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_a4389063907bd8acede7114e3887d6102"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a></div><div class="ttdeci">const int ECE_PLACE_ON_SURFACE</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00037">CentralEconomy.c:37</a></div></div>
+<div class="ttc" id="a_container___base_8c_html_a9e41f81c9147ef4376714c6c3cc1795b"><div class="ttname"><a href="../../df/d04/_container___base_8c.html#a9e41f81c9147ef4376714c6c3cc1795b">m_HalfExtents</a></div><div class="ttdeci">Container_Base m_HalfExtents</div></div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="a_shelter_8c_html_a0f9f51fac301e1a2ad28858fa4a483f6"><div class="ttname"><a href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a></div><div class="ttdeci">class ShelterBase extends TentBase GetShelterVariant()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00001">Shelter.c:90</a></div></div>
+<div class="ttc" id="a_shelter_8c_html_a2686b9d03bc43044bc5553db18f4e8c2"><div class="ttname"><a href="#a2686b9d03bc43044bc5553db18f4e8c2">IsPlayerInside</a></div><div class="ttdeci">override bool IsPlayerInside(PlayerBase player, string selection)</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00143">Shelter.c:143</a></div></div>
+<div class="ttc" id="a_shelter_8c_html_a53c69ce34c42848264c74d634d749253"><div class="ttname"><a href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a></div><div class="ttdeci">static const string SITE_OBJECT_TYPE</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00091">Shelter.c:91</a></div></div>
+<div class="ttc" id="a_shelter_8c_html_a79b9c9dd79abc8f83fd947224dc68f48"><div class="ttname"><a href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a></div><div class="ttdeci">void SpawnKit()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00137">Shelter.c:137</a></div></div>
+<div class="ttc" id="a_shelter_8c_html_a7cdcc69423ecd9679aaca3f59be3d4eb"><div class="ttname"><a href="#a7cdcc69423ecd9679aaca3f59be3d4eb">Deconstruct</a></div><div class="ttdeci">void Deconstruct()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00120">Shelter.c:120</a></div></div>
+<div class="ttc" id="a_shelter_8c_html_aaaebd4f39421efd8824a11a3d21e3d17"><div class="ttname"><a href="#aaaebd4f39421efd8824a11a3d21e3d17">EEInit</a></div><div class="ttdeci">override void EEInit()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00113">Shelter.c:113</a></div></div>
+<div class="ttc" id="a_shelter_8c_html_aab4baa2626a77acb38c41286a3dac7b6"><div class="ttname"><a href="#aab4baa2626a77acb38c41286a3dac7b6">SetActions</a></div><div class="ttdeci">override void SetActions()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00101">Shelter.c:101</a></div></div>
+<div class="ttc" id="a_shelter_8c_html_ab07a0540e5c03b1e0983620dfd7bf26e"><div class="ttname"><a href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a></div><div class="ttdeci">string GetMaterialPath()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00127">Shelter.c:127</a></div></div>
+<div class="ttc" id="a_shelter_8c_html_afeb42335dd0df4c5d0113a0a9e6908b9"><div class="ttname"><a href="#afeb42335dd0df4c5d0113a0a9e6908b9">ShelterBase</a></div><div class="ttdeci">void ShelterBase()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00093">Shelter.c:93</a></div></div>
+<div class="ttc" id="a_underground_area_loader_8c_html_af4b5180d61f839c99de2d15fdcda4568"><div class="ttname"><a href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a></div><div class="ttdeci">class JsonUndergroundAreaTriggerData GetPosition</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0a/_underground_area_loader_8c_source.html#l00001">UndergroundAreaLoader.c:9</a></div></div>
+<div class="ttc" id="aclass_action_deconstruct_shelter_html"><div class="ttname"><a href="../../d6/d0e/class_action_deconstruct_shelter.html">ActionDeconstructShelter</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d00/_action_pack_shelter_8c_source.html#l00001">ActionPackShelter.c:2</a></div></div>
+<div class="ttc" id="aclass_action_toggle_place_object_html"><div class="ttname"><a href="../../d8/d04/class_action_toggle_place_object.html">ActionTogglePlaceObject</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0f/_action_toggle_place_object_8c_source.html#l00001">ActionTogglePlaceObject.c:2</a></div></div>
+<div class="ttc" id="aclass_action_toggle_tent_open_html"><div class="ttname"><a href="../../db/d0e/class_action_toggle_tent_open.html">ActionToggleTentOpen</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0e/_action_toggle_tent_open_8c_source.html#l00001">ActionToggleTentOpen.c:2</a></div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+<div class="ttc" id="aclass_shelter_base_html"><div class="ttname"><a href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_shelter_8c_source.html#l00096">Shelter.c:97</a></div></div>
+<div class="ttc" id="aclass_static_construction_methods_html"><div class="ttname"><a href="../../d6/d08/class_static_construction_methods.html">StaticConstructionMethods</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d00/_construction_8c_source.html#l01148">Construction.c:1149</a></div></div>
+<div class="ttc" id="aclass_static_construction_methods_html_a04e7985f478ee1fe7e086b573c9c5837"><div class="ttname"><a href="../../d6/d08/class_static_construction_methods.html#a04e7985f478ee1fe7e086b573c9c5837">StaticConstructionMethods::SpawnConstructionMaterialPiles</a></div><div class="ttdeci">static void SpawnConstructionMaterialPiles(notnull EntityAI entity, Man player, string cfg_path, string main_part_name, string damagezone_name=&quot;&quot;, bool is_base=false)</div><div class="ttdoc">spawns material from any construction; 'player' parameter optional</div><div class="ttdef"><b>Definition</b> <a href="../../de/d00/_construction_8c_source.html#l01151">Construction.c:1151</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga5bd1deb1c96276d94eeec6fe40955c41"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a></div><div class="ttdeci">proto native vector Vector(float x, float y, float z)</div><div class="ttdoc">Vector constructor from components.</div></div>
+<div class="ttc" id="agroup___menu_i_d_html_ga4eefa6610d914e19744cb7e377171479"><div class="ttname"><a href="../../d7/d0f/group___menu_i_d.html#ga4eefa6610d914e19744cb7e377171479">CFG_VEHICLESPATH</a></div><div class="ttdeci">const string CFG_VEHICLESPATH</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00209">constants.c:209</a></div></div>
+<div class="ttc" id="agroup___strings_html_gaec7e49a1dcfd0bc429834f29bc0d35c1"><div class="ttname"><a href="../../d5/d02/group___strings.html#gaec7e49a1dcfd0bc429834f29bc0d35c1">string::Format</a></div><div class="ttdeci">static proto string Format(string fmt, void param1=NULL, void param2=NULL, void param3=NULL, void param4=NULL, void param5=NULL, void param6=NULL, void param7=NULL, void param8=NULL, void param9=NULL)</div><div class="ttdoc">Gets n-th character from string.</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab07a0540e5c03b1e0983620dfd7bf26e" name="ab07a0540e5c03b1e0983620dfd7bf26e"></a>
@@ -194,6 +330,117 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00127">127</a> of file <a class="el" href="../../d0/d02/_shelter_8c_source.html">Shelter.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>{</div>
+<div class="line"><span class="lineno">  129</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a> = <span class="stringliteral">&quot;ShelterSite&quot;</span>;</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#afeb42335dd0df4c5d0113a0a9e6908b9">ShelterBase</a>()</div>
+<div class="line"><span class="lineno">  132</span>  {</div>
+<div class="line"><span class="lineno">  133</span>    m_ShowAnimationsWhenPitched.Insert(<span class="stringliteral">&quot;Body&quot;</span>);</div>
+<div class="line"><span class="lineno">  134</span>    m_ShowAnimationsWhenPacked.Insert(<span class="stringliteral">&quot;Body&quot;</span>);</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="../../df/d04/_container___base_8c.html#a9e41f81c9147ef4376714c6c3cc1795b">m_HalfExtents</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0.8, 0.15, 1.3);</div>
+<div class="line"><span class="lineno">  137</span>  }</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aab4baa2626a77acb38c41286a3dac7b6">SetActions</a>()</div>
+<div class="line"><span class="lineno">  140</span>  {</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../d8/d04/class_action_toggle_place_object.html">ActionTogglePlaceObject</a>);</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../db/d0e/class_action_toggle_tent_open.html">ActionToggleTentOpen</a>);</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_function" href="../../dd/d00/_action_pack_tent_8c.html#abab4d644e31488cfcfce0d9b941efe02">ActionPackTent</a>);</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(ActionDeployObject);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d6/d0e/class_action_deconstruct_shelter.html">ActionDeconstructShelter</a>);</div>
+<div class="line"><span class="lineno">  149</span>  }</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aaaebd4f39421efd8824a11a3d21e3d17">EEInit</a>()</div>
+<div class="line"><span class="lineno">  152</span>  {</div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    TryPitch(<span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  156</span>  }</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a7cdcc69423ecd9679aaca3f59be3d4eb">Deconstruct</a>()</div>
+<div class="line"><span class="lineno">  159</span>  {</div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_class" href="../../d6/d08/class_static_construction_methods.html">StaticConstructionMethods</a>.<a class="code hl_function" href="../../d6/d08/class_static_construction_methods.html#a04e7985f478ee1fe7e086b573c9c5837">SpawnConstructionMaterialPiles</a>(<span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_function" href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a>(), <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>());</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_function" href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a>();</div>
+<div class="line"><span class="lineno">  162</span>    Delete();</div>
+<div class="line"><span class="lineno">  163</span>  }</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a>()</div>
+<div class="line"><span class="lineno">  166</span>  {</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">return</span> <span class="keywordtype">string</span>.<a class="code hl_function" href="../../d5/d02/group___strings.html#gaec7e49a1dcfd0bc429834f29bc0d35c1">Format</a>(<span class="stringliteral">&quot;%1 %2 Construction site %3 Materials&quot;</span>, <a class="code hl_variable" href="../../d7/d0f/group___menu_i_d.html#ga4eefa6610d914e19744cb7e377171479">CFG_VEHICLESPATH</a>, <a class="code hl_variable" href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a>, <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>());</div>
+<div class="line"><span class="lineno">  168</span>  }</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  171</span>  {</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a>()</div>
+<div class="line"><span class="lineno">  176</span>  {</div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">constructionKit</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;ShelterKit&quot;</span>, <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>(), <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>));</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">constructionKit</a>.SetHealth01(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, GetHealth01());</div>
+<div class="line"><span class="lineno">  179</span>  }</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a2686b9d03bc43044bc5553db18f4e8c2">IsPlayerInside</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keywordtype">string</span> selection)</div>
+<div class="line"><span class="lineno">  182</span>  {</div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player_pos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetPosition();</div>
+<div class="line"><span class="lineno">  184</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">shelter_pos</a> = <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>();</div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a> = GetDirection();</div>
+<div class="line"><span class="lineno">  186</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>[1] = 0;</div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>.Normalize();</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[2];</div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a>;</div>
+<div class="line"><span class="lineno">  191</span>    GetCollisionBox(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>);</div>
+<div class="line"><span class="lineno">  192</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[0];</div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[1];</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">shelter_pos</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">player_pos</a>;</div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>[1] = 0;</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">len</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.Length();</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.Normalize();</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir_angle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter_angle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">test_angles</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter_angle</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir_angle</a>;</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">test_angles</a>.AnglesToVector() * <a class="code hl_class" href="../../db/d06/class_param3.html">len</a>;</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[0] &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a>[0] || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[0] &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a>[0] || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[2] &lt; 0.2 || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[2] &gt; 2.2)</div>
+<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  210</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="line"><span class="lineno">  212</span>}</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterFabric</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  215</span>{</div>
+<div class="line"><span class="lineno">  216</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  217</span>  {</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;fabric&quot;</span>;</div>
+<div class="line"><span class="lineno">  219</span>  }</div>
+<div class="line"><span class="lineno">  220</span>}</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterLeather</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  223</span>{</div>
+<div class="line"><span class="lineno">  224</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  225</span>  {</div>
+<div class="line"><span class="lineno">  226</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;leather&quot;</span>;</div>
+<div class="line"><span class="lineno">  227</span>  }</div>
+<div class="line"><span class="lineno">  228</span>}</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterStick</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  231</span>{</div>
+<div class="line"><span class="lineno">  232</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  233</span>  {</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;stick&quot;</span>;</div>
+<div class="line"><span class="lineno">  235</span>  }</div>
+<div class="line"><span class="lineno">  236</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00032">TentBase::Deconstruct()</a>.</p>
 
 </div>
 </div>
@@ -213,7 +460,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00001">1</a> of file <a class="el" href="../../d0/d02/_shelter_8c_source.html">Shelter.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   91</span>  {</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;fabric&quot;</span>;</div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2686b9d03bc43044bc5553db18f4e8c2" name="a2686b9d03bc43044bc5553db18f4e8c2"></a>
@@ -236,7 +486,116 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00143">143</a> of file <a class="el" href="../../d0/d02/_shelter_8c_source.html">Shelter.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  144</span>{</div>
+<div class="line"><span class="lineno">  145</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a> = <span class="stringliteral">&quot;ShelterSite&quot;</span>;</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#afeb42335dd0df4c5d0113a0a9e6908b9">ShelterBase</a>()</div>
+<div class="line"><span class="lineno">  148</span>  {</div>
+<div class="line"><span class="lineno">  149</span>    m_ShowAnimationsWhenPitched.Insert(<span class="stringliteral">&quot;Body&quot;</span>);</div>
+<div class="line"><span class="lineno">  150</span>    m_ShowAnimationsWhenPacked.Insert(<span class="stringliteral">&quot;Body&quot;</span>);</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    <a class="code hl_variable" href="../../df/d04/_container___base_8c.html#a9e41f81c9147ef4376714c6c3cc1795b">m_HalfExtents</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0.8, 0.15, 1.3);</div>
+<div class="line"><span class="lineno">  153</span>  }</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aab4baa2626a77acb38c41286a3dac7b6">SetActions</a>()</div>
+<div class="line"><span class="lineno">  156</span>  {</div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../d8/d04/class_action_toggle_place_object.html">ActionTogglePlaceObject</a>);</div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../db/d0e/class_action_toggle_tent_open.html">ActionToggleTentOpen</a>);</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_function" href="../../dd/d00/_action_pack_tent_8c.html#abab4d644e31488cfcfce0d9b941efe02">ActionPackTent</a>);</div>
+<div class="line"><span class="lineno">  162</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(ActionDeployObject);</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d6/d0e/class_action_deconstruct_shelter.html">ActionDeconstructShelter</a>);</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aaaebd4f39421efd8824a11a3d21e3d17">EEInit</a>()</div>
+<div class="line"><span class="lineno">  168</span>  {</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    TryPitch(<span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  172</span>  }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a7cdcc69423ecd9679aaca3f59be3d4eb">Deconstruct</a>()</div>
+<div class="line"><span class="lineno">  175</span>  {</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_class" href="../../d6/d08/class_static_construction_methods.html">StaticConstructionMethods</a>.<a class="code hl_function" href="../../d6/d08/class_static_construction_methods.html#a04e7985f478ee1fe7e086b573c9c5837">SpawnConstructionMaterialPiles</a>(<span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_function" href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a>(), <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>());</div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_function" href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a>();</div>
+<div class="line"><span class="lineno">  178</span>    Delete();</div>
+<div class="line"><span class="lineno">  179</span>  }</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a>()</div>
+<div class="line"><span class="lineno">  182</span>  {</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">return</span> <span class="keywordtype">string</span>.<a class="code hl_function" href="../../d5/d02/group___strings.html#gaec7e49a1dcfd0bc429834f29bc0d35c1">Format</a>(<span class="stringliteral">&quot;%1 %2 Construction site %3 Materials&quot;</span>, <a class="code hl_variable" href="../../d7/d0f/group___menu_i_d.html#ga4eefa6610d914e19744cb7e377171479">CFG_VEHICLESPATH</a>, <a class="code hl_variable" href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a>, <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>());</div>
+<div class="line"><span class="lineno">  184</span>  }</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  187</span>  {</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  189</span>  }</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a>()</div>
+<div class="line"><span class="lineno">  192</span>  {</div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">constructionKit</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;ShelterKit&quot;</span>, <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>(), <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>));</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">constructionKit</a>.SetHealth01(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, GetHealth01());</div>
+<div class="line"><span class="lineno">  195</span>  }</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a2686b9d03bc43044bc5553db18f4e8c2">IsPlayerInside</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keywordtype">string</span> selection)</div>
+<div class="line"><span class="lineno">  198</span>  {</div>
+<div class="line"><span class="lineno">  199</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player_pos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetPosition();</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">shelter_pos</a> = <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>();</div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a> = GetDirection();</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>[1] = 0;</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>.Normalize();</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[2];</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a>;</div>
+<div class="line"><span class="lineno">  207</span>    GetCollisionBox(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>);</div>
+<div class="line"><span class="lineno">  208</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[0];</div>
+<div class="line"><span class="lineno">  209</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[1];</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">shelter_pos</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">player_pos</a>;</div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>[1] = 0;</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">len</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.Length();</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.Normalize();</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir_angle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter_angle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  219</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">test_angles</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter_angle</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir_angle</a>;</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">test_angles</a>.AnglesToVector() * <a class="code hl_class" href="../../db/d06/class_param3.html">len</a>;</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[0] &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a>[0] || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[0] &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a>[0] || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[2] &lt; 0.2 || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[2] &gt; 2.2)</div>
+<div class="line"><span class="lineno">  224</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  226</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  227</span>  }</div>
+<div class="line"><span class="lineno">  228</span>}</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterFabric</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  231</span>{</div>
+<div class="line"><span class="lineno">  232</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  233</span>  {</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;fabric&quot;</span>;</div>
+<div class="line"><span class="lineno">  235</span>  }</div>
+<div class="line"><span class="lineno">  236</span>}</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterLeather</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  239</span>{</div>
+<div class="line"><span class="lineno">  240</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  241</span>  {</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;leather&quot;</span>;</div>
+<div class="line"><span class="lineno">  243</span>  }</div>
+<div class="line"><span class="lineno">  244</span>}</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterStick</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  247</span>{</div>
+<div class="line"><span class="lineno">  248</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  249</span>  {</div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;stick&quot;</span>;</div>
+<div class="line"><span class="lineno">  251</span>  }</div>
+<div class="line"><span class="lineno">  252</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aab4baa2626a77acb38c41286a3dac7b6" name="aab4baa2626a77acb38c41286a3dac7b6"></a>
@@ -255,7 +614,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00101">101</a> of file <a class="el" href="../../d0/d02/_shelter_8c_source.html">Shelter.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  107</span>  {</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;stick&quot;</span>;</div>
+<div class="line"><span class="lineno">  109</span>  }</div>
+<div class="line"><span class="lineno">  110</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afeb42335dd0df4c5d0113a0a9e6908b9" name="afeb42335dd0df4c5d0113a0a9e6908b9"></a>
@@ -274,7 +639,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00093">93</a> of file <a class="el" href="../../d0/d02/_shelter_8c_source.html">Shelter.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   97</span>{</div>
+<div class="line"><span class="lineno">   98</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">   99</span>  {</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a79b9c9dd79abc8f83fd947224dc68f48" name="a79b9c9dd79abc8f83fd947224dc68f48"></a>
@@ -293,6 +661,117 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00137">137</a> of file <a class="el" href="../../d0/d02/_shelter_8c_source.html">Shelter.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>{</div>
+<div class="line"><span class="lineno">  139</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code hl_variable" href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a> = <span class="stringliteral">&quot;ShelterSite&quot;</span>;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#afeb42335dd0df4c5d0113a0a9e6908b9">ShelterBase</a>()</div>
+<div class="line"><span class="lineno">  142</span>  {</div>
+<div class="line"><span class="lineno">  143</span>    m_ShowAnimationsWhenPitched.Insert(<span class="stringliteral">&quot;Body&quot;</span>);</div>
+<div class="line"><span class="lineno">  144</span>    m_ShowAnimationsWhenPacked.Insert(<span class="stringliteral">&quot;Body&quot;</span>);</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="../../df/d04/_container___base_8c.html#a9e41f81c9147ef4376714c6c3cc1795b">m_HalfExtents</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0.8, 0.15, 1.3);</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aab4baa2626a77acb38c41286a3dac7b6">SetActions</a>()</div>
+<div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../d8/d04/class_action_toggle_place_object.html">ActionTogglePlaceObject</a>);</div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_class" href="../../db/d0e/class_action_toggle_tent_open.html">ActionToggleTentOpen</a>);</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(<a class="code hl_function" href="../../dd/d00/_action_pack_tent_8c.html#abab4d644e31488cfcfce0d9b941efe02">ActionPackTent</a>);</div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a119172381c56c8bb0a629326e9998abd">RemoveAction</a>(ActionDeployObject);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d6/d0e/class_action_deconstruct_shelter.html">ActionDeconstructShelter</a>);</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aaaebd4f39421efd8824a11a3d21e3d17">EEInit</a>()</div>
+<div class="line"><span class="lineno">  162</span>  {</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>    TryPitch(<span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  166</span>  }</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a7cdcc69423ecd9679aaca3f59be3d4eb">Deconstruct</a>()</div>
+<div class="line"><span class="lineno">  169</span>  {</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_class" href="../../d6/d08/class_static_construction_methods.html">StaticConstructionMethods</a>.<a class="code hl_function" href="../../d6/d08/class_static_construction_methods.html#a04e7985f478ee1fe7e086b573c9c5837">SpawnConstructionMaterialPiles</a>(<span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_function" href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a>(), <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>());</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_function" href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a>();</div>
+<div class="line"><span class="lineno">  172</span>    Delete();</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#ab07a0540e5c03b1e0983620dfd7bf26e">GetMaterialPath</a>()</div>
+<div class="line"><span class="lineno">  176</span>  {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">return</span> <span class="keywordtype">string</span>.<a class="code hl_function" href="../../d5/d02/group___strings.html#gaec7e49a1dcfd0bc429834f29bc0d35c1">Format</a>(<span class="stringliteral">&quot;%1 %2 Construction site %3 Materials&quot;</span>, <a class="code hl_variable" href="../../d7/d0f/group___menu_i_d.html#ga4eefa6610d914e19744cb7e377171479">CFG_VEHICLESPATH</a>, <a class="code hl_variable" href="#a53c69ce34c42848264c74d634d749253">SITE_OBJECT_TYPE</a>, <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>());</div>
+<div class="line"><span class="lineno">  178</span>  }</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  181</span>  {</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a79b9c9dd79abc8f83fd947224dc68f48">SpawnKit</a>()</div>
+<div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">constructionKit</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;ShelterKit&quot;</span>, <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>(), <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>));</div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">constructionKit</a>.SetHealth01(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, GetHealth01());</div>
+<div class="line"><span class="lineno">  189</span>  }</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a2686b9d03bc43044bc5553db18f4e8c2">IsPlayerInside</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keywordtype">string</span> selection)</div>
+<div class="line"><span class="lineno">  192</span>  {</div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player_pos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetPosition();</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">shelter_pos</a> = <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>();</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a> = GetDirection();</div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>[1] = 0;</div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>.Normalize();</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[2];</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a>;</div>
+<div class="line"><span class="lineno">  201</span>    GetCollisionBox(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>);</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[0];</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a> = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>[1];</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">shelter_pos</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">player_pos</a>;</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>[1] = 0;</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">len</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.Length();</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.Normalize();</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir_angle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter_angle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">test_angles</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">dir_to_shelter_angle</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">ref_dir_angle</a>;</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">test_angles</a>.AnglesToVector() * <a class="code hl_class" href="../../db/d06/class_param3.html">len</a>;</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[0] &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">b1</a>[0] || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[0] &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">b2</a>[0] || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[2] &lt; 0.2 || <a class="code hl_class" href="../../db/d06/class_param3.html">test_position</a>[2] &gt; 2.2)</div>
+<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  220</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  221</span>  }</div>
+<div class="line"><span class="lineno">  222</span>}</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterFabric</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  225</span>{</div>
+<div class="line"><span class="lineno">  226</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  227</span>  {</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;fabric&quot;</span>;</div>
+<div class="line"><span class="lineno">  229</span>  }</div>
+<div class="line"><span class="lineno">  230</span>}</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterLeather</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  233</span>{</div>
+<div class="line"><span class="lineno">  234</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  235</span>  {</div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;leather&quot;</span>;</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+<div class="line"><span class="lineno">  238</span>}</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ShelterStick</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../dc/d0b/class_shelter_base.html">ShelterBase</a></div>
+<div class="line"><span class="lineno">  241</span>{</div>
+<div class="line"><span class="lineno">  242</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a0f9f51fac301e1a2ad28858fa4a483f6">GetShelterVariant</a>()</div>
+<div class="line"><span class="lineno">  243</span>  {</div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;stick&quot;</span>;</div>
+<div class="line"><span class="lineno">  245</span>  }</div>
+<div class="line"><span class="lineno">  246</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00032">TentBase::Deconstruct()</a>.</p>
 
 </div>
 </div>
@@ -318,6 +797,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00091">91</a> of file <a class="el" href="../../d0/d02/_shelter_8c_source.html">Shelter.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_shelter_8c_source.html#l00039">TentBase::GetMaterialPath()</a>.</p>
 
 </div>
 </div>

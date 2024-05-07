@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -142,6 +139,36 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_weapon_fire_8c_source.html#l00098">98</a> of file <a class="el" href="../../d5/d0b/_weapon_fire_8c_source.html">WeaponFire.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="../../d5/d0b/_weapon_fire_8c.html#a126e3ea2e23a8fededbff9547ad0ccb4">m_dtAccumulator</a> = 0;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">IsWeaponLogEnable</a>()) <a class="code hl_function" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#a40adfc1e22a9b751658055847f9c4b83">wpnPrint</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; WeaponFire bang!&quot;</span>);</div>
+<div class="line"><span class="lineno">  103</span>    <span class="comment">//m_weapon.Fire();</span></div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mi</a> = <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.GetCurrentMuzzle();</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../da/d0c/_weapon_inventory_8c.html#aa701e596d258eef69f6ff0e6d6543ec1">TryFireWeapon</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>))</div>
+<div class="line"><span class="lineno">  106</span>    {</div>
+<div class="line"><span class="lineno">  107</span>      <a class="code hl_class" href="../../d3/d05/class_day_z_player_implement.html">DayZPlayerImplement</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>;</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">p</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_player))</div>
+<div class="line"><span class="lineno">  109</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.GetAimingModel().SetRecoil(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>);</div>
+<div class="line"><span class="lineno">  110</span>      <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.EjectCasing(<a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  111</span>      <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.EffectBulletHide(<a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  112</span>      <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.OnFire(<a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="ttc" id="a4___world_2_entities_2_firearms_2_debug_8c_html_a40adfc1e22a9b751658055847f9c4b83"><div class="ttname"><a href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#a40adfc1e22a9b751658055847f9c4b83">wpnPrint</a></div><div class="ttdeci">void wpnPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c_source.html#l00001">Debug.c:1</a></div></div>
+<div class="ttc" id="a_guards_8c_html_a0bae26f5106cf38f652c51861f0f8948"><div class="ttname"><a href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a></div><div class="ttdeci">class WeaponGuardIsDestroyed extends WeaponGuardBase m_weapon</div><div class="ttdef"><b>Definition</b> <a href="../../de/d03/_guards_8c_source.html#l00602">Guards.c:602</a></div></div>
+<div class="ttc" id="a_weapon_fire_8c_html_a126e3ea2e23a8fededbff9547ad0ccb4"><div class="ttname"><a href="../../d5/d0b/_weapon_fire_8c.html#a126e3ea2e23a8fededbff9547ad0ccb4">m_dtAccumulator</a></div><div class="ttdeci">class WeaponFireWithEject extends WeaponFire m_dtAccumulator</div></div>
+<div class="ttc" id="a_weapon_inventory_8c_html_aa701e596d258eef69f6ff0e6d6543ec1"><div class="ttname"><a href="../../da/d0c/_weapon_inventory_8c.html#aa701e596d258eef69f6ff0e6d6543ec1">TryFireWeapon</a></div><div class="ttdeci">proto native bool TryFireWeapon(EntityAI weapon, int muzzleIndex)</div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_html"><div class="ttname"><a href="../../d3/d05/class_day_z_player_implement.html">DayZPlayerImplement</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0e/_man_base_8c_source.html#l00001">ManBase.c:2</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a1936dba0ee4da1a581859d6603178326"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">LogManager::IsWeaponLogEnable</a></div><div class="ttdeci">static bool IsWeaponLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00799">Debug.c:799</a></div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00799">LogManager::IsWeaponLogEnable()</a>, <a class="el" href="../../d5/d0b/_weapon_fire_8c.html#a126e3ea2e23a8fededbff9547ad0ccb4">m_dtAccumulator</a>, <a class="el" href="../../de/d03/_guards_8c_source.html#l00602">m_weapon</a>, <a class="el" href="../../da/d0c/_weapon_inventory_8c.html#aa701e596d258eef69f6ff0e6d6543ec1">TryFireWeapon()</a>, and <a class="el" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c_source.html#l00001">wpnPrint()</a>.</p>
 
 </div>
 </div>
@@ -169,6 +196,26 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_weapon_fire_8c_source.html#l00314">314</a> of file <a class="el" href="../../d5/d0b/_weapon_fire_8c_source.html">WeaponFire.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  315</span>  {</div>
+<div class="line"><span class="lineno">  316</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>)</div>
+<div class="line"><span class="lineno">  318</span>    {</div>
+<div class="line"><span class="lineno">  319</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.IsJammed())</div>
+<div class="line"><span class="lineno">  320</span>      {</div>
+<div class="line"><span class="lineno">  321</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">IsWeaponLogEnable</a>()) <a class="code hl_function" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#afa33033805ea8cbc9b91ae2d002ffcd7">wpnDebugPrint</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ejected fired out casing&quot;</span>);</div>
+<div class="line"><span class="lineno">  322</span>        <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mi</a> = <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.GetCurrentMuzzle();</div>
+<div class="line"><span class="lineno">  323</span>        <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.EjectCasing(<a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  324</span>        <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.EffectBulletHide(<a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  325</span>        <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.SelectionBulletHide();</div>
+<div class="line"><span class="lineno">  326</span> </div>
+<div class="line"><span class="lineno">  327</span>        <a class="code hl_function" href="../../d5/d04/weapon__utils_8c.html#a74f42313b991e8c2b3128abc54646bfc">pushToChamberFromAttachedMagazine</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  328</span>      }</div>
+<div class="line"><span class="lineno">  329</span>    }</div>
+<div class="line"><span class="lineno">  330</span>  }</div>
+<div class="ttc" id="a4___world_2_entities_2_firearms_2_debug_8c_html_afa33033805ea8cbc9b91ae2d002ffcd7"><div class="ttname"><a href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#afa33033805ea8cbc9b91ae2d002ffcd7">wpnDebugPrint</a></div><div class="ttdeci">void wpnDebugPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c_source.html#l00009">Debug.c:9</a></div></div>
+<div class="ttc" id="aweapon__utils_8c_html_a74f42313b991e8c2b3128abc54646bfc"><div class="ttname"><a href="../../d5/d04/weapon__utils_8c.html#a74f42313b991e8c2b3128abc54646bfc">pushToChamberFromAttachedMagazine</a></div><div class="ttdeci">bool pushToChamberFromAttachedMagazine(Weapon_Base weapon, int muzzleIndex)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/weapon__utils_8c_source.html#l00001">weapon_utils.c:1</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00799">LogManager::IsWeaponLogEnable()</a>, <a class="el" href="../../de/d03/_guards_8c_source.html#l00602">m_weapon</a>, <a class="el" href="../../d5/d04/weapon__utils_8c_source.html#l00001">pushToChamberFromAttachedMagazine()</a>, and <a class="el" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c_source.html#l00009">wpnDebugPrint()</a>.</p>
 
 </div>
 </div>
@@ -196,6 +243,23 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_weapon_fire_8c_source.html#l00335">335</a> of file <a class="el" href="../../d5/d0b/_weapon_fire_8c_source.html">WeaponFire.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  336</span>  {</div>
+<div class="line"><span class="lineno">  337</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  338</span> </div>
+<div class="line"><span class="lineno">  339</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.IsJammed())</div>
+<div class="line"><span class="lineno">  340</span>    {</div>
+<div class="line"><span class="lineno">  341</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">IsWeaponLogEnable</a>()) <a class="code hl_function" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#afa33033805ea8cbc9b91ae2d002ffcd7">wpnDebugPrint</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ejected fired out casing&quot;</span>);</div>
+<div class="line"><span class="lineno">  342</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mi</a> = <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.GetCurrentMuzzle();</div>
+<div class="line"><span class="lineno">  343</span>      <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.EjectCasing(<a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  344</span>      <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.EffectBulletHide(<a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  345</span>      <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.SelectionBulletHide();</div>
+<div class="line"><span class="lineno">  346</span> </div>
+<div class="line"><span class="lineno">  347</span>      <a class="code hl_function" href="../../d5/d04/weapon__utils_8c.html#a04d056bc1c397d13bb47b46ab4d31766">pushToChamberFromInnerMagazine</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mi</a>);</div>
+<div class="line"><span class="lineno">  348</span>    }</div>
+<div class="line"><span class="lineno">  349</span>  }</div>
+<div class="ttc" id="aweapon__utils_8c_html_a04d056bc1c397d13bb47b46ab4d31766"><div class="ttname"><a href="../../d5/d04/weapon__utils_8c.html#a04d056bc1c397d13bb47b46ab4d31766">pushToChamberFromInnerMagazine</a></div><div class="ttdeci">bool pushToChamberFromInnerMagazine(Weapon_Base weapon, int muzzleIndex)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/weapon__utils_8c_source.html#l00033">weapon_utils.c:33</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00799">LogManager::IsWeaponLogEnable()</a>, <a class="el" href="../../de/d03/_guards_8c_source.html#l00602">m_weapon</a>, <a class="el" href="../../d5/d04/weapon__utils_8c_source.html#l00033">pushToChamberFromInnerMagazine()</a>, and <a class="el" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c_source.html#l00009">wpnDebugPrint()</a>.</p>
 
 </div>
 </div>

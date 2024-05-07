@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -161,7 +158,24 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html#l00039">39</a> of file <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html">ActionTuneFrequency.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   40</span>  {</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsTransmitter())</div>
+<div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>      <a class="code hl_class" href="../../d0/d0b/class_transmitter_base.html">TransmitterBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">transmitter</a> = <a class="code hl_class" href="../../d0/d0b/class_transmitter_base.html">TransmitterBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">transmitter</a>.GetCompEM().IsWorking())</div>
+<div class="line"><span class="lineno">   46</span>      {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="comment">//transmitter.DisplayRadioInfo( transmitter.GetTunedFrequency().ToString(), player );</span></div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   50</span>      }</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_transmitter_base_html"><div class="ttname"><a href="../../d0/d0b/class_transmitter_base.html">TransmitterBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_base_radio_8c_source.html#l00001">BaseRadio.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a994f0d0ff7b7afa1f6134e102a723d9a" name="a994f0d0ff7b7afa1f6134e102a723d9a"></a>
@@ -180,6 +194,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html#l00001">1</a> of file <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html">ActionTuneFrequency.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    m_CallbackClass = <a class="code hl_class" href="../../d6/d0e/class_action_tune_frequency_c_b.html">ActionTuneFrequencyCB</a>;</div>
+<div class="line"><span class="lineno">   16</span>    m_CommandUID = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONMOD_ITEM_TUNE;</div>
+<div class="line"><span class="lineno">   17</span>    m_CommandUIDProne = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONFB_ITEM_TUNE;</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a7ac795d34da2b1289e6ba3122c804ac3">m_SpecialtyWeight</a> = <a class="code hl_class" href="../../d0/d0d/class_u_a_soft_skills_weight.html">UASoftSkillsWeight</a>.<a class="code hl_variable" href="../../d0/d0d/class_u_a_soft_skills_weight.html#a123369fe4d5de03cd63e4a047eb71f3b">ROUGH_LOW</a>;</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a> = <span class="stringliteral">&quot;#tune_frequency&quot;</span>;</div>
+<div class="line"><span class="lineno">   21</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a11fc80cdcb775f018854049236528029"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a></div><div class="ttdeci">string m_Text</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00049">ActionBase.c:49</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_a7ac795d34da2b1289e6ba3122c804ac3"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a7ac795d34da2b1289e6ba3122c804ac3">m_SpecialtyWeight</a></div><div class="ttdeci">float m_SpecialtyWeight</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00068">ActionBase.c:68</a></div></div>
+<div class="ttc" id="aclass_action_tune_frequency_c_b_html"><div class="ttname"><a href="../../d6/d0e/class_action_tune_frequency_c_b.html">ActionTuneFrequencyCB</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_action_tune_frequency_8c_source.html#l00001">ActionTuneFrequency.c:2</a></div></div>
+<div class="ttc" id="aclass_u_a_soft_skills_weight_html"><div class="ttname"><a href="../../d0/d0d/class_u_a_soft_skills_weight.html">UASoftSkillsWeight</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0e/_action_constants_8c_source.html#l00118">ActionConstants.c:119</a></div></div>
+<div class="ttc" id="aclass_u_a_soft_skills_weight_html_a123369fe4d5de03cd63e4a047eb71f3b"><div class="ttname"><a href="../../d0/d0d/class_u_a_soft_skills_weight.html#a123369fe4d5de03cd63e4a047eb71f3b">UASoftSkillsWeight::ROUGH_LOW</a></div><div class="ttdeci">const float ROUGH_LOW</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0e/_action_constants_8c_source.html#l00120">ActionConstants.c:120</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d9/d0b/_action_constructor_8c_source.html#l00027">ActionConstructor::RegisterActions()</a>, and <a class="el" href="../../d8/d0f/_transmitter_base_8c_source.html#l00129">ItemTransmitter::SetActions()</a>.</p>
 
 </div>
 </div>
@@ -226,6 +256,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html#l00023">23</a> of file <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html">ActionTuneFrequency.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>  {</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a81fd8dac008261b8f2062657a645b0d4">m_ConditionTarget</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d0f/class_c_c_t_none.html">CCTNone</a>;</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a733279ad481ba700333db91fa140e910">m_ConditionItem</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../de/d06/class_c_c_i_non_ruined.html">CCINonRuined</a>;</div>
+<div class="line"><span class="lineno">   27</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a733279ad481ba700333db91fa140e910"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a733279ad481ba700333db91fa140e910">m_ConditionItem</a></div><div class="ttdeci">ref CCIBase m_ConditionItem</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00055">ActionBase.c:55</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_a81fd8dac008261b8f2062657a645b0d4"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a81fd8dac008261b8f2062657a645b0d4">m_ConditionTarget</a></div><div class="ttdeci">ref CCTBase m_ConditionTarget</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00056">ActionBase.c:56</a></div></div>
+<div class="ttc" id="aclass_c_c_i_non_ruined_html"><div class="ttname"><a href="../../de/d06/class_c_c_i_non_ruined.html">CCINonRuined</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d06/_c_c_i_non_ruined_8c_source.html#l00001">CCINonRuined.c:2</a></div></div>
+<div class="ttc" id="aclass_c_c_t_none_html"><div class="ttname"><a href="../../d2/d0f/class_c_c_t_none.html">CCTNone</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0b/_c_c_t_none_8c_source.html#l00001">CCTNone.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00055">m_ConditionItem</a>, and <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00056">m_ConditionTarget</a>.</p>
 
 </div>
 </div>
@@ -245,7 +285,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html#l00029">29</a> of file <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html">ActionTuneFrequency.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   30</span>  {</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   32</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab80733e1a8c145c8ee7b04476d535d72" name="ab80733e1a8c145c8ee7b04476d535d72"></a>
@@ -264,7 +307,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html#l00034">34</a> of file <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html">ActionTuneFrequency.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   35</span>  {</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   37</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a00cda41fe9dd093059da5c4b83b591bc" name="a00cda41fe9dd093059da5c4b83b591bc"></a>
@@ -283,7 +329,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html#l00056">56</a> of file <a class="el" href="../../dc/d0c/_action_tune_frequency_8c_source.html">ActionTuneFrequency.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  {</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_class" href="../../d0/d0b/class_transmitter_base.html">TransmitterBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">transmitter</a> = <a class="code hl_class" href="../../d0/d0b/class_transmitter_base.html">TransmitterBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">transmitter</a>.SetNextFrequency(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player);</div>
+<div class="line"><span class="lineno">   60</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>

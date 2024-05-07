@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -236,7 +233,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00016">16</a> of file <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html">ComponentAnimalBleeding.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -264,6 +264,39 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00081">81</a> of file <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html">ComponentAnimalBleeding.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>  {</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/d00/class_component.html#a1b025fbc35d96087cbbd8e78de00e075">m_ThisEntityAI</a>.IsAlive())</div>
+<div class="line"><span class="lineno">   84</span>    {</div>
+<div class="line"><span class="lineno">   85</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bleeding_intensity</a> = <a class="code hl_variable" href="#a0128d2d149db81abe06e9872c52453c0">BASE_BLEED_RATE</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">wound_intensity</a>;</div>
+<div class="line"><span class="lineno">   86</span>      <span class="comment">//Print(&quot;bleeding_intensity: &quot; + bleeding_intensity);</span></div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">global_blood_lvl</a> = <a class="code hl_variable" href="../../d2/d00/class_component.html#a1b025fbc35d96087cbbd8e78de00e075">m_ThisEntityAI</a>.GetHealth(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Blood&quot;</span>);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>      <a class="code hl_variable" href="../../d2/d00/class_component.html#a1b025fbc35d96087cbbd8e78de00e075">m_ThisEntityAI</a>.DecreaseHealth(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Blood&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">bleeding_intensity</a>);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">global_blood_lvl</a> &lt; <a class="code hl_variable" href="#a82c70b4eeb48ad210e23a73aca7a7672">PASS_OUT_AMOUT</a>)</div>
+<div class="line"><span class="lineno">   92</span>      {</div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_variable" href="../../d2/d00/class_component.html#a1b025fbc35d96087cbbd8e78de00e075">m_ThisEntityAI</a>.SetHealth(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">   94</span>        <span class="comment">//Print(&quot;global_blood_lvl &lt; PASS_OUT_AMOUT =&gt; Zabijam zviera.&quot;);</span></div>
+<div class="line"><span class="lineno">   95</span>      }</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>      <span class="comment">//Print( &quot;GetHealth Global Health: &quot; + m_ThisEntityAI.GetHealth( &quot;&quot;, &quot;Health&quot; ));</span></div>
+<div class="line"><span class="lineno">   98</span>      <span class="comment">//Print( &quot;GetHealth Global Blood: &quot; + m_ThisEntityAI.GetHealth( &quot;&quot;, &quot;Blood&quot; ));</span></div>
+<div class="line"><span class="lineno">   99</span>      <span class="comment">//Print( &quot;GetHealth Global Shock: &quot; + m_ThisEntityAI.GetHealth( &quot;&quot;, &quot;Shock&quot; ));</span></div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  103</span>    {</div>
+<div class="line"><span class="lineno">  104</span>      <a class="code hl_variable" href="#a8c1d0c510546d8af9ce8c3d43a3e48a1">m_BleedTimer</a>.Stop();</div>
+<div class="line"><span class="lineno">  105</span>      <span class="comment">//Print(&quot;Vypinam timer.&quot;);</span></div>
+<div class="line"><span class="lineno">  106</span>    }</div>
+<div class="line"><span class="lineno">  107</span>  }</div>
+<div class="ttc" id="aclass_component_animal_bleeding_html_a0128d2d149db81abe06e9872c52453c0"><div class="ttname"><a href="#a0128d2d149db81abe06e9872c52453c0">ComponentAnimalBleeding::BASE_BLEED_RATE</a></div><div class="ttdeci">const float BASE_BLEED_RATE</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_component_animal_bleeding_8c_source.html#l00012">ComponentAnimalBleeding.c:12</a></div></div>
+<div class="ttc" id="aclass_component_animal_bleeding_html_a82c70b4eeb48ad210e23a73aca7a7672"><div class="ttname"><a href="#a82c70b4eeb48ad210e23a73aca7a7672">ComponentAnimalBleeding::PASS_OUT_AMOUT</a></div><div class="ttdeci">const float PASS_OUT_AMOUT</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_component_animal_bleeding_8c_source.html#l00013">ComponentAnimalBleeding.c:13</a></div></div>
+<div class="ttc" id="aclass_component_animal_bleeding_html_a8c1d0c510546d8af9ce8c3d43a3e48a1"><div class="ttname"><a href="#a8c1d0c510546d8af9ce8c3d43a3e48a1">ComponentAnimalBleeding::m_BleedTimer</a></div><div class="ttdeci">ref Timer m_BleedTimer</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_component_animal_bleeding_8c_source.html#l00011">ComponentAnimalBleeding.c:11</a></div></div>
+<div class="ttc" id="aclass_component_html_a1b025fbc35d96087cbbd8e78de00e075"><div class="ttname"><a href="../../d2/d00/class_component.html#a1b025fbc35d96087cbbd8e78de00e075">Component::m_ThisEntityAI</a></div><div class="ttdeci">EntityAI m_ThisEntityAI</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d01/_component_8c_source.html#l00024">Component.c:24</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00012">BASE_BLEED_RATE</a>, <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00011">m_BleedTimer</a>, <a class="el" href="../../d1/d01/_component_8c_source.html#l00024">Component::m_ThisEntityAI</a>, and <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00013">PASS_OUT_AMOUT</a>.</p>
 
 </div>
 </div>
@@ -300,6 +333,41 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00049">49</a> of file <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html">ComponentAnimalBleeding.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>  {</div>
+<div class="line"><span class="lineno">   51</span>    <span class="comment">//Print( &quot;GetHealth Health before creating wound@: &quot; + zone_name + &quot; &quot; + m_ThisEntityAI.GetHealth( zone_name, &quot;Health&quot; ));</span></div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_function" href="#a74ec58161ff06c8b0dbacfdb69da554e">InflictWoundDamage</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">damage_result</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">zone_name</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ammo</a>);</div>
+<div class="line"><span class="lineno">   53</span>    <span class="comment">//Print( &quot;GetHealth Health after creating wood@: &quot; + zone_name + &quot; &quot; + m_ThisEntityAI.GetHealth( zone_name, &quot;Health&quot; ));</span></div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">can_bleed</a> = <span class="keyword">false</span>; <span class="comment">//= GetGame().ConfigGetFloat( &quot;CfgVehicles &quot; + m_ThisEntityAI.GetType() + &quot; DamageSystem &quot; + &quot;DamageZones &quot; + zone_name + &quot; canBleed&quot; );</span></div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">//Print(&quot;can_bleed: &quot; + can_bleed );</span></div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bleed_treshold</a> = 0; <span class="comment">//= GetGame().ConfigGetFloat( &quot;CfgAmmo &quot; + ammo + &quot; DamageApplied &quot; + &quot;bleedThreshold&quot; );</span></div>
+<div class="line"><span class="lineno">   58</span>    <span class="comment">//Print(&quot;bleed_treshold: &quot; + bleed_treshold );</span></div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">chance</a> = -1; <span class="comment">//Math.RandomFloat01();</span></div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment">//Print(&quot;chance: &quot; + chance );</span></div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <span class="comment">//Print( &quot;GetHealth Health @: &quot; + m_ThisEntityAI.GetHealth( zone_name, &quot;Health&quot; ));</span></div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">//Print( &quot;GetHealth Blood @: &quot; + m_ThisEntityAI.GetHealth( zone_name, &quot;Blood&quot; ));</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="comment">//Print( &quot;GetHealth Shock @: &quot; + m_ThisEntityAI.GetHealth( zone_name, &quot;Shock&quot; ));</span></div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">can_bleed</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">chance</a> &lt;= <a class="code hl_class" href="../../db/d06/class_param3.html">bleed_treshold</a>)</div>
+<div class="line"><span class="lineno">   67</span>    {</div>
+<div class="line"><span class="lineno">   68</span>      <a class="code hl_variable" href="#a8c1d0c510546d8af9ce8c3d43a3e48a1">m_BleedTimer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d08/class_timer.html">Timer</a>();</div>
+<div class="line"><span class="lineno">   69</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">wound_intensity</a> = <a class="code hl_function" href="#acc31e3fc1008194a61f9a0bdfdd9b79a">GetWoundIntensity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">bleed_treshold</a>);</div>
+<div class="line"><span class="lineno">   70</span>      <span class="comment">//Print(&quot;wound_intensity: &quot; + wound_intensity);</span></div>
+<div class="line"><span class="lineno">   71</span>      <a class="code hl_variable" href="#a8c1d0c510546d8af9ce8c3d43a3e48a1">m_BleedTimer</a>.Run(1, <span class="keyword">this</span>, <span class="stringliteral">&quot;Bleed&quot;</span>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;float&gt;</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">wound_intensity</a>), <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">      else</span></div>
+<div class="line"><span class="lineno">   75</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">   76</span><span class="comment">      Print(&quot;Not bleeding&quot;);</span></div>
+<div class="line"><span class="lineno">   77</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">   78</span><span class="comment">    */</span></div>
+<div class="line"><span class="lineno">   79</span>  }</div>
+<div class="ttc" id="aclass_component_animal_bleeding_html_a74ec58161ff06c8b0dbacfdb69da554e"><div class="ttname"><a href="#a74ec58161ff06c8b0dbacfdb69da554e">ComponentAnimalBleeding::InflictWoundDamage</a></div><div class="ttdeci">void InflictWoundDamage(TotalDamageResult damage_result, string zone_name, string ammo)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_component_animal_bleeding_8c_source.html#l00021">ComponentAnimalBleeding.c:21</a></div></div>
+<div class="ttc" id="aclass_component_animal_bleeding_html_acc31e3fc1008194a61f9a0bdfdd9b79a"><div class="ttname"><a href="#acc31e3fc1008194a61f9a0bdfdd9b79a">ComponentAnimalBleeding::GetWoundIntensity</a></div><div class="ttdeci">float GetWoundIntensity(float bleed_treshold)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_component_animal_bleeding_8c_source.html#l00109">ComponentAnimalBleeding.c:109</a></div></div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="../../d8/d08/class_timer.html">Timer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d02/_day_z_player_implement_8c_source.html#l00060">DayZPlayerImplement.c:61</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00109">GetWoundIntensity()</a>, <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00021">InflictWoundDamage()</a>, and <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00011">m_BleedTimer</a>.</p>
 
 </div>
 </div>
@@ -327,6 +395,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00109">109</a> of file <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html">ComponentAnimalBleeding.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>  {</div>
+<div class="line"><span class="lineno">  111</span>    <span class="comment">//higher the bleeding treshold =&gt; more intense bleeding</span></div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bleed_treshold</a> * 2;</div>
+<div class="line"><span class="lineno">  113</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00049">CreateWound()</a>.</p>
 
 </div>
 </div>
@@ -363,6 +437,36 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00021">21</a> of file <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html">ComponentAnimalBleeding.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ammo</a> == <span class="stringliteral">&quot;MeleeWolf&quot;</span>)</div>
+<div class="line"><span class="lineno">   24</span>      <a class="code hl_variable" href="../../d2/d00/class_component.html#a1b025fbc35d96087cbbd8e78de00e075">m_ThisEntityAI</a>.SetHealth(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">zone_name</a>)</div>
+<div class="line"><span class="lineno">   27</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">health_damage_inflicted</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">damage_result</a>.GetDamage(<a class="code hl_class" href="../../db/d06/class_param3.html">zone_name</a>, <span class="stringliteral">&quot;Health&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment">//float blood_damage_inflicted = damage_result.GetDamage( zone_name, &quot;Blood&quot;);</span></div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">wound_healt_damage</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">health_damage_inflicted</a>;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">//float wound_blood_damage = health_damage_inflicted;</span></div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="../../d2/d00/class_component.html#a1b025fbc35d96087cbbd8e78de00e075">m_ThisEntityAI</a>.DecreaseHealth(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Health&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">wound_healt_damage</a>);</div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">//m_ThisEntityAI.DecreaseHealth( &quot;&quot;, &quot;Blood&quot;, wound_blood_damage );</span></div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">zone_name</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>      <a class="code hl_variable" href="../../d2/d00/class_component.html#a1b025fbc35d96087cbbd8e78de00e075">m_ThisEntityAI</a>.DecreaseHealth(<a class="code hl_class" href="../../db/d06/class_param3.html">zone_name</a>, <span class="stringliteral">&quot;Health&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">wound_healt_damage</a>);</div>
+<div class="line"><span class="lineno">   40</span>      <span class="comment">//m_ThisEntityAI.DecreaseHealth( zone_name, &quot;Blood&quot;, wound_blood_damage );</span></div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">//Print(&quot;Zone hit: &quot; + zone_name );</span></div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">//Print(&quot;damage_result Health: &quot; + damage_result.GetDamage( zone_name, &quot;Health&quot; ) );</span></div>
+<div class="line"><span class="lineno">   46</span>    <span class="comment">//Print(&quot;damage_result Blood: &quot; + damage_result.GetDamage( zone_name, &quot;Blood&quot; ) );</span></div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d01/_component_8c_source.html#l00024">Component::m_ThisEntityAI</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00049">CreateWound()</a>.</p>
 
 </div>
 </div>
@@ -389,6 +493,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00012">12</a> of file <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html">ComponentAnimalBleeding.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00081">Bleed()</a>.</p>
+
 </div>
 </div>
 <a id="a8c1d0c510546d8af9ce8c3d43a3e48a1" name="a8c1d0c510546d8af9ce8c3d43a3e48a1"></a>
@@ -413,6 +519,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00011">11</a> of file <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html">ComponentAnimalBleeding.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00081">Bleed()</a>, and <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00049">CreateWound()</a>.</p>
+
 </div>
 </div>
 <a id="a82c70b4eeb48ad210e23a73aca7a7672" name="a82c70b4eeb48ad210e23a73aca7a7672"></a>
@@ -436,6 +544,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00013">13</a> of file <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html">ComponentAnimalBleeding.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d04/_component_animal_bleeding_8c_source.html#l00081">Bleed()</a>.</p>
 
 </div>
 </div>

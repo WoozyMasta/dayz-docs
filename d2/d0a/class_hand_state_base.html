@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -349,6 +346,12 @@ Private Attributes</h2></td></tr>
 <p>nested state machine (or null) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00011">11</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>{ <a class="code hl_variable" href="#a4813176ff688214e79ebd3a0c77dec38">m_Player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>; <a class="code hl_variable" href="#a87b981068ee55873e65b4137eac4f927">m_parentState</a> = parent; }</div>
+<div class="ttc" id="aclass_hand_state_base_html_a4813176ff688214e79ebd3a0c77dec38"><div class="ttname"><a href="#a4813176ff688214e79ebd3a0c77dec38">HandStateBase::m_Player</a></div><div class="ttdeci">Man m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0d/_hand_state_base_8c_source.html#l00008">HandStateBase.c:8</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_a87b981068ee55873e65b4137eac4f927"><div class="ttname"><a href="#a87b981068ee55873e65b4137eac4f927">HandStateBase::m_parentState</a></div><div class="ttdeci">HandStateBase m_parentState</div><div class="ttdoc">entity that this state relates to</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0d/_hand_state_base_8c_source.html#l00009">HandStateBase.c:9</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00009">m_parentState</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00008">m_Player</a>.</p>
 
 </div>
 </div>
@@ -379,6 +382,17 @@ Private Attributes</h2></td></tr>
 <p>adds transition into m_FSM transition table </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00035">35</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>  {</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a44cb21a3b6ad2e8fd9bce331855d442a">HasFSM</a>())</div>
+<div class="line"><span class="lineno">   38</span>      <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>);</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   40</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[hndfsm] adding transition to state without FSM. Configure FSM first.&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>  }</div>
+<div class="ttc" id="aclass_hand_state_base_html_a44cb21a3b6ad2e8fd9bce331855d442a"><div class="ttname"><a href="#a44cb21a3b6ad2e8fd9bce331855d442a">HandStateBase::HasFSM</a></div><div class="ttdeci">bool HasFSM()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">HandStateBase.c:22</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_a8782816327cac7d37c87f7bbae5b741b"><div class="ttname"><a href="#a8782816327cac7d37c87f7bbae5b741b">HandStateBase::m_FSM</a></div><div class="ttdeci">ref HandFSM m_FSM</div><div class="ttdoc">hierarchical parent state of this state (or null)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">HandStateBase.c:10</a></div></div>
+<div class="ttc" id="agroup___debug_html_ga786b160dafbe15abb829786ba345cb15"><div class="ttname"><a href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a></div><div class="ttdeci">void Error(string err)</div><div class="ttdoc">Messagebox with error message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_en_debug_8c_source.html#l00090">EnDebug.c:90</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">HasFSM()</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -406,7 +420,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00036">36</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{ <span class="keywordflow">return</span> 0; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a97ad43aae229bacadae441303e2279db" name="a97ad43aae229bacadae441303e2279db"></a>
@@ -433,6 +448,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00023">23</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -461,6 +479,9 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>state that owns this sub-state (or null if plain state) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00020">20</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a87b981068ee55873e65b4137eac4f927">m_parentState</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00009">m_parentState</a>.</p>
 
 </div>
 </div>
@@ -492,7 +513,36 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00120">120</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  121</span>  {</div>
+<div class="line"><span class="lineno">  122</span>    <span class="comment">// setup nested state machine</span></div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a> = <span class="keyword">new</span> HandStartHidingAnimated(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.HIDE, -1);</div>
+<div class="line"><span class="lineno">  124</span>    <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandAnimatedMoveToDst_W4T</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.SHOW, -1);</div>
+<div class="line"><span class="lineno">  125</span>    <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandAnimatedMoveToDst_W4T_Basic</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <span class="comment">// events:</span></div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> HandEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a> = <span class="keyword">new</span> HandAnimEventChanged;</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a> = <span class="keyword">new</span> HandEventDestroyed;</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a>(<span class="keyword">this</span>); <span class="comment">// @NOTE: set owner of the submachine fsm</span></div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a>, <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>));</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a>, <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>)); <span class="comment">// no animation in Hide step</span></div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.SetInitialState(<a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a>);</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+<div class="ttc" id="a_hand_f_s_m_8c_html_ababd3ce5e02c0ab66d634bd26911a833"><div class="ttname"><a href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a></div><div class="ttdeci">FSMTransition&lt; HandStateBase, HandEventBase, HandActionBase, HandGuardBase &gt; HandTransition</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00027">HandFSM.c:27</a></div></div>
+<div class="ttc" id="aclass_hand_event_base_html"><div class="ttname"><a href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a></div><div class="ttdoc">Abstracted event, not to be used, only inherited.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00190">Hand_Events.c:191</a></div></div>
+<div class="ttc" id="aclass_hand_f_s_m_html"><div class="ttname"><a href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a></div><div class="ttdoc">Hand finite state machine.</div></div>
+<div class="ttc" id="aclass_hand_state_base_html_ab42db25041f9fff59236373bd7764f81"><div class="ttname"><a href="#ab42db25041f9fff59236373bd7764f81">HandStateBase::m_Hide</a></div><div class="ttdeci">ref HandAnimatedMoveToDst_W4T_Basic m_Hide</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00118">HandAnimatedForceSwapping.c:118</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_abf0da5710d37c6fdab699d0b15c7068c"><div class="ttname"><a href="#abf0da5710d37c6fdab699d0b15c7068c">HandStateBase::m_Show</a></div><div class="ttdeci">ref HandAnimatedMoveToDst_W4T m_Show</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00117">HandAnimatedForceSwapping.c:117</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_ad5225b8ffe042d1dff4aa98ebc7cd1a9"><div class="ttname"><a href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">HandStateBase::m_Start</a></div><div class="ttdeci">ref HandStartHidingAnimated m_Start</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00116">HandAnimatedForceSwapping.c:116</a></div></div>
+<div class="ttc" id="ahuman_8c_html_a70aa34d22d03160ea5e3d5248cd37093"><div class="ttname"><a href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a></div><div class="ttdeci">WeaponActions</div><div class="ttdoc">actions</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00795">human.c:796</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9f36a6252d4655706b6b76a7e0f3e9eb" name="a9f36a6252d4655706b6b76a7e0f3e9eb"></a>
@@ -523,7 +573,27 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00244">244</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <span class="comment">// setup nested state machine</span></div>
+<div class="line"><span class="lineno">  247</span>    <a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a> = <span class="keyword">new</span> HandStartHidingAnimated(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.HIDE, -1);</div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../de/d05/class_hand_force_swapping_animated___show.html">HandForceSwappingAnimated_Show</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.SHOW, -1);</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>    <span class="comment">// events:</span></div>
+<div class="line"><span class="lineno">  251</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> HandEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a> = <span class="keyword">new</span> HandAnimEventChanged;</div>
+<div class="line"><span class="lineno">  253</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a> = <span class="keyword">new</span> HandEventDestroyed;</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a>(<span class="keyword">this</span>); <span class="comment">// @NOTE: set owner of the submachine fsm</span></div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a>, <a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>));</div>
+<div class="line"><span class="lineno">  258</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">  259</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.SetInitialState(<a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a>);</div>
+<div class="line"><span class="lineno">  262</span>  }</div>
+<div class="ttc" id="aclass_hand_force_swapping_animated___show_html"><div class="ttname"><a href="../../de/d05/class_hand_force_swapping_animated___show.html">HandForceSwappingAnimated_Show</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d03/_hand_animated_swapping_8c_source.html#l00001">HandAnimatedSwapping.c:2</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_ab5cfa3c797a34e4975797906c61b1915"><div class="ttname"><a href="#ab5cfa3c797a34e4975797906c61b1915">HandStateBase::m_Swap</a></div><div class="ttdeci">ref HandForceSwappingAnimated_Show m_Swap</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00242">HandAnimatedForceSwapping.c:242</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af73d8f54499cd0040f6389dca25e5d87" name="af73d8f54499cd0040f6389dca25e5d87"></a>
@@ -554,7 +624,23 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html#l00085">85</a> of file <a class="el" href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html">HandAnimatedMovingToAtt.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   86</span>  {</div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment">// setup nested state machine</span></div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a> = <span class="keyword">new</span> HandStartHidingAnimated(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.HIDE, -1);</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandAnimatedMoveToDst_W4T</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.SHOW, -1);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="comment">// events:</span></div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> HandEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a> = <span class="keyword">new</span> HandAnimEventChanged;</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a>(<span class="keyword">this</span>); <span class="comment">// @NOTE: set owner of the submachine fsm</span></div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a>, <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>));</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.SetInitialState(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>);</div>
+<div class="line"><span class="lineno">  101</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9c160b3327a58d863db32a5e89309c3b" name="a9c160b3327a58d863db32a5e89309c3b"></a>
@@ -585,7 +671,23 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d03/_hand_animated_swapping_8c_source.html#l00016">16</a> of file <a class="el" href="../../d1/d03/_hand_animated_swapping_8c_source.html">HandAnimatedSwapping.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span>    <span class="comment">// setup nested state machine</span></div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a> = <span class="keyword">new</span> HandStartHidingAnimated(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.HIDE, -1);</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandSwappingAnimated_Show</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.SHOW, -1);</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <span class="comment">// events:</span></div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> HandEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a> = <span class="keyword">new</span> HandAnimEventChanged;</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a>(<span class="keyword">this</span>); <span class="comment">// @NOTE: set owner of the submachine fsm</span></div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a>, <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>));</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.SetInitialState(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>);</div>
+<div class="line"><span class="lineno">   32</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0cf72fbdb5842c6764090d9b6dadee64" name="a0cf72fbdb5842c6764090d9b6dadee64"></a>
@@ -616,7 +718,26 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_hand_animated_taking_from_att_8c_source.html#l00070">70</a> of file <a class="el" href="../../da/d03/_hand_animated_taking_from_att_8c_source.html">HandAnimatedTakingFromAtt.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   71</span>  {</div>
+<div class="line"><span class="lineno">   72</span>    <span class="comment">// setup nested state machine</span></div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">HandTakingAnimated_Hide</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.HIDE, -1);</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a> = <span class="keyword">new</span> HandTakingAnimated_Show(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>, <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.SHOW, -1);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="comment">// events:</span></div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> HandEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a> = <span class="keyword">new</span> HandAnimEventChanged;</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a> = <span class="keyword">new</span> HandEventDestroyed;</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a>(<span class="keyword">this</span>); <span class="comment">// @NOTE: set owner of the submachine fsm</span></div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_AEh_</a>, <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>));</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__Xd_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.SetInitialState(<a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>);</div>
+<div class="line"><span class="lineno">   89</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac7a8c1bad0159ca74094c2538dfa8c9f" name="ac7a8c1bad0159ca74094c2538dfa8c9f"></a>
@@ -647,6 +768,23 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00042">42</a> of file <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html">HandReplacingItemElsewhereWithNewInHands.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment">// setup nested state machine</span></div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_variable" href="#a37ba4a7d0858c9c0412253efe0e7cdb7">m_Replacing</a> = <span class="keyword">new</span> <a class="code hl_function" href="#a44800ae6ed6e98dab906651442598cd7">HandStartReplacingItemElsewhereWithNewInHands</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="comment">// events:</span></div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> HandEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a>(<span class="keyword">this</span>); <span class="comment">// @NOTE: set owner of the submachine fsm</span></div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a37ba4a7d0858c9c0412253efe0e7cdb7">m_Replacing</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>));</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.SetInitialState(<a class="code hl_variable" href="#a37ba4a7d0858c9c0412253efe0e7cdb7">m_Replacing</a>);</div>
+<div class="line"><span class="lineno">   55</span>  }</div>
+<div class="ttc" id="aclass_hand_state_base_html_a37ba4a7d0858c9c0412253efe0e7cdb7"><div class="ttname"><a href="#a37ba4a7d0858c9c0412253efe0e7cdb7">HandStateBase::m_Replacing</a></div><div class="ttdeci">ref HandStartReplacingItemElsewhereWithNewInHands m_Replacing</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00040">HandReplacingItemElsewhereWithNewInHands.c:40</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_a44800ae6ed6e98dab906651442598cd7"><div class="ttname"><a href="#a44800ae6ed6e98dab906651442598cd7">HandStateBase::HandStartReplacingItemElsewhereWithNewInHands</a></div><div class="ttdeci">void HandStartReplacingItemElsewhereWithNewInHands(Man player=NULL, HandStateBase parent=NULL)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00003">HandReplacingItemElsewhereWithNewInHands.c:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00003">HandStartReplacingItemElsewhereWithNewInHands()</a>.</p>
 
 </div>
 </div>
@@ -678,6 +816,22 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00051">51</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>  {</div>
+<div class="line"><span class="lineno">   53</span>    <span class="comment">// setup nested state machine</span></div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="#a37ba4a7d0858c9c0412253efe0e7cdb7">m_Replacing</a> = <span class="keyword">new</span> <a class="code hl_function" href="#ae742dbb67b6ed5883f389efec29f454a">HandStartReplacingItemInHands</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">// events:</span></div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_class" href="../../d8/d0e/class_hand_event_base.html">HandEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> HandEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d05/class_hand_f_s_m.html">HandFSM</a>(<span class="keyword">this</span>); <span class="comment">// @NOTE: set owner of the submachine fsm</span></div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d0b/_hand_f_s_m_8c.html#ababd3ce5e02c0ab66d634bd26911a833">HandTransition</a>(<a class="code hl_variable" href="#a37ba4a7d0858c9c0412253efe0e7cdb7">m_Replacing</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>));</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.SetInitialState(<a class="code hl_variable" href="#a37ba4a7d0858c9c0412253efe0e7cdb7">m_Replacing</a>);</div>
+<div class="line"><span class="lineno">   64</span>  }</div>
+<div class="ttc" id="aclass_hand_state_base_html_ae742dbb67b6ed5883f389efec29f454a"><div class="ttname"><a href="#ae742dbb67b6ed5883f389efec29f454a">HandStateBase::HandStartReplacingItemInHands</a></div><div class="ttdeci">void HandStartReplacingItemInHands(Man player=NULL, HandStateBase parent=NULL)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00003">HandReplacingItemInHands.c:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00003">HandStartReplacingItemInHands()</a>.</p>
 
 </div>
 </div>
@@ -714,7 +868,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00008">8</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    8</span>{ <a class="code hl_variable" href="#af2bca7da1b1b5f60c2a96c386ee70669">m_AnimState</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">anim_state</a>; }</div>
+<div class="ttc" id="aclass_hand_state_base_html_af2bca7da1b1b5f60c2a96c386ee70669"><div class="ttname"><a href="#af2bca7da1b1b5f60c2a96c386ee70669">HandStateBase::m_AnimState</a></div><div class="ttdeci">int m_AnimState</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d02/_hand_stable_state_8c_source.html#l00006">HandStableState.c:6</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a52b02313007dc42f2788cd334ffa62f9" name="a52b02313007dc42f2788cd334ffa62f9"></a>
@@ -757,6 +913,14 @@ Private Attributes</h2></td></tr>
 <p>specific action sub-type </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d05/_hand_start_action_8c_source.html#l00009">9</a> of file <a class="el" href="../../d1/d05/_hand_start_action_8c_source.html">HandStartAction.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>  {</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action</a>;</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="#ad427d937cf3f3f41691f22751ecfe423">m_ActionType</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">actionType</a>;</div>
+<div class="line"><span class="lineno">   13</span>  }</div>
+<div class="ttc" id="aclass_hand_state_base_html_a7537d4a3cf8246af388a1f6455f0bd5e"><div class="ttname"><a href="#a7537d4a3cf8246af388a1f6455f0bd5e">HandStateBase::m_Action</a></div><div class="ttdeci">WeaponActions m_Action</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d05/_hand_start_action_8c_source.html#l00006">HandStartAction.c:6</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_ad427d937cf3f3f41691f22751ecfe423"><div class="ttname"><a href="#ad427d937cf3f3f41691f22751ecfe423">HandStateBase::m_ActionType</a></div><div class="ttdeci">int m_ActionType</div><div class="ttdoc">action to be played</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d05/_hand_start_action_8c_source.html#l00007">HandStartAction.c:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d05/_action_input_8c.html#a3d09e412d12db79f4e4dda7b223efcc9">m_Action</a>.</p>
 
 </div>
 </div>
@@ -788,6 +952,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00003">3</a> of file <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html">HandReplacingItemElsewhereWithNewInHands.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  { }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00042">HandReplacingItemElsewhereWithNewInHands()</a>.</p>
 
 </div>
 </div>
@@ -819,6 +986,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00003">3</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  { }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00051">HandReplacingItemInHands()</a>.</p>
 
 </div>
 </div>
@@ -848,7 +1018,8 @@ Private Attributes</h2></td></tr>
 <p>query for entity in hands </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00039">39</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a44cb21a3b6ad2e8fd9bce331855d442a" name="a44cb21a3b6ad2e8fd9bce331855d442a"></a>
@@ -875,6 +1046,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">22</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a> != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">m_FSM</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00035">AddTransition()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00115">IsWaitingForActionFinish()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00091">OnAbort()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00049">OnEntry()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00081">OnUpdate()</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00025">ProcessEvent()</a>.</p>
 
 </div>
 </div>
@@ -905,7 +1081,8 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if this state is idle </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00034">34</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4b9502137f606a6634699c74435fc9f0" name="a4b9502137f606a6634699c74435fc9f0"></a>
@@ -932,7 +1109,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d05/_hand_start_action_8c_source.html#l00053">53</a> of file <a class="el" href="../../d1/d05/_hand_start_action_8c_source.html">HandStartAction.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab74e6b3e1e3a9c5936297166f1b5c951" name="ab74e6b3e1e3a9c5936297166f1b5c951"></a>
@@ -959,7 +1137,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00121">121</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  121</span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2c595cfc37e5c32cd425fe22d5fa84f4" name="a2c595cfc37e5c32cd425fe22d5fa84f4"></a>
@@ -989,7 +1168,8 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if this state is waiting for finish signal </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00050">50</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad664f17138c75d0abd8cd184ae7be4c7" name="ad664f17138c75d0abd8cd184ae7be4c7"></a>
@@ -1016,7 +1196,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00034">34</a> of file <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html">HandReplacingItemElsewhereWithNewInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad664f17138c75d0abd8cd184ae7be4c7" name="ad664f17138c75d0abd8cd184ae7be4c7"></a>
@@ -1043,7 +1224,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00043">43</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3cad2a617d8974048dced16153bc3b33" name="a3cad2a617d8974048dced16153bc3b33"></a>
@@ -1070,6 +1252,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00115">115</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#a44cb21a3b6ad2e8fd9bce331855d442a">HasFSM</a>() &amp;&amp; <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.IsRunning() &amp;&amp; <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.GetCurrentState().IsWaitingForActionFinish(); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">HasFSM()</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -1097,7 +1282,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00038">38</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   39</span>  {</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   42</span>  }</div>
+<div class="ttc" id="aclass_hand_state_base_html_a1b0cbb1aadac002afb3f011a3948e0bc"><div class="ttname"><a href="#a1b0cbb1aadac002afb3f011a3948e0bc">HandStateBase::m_Dst</a></div><div class="ttdeci">ref InventoryLocation m_Dst</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00005">HandAnimatedForceSwapping.c:5</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ace52a1cbadf14159675e7f07dac94fbf" name="ace52a1cbadf14159675e7f07dac94fbf"></a>
@@ -1124,6 +1314,38 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00185">185</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  188</span>    {</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>)</div>
+<div class="line"><span class="lineno">  190</span>      {</div>
+<div class="line"><span class="lineno">  191</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>);</div>
+<div class="line"><span class="lineno">  192</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>);</div>
+<div class="line"><span class="lineno">  193</span>      }</div>
+<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  196</span>    {</div>
+<div class="line"><span class="lineno">  197</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>)</div>
+<div class="line"><span class="lineno">  198</span>      {</div>
+<div class="line"><span class="lineno">  199</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem());</div>
+<div class="line"><span class="lineno">  200</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem());</div>
+<div class="line"><span class="lineno">  201</span>      }</div>
+<div class="line"><span class="lineno">  202</span>    }</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  210</span>  }</div>
+<div class="ttc" id="aclass_hand_state_base_html_a74a5b95feaba2f199c2be3623d9d2157"><div class="ttname"><a href="#a74a5b95feaba2f199c2be3623d9d2157">HandStateBase::m_Dst1</a></div><div class="ttdeci">ref InventoryLocation m_Dst1</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00113">HandAnimatedForceSwapping.c:113</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_a7fa8d00b3d886895fc03a4a2b3b1f9a7"><div class="ttname"><a href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">HandStateBase::m_Src1</a></div><div class="ttdeci">ref InventoryLocation m_Src1</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00111">HandAnimatedForceSwapping.c:111</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_ad5ca24e68d76d4b696f313ffaa681d20"><div class="ttname"><a href="#ad5ca24e68d76d4b696f313ffaa681d20">HandStateBase::m_Dst2</a></div><div class="ttdeci">ref InventoryLocation m_Dst2</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00114">HandAnimatedForceSwapping.c:114</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_af702343a0be0ab3698af31ba10e019c4"><div class="ttname"><a href="#af702343a0be0ab3698af31ba10e019c4">HandStateBase::m_Src2</a></div><div class="ttdeci">ref InventoryLocation m_Src2</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00112">HandAnimatedForceSwapping.c:112</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -1151,6 +1373,31 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00307">307</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  308</span>  {</div>
+<div class="line"><span class="lineno">  309</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  310</span>    {</div>
+<div class="line"><span class="lineno">  311</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>)</div>
+<div class="line"><span class="lineno">  312</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>);</div>
+<div class="line"><span class="lineno">  313</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>)</div>
+<div class="line"><span class="lineno">  314</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>);</div>
+<div class="line"><span class="lineno">  315</span>    }</div>
+<div class="line"><span class="lineno">  316</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  317</span>    {</div>
+<div class="line"><span class="lineno">  318</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>)</div>
+<div class="line"><span class="lineno">  319</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem());</div>
+<div class="line"><span class="lineno">  320</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>)</div>
+<div class="line"><span class="lineno">  321</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem());</div>
+<div class="line"><span class="lineno">  322</span>    }</div>
+<div class="line"><span class="lineno">  323</span> </div>
+<div class="line"><span class="lineno">  324</span>    <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  325</span>    <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  326</span>    <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  327</span>    <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  330</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -1178,6 +1425,21 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html#l00121">121</a> of file <a class="el" href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html">HandAnimatedMovingToAtt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>  {</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a947041641f6abaa01b8c4fdb0128ecbe">m_Entity</a>, <a class="code hl_variable" href="#ad6dadfe1b49ef6fbe45fc1cb329421e2">m_ilEntity</a>);</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  126</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJunctureEx(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#a947041641f6abaa01b8c4fdb0128ecbe">m_Entity</a>);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_variable" href="#a947041641f6abaa01b8c4fdb0128ecbe">m_Entity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_variable" href="#ad6dadfe1b49ef6fbe45fc1cb329421e2">m_ilEntity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  132</span>  }</div>
+<div class="ttc" id="aclass_hand_state_base_html_a947041641f6abaa01b8c4fdb0128ecbe"><div class="ttname"><a href="#a947041641f6abaa01b8c4fdb0128ecbe">HandStateBase::m_Entity</a></div><div class="ttdeci">EntityAI m_Entity</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html#l00078">HandAnimatedMovingToAtt.c:78</a></div></div>
+<div class="ttc" id="aclass_hand_state_base_html_ad6dadfe1b49ef6fbe45fc1cb329421e2"><div class="ttname"><a href="#ad6dadfe1b49ef6fbe45fc1cb329421e2">HandStateBase::m_ilEntity</a></div><div class="ttdeci">ref InventoryLocation m_ilEntity</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html#l00083">HandAnimatedMovingToAtt.c:83</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/d0c/_action_debug_8c_source.html#l00011">m_Entity</a>.</p>
 
 </div>
 </div>
@@ -1205,6 +1467,31 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d03/_hand_animated_swapping_8c_source.html#l00062">62</a> of file <a class="el" href="../../d1/d03/_hand_animated_swapping_8c_source.html">HandAnimatedSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>  {</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>)</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>);</div>
+<div class="line"><span class="lineno">   68</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>)</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>);</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>)</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem());</div>
+<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>)</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem());</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -1232,6 +1519,27 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_hand_animated_taking_from_att_8c_source.html#l00105">105</a> of file <a class="el" href="../../da/d03/_hand_animated_taking_from_att_8c_source.html">HandAnimatedTakingFromAtt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  109</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#abb9ab64f7a3e90d4494a506ab5bb9738">InventoryHFSMLog</a>(<span class="stringliteral">&quot;Action - STS = &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetSimulationTimeStamp(), <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.ToString(), <span class="stringliteral">&quot;n/a&quot;</span>, <span class="stringliteral">&quot;OnAbort&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.ToString());</div>
+<div class="line"><span class="lineno">  110</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>)</div>
+<div class="line"><span class="lineno">  112</span>    {</div>
+<div class="line"><span class="lineno">  113</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>.GetItem(), <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>);</div>
+<div class="line"><span class="lineno">  114</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">  115</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>.GetItem());</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  120</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_abb9ab64f7a3e90d4494a506ab5bb9738"><div class="ttname"><a href="../../da/d0d/class_debug.html#abb9ab64f7a3e90d4494a506ab5bb9738">Debug::InventoryHFSMLog</a></div><div class="ttdeci">static void InventoryHFSMLog(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00183">Debug.c:183</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a8e070df24bcb6afaf456af7ba270294a"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">LogManager::IsInventoryHFSMLogEnable</a></div><div class="ttdeci">static bool IsInventoryHFSMLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">Debug.c:749</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00183">Debug::InventoryHFSMLog()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>.</p>
 
 </div>
 </div>
@@ -1259,7 +1567,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00024">24</a> of file <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html">HandReplacingItemElsewhereWithNewInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   25</span>  {</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   27</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ace52a1cbadf14159675e7f07dac94fbf" name="ace52a1cbadf14159675e7f07dac94fbf"></a>
@@ -1286,7 +1597,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00033">33</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   34</span>  {</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   36</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ace52a1cbadf14159675e7f07dac94fbf" name="ace52a1cbadf14159675e7f07dac94fbf"></a>
@@ -1313,7 +1627,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00071">71</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   72</span>  {</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   74</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ace52a1cbadf14159675e7f07dac94fbf" name="ace52a1cbadf14159675e7f07dac94fbf"></a>
@@ -1340,7 +1657,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00024">24</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   25</span>  {</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   27</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adf04acfca322682c08e952db83a4a8d5" name="adf04acfca322682c08e952db83a4a8d5"></a>
@@ -1367,6 +1687,21 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00091">91</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>  {</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a44cb21a3b6ad2e8fd9bce331855d442a">HasFSM</a>() &amp;&amp; <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.IsRunning())</div>
+<div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] OnAbort &quot;</span> + this.<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>().<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>() + <span class="stringliteral">&quot;  Has Sub-FSM! Aborting submachine...&quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>      <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.Abort(e);</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">//Debug.InventoryHFSMLog(&quot;ABORTED &quot; + e.m_Player.GetSimulationTimeStamp(), &quot;&quot;/*typename.EnumToString(HandEventID, GetEventID()) */, &quot;n/a&quot;, &quot;OnAbort&quot;, m_Player.ToString() );</span></div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] } &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player) + <span class="stringliteral">&quot; STS = &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetSimulationTimeStamp() + <span class="stringliteral">&quot; ABORTED &quot;</span> + <span class="keyword">this</span>.Type().ToString());</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="ttc" id="a_en_convert_8c_html_afa7657e4f6687b78bc860ddff41c3bef"><div class="ttname"><a href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a></div><div class="ttdeci">proto string ToString()</div></div>
+<div class="ttc" id="a_hand_f_s_m_8c_html_a4d1ced2805a0b33fc2d7a5ae1300b53b"><div class="ttname"><a href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a></div><div class="ttdeci">void hndDebugPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">HandFSM.c:1</a></div></div>
+<div class="ttc" id="a_json_data_contaminated_area_8c_html_a651a3c9de2e16ff0deca8d09dedbda58"><div class="ttname"><a href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a></div><div class="ttdeci">string Type</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">JsonDataContaminatedArea.c:11</a></div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">HasFSM()</a>, <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">m_FSM</a>, <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>, and <a class="el" href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">Type</a>.</p>
 
 </div>
 </div>
@@ -1394,6 +1729,42 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00007">7</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>  {</div>
+<div class="line"><span class="lineno">    9</span>    Man <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player;</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a> &amp;&amp; <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>.IsValid())</div>
+<div class="line"><span class="lineno">   11</span>    {</div>
+<div class="line"><span class="lineno">   12</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>.GetItem();</div>
+<div class="line"><span class="lineno">   13</span>      <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">src</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">   14</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetInventory().GetCurrentInventoryLocation(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>))</div>
+<div class="line"><span class="lineno">   15</span>      {</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#afaa447545304ba3777276e0943b82e73">LocationCanMoveEntity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>, <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>))</div>
+<div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>          <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#ae5e8d93d03255a7a80fb2f73f3854bc0">LocationSyncMoveEntity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>, <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>);</div>
+<div class="line"><span class="lineno">   19</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.OnItemInHandsChanged();</div>
+<div class="line"><span class="lineno">   20</span>        }</div>
+<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   22</span>        {</div>
+<div class="line"><span class="lineno">   23</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">   24</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">   25</span>            <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#abb9ab64f7a3e90d4494a506ab5bb9738">InventoryHFSMLog</a>(<span class="stringliteral">&quot;[hndfsm] HandAnimatedMoveToDst_W4T_Basic - not allowed&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   27</span>        }</div>
+<div class="line"><span class="lineno">   28</span>      }</div>
+<div class="line"><span class="lineno">   29</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[hndfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player) + <span class="stringliteral">&quot; STS = &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetSimulationTimeStamp() + <span class="stringliteral">&quot; HandAnimatedMoveToDst_W4T_Basic - item &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> + <span class="stringliteral">&quot; has no Inventory or Location, inv=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetInventory());</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   33</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[hndfsm] HandAnimatedMoveToDst_W4T_Basic - event has no valid m_Dst&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   36</span>  }</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_ae5e8d93d03255a7a80fb2f73f3854bc0"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#ae5e8d93d03255a7a80fb2f73f3854bc0">GameInventory::LocationSyncMoveEntity</a></div><div class="ttdeci">static proto native bool LocationSyncMoveEntity(notnull InventoryLocation src_loc, notnull InventoryLocation dst_loc)</div><div class="ttdoc">synchronously removes item from current inventory location and adds it to destination no anims involv...</div></div>
+<div class="ttc" id="aclass_game_inventory_html_afaa447545304ba3777276e0943b82e73"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#afaa447545304ba3777276e0943b82e73">GameInventory::LocationCanMoveEntity</a></div><div class="ttdeci">static proto native bool LocationCanMoveEntity(notnull InventoryLocation src, notnull InventoryLocation dst)</div><div class="ttdoc">queries if the entity contained in inv_loc.m_item can be moved to another location This is a shorthan...</div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00183">Debug::InventoryHFSMLog()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../dc/d01/class_game_inventory.html#afaa447545304ba3777276e0943b82e73">GameInventory::LocationCanMoveEntity()</a>, and <a class="el" href="../../dc/d01/class_game_inventory.html#ae5e8d93d03255a7a80fb2f73f3854bc0">GameInventory::LocationSyncMoveEntity()</a>.</p>
 
 </div>
 </div>
@@ -1421,6 +1792,49 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00144">144</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    HandEventForceSwap <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a> = HandEventForceSwap.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>)</div>
+<div class="line"><span class="lineno">  148</span>    {</div>
+<div class="line"><span class="lineno">  149</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetSrc().GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.HANDS)</div>
+<div class="line"><span class="lineno">  150</span>      {</div>
+<div class="line"><span class="lineno">  151</span>        <a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_AnimationID;</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>        <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetSrc();</div>
+<div class="line"><span class="lineno">  154</span>        <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Src2;</div>
+<div class="line"><span class="lineno">  155</span>        <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetDst();</div>
+<div class="line"><span class="lineno">  156</span>        <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Dst2;</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>        <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Animation2ID;</div>
+<div class="line"><span class="lineno">  159</span>      }</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  161</span>      {</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Animation2ID;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>        <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Src2;</div>
+<div class="line"><span class="lineno">  165</span>        <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetSrc();</div>
+<div class="line"><span class="lineno">  166</span>        <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Dst2;</div>
+<div class="line"><span class="lineno">  167</span>        <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetDst();</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>        <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_AnimationID;</div>
+<div class="line"><span class="lineno">  170</span>      }</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>      <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>.m_Dst = <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>;</div>
+<div class="line"><span class="lineno">  173</span>      <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Dst = <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>;</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  176</span>      {</div>
+<div class="line"><span class="lineno">  177</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().AddInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">c_InventoryReservationTimeoutShortMS</a>);</div>
+<div class="line"><span class="lineno">  178</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().AddInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">c_InventoryReservationTimeoutShortMS</a>);</div>
+<div class="line"><span class="lineno">  179</span>      }</div>
+<div class="line"><span class="lineno">  180</span>    }</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// @NOTE: super at the end (prevent override from submachine start)</span></div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+<div class="ttc" id="a_inventory_location_8c_html_ad09049fb2b99c763369bfe6228aa81b3"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a></div><div class="ttdeci">InventoryLocationType</div><div class="ttdoc">types of Inventory Location</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00003">InventoryLocation.c:4</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_a6197604def6effd41d564cfa569ceecf"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">GameInventory::c_InventoryReservationTimeoutShortMS</a></div><div class="ttdeci">const int c_InventoryReservationTimeoutShortMS</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00688">Inventory.c:688</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00688">GameInventory::c_InventoryReservationTimeoutShortMS</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00113">m_Dst1</a>, and <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00114">m_Dst2</a>.</p>
 
 </div>
 </div>
@@ -1448,6 +1862,49 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00264">264</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  265</span>  {</div>
+<div class="line"><span class="lineno">  266</span>    HandEventForceSwap <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a> = HandEventForceSwap.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  267</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>)</div>
+<div class="line"><span class="lineno">  268</span>    {</div>
+<div class="line"><span class="lineno">  269</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetSrc().GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.HANDS)</div>
+<div class="line"><span class="lineno">  270</span>      {</div>
+<div class="line"><span class="lineno">  271</span>        <a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_AnimationID;</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>        <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetSrc();</div>
+<div class="line"><span class="lineno">  274</span>        <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Src2;</div>
+<div class="line"><span class="lineno">  275</span>        <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetDst();</div>
+<div class="line"><span class="lineno">  276</span>        <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Dst2;</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>        <a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Animation2ID;</div>
+<div class="line"><span class="lineno">  279</span>      }</div>
+<div class="line"><span class="lineno">  280</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  281</span>      {</div>
+<div class="line"><span class="lineno">  282</span>        <a class="code hl_variable" href="#ad5225b8ffe042d1dff4aa98ebc7cd1a9">m_Start</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Animation2ID;</div>
+<div class="line"><span class="lineno">  283</span> </div>
+<div class="line"><span class="lineno">  284</span>        <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Src2;</div>
+<div class="line"><span class="lineno">  285</span>        <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetSrc();</div>
+<div class="line"><span class="lineno">  286</span>        <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_Dst2;</div>
+<div class="line"><span class="lineno">  287</span>        <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.GetDst();</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>        <a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">efs</a>.m_AnimationID;</div>
+<div class="line"><span class="lineno">  290</span>      }</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>      <a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>.m_Src1 = <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a>;</div>
+<div class="line"><span class="lineno">  293</span>      <a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>.m_Dst1 = <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>;</div>
+<div class="line"><span class="lineno">  294</span>      <a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>.m_Src2 = <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a>;</div>
+<div class="line"><span class="lineno">  295</span>      <a class="code hl_variable" href="#ab5cfa3c797a34e4975797906c61b1915">m_Swap</a>.m_Dst2 = <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>;</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  298</span>      {</div>
+<div class="line"><span class="lineno">  299</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().AddInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">c_InventoryReservationTimeoutShortMS</a>);</div>
+<div class="line"><span class="lineno">  300</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().AddInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">c_InventoryReservationTimeoutShortMS</a>);</div>
+<div class="line"><span class="lineno">  301</span>      }</div>
+<div class="line"><span class="lineno">  302</span>    }</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// @NOTE: super at the end (prevent override from submachine start)</span></div>
+<div class="line"><span class="lineno">  305</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00688">GameInventory::c_InventoryReservationTimeoutShortMS</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00113">m_Dst1</a>, <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00114">m_Dst2</a>, <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00111">m_Src1</a>, and <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00112">m_Src2</a>.</p>
 
 </div>
 </div>
@@ -1475,6 +1932,24 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html#l00103">103</a> of file <a class="el" href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html">HandAnimatedMovingToAtt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>  {</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_variable" href="#a947041641f6abaa01b8c4fdb0128ecbe">m_Entity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.GetSrcEntity();</div>
+<div class="line"><span class="lineno">  106</span>    HandEventMoveTo <a class="code hl_class" href="../../db/d06/class_param3.html">ev_move</a> = HandEventMoveTo.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ev_move</a>)</div>
+<div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>      <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Dst = <a class="code hl_class" href="../../db/d06/class_param3.html">ev_move</a>.GetDst();</div>
+<div class="line"><span class="lineno">  110</span>      <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">ev_move</a>.GetAnimationID();</div>
+<div class="line"><span class="lineno">  111</span>      <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">ev_move</a>.GetAnimationID();</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>      <a class="code hl_variable" href="#ad6dadfe1b49ef6fbe45fc1cb329421e2">m_ilEntity</a> = <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Dst;</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().AddInventoryReservationEx(<a class="code hl_variable" href="#a947041641f6abaa01b8c4fdb0128ecbe">m_Entity</a>, <a class="code hl_variable" href="#ad6dadfe1b49ef6fbe45fc1cb329421e2">m_ilEntity</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">c_InventoryReservationTimeoutShortMS</a>);</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// @NOTE: super at the end (prevent override from submachine start)</span></div>
+<div class="line"><span class="lineno">  119</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00688">GameInventory::c_InventoryReservationTimeoutShortMS</a>, and <a class="el" href="../../d2/d0c/_action_debug_8c_source.html#l00011">m_Entity</a>.</p>
 
 </div>
 </div>
@@ -1502,6 +1977,35 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d03/_hand_animated_swapping_8c_source.html#l00034">34</a> of file <a class="el" href="../../d1/d03/_hand_animated_swapping_8c_source.html">HandAnimatedSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>  {</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_class" href="../../d1/d02/class_hand_event_swap.html">HandEventSwap</a> <a class="code hl_class" href="../../db/d06/class_param3.html">es</a> = <a class="code hl_class" href="../../d1/d02/class_hand_event_swap.html">HandEventSwap</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">es</a>)</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>      <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">es</a>.GetSrc();</div>
+<div class="line"><span class="lineno">   40</span>      <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">es</a>.m_Src2;</div>
+<div class="line"><span class="lineno">   41</span>      <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">es</a>.GetDst();</div>
+<div class="line"><span class="lineno">   42</span>      <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">es</a>.m_Dst2;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>      <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Src1 = <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a>;</div>
+<div class="line"><span class="lineno">   45</span>      <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Src2 = <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a>;</div>
+<div class="line"><span class="lineno">   46</span>      <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Dst1 = <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>;</div>
+<div class="line"><span class="lineno">   47</span>      <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Dst2 = <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>      <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">es</a>.m_AnimationID;</div>
+<div class="line"><span class="lineno">   50</span>      <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">es</a>.m_Animation2ID;</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   53</span>      {</div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().AddInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">c_InventoryReservationTimeoutShortMS</a>);</div>
+<div class="line"><span class="lineno">   55</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().AddInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">c_InventoryReservationTimeoutShortMS</a>);</div>
+<div class="line"><span class="lineno">   56</span>      }</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// @NOTE: super at the end (prevent override from submachine start)</span></div>
+<div class="line"><span class="lineno">   60</span>  }</div>
+<div class="ttc" id="aclass_hand_event_swap_html"><div class="ttname"><a href="../../d1/d02/class_hand_event_swap.html">HandEventSwap</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00621">Hand_Events.c:622</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00688">GameInventory::c_InventoryReservationTimeoutShortMS</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00113">m_Dst1</a>, <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00114">m_Dst2</a>, <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00111">m_Src1</a>, and <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00112">m_Src2</a>.</p>
 
 </div>
 </div>
@@ -1529,6 +2033,20 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_hand_animated_taking_from_att_8c_source.html#l00091">91</a> of file <a class="el" href="../../da/d03/_hand_animated_taking_from_att_8c_source.html">HandAnimatedTakingFromAtt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>  {</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.GetDst();</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Src = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.GetSrc();</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_Dst = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.GetDst();</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_variable" href="#ab42db25041f9fff59236373bd7764f81">m_Hide</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.GetAnimationID();</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_variable" href="#abf0da5710d37c6fdab699d0b15c7068c">m_Show</a>.m_ActionType = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.GetAnimationID();</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().AddInventoryReservationEx(<a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>.GetItem(), <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#a6197604def6effd41d564cfa569ceecf">c_InventoryReservationTimeoutShortMS</a>);</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// @NOTE: super at the end (prevent override from submachine start)</span></div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00688">GameInventory::c_InventoryReservationTimeoutShortMS</a>.</p>
 
 </div>
 </div>
@@ -1556,6 +2074,26 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00006">6</a> of file <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html">HandReplacingItemElsewhereWithNewInHands.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>  {</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span>    Man <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player;</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_class" href="../../dc/d02/class_hand_event_replace_with_new_base.html">HandEventReplaceWithNewBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">edr</a> = <a class="code hl_class" href="../../dc/d02/class_hand_event_replace_with_new_base.html">HandEventReplaceWithNewBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">edr</a>)</div>
+<div class="line"><span class="lineno">   13</span>    {</div>
+<div class="line"><span class="lineno">   14</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] HandStartReplacingItemElsewhereWithNewInHands about to execute lambda&quot;</span>);</div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>      <a class="code hl_class" href="../../d4/d09/class_human_inventory_with_f_s_m.html">HumanInventoryWithFSM</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inv</a> = <a class="code hl_class" href="../../d4/d09/class_human_inventory_with_f_s_m.html">HumanInventoryWithFSM</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory());</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">edr</a>.m_Lambda.Execute(<a class="code hl_class" href="../../db/d06/class_param3.html">inv</a>);</div>
+<div class="line"><span class="lineno">   18</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   21</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[hndfsm] HandStartReplacingItemElsewhereWithNewInHands - not a HandEvenReplaceWithNewBase event&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>  }</div>
+<div class="ttc" id="aclass_hand_event_replace_with_new_base_html"><div class="ttname"><a href="../../dc/d02/class_hand_event_replace_with_new_base.html">HandEventReplaceWithNewBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00710">Hand_Events.c:711</a></div></div>
+<div class="ttc" id="aclass_human_inventory_with_f_s_m_html"><div class="ttname"><a href="../../d4/d09/class_human_inventory_with_f_s_m.html">HumanInventoryWithFSM</a></div><div class="ttdoc">HumanInventory... with FSM (synchronous, no anims)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_human_inventory_with_f_s_m_8c_source.html#l00005">HumanInventoryWithFSM.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>.</p>
 
 </div>
 </div>
@@ -1583,6 +2121,34 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00006">6</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>  {</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span>    Man <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player;</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">itemInHands</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetHumanInventory().GetEntityInHands();</div>
+<div class="line"><span class="lineno">   12</span> </div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">src</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">itemInHands</a>.GetInventory().GetCurrentInventoryLocation(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>))</div>
+<div class="line"><span class="lineno">   15</span>    {</div>
+<div class="line"><span class="lineno">   16</span>      <a class="code hl_class" href="../../d1/d0f/class_hand_event_destroy_and_replace_with_new.html">HandEventDestroyAndReplaceWithNew</a> <a class="code hl_class" href="../../db/d06/class_param3.html">edr</a> = <a class="code hl_class" href="../../d1/d0f/class_hand_event_destroy_and_replace_with_new.html">HandEventDestroyAndReplaceWithNew</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   17</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">edr</a>)</div>
+<div class="line"><span class="lineno">   18</span>      {</div>
+<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] HandStartReplacingItemInHands about to execute lambda&quot;</span>);</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>        <a class="code hl_class" href="../../d4/d09/class_human_inventory_with_f_s_m.html">HumanInventoryWithFSM</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inv</a> = <a class="code hl_class" href="../../d4/d09/class_human_inventory_with_f_s_m.html">HumanInventoryWithFSM</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetInventory());</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">edr</a>.m_Lambda.Execute(<a class="code hl_class" href="../../db/d06/class_param3.html">inv</a>);</div>
+<div class="line"><span class="lineno">   23</span>        <span class="comment">//player.GetItemAccessor().OnItemInHandsChanged();</span></div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   25</span>      }</div>
+<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   27</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[hndfsm] HandStartReplacingItemInHands - not a HandEventDestroyAndReplaceWithNew event&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   30</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[hndfsm] HandStartReplacingItemInHands - itemInHands has no InventoryLocation&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>  }</div>
+<div class="ttc" id="aclass_hand_event_destroy_and_replace_with_new_html"><div class="ttname"><a href="../../d1/d0f/class_hand_event_destroy_and_replace_with_new.html">HandEventDestroyAndReplaceWithNew</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00715">Hand_Events.c:716</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>.</p>
 
 </div>
 </div>
@@ -1610,7 +2176,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00066">66</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   67</span>  {</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   69</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a25901bba506525c68e8ce3dc24951dfa" name="a25901bba506525c68e8ce3dc24951dfa"></a>
@@ -1637,6 +2206,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00012">12</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>  {</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_function" href="#a6e99808ed928201431db14dac56dcbf9">SyncAnimState</a>();</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>    <span class="comment">//m_weapon.OnStableStateEntry();</span></div>
+<div class="line"><span class="lineno">   18</span>  }</div>
+<div class="ttc" id="aclass_hand_state_base_html_a6e99808ed928201431db14dac56dcbf9"><div class="ttname"><a href="#a6e99808ed928201431db14dac56dcbf9">HandStateBase::SyncAnimState</a></div><div class="ttdeci">void SyncAnimState()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d02/_hand_stable_state_8c_source.html#l00010">HandStableState.c:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0f/_weapon_stable_state_8c_source.html#l00039">SyncAnimState()</a>.</p>
 
 </div>
 </div>
@@ -1664,6 +2242,42 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d05/_hand_start_action_8c_source.html#l00015">15</a> of file <a class="el" href="../../d1/d05/_hand_start_action_8c_source.html">HandStartAction.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>  {</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player)</div>
+<div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>      <a class="code hl_class" href="../../da/d00/class_human_command_weapons.html">HumanCommandWeapons</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetCommandModifier_Weapons();</div>
+<div class="line"><span class="lineno">   22</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>)</div>
+<div class="line"><span class="lineno">   23</span>      {</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad427d937cf3f3f41691f22751ecfe423">m_ActionType</a> == -1)</div>
+<div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.StartAction(-1, -1);</div>
+<div class="line"><span class="lineno">   27</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;HCW: &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player) + <span class="stringliteral">&quot; STS = &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetSimulationTimeStamp() + <span class="stringliteral">&quot; playing A=-1 AT=-1 fini=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.IsActionFinished());</div>
+<div class="line"><span class="lineno">   28</span>        }</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   30</span>        {</div>
+<div class="line"><span class="lineno">   31</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.StartAction(<a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>, <a class="code hl_variable" href="#ad427d937cf3f3f41691f22751ecfe423">m_ActionType</a>);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.GetRunningAction() == <a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.GetRunningActionType() == <a class="code hl_variable" href="#ad427d937cf3f3f41691f22751ecfe423">m_ActionType</a>)</div>
+<div class="line"><span class="lineno">   34</span>          {</div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;HCW: &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player) + <span class="stringliteral">&quot; STS = &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetSimulationTimeStamp() + <span class="stringliteral">&quot; playing A=&quot;</span> + <span class="keyword">typename</span>.EnumToString(<a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>, <a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>) + <span class="stringliteral">&quot; AT=&quot;</span> + <a class="code hl_function" href="../../d4/d0e/human_8c.html#a7a257c76197be68ad54ce2409c5b9d3a">WeaponActionTypeToString</a>(<a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>, <a class="code hl_variable" href="#ad427d937cf3f3f41691f22751ecfe423">m_ActionType</a>) + <span class="stringliteral">&quot; fini=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.IsActionFinished());</div>
+<div class="line"><span class="lineno">   36</span>          }</div>
+<div class="line"><span class="lineno">   37</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   38</span>            <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;HCW: NOT playing A=&quot;</span> + <span class="keyword">typename</span>.EnumToString(<a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>, <a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>) + <span class="stringliteral">&quot; AT=&quot;</span> + <a class="code hl_function" href="../../d4/d0e/human_8c.html#a7a257c76197be68ad54ce2409c5b9d3a">WeaponActionTypeToString</a>(<a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>, <a class="code hl_variable" href="#ad427d937cf3f3f41691f22751ecfe423">m_ActionType</a>) + <span class="stringliteral">&quot; fini=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.IsActionFinished());</div>
+<div class="line"><span class="lineno">   39</span>        }</div>
+<div class="line"><span class="lineno">   40</span>      }</div>
+<div class="line"><span class="lineno">   41</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;---: remote playing A=&quot;</span> + <span class="keyword">typename</span>.EnumToString(<a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>, <a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>) + <span class="stringliteral">&quot; AT=&quot;</span> + <a class="code hl_function" href="../../d4/d0e/human_8c.html#a7a257c76197be68ad54ce2409c5b9d3a">WeaponActionTypeToString</a>(<a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>, <a class="code hl_variable" href="#ad427d937cf3f3f41691f22751ecfe423">m_ActionType</a>));</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;---: warning, no player wants to play A=&quot;</span> + <span class="keyword">typename</span>.EnumToString(<a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>, <a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>) + <span class="stringliteral">&quot; AT=&quot;</span> + <a class="code hl_function" href="../../d4/d0e/human_8c.html#a7a257c76197be68ad54ce2409c5b9d3a">WeaponActionTypeToString</a>(<a class="code hl_variable" href="#a7537d4a3cf8246af388a1f6455f0bd5e">m_Action</a>, <a class="code hl_variable" href="#ad427d937cf3f3f41691f22751ecfe423">m_ActionType</a>));</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+<div class="ttc" id="aclass_human_command_weapons_html"><div class="ttname"><a href="../../da/d00/class_human_command_weapons.html">HumanCommandWeapons</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00973">human.c:974</a></div></div>
+<div class="ttc" id="ahuman_8c_html_a7a257c76197be68ad54ce2409c5b9d3a"><div class="ttname"><a href="../../d4/d0e/human_8c.html#a7a257c76197be68ad54ce2409c5b9d3a">WeaponActionTypeToString</a></div><div class="ttdeci">string WeaponActionTypeToString(int A, int AT)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00923">human.c:923</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d2/d05/_action_input_8c.html#a3d09e412d12db79f4e4dda7b223efcc9">m_Action</a>, and <a class="el" href="../../d4/d0e/human_8c_source.html#l00923">WeaponActionTypeToString()</a>.</p>
 
 </div>
 </div>
@@ -1691,6 +2305,33 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00049">49</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>  {</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a44cb21a3b6ad2e8fd9bce331855d442a">HasFSM</a>() &amp;&amp; !<a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.IsRunning())</div>
+<div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>)</div>
+<div class="line"><span class="lineno">   54</span>      {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] { &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player) + <span class="stringliteral">&quot; STS = &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetSimulationTimeStamp() + <span class="stringliteral">&quot; &quot;</span> + <span class="keyword">this</span>.Type().ToString() + <span class="stringliteral">&quot;  Has Sub-FSM! Starting submachine...&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>      }</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   58</span>      {</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] { &quot;</span> + this.<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>().<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>() + <span class="stringliteral">&quot;  Has Sub-FSM! Starting submachine...&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span>      }</div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.Start(e);</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>)</div>
+<div class="line"><span class="lineno">   66</span>      {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] { &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player) + <span class="stringliteral">&quot; STS = &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetSimulationTimeStamp() + <span class="stringliteral">&quot; &quot;</span> + <span class="keyword">this</span>.Type().ToString());</div>
+<div class="line"><span class="lineno">   68</span>      }</div>
+<div class="line"><span class="lineno">   69</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   70</span>      {</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] { &quot;</span> + this.<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>().<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>());</div>
+<div class="line"><span class="lineno">   72</span>      }</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="line"><span class="lineno">   74</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">HasFSM()</a>, <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">m_FSM</a>, <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>, and <a class="el" href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">Type</a>.</p>
 
 </div>
 </div>
@@ -1718,7 +2359,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00044">44</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   45</span>  {</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0d62c16ce9a8651b693296fb4438c1ac" name="a0d62c16ce9a8651b693296fb4438c1ac"></a>
@@ -1745,6 +2390,27 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00212">212</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>  {</div>
+<div class="line"><span class="lineno">  214</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  215</span>    {</div>
+<div class="line"><span class="lineno">  216</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>);</div>
+<div class="line"><span class="lineno">  217</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>);</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  220</span>    {</div>
+<div class="line"><span class="lineno">  221</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem());</div>
+<div class="line"><span class="lineno">  222</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem());</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  231</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -1772,6 +2438,27 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00332">332</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  333</span>  {</div>
+<div class="line"><span class="lineno">  334</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  335</span>    {</div>
+<div class="line"><span class="lineno">  336</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>);</div>
+<div class="line"><span class="lineno">  337</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>);</div>
+<div class="line"><span class="lineno">  338</span>    }</div>
+<div class="line"><span class="lineno">  339</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  340</span>    {</div>
+<div class="line"><span class="lineno">  341</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem());</div>
+<div class="line"><span class="lineno">  342</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player, <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem());</div>
+<div class="line"><span class="lineno">  343</span>    }</div>
+<div class="line"><span class="lineno">  344</span> </div>
+<div class="line"><span class="lineno">  345</span>    <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  346</span>    <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  347</span>    <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  348</span>    <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  349</span> </div>
+<div class="line"><span class="lineno">  350</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  351</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -1799,6 +2486,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html#l00134">134</a> of file <a class="el" href="../../d3/d0d/_hand_animated_moving_to_att_8c_source.html">HandAnimatedMovingToAtt.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>  {</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  137</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a947041641f6abaa01b8c4fdb0128ecbe">m_Entity</a>, <a class="code hl_variable" href="#ad6dadfe1b49ef6fbe45fc1cb329421e2">m_ilEntity</a>);</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_variable" href="#a947041641f6abaa01b8c4fdb0128ecbe">m_Entity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_variable" href="#ad6dadfe1b49ef6fbe45fc1cb329421e2">m_ilEntity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  143</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/d0c/_action_debug_8c_source.html#l00011">m_Entity</a>.</p>
 
 </div>
 </div>
@@ -1826,6 +2524,22 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d03/_hand_animated_swapping_8c_source.html#l00087">87</a> of file <a class="el" href="../../d1/d03/_hand_animated_swapping_8c_source.html">HandAnimatedSwapping.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>  {</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>.GetItem(), <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a>);</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>.GetItem(), <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a>);</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="#a7fa8d00b3d886895fc03a4a2b3b1f9a7">m_Src1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_variable" href="#af702343a0be0ab3698af31ba10e019c4">m_Src2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_variable" href="#a74a5b95feaba2f199c2be3623d9d2157">m_Dst1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_variable" href="#ad5ca24e68d76d4b696f313ffaa681d20">m_Dst2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  101</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -1853,7 +2567,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d03/_hand_animated_taking_from_att_8c_source.html#l00122">122</a> of file <a class="el" href="../../da/d03/_hand_animated_taking_from_att_8c_source.html">HandAnimatedTakingFromAtt.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  123</span>  {</div>
+<div class="line"><span class="lineno">  124</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetHumanInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>.GetItem(), <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a>);</div>
+<div class="line"><span class="lineno">  125</span>    <a class="code hl_variable" href="#a1b0cbb1aadac002afb3f011a3948e0bc">m_Dst</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0d62c16ce9a8651b693296fb4438c1ac" name="a0d62c16ce9a8651b693296fb4438c1ac"></a>
@@ -1880,7 +2600,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html#l00029">29</a> of file <a class="el" href="../../d7/d09/_hand_replacing_item_elsewhere_with_new_in_hands_8c_source.html">HandReplacingItemElsewhereWithNewInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   30</span>  {</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   32</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0d62c16ce9a8651b693296fb4438c1ac" name="a0d62c16ce9a8651b693296fb4438c1ac"></a>
@@ -1907,7 +2630,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00038">38</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   39</span>  {</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   41</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0d62c16ce9a8651b693296fb4438c1ac" name="a0d62c16ce9a8651b693296fb4438c1ac"></a>
@@ -1934,7 +2660,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html#l00076">76</a> of file <a class="el" href="../../d9/d0e/_hand_replacing_item_in_hands_8c_source.html">HandReplacingItemInHands.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   77</span>  {</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   79</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0d62c16ce9a8651b693296fb4438c1ac" name="a0d62c16ce9a8651b693296fb4438c1ac"></a>
@@ -1961,7 +2690,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00028">28</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   29</span>  {</div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment">//m_weapon.ResetWeaponAnimState();</span></div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   32</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0d62c16ce9a8651b693296fb4438c1ac" name="a0d62c16ce9a8651b693296fb4438c1ac"></a>
@@ -1988,7 +2721,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d05/_hand_start_action_8c_source.html#l00048">48</a> of file <a class="el" href="../../d1/d05/_hand_start_action_8c_source.html">HandStartAction.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   49</span>  {</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   51</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a60c66ab1a0a3b1ab88bbeace66a50cda" name="a60c66ab1a0a3b1ab88bbeace66a50cda"></a>
@@ -2015,6 +2751,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00106">106</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>  {</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] } &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player) + <span class="stringliteral">&quot; STS = &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_Player.GetSimulationTimeStamp() + <span class="stringliteral">&quot; &quot;</span> + <span class="keyword">this</span>.Type().ToString());</div>
+<div class="line"><span class="lineno">  109</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>.</p>
 
 </div>
 </div>
@@ -2055,6 +2796,11 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00135">135</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>  {</div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_variable" href="#a4813176ff688214e79ebd3a0c77dec38">m_Player</a>.GetHumanInventory().OnHandsStateChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>);</div>
+<div class="line"><span class="lineno">  138</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00008">m_Player</a>.</p>
 
 </div>
 </div>
@@ -2095,7 +2841,8 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00128">128</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  128</span>{ }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a93568143b3e3b9028c29221b6d1bb5bc" name="a93568143b3e3b9028c29221b6d1bb5bc"></a>
@@ -2122,6 +2869,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00019">19</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>  {</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnUpdate(<a class="code hl_class" href="../../db/d06/class_param3.html">dt</a>);</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_function" href="#a6e99808ed928201431db14dac56dcbf9">SyncAnimState</a>();</div>
+<div class="line"><span class="lineno">   23</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0f/_weapon_stable_state_8c_source.html#l00039">SyncAnimState()</a>.</p>
 
 </div>
 </div>
@@ -2149,6 +2902,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00081">81</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>  {</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a44cb21a3b6ad2e8fd9bce331855d442a">HasFSM</a>() &amp;&amp; <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.IsRunning())</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.GetCurrentState().OnUpdate(<a class="code hl_class" href="../../db/d06/class_param3.html">dt</a>);</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">HasFSM()</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -2176,6 +2935,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00025">25</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>  {</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a44cb21a3b6ad2e8fd9bce331855d442a">HasFSM</a>())</div>
+<div class="line"><span class="lineno">   28</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a8782816327cac7d37c87f7bbae5b741b">m_FSM</a>.ProcessEvent(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   30</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">HasFSM()</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">m_FSM</a>.</p>
 
 </div>
 </div>
@@ -2205,6 +2971,9 @@ Private Attributes</h2></td></tr>
 <p>allows construction of hierarchical state machine </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00016">16</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{ <a class="code hl_variable" href="#a87b981068ee55873e65b4137eac4f927">m_parentState</a> = parent; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00009">m_parentState</a>.</p>
 
 </div>
 </div>
@@ -2232,7 +3001,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html#l00010">10</a> of file <a class="el" href="../../dc/d02/_hand_stable_state_8c_source.html">HandStableState.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   10</span>{ }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -2356,6 +3126,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00113">113</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00144">OnEntry()</a>.</p>
+
 </div>
 </div>
 <a id="ad5ca24e68d76d4b696f313ffaa681d20" name="ad5ca24e68d76d4b696f313ffaa681d20"></a>
@@ -2379,6 +3151,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00114">114</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00144">OnEntry()</a>.</p>
 
 </div>
 </div>
@@ -2429,6 +3203,8 @@ Private Attributes</h2></td></tr>
 <p>hierarchical parent state of this state (or null) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00010">10</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00035">AddTransition()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00023">GetFSM()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00022">HasFSM()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00115">IsWaitingForActionFinish()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00091">OnAbort()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00049">OnEntry()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00081">OnUpdate()</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00025">ProcessEvent()</a>.</p>
 
 </div>
 </div>
@@ -2554,6 +3330,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00009">9</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00020">GetParentState()</a>, <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00011">HandStateBase()</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00016">SetParentState()</a>.</p>
+
 </div>
 </div>
 <a id="a4813176ff688214e79ebd3a0c77dec38" name="a4813176ff688214e79ebd3a0c77dec38"></a>
@@ -2577,6 +3355,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00008">8</a> of file <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html">HandStateBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00011">HandStateBase()</a>, and <a class="el" href="../../d8/d0d/_hand_state_base_8c_source.html#l00135">OnStateChanged()</a>.</p>
 
 </div>
 </div>
@@ -2722,6 +3502,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00111">111</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00264">OnEntry()</a>.</p>
+
 </div>
 </div>
 <a id="af702343a0be0ab3698af31ba10e019c4" name="af702343a0be0ab3698af31ba10e019c4"></a>
@@ -2745,6 +3527,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00112">112</a> of file <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html">HandAnimatedForceSwapping.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/_hand_animated_force_swapping_8c_source.html#l00264">OnEntry()</a>.</p>
 
 </div>
 </div>

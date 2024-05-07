@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -158,7 +155,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html#l00007">7</a> of file <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html">DayZSpectator.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    8</span>  {</div>
+<div class="line"><span class="lineno">    9</span>    SetEventMask(<a class="code hl_enumeration" href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a>.FRAME);</div>
+<div class="line"><span class="lineno">   10</span>  }</div>
+<div class="ttc" id="agroup___entity_attributes_html_gaa29339063b04471895b3cb38b17cdb13"><div class="ttname"><a href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a></div><div class="ttdeci">EntityEvent</div><div class="ttdoc">Entity events for event-mask, or throwing event from code.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d05/_en_entity_8c_source.html#l00043">EnEntity.c:44</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -190,6 +191,67 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html#l00012">12</a> of file <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html">DayZSpectator.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>  {</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UACarShiftGearUp</a>).LocalPress())</div>
+<div class="line"><span class="lineno">   15</span>      <a class="code hl_variable" href="#ae5c59409aa844e232fd0cf44834ee2b7">m_SpeedMultiplier</a> = <a class="code hl_variable" href="#ae5c59409aa844e232fd0cf44834ee2b7">m_SpeedMultiplier</a> + 2;</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UACarShiftGearDown</a>).LocalPress())</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_variable" href="#ae5c59409aa844e232fd0cf44834ee2b7">m_SpeedMultiplier</a> = <a class="code hl_variable" href="#ae5c59409aa844e232fd0cf44834ee2b7">m_SpeedMultiplier</a> - 2;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">float</span> speed = 5.0 * <a class="code hl_variable" href="#ae5c59409aa844e232fd0cf44834ee2b7">m_SpeedMultiplier</a>;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UATurbo</a>).LocalValue())</div>
+<div class="line"><span class="lineno">   21</span>      speed *= 2;</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">forward</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAMoveForward</a>).LocalValue() - <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAMoveBack</a>).LocalValue();</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">strafe</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAMoveRight</a>).LocalValue() - <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAMoveLeft</a>).LocalValue();</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">direction</a> = GetDirection();</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">directionAside</a> = <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_variable" href="../../d7/d0c/classvector.html#ac187fd4c6a90da92d88737f963b03d6d">Up</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">direction</a>;</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">oldPos</a> = <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>();</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">forwardChange</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">forward</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">direction</a> * speed;</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">strafeChange</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">strafe</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">directionAside</a> * speed;</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">newPos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">oldPos</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">forwardChange</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">strafeChange</a>;</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">yMin</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceRoadY(<a class="code hl_class" href="../../db/d06/class_param3.html">newPos</a>[0], <a class="code hl_class" href="../../db/d06/class_param3.html">newPos</a>[2]);</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newPos</a>[1] &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">yMin</a>)</div>
+<div class="line"><span class="lineno">   35</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">newPos</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">yMin</a>;</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="../../d6/d0e/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">newPos</a>);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">yawDiff</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAAimLeft</a>).LocalValue() - <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAAimRight</a>).LocalValue();</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">pitchDiff</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAAimDown</a>).LocalValue() - <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAAimUp</a>).LocalValue();</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">oldOrient</a> = <a class="code hl_function" href="../../df/d0e/_area_damage_manager_8c.html#a3bae34135b918bcd04b5f8a3d136e313">GetOrientation</a>();</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">oldOrient</a>;</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>[0] = <a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>[0] - <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_variable" href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">RAD2DEG</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">yawDiff</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>[1] - <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_variable" href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">RAD2DEG</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">pitchDiff</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>[1] &lt; -89)</div>
+<div class="line"><span class="lineno">   46</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>[1] = -89;</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>[1] &gt; 89)</div>
+<div class="line"><span class="lineno">   48</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>[1] = 89;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    SetOrientation(<a class="code hl_class" href="../../db/d06/class_param3.html">newOrient</a>);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7f67eb7617c545f730e6f91243e6ea26">m_SendUpdateAcc</a> &gt; 0.5)</div>
+<div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().UpdateSpectatorPosition(<a class="code hl_class" href="../../db/d06/class_param3.html">newPos</a>);</div>
+<div class="line"><span class="lineno">   55</span>      <a class="code hl_variable" href="#a7f67eb7617c545f730e6f91243e6ea26">m_SendUpdateAcc</a> = 0;</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="#a7f67eb7617c545f730e6f91243e6ea26">m_SendUpdateAcc</a> = <a class="code hl_variable" href="#a7f67eb7617c545f730e6f91243e6ea26">m_SendUpdateAcc</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="ttc" id="a_area_damage_manager_8c_html_a3bae34135b918bcd04b5f8a3d136e313"><div class="ttname"><a href="../../df/d0e/_area_damage_manager_8c.html#a3bae34135b918bcd04b5f8a3d136e313">GetOrientation</a></div><div class="ttdeci">vector GetOrientation()</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_area_damage_manager_8c_source.html#l00300">AreaDamageManager.c:300</a></div></div>
+<div class="ttc" id="a_u_a_input_8c_html_a616105f49c02ce570dbb5acb4b9b17f8"><div class="ttname"><a href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a></div><div class="ttdeci">proto native UAInputAPI GetUApi()</div></div>
+<div class="ttc" id="a_underground_area_loader_8c_html_af4b5180d61f839c99de2d15fdcda4568"><div class="ttname"><a href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a></div><div class="ttdeci">class JsonUndergroundAreaTriggerData GetPosition</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0a/_underground_area_loader_8c_source.html#l00001">UndergroundAreaLoader.c:9</a></div></div>
+<div class="ttc" id="aclass_day_z_spectator_html_a7f67eb7617c545f730e6f91243e6ea26"><div class="ttname"><a href="#a7f67eb7617c545f730e6f91243e6ea26">DayZSpectator::m_SendUpdateAcc</a></div><div class="ttdeci">float m_SendUpdateAcc</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_day_z_spectator_8c_source.html#l00005">DayZSpectator.c:5</a></div></div>
+<div class="ttc" id="aclass_day_z_spectator_html_ae5c59409aa844e232fd0cf44834ee2b7"><div class="ttname"><a href="#ae5c59409aa844e232fd0cf44834ee2b7">DayZSpectator::m_SpeedMultiplier</a></div><div class="ttdeci">float m_SpeedMultiplier</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_day_z_spectator_8c_source.html#l00003">DayZSpectator.c:3</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="aclassvector_html_ac187fd4c6a90da92d88737f963b03d6d"><div class="ttname"><a href="../../d7/d0c/classvector.html#ac187fd4c6a90da92d88737f963b03d6d">vector::Up</a></div><div class="ttdeci">static const vector Up</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00107">EnConvert.c:107</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga3aa6cafceab9d573982aa9db5a5d6e34"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a></div><div class="ttdeci">proto native void SetPosition(vector position)</div><div class="ttdoc">Set the world position of the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00420">Effect.c:420</a></div></div>
+<div class="ttc" id="agroup___math_html_gad73851cb23a468ee6eb705d0ec76e141"><div class="ttname"><a href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">Math::RAD2DEG</a></div><div class="ttdeci">static const float RAD2DEG</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00016">EnMath.c:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../df/d0e/_area_damage_manager_8c_source.html#l00300">GetOrientation()</a>, <a class="el" href="../../d3/d0a/_underground_area_loader_8c_source.html#l00009">GetPosition</a>, <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>, <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html#l00005">m_SendUpdateAcc</a>, <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html#l00003">m_SpeedMultiplier</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00016">Math::RAD2DEG</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00420">SetPosition()</a>, and <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00107">vector::Up</a>.</p>
 
 </div>
 </div>
@@ -216,6 +278,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html#l00005">5</a> of file <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html">DayZSpectator.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html#l00012">EOnFrame()</a>.</p>
+
 </div>
 </div>
 <a id="ae5c59409aa844e232fd0cf44834ee2b7" name="ae5c59409aa844e232fd0cf44834ee2b7"></a>
@@ -239,6 +303,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html#l00003">3</a> of file <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html">DayZSpectator.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_day_z_spectator_8c_source.html#l00012">EOnFrame()</a>.</p>
 
 </div>
 </div>

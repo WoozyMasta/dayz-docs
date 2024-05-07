@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -155,6 +152,16 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00063">63</a> of file <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html">ObjectSpawner.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>  {</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_function" href="#ae26be93be9f524a80f5e6c86dfe4a610">SpawnObjects</a>();</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorld().ProcessMarkedObjectsForPathgraphUpdate();</div>
+<div class="line"><span class="lineno">   67</span>  }</div>
+<div class="ttc" id="aclass_object_spawner_handler_html_ae26be93be9f524a80f5e6c86dfe4a610"><div class="ttname"><a href="#ae26be93be9f524a80f5e6c86dfe4a610">ObjectSpawnerHandler::SpawnObjects</a></div><div class="ttdeci">static void SpawnObjects()</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0b/_object_spawner_8c_source.html#l00005">ObjectSpawner.c:5</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00005">SpawnObjects()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l01059">CGame::GlobalsInit()</a>.</p>
 
 </div>
 </div>
@@ -182,6 +189,56 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00027">27</a> of file <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html">ObjectSpawner.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>  {</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a> <a class="code hl_class" href="../../db/d06/class_param3.html">object</a>;</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">float</span> scale = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.scale;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (scale == 0)</div>
+<div class="line"><span class="lineno">   33</span>      scale = 1;</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.name.Contains(<span class="stringliteral">&quot;\\&quot;</span>) || <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.name.Contains(<span class="stringliteral">&quot;/&quot;</span>))</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="#a8e9d48490e86411d0a6d1ca0dfe2697c">ValidatePath</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.name))</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordtype">object</span> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateStaticObjectUsingP3D(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.name, <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#a5f52b496fb3f21f74ab18ba12c473c58">ArrayToVec</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.pos), <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#a5f52b496fb3f21f74ab18ba12c473c58">ArrayToVec</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.ypr), scale);</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>      <span class="keywordtype">int</span> flags = <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a5b3ddad7d1af49fda8f9bd4bf67d3938">ECE_SETUP</a> | <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a62ceb6c3dfa0a5ab0ea09985591162e5">ECE_UPDATEPATHGRAPH</a> | <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#af301ac365e91a0c639affaaf7d79d169">ECE_CREATEPHYSICS</a> | <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#ac8a8788a58c05181069d2cbe22ddf09c">ECE_NOLIFETIME</a> | <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#aba8c289c2c78d02f705f0c1ee537f917">ECE_DYNAMIC_PERSISTENCY</a>;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.enableCEPersistency)</div>
+<div class="line"><span class="lineno">   45</span>      {</div>
+<div class="line"><span class="lineno">   46</span>        flags &amp;= ~ECE_DYNAMIC_PERSISTENCY;</div>
+<div class="line"><span class="lineno">   47</span>        flags &amp;= ~ECE_NOLIFETIME;</div>
+<div class="line"><span class="lineno">   48</span>      }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>      <span class="keywordtype">object</span> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.name, <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#a5f52b496fb3f21f74ab18ba12c473c58">ArrayToVec</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.pos), flags, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a9c02d6a929b70154ec49df4512205610">RF_IGNORE</a>);</div>
+<div class="line"><span class="lineno">   51</span>      <span class="keywordflow">if</span> (<span class="keywordtype">object</span>)</div>
+<div class="line"><span class="lineno">   52</span>      {</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordtype">object</span>.SetOrientation(<a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#a5f52b496fb3f21f74ab18ba12c473c58">ArrayToVec</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.ypr));</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.scale != 1)</div>
+<div class="line"><span class="lineno">   55</span>          <span class="keywordtype">object</span>.SetScale(scale);</div>
+<div class="line"><span class="lineno">   56</span>      }</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (!<span class="keywordtype">object</span>)</div>
+<div class="line"><span class="lineno">   60</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#gae273d2b39046bd2d0b46d3e5132ee54c">PrintToRPT</a>(<span class="stringliteral">&quot;Object spawner failed to spawn &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.name);</div>
+<div class="line"><span class="lineno">   61</span>  }</div>
+<div class="ttc" id="a_central_economy_8c_html_a5b3ddad7d1af49fda8f9bd4bf67d3938"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#a5b3ddad7d1af49fda8f9bd4bf67d3938">ECE_SETUP</a></div><div class="ttdeci">const int ECE_SETUP</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00009">CentralEconomy.c:9</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_a62ceb6c3dfa0a5ab0ea09985591162e5"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#a62ceb6c3dfa0a5ab0ea09985591162e5">ECE_UPDATEPATHGRAPH</a></div><div class="ttdeci">const int ECE_UPDATEPATHGRAPH</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00013">CentralEconomy.c:13</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_a9c02d6a929b70154ec49df4512205610"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#a9c02d6a929b70154ec49df4512205610">RF_IGNORE</a></div><div class="ttdeci">const int RF_IGNORE</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00056">CentralEconomy.c:56</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_aba8c289c2c78d02f705f0c1ee537f917"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#aba8c289c2c78d02f705f0c1ee537f917">ECE_DYNAMIC_PERSISTENCY</a></div><div class="ttdeci">const int ECE_DYNAMIC_PERSISTENCY</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00032">CentralEconomy.c:32</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_ac8a8788a58c05181069d2cbe22ddf09c"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#ac8a8788a58c05181069d2cbe22ddf09c">ECE_NOLIFETIME</a></div><div class="ttdeci">const int ECE_NOLIFETIME</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00029">CentralEconomy.c:29</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_af301ac365e91a0c639affaaf7d79d169"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#af301ac365e91a0c639affaaf7d79d169">ECE_CREATEPHYSICS</a></div><div class="ttdeci">const int ECE_CREATEPHYSICS</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00016">CentralEconomy.c:16</a></div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+<div class="ttc" id="aclass_object_spawner_handler_html_a8e9d48490e86411d0a6d1ca0dfe2697c"><div class="ttname"><a href="#a8e9d48490e86411d0a6d1ca0dfe2697c">ObjectSpawnerHandler::ValidatePath</a></div><div class="ttdeci">static bool ValidatePath(string path)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0b/_object_spawner_8c_source.html#l00070">ObjectSpawner.c:70</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="aclassvector_html_a5f52b496fb3f21f74ab18ba12c473c58"><div class="ttname"><a href="../../d7/d0c/classvector.html#a5f52b496fb3f21f74ab18ba12c473c58">vector::ArrayToVec</a></div><div class="ttdeci">static vector ArrayToVec(float arr[])</div><div class="ttdoc">Convert static array of floats into a vector.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00503">EnConvert.c:503</a></div></div>
+<div class="ttc" id="agroup___debug_html_gae273d2b39046bd2d0b46d3e5132ee54c"><div class="ttname"><a href="../../d0/d02/group___debug.html#gae273d2b39046bd2d0b46d3e5132ee54c">PrintToRPT</a></div><div class="ttdeci">proto void PrintToRPT(void var)</div><div class="ttdoc">Prints content of variable to RPT file (performance warning - each write means fflush!...</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00503">vector::ArrayToVec()</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00016">ECE_CREATEPHYSICS</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00032">ECE_DYNAMIC_PERSISTENCY</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00029">ECE_NOLIFETIME</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00009">ECE_SETUP</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00013">ECE_UPDATEPATHGRAPH</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d02/group___debug.html#gae273d2b39046bd2d0b46d3e5132ee54c">PrintToRPT()</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00056">RF_IGNORE</a>, and <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00070">ValidatePath()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00005">SpawnObjects()</a>.</p>
 
 </div>
 </div>
@@ -209,6 +266,38 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00005">5</a> of file <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html">ObjectSpawner.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d7/d0e/class_cfg_gameplay_handler.html">CfgGameplayHandler</a>.<a class="code hl_function" href="../../d7/d0e/class_cfg_gameplay_handler.html#a2705338f90204fd396ed0a1252f8d108">GetObjectSpawnersArr</a>() &amp;&amp; <a class="code hl_class" href="../../d7/d0e/class_cfg_gameplay_handler.html">CfgGameplayHandler</a>.<a class="code hl_function" href="../../d7/d0e/class_cfg_gameplay_handler.html#a2705338f90204fd396ed0a1252f8d108">GetObjectSpawnersArr</a>().Count() &gt; 0)</div>
+<div class="line"><span class="lineno">    8</span>    {</div>
+<div class="line"><span class="lineno">    9</span>      <a class="code hl_class" href="../../d2/d01/classarray.html">TStringArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">arr</a> = <a class="code hl_class" href="../../d7/d0e/class_cfg_gameplay_handler.html">CfgGameplayHandler</a>.<a class="code hl_function" href="../../d7/d0e/class_cfg_gameplay_handler.html#a2705338f90204fd396ed0a1252f8d108">GetObjectSpawnersArr</a>();</div>
+<div class="line"><span class="lineno">   10</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">spawnerFilePath</a>: <a class="code hl_class" href="../../db/d06/class_param3.html">arr</a>)</div>
+<div class="line"><span class="lineno">   11</span>      {</div>
+<div class="line"><span class="lineno">   12</span>        <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> = <span class="stringliteral">&quot;$mission:&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">spawnerFilePath</a>;</div>
+<div class="line"><span class="lineno">   13</span> </div>
+<div class="line"><span class="lineno">   14</span>        <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>;</div>
+<div class="line"><span class="lineno">   15</span>        <a class="code hl_class" href="../../dc/d06/class_object_spawner_json.html">ObjectSpawnerJson</a> <a class="code hl_class" href="../../db/d06/class_param3.html">spawner</a>;</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">JsonFileLoader&lt;ObjectSpawnerJson&gt;</a>.LoadFile(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">spawner</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>))</div>
+<div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>          <span class="keywordflow">foreach</span> (<a class="code hl_class" href="../../d9/d0a/class_i_t_e_m___spawner_object.html">ITEM_SpawnerObject</a> <a class="code hl_class" href="../../db/d06/class_param3.html">o</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">spawner</a>.Objects)</div>
+<div class="line"><span class="lineno">   19</span>            <a class="code hl_function" href="#a13c6fbbbec5f1f18405c2110d50cf2cf">SpawnObject</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">o</a>);</div>
+<div class="line"><span class="lineno">   20</span>        }</div>
+<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   22</span>          <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>);</div>
+<div class="line"><span class="lineno">   23</span>      }</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="line"><span class="lineno">   25</span>  }</div>
+<div class="ttc" id="a_option_selector_multistate_8c_html_a46c20eb2a26abeb1e934cd66e1dd6484"><div class="ttname"><a href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a></div><div class="ttdeci">string path</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">OptionSelectorMultistate.c:121</a></div></div>
+<div class="ttc" id="aclass_cfg_gameplay_handler_html"><div class="ttname"><a href="../../d7/d0e/class_cfg_gameplay_handler.html">CfgGameplayHandler</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_cfg_gameplay_handler_8c_source.html#l00001">CfgGameplayHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_cfg_gameplay_handler_html_a2705338f90204fd396ed0a1252f8d108"><div class="ttname"><a href="../../d7/d0e/class_cfg_gameplay_handler.html#a2705338f90204fd396ed0a1252f8d108">CfgGameplayHandler::GetObjectSpawnersArr</a></div><div class="ttdeci">static TStringArray GetObjectSpawnersArr()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_cfg_gameplay_handler_8c_source.html#l00133">CfgGameplayHandler.c:133</a></div></div>
+<div class="ttc" id="aclass_i_t_e_m___spawner_object_html"><div class="ttname"><a href="../../d9/d0a/class_i_t_e_m___spawner_object.html">ITEM_SpawnerObject</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0b/_object_spawner_8c_source.html#l00087">ObjectSpawner.c:88</a></div></div>
+<div class="ttc" id="aclass_object_spawner_handler_html_a13c6fbbbec5f1f18405c2110d50cf2cf"><div class="ttname"><a href="#a13c6fbbbec5f1f18405c2110d50cf2cf">ObjectSpawnerHandler::SpawnObject</a></div><div class="ttdeci">static void SpawnObject(ITEM_SpawnerObject item)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0b/_object_spawner_8c_source.html#l00027">ObjectSpawner.c:27</a></div></div>
+<div class="ttc" id="aclass_object_spawner_json_html"><div class="ttname"><a href="../../dc/d06/class_object_spawner_json.html">ObjectSpawnerJson</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0b/_object_spawner_8c_source.html#l00082">ObjectSpawner.c:83</a></div></div>
+<div class="ttc" id="aclassarray_html"><div class="ttname"><a href="../../d2/d01/classarray.html">array&lt; string &gt;</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../d4/d0f/_cfg_gameplay_handler_8c_source.html#l00133">CfgGameplayHandler::GetObjectSpawnersArr()</a>, <a class="el" href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">path</a>, and <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00027">SpawnObject()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00063">OnGameplayDataHandlerLoad()</a>.</p>
 
 </div>
 </div>
@@ -236,6 +325,20 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00070">70</a> of file <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html">ObjectSpawner.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>  {</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>: <a class="code hl_variable" href="#aa03b239258c020fb53d91300da2502c7">VALID_PATHS</a>)</div>
+<div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>.<a class="code hl_function" href="../../d5/d02/group___strings.html#ga85b2e59c7d314ab5456e50bab2627882">Contains</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">p</a>))</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
+<div class="ttc" id="aclass_object_spawner_handler_html_aa03b239258c020fb53d91300da2502c7"><div class="ttname"><a href="#aa03b239258c020fb53d91300da2502c7">ObjectSpawnerHandler::VALID_PATHS</a></div><div class="ttdeci">static const ref TStringArray VALID_PATHS</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0b/_object_spawner_8c_source.html#l00003">ObjectSpawner.c:3</a></div></div>
+<div class="ttc" id="agroup___strings_html_ga85b2e59c7d314ab5456e50bab2627882"><div class="ttname"><a href="../../d5/d02/group___strings.html#ga85b2e59c7d314ab5456e50bab2627882">string::Contains</a></div><div class="ttdeci">bool Contains(string sample)</div><div class="ttdoc">Returns true if sample is substring of string.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d04/_en_string_8c_source.html#l00286">EnString.c:286</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d04/_en_string_8c_source.html#l00286">string::Contains()</a>, <a class="el" href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">path</a>, and <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00003">VALID_PATHS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00027">SpawnObject()</a>.</p>
 
 </div>
 </div>
@@ -261,6 +364,9 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00003">3</a> of file <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html">ObjectSpawner.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>{<span class="stringliteral">&quot;DZ\\plants&quot;</span>, <span class="stringliteral">&quot;DZ\\plants_bliss&quot;</span>, <span class="stringliteral">&quot;DZ\\rocks&quot;</span>, <span class="stringliteral">&quot;DZ\\rocks_bliss&quot;</span>, <span class="stringliteral">&quot;DZ/plants&quot;</span>, <span class="stringliteral">&quot;DZ/plants_bliss&quot;</span>, <span class="stringliteral">&quot;DZ/rocks&quot;</span>, <span class="stringliteral">&quot;DZ/rocks_bliss&quot;</span>};</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d1/d0b/_object_spawner_8c_source.html#l00070">ValidatePath()</a>.</p>
 
 </div>
 </div>

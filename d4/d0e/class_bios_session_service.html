@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -284,6 +281,8 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>EBiosError indicating if the async operation is pending. </dd></dl>
 
+<p class="reference">Referenced by <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00047">TryGetSession()</a>.</p>
+
 </div>
 </div>
 <a id="ae3753465d225f5bb82051a6a35a9a8ba" name="ae3753465d225f5bb82051a6a35a9a8ba"></a>
@@ -310,6 +309,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00252">252</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  253</span>  {</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d5/d0f/class_client_data.html">ClientData</a>.<a class="code hl_function" href="../../d5/d0f/class_client_data.html#a3bd11808e78ca63223eae1f0953b724a">GetSimplePlayerList</a>();</div>
+<div class="line"><span class="lineno">  255</span>  }</div>
+<div class="ttc" id="aclass_client_data_html"><div class="ttname"><a href="../../d5/d0f/class_client_data.html">ClientData</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_client_data_8c_source.html#l00001">ClientData.c:2</a></div></div>
+<div class="ttc" id="aclass_client_data_html_a3bd11808e78ca63223eae1f0953b724a"><div class="ttname"><a href="../../d5/d0f/class_client_data.html#a3bd11808e78ca63223eae1f0953b724a">ClientData::GetSimplePlayerList</a></div><div class="ttdeci">static array&lt; string &gt; GetSimplePlayerList()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_client_data_8c_source.html#l00084">ClientData.c:84</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d06/_client_data_8c_source.html#l00084">ClientData::GetSimplePlayerList()</a>.</p>
 
 </div>
 </div>
@@ -356,6 +362,8 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>EBiosError indicating if the async operation is pending. </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00214">OnEnterGameplaySession()</a>.</p>
 
 </div>
 </div>
@@ -431,7 +439,9 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00138">138</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  139</span>  {</div>
+<div class="line"><span class="lineno">  140</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6aaa1fa5a49b53fe321db843938c5c1c" name="a6aaa1fa5a49b53fe321db843938c5c1c"></a>
@@ -477,6 +487,24 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00214">214</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>  {</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../d0/d06/class_online_services.html">OnlineServices</a>.<a class="code hl_function" href="../../d0/d06/class_online_services.html#ab498f9248a50c13d13b14a61a5fe7479">ErrorCaught</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">error</a>))</div>
+<div class="line"><span class="lineno">  217</span>    {</div>
+<div class="line"><span class="lineno">  218</span>      <a class="code hl_function" href="#ab3b13df781da203f582ff5ca921e11ac">SetGameplayActivityAsync</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">session_address</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">session_port</a>);</div>
+<div class="line"><span class="lineno">  219</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d0/d06/class_online_services.html">OnlineServices</a>.<a class="code hl_function" href="../../d0/d06/class_online_services.html#a8cdc6ee26a3c00833daf32162dc430f3">GetPendingInviteList</a>())</div>
+<div class="line"><span class="lineno">  220</span>        <a class="code hl_function" href="#a8ca03e4d5ea70c9a31c5939ac38f1abc">InviteToGameplaySessionAsync</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">session_address</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">session_port</a>, <a class="code hl_class" href="../../d0/d06/class_online_services.html">OnlineServices</a>.<a class="code hl_function" href="../../d0/d06/class_online_services.html#a8cdc6ee26a3c00833daf32162dc430f3">GetPendingInviteList</a>());</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>      <span class="comment">//OnlineServices.GetCurrentServerInfo(session_address, session_port);</span></div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span>  }</div>
+<div class="ttc" id="aclass_bios_session_service_html_a8ca03e4d5ea70c9a31c5939ac38f1abc"><div class="ttname"><a href="#a8ca03e4d5ea70c9a31c5939ac38f1abc">BiosSessionService::InviteToGameplaySessionAsync</a></div><div class="ttdeci">proto native EBiosError InviteToGameplaySessionAsync(string session_address, int session_port, array&lt; string &gt; invitee_list)</div><div class="ttdoc">Send invite to list of users.</div></div>
+<div class="ttc" id="aclass_bios_session_service_html_ab3b13df781da203f582ff5ca921e11ac"><div class="ttname"><a href="#ab3b13df781da203f582ff5ca921e11ac">BiosSessionService::SetGameplayActivityAsync</a></div><div class="ttdeci">proto native EBiosError SetGameplayActivityAsync(string session_address, int session_port)</div><div class="ttdoc">Sets the activity to a gameplay session.</div></div>
+<div class="ttc" id="aclass_online_services_html"><div class="ttname"><a href="../../d0/d06/class_online_services.html">OnlineServices</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d07/_online_services_8c_source.html#l00001">OnlineServices.c:2</a></div></div>
+<div class="ttc" id="aclass_online_services_html_a8cdc6ee26a3c00833daf32162dc430f3"><div class="ttname"><a href="../../d0/d06/class_online_services.html#a8cdc6ee26a3c00833daf32162dc430f3">OnlineServices::GetPendingInviteList</a></div><div class="ttdeci">static array&lt; string &gt; GetPendingInviteList()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d07/_online_services_8c_source.html#l00530">OnlineServices.c:530</a></div></div>
+<div class="ttc" id="aclass_online_services_html_ab498f9248a50c13d13b14a61a5fe7479"><div class="ttname"><a href="../../d0/d06/class_online_services.html#ab498f9248a50c13d13b14a61a5fe7479">OnlineServices::ErrorCaught</a></div><div class="ttdeci">static bool ErrorCaught(EBiosError error)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d07/_online_services_8c_source.html#l00076">OnlineServices.c:76</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d07/_online_services_8c_source.html#l00076">OnlineServices::ErrorCaught()</a>, <a class="el" href="../../d9/d07/_online_services_8c_source.html#l00530">OnlineServices::GetPendingInviteList()</a>, <a class="el" href="#a8ca03e4d5ea70c9a31c5939ac38f1abc">InviteToGameplaySessionAsync()</a>, and <a class="el" href="#ab3b13df781da203f582ff5ca921e11ac">SetGameplayActivityAsync()</a>.</p>
 
 </div>
 </div>
@@ -517,6 +545,55 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00147">147</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>  {</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_variable" href="#a071f692c67dc193fb76f55f5fe26e56f">m_GetSessionAttempts</a> = 0;</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetGameState())</div>
+<div class="line"><span class="lineno">  151</span>    {</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../db/d06/class_param3.html">DayZGameState</a>.IN_GAME:</div>
+<div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">addr</a>;</div>
+<div class="line"><span class="lineno">  155</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">port</a>;</div>
+<div class="line"><span class="lineno">  156</span>      <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">found</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetHostAddress(<a class="code hl_class" href="../../db/d06/class_param3.html">addr</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">port</a>);</div>
+<div class="line"><span class="lineno">  157</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">addr</a> != <a class="code hl_class" href="../../db/d06/class_param3.html">session_address</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">port</a> != <a class="code hl_class" href="../../db/d06/class_param3.html">session_port</a>)</div>
+<div class="line"><span class="lineno">  158</span>      {</div>
+<div class="line"><span class="lineno">  159</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">found</a>)</div>
+<div class="line"><span class="lineno">  160</span>        {</div>
+<div class="line"><span class="lineno">  161</span>          <a class="code hl_class" href="../../d0/d06/class_online_services.html">OnlineServices</a>.<a class="code hl_function" href="../../d0/d06/class_online_services.html#affa959396f610a92b12f08556a124e8d">SetInviteServerInfo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">session_address</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">session_port</a>);</div>
+<div class="line"><span class="lineno">  162</span>          <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetUIManager().CloseAll();</div>
+<div class="line"><span class="lineno">  163</span>          <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetUIManager().EnterScriptedMenu(<a class="code hl_variable" href="../../d7/d0f/group___menu_i_d.html#ga91c4c093cdf1a675aa289143a0d574b9">MENU_INVITE_TIMER</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>))</div>
+<div class="line"><span class="lineno">  164</span>            <a class="code hl_class" href="../../d8/d0d/class_notification_system.html">NotificationSystem</a>.<a class="code hl_function" href="../../d8/d0d/class_notification_system.html#ae7e705691ea84eaf201e629d1643d7c4">AddNotification</a>(<a class="code hl_enumeration" href="../../d5/d04/_notification_system_8c.html#a25a31a4bdc02a0d0adb743e26dd14ba9">NotificationType</a>.CONNECT_FAIL_GENERIC, <a class="code hl_class" href="../../d8/d0d/class_notification_system.html">NotificationSystem</a>.<a class="code hl_variable" href="../../d8/d0d/class_notification_system.html#accfe578deaa48fa121af33c412ec284e">DEFAULT_TIME_DISPLAYED</a>);</div>
+<div class="line"><span class="lineno">  165</span>        }</div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  167</span>          <a class="code hl_class" href="../../d8/d0d/class_notification_system.html">NotificationSystem</a>.<a class="code hl_function" href="../../d8/d0d/class_notification_system.html#ae7e705691ea84eaf201e629d1643d7c4">AddNotification</a>(<a class="code hl_enumeration" href="../../d5/d04/_notification_system_8c.html#a25a31a4bdc02a0d0adb743e26dd14ba9">NotificationType</a>.JOIN_FAIL_GET_SESSION, <a class="code hl_class" href="../../d8/d0d/class_notification_system.html">NotificationSystem</a>.<a class="code hl_variable" href="../../d8/d0d/class_notification_system.html#accfe578deaa48fa121af33c412ec284e">DEFAULT_TIME_DISPLAYED</a>);</div>
+<div class="line"><span class="lineno">  168</span>      }</div>
+<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  170</span>        <a class="code hl_class" href="../../d8/d0d/class_notification_system.html">NotificationSystem</a>.<a class="code hl_function" href="../../d8/d0d/class_notification_system.html#ae7e705691ea84eaf201e629d1643d7c4">AddNotification</a>(<a class="code hl_enumeration" href="../../d5/d04/_notification_system_8c.html#a25a31a4bdc02a0d0adb743e26dd14ba9">NotificationType</a>.INVITE_FAIL_SAME_SERVER, <a class="code hl_class" href="../../d8/d0d/class_notification_system.html">NotificationSystem</a>.<a class="code hl_variable" href="../../d8/d0d/class_notification_system.html#accfe578deaa48fa121af33c412ec284e">DEFAULT_TIME_DISPLAYED</a>, <span class="stringliteral">&quot;#ps4_already_in_session&quot;</span>);</div>
+<div class="line"><span class="lineno">  171</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  172</span>    }</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../db/d06/class_param3.html">DayZGameState</a>.CONNECTING:</div>
+<div class="line"><span class="lineno">  174</span>    {</div>
+<div class="line"><span class="lineno">  175</span>      <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.DisconnectSessionEx(<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a>);</div>
+<div class="line"><span class="lineno">  176</span>      <span class="comment">// Intentionally no break, fall through to connecting</span></div>
+<div class="line"><span class="lineno">  177</span>    }</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  179</span>    {</div>
+<div class="line"><span class="lineno">  180</span>      <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConnectFromJoin(<a class="code hl_class" href="../../db/d06/class_param3.html">session_address</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">session_port</a>);</div>
+<div class="line"><span class="lineno">  181</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  182</span>    }</div>
+<div class="line"><span class="lineno">  183</span>    }</div>
+<div class="line"><span class="lineno">  184</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a1e518520a52a69c1afeeb8419217fbb3"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a></div><div class="ttdeci">enum DisconnectSessionFlags DISCONNECT_SESSION_FLAGS_FORCE</div></div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03528">DayZGame.c:3528</a></div></div>
+<div class="ttc" id="a_notification_system_8c_html_a25a31a4bdc02a0d0adb743e26dd14ba9"><div class="ttname"><a href="../../d5/d04/_notification_system_8c.html#a25a31a4bdc02a0d0adb743e26dd14ba9">NotificationType</a></div><div class="ttdeci">NotificationType</div><div class="ttdoc">DEPRECATED (moved into NotificationSystem)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00003">NotificationSystem.c:4</a></div></div>
+<div class="ttc" id="aclass_bios_session_service_html_a071f692c67dc193fb76f55f5fe26e56f"><div class="ttname"><a href="#a071f692c67dc193fb76f55f5fe26e56f">BiosSessionService::m_GetSessionAttempts</a></div><div class="ttdeci">int m_GetSessionAttempts</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_bios_session_service_8c_source.html#l00003">BiosSessionService.c:3</a></div></div>
+<div class="ttc" id="aclass_notification_system_html"><div class="ttname"><a href="../../d8/d0d/class_notification_system.html">NotificationSystem</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00069">NotificationSystem.c:70</a></div></div>
+<div class="ttc" id="aclass_notification_system_html_accfe578deaa48fa121af33c412ec284e"><div class="ttname"><a href="../../d8/d0d/class_notification_system.html#accfe578deaa48fa121af33c412ec284e">NotificationSystem::DEFAULT_TIME_DISPLAYED</a></div><div class="ttdeci">const int DEFAULT_TIME_DISPLAYED</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00071">NotificationSystem.c:71</a></div></div>
+<div class="ttc" id="aclass_notification_system_html_ae7e705691ea84eaf201e629d1643d7c4"><div class="ttname"><a href="../../d8/d0d/class_notification_system.html#ae7e705691ea84eaf201e629d1643d7c4">NotificationSystem::AddNotification</a></div><div class="ttdeci">static void AddNotification(NotificationType type, float show_time, string detail_text=&quot;&quot;)</div><div class="ttdoc">Send notification from default types to local player.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00188">NotificationSystem.c:188</a></div></div>
+<div class="ttc" id="aclass_online_services_html_affa959396f610a92b12f08556a124e8d"><div class="ttname"><a href="../../d0/d06/class_online_services.html#affa959396f610a92b12f08556a124e8d">OnlineServices::SetInviteServerInfo</a></div><div class="ttdeci">static void SetInviteServerInfo(string ip, int port)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d07/_online_services_8c_source.html#l00164">OnlineServices.c:164</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___menu_i_d_html_ga91c4c093cdf1a675aa289143a0d574b9"><div class="ttname"><a href="../../d7/d0f/group___menu_i_d.html#ga91c4c093cdf1a675aa289143a0d574b9">MENU_INVITE_TIMER</a></div><div class="ttdeci">const int MENU_INVITE_TIMER</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00196">constants.c:196</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00188">NotificationSystem::AddNotification()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00071">NotificationSystem::DEFAULT_TIME_DISPLAYED</a>, <a class="el" href="../../d8/d08/_day_z_game_8c.html#a1e518520a52a69c1afeeb8419217fbb3">DISCONNECT_SESSION_FLAGS_FORCE</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00003">m_GetSessionAttempts</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00196">MENU_INVITE_TIMER</a>, and <a class="el" href="../../d9/d07/_online_services_8c_source.html#l00164">OnlineServices::SetInviteServerInfo()</a>.</p>
 
 </div>
 </div>
@@ -553,6 +630,22 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00195">195</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>  {</div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_class" href="../../d0/d06/class_online_services.html">OnlineServices</a>.<a class="code hl_function" href="../../d0/d06/class_online_services.html#ab498f9248a50c13d13b14a61a5fe7479">ErrorCaught</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">error</a>);</div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_variable" href="#a071f692c67dc193fb76f55f5fe26e56f">m_GetSessionAttempts</a>++;</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span><span class="preprocessor">#ifdef PLATFORM_XBOX</span></div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLater(<a class="code hl_function" href="#a9f3dfa6e05d1f2d3f4505035486b2968">TryGetSession</a>, 100, <span class="keyword">false</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  202</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  203</span><span class="preprocessor">#ifdef PLATFORM_PS4</span></div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.DisconnectSessionEx(<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a7c901cea67926bb3e9cef87e44f16a80">DISCONNECT_SESSION_FLAGS_JOIN</a>);</div>
+<div class="line"><span class="lineno">  205</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  206</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a7c901cea67926bb3e9cef87e44f16a80"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a7c901cea67926bb3e9cef87e44f16a80">DISCONNECT_SESSION_FLAGS_JOIN</a></div><div class="ttdeci">const int DISCONNECT_SESSION_FLAGS_JOIN</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l00014">DayZGame.c:14</a></div></div>
+<div class="ttc" id="aclass_bios_session_service_html_a9f3dfa6e05d1f2d3f4505035486b2968"><div class="ttname"><a href="#a9f3dfa6e05d1f2d3f4505035486b2968">BiosSessionService::TryGetSession</a></div><div class="ttdeci">void TryGetSession(string join_handle=&quot;&quot;)</div><div class="ttdoc">Gets a session from a join handle.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_bios_session_service_8c_source.html#l00047">BiosSessionService.c:47</a></div></div>
+<div class="ttc" id="agroup___tools_html_gaaf491f3ecd1d9aefb35a16bf96ca420c"><div class="ttname"><a href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a></div><div class="ttdeci">const int CALL_CATEGORY_SYSTEM</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">tools.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00014">DISCONNECT_SESSION_FLAGS_JOIN</a>, <a class="el" href="../../d9/d07/_online_services_8c_source.html#l00076">OnlineServices::ErrorCaught()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00003">m_GetSessionAttempts</a>, and <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00047">TryGetSession()</a>.</p>
 
 </div>
 </div>
@@ -588,7 +681,10 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00247">247</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  248</span>  {</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5261e2ffc412ac410b7d4b3cc4ba44e3" name="a5261e2ffc412ac410b7d4b3cc4ba44e3"></a>
@@ -623,7 +719,9 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00230">230</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  231</span>  {</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac0d1fb913bc5e0910bf5a1af08403ef2" name="ac0d1fb913bc5e0910bf5a1af08403ef2"></a>
@@ -691,6 +789,11 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00129">129</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_class" href="../../d0/d06/class_online_services.html">OnlineServices</a>.<a class="code hl_function" href="../../d0/d06/class_online_services.html#ab498f9248a50c13d13b14a61a5fe7479">ErrorCaught</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">error</a>);</div>
+<div class="line"><span class="lineno">  132</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d07/_online_services_8c_source.html#l00076">OnlineServices::ErrorCaught()</a>.</p>
 
 </div>
 </div>
@@ -726,6 +829,11 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00238">238</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  239</span>  {</div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_class" href="../../d0/d06/class_online_services.html">OnlineServices</a>.<a class="code hl_function" href="../../d0/d06/class_online_services.html#ab498f9248a50c13d13b14a61a5fe7479">ErrorCaught</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">error</a>);</div>
+<div class="line"><span class="lineno">  241</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d07/_online_services_8c_source.html#l00076">OnlineServices::ErrorCaught()</a>.</p>
 
 </div>
 </div>
@@ -766,6 +874,8 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>EBiosError indicating if the async operation is pending. </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00214">OnEnterGameplaySession()</a>.</p>
 
 </div>
 </div>
@@ -870,6 +980,24 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>EBiosError indicating if the async operation is pending. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00047">47</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">join_handle</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_variable" href="#a071f692c67dc193fb76f55f5fe26e56f">m_GetSessionAttempts</a> = 0;</div>
+<div class="line"><span class="lineno">   52</span>      <a class="code hl_variable" href="#ac1e8569d0c006786300c5402d3f5cab8">m_CurrentHandle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">join_handle</a>;</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a071f692c67dc193fb76f55f5fe26e56f">m_GetSessionAttempts</a> &lt; 10)</div>
+<div class="line"><span class="lineno">   56</span>      <a class="code hl_function" href="#aaee0c72f1d0e17a2cec7557ab58e3f8d">GetSessionAsync</a>(<a class="code hl_variable" href="#ac1e8569d0c006786300c5402d3f5cab8">m_CurrentHandle</a>);</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   58</span>      <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.DisconnectSessionEx(<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a7c901cea67926bb3e9cef87e44f16a80">DISCONNECT_SESSION_FLAGS_JOIN</a>);</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="ttc" id="aclass_bios_session_service_html_aaee0c72f1d0e17a2cec7557ab58e3f8d"><div class="ttname"><a href="#aaee0c72f1d0e17a2cec7557ab58e3f8d">BiosSessionService::GetSessionAsync</a></div><div class="ttdeci">proto native EBiosError GetSessionAsync(string join_handle)</div><div class="ttdoc">Gets a session from a join handle.</div></div>
+<div class="ttc" id="aclass_bios_session_service_html_ac1e8569d0c006786300c5402d3f5cab8"><div class="ttname"><a href="#ac1e8569d0c006786300c5402d3f5cab8">BiosSessionService::m_CurrentHandle</a></div><div class="ttdeci">string m_CurrentHandle</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_bios_session_service_8c_source.html#l00004">BiosSessionService.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00014">DISCONNECT_SESSION_FLAGS_JOIN</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="#aaee0c72f1d0e17a2cec7557ab58e3f8d">GetSessionAsync()</a>, <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00004">m_CurrentHandle</a>, and <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00003">m_GetSessionAttempts</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00195">OnGetSessionError()</a>.</p>
 
 </div>
 </div>
@@ -896,6 +1024,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00004">4</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00047">TryGetSession()</a>.</p>
+
 </div>
 </div>
 <a id="a071f692c67dc193fb76f55f5fe26e56f" name="a071f692c67dc193fb76f55f5fe26e56f"></a>
@@ -919,6 +1049,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00003">3</a> of file <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html">BiosSessionService.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00147">OnGetGameplaySession()</a>, <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00195">OnGetSessionError()</a>, and <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00047">TryGetSession()</a>.</p>
 
 </div>
 </div>

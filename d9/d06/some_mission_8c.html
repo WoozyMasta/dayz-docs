@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -128,6 +125,49 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/some_mission_8c_source.html#l00001">1</a> of file <a class="el" href="../../d9/d06/some_mission_8c_source.html">someMission.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    2</span>{</div>
+<div class="line"><span class="lineno">    3</span>  <a class="code hl_function" href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a>(<span class="stringliteral">&quot;Creating Mission: &quot;</span> + <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>);</div>
+<div class="line"><span class="lineno">    4</span> </div>
+<div class="line"><span class="lineno">    5</span>  <span class="comment">// g_Game.SetMissionPath(path); Done from C++ now</span></div>
+<div class="line"><span class="lineno">    6</span> </div>
+<div class="line"><span class="lineno">    7</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.IsMultiplayer() &amp;&amp; <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.IsServer())</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> MissionServer;</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span><span class="preprocessor">#ifdef NO_GUI</span></div>
+<div class="line"><span class="lineno">   11</span>  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MissionDummy</a>;</div>
+<div class="line"><span class="lineno">   12</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   13</span>  <a class="code hl_class" href="../../db/d06/class_param3.html">MissionMainMenu</a> <a class="code hl_class" href="../../db/d06/class_param3.html">m</a>;</div>
+<div class="line"><span class="lineno">   14</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>.<a class="code hl_function" href="../../d5/d02/group___strings.html#ga85b2e59c7d314ab5456e50bab2627882">Contains</a>(<span class="stringliteral">&quot;NoCutscene&quot;</span>))</div>
+<div class="line"><span class="lineno">   15</span>  {</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">m</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MissionMainMenu</a>();</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">m</a>.m_NoCutscene = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">m</a>;</div>
+<div class="line"><span class="lineno">   19</span>  }</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>.<a class="code hl_function" href="../../d5/d02/group___strings.html#ga85b2e59c7d314ab5456e50bab2627882">Contains</a>(<span class="stringliteral">&quot;intro&quot;</span>))</div>
+<div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">m</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MissionMainMenu</a>();</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">m</a>.m_NoCutscene = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">m</a>;</div>
+<div class="line"><span class="lineno">   26</span>  }</div>
+<div class="line"><span class="lineno">   27</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   28</span>  {</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   30</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MissionDummy</a>;</div>
+<div class="line"><span class="lineno">   31</span><span class="preprocessor">#ifndef NO_GUI_INGAME</span></div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> MissionGameplay;</div>
+<div class="line"><span class="lineno">   33</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MissionDummy</a>;</div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   36</span>  }</div>
+<div class="line"><span class="lineno">   37</span>}</div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03528">DayZGame.c:3528</a></div></div>
+<div class="ttc" id="a_option_selector_multistate_8c_html_a46c20eb2a26abeb1e934cd66e1dd6484"><div class="ttname"><a href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a></div><div class="ttdeci">string path</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">OptionSelectorMultistate.c:121</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___debug_html_gaaa9351d895a1f244a26fd635c378c536"><div class="ttname"><a href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a></div><div class="ttdeci">proto void Print(void var)</div><div class="ttdoc">Prints content of variable to console/log.</div></div>
+<div class="ttc" id="agroup___strings_html_ga85b2e59c7d314ab5456e50bab2627882"><div class="ttname"><a href="../../d5/d02/group___strings.html#ga85b2e59c7d314ab5456e50bab2627882">string::Contains</a></div><div class="ttdeci">bool Contains(string sample)</div><div class="ttdoc">Returns true if sample is substring of string.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d04/_en_string_8c_source.html#l00286">EnString.c:286</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d04/_en_string_8c_source.html#l00286">string::Contains()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">path</a>, and <a class="el" href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print()</a>.</p>
 
 </div>
 </div>

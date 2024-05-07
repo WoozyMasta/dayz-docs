@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -162,6 +159,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00005">5</a> of file <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html">ActionTurnOffWeaponFlashlight.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_variable" href="../../d7/d04/class_animated_action_base.html#a60b7090734d459f8ab4353b948c2fa82">m_CommandUID</a> = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONMOD_ITEM_OFF;<span class="comment">//CMD_ACTIONMOD_INTERACTONCE</span></div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a> = <span class="stringliteral">&quot;#switch_off&quot;</span>;</div>
+<div class="line"><span class="lineno">    9</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a11fc80cdcb775f018854049236528029"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a></div><div class="ttdeci">string m_Text</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00049">ActionBase.c:49</a></div></div>
+<div class="ttc" id="aclass_animated_action_base_html_a60b7090734d459f8ab4353b948c2fa82"><div class="ttname"><a href="../../d7/d04/class_animated_action_base.html#a60b7090734d459f8ab4353b948c2fa82">AnimatedActionBase::m_CommandUID</a></div><div class="ttdeci">int m_CommandUID</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0d/_animated_action_base_8c_source.html#l00122">AnimatedActionBase.c:122</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0d/_animated_action_base_8c_source.html#l00122">AnimatedActionBase::m_CommandUID</a>, and <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00049">m_Text</a>.</p>
 
 </div>
 </div>
@@ -199,6 +205,32 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00022">22</a> of file <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html">ActionTurnOffWeaponFlashlight.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>  {</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../dd/d09/class_rifle___base.html">Rifle_Base</a>))</div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>      <span class="comment">//m_CommandUID = DayZPlayerConstants.CMD_ACTIONMOD_LIGHTFLARE;</span></div>
+<div class="line"><span class="lineno">   27</span>      <a class="code hl_variable" href="#a7e8f908d3e25a3677bc85edf05e1c62d">m_flashlight</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.FindAttachmentBySlotName(<span class="stringliteral">&quot;weaponFlashlight&quot;</span>));</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsInherited(<a class="code hl_class" href="../../d2/d0e/class_pistol___base.html">Pistol_Base</a>))</div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>      <span class="comment">//m_CommandUID = DayZPlayerConstants.CMD_ACTIONMOD_LITCHEMLIGHT;</span></div>
+<div class="line"><span class="lineno">   32</span>      <a class="code hl_variable" href="#a7e8f908d3e25a3677bc85edf05e1c62d">m_flashlight</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.FindAttachmentBySlotName(<span class="stringliteral">&quot;pistolFlashlight&quot;</span>));</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">else</span> <span class="comment">//is not valid item</span></div>
+<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7e8f908d3e25a3677bc85edf05e1c62d">m_flashlight</a> &amp;&amp; <a class="code hl_variable" href="#a7e8f908d3e25a3677bc85edf05e1c62d">m_flashlight</a>.HasEnergyManager() &amp;&amp; <a class="code hl_variable" href="#a7e8f908d3e25a3677bc85edf05e1c62d">m_flashlight</a>.GetCompEM().CanSwitchOff()) <span class="comment">//TODO review conditions for turning off</span></div>
+<div class="line"><span class="lineno">   38</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   41</span>  }</div>
+<div class="ttc" id="aclass_action_turn_off_weapon_flashlight_html_a7e8f908d3e25a3677bc85edf05e1c62d"><div class="ttname"><a href="#a7e8f908d3e25a3677bc85edf05e1c62d">ActionTurnOffWeaponFlashlight::m_flashlight</a></div><div class="ttdeci">ItemBase m_flashlight</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00003">ActionTurnOffWeaponFlashlight.c:3</a></div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_pistol___base_html"><div class="ttname"><a href="../../d2/d0e/class_pistol___base.html">Pistol_Base</a></div><div class="ttdoc">base for semi auto weapons @NOTE name copies config base class</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d00/_pistol_alt___base_8c_source.html#l00001">PistolAlt_Base.c:2</a></div></div>
+<div class="ttc" id="aclass_rifle___base_html"><div class="ttname"><a href="../../dd/d09/class_rifle___base.html">Rifle_Base</a></div><div class="ttdoc">base for rifles @NOTE name copies config base class</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0a/_s_k_s_8c_source.html#l00069">SKS.c:70</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00003">m_flashlight</a>.</p>
 
 </div>
 </div>
@@ -226,6 +258,16 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00011">11</a> of file <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html">ActionTurnOffWeaponFlashlight.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a733279ad481ba700333db91fa140e910">m_ConditionItem</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../de/d06/class_c_c_i_non_ruined.html">CCINonRuined</a>;</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a81fd8dac008261b8f2062657a645b0d4">m_ConditionTarget</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d0f/class_c_c_t_none.html">CCTNone</a>;</div>
+<div class="line"><span class="lineno">   15</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a733279ad481ba700333db91fa140e910"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a733279ad481ba700333db91fa140e910">m_ConditionItem</a></div><div class="ttdeci">ref CCIBase m_ConditionItem</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00055">ActionBase.c:55</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_a81fd8dac008261b8f2062657a645b0d4"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a81fd8dac008261b8f2062657a645b0d4">m_ConditionTarget</a></div><div class="ttdeci">ref CCTBase m_ConditionTarget</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00056">ActionBase.c:56</a></div></div>
+<div class="ttc" id="aclass_c_c_i_non_ruined_html"><div class="ttname"><a href="../../de/d06/class_c_c_i_non_ruined.html">CCINonRuined</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d06/_c_c_i_non_ruined_8c_source.html#l00001">CCINonRuined.c:2</a></div></div>
+<div class="ttc" id="aclass_c_c_t_none_html"><div class="ttname"><a href="../../d2/d0f/class_c_c_t_none.html">CCTNone</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0b/_c_c_t_none_8c_source.html#l00001">CCTNone.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00055">m_ConditionItem</a>, and <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00056">m_ConditionTarget</a>.</p>
 
 </div>
 </div>
@@ -253,7 +295,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00017">17</a> of file <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html">ActionTurnOffWeaponFlashlight.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   18</span>  {</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   20</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a72af6880643f7e842f264f3cdb201a18" name="a72af6880643f7e842f264f3cdb201a18"></a>
@@ -280,6 +325,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00043">43</a> of file <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html">ActionTurnOffWeaponFlashlight.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>  {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7e8f908d3e25a3677bc85edf05e1c62d">m_flashlight</a>.HasEnergyManager())</div>
+<div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7e8f908d3e25a3677bc85edf05e1c62d">m_flashlight</a>.GetCompEM().IsSwitchedOn())</div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_variable" href="#a7e8f908d3e25a3677bc85edf05e1c62d">m_flashlight</a>.GetCompEM().SwitchOff();</div>
+<div class="line"><span class="lineno">   49</span>      <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem).FlashlightOff(); <span class="comment">//currently seems to be doing nothing</span></div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+<div class="line"><span class="lineno">   51</span>  }</div>
+<div class="ttc" id="aclass_weapon___base_html"><div class="ttname"><a href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a></div><div class="ttdoc">shorthand</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_bolt_action_rifle___base_8c_source.html#l00005">BoltActionRifle_Base.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00003">m_flashlight</a>.</p>
 
 </div>
 </div>
@@ -305,6 +361,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00003">3</a> of file <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html">ActionTurnOffWeaponFlashlight.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00022">ActionCondition()</a>, and <a class="el" href="../../d7/d01/_action_turn_off_weapon_flashlight_8c_source.html#l00043">OnExecuteServer()</a>.</p>
 
 </div>
 </div>

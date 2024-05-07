@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -396,6 +393,38 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00005">5</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../df/d09/class_slots_container.html">SlotsContainer</a>(<span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">    8</span>    m_Body.Insert(<a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>);</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetMainWidget().SetUserID(<a class="code hl_class" href="../../db/d06/class_param3.html">index</a>);</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">k</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">k</a> &lt; <a class="code hl_variable" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">k</a>++)</div>
+<div class="line"><span class="lineno">   12</span>    {</div>
+<div class="line"><span class="lineno">   13</span>      <span class="comment">//WidgetEventHandler.GetInstance().RegisterOnDropReceived( m_ItemsCont.GetSlotIcon( k ).GetMainWidget(),  m_Parent, &quot;OnDropReceivedFromHeader&quot; );</span></div>
+<div class="line"><span class="lineno">   14</span>      <span class="comment">//WidgetEventHandler.GetInstance().RegisterOnDropReceived(  m_ItemsCont.GetSlotIcon( k ).GetPanelWidget(),  m_Parent, &quot;OnDropReceivedFromHeader&quot; );</span></div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>).GetMainWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDraggingOver(<a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>).GetPanelWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;DraggingOverHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseButtonDown(<a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>).GetMainWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;MouseClick&quot;</span>);</div>
+<div class="line"><span class="lineno">   20</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseButtonDown(<a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>).GetPanelWidget(), <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;MouseClick&quot;</span>);</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseEnter(<a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>).GetMainWidget(), <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>), <span class="stringliteral">&quot;MouseEnterGhostSlot&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>      <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseLeave(<a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>).GetMainWidget(), <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>), <span class="stringliteral">&quot;MouseLeaveGhostSlot&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>      <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>).GetMainWidget().SetUserID(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>);</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetSlotIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>).GetPanelWidget().SetUserID(<a class="code hl_class" href="../../db/d06/class_param3.html">k</a>);</div>
+<div class="line"><span class="lineno">   27</span>    }</div>
+<div class="line"><span class="lineno">   28</span>  }</div>
+<div class="ttc" id="a5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_html_a2125e1d81755555832a3216e873431e0"><div class="ttname"><a href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c.html#a2125e1d81755555832a3216e873431e0">ITEMS_IN_ROW</a></div><div class="ttdeci">const int ITEMS_IN_ROW</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00001">Attachments.c:1</a></div></div>
+<div class="ttc" id="a_size_to_child_8c_html_a74e413f5a164dfc9b133b21caee53379"><div class="ttname"><a href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a></div><div class="ttdeci">Widget m_Parent</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_size_to_child_8c_source.html#l00086">SizeToChild.c:86</a></div></div>
+<div class="ttc" id="aclass_attachment_categories_slots_container_html_ad67b4025e82766e05c7c0b716e827507"><div class="ttname"><a href="#ad67b4025e82766e05c7c0b716e827507">AttachmentCategoriesSlotsContainer::m_ItemsCont</a></div><div class="ttdeci">ref SlotsContainer m_ItemsCont</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00003">AttachmentCategoriesSlotsContainer.c:3</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_slots_container_html"><div class="ttname"><a href="../../df/d09/class_slots_container.html">SlotsContainer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d09/_slots_container_8c_source.html#l00001">SlotsContainer.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00001">WidgetEventHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html_ad2fdf38578ef5954a19cb7c97ee4f89b"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">WidgetEventHandler::GetInstance</a></div><div class="ttdeci">static WidgetEventHandler GetInstance()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler.c:22</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler::GetInstance()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00001">ITEMS_IN_ROW</a>, <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00003">m_ItemsCont</a>, and <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>.</p>
 
 </div>
 </div>
@@ -424,7 +453,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00107">107</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  108</span>  {</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  110</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5ea2533f3a8b2870597aac28403df37d" name="a5ea2533f3a8b2870597aac28403df37d"></a>
@@ -451,7 +483,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00112">112</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  113</span>  {</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a799bf926f209fc3cfebee292d400b844" name="a799bf926f209fc3cfebee292d400b844"></a>
@@ -478,7 +513,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00082">82</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5e57a79f7c26171ec59ca5123339c366" name="a5e57a79f7c26171ec59ca5123339c366"></a>
@@ -505,7 +543,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00102">102</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae8d2df36368fe206e79f8bf1ed9eba09" name="ae8d2df36368fe206e79f8bf1ed9eba09"></a>
@@ -532,6 +573,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00066">66</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>  {</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetFocusedSlotsIcon().GetRadialIcon().Show(<a class="code hl_class" href="../../db/d06/class_param3.html">expand</a>);</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetFocusedSlotsIcon().GetRadialIconClosed().Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">expand</a>);</div>
+<div class="line"><span class="lineno">   70</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00003">m_ItemsCont</a>.</p>
 
 </div>
 </div>
@@ -563,6 +610,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00132">132</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>  {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment_category</a>;</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetChildName(<a class="code hl_class" href="../../db/d06/class_param3.html">config_path_attachment_categories</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">attachment_category</a>);</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment_category</a>;</div>
+<div class="line"><span class="lineno">  137</span>  }</div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -590,6 +645,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00061">61</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>  {</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetFocusedSlotsIcon().GetMainWidget().GetUserID();</div>
+<div class="line"><span class="lineno">   64</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00003">m_ItemsCont</a>.</p>
 
 </div>
 </div>
@@ -617,6 +677,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00051">51</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>  {</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetFocusedSlotsIcon().GetRender().GetItem();</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00003">m_ItemsCont</a>.</p>
 
 </div>
 </div>
@@ -648,6 +713,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00139">139</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>  {</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">icon_path</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">config_path_attachment_categories</a> + <span class="stringliteral">&quot; &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">attachment_category</a> + <span class="stringliteral">&quot; icon&quot;</span>;</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">icon_name</a>;</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetText(<a class="code hl_class" href="../../db/d06/class_param3.html">icon_path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">icon_name</a>);</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">icon_name</a>;</div>
+<div class="line"><span class="lineno">  145</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -675,6 +748,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00056">56</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  {</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>.GetMainWidget().GetUserID();</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00003">m_ItemsCont</a>.</p>
 
 </div>
 </div>
@@ -702,6 +780,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00046">46</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>  {</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad67b4025e82766e05c7c0b716e827507">m_ItemsCont</a>;</div>
+<div class="line"><span class="lineno">   49</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00003">m_ItemsCont</a>.</p>
 
 </div>
 </div>
@@ -729,7 +812,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00030">30</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   31</span>  {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; m_Body.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>      <a class="code hl_class" href="../../d5/d08/class_layout_holder.html">LayoutHolder</a> <a class="code hl_class" href="../../db/d06/class_param3.html">c</a> = m_Body[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>];</div>
+<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">c</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">c</a>.IsDisplayable())</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   39</span>  }</div>
+<div class="ttc" id="aclass_layout_holder_html"><div class="ttname"><a href="../../d5/d08/class_layout_holder.html">LayoutHolder</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d0c/_container_8c_source.html#l00001">Container.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac2095a8bbefa2115611fac4db37e4b40" name="ac2095a8bbefa2115611fac4db37e4b40"></a>
@@ -756,7 +849,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00117">117</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  120</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa0cf4a5ec43b54931c3f709088a2e646" name="aa0cf4a5ec43b54931c3f709088a2e646"></a>
@@ -783,7 +879,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00122">122</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  123</span>  {</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6e5268ad9fec884fbb4f0cca05371bfa" name="a6e5268ad9fec884fbb4f0cca05371bfa"></a>
@@ -810,7 +909,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00127">127</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  128</span>  {</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  130</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6ab515e74ee85fe7e47f67ceb64c7d38" name="a6ab515e74ee85fe7e47f67ceb64c7d38"></a>
@@ -837,7 +939,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00077">77</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   78</span>  {</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   80</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ade7cb701b07b4ec2ce6cc5417a6283da" name="ade7cb701b07b4ec2ce6cc5417a6283da"></a>
@@ -864,7 +969,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00072">72</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   73</span>  {</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   75</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a80327b05117e130b1e7df3ad5d0ae98e" name="a80327b05117e130b1e7df3ad5d0ae98e"></a>
@@ -891,6 +999,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00041">41</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>  {</div>
+<div class="line"><span class="lineno">   43</span>    m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#af2c945eebda1050b002aadc90acddc5e">Container</a>;</div>
+<div class="line"><span class="lineno">   44</span>  }</div>
+<div class="ttc" id="aclass_widget_layout_name_html"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00001">WidgetLayoutName.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_af2c945eebda1050b002aadc90acddc5e"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#af2c945eebda1050b002aadc90acddc5e">WidgetLayoutName::Container</a></div><div class="ttdeci">const string Container</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00047">WidgetLayoutName.c:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00047">WidgetLayoutName::Container</a>.</p>
 
 </div>
 </div>
@@ -918,7 +1033,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00097">97</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   98</span>  {</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a329c13fb4d7a2ed5de7aa5b623f03264" name="a329c13fb4d7a2ed5de7aa5b623f03264"></a>
@@ -945,7 +1063,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00092">92</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   93</span>  {</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   95</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aea6daae047dece2264744136010b2a8d" name="aea6daae047dece2264744136010b2a8d"></a>
@@ -972,7 +1093,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00087">87</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   88</span>  {</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   90</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -997,6 +1121,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00003">3</a> of file <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html">AttachmentCategoriesSlotsContainer.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00005">AttachmentCategoriesSlotsContainer()</a>, <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00066">ExpandCollapseContainer()</a>, <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00061">GetFocusedID()</a>, <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00051">GetFocusedItem()</a>, <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00056">GetParentID()</a>, and <a class="el" href="../../d6/d0a/_attachment_categories_slots_container_8c_source.html#l00046">GetSlotsContainer()</a>.</p>
 
 </div>
 </div>

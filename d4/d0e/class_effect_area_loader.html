@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -151,6 +148,120 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00006">6</a> of file <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html">ContaminatedAreaLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>  {</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_class" href="../../d9/d04/class_json_data_contaminated_areas.html">JsonDataContaminatedAreas</a> <a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a>;</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span>    <span class="comment">// We confirm the contaminated area configuration file exists in mission folder</span></div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist</a>(<a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a>))</div>
+<div class="line"><span class="lineno">   12</span>    {</div>
+<div class="line"><span class="lineno">   13</span>      <span class="comment">// We fallback to check in data and notify user file was not found in mission</span></div>
+<div class="line"><span class="lineno">   14</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#gae273d2b39046bd2d0b46d3e5132ee54c">PrintToRPT</a>(<span class="stringliteral">&quot;[WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in MISSION folder, your path is &quot;</span> + <a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a> + <span class="stringliteral">&quot; Attempting DATA folder&quot;</span>); <span class="comment">// If the path is invalid, we warn the user</span></div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>      <a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorldName(<a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a>);</div>
+<div class="line"><span class="lineno">   18</span>      <a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;dz/worlds/%1/ce/cfgeffectarea.json&quot;</span>, <a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a>);</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist</a>(<a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a>))</div>
+<div class="line"><span class="lineno">   21</span>      {</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#gae273d2b39046bd2d0b46d3e5132ee54c">PrintToRPT</a>(<span class="stringliteral">&quot;[WARNING] :: [EffectAreaLoader CreateZones] :: No contaminated area file found in DATA folder, your path is &quot;</span> + <a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a>); <span class="comment">// If the path is invalid, we warn the user</span></div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span>; <span class="comment">// Nothing could be read, just end here</span></div>
+<div class="line"><span class="lineno">   24</span>      }</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <span class="comment">// We load the data from file, in case of failure we notify user</span></div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a> = <a class="code hl_class" href="../../d4/d0e/class_effect_area_loader.html">EffectAreaLoader</a>.<a class="code hl_function" href="#a62c9974fe44b614263cab35788c487b4">GetData</a>();</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a>)</div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>      <span class="comment">// Now that we have extracted the data we go through every declared area</span></div>
+<div class="line"><span class="lineno">   32</span>      <span class="comment">//Debug.Log(&quot;Contaminated area JSON contains : &quot; + effectAreaData.Areas.Count());</span></div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a>.Areas.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   35</span>      {</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">EffectAreaParams</a> <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">EffectAreaParams</a>();</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>        <span class="comment">// We feed in all relevant data</span></div>
+<div class="line"><span class="lineno">   39</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamName = <a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a>.Areas.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).AreaName;</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">areaType</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a>.Areas.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).Type;</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamTriggerType = <a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a>.Areas.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).TriggerType;</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_class" href="../../d8/d08/class_json_data_area_data.html">JsonDataAreaData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a>.Areas.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).Data;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>        <span class="comment">// World level area data ( Trigger info, world particles, etc... )</span></div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> pos = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.Pos[0], <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.Pos[1], <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.Pos[2]);</div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamRadius = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.Radius;</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamPosHeight = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.PosHeight;</div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamNegHeight = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.NegHeight;</div>
+<div class="line"><span class="lineno">   49</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamInnerRings = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.InnerRingCount;</div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamInnerSpace = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.InnerPartDist;</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamOuterToggle = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.OuterRingToggle;</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamOuterSpace = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.OuterPartDist;</div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamOuterOffset = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.OuterOffset;</div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamVertLayers = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.VerticalLayers;</div>
+<div class="line"><span class="lineno">   55</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamVerticalOffset = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.VerticalOffset;</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">particleName</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.ParticleName;</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>        <span class="comment">// Local level area data ( Player particles and PPE )</span></div>
+<div class="line"><span class="lineno">   59</span>        <a class="code hl_class" href="../../d4/d0b/class_json_data_player_data.html">JsonDataPlayerData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">playerData</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">effectAreaData</a>.Areas.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).PlayerData;</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">aroundPartName</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">playerData</a>.AroundPartName;</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">tinyPartName</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">playerData</a>.TinyPartName;</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ppeRequesterType</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">playerData</a>.PPERequesterType;</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>        <span class="comment">// Conversion of particle name to ID for synchronization and loading</span></div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">particleName</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   66</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamPartId = <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_function" href="../../dd/d02/class_particle_list.html#a8d9bcf5982a41265d149d84481e7013a">GetParticleID</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">particleName</a>);</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">aroundPartName</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   69</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamAroundPartId = <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_function" href="../../dd/d02/class_particle_list.html#a8d9bcf5982a41265d149d84481e7013a">GetParticleID</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">aroundPartName</a>);</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">tinyPartName</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   72</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamTinyPartId = <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_function" href="../../dd/d02/class_particle_list.html#a8d9bcf5982a41265d149d84481e7013a">GetParticleID</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">tinyPartName</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>.m_ParamPpeRequesterType = <a class="code hl_class" href="../../db/d06/class_param3.html">ppeRequesterType</a>;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_class" href="../../d5/d04/class_effect_area.html">EffectArea</a> <a class="code hl_class" href="../../db/d06/class_param3.html">newZone</a>; <span class="comment">// Zones MUST inherit from EffectArea</span></div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>        <span class="comment">// We snap item position to ground before creating if specified Y is 0</span></div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> (pos[1] == 0)</div>
+<div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>          pos[1] = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceRoadY(pos[0], pos[2]);</div>
+<div class="line"><span class="lineno">   82</span>          <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">newZone</a>, <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<a class="code hl_class" href="../../db/d06/class_param3.html">areaType</a>, pos, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a>));</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   85</span>          <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">newZone</a>, <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<a class="code hl_class" href="../../db/d06/class_param3.html">areaType</a>, pos, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a035ccd1155fa1003347d7bad5e18431a">ECE_NONE</a>));</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>        <span class="comment">// We created a new zone, we feed in the data to finalize setup</span></div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newZone</a>)</div>
+<div class="line"><span class="lineno">   89</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">newZone</a>.SetupZoneData(<a class="code hl_class" href="../../db/d06/class_param3.html">params</a>);</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   91</span>          <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[WARNING] :: [EffectAreaLoader CreateZones] :: Cast failed, are you sure your class ( &#39;Type:&#39; ) inherits from EffectArea and that there are no Typos?&quot;</span>);</div>
+<div class="line"><span class="lineno">   92</span>      }</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   95</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[WARNING] :: [EffectAreaLoader CreateZones] :: Data could not be read, please check data and syntax&quot;</span>); <span class="comment">// Most JSON related errors should be handled, but we have an extra check in case data could not be read</span></div>
+<div class="line"><span class="lineno">   96</span>  }</div>
+<div class="ttc" id="a_central_economy_8c_html_a035ccd1155fa1003347d7bad5e18431a"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#a035ccd1155fa1003347d7bad5e18431a">ECE_NONE</a></div><div class="ttdeci">const int ECE_NONE</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00007">CentralEconomy.c:7</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_a4389063907bd8acede7114e3887d6102"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#a4389063907bd8acede7114e3887d6102">ECE_PLACE_ON_SURFACE</a></div><div class="ttdeci">const int ECE_PLACE_ON_SURFACE</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00037">CentralEconomy.c:37</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_effect_area_html"><div class="ttname"><a href="../../d5/d04/class_effect_area.html">EffectArea</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00036">EffectArea.c:37</a></div></div>
+<div class="ttc" id="aclass_effect_area_loader_html"><div class="ttname"><a href="../../d4/d0e/class_effect_area_loader.html">EffectAreaLoader</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00002">ContaminatedAreaLoader.c:3</a></div></div>
+<div class="ttc" id="aclass_effect_area_loader_html_a62c9974fe44b614263cab35788c487b4"><div class="ttname"><a href="#a62c9974fe44b614263cab35788c487b4">EffectAreaLoader::GetData</a></div><div class="ttdeci">static JsonDataContaminatedAreas GetData()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00098">ContaminatedAreaLoader.c:98</a></div></div>
+<div class="ttc" id="aclass_effect_area_loader_html_ac483f7203a2e12b14f003662a12a889c"><div class="ttname"><a href="#ac483f7203a2e12b14f003662a12a889c">EffectAreaLoader::m_Path</a></div><div class="ttdeci">static string m_Path</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00004">ContaminatedAreaLoader.c:4</a></div></div>
+<div class="ttc" id="aclass_json_data_area_data_html"><div class="ttname"><a href="../../d8/d08/class_json_data_area_data.html">JsonDataAreaData</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00017">JsonDataContaminatedArea.c:18</a></div></div>
+<div class="ttc" id="aclass_json_data_contaminated_areas_html"><div class="ttname"><a href="../../d9/d04/class_json_data_contaminated_areas.html">JsonDataContaminatedAreas</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00002">JsonDataContaminatedArea.c:3</a></div></div>
+<div class="ttc" id="aclass_json_data_player_data_html"><div class="ttname"><a href="../../d4/d0b/class_json_data_player_data.html">JsonDataPlayerData</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00033">JsonDataContaminatedArea.c:34</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_particle_list_html"><div class="ttname"><a href="../../dd/d02/class_particle_list.html">ParticleList</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00011">ParticleList.c:12</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_a8d9bcf5982a41265d149d84481e7013a"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#a8d9bcf5982a41265d149d84481e7013a">ParticleList::GetParticleID</a></div><div class="ttdeci">static int GetParticleID(string particle_file)</div><div class="ttdoc">Returns particle's ID based on the path (without .ptc suffix)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00400">ParticleList.c:400</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___debug_html_ga786b160dafbe15abb829786ba345cb15"><div class="ttname"><a href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a></div><div class="ttdeci">void Error(string err)</div><div class="ttdoc">Messagebox with error message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_en_debug_8c_source.html#l00090">EnDebug.c:90</a></div></div>
+<div class="ttc" id="agroup___debug_html_gae273d2b39046bd2d0b46d3e5132ee54c"><div class="ttname"><a href="../../d0/d02/group___debug.html#gae273d2b39046bd2d0b46d3e5132ee54c">PrintToRPT</a></div><div class="ttdeci">proto void PrintToRPT(void var)</div><div class="ttdoc">Prints content of variable to RPT file (performance warning - each write means fflush!...</div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+<div class="ttc" id="agroup___file_html_gac8ac6334d3ec51a5537c4ea4f6c57e04"><div class="ttname"><a href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist</a></div><div class="ttdeci">proto bool FileExist(string name)</div><div class="ttdoc">Check existence of file.</div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga5bd1deb1c96276d94eeec6fe40955c41"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a></div><div class="ttdeci">proto native vector Vector(float x, float y, float z)</div><div class="ttdoc">Vector constructor from components.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00007">ECE_NONE</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00037">ECE_PLACE_ON_SURFACE</a>, <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist()</a>, <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00098">GetData()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00400">ParticleList::GetParticleID()</a>, <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00004">m_Path</a>, <a class="el" href="../../d0/d02/group___debug.html#gae273d2b39046bd2d0b46d3e5132ee54c">PrintToRPT()</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/mission_server_8c_source.html#l00084">MissionBase::OnMissionStart()</a>.</p>
 
 </div>
 </div>
@@ -178,6 +289,19 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00098">98</a> of file <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html">ContaminatedAreaLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>;</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_class" href="../../d9/d04/class_json_data_contaminated_areas.html">JsonDataContaminatedAreas</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>;</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">JsonFileLoader&lt;JsonDataContaminatedAreas&gt;</a>.LoadFile(<a class="code hl_variable" href="#ac483f7203a2e12b14f003662a12a889c">m_Path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>))</div>
+<div class="line"><span class="lineno">  103</span>      <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>);</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>;</div>
+<div class="line"><span class="lineno">  106</span>  }</div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, and <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00004">m_Path</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00006">CreateZones()</a>, and <a class="el" href="../../d2/d0b/_area_exposure_8c_source.html#l00037">AreaExposureMdfr::OnActivate()</a>.</p>
 
 </div>
 </div>
@@ -203,6 +327,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00004">4</a> of file <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html">ContaminatedAreaLoader.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00006">CreateZones()</a>, and <a class="el" href="../../d0/d0d/_contaminated_area_loader_8c_source.html#l00098">GetData()</a>.</p>
 
 </div>
 </div>

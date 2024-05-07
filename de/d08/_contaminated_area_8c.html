@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -146,7 +143,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d08/_contaminated_area_8c_source.html#l00069">69</a> of file <a class="el" href="../../de/d08/_contaminated_area_8c_source.html">ContaminatedArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   70</span>  {</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEDelete(parent);</div>
+<div class="line"><span class="lineno">   72</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a58793c1561abb560da4377da77ad6dea" name="a58793c1561abb560da4377da77ad6dea"></a>
@@ -165,7 +166,32 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d08/_contaminated_area_8c_source.html#l00027">27</a> of file <a class="el" href="../../de/d08/_contaminated_area_8c_source.html">ContaminatedArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   28</span>  {</div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">// We make sure we have the particle array</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!m_ToxicClouds)</div>
+<div class="line"><span class="lineno">   31</span>      m_ToxicClouds = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;Particle&gt;</a>;</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    SetSynchDirty();</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">   36</span>    <span class="comment">// Debugs when placing entity by hand using internal tools</span></div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() &amp;&amp; !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;YOU CAN IGNORE THE FOLLOWING DUMP&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>      InitZone();</div>
+<div class="line"><span class="lineno">   41</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;YOU CAN USE FOLLOWING DATA PROPERLY&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   46</span>      InitZone();</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">   49</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_ac759558b1dd4e820330546c994a9d840"><div class="ttname"><a href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Debug::Log</a></div><div class="ttdeci">static void Log(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdoc">Prints debug message with normal prio.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug.c:133</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a89117103e533490810b61c707b33a390" name="a89117103e533490810b61c707b33a390"></a>
@@ -184,6 +210,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d08/_contaminated_area_8c_source.html#l00061">61</a> of file <a class="el" href="../../de/d08/_contaminated_area_8c_source.html">ContaminatedArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>  {</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.InitZoneClient();</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">// We spawn VFX on client</span></div>
+<div class="line"><span class="lineno">   66</span>    PlaceParticles(GetWorldPosition(), <a class="code hl_variable" href="../../d6/d07/_a_i_group_behaviour_8c.html#af3c960f8d8e676c260d328e5f7b32d74">m_Radius</a>, m_InnerRings, m_InnerSpacing, m_OuterRingToggle, m_OuterSpacing, m_OuterRingOffset, m_ParticleID);</div>
+<div class="line"><span class="lineno">   67</span>  }</div>
+<div class="ttc" id="a_a_i_group_behaviour_8c_html_af3c960f8d8e676c260d328e5f7b32d74"><div class="ttname"><a href="../../d6/d07/_a_i_group_behaviour_8c.html#af3c960f8d8e676c260d328e5f7b32d74">m_Radius</a></div><div class="ttdeci">float m_Radius</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d07/_a_i_group_behaviour_8c_source.html#l00010">AIGroupBehaviour.c:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d07/_a_i_group_behaviour_8c_source.html#l00010">m_Radius</a>.</p>
 
 </div>
 </div>
@@ -203,6 +238,17 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d08/_contaminated_area_8c_source.html#l00052">52</a> of file <a class="el" href="../../de/d08/_contaminated_area_8c_source.html">ContaminatedArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>  {</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.InitZoneServer();</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">// We create the trigger on server</span></div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (m_TriggerType != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   58</span>      <a class="code hl_function" href="../../dd/d08/_trap_base_8c.html#a56e9fba9303f5e86f50ccf4c54562794">CreateTrigger</a>(<a class="code hl_variable" href="../../d5/d0d/_effect_8c.html#a95d9484423b4997bf70860a1bb683c32">m_Position</a>, <a class="code hl_variable" href="../../d6/d07/_a_i_group_behaviour_8c.html#af3c960f8d8e676c260d328e5f7b32d74">m_Radius</a>);</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="ttc" id="a_effect_8c_html_a95d9484423b4997bf70860a1bb683c32"><div class="ttname"><a href="../../d5/d0d/_effect_8c.html#a95d9484423b4997bf70860a1bb683c32">m_Position</a></div><div class="ttdeci">vector m_Position</div><div class="ttdoc">Cached world position.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00041">Effect.c:41</a></div></div>
+<div class="ttc" id="a_trap_base_8c_html_a56e9fba9303f5e86f50ccf4c54562794"><div class="ttname"><a href="../../dd/d08/_trap_base_8c.html#a56e9fba9303f5e86f50ccf4c54562794">CreateTrigger</a></div><div class="ttdeci">void CreateTrigger()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d08/_trap_base_8c_source.html#l00468">TrapBase.c:468</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00468">CreateTrigger()</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00041">m_Position</a>, and <a class="el" href="../../d6/d07/_a_i_group_behaviour_8c_source.html#l00010">m_Radius</a>.</p>
 
 </div>
 </div>
@@ -226,7 +272,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d08/_contaminated_area_8c_source.html#l00023">23</a> of file <a class="el" href="../../de/d08/_contaminated_area_8c_source.html">ContaminatedArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   23</span>  {</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetupZoneData(<a class="code hl_class" href="../../db/d06/class_param3.html">params</a>);</div>
+<div class="line"><span class="lineno">   25</span>  }</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a58793c1561abb560da4377da77ad6dea">EEInit</a>()</div>
+<div class="ttc" id="a_contaminated_area_8c_html_a58793c1561abb560da4377da77ad6dea"><div class="ttname"><a href="#a58793c1561abb560da4377da77ad6dea">EEInit</a></div><div class="ttdeci">override void EEInit()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d08/_contaminated_area_8c_source.html#l00027">ContaminatedArea.c:27</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="adcb39093b85ad1b1ca41d020799fdda0" name="adcb39093b85ad1b1ca41d020799fdda0"></a>
@@ -268,7 +320,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d08/_contaminated_area_8c_source.html#l00001">1</a> of file <a class="el" href="../../de/d08/_contaminated_area_8c_source.html">ContaminatedArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   23</span>  {</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetupZoneData(<a class="code hl_class" href="../../db/d06/class_param3.html">params</a>);</div>
+<div class="line"><span class="lineno">   25</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

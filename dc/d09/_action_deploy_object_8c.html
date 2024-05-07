@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -185,6 +182,27 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00030">30</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>  {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">//Client</span></div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsPlacingLocal())</div>
+<div class="line"><span class="lineno">   36</span>      {</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetHologramLocal().IsColliding())</div>
+<div class="line"><span class="lineno">   38</span>        {</div>
+<div class="line"><span class="lineno">   39</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.CanBePlaced(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetHologramLocal().GetProjectionEntity().GetPosition()))</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="line"><span class="lineno">   42</span>      }</div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">//Server</span></div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -204,6 +222,28 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00049">49</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>  {</div>
+<div class="line"><span class="lineno">   51</span>    <span class="comment">//Server</span></div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.IsPlacingServer())</div>
+<div class="line"><span class="lineno">   55</span>      {</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   57</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetHologramServer().EvaluateCollision(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetHologramServer().IsColliding())</div>
+<div class="line"><span class="lineno">   60</span>        {</div>
+<div class="line"><span class="lineno">   61</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.CanBePlaced(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetHologramServer().GetProjectionEntity().GetPosition()))</div>
+<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   65</span>      }</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   69</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -223,7 +263,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00001">1</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   10</span>  {</div>
+<div class="line"><span class="lineno">   11</span>    m_CommandUID = 0;</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#ac25939d007cc07615028e1ec91815093">m_StanceMask</a> = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEMASK_CROUCH | <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEMASK_ERECT;</div>
+<div class="line"><span class="lineno">   13</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_ac25939d007cc07615028e1ec91815093"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#ac25939d007cc07615028e1ec91815093">m_StanceMask</a></div><div class="ttdeci">int m_StanceMask</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00053">ActionBase.c:53</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a798699eb2b24d51f4706ebec7debc457" name="a798699eb2b24d51f4706ebec7debc457"></a>
@@ -242,7 +288,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00025">25</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   26</span>  {</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   28</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae4b8096e050d0a62daa431588f8af715" name="ae4b8096e050d0a62daa431588f8af715"></a>
@@ -265,7 +314,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00264">264</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  265</span>  {</div>
+<div class="line"><span class="lineno">  266</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.HandleReciveData(<a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>    <a class="code hl_class" href="../../dc/d04/class_place_object_action_recive_data.html">PlaceObjectActionReciveData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">recive_data_po</a> = <a class="code hl_class" href="../../dc/d04/class_place_object_action_recive_data.html">PlaceObjectActionReciveData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>);</div>
+<div class="line"><span class="lineno">  269</span>    <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_po</a> = <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_po</a>.m_Position = <a class="code hl_class" href="../../db/d06/class_param3.html">recive_data_po</a>.m_Position;</div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_po</a>.m_Orientation = <a class="code hl_class" href="../../db/d06/class_param3.html">recive_data_po</a>.m_Orientation;</div>
+<div class="line"><span class="lineno">  273</span>  }</div>
+<div class="ttc" id="aclass_place_object_action_data_html"><div class="ttname"><a href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d04/_action_deploy_base_8c_source.html#l00001">ActionDeployBase.c:2</a></div></div>
+<div class="ttc" id="aclass_place_object_action_recive_data_html"><div class="ttname"><a href="../../dc/d04/class_place_object_action_recive_data.html">PlaceObjectActionReciveData</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d09/_action_deploy_object_8c_source.html#l00001">ActionDeployObject.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8776280df4c7e336f026407579b68872" name="a8776280df4c7e336f026407579b68872"></a>
@@ -284,7 +344,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00015">15</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   16</span>  {</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   18</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7c6ca247d9b1819c4e46fc2e2ee173bb" name="a7c6ca247d9b1819c4e46fc2e2ee173bb"></a>
@@ -303,7 +366,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00020">20</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   21</span>  {</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   23</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad14460f2f68fee5fd0269e919681d80c" name="ad14460f2f68fee5fd0269e919681d80c"></a>
@@ -322,7 +388,27 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00159">159</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  160</span>  {</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEndClient(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a> = <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_AlreadyPlaced)</div>
+<div class="line"><span class="lineno">  165</span>    {</div>
+<div class="line"><span class="lineno">  166</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.PlacingCancelLocal();</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>      <span class="comment">//action terminated locally, send cancel to server</span></div>
+<div class="line"><span class="lineno">  169</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Player.GetActionManager().RequestEndAction();</div>
+<div class="line"><span class="lineno">  170</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetHologramLocal())</div>
+<div class="line"><span class="lineno">  171</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetHologramLocal().SetUpdatePosition(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>      <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">source</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  174</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetInventory().GetCurrentInventoryLocation(<a class="code hl_class" href="../../db/d06/class_param3.html">source</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.GROUND)</div>
+<div class="line"><span class="lineno">  175</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.PredictiveTakeEntityToHands(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span>  }</div>
+<div class="ttc" id="a_inventory_location_8c_html_ad09049fb2b99c763369bfe6228aa81b3"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a></div><div class="ttdeci">InventoryLocationType</div><div class="ttdoc">types of Inventory Location</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00003">InventoryLocation.c:4</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2ebf3855cc8960864124ba5ca4949033" name="a2ebf3855cc8960864124ba5ca4949033"></a>
@@ -341,6 +427,44 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00179">179</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>  {</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEndServer(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a> || !<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem)</div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>    <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a> = <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_AlreadyPlaced)</div>
+<div class="line"><span class="lineno">  188</span>    {</div>
+<div class="line"><span class="lineno">  189</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJunctureEx(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">  190</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.SetIsBeingPlaced(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">  193</span>      {</div>
+<div class="line"><span class="lineno">  194</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.PlacingCancelServer();</div>
+<div class="line"><span class="lineno">  195</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.SoundSynchRemoteReset();</div>
+<div class="line"><span class="lineno">  196</span>      }</div>
+<div class="line"><span class="lineno">  197</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  198</span>      {</div>
+<div class="line"><span class="lineno">  199</span>        <span class="comment">//local singleplayer</span></div>
+<div class="line"><span class="lineno">  200</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.PlacingCancelLocal();</div>
+<div class="line"><span class="lineno">  201</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.PlacingCancelServer();</div>
+<div class="line"><span class="lineno">  202</span>      }</div>
+<div class="line"><span class="lineno">  203</span>    }</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  205</span>    {</div>
+<div class="line"><span class="lineno">  206</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.SetIsDeploySound(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  207</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.SetIsPlaceSound(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  208</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.SoundSynchRemoteReset();</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.IsBasebuildingKit())</div>
+<div class="line"><span class="lineno">  211</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.Delete();</div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  213</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ClearJunctureEx(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -360,7 +484,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00228">228</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  229</span>  {</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.SoundSynchRemote();</div>
+<div class="line"><span class="lineno">  231</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aab96e0b1a6bd70d80af8b1e5188d402e" name="aab96e0b1a6bd70d80af8b1e5188d402e"></a>
@@ -379,7 +506,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00144">144</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a> = <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>)</div>
+<div class="line"><span class="lineno">  148</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">entity_for_placing</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem;</div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">position</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetLocalProjectionPosition();</div>
+<div class="line"><span class="lineno">  152</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">orientation</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetLocalProjectionOrientation();</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_AlreadyPlaced = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">entity_for_placing</a>.OnPlacementComplete(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player, <a class="code hl_class" href="../../db/d06/class_param3.html">position</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">orientation</a>);</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3b45d0586cb87b4484a292e8510bf509" name="a3b45d0586cb87b4484a292e8510bf509"></a>
@@ -398,6 +540,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00217">217</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>  {</div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">  220</span>    {</div>
+<div class="line"><span class="lineno">  221</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetItemInHands())</div>
+<div class="line"><span class="lineno">  222</span>        ActiondeployObjectCB.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Callback).DropDuringPlacing(); <span class="comment">//legacy stuff</span></div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>      <a class="code hl_function" href="../../dc/d04/_action_deploy_base_8c.html#a6b6d4ddab76fd5bfe555affb3595155c">DropDuringPlacing</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player);</div>
+<div class="line"><span class="lineno">  225</span>    }</div>
+<div class="line"><span class="lineno">  226</span>  }</div>
+<div class="ttc" id="a_action_deploy_base_8c_html_a6b6d4ddab76fd5bfe555affb3595155c"><div class="ttname"><a href="../../dc/d04/_action_deploy_base_8c.html#a6b6d4ddab76fd5bfe555affb3595155c">DropDuringPlacing</a></div><div class="ttdeci">void DropDuringPlacing()</div><div class="ttdoc">DEPRECATED.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d04/_action_deploy_base_8c.html#a6b6d4ddab76fd5bfe555affb3595155c">DropDuringPlacing()</a>, and <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -417,6 +571,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00104">104</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>  {</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a> = <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>)</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">  111</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.PlacingCompleteLocal();</div>
+<div class="line"><span class="lineno">  112</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -436,6 +600,36 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00114">114</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>  {</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">  117</span>    {</div>
+<div class="line"><span class="lineno">  118</span>      <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>;</div>
+<div class="line"><span class="lineno">  119</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a> = <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>)</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">entity_for_placing</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem;</div>
+<div class="line"><span class="lineno">  125</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Player.SetLocalProjectionPosition(<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Position);</div>
+<div class="line"><span class="lineno">  126</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Player.SetLocalProjectionOrientation(<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Orientation);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem)</div>
+<div class="line"><span class="lineno">  129</span>      {</div>
+<div class="line"><span class="lineno">  130</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Player.PlacingStartServer(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().AddActionJuncture(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player, <a class="code hl_class" href="../../db/d06/class_param3.html">entity_for_placing</a>, 10000);</div>
+<div class="line"><span class="lineno">  133</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.SetIsBeingPlaced(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  134</span>      }</div>
+<div class="line"><span class="lineno">  135</span>    }</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  137</span>    {</div>
+<div class="line"><span class="lineno">  138</span>      <span class="comment">//local singleplayer</span></div>
+<div class="line"><span class="lineno">  139</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.PlacingStartServer(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">  140</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.SetIsBeingPlaced(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -459,7 +653,26 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00243">243</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  244</span>  {</div>
+<div class="line"><span class="lineno">  245</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>)</div>
+<div class="line"><span class="lineno">  246</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../dc/d04/class_place_object_action_recive_data.html">PlaceObjectActionReciveData</a>;</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.ReadFromContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>);</div>
+<div class="line"><span class="lineno">  249</span>    <a class="code hl_class" href="../../dc/d04/class_place_object_action_recive_data.html">PlaceObjectActionReciveData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_po</a> = <a class="code hl_class" href="../../dc/d04/class_place_object_action_recive_data.html">PlaceObjectActionReciveData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_recive_data</a>);</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">entity_position</a> = <span class="stringliteral">&quot;0 0 0&quot;</span>;</div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">entity_orientation</a> = <span class="stringliteral">&quot;0 0 0&quot;</span>;</div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">entity_position</a>))</div>
+<div class="line"><span class="lineno">  254</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  255</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">entity_orientation</a>))</div>
+<div class="line"><span class="lineno">  256</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  257</span> </div>
+<div class="line"><span class="lineno">  258</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_po</a>.m_Position = <a class="code hl_class" href="../../db/d06/class_param3.html">entity_position</a>;</div>
+<div class="line"><span class="lineno">  259</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data_po</a>.m_Orientation = <a class="code hl_class" href="../../db/d06/class_param3.html">entity_orientation</a>;</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  262</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aba51e6fb279797318af73e89a6208e71" name="aba51e6fb279797318af73e89a6208e71"></a>
@@ -497,6 +710,41 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00071">71</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>  {</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetupAction(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">extra_data</a>))</div>
+<div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>      <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>;</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a> = <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   77</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_AlreadyPlaced = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDedicatedServer())</div>
+<div class="line"><span class="lineno">   79</span>      {</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetHologramLocal().SetUpdatePosition(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>        <a class="code hl_class" href="../../dd/d05/class_hologram.html">Hologram</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hologram</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetHologramLocal();</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">hologram</a>)</div>
+<div class="line"><span class="lineno">   84</span>        {</div>
+<div class="line"><span class="lineno">   85</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Position = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetHologramLocal().GetProjectionPosition();</div>
+<div class="line"><span class="lineno">   86</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Orientation = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetHologramLocal().GetProjectionOrientation();</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Player.SetLocalProjectionPosition(<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Position);</div>
+<div class="line"><span class="lineno">   89</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Player.SetLocalProjectionOrientation(<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Orientation);</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   92</span>          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   93</span>      }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem)</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>      <a class="code hl_function" href="#a9bd30dcabdb452229185c7eccce04c23">SetupAnimation</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem);</div>
+<div class="line"><span class="lineno">   99</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  102</span>  }</div>
+<div class="ttc" id="a_action_deploy_object_8c_html_a9bd30dcabdb452229185c7eccce04c23"><div class="ttname"><a href="#a9bd30dcabdb452229185c7eccce04c23">SetupAnimation</a></div><div class="ttdeci">void SetupAnimation(ItemBase item)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d09/_action_deploy_object_8c_source.html#l00275">ActionDeployObject.c:275</a></div></div>
+<div class="ttc" id="aclass_hologram_html"><div class="ttname"><a href="../../dd/d05/class_hologram.html">Hologram</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0e/_hologram_8c_source.html#l00001">Hologram.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00275">SetupAnimation()</a>.</p>
 
 </div>
 </div>
@@ -516,6 +764,36 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00275">275</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  276</span>  {</div>
+<div class="line"><span class="lineno">  277</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsDeployable())</div>
+<div class="line"><span class="lineno">  278</span>    {</div>
+<div class="line"><span class="lineno">  279</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsHeavyBehaviour())</div>
+<div class="line"><span class="lineno">  280</span>        m_CommandUID = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONFB_DEPLOY_HEAVY;</div>
+<div class="line"><span class="lineno">  281</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsOneHandedBehaviour())</div>
+<div class="line"><span class="lineno">  282</span>        m_CommandUID = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONFB_DEPLOY_1HD;</div>
+<div class="line"><span class="lineno">  283</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsTwoHandedBehaviour())</div>
+<div class="line"><span class="lineno">  284</span>        m_CommandUID = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONFB_DEPLOY_2HD;</div>
+<div class="line"><span class="lineno">  285</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  286</span>        <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;Error: check &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> + <span class="stringliteral">&quot; behaviour&quot;</span>);</div>
+<div class="line"><span class="lineno">  287</span>    }</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  289</span>    {</div>
+<div class="line"><span class="lineno">  290</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsHeavyBehaviour())</div>
+<div class="line"><span class="lineno">  291</span>        m_CommandUID = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONFB_PLACING_HEAVY;</div>
+<div class="line"><span class="lineno">  292</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsOneHandedBehaviour())</div>
+<div class="line"><span class="lineno">  293</span>        m_CommandUID = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONFB_PLACING_1HD;</div>
+<div class="line"><span class="lineno">  294</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsTwoHandedBehaviour())</div>
+<div class="line"><span class="lineno">  295</span>        m_CommandUID = <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONFB_PLACING_2HD;</div>
+<div class="line"><span class="lineno">  296</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  297</span>        <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;Error: check &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> + <span class="stringliteral">&quot; behaviour&quot;</span>);</div>
+<div class="line"><span class="lineno">  298</span>    }</div>
+<div class="line"><span class="lineno">  299</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_ac759558b1dd4e820330546c994a9d840"><div class="ttname"><a href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Debug::Log</a></div><div class="ttdeci">static void Log(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdoc">Prints debug message with normal prio.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug.c:133</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug::Log()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00071">SetupAction()</a>.</p>
 
 </div>
 </div>
@@ -539,7 +817,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html#l00233">233</a> of file <a class="el" href="../../dc/d09/_action_deploy_object_8c_source.html">ActionDeployObject.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  234</span>  {</div>
+<div class="line"><span class="lineno">  235</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.WriteToContext(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a> = <a class="code hl_class" href="../../d4/d08/class_place_object_action_data.html">PlaceObjectActionData</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Position);</div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">poActionData</a>.m_Orientation);</div>
+<div class="line"><span class="lineno">  241</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>

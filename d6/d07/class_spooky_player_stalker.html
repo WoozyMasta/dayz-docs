@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -162,6 +159,36 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00328">328</a> of file <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html">SpookyAreaMisc.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  329</span>  {</div>
+<div class="line"><span class="lineno">  330</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">  333</span>    {</div>
+<div class="line"><span class="lineno">  334</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d09/class_universal_temperature_source_settings.html">UniversalTemperatureSourceSettings</a>();</div>
+<div class="line"><span class="lineno">  335</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>.m_Updateable = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  336</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>.m_UpdateInterval = 3;</div>
+<div class="line"><span class="lineno">  337</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>.m_TemperatureMin = -20;</div>
+<div class="line"><span class="lineno">  338</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>.m_TemperatureMax = -20;</div>
+<div class="line"><span class="lineno">  339</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>.m_RangeFull = 2;</div>
+<div class="line"><span class="lineno">  340</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>.m_RangeMax = 2;</div>
+<div class="line"><span class="lineno">  341</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>.m_TemperatureCap = -20;</div>
+<div class="line"><span class="lineno">  342</span>      <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>.m_ManualUpdate = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>      <a class="code hl_variable" href="#aac840ae950108a5745e87edc90591da9">m_UTSLConstant</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">UniversalTemperatureSourceLambdaConstant</a>();</div>
+<div class="line"><span class="lineno">  345</span>      <a class="code hl_variable" href="#aa1672ec1e19db94e4eff9c68efdca1f9">m_UTSource</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d09/class_universal_temperature_source.html">UniversalTemperatureSource</a>(<span class="keyword">this</span>, <a class="code hl_variable" href="#a03f4ca2fddf6e9dee6cf934ad77d2054">m_UTSSettings</a>, <a class="code hl_variable" href="#aac840ae950108a5745e87edc90591da9">m_UTSLConstant</a>);</div>
+<div class="line"><span class="lineno">  346</span>      <a class="code hl_variable" href="#aa1672ec1e19db94e4eff9c68efdca1f9">m_UTSource</a>.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  347</span>    }</div>
+<div class="line"><span class="lineno">  348</span> </div>
+<div class="line"><span class="lineno">  349</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_spooky_player_stalker_html_a03f4ca2fddf6e9dee6cf934ad77d2054"><div class="ttname"><a href="#a03f4ca2fddf6e9dee6cf934ad77d2054">SpookyPlayerStalker::m_UTSSettings</a></div><div class="ttdeci">ref UniversalTemperatureSourceSettings m_UTSSettings</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d06/_spooky_area_misc_8c_source.html#l00324">SpookyAreaMisc.c:324</a></div></div>
+<div class="ttc" id="aclass_spooky_player_stalker_html_aa1672ec1e19db94e4eff9c68efdca1f9"><div class="ttname"><a href="#aa1672ec1e19db94e4eff9c68efdca1f9">SpookyPlayerStalker::m_UTSource</a></div><div class="ttdeci">ref UniversalTemperatureSource m_UTSource</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d06/_spooky_area_misc_8c_source.html#l00323">SpookyAreaMisc.c:323</a></div></div>
+<div class="ttc" id="aclass_spooky_player_stalker_html_aac840ae950108a5745e87edc90591da9"><div class="ttname"><a href="#aac840ae950108a5745e87edc90591da9">SpookyPlayerStalker::m_UTSLConstant</a></div><div class="ttdeci">ref UniversalTemperatureSourceLambdaConstant m_UTSLConstant</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d06/_spooky_area_misc_8c_source.html#l00325">SpookyAreaMisc.c:325</a></div></div>
+<div class="ttc" id="aclass_universal_temperature_source_html"><div class="ttname"><a href="../../db/d09/class_universal_temperature_source.html">UniversalTemperatureSource</a></div><div class="ttdoc">original Timer deletes m_params which is unwanted</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0b/_universal_temperature_source_8c_source.html#l00025">UniversalTemperatureSource.c:26</a></div></div>
+<div class="ttc" id="aclass_universal_temperature_source_settings_html"><div class="ttname"><a href="../../db/d09/class_universal_temperature_source_settings.html">UniversalTemperatureSourceSettings</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0b/_universal_temperature_source_8c_source.html#l00001">UniversalTemperatureSource.c:2</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00325">m_UTSLConstant</a>, <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00323">m_UTSource</a>, and <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00324">m_UTSSettings</a>.</p>
 
 </div>
 </div>
@@ -188,6 +215,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00325">325</a> of file <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html">SpookyAreaMisc.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00328">EEInit()</a>.</p>
+
 </div>
 </div>
 <a id="aa1672ec1e19db94e4eff9c68efdca1f9" name="aa1672ec1e19db94e4eff9c68efdca1f9"></a>
@@ -212,6 +241,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00323">323</a> of file <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html">SpookyAreaMisc.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00328">EEInit()</a>.</p>
+
 </div>
 </div>
 <a id="a03f4ca2fddf6e9dee6cf934ad77d2054" name="a03f4ca2fddf6e9dee6cf934ad77d2054"></a>
@@ -235,6 +266,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00324">324</a> of file <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html">SpookyAreaMisc.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d06/_spooky_area_misc_8c_source.html#l00328">EEInit()</a>.</p>
 
 </div>
 </div>

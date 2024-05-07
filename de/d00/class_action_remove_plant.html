@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -162,6 +159,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00005">5</a> of file <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html">ActionRemovePlant.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a> = <span class="stringliteral">&quot;#remove_plant&quot;</span>;</div>
+<div class="line"><span class="lineno">    8</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a11fc80cdcb775f018854049236528029"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a></div><div class="ttdeci">string m_Text</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00049">ActionBase.c:49</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00049">m_Text</a>.</p>
 
 </div>
 </div>
@@ -199,6 +202,52 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00021">21</a> of file <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html">ActionRemovePlant.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_class" href="../../df/d0e/class_garden_base.html">GardenBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">garden_base</a>;</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">garden_base</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject()))</div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">Slot</a> slot;</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">selections</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a>;</div>
+<div class="line"><span class="lineno">   29</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">garden_base</a>.GetActionComponentNameList(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetComponentIndex(), <a class="code hl_class" href="../../db/d06/class_param3.html">selections</a>);</div>
+<div class="line"><span class="lineno">   30</span>      <span class="keywordtype">string</span> selection;</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">s</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">s</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">selections</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">s</a>++)</div>
+<div class="line"><span class="lineno">   33</span>      {</div>
+<div class="line"><span class="lineno">   34</span>        selection = <a class="code hl_class" href="../../db/d06/class_param3.html">selections</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">s</a>];</div>
+<div class="line"><span class="lineno">   35</span>        slot = <a class="code hl_class" href="../../db/d06/class_param3.html">garden_base</a>.GetSlotBySelection(selection);</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">if</span> (slot)</div>
+<div class="line"><span class="lineno">   37</span>          <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   38</span>      }</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>      <span class="keywordflow">if</span> (slot &amp;&amp; slot.GetPlant())</div>
+<div class="line"><span class="lineno">   41</span>      {</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_variable" href="#af5428abacd881f11b5f1fa1234429019">m_Plant</a> = PlantBase.Cast(slot.GetPlant());</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#af5428abacd881f11b5f1fa1234429019">m_Plant</a>.IsGrowing() || <a class="code hl_variable" href="#af5428abacd881f11b5f1fa1234429019">m_Plant</a>.IsDry() || !<a class="code hl_variable" href="#af5428abacd881f11b5f1fa1234429019">m_Plant</a>.HasCrops() || <a class="code hl_variable" href="#af5428abacd881f11b5f1fa1234429019">m_Plant</a>.IsSpoiled())</div>
+<div class="line"><span class="lineno">   44</span>          <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   45</span>      }</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   48</span>    <span class="comment">/*Object targetObject = target.GetObject();</span></div>
+<div class="line"><span class="lineno">   49</span><span class="comment">      if ( targetObject != NULL &amp;&amp; targetObject.IsInherited(PlantBase) )</span></div>
+<div class="line"><span class="lineno">   50</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">   51</span><span class="comment">      PlantBase plant = PlantBase.Cast( targetObject );</span></div>
+<div class="line"><span class="lineno">   52</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   53</span><span class="comment">      if ( plant.IsGrowing()  ||  plant.IsDry()  ||  !plant.HasCrops() || plant.IsSpoiled())</span></div>
+<div class="line"><span class="lineno">   54</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">   55</span><span class="comment">        return true;</span></div>
+<div class="line"><span class="lineno">   56</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">   57</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">   58</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   59</span><span class="comment">      return false;*/</span></div>
+<div class="line"><span class="lineno">   60</span>  }</div>
+<div class="ttc" id="aclass_action_remove_plant_html_af5428abacd881f11b5f1fa1234429019"><div class="ttname"><a href="#af5428abacd881f11b5f1fa1234429019">ActionRemovePlant::m_Plant</a></div><div class="ttdeci">PlantBase m_Plant</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d04/_action_remove_plant_8c_source.html#l00003">ActionRemovePlant.c:3</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_garden_base_html"><div class="ttname"><a href="../../df/d0e/class_garden_base.html">GardenBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_garden_plot_8c_source.html#l00001">GardenPlot.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, and <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00003">m_Plant</a>.</p>
 
 </div>
 </div>
@@ -226,6 +275,18 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00015">15</a> of file <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html">ActionRemovePlant.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>  {</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a733279ad481ba700333db91fa140e910">m_ConditionItem</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0c/class_c_c_i_none.html">CCINone</a>;</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a81fd8dac008261b8f2062657a645b0d4">m_ConditionTarget</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d0a/class_c_c_t_cursor.html">CCTCursor</a>(<a class="code hl_class" href="../../da/d0a/class_u_a_max_distances.html">UAMaxDistances</a>.<a class="code hl_variable" href="../../da/d0a/class_u_a_max_distances.html#a57c8e1138ae73838e95b277413124c5d">SMALL</a>);</div>
+<div class="line"><span class="lineno">   19</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a733279ad481ba700333db91fa140e910"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a733279ad481ba700333db91fa140e910">m_ConditionItem</a></div><div class="ttdeci">ref CCIBase m_ConditionItem</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00055">ActionBase.c:55</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_a81fd8dac008261b8f2062657a645b0d4"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a81fd8dac008261b8f2062657a645b0d4">m_ConditionTarget</a></div><div class="ttdeci">ref CCTBase m_ConditionTarget</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00056">ActionBase.c:56</a></div></div>
+<div class="ttc" id="aclass_c_c_i_none_html"><div class="ttname"><a href="../../d4/d0c/class_c_c_i_none.html">CCINone</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_c_c_i_none_8c_source.html#l00001">CCINone.c:2</a></div></div>
+<div class="ttc" id="aclass_c_c_t_cursor_html"><div class="ttname"><a href="../../d2/d0a/class_c_c_t_cursor.html">CCTCursor</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d09/_c_c_t_cursor_8c_source.html#l00001">CCTCursor.c:2</a></div></div>
+<div class="ttc" id="aclass_u_a_max_distances_html"><div class="ttname"><a href="../../da/d0a/class_u_a_max_distances.html">UAMaxDistances</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0e/_action_constants_8c_source.html#l00104">ActionConstants.c:105</a></div></div>
+<div class="ttc" id="aclass_u_a_max_distances_html_a57c8e1138ae73838e95b277413124c5d"><div class="ttname"><a href="../../da/d0a/class_u_a_max_distances.html#a57c8e1138ae73838e95b277413124c5d">UAMaxDistances::SMALL</a></div><div class="ttdeci">const float SMALL</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0e/_action_constants_8c_source.html#l00106">ActionConstants.c:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00055">m_ConditionItem</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00056">m_ConditionTarget</a>, and <a class="el" href="../../d3/d0e/_action_constants_8c_source.html#l00106">UAMaxDistances::SMALL</a>.</p>
 
 </div>
 </div>
@@ -253,7 +314,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00010">10</a> of file <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html">ActionRemovePlant.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   11</span>  {</div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../dd/d0f/class_continuous_interact_action_input.html">ContinuousInteractActionInput</a>;</div>
+<div class="line"><span class="lineno">   13</span>  }</div>
+<div class="ttc" id="aclass_continuous_interact_action_input_html"><div class="ttname"><a href="../../dd/d0f/class_continuous_interact_action_input.html">ContinuousInteractActionInput</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00503">ActionInput.c:504</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a539853517513e3d1de5f4a989d618578" name="a539853517513e3d1de5f4a989d618578"></a>
@@ -280,6 +345,23 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00062">62</a> of file <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html">ActionRemovePlant.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>  {</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#af5428abacd881f11b5f1fa1234429019">m_Plant</a>)</div>
+<div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>      <span class="comment">//m_Plant.RemovePlant();</span></div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>      <span class="comment">//New method allowing us to pass player position</span></div>
+<div class="line"><span class="lineno">   69</span>      <a class="code hl_variable" href="#af5428abacd881f11b5f1fa1234429019">m_Plant</a>.RemovePlantEx(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetPosition());</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="line"><span class="lineno">   71</span>    <span class="comment">/*Object targetObject = action_data.m_Target.GetObject();</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">      if ( targetObject != NULL &amp;&amp; targetObject.IsInherited(PlantBase) )</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">      PlantBase plant = PlantBase.Cast( targetObject );</span></div>
+<div class="line"><span class="lineno">   75</span><span class="comment">      plant.RemovePlant();</span></div>
+<div class="line"><span class="lineno">   76</span><span class="comment">      }*/</span></div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00003">m_Plant</a>.</p>
 
 </div>
 </div>
@@ -305,6 +387,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00003">3</a> of file <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html">ActionRemovePlant.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00021">ActionCondition()</a>, and <a class="el" href="../../d4/d04/_action_remove_plant_8c_source.html#l00062">OnExecuteServer()</a>.</p>
 
 </div>
 </div>

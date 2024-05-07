@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -167,6 +164,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00009">9</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>  {</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="#adf79d078ad276d1d40dbe1d155a2a8b9">m_ProcuringItem</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">procuring_item</a>;</div>
+<div class="line"><span class="lineno">   12</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_rain_procurement_manager_html_adf79d078ad276d1d40dbe1d155a2a8b9"><div class="ttname"><a href="#adf79d078ad276d1d40dbe1d155a2a8b9">RainProcurementManager::m_ProcuringItem</a></div><div class="ttdeci">ItemBase m_ProcuringItem</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00004">RainProcurementManager.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00004">m_ProcuringItem</a>.</p>
 
 </div>
 </div>
@@ -195,6 +199,22 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00015">15</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>  {</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="#acebf55611194d84838123fcd482d61eb">m_IsUnderRoof</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.IsUnderRoof(<a class="code hl_variable" href="#adf79d078ad276d1d40dbe1d155a2a8b9">m_ProcuringItem</a>);</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="comment">//m_ProcuringItem.SetQuantity(0); /*set to 0 for debug purposses*/</span></div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#acebf55611194d84838123fcd482d61eb">m_IsUnderRoof</a>)</div>
+<div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>      <a class="code hl_variable" href="#a540d62c61298f1ce37c28fb9f95e2ad5">m_UpdateTimer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d08/class_timer.html">Timer</a>();</div>
+<div class="line"><span class="lineno">   24</span>      <a class="code hl_variable" href="#a540d62c61298f1ce37c28fb9f95e2ad5">m_UpdateTimer</a>.Run(10, <span class="keyword">this</span>, <span class="stringliteral">&quot;RainProcurementCheck&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="line"><span class="lineno">   26</span>  }</div>
+<div class="ttc" id="aclass_rain_procurement_manager_html_a540d62c61298f1ce37c28fb9f95e2ad5"><div class="ttname"><a href="#a540d62c61298f1ce37c28fb9f95e2ad5">RainProcurementManager::m_UpdateTimer</a></div><div class="ttdeci">ref Timer m_UpdateTimer</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00006">RainProcurementManager.c:6</a></div></div>
+<div class="ttc" id="aclass_rain_procurement_manager_html_acebf55611194d84838123fcd482d61eb"><div class="ttname"><a href="#acebf55611194d84838123fcd482d61eb">RainProcurementManager::m_IsUnderRoof</a></div><div class="ttdeci">int m_IsUnderRoof</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00005">RainProcurementManager.c:5</a></div></div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="../../d8/d08/class_timer.html">Timer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d02/_day_z_player_implement_8c_source.html#l00060">DayZPlayerImplement.c:61</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00005">m_IsUnderRoof</a>, <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00004">m_ProcuringItem</a>, and <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00006">m_UpdateTimer</a>.</p>
 
 </div>
 </div>
@@ -222,6 +242,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00071">71</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>  {</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a540d62c61298f1ce37c28fb9f95e2ad5">m_UpdateTimer</a> != <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   74</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00006">m_UpdateTimer</a>.</p>
 
 </div>
 </div>
@@ -249,6 +274,33 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00029">29</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>  {</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">rain_intensity</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWeather().GetRain().GetActual();</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">fill_per_update</a> = <a class="code hl_variable" href="#a6fcdc00c9a27735b5e7d9385c301935f">RAIN_COEFFICIENT</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">rain_intensity</a>;</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">rain_intensity</a> &gt; 0)</div>
+<div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adf79d078ad276d1d40dbe1d155a2a8b9">m_ProcuringItem</a>.GetQuantity() &lt; <a class="code hl_variable" href="#adf79d078ad276d1d40dbe1d155a2a8b9">m_ProcuringItem</a>.GetQuantityMax())</div>
+<div class="line"><span class="lineno">   37</span>      {</div>
+<div class="line"><span class="lineno">   38</span>        <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="../../db/d01/class_liquid.html#a56ac8aaa3efbd57bdefa37fdb2fb91d7">FillContainerEnviro</a>(<a class="code hl_variable" href="#adf79d078ad276d1d40dbe1d155a2a8b9">m_ProcuringItem</a>, <a class="code hl_variable" href="../../d9/d09/group___liquid_types.html#ga89c3167cb88f966914caee7442a95bbd">LIQUID_WATER</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">fill_per_update</a>);</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>        <span class="comment">//Print( &quot;Quantity of &quot; + m_ProcuringItem + &quot; is: &quot; +  m_ProcuringItem.GetQuantity() );</span></div>
+<div class="line"><span class="lineno">   41</span>      }</div>
+<div class="line"><span class="lineno">   42</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   43</span>      {</div>
+<div class="line"><span class="lineno">   44</span>        <span class="comment">//Print(&quot;vesel full&quot;);</span></div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_function" href="#a265c4b5b4ed6ffc313a7a0ef95aaff89">StopRainProcurement</a>();</div>
+<div class="line"><span class="lineno">   46</span>      }</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
+<div class="ttc" id="aclass_liquid_html"><div class="ttname"><a href="../../db/d01/class_liquid.html">Liquid</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00001">Liquid.c:2</a></div></div>
+<div class="ttc" id="aclass_liquid_html_a56ac8aaa3efbd57bdefa37fdb2fb91d7"><div class="ttname"><a href="../../db/d01/class_liquid.html#a56ac8aaa3efbd57bdefa37fdb2fb91d7">Liquid::FillContainerEnviro</a></div><div class="ttdeci">static void FillContainerEnviro(ItemBase container, int liquid_type, float amount, bool inject_agents=false)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00126">Liquid.c:126</a></div></div>
+<div class="ttc" id="aclass_rain_procurement_manager_html_a265c4b5b4ed6ffc313a7a0ef95aaff89"><div class="ttname"><a href="#a265c4b5b4ed6ffc313a7a0ef95aaff89">RainProcurementManager::StopRainProcurement</a></div><div class="ttdeci">void StopRainProcurement()</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00076">RainProcurementManager.c:76</a></div></div>
+<div class="ttc" id="aclass_rain_procurement_manager_html_a6fcdc00c9a27735b5e7d9385c301935f"><div class="ttname"><a href="#a6fcdc00c9a27735b5e7d9385c301935f">RainProcurementManager::RAIN_COEFFICIENT</a></div><div class="ttdeci">const int RAIN_COEFFICIENT</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00007">RainProcurementManager.c:7</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___liquid_types_html_ga89c3167cb88f966914caee7442a95bbd"><div class="ttname"><a href="../../d9/d09/group___liquid_types.html#ga89c3167cb88f966914caee7442a95bbd">LIQUID_WATER</a></div><div class="ttdeci">const int LIQUID_WATER</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00504">constants.c:504</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00126">Liquid::FillContainerEnviro()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00504">LIQUID_WATER</a>, <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00004">m_ProcuringItem</a>, <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00007">RAIN_COEFFICIENT</a>, and <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00076">StopRainProcurement()</a>.</p>
 
 </div>
 </div>
@@ -276,6 +328,15 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00076">76</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>  {</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#acebf55611194d84838123fcd482d61eb">m_IsUnderRoof</a>)</div>
+<div class="line"><span class="lineno">   79</span>      <a class="code hl_variable" href="#a540d62c61298f1ce37c28fb9f95e2ad5">m_UpdateTimer</a>.Stop();</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00005">m_IsUnderRoof</a>, and <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00006">m_UpdateTimer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00029">RainProcurementCheck()</a>.</p>
 
 </div>
 </div>
@@ -302,6 +363,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00005">5</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00015">InitRainProcurement()</a>, and <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00076">StopRainProcurement()</a>.</p>
+
 </div>
 </div>
 <a id="adf79d078ad276d1d40dbe1d155a2a8b9" name="adf79d078ad276d1d40dbe1d155a2a8b9"></a>
@@ -325,6 +388,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00004">4</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00015">InitRainProcurement()</a>, <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00029">RainProcurementCheck()</a>, and <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00009">RainProcurementManager()</a>.</p>
 
 </div>
 </div>
@@ -350,6 +415,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00006">6</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00015">InitRainProcurement()</a>, <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00071">IsRunning()</a>, and <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00076">StopRainProcurement()</a>.</p>
+
 </div>
 </div>
 <a id="a6fcdc00c9a27735b5e7d9385c301935f" name="a6fcdc00c9a27735b5e7d9385c301935f"></a>
@@ -373,6 +440,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00007">7</a> of file <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html">RainProcurementManager.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00029">RainProcurementCheck()</a>.</p>
 
 </div>
 </div>

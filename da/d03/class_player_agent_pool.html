@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -201,6 +198,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00014">14</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>  {</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">   17</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_player_agent_pool_html_a9d034fac65266cfe4e95d15e948e737d"><div class="ttname"><a href="#a9d034fac65266cfe4e95d15e948e737d">PlayerAgentPool::m_Player</a></div><div class="ttdeci">PlayerBase m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00007">PlayerAgentPool.c:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00007">m_Player</a>.</p>
 
 </div>
 </div>
@@ -228,7 +232,10 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00019">19</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   20</span>  {</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -260,6 +267,28 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00133">133</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">max_count</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentMaxCount(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>);</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Contains(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> &gt; 0) <span class="comment">//if it contains, maybe add count only ?</span></div>
+<div class="line"><span class="lineno">  138</span>    {</div>
+<div class="line"><span class="lineno">  139</span>      <span class="comment">//m_VirusPool.Insert( agent_id, Math.Clamp(count,0,max_count) );</span></div>
+<div class="line"><span class="lineno">  140</span>      <a class="code hl_function" href="#ae3f172cafbfbbc2b3674d811c3e744b8">SetAgentCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>);</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  143</span>    {</div>
+<div class="line"><span class="lineno">  144</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">new_value</a> = <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>) + <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>;</div>
+<div class="line"><span class="lineno">  145</span>      <span class="comment">//Print(new_value);</span></div>
+<div class="line"><span class="lineno">  146</span>      <a class="code hl_function" href="#ae3f172cafbfbbc2b3674d811c3e744b8">SetAgentCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_value</a>);</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span>  }</div>
+<div class="ttc" id="aclass_player_agent_pool_html_a177aeed4b80ac3300d879dc1ef4c008e"><div class="ttname"><a href="#a177aeed4b80ac3300d879dc1ef4c008e">PlayerAgentPool::m_VirusPool</a></div><div class="ttdeci">ref map&lt; int, float &gt; m_VirusPool</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">PlayerAgentPool.c:3</a></div></div>
+<div class="ttc" id="aclass_player_agent_pool_html_a5aaec886508fbbc0d5dedaad77e174f8"><div class="ttname"><a href="#a5aaec886508fbbc0d5dedaad77e174f8">PlayerAgentPool::m_PluginTransmissionAgents</a></div><div class="ttdeci">PluginTransmissionAgents m_PluginTransmissionAgents</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">PlayerAgentPool.c:12</a></div></div>
+<div class="ttc" id="aclass_player_agent_pool_html_ae3f172cafbfbbc2b3674d811c3e744b8"><div class="ttname"><a href="#ae3f172cafbfbbc2b3674d811c3e744b8">PlayerAgentPool::SetAgentCount</a></div><div class="ttdeci">void SetAgentCount(int agent_id, float count)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">PlayerAgentPool.c:218</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">m_PluginTransmissionAgents</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">SetAgentCount()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00128">DigestAgent()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00256">RemoteGrowRequestDebug()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00204">SpawnAgents()</a>.</p>
 
 </div>
 </div>
@@ -287,6 +316,22 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00239">239</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  240</span>  {</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  242</span>    {</div>
+<div class="line"><span class="lineno">  243</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a> = <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.GetKey(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  244</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">antibiotics_resistance</a> = 1 - <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentAntiboticsResistanceEx(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>);</div>
+<div class="line"><span class="lineno">  245</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">delta</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">attack_value</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">antibiotics_resistance</a>;</div>
+<div class="line"><span class="lineno">  246</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">old_count</a> = <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>);</div>
+<div class="line"><span class="lineno">  247</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">new_count</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">old_count</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">delta</a>;</div>
+<div class="line"><span class="lineno">  248</span>      <span class="comment">//PrintString(&quot;delta:&quot;+delta.ToString());</span></div>
+<div class="line"><span class="lineno">  249</span>      <span class="comment">//PrintString(&quot;old_count:&quot;+old_count.ToString());</span></div>
+<div class="line"><span class="lineno">  250</span>      <span class="comment">//PrintString(&quot;new_count:&quot;+new_count.ToString());</span></div>
+<div class="line"><span class="lineno">  251</span>      <a class="code hl_function" href="#ae3f172cafbfbbc2b3674d811c3e744b8">SetAgentCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_count</a>);</div>
+<div class="line"><span class="lineno">  252</span>    }</div>
+<div class="line"><span class="lineno">  253</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00007">m_Player</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">m_PluginTransmissionAgents</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">SetAgentCount()</a>.</p>
 
 </div>
 </div>
@@ -318,6 +363,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00128">128</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>  {</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_function" href="#a8c9c8688caa2a8c1b5c236e590aca79b">AddAgent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentDigestibility(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>) * <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>);</div>
+<div class="line"><span class="lineno">  131</span>  }</div>
+<div class="ttc" id="aclass_player_agent_pool_html_a8c9c8688caa2a8c1b5c236e590aca79b"><div class="ttname"><a href="#a8c9c8688caa2a8c1b5c236e590aca79b">PlayerAgentPool::AddAgent</a></div><div class="ttdeci">void AddAgent(int agent_id, float count)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00133">PlayerAgentPool.c:133</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00133">AddAgent()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">m_PluginTransmissionAgents</a>.</p>
 
 </div>
 </div>
@@ -345,6 +396,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00184">184</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>  {</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aaca67a08b424e499026729192b7fcad5">m_AgentMask</a>;</div>
+<div class="line"><span class="lineno">  187</span>  }</div>
+<div class="ttc" id="aclass_player_agent_pool_html_aaca67a08b424e499026729192b7fcad5"><div class="ttname"><a href="#aaca67a08b424e499026729192b7fcad5">PlayerAgentPool::m_AgentMask</a></div><div class="ttdeci">int m_AgentMask</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00008">PlayerAgentPool.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00008">m_AgentMask</a>.</p>
 
 </div>
 </div>
@@ -372,6 +429,23 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00268">268</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  269</span>  {</div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentList().Count();</div>
+<div class="line"><span class="lineno">  271</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  272</span>    {</div>
+<div class="line"><span class="lineno">  273</span>      <a class="code hl_class" href="../../d1/d05/class_agent_base.html">AgentBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">agent</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentList().GetElement(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  274</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">agent_name</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">agent</a>.GetName();</div>
+<div class="line"><span class="lineno">  275</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">agent</a>.GetAgentType();</div>
+<div class="line"><span class="lineno">  276</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">max_agents</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentMaxCount(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>);</div>
+<div class="line"><span class="lineno">  277</span>      <span class="keywordtype">string</span> amount = <a class="code hl_function" href="#aed3c4abe1ca2167b15e3194d371530f5">GetSingleAgentCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>).ToString() + <span class="stringliteral">&quot;/&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">max_agents</a>.ToString();</div>
+<div class="line"><span class="lineno">  278</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">object_out</a>.Insert(<span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param3&lt;string, string, int&gt;</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_name</a>, amount, <a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>));</div>
+<div class="line"><span class="lineno">  279</span>    }</div>
+<div class="line"><span class="lineno">  280</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">object_out</a>.InsertAt(<span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;int&gt;</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">count</a>), 0);</div>
+<div class="line"><span class="lineno">  281</span>  }</div>
+<div class="ttc" id="aclass_agent_base_html"><div class="ttname"><a href="../../d1/d05/class_agent_base.html">AgentBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d05/_brain_agent_8c_source.html#l00001">BrainAgent.c:2</a></div></div>
+<div class="ttc" id="aclass_player_agent_pool_html_aed3c4abe1ca2167b15e3194d371530f5"><div class="ttname"><a href="#aed3c4abe1ca2167b15e3194d371530f5">PlayerAgentPool::GetSingleAgentCount</a></div><div class="ttdeci">int GetSingleAgentCount(int agent_id)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00189">PlayerAgentPool.c:189</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00189">GetSingleAgentCount()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">m_PluginTransmissionAgents</a>.</p>
 
 </div>
 </div>
@@ -399,6 +473,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00189">189</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  190</span>  {</div>
+<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Contains(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>))</div>
+<div class="line"><span class="lineno">  192</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>);</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  194</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00268">GetDebugObject()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00204">SpawnAgents()</a>.</p>
 
 </div>
 </div>
@@ -426,6 +509,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00024">24</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>  {</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ade3a46a7d3c79470ce201fc6dcdb3b06">STORAGE_VERSION</a>;</div>
+<div class="line"><span class="lineno">   27</span>  }</div>
+<div class="ttc" id="aclass_player_agent_pool_html_ade3a46a7d3c79470ce201fc6dcdb3b06"><div class="ttname"><a href="#ade3a46a7d3c79470ce201fc6dcdb3b06">PlayerAgentPool::STORAGE_VERSION</a></div><div class="ttdeci">const int STORAGE_VERSION</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00010">PlayerAgentPool.c:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00010">STORAGE_VERSION</a>.</p>
 
 </div>
 </div>
@@ -453,6 +542,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00196">196</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  197</span>  {</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">agent_count</a>;</div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  200</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">agent_count</a> += <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.GetElement(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">agent_count</a>;</div>
+<div class="line"><span class="lineno">  202</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>.</p>
 
 </div>
 </div>
@@ -480,6 +577,56 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00048">48</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>  {</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d9/d0d/_plugin_manager_8c.html#a3524404d2438f6b3f1fa1ee7205992e1">IsPluginManagerExists</a>()) <span class="comment">//check if modules are running</span></div>
+<div class="line"><span class="lineno">   51</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_enumeration" href="../../da/d04/_e_stat_levels_8c.html#a33dd957dac0dffc62424608704bc94a3">EStatLevels</a> <a class="code hl_class" href="../../db/d06/class_param3.html">immunity_level</a> = <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>.GetImmunityLevel();</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_variable" href="#a566f989d9d702b247ef76a7f5822454b">m_TotalAgentCount</a> = 0;</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a> = <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.GetKey(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   59</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">max_count</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentMaxCount(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_enumeration" href="../../da/d04/_e_stat_levels_8c.html#a33dd957dac0dffc62424608704bc94a3">EStatLevels</a> <a class="code hl_class" href="../../db/d06/class_param3.html">agent_potency</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentPotencyEx(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">grow_delta</a>;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">agent_potency</a> &lt;= <a class="code hl_class" href="../../db/d06/class_param3.html">immunity_level</a>)</div>
+<div class="line"><span class="lineno">   66</span>      {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">grow_during_antibiotics</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GrowDuringAntibioticsAttack(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>);</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>.IsAntibioticsActive() &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">grow_during_antibiotics</a>)</div>
+<div class="line"><span class="lineno">   69</span>          <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">invasibility</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentInvasibilityEx(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>);</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">grow_delta</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">invasibility</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">deltaT</a>;</div>
+<div class="line"><span class="lineno">   72</span>      }</div>
+<div class="line"><span class="lineno">   73</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   74</span>      {</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">dieoff_speed</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentDieOffSpeedEx(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>);</div>
+<div class="line"><span class="lineno">   76</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">grow_delta</a> = -<a class="code hl_class" href="../../db/d06/class_param3.html">dieoff_speed</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">deltaT</a>;</div>
+<div class="line"><span class="lineno">   77</span>      }</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>      <span class="comment">//Print( agent_id );</span></div>
+<div class="line"><span class="lineno">   80</span>      <span class="comment">//Print( grow_delta );</span></div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">old_count</a> = <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>);</div>
+<div class="line"><span class="lineno">   83</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">new_count</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">old_count</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">grow_delta</a>;</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">new_count</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Clamp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">new_count</a>, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">max_count</a>);</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>      <a class="code hl_variable" href="#a566f989d9d702b247ef76a7f5822454b">m_TotalAgentCount</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">new_count</a>;</div>
+<div class="line"><span class="lineno">   87</span>      <a class="code hl_function" href="#ae3f172cafbfbbc2b3674d811c3e744b8">SetAgentCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_count</a>);</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
+<div class="line"><span class="lineno">   89</span>  }</div>
+<div class="ttc" id="a_e_stat_levels_8c_html_a33dd957dac0dffc62424608704bc94a3"><div class="ttname"><a href="../../da/d04/_e_stat_levels_8c.html#a33dd957dac0dffc62424608704bc94a3">EStatLevels</a></div><div class="ttdeci">EStatLevels</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_e_stat_levels_8c_source.html#l00001">EStatLevels.c:2</a></div></div>
+<div class="ttc" id="a_plugin_manager_8c_html_a3524404d2438f6b3f1fa1ee7205992e1"><div class="ttname"><a href="../../d9/d0d/_plugin_manager_8c.html#a3524404d2438f6b3f1fa1ee7205992e1">IsPluginManagerExists</a></div><div class="ttdeci">bool IsPluginManagerExists()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_plugin_manager_8c_source.html#l00292">PluginManager.c:292</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_player_agent_pool_html_a566f989d9d702b247ef76a7f5822454b"><div class="ttname"><a href="#a566f989d9d702b247ef76a7f5822454b">PlayerAgentPool::m_TotalAgentCount</a></div><div class="ttdeci">float m_TotalAgentCount</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00006">PlayerAgentPool.c:6</a></div></div>
+<div class="ttc" id="agroup___math_html_ga939cca08ae6c7facc9293f2dbce3def5"><div class="ttname"><a href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp</a></div><div class="ttdeci">static proto float Clamp(float value, float min, float max)</div><div class="ttdoc">Clamps 'value' to 'min' if it is lower than 'min', or to 'max' if it is higher than 'max'.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp()</a>, <a class="el" href="../../d9/d0d/_plugin_manager_8c_source.html#l00292">IsPluginManagerExists()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00007">m_Player</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">m_PluginTransmissionAgents</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00006">m_TotalAgentCount</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">SetAgentCount()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00042">ImmuneSystemTick()</a>.</p>
 
 </div>
 </div>
@@ -511,6 +658,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00042">42</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_function" href="#af10a2a2bcfe736076b44971902c20867">SpawnAgents</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">deltaT</a>);</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="#af38a116aee78ae180dc097f87e252a29">GrowAgents</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">deltaT</a>);</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+<div class="ttc" id="aclass_player_agent_pool_html_af10a2a2bcfe736076b44971902c20867"><div class="ttname"><a href="#af10a2a2bcfe736076b44971902c20867">PlayerAgentPool::SpawnAgents</a></div><div class="ttdeci">void SpawnAgents(float deltaT)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00204">PlayerAgentPool.c:204</a></div></div>
+<div class="ttc" id="aclass_player_agent_pool_html_af38a116aee78ae180dc097f87e252a29"><div class="ttname"><a href="#af38a116aee78ae180dc097f87e252a29">PlayerAgentPool::GrowAgents</a></div><div class="ttdeci">void GrowAgents(float deltaT)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_player_agent_pool_8c_source.html#l00048">PlayerAgentPool.c:48</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00048">GrowAgents()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00204">SpawnAgents()</a>.</p>
 
 </div>
 </div>
@@ -542,6 +697,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00105">105</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span>    <span class="comment">//Debug.Log(&quot;PlayerAgentPool OnStoreLoad called&quot;, &quot;Agents&quot;);</span></div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>;</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">count</a>))</div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  114</span>    {</div>
+<div class="line"><span class="lineno">  115</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">key</a>;</div>
+<div class="line"><span class="lineno">  116</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  117</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">key</a>))</div>
+<div class="line"><span class="lineno">  118</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">value</a>))</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>      <a class="code hl_function" href="#ae3f172cafbfbbc2b3674d811c3e744b8">SetAgentCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">key</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">SetAgentCount()</a>.</p>
 
 </div>
 </div>
@@ -569,6 +748,20 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00091">91</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>  {</div>
+<div class="line"><span class="lineno">   93</span>    <span class="comment">//Debug.Log(&quot;PlayerAgentPool OnStoreSave called&quot;, &quot;Agents&quot;);</span></div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Count());</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">key</a> = <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.GetKey(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   99</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">value</a> = <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.GetElement(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">key</a>);</div>
+<div class="line"><span class="lineno">  101</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>.</p>
 
 </div>
 </div>
@@ -596,6 +789,21 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00029">29</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>  {</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>)</div>
+<div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   34</span>      {</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;Agent: &quot;</span> + <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.GetKey(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).ToString(), <span class="stringliteral">&quot;Agents&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;Count: &quot;</span> + <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.GetElement(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).ToString(), <span class="stringliteral">&quot;Agents&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span>      }</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_ac759558b1dd4e820330546c994a9d840"><div class="ttname"><a href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Debug::Log</a></div><div class="ttdeci">static void Log(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdoc">Prints debug message with normal prio.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug.c:133</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug::Log()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>.</p>
 
 </div>
 </div>
@@ -623,6 +831,21 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00256">256</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  257</span>  {</div>
+<div class="line"><span class="lineno">  258</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../de/d00/class_cached_objects_params.html">CachedObjectsParams</a>.<a class="code hl_variable" href="../../de/d00/class_cached_objects_params.html#a31325a9f1aa966d33be94a5b1688b271">PARAM1_INT</a>);</div>
+<div class="line"><span class="lineno">  259</span>    <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code hl_class" href="../../de/d00/class_cached_objects_params.html">CachedObjectsParams</a>.<a class="code hl_variable" href="../../de/d00/class_cached_objects_params.html#a31325a9f1aa966d33be94a5b1688b271">PARAM1_INT</a>.param1;</div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">max</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentMaxCount(<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga5de10d171b32d639a1e42d57f33437a9">AbsInt</a>(<span class="keywordtype">id</span>));</div>
+<div class="line"><span class="lineno">  261</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">grow</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">max</a> / 10;</div>
+<div class="line"><span class="lineno">  262</span>    <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &gt; 0)</div>
+<div class="line"><span class="lineno">  263</span>      <a class="code hl_function" href="#a8c9c8688caa2a8c1b5c236e590aca79b">AddAgent</a>(<span class="keywordtype">id</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">grow</a>);</div>
+<div class="line"><span class="lineno">  264</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &lt; 0)</div>
+<div class="line"><span class="lineno">  265</span>      <a class="code hl_function" href="#a8c9c8688caa2a8c1b5c236e590aca79b">AddAgent</a>(-<span class="keywordtype">id</span>, -<a class="code hl_class" href="../../db/d06/class_param3.html">grow</a>);</div>
+<div class="line"><span class="lineno">  266</span>  }</div>
+<div class="ttc" id="aclass_cached_objects_params_html"><div class="ttname"><a href="../../de/d00/class_cached_objects_params.html">CachedObjectsParams</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_utility_classes_8c_source.html#l00009">UtilityClasses.c:10</a></div></div>
+<div class="ttc" id="aclass_cached_objects_params_html_a31325a9f1aa966d33be94a5b1688b271"><div class="ttname"><a href="../../de/d00/class_cached_objects_params.html#a31325a9f1aa966d33be94a5b1688b271">CachedObjectsParams::PARAM1_INT</a></div><div class="ttdeci">static ref Param1&lt; int &gt; PARAM1_INT</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_utility_classes_8c_source.html#l00011">UtilityClasses.c:11</a></div></div>
+<div class="ttc" id="agroup___math_html_ga5de10d171b32d639a1e42d57f33437a9"><div class="ttname"><a href="../../d5/d08/group___math.html#ga5de10d171b32d639a1e42d57f33437a9">Math::AbsInt</a></div><div class="ttdeci">static proto int AbsInt(int i)</div><div class="ttdoc">Returns absolute value.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga5de10d171b32d639a1e42d57f33437a9">Math::AbsInt()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00133">AddAgent()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">m_PluginTransmissionAgents</a>, and <a class="el" href="../../de/d07/_utility_classes_8c_source.html#l00011">CachedObjectsParams::PARAM1_INT</a>.</p>
 
 </div>
 </div>
@@ -650,6 +873,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00159">159</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>  {</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_function" href="#ae3f172cafbfbbc2b3674d811c3e744b8">SetAgentCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, 0);</div>
+<div class="line"><span class="lineno">  162</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">SetAgentCount()</a>.</p>
 
 </div>
 </div>
@@ -677,6 +905,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00164">164</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>  {</div>
+<div class="line"><span class="lineno">  166</span>    <a class="code hl_variable" href="#aaca67a08b424e499026729192b7fcad5">m_AgentMask</a> = 0;</div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Clear();</div>
+<div class="line"><span class="lineno">  168</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00008">m_AgentMask</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>.</p>
 
 </div>
 </div>
@@ -708,6 +942,29 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">218</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>  {</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">count</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  221</span>    {</div>
+<div class="line"><span class="lineno">  222</span>      <span class="comment">//Debug.Log(&quot;+ growing agent&quot;+ agent_id.ToString() +&quot;to count: &quot;+count.ToString(), &quot;Agents&quot;);</span></div>
+<div class="line"><span class="lineno">  223</span>      <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Set(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>);</div>
+<div class="line"><span class="lineno">  224</span>      <a class="code hl_variable" href="#aaca67a08b424e499026729192b7fcad5">m_AgentMask</a> = <a class="code hl_variable" href="#aaca67a08b424e499026729192b7fcad5">m_AgentMask</a> | <a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>;</div>
+<div class="line"><span class="lineno">  225</span>    }</div>
+<div class="line"><span class="lineno">  226</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  227</span>    {</div>
+<div class="line"><span class="lineno">  228</span>      <span class="comment">//Debug.Log(&quot;- REMOVING agent&quot;+ agent_id.ToString(), &quot;Agents&quot;);</span></div>
+<div class="line"><span class="lineno">  229</span>      <a class="code hl_variable" href="#a177aeed4b80ac3300d879dc1ef4c008e">m_VirusPool</a>.Remove(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>);</div>
+<div class="line"><span class="lineno">  230</span>      <a class="code hl_variable" href="#aaca67a08b424e499026729192b7fcad5">m_AgentMask</a> = <a class="code hl_variable" href="#aaca67a08b424e499026729192b7fcad5">m_AgentMask</a> &amp; <a class="code hl_class" href="../../db/d06/class_param3.html">~agent_id</a>;</div>
+<div class="line"><span class="lineno">  231</span>    }</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>.m_Agents != <a class="code hl_variable" href="#aaca67a08b424e499026729192b7fcad5">m_AgentMask</a>)</div>
+<div class="line"><span class="lineno">  233</span>    {</div>
+<div class="line"><span class="lineno">  234</span>      <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>.m_Agents = <a class="code hl_variable" href="#aaca67a08b424e499026729192b7fcad5">m_AgentMask</a>;</div>
+<div class="line"><span class="lineno">  235</span>      <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>.SetSynchDirty();</div>
+<div class="line"><span class="lineno">  236</span>    }</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00008">m_AgentMask</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00007">m_Player</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">m_VirusPool</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00133">AddAgent()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00239">AntibioticsAttack()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00048">GrowAgents()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00105">OnStoreLoad()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00159">RemoveAgent()</a>.</p>
 
 </div>
 </div>
@@ -735,6 +992,21 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00204">204</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>  {</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentList().Count();</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  208</span>    {</div>
+<div class="line"><span class="lineno">  209</span>      <a class="code hl_class" href="../../d1/d05/class_agent_base.html">AgentBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">agent</a> = <a class="code hl_variable" href="#a5aaec886508fbbc0d5dedaad77e174f8">m_PluginTransmissionAgents</a>.GetAgentList().GetElement(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  210</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">agent</a>.GetAgentType();</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="#aed3c4abe1ca2167b15e3194d371530f5">GetSingleAgentCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>) == 0 &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">agent</a>.AutoinfectCheck(<a class="code hl_class" href="../../db/d06/class_param3.html">deltaT</a>, <a class="code hl_variable" href="#a9d034fac65266cfe4e95d15e948e737d">m_Player</a>))</div>
+<div class="line"><span class="lineno">  213</span>        <a class="code hl_function" href="#a8c9c8688caa2a8c1b5c236e590aca79b">AddAgent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">agent_id</a>, 100);</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00133">AddAgent()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00189">GetSingleAgentCount()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00007">m_Player</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">m_PluginTransmissionAgents</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00042">ImmuneSystemTick()</a>.</p>
 
 </div>
 </div>
@@ -760,6 +1032,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00008">8</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00184">GetAgents()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00164">RemoveAllAgents()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">SetAgentCount()</a>.</p>
 
 </div>
 </div>
@@ -809,6 +1083,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00007">7</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00239">AntibioticsAttack()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00048">GrowAgents()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00014">PlayerAgentPool()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">SetAgentCount()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00204">SpawnAgents()</a>.</p>
+
 </div>
 </div>
 <a id="a5aaec886508fbbc0d5dedaad77e174f8" name="a5aaec886508fbbc0d5dedaad77e174f8"></a>
@@ -832,6 +1108,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00012">12</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00133">AddAgent()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00239">AntibioticsAttack()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00128">DigestAgent()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00268">GetDebugObject()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00048">GrowAgents()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00256">RemoteGrowRequestDebug()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00204">SpawnAgents()</a>.</p>
 
 </div>
 </div>
@@ -857,6 +1135,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00006">6</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00048">GrowAgents()</a>.</p>
+
 </div>
 </div>
 <a id="a177aeed4b80ac3300d879dc1ef4c008e" name="a177aeed4b80ac3300d879dc1ef4c008e"></a>
@@ -880,6 +1160,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00003">3</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00133">AddAgent()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00239">AntibioticsAttack()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00189">GetSingleAgentCount()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00196">GetTotalAgentCount()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00048">GrowAgents()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00091">OnStoreSave()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00029">PrintAgents()</a>, <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00164">RemoveAllAgents()</a>, and <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00218">SetAgentCount()</a>.</p>
 
 </div>
 </div>
@@ -928,6 +1210,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00010">10</a> of file <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html">PlayerAgentPool.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_player_agent_pool_8c_source.html#l00024">GetStorageVersion()</a>.</p>
 
 </div>
 </div>

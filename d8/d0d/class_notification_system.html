@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -217,6 +214,20 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00109">109</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>  {</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_variable" href="#a6d42fa2ef16c2164d083a4cb9324dceb">m_TimeElapsed</a> = 0.0;</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_variable" href="#abcd521177b5f367646158e8e88037f5c">m_TimeArray</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ref NotificationRuntimeData&gt;</a>();</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_variable" href="#a45c8097a8afdf6507e1325ab758d29b8">m_DeferredArray</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ref NotificationRuntimeData&gt;</a>();</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="ttc" id="aclass_notification_system_html_a45c8097a8afdf6507e1325ab758d29b8"><div class="ttname"><a href="#a45c8097a8afdf6507e1325ab758d29b8">NotificationSystem::m_DeferredArray</a></div><div class="ttdeci">ref array&lt; ref NotificationRuntimeData &gt; m_DeferredArray</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00082">NotificationSystem.c:82</a></div></div>
+<div class="ttc" id="aclass_notification_system_html_a6d42fa2ef16c2164d083a4cb9324dceb"><div class="ttname"><a href="#a6d42fa2ef16c2164d083a4cb9324dceb">NotificationSystem::m_TimeElapsed</a></div><div class="ttdeci">float m_TimeElapsed</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00085">NotificationSystem.c:85</a></div></div>
+<div class="ttc" id="aclass_notification_system_html_abcd521177b5f367646158e8e88037f5c"><div class="ttname"><a href="#abcd521177b5f367646158e8e88037f5c">NotificationSystem::m_TimeArray</a></div><div class="ttdeci">ref array&lt; ref NotificationRuntimeData &gt; m_TimeArray</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00081">NotificationSystem.c:81</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00082">m_DeferredArray</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00081">m_TimeArray</a>, and <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00085">m_TimeElapsed</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00090">InitInstance()</a>.</p>
 
 </div>
 </div>
@@ -264,6 +275,27 @@ Static Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00188">188</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>  {</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeArray.Count() &lt; <a class="code hl_variable" href="#abcfd2841375904a18f2a15a3b5b322c9">MAX_NOTIFICATIONS</a>)</div>
+<div class="line"><span class="lineno">  191</span>    {</div>
+<div class="line"><span class="lineno">  192</span>      <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">show_time</a>, <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.GetNotificationData(type), <a class="code hl_class" href="../../db/d06/class_param3.html">detail_text</a>);</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeArray.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  195</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_OnNotificationAdded.Invoke(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  198</span>    {</div>
+<div class="line"><span class="lineno">  199</span>      <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dataDeferred</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">show_time</a>, <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.GetNotificationData(type), <a class="code hl_class" href="../../db/d06/class_param3.html">detail_text</a>);</div>
+<div class="line"><span class="lineno">  200</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DeferredArray.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">dataDeferred</a>);</div>
+<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="line"><span class="lineno">  202</span>  }</div>
+<div class="ttc" id="a_notification_system_8c_html_a3a6ae2002a635ead1502f028ad39c2b5"><div class="ttname"><a href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a></div><div class="ttdeci">void NotificationRuntimeData(float time, NotificationData data, string detail_text)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00023">NotificationSystem.c:23</a></div></div>
+<div class="ttc" id="aclass_notification_system_html_a95cf2f46a5676d1c88f3af24617a069f"><div class="ttname"><a href="#a95cf2f46a5676d1c88f3af24617a069f">NotificationSystem::m_Instance</a></div><div class="ttdeci">static ref NotificationSystem m_Instance</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00079">NotificationSystem.c:79</a></div></div>
+<div class="ttc" id="aclass_notification_system_html_abcfd2841375904a18f2a15a3b5b322c9"><div class="ttname"><a href="#abcfd2841375904a18f2a15a3b5b322c9">NotificationSystem::MAX_NOTIFICATIONS</a></div><div class="ttdeci">static const int MAX_NOTIFICATIONS</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00075">NotificationSystem.c:75</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00079">m_Instance</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00075">MAX_NOTIFICATIONS</a>, and <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00023">NotificationRuntimeData()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l02485">CGame::DisconnectSessionEx()</a>, <a class="el" href="../../d9/d07/_online_services_8c_source.html#l00237">OnlineServices::OnFriendsAsync()</a>, <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00147">BiosSessionService::OnGetGameplaySession()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l02741">CGame::OnRPC()</a>, and <a class="el" href="../../da/d0f/_bios_user_manager_8c_source.html#l00090">BiosUserManager::SelectUserEx()</a>.</p>
 
 </div>
 </div>
@@ -316,6 +348,27 @@ Static Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00211">211</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>  {</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeArray.Count() &lt; <a class="code hl_variable" href="#abcfd2841375904a18f2a15a3b5b322c9">MAX_NOTIFICATIONS</a>)</div>
+<div class="line"><span class="lineno">  214</span>    {</div>
+<div class="line"><span class="lineno">  215</span>      <a class="code hl_class" href="../../d6/d04/class_notification_data.html">NotificationData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">tempData</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d04/class_notification_data.html">NotificationData</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">title_text</a>);</div>
+<div class="line"><span class="lineno">  216</span>      <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">show_time</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">tempData</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">detail_text</a>);</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeArray.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  219</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_OnNotificationAdded.Invoke(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  222</span>    {</div>
+<div class="line"><span class="lineno">  223</span>      <a class="code hl_class" href="../../d6/d04/class_notification_data.html">NotificationData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">tempDataDeferred</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d04/class_notification_data.html">NotificationData</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">title_text</a>);</div>
+<div class="line"><span class="lineno">  224</span>      <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dataDeferred</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">show_time</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">tempDataDeferred</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">detail_text</a>);</div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DeferredArray.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">dataDeferred</a>);</div>
+<div class="line"><span class="lineno">  226</span>    }</div>
+<div class="line"><span class="lineno">  227</span>  }</div>
+<div class="ttc" id="aclass_notification_data_html"><div class="ttname"><a href="../../d6/d04/class_notification_data.html">NotificationData</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d00/_notification_data_8c_source.html#l00001">NotificationData.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00079">m_Instance</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00075">MAX_NOTIFICATIONS</a>, and <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00023">NotificationRuntimeData()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l02741">CGame::OnRPC()</a>.</p>
 
 </div>
 </div>
@@ -343,6 +396,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00099">99</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>  {</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  102</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00079">m_Instance</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l01027">CGame::~DayZGame()</a>.</p>
 
 </div>
 </div>
@@ -370,6 +430,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00104">104</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>  {</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>;</div>
+<div class="line"><span class="lineno">  107</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00079">m_Instance</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_notification_u_i_8c_source.html#l00020">NotificationUI::NotificationUI()</a>, and <a class="el" href="../../dd/d03/_notification_u_i_8c_source.html#l00038">NotificationUI::~NotificationUI()</a>.</p>
 
 </div>
 </div>
@@ -397,6 +464,15 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00268">268</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  269</span>  {</div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a275df175e38371c8308945b2a2eb9573">m_DataArray</a>.Contains(type))</div>
+<div class="line"><span class="lineno">  271</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a275df175e38371c8308945b2a2eb9573">m_DataArray</a>.Get(type);</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  274</span>  }</div>
+<div class="ttc" id="aclass_notification_system_html_a275df175e38371c8308945b2a2eb9573"><div class="ttname"><a href="#a275df175e38371c8308945b2a2eb9573">NotificationSystem::m_DataArray</a></div><div class="ttdeci">ref map&lt; NotificationType, ref NotificationData &gt; m_DataArray</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00083">NotificationSystem.c:83</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00083">m_DataArray</a>.</p>
 
 </div>
 </div>
@@ -424,6 +500,18 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00090">90</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>  {</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>)</div>
+<div class="line"><span class="lineno">   93</span>    {</div>
+<div class="line"><span class="lineno">   94</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a> = <span class="keyword">new</span> <a class="code hl_function" href="#adf618ab8cfabc3d79cbc3f35c26621fa">NotificationSystem</a>();</div>
+<div class="line"><span class="lineno">   95</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.LoadNotificationData();</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span>  }</div>
+<div class="ttc" id="aclass_notification_system_html_adf618ab8cfabc3d79cbc3f35c26621fa"><div class="ttname"><a href="#adf618ab8cfabc3d79cbc3f35c26621fa">NotificationSystem::NotificationSystem</a></div><div class="ttdeci">void NotificationSystem()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00109">NotificationSystem.c:109</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00079">m_Instance</a>, and <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00109">NotificationSystem()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l01958">CGame::InitNotifications()</a>.</p>
 
 </div>
 </div>
@@ -451,6 +539,48 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00276">276</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  277</span>  {</div>
+<div class="line"><span class="lineno">  278</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;NotificationType, NotificationData&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">dataArray</a>;</div>
+<div class="line"><span class="lineno">  279</span>    <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DataArray = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;NotificationType, ref NotificationData&gt;</a>();</div>
+<div class="line"><span class="lineno">  280</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>;</div>
+<div class="line"><span class="lineno">  281</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">JsonFileLoader</a>&lt;<a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;NotificationType, NotificationData&gt;</a>&gt;.LoadFile(<a class="code hl_variable" href="#a062de653d9bc1897ac5d941d2dd3ea4a">JSON_FILE_PATH</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dataArray</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>))</div>
+<div class="line"><span class="lineno">  282</span>      <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>);</div>
+<div class="line"><span class="lineno">  283</span> </div>
+<div class="line"><span class="lineno">  284</span>    <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DataArray.Copy(<a class="code hl_class" href="../../db/d06/class_param3.html">dataArray</a>);</div>
+<div class="line"><span class="lineno">  285</span> </div>
+<div class="line"><span class="lineno">  286</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">notificationTypes</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a>();</div>
+<div class="line"><span class="lineno">  287</span>    <a class="code hl_enumeration" href="../../d5/d04/_notification_system_8c.html#a25a31a4bdc02a0d0adb743e26dd14ba9">NotificationType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">notificationType</a> = 0;</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">while</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">notificationType</a> != <a class="code hl_enumeration" href="../../d5/d04/_notification_system_8c.html#a25a31a4bdc02a0d0adb743e26dd14ba9">NotificationType</a>.NOTIFICATIONS_END)</div>
+<div class="line"><span class="lineno">  289</span>    {</div>
+<div class="line"><span class="lineno">  290</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">notificationTypes</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">notificationType</a>);</div>
+<div class="line"><span class="lineno">  291</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">notificationType</a>++;</div>
+<div class="line"><span class="lineno">  292</span>    }</div>
+<div class="line"><span class="lineno">  293</span> </div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DataArray.Count(); ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  295</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">notificationTypes</a>.RemoveItem(<a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DataArray.GetKey(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>));</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">notificationTypes</a>.Count() &gt; 0)</div>
+<div class="line"><span class="lineno">  298</span>    {</div>
+<div class="line"><span class="lineno">  299</span>      <span class="keywordflow">foreach</span> (<a class="code hl_enumeration" href="../../d5/d04/_notification_system_8c.html#a25a31a4bdc02a0d0adb743e26dd14ba9">NotificationType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">notificationType2</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">notificationTypes</a>)</div>
+<div class="line"><span class="lineno">  300</span>      {</div>
+<div class="line"><span class="lineno">  301</span>        <a class="code hl_class" href="../../d6/d04/class_notification_data.html">NotificationData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">notificationData</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d04/class_notification_data.html">NotificationData</a>(</div>
+<div class="line"><span class="lineno">  302</span>          <span class="stringliteral">&quot;please_add_an_icon&quot;</span>,</div>
+<div class="line"><span class="lineno">  303</span>          <span class="stringliteral">&quot;please_add_a_title&quot;</span>,</div>
+<div class="line"><span class="lineno">  304</span>          <span class="stringliteral">&quot;optional_description&quot;</span>,</div>
+<div class="line"><span class="lineno">  305</span>        );</div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>        <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DataArray.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">notificationType2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">notificationData</a>);</div>
+<div class="line"><span class="lineno">  308</span>      }</div>
+<div class="line"><span class="lineno">  309</span> </div>
+<div class="line"><span class="lineno">  310</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">JsonFileLoader</a>&lt;<a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;NotificationType, ref NotificationData&gt;</a>&gt;.SaveFile(<a class="code hl_variable" href="#a062de653d9bc1897ac5d941d2dd3ea4a">JSON_FILE_PATH</a>, <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DataArray, <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>))</div>
+<div class="line"><span class="lineno">  311</span>        <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>);</div>
+<div class="line"><span class="lineno">  312</span>    }</div>
+<div class="line"><span class="lineno">  313</span>  }</div>
+<div class="ttc" id="a_notification_system_8c_html_a25a31a4bdc02a0d0adb743e26dd14ba9"><div class="ttname"><a href="../../d5/d04/_notification_system_8c.html#a25a31a4bdc02a0d0adb743e26dd14ba9">NotificationType</a></div><div class="ttdeci">NotificationType</div><div class="ttdoc">DEPRECATED (moved into NotificationSystem)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00003">NotificationSystem.c:4</a></div></div>
+<div class="ttc" id="aclass_notification_system_html_a062de653d9bc1897ac5d941d2dd3ea4a"><div class="ttname"><a href="#a062de653d9bc1897ac5d941d2dd3ea4a">NotificationSystem::JSON_FILE_PATH</a></div><div class="ttdeci">static const string JSON_FILE_PATH</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00074">NotificationSystem.c:74</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00074">JSON_FILE_PATH</a>, and <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00079">m_Instance</a>.</p>
 
 </div>
 </div>
@@ -503,6 +633,13 @@ Static Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00158">158</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>  {</div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  161</span>      <a class="code hl_function" href="#ac63f365098df3610099b710a80b939f9">SendNotificationToPlayerIdentity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetIdentity(), type, <a class="code hl_class" href="../../db/d06/class_param3.html">show_time</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">detail_text</a>);</div>
+<div class="line"><span class="lineno">  162</span>  }</div>
+<div class="ttc" id="aclass_notification_system_html_ac63f365098df3610099b710a80b939f9"><div class="ttname"><a href="#ac63f365098df3610099b710a80b939f9">NotificationSystem::SendNotificationToPlayerIdentity</a></div><div class="ttdeci">static void SendNotificationToPlayerIdentity(PlayerIdentity player, NotificationType type, float show_time, string detail_text=&quot;&quot;)</div><div class="ttdoc">Send notification from default types to player identity from server.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00171">NotificationSystem.c:171</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00171">SendNotificationToPlayerIdentity()</a>.</p>
 
 </div>
 </div>
@@ -561,6 +698,13 @@ Static Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00125">125</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>  {</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  128</span>      <a class="code hl_function" href="#af38241f43138ced69a912cbc0cf36b28">SendNotificationToPlayerIdentityExtended</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetIdentity(), <a class="code hl_class" href="../../db/d06/class_param3.html">show_time</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">title_text</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">detail_text</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>);</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
+<div class="ttc" id="aclass_notification_system_html_af38241f43138ced69a912cbc0cf36b28"><div class="ttname"><a href="#af38241f43138ced69a912cbc0cf36b28">NotificationSystem::SendNotificationToPlayerIdentityExtended</a></div><div class="ttdeci">static void SendNotificationToPlayerIdentityExtended(PlayerIdentity player, float show_time, string title_text, string detail_text=&quot;&quot;, string icon=&quot;&quot;)</div><div class="ttdoc">Send custom notification to player identity from server.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00139">NotificationSystem.c:139</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00139">SendNotificationToPlayerIdentityExtended()</a>.</p>
 
 </div>
 </div>
@@ -613,6 +757,19 @@ Static Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00171">171</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>  {</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_class" href="../../d5/d0a/class_script_r_p_c.html">ScriptRPC</a> <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d5/d0a/class_script_r_p_c.html">ScriptRPC</a>();</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Write(type);</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">show_time</a>);</div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">detail_text</a>);</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Send(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SEND_NOTIFICATION, <span class="keyword">true</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  180</span>  }</div>
+<div class="ttc" id="a_e_r_p_cs_8c_html_a6ce2d98a3b8fbdba5b450abf2d6eab37"><div class="ttname"><a href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a></div><div class="ttdeci">ERPCs</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d06/_e_r_p_cs_8c_source.html#l00001">ERPCs.c:2</a></div></div>
+<div class="ttc" id="aclass_script_r_p_c_html"><div class="ttname"><a href="../../d5/d0a/class_script_r_p_c.html">ScriptRPC</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00104">gameplay.c:105</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00158">SendNotificationToPlayer()</a>.</p>
 
 </div>
 </div>
@@ -671,6 +828,18 @@ Static Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00139">139</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>  {</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_class" href="../../d5/d0a/class_script_r_p_c.html">ScriptRPC</a> <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d5/d0a/class_script_r_p_c.html">ScriptRPC</a>();</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">show_time</a>);</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">title_text</a>);</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">detail_text</a>);</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Write(<a class="code hl_class" href="../../db/d06/class_param3.html">icon</a>);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">rpc</a>.Send(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SEND_NOTIFICATION_EXTENDED, <span class="keyword">true</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  149</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00125">SendNotificationToPlayerExtended()</a>.</p>
 
 </div>
 </div>
@@ -698,6 +867,49 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00229">229</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  230</span>  {</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>)</div>
+<div class="line"><span class="lineno">  232</span>    {</div>
+<div class="line"><span class="lineno">  233</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetGameState() != <a class="code hl_class" href="../../db/d06/class_param3.html">DayZGameState</a>.IN_GAME &amp;&amp; <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.GetGameState() != <a class="code hl_class" href="../../db/d06/class_param3.html">DayZGameState</a>.MAIN_MENU)</div>
+<div class="line"><span class="lineno">  234</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>      <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeElapsed += <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>;</div>
+<div class="line"><span class="lineno">  237</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeElapsed &gt;= <a class="code hl_variable" href="#a667c88d6c4fae5866cd773ecf2b2cc47">UPDATE_INTERVAL_THRESHOLD</a>)</div>
+<div class="line"><span class="lineno">  238</span>      {</div>
+<div class="line"><span class="lineno">  239</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;NotificationRuntimeData&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">expiredNotifications</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;NotificationRuntimeData&gt;</a>();</div>
+<div class="line"><span class="lineno">  240</span>        <span class="keywordflow">foreach</span> (<a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">visibleNotificationData</a> : <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.<a class="code hl_variable" href="#abcd521177b5f367646158e8e88037f5c">m_TimeArray</a>)</div>
+<div class="line"><span class="lineno">  241</span>        {</div>
+<div class="line"><span class="lineno">  242</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">visibleNotificationData</a>.GetRemainingTime() &lt;= 0.0)</div>
+<div class="line"><span class="lineno">  243</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">expiredNotifications</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">visibleNotificationData</a>);</div>
+<div class="line"><span class="lineno">  244</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  245</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">visibleNotificationData</a>.UpdateRemainingTime(<a class="code hl_variable" href="#a667c88d6c4fae5866cd773ecf2b2cc47">UPDATE_INTERVAL_THRESHOLD</a>);</div>
+<div class="line"><span class="lineno">  246</span>        }</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>        <span class="keywordflow">foreach</span> (<a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">expiredNotificationData</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">expiredNotifications</a>)</div>
+<div class="line"><span class="lineno">  249</span>        {</div>
+<div class="line"><span class="lineno">  250</span>          <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_OnNotificationRemoved.Invoke(<a class="code hl_class" href="../../db/d06/class_param3.html">expiredNotificationData</a>);</div>
+<div class="line"><span class="lineno">  251</span>          <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeArray.RemoveItem(<a class="code hl_class" href="../../db/d06/class_param3.html">expiredNotificationData</a>);</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DeferredArray.Count() &gt; 0)</div>
+<div class="line"><span class="lineno">  254</span>          {</div>
+<div class="line"><span class="lineno">  255</span>            <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DeferredArray.Count();</div>
+<div class="line"><span class="lineno">  256</span>            <a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a3a6ae2002a635ead1502f028ad39c2b5">NotificationRuntimeData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">deferredNotificationData</a> = <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DeferredArray.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">count</a> - 1);</div>
+<div class="line"><span class="lineno">  257</span>            <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeArray.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">deferredNotificationData</a>);</div>
+<div class="line"><span class="lineno">  258</span>            <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_OnNotificationAdded.Invoke(<a class="code hl_class" href="../../db/d06/class_param3.html">deferredNotificationData</a>);</div>
+<div class="line"><span class="lineno">  259</span>            <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_DeferredArray.Remove(<a class="code hl_class" href="../../db/d06/class_param3.html">count</a> - 1);</div>
+<div class="line"><span class="lineno">  260</span>          }</div>
+<div class="line"><span class="lineno">  261</span>        }</div>
+<div class="line"><span class="lineno">  262</span> </div>
+<div class="line"><span class="lineno">  263</span>        <a class="code hl_variable" href="#a95cf2f46a5676d1c88f3af24617a069f">m_Instance</a>.m_TimeElapsed = 0;</div>
+<div class="line"><span class="lineno">  264</span>      }</div>
+<div class="line"><span class="lineno">  265</span>    }</div>
+<div class="line"><span class="lineno">  266</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03528">DayZGame.c:3528</a></div></div>
+<div class="ttc" id="aclass_notification_system_html_a667c88d6c4fae5866cd773ecf2b2cc47"><div class="ttname"><a href="#a667c88d6c4fae5866cd773ecf2b2cc47">NotificationSystem::UPDATE_INTERVAL_THRESHOLD</a></div><div class="ttdeci">static const float UPDATE_INTERVAL_THRESHOLD</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00077">NotificationSystem.c:77</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00079">m_Instance</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00023">NotificationRuntimeData()</a>, and <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00077">UPDATE_INTERVAL_THRESHOLD</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l02649">CGame::OnUpdate()</a>.</p>
 
 </div>
 </div>
@@ -724,6 +936,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00071">71</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l02485">CGame::DisconnectSessionEx()</a>, <a class="el" href="../../d9/d07/_online_services_8c_source.html#l00237">OnlineServices::OnFriendsAsync()</a>, <a class="el" href="../../d6/d01/_bios_session_service_8c_source.html#l00147">BiosSessionService::OnGetGameplaySession()</a>, and <a class="el" href="../../da/d0f/_bios_user_manager_8c_source.html#l00090">BiosUserManager::SelectUserEx()</a>.</p>
+
 </div>
 </div>
 <a id="a062de653d9bc1897ac5d941d2dd3ea4a" name="a062de653d9bc1897ac5d941d2dd3ea4a"></a>
@@ -747,6 +961,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00074">74</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00276">LoadNotificationData()</a>.</p>
 
 </div>
 </div>
@@ -772,6 +988,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00083">83</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00268">GetNotificationData()</a>.</p>
+
 </div>
 </div>
 <a id="a45c8097a8afdf6507e1325ab758d29b8" name="a45c8097a8afdf6507e1325ab758d29b8"></a>
@@ -796,6 +1014,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00082">82</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00109">NotificationSystem()</a>.</p>
+
 </div>
 </div>
 <a id="a95cf2f46a5676d1c88f3af24617a069f" name="a95cf2f46a5676d1c88f3af24617a069f"></a>
@@ -819,6 +1039,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00079">79</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00188">AddNotification()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00211">AddNotificationExtended()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00099">CleanupInstance()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00104">GetInstance()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00090">InitInstance()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00276">LoadNotificationData()</a>, and <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00229">Update()</a>.</p>
 
 </div>
 </div>
@@ -892,6 +1114,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00081">81</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00109">NotificationSystem()</a>.</p>
+
 </div>
 </div>
 <a id="a6d42fa2ef16c2164d083a4cb9324dceb" name="a6d42fa2ef16c2164d083a4cb9324dceb"></a>
@@ -915,6 +1139,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00085">85</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00109">NotificationSystem()</a>.</p>
 
 </div>
 </div>
@@ -940,6 +1166,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00075">75</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00188">AddNotification()</a>, and <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00211">AddNotificationExtended()</a>.</p>
+
 </div>
 </div>
 <a id="a3b90bfc3e05f0f15a792bc4d7b81d651" name="a3b90bfc3e05f0f15a792bc4d7b81d651"></a>
@@ -964,6 +1192,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00072">72</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_notification_u_i_8c_source.html#l00173">NotificationUI::Update()</a>.</p>
+
 </div>
 </div>
 <a id="a667c88d6c4fae5866cd773ecf2b2cc47" name="a667c88d6c4fae5866cd773ecf2b2cc47"></a>
@@ -987,6 +1217,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00077">77</a> of file <a class="el" href="../../d5/d04/_notification_system_8c_source.html">NotificationSystem.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00229">Update()</a>.</p>
 
 </div>
 </div>

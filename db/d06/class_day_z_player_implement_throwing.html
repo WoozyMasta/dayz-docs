@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -185,6 +182,18 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00003">3</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">pPlayer</a>;</div>
+<div class="line"><span class="lineno">    6</span>    <a class="code hl_function" href="#a3d837ba6f4debeb4b5f66559a1f93638">SetThrowingModeEnabled</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">    7</span> </div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_function" href="#a04ab3a43ca05f635c72b75843558c121">ResetState</a>();</div>
+<div class="line"><span class="lineno">    9</span>  }</div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a04ab3a43ca05f635c72b75843558c121"><div class="ttname"><a href="#a04ab3a43ca05f635c72b75843558c121">DayZPlayerImplementThrowing::ResetState</a></div><div class="ttdeci">void ResetState()</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00118">DayZPlayerImplementThrowing.c:118</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a3d837ba6f4debeb4b5f66559a1f93638"><div class="ttname"><a href="#a3d837ba6f4debeb4b5f66559a1f93638">DayZPlayerImplementThrowing::SetThrowingModeEnabled</a></div><div class="ttdeci">void SetThrowingModeEnabled(bool enable)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00125">DayZPlayerImplementThrowing.c:125</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_adf6f58a6767945f9ef8aac3a7e17a212"><div class="ttname"><a href="#adf6f58a6767945f9ef8aac3a7e17a212">DayZPlayerImplementThrowing::m_Player</a></div><div class="ttdeci">DayZPlayer m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00223">DayZPlayerImplementThrowing.c:223</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00223">m_Player</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00118">ResetState()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00125">SetThrowingModeEnabled()</a>.</p>
 
 </div>
 </div>
@@ -213,6 +222,56 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00149">149</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">// basic stance has priority</span></div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pHic</a>.IsStanceChange())</div>
+<div class="line"><span class="lineno">  153</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <span class="comment">// don&#39;t change mode in raise</span></div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pHic</a>.IsWeaponRaised())</div>
+<div class="line"><span class="lineno">  157</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <span class="comment">// check if it&#39;s not a heavy item</span></div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_class" href="../../d1/d04/class_human_item_behavior_cfg.html">HumanItemBehaviorCfg</a> <a class="code hl_class" href="../../db/d06/class_param3.html">itemCfg</a> = <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.GetItemAccessor().GetItemInHandsBehaviourCfg();</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">itemCfg</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">itemCfg</a>.m_iType == <a class="code hl_class" href="../../db/d06/class_param3.html">ItemBehaviorType</a>.HEAVY)</div>
+<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="comment">/*    HumanMovementState movementState = new HumanMovementState();</span></div>
+<div class="line"><span class="lineno">  165</span><span class="comment">        m_Player.GetMovementState(movementState);</span></div>
+<div class="line"><span class="lineno">  166</span><span class="comment">        if( movementState.IsInProne() )</span></div>
+<div class="line"><span class="lineno">  167</span><span class="comment">          return false;*/</span></div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">playerPB</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>);</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerPB</a>)</div>
+<div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerPB</a>.GetEmoteManager().IsEmotePlaying())</div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerPB</a>.GetActionManager().GetRunningAction() != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>)</div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerPB</a>.IsRestrained() || <a class="code hl_class" href="../../db/d06/class_param3.html">playerPB</a>.IsItemsToDelete())</div>
+<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerPB</a>.GetDayZPlayerInventory().IsProcessing())</div>
+<div class="line"><span class="lineno">  182</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerPB</a>.GetWeaponManager().IsRunning())</div>
+<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  186</span>    }</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#ac0ff9f71781d78b8698c4f8fb7c454d3">CheckFreeSpace</a>())</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  192</span>  }</div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_ac0ff9f71781d78b8698c4f8fb7c454d3"><div class="ttname"><a href="#ac0ff9f71781d78b8698c4f8fb7c454d3">DayZPlayerImplementThrowing::CheckFreeSpace</a></div><div class="ttdeci">bool CheckFreeSpace()</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00218">DayZPlayerImplementThrowing.c:218</a></div></div>
+<div class="ttc" id="aclass_human_item_behavior_cfg_html"><div class="ttname"><a href="../../d1/d04/class_human_item_behavior_cfg.html">HumanItemBehaviorCfg</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d08/humanitems_8c_source.html#l00005">humanitems.c:6</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00218">CheckFreeSpace()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00223">m_Player</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>.</p>
 
 </div>
 </div>
@@ -240,6 +299,25 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00194">194</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>  {</div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_class" href="../../d1/d04/class_human_item_behavior_cfg.html">HumanItemBehaviorCfg</a> <a class="code hl_class" href="../../db/d06/class_param3.html">itemInHandsCfg</a> = <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.GetItemAccessor().GetItemInHandsBehaviourCfg();</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">boo</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_class" href="../../d3/d06/class_u_a_interface.html">UAInterface</a> <a class="code hl_class" href="../../db/d06/class_param3.html">input_interface</a> = <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.GetInputInterface();</div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">input_interface</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">input_interface</a>.SyncedPress(<span class="stringliteral">&quot;UAGear&quot;</span>))</div>
+<div class="line"><span class="lineno">  200</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">boo</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">boo</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">pHic</a>.IsWeaponRaised() || (<a class="code hl_class" href="../../db/d06/class_param3.html">itemInHandsCfg</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">itemInHandsCfg</a>.m_iType == <a class="code hl_class" href="../../db/d06/class_param3.html">ItemBehaviorType</a>.HEAVY))</div>
+<div class="line"><span class="lineno">  202</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#ac0ff9f71781d78b8698c4f8fb7c454d3">CheckFreeSpace</a>())</div>
+<div class="line"><span class="lineno">  205</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  208</span>  }</div>
+<div class="ttc" id="aclass_u_a_interface_html"><div class="ttname"><a href="../../d3/d06/class_u_a_interface.html">UAInterface</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0a/_u_a_input_8c_source.html#l00095">UAInput.c:96</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00218">CheckFreeSpace()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00223">m_Player</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00210">CanContinueThrowingEx()</a>.</p>
 
 </div>
 </div>
@@ -271,6 +349,17 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00210">210</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>  {</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pEntityInHands</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>)</div>
+<div class="line"><span class="lineno">  213</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a32714b7dc1eae20d48bce294ccf3d52b">CanContinueThrowing</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pHic</a>);</div>
+<div class="line"><span class="lineno">  216</span>  }</div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a32714b7dc1eae20d48bce294ccf3d52b"><div class="ttname"><a href="#a32714b7dc1eae20d48bce294ccf3d52b">DayZPlayerImplementThrowing::CanContinueThrowing</a></div><div class="ttdeci">bool CanContinueThrowing(HumanInputController pHic)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00194">DayZPlayerImplementThrowing.c:194</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00194">CanContinueThrowing()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>.</p>
 
 </div>
 </div>
@@ -298,6 +387,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00218">218</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  219</span>  {</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.CheckFreeSpace(<a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_variable" href="../../d7/d0c/classvector.html#a6ad2d639d86b8e70f2b1201cccfe2b69">Forward</a>, 0.7, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  221</span>  }</div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="aclassvector_html_a6ad2d639d86b8e70f2b1201cccfe2b69"><div class="ttname"><a href="../../d7/d0c/classvector.html#a6ad2d639d86b8e70f2b1201cccfe2b69">vector::Forward</a></div><div class="ttdeci">static const vector Forward</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00109">EnConvert.c:109</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00109">vector::Forward</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00223">m_Player</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00149">CanChangeThrowingStance()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00194">CanContinueThrowing()</a>.</p>
 
 </div>
 </div>
@@ -345,6 +443,117 @@ Private Attributes</h2></td></tr>
 <p>handle throw force</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">11</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">pEntityInHands</a> &amp;&amp; !<a class="code hl_variable" href="#aa39cbfacdc1f8b3fe4adc8b597d3819c">m_bThrowingAnimationPlaying</a>)</div>
+<div class="line"><span class="lineno">   14</span>    {</div>
+<div class="line"><span class="lineno">   15</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adf90186d521335dde47a1e5df51ba65b">m_bThrowingModeEnabled</a>)</div>
+<div class="line"><span class="lineno">   16</span>      {</div>
+<div class="line"><span class="lineno">   17</span>        <a class="code hl_function" href="#a3d837ba6f4debeb4b5f66559a1f93638">SetThrowingModeEnabled</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.SetThrowingMode(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   19</span>      }</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   22</span>    }</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_function" href="#a3d837ba6f4debeb4b5f66559a1f93638">SetThrowingModeEnabled</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.IsThrowingMode());</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pHic</a>.IsThrowingModeChange() &amp;&amp; <a class="code hl_function" href="#a6865353e4259be2c0a02263439df37ac">CanChangeThrowingStance</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pHic</a>))</div>
+<div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>      <a class="code hl_function" href="#a04ab3a43ca05f635c72b75843558c121">ResetState</a>();</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.SetActionProgressParams(0, 0);</div>
+<div class="line"><span class="lineno">   33</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.SetThrowingMode(!<a class="code hl_variable" href="#adf90186d521335dde47a1e5df51ba65b">m_bThrowingModeEnabled</a>);</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adf90186d521335dde47a1e5df51ba65b">m_bThrowingModeEnabled</a>)</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a37c99fa7f511908292edd256b90c9dbc">CanContinueThrowingEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pHic</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pEntityInHands</a>))</div>
+<div class="line"><span class="lineno">   42</span>      {</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_function" href="#a3d837ba6f4debeb4b5f66559a1f93638">SetThrowingModeEnabled</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_function" href="#a04ab3a43ca05f635c72b75843558c121">ResetState</a>();</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.SetActionProgressParams(0, 0);</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.SetThrowingMode(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   50</span>      }</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   53</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.WasItemLeaveHandsEvent())</div>
+<div class="line"><span class="lineno">   54</span>      {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">lr</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.GetBaseAimingAngleLR();</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ud</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.GetBaseAimingAngleUD();</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">aimOrientation</a> = <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.GetOrientation();</div>
+<div class="line"><span class="lineno">   58</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">aimOrientation</a>[0] = <a class="code hl_class" href="../../db/d06/class_param3.html">aimOrientation</a>[0] + <a class="code hl_class" href="../../db/d06/class_param3.html">lr</a>;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>        <span class="comment">//add 5 deg</span></div>
+<div class="line"><span class="lineno">   61</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">aimOrientation</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">aimOrientation</a>[1] + <a class="code hl_class" href="../../db/d06/class_param3.html">ud</a> + 5;</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>        <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.GetHumanInventory().ThrowEntity(<a class="code hl_class" href="../../db/d06/class_param3.html">pEntityInHands</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">aimOrientation</a>.AnglesToVector(), <a class="code hl_variable" href="#a654a8c0e5fe9784a5e45643f682c5aec">c_fThrowingForceMin</a> + <a class="code hl_variable" href="#a03de9e86d9a6a548b61777cb29188d65">m_fThrowingForce01</a> * (<a class="code hl_variable" href="#a9da0f1c2334cc3763e9548208102d99d">c_fThrowingForceMax</a> - <a class="code hl_variable" href="#a654a8c0e5fe9784a5e45643f682c5aec">c_fThrowingForceMin</a>));</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   66</span>      }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   69</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#aa39cbfacdc1f8b3fe4adc8b597d3819c">m_bThrowingAnimationPlaying</a>)</div>
+<div class="line"><span class="lineno">   70</span>      {</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pHic</a>.IsAttackButton())</div>
+<div class="line"><span class="lineno">   72</span>        {</div>
+<div class="line"><span class="lineno">   73</span>          <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a1f80ec0b4237552207793cfab8f0009f">m_bThrowingInProgress</a>)</div>
+<div class="line"><span class="lineno">   74</span>            <a class="code hl_variable" href="#a1f80ec0b4237552207793cfab8f0009f">m_bThrowingInProgress</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>          <a class="code hl_variable" href="#a03de9e86d9a6a548b61777cb29188d65">m_fThrowingForce01</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">pDt</a> * <a class="code hl_variable" href="#a45c08be8f164c97b59409470be2d6fa3">c_fThrowingForceCoef</a>;</div>
+<div class="line"><span class="lineno">   77</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a03de9e86d9a6a548b61777cb29188d65">m_fThrowingForce01</a> &gt; 1.0)</div>
+<div class="line"><span class="lineno">   78</span>            <a class="code hl_variable" href="#a03de9e86d9a6a548b61777cb29188d65">m_fThrowingForce01</a> = 1.0;</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.SetActionProgressParams(<a class="code hl_variable" href="#a03de9e86d9a6a548b61777cb29188d65">m_fThrowingForce01</a>, 0);</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>          <a class="code hl_class" href="../../dd/d00/class_human_command_move.html">HumanCommandMove</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hcm</a> = <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.GetCommand_Move();</div>
+<div class="line"><span class="lineno">   85</span>          <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">standingFromBack</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">hcm</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">hcm</a>.IsStandingFromBack();</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1f80ec0b4237552207793cfab8f0009f">m_bThrowingInProgress</a> &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">standingFromBack</a>)</div>
+<div class="line"><span class="lineno">   88</span>          {</div>
+<div class="line"><span class="lineno">   89</span>            <a class="code hl_variable" href="#a1f80ec0b4237552207793cfab8f0009f">m_bThrowingInProgress</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>            <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">throwType</a> = 1;</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>            <a class="code hl_class" href="../../d1/d04/class_human_item_behavior_cfg.html">HumanItemBehaviorCfg</a> <a class="code hl_class" href="../../db/d06/class_param3.html">itemCfg</a> = <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.GetItemAccessor().GetItemInHandsBehaviourCfg();</div>
+<div class="line"><span class="lineno">   94</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">itemCfg</a> = <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.GetItemAccessor().GetItemInHandsBehaviourCfg();</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">itemCfg</a>)</div>
+<div class="line"><span class="lineno">   96</span>            {</div>
+<div class="line"><span class="lineno">   97</span>              <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">itemCfg</a>.m_iType)</div>
+<div class="line"><span class="lineno">   98</span>              {</div>
+<div class="line"><span class="lineno">   99</span>              <span class="keywordflow">case</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ItemBehaviorType</a>.TWOHANDED:</div>
+<div class="line"><span class="lineno">  100</span>              <span class="keywordflow">case</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ItemBehaviorType</a>.POLEARMS:</div>
+<div class="line"><span class="lineno">  101</span>                <a class="code hl_class" href="../../db/d06/class_param3.html">throwType</a> = 2;</div>
+<div class="line"><span class="lineno">  102</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  103</span>              <span class="keywordflow">case</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ItemBehaviorType</a>.FIREARMS:</div>
+<div class="line"><span class="lineno">  104</span>                <a class="code hl_class" href="../../db/d06/class_param3.html">throwType</a> = 3;</div>
+<div class="line"><span class="lineno">  105</span>              }</div>
+<div class="line"><span class="lineno">  106</span>            }</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">pHcw</a>.ThrowItem(<a class="code hl_class" href="../../db/d06/class_param3.html">throwType</a>);</div>
+<div class="line"><span class="lineno">  109</span>            <a class="code hl_variable" href="#aa39cbfacdc1f8b3fe4adc8b597d3819c">m_bThrowingAnimationPlaying</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  110</span>          }</div>
+<div class="line"><span class="lineno">  111</span>        }</div>
+<div class="line"><span class="lineno">  112</span>      }</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  115</span>      <a class="code hl_function" href="#a04ab3a43ca05f635c72b75843558c121">ResetState</a>();</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a03de9e86d9a6a548b61777cb29188d65"><div class="ttname"><a href="#a03de9e86d9a6a548b61777cb29188d65">DayZPlayerImplementThrowing::m_fThrowingForce01</a></div><div class="ttdeci">float m_fThrowingForce01</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00227">DayZPlayerImplementThrowing.c:227</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a1f80ec0b4237552207793cfab8f0009f"><div class="ttname"><a href="#a1f80ec0b4237552207793cfab8f0009f">DayZPlayerImplementThrowing::m_bThrowingInProgress</a></div><div class="ttdeci">bool m_bThrowingInProgress</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00225">DayZPlayerImplementThrowing.c:225</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a37c99fa7f511908292edd256b90c9dbc"><div class="ttname"><a href="#a37c99fa7f511908292edd256b90c9dbc">DayZPlayerImplementThrowing::CanContinueThrowingEx</a></div><div class="ttdeci">bool CanContinueThrowingEx(HumanInputController pHic, EntityAI pEntityInHands)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00210">DayZPlayerImplementThrowing.c:210</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a45c08be8f164c97b59409470be2d6fa3"><div class="ttname"><a href="#a45c08be8f164c97b59409470be2d6fa3">DayZPlayerImplementThrowing::c_fThrowingForceCoef</a></div><div class="ttdeci">const float c_fThrowingForceCoef</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00231">DayZPlayerImplementThrowing.c:231</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a654a8c0e5fe9784a5e45643f682c5aec"><div class="ttname"><a href="#a654a8c0e5fe9784a5e45643f682c5aec">DayZPlayerImplementThrowing::c_fThrowingForceMin</a></div><div class="ttdeci">const float c_fThrowingForceMin</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00229">DayZPlayerImplementThrowing.c:229</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a6865353e4259be2c0a02263439df37ac"><div class="ttname"><a href="#a6865353e4259be2c0a02263439df37ac">DayZPlayerImplementThrowing::CanChangeThrowingStance</a></div><div class="ttdeci">bool CanChangeThrowingStance(HumanInputController pHic)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00149">DayZPlayerImplementThrowing.c:149</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_a9da0f1c2334cc3763e9548208102d99d"><div class="ttname"><a href="#a9da0f1c2334cc3763e9548208102d99d">DayZPlayerImplementThrowing::c_fThrowingForceMax</a></div><div class="ttdeci">const float c_fThrowingForceMax</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00230">DayZPlayerImplementThrowing.c:230</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_aa39cbfacdc1f8b3fe4adc8b597d3819c"><div class="ttname"><a href="#aa39cbfacdc1f8b3fe4adc8b597d3819c">DayZPlayerImplementThrowing::m_bThrowingAnimationPlaying</a></div><div class="ttdeci">bool m_bThrowingAnimationPlaying</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00226">DayZPlayerImplementThrowing.c:226</a></div></div>
+<div class="ttc" id="aclass_day_z_player_implement_throwing_html_adf90186d521335dde47a1e5df51ba65b"><div class="ttname"><a href="#adf90186d521335dde47a1e5df51ba65b">DayZPlayerImplementThrowing::m_bThrowingModeEnabled</a></div><div class="ttdeci">bool m_bThrowingModeEnabled</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00224">DayZPlayerImplementThrowing.c:224</a></div></div>
+<div class="ttc" id="aclass_human_command_move_html"><div class="ttname"><a href="../../dd/d00/class_human_command_move.html">HumanCommandMove</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00431">human.c:432</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00231">c_fThrowingForceCoef</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00230">c_fThrowingForceMax</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00229">c_fThrowingForceMin</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00149">CanChangeThrowingStance()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00210">CanContinueThrowingEx()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00226">m_bThrowingAnimationPlaying</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00225">m_bThrowingInProgress</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00224">m_bThrowingModeEnabled</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00227">m_fThrowingForce01</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00223">m_Player</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00118">ResetState()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00125">SetThrowingModeEnabled()</a>.</p>
 
 </div>
 </div>
@@ -374,6 +583,13 @@ Private Attributes</h2></td></tr>
 <p>Throwing animation after button release. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00144">144</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa39cbfacdc1f8b3fe4adc8b597d3819c">m_bThrowingAnimationPlaying</a>;</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00226">m_bThrowingAnimationPlaying</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00204">ActionPossibilityCheck()</a>.</p>
 
 </div>
 </div>
@@ -403,6 +619,11 @@ Private Attributes</h2></td></tr>
 <p>Throwing wind-up only (button hold) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00138">138</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>  {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a1f80ec0b4237552207793cfab8f0009f">m_bThrowingInProgress</a>;</div>
+<div class="line"><span class="lineno">  141</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00225">m_bThrowingInProgress</a>.</p>
 
 </div>
 </div>
@@ -430,6 +651,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00132">132</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>  {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#adf90186d521335dde47a1e5df51ba65b">m_bThrowingModeEnabled</a>;</div>
+<div class="line"><span class="lineno">  135</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00224">m_bThrowingModeEnabled</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/d03/_emote_manager_8c_source.html#l00772">CanPlayEmote()</a>.</p>
 
 </div>
 </div>
@@ -457,6 +685,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00118">118</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>  {</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_variable" href="#a03de9e86d9a6a548b61777cb29188d65">m_fThrowingForce01</a> = 0;</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_variable" href="#a1f80ec0b4237552207793cfab8f0009f">m_bThrowingInProgress</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_variable" href="#aa39cbfacdc1f8b3fe4adc8b597d3819c">m_bThrowingAnimationPlaying</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00226">m_bThrowingAnimationPlaying</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00225">m_bThrowingInProgress</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00227">m_fThrowingForce01</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00003">DayZPlayerImplementThrowing()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>.</p>
 
 </div>
 </div>
@@ -484,6 +721,15 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00125">125</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>  {</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">enable</a> != <a class="code hl_variable" href="#adf90186d521335dde47a1e5df51ba65b">m_bThrowingModeEnabled</a>)</div>
+<div class="line"><span class="lineno">  128</span>      <a class="code hl_variable" href="#adf6f58a6767945f9ef8aac3a7e17a212">m_Player</a>.OnThrowingModeChange(<a class="code hl_class" href="../../db/d06/class_param3.html">enable</a>);</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_variable" href="#adf90186d521335dde47a1e5df51ba65b">m_bThrowingModeEnabled</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">enable</a>;</div>
+<div class="line"><span class="lineno">  130</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00224">m_bThrowingModeEnabled</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00223">m_Player</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00003">DayZPlayerImplementThrowing()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>.</p>
 
 </div>
 </div>
@@ -510,6 +756,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00231">231</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>.</p>
+
 </div>
 </div>
 <a id="a9da0f1c2334cc3763e9548208102d99d" name="a9da0f1c2334cc3763e9548208102d99d"></a>
@@ -533,6 +781,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00230">230</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>.</p>
 
 </div>
 </div>
@@ -558,6 +808,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00229">229</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>.</p>
+
 </div>
 </div>
 <a id="aa39cbfacdc1f8b3fe4adc8b597d3819c" name="aa39cbfacdc1f8b3fe4adc8b597d3819c"></a>
@@ -581,6 +833,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00226">226</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00144">IsThrowingAnimationPlaying()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00118">ResetState()</a>.</p>
 
 </div>
 </div>
@@ -606,6 +860,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00225">225</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00138">IsThrowingInProgress()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00118">ResetState()</a>.</p>
+
 </div>
 </div>
 <a id="adf90186d521335dde47a1e5df51ba65b" name="adf90186d521335dde47a1e5df51ba65b"></a>
@@ -629,6 +885,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00224">224</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00132">IsThrowingModeEnabled()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00125">SetThrowingModeEnabled()</a>.</p>
 
 </div>
 </div>
@@ -654,6 +912,8 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00227">227</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00118">ResetState()</a>.</p>
+
 </div>
 </div>
 <a id="adf6f58a6767945f9ef8aac3a7e17a212" name="adf6f58a6767945f9ef8aac3a7e17a212"></a>
@@ -677,6 +937,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00223">223</a> of file <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html">DayZPlayerImplementThrowing.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00149">CanChangeThrowingStance()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00194">CanContinueThrowing()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00218">CheckFreeSpace()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00003">DayZPlayerImplementThrowing()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00011">HandleThrowing()</a>, and <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00125">SetThrowingModeEnabled()</a>.</p>
 
 </div>
 </div>

@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -179,6 +176,43 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00047">47</a> of file <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html">Building.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    ActionBase <a class="code hl_class" href="../../db/d06/class_param3.html">action</a> = ActionManagerBase.GetAction(<a class="code hl_class" href="../../db/d06/class_param3.html">actionName</a>);</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action</a>)</div>
+<div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#a87dcfbb1acc79bc63ccc7af1476c913d">LogError</a>(<span class="stringliteral">&quot;Action &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">actionName</a> + <span class="stringliteral">&quot; dosn&#39;t exist!&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keyword">typename</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ai</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action</a>.GetInputType();</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ai</a>)</div>
+<div class="line"><span class="lineno">   59</span>    {</div>
+<div class="line"><span class="lineno">   60</span>      <a class="code hl_variable" href="#a98dca8629655bb33fc72bb202ca2fb3c">m_ActionsInitialize</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   61</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ActionBase_Basic&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">action_array</a> = <a class="code hl_variable" href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">ai</a>);</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_array</a>)</div>
+<div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_array</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ActionBase_Basic&gt;</a>;</div>
+<div class="line"><span class="lineno">   68</span>      <a class="code hl_variable" href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">ai</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">action_array</a>);</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#acae9092240f417553e9fb20c0c8797d0">IsActionLogEnable</a>())</div>
+<div class="line"><span class="lineno">   72</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#afa8a52d35ffa569e2a8b36b4d3026609">ActionLog</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action</a>.ToString() + <span class="stringliteral">&quot; -&gt; &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">ai</a>, <span class="keyword">this</span>.ToString(), <span class="stringliteral">&quot;n/a&quot;</span>, <span class="stringliteral">&quot;Add action&quot;</span>);</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_array</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">action</a>);</div>
+<div class="line"><span class="lineno">   74</span>  }</div>
+<div class="ttc" id="a4___world_2_entities_2_game_2_super_2_building_8c_html_a21cd396a6f75d9f928f6fa4f518a8e51"><div class="ttname"><a href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a></div><div class="ttdeci">TInputActionMap m_InputActionMap</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00011">Building.c:11</a></div></div>
+<div class="ttc" id="a4___world_2_entities_2_game_2_super_2_building_8c_html_a98dca8629655bb33fc72bb202ca2fb3c"><div class="ttname"><a href="#a98dca8629655bb33fc72bb202ca2fb3c">m_ActionsInitialize</a></div><div class="ttdeci">bool m_ActionsInitialize</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00012">Building.c:12</a></div></div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_a87dcfbb1acc79bc63ccc7af1476c913d"><div class="ttname"><a href="../../da/d0d/class_debug.html#a87dcfbb1acc79bc63ccc7af1476c913d">Debug::LogError</a></div><div class="ttdeci">static void LogError(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdoc">Prints debug message as error message.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00341">Debug.c:341</a></div></div>
+<div class="ttc" id="aclass_debug_html_afa8a52d35ffa569e2a8b36b4d3026609"><div class="ttname"><a href="../../da/d0d/class_debug.html#afa8a52d35ffa569e2a8b36b4d3026609">Debug::ActionLog</a></div><div class="ttdeci">static void ActionLog(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00143">Debug.c:143</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_acae9092240f417553e9fb20c0c8797d0"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#acae9092240f417553e9fb20c0c8797d0">LogManager::IsActionLogEnable</a></div><div class="ttdeci">static bool IsActionLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00719">Debug.c:719</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00143">Debug::ActionLog()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00719">LogManager::IsActionLogEnable()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00341">Debug::LogError()</a>, <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00132">m_ActionsInitialize</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00131">m_InputActionMap</a>.</p>
 
 </div>
 </div>
@@ -198,6 +232,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00014">14</a> of file <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html">Building.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>  {</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="#a98dca8629655bb33fc72bb202ca2fb3c">m_ActionsInitialize</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   17</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00132">m_ActionsInitialize</a>.</p>
 
 </div>
 </div>
@@ -221,6 +260,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00031">31</a> of file <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html">Building.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>  {</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a98dca8629655bb33fc72bb202ca2fb3c">m_ActionsInitialize</a>)</div>
+<div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>      <a class="code hl_variable" href="#a98dca8629655bb33fc72bb202ca2fb3c">m_ActionsInitialize</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   36</span>      <a class="code hl_function" href="#afff6aa7201eb061ee2d0a22765e6b0a7">InitializeActions</a>();</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">actions</a> = <a class="code hl_variable" href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">action_input_type</a>);</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+<div class="ttc" id="a4___world_2_entities_2_game_2_super_2_building_8c_html_afff6aa7201eb061ee2d0a22765e6b0a7"><div class="ttname"><a href="#afff6aa7201eb061ee2d0a22765e6b0a7">InitializeActions</a></div><div class="ttdeci">void InitializeActions()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00019">Building.c:19</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00182">InitializeActions()</a>, <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00132">m_ActionsInitialize</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00131">m_InputActionMap</a>.</p>
 
 </div>
 </div>
@@ -240,6 +291,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00019">19</a> of file <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html">Building.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>  {</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a> = <a class="code hl_variable" href="#a01eb1f64e3525c2b6367f977b8340a4d">m_BuildingTypeActionsMap</a>.Get(this.<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>());</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a>)</div>
+<div class="line"><span class="lineno">   23</span>    {</div>
+<div class="line"><span class="lineno">   24</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">TInputActionMap</a> <a class="code hl_class" href="../../db/d06/class_param3.html">iam</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="../../d2/d0e/_action_manager_client_8c.html#abf5d0ca69f1bde8872d7e45589ef73d7">TInputActionMap</a>;</div>
+<div class="line"><span class="lineno">   25</span>      <a class="code hl_variable" href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">iam</a>;</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_function" href="#a2400a05f77ec52157aea175d232e50ca">SetActions</a>();</div>
+<div class="line"><span class="lineno">   27</span>      <a class="code hl_variable" href="#a01eb1f64e3525c2b6367f977b8340a4d">m_BuildingTypeActionsMap</a>.Insert(this.<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>(), <a class="code hl_variable" href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a>);</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="a4___world_2_entities_2_game_2_super_2_building_8c_html_a01eb1f64e3525c2b6367f977b8340a4d"><div class="ttname"><a href="#a01eb1f64e3525c2b6367f977b8340a4d">m_BuildingTypeActionsMap</a></div><div class="ttdeci">House m_BuildingTypeActionsMap</div></div>
+<div class="ttc" id="a4___world_2_entities_2_game_2_super_2_building_8c_html_a2400a05f77ec52157aea175d232e50ca"><div class="ttname"><a href="#a2400a05f77ec52157aea175d232e50ca">SetActions</a></div><div class="ttdeci">void SetActions()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00042">Building.c:42</a></div></div>
+<div class="ttc" id="a_action_manager_client_8c_html_abf5d0ca69f1bde8872d7e45589ef73d7"><div class="ttname"><a href="../../d2/d0e/_action_manager_client_8c.html#abf5d0ca69f1bde8872d7e45589ef73d7">TInputActionMap</a></div><div class="ttdeci">map&lt; typename, ref array&lt; ActionBase_Basic &gt; &gt; TInputActionMap</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0e/_action_manager_client_8c_source.html#l00001">ActionManagerClient.c:1</a></div></div>
+<div class="ttc" id="a_json_data_contaminated_area_8c_html_a651a3c9de2e16ff0deca8d09dedbda58"><div class="ttname"><a href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a></div><div class="ttdeci">string Type</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">JsonDataContaminatedArea.c:11</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a01eb1f64e3525c2b6367f977b8340a4d">m_BuildingTypeActionsMap</a>, <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00131">m_InputActionMap</a>, <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00205">SetActions()</a>, and <a class="el" href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">Type</a>.</p>
 
 </div>
 </div>
@@ -259,6 +326,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00076">76</a> of file <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html">Building.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>  {</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">   79</span>    ActionBase <a class="code hl_class" href="../../db/d06/class_param3.html">action</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetActionManager().GetAction(<a class="code hl_class" href="../../db/d06/class_param3.html">actionName</a>);</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keyword">typename</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ai</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action</a>.GetInputType();</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ActionBase_Basic&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">action_array</a> = <a class="code hl_variable" href="#a21cd396a6f75d9f928f6fa4f518a8e51">m_InputActionMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">ai</a>);</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_array</a>)</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_array</a>.RemoveItem(<a class="code hl_class" href="../../db/d06/class_param3.html">action</a>);</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00047">ModifierBase.c:47</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00131">m_InputActionMap</a>.</p>
 
 </div>
 </div>
@@ -278,7 +359,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00042">42</a> of file <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html">Building.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment">//AddAction();</span></div>
+<div class="line"><span class="lineno">   45</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -309,6 +393,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00019">InitializeActions()</a>.</p>
 
 </div>
 </div>

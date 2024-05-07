@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -205,7 +202,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00083">83</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{ <span class="keywordflow">return</span> -1; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac51c925574115cb52c59024e308550ec" name="ac51c925574115cb52c59024e308550ec"></a>
@@ -224,7 +222,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00084">84</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   84</span>{ <span class="keywordflow">return</span> -1; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad5d4f6041384e3e7d6c06f91031b28ab" name="ad5d4f6041384e3e7d6c06f91031b28ab"></a>
@@ -243,7 +242,120 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00138">138</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  139</span>{</div>
+<div class="line"><span class="lineno">  140</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  141</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  142</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  145</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  146</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  147</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  151</span>  {</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  153</span>  }</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  156</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  157</span>  {</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  162</span>  {</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  164</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  168</span>  {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  170</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  176</span>  {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  178</span>  }</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  181</span>  {</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  188</span>  }</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  193</span>  {</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  195</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  196</span>  }</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  199</span>  {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  204</span>  {</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  206</span>  }</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  209</span>  {</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="line"><span class="lineno">  212</span>}</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  215</span>{</div>
+<div class="line"><span class="lineno">  216</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  217</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  218</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  219</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  220</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  221</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  222</span>}</div>
+<div class="ttc" id="a_infected_sound_event_handler_8c_html_aa7f9de653cd121fb2608891ce7dc22fe"><div class="ttname"><a href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a></div><div class="ttdeci">override int GetCurrentStateEventID()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_infected_sound_event_handler_8c_source.html#l00038">InfectedSoundEventHandler.c:38</a></div></div>
+<div class="ttc" id="a_infected_sound_event_handler_8c_html_ab514941aa875ea2e8db5576cb39b077f"><div class="ttname"><a href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a></div><div class="ttdeci">override int GetCurrentStateEventType()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_infected_sound_event_handler_8c_source.html#l00045">InfectedSoundEventHandler.c:45</a></div></div>
+<div class="ttc" id="a_player_sound_event_handler_8c_html_a69457de8322c541f2671e4df95fe891b"><div class="ttname"><a href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a></div><div class="ttdeci">override bool PlayRequestEx(EPlayerSoundEventID id, bool sent_from_server=false, int param=0)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_player_sound_event_handler_8c_source.html#l00136">PlayerSoundEventHandler.c:136</a></div></div>
+<div class="ttc" id="a_player_sound_event_handler_8c_html_ae40d08748e52403c01d49f8987673c88"><div class="ttname"><a href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a></div><div class="ttdeci">EPlayerSoundEventID</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_player_sound_event_handler_8c_source.html#l00001">PlayerSoundEventHandler.c:2</a></div></div>
+<div class="ttc" id="a_smpt_anim_meta_8c_html_a1298686b3cdfa075b18f24f6ede82d60"><div class="ttname"><a href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a></div><div class="ttdeci">EAnimPlayState PlayRequest()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0c/_smpt_anim_meta_8c_source.html#l00061">SmptAnimMeta.c:61</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a05b9afdb0407e8fc5d6b759763846fa7"><div class="ttname"><a href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a></div><div class="ttdeci">AbstractWave m_SoundSetCallback</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00080">SoundEvents.c:80</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a23cd83196cbe840c423d33e754dc9413"><div class="ttname"><a href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a></div><div class="ttdeci">int m_Type</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00081">SoundEvents.c:81</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a2d7349a4ff5c59bab66e6bf1bfda7161"><div class="ttname"><a href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a></div><div class="ttdeci">AbstractWave GetSoundSetCallback()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00148">SoundEvents.c:148</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a34d242cd529c350464cf12056830ade6"><div class="ttname"><a href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a></div><div class="ttdeci">bool IsSoundCallbackExist()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00107">SoundEvents.c:107</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a443a4e9b46aa9be812644d68515caade"><div class="ttname"><a href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a></div><div class="ttdeci">bool IsDestroyRequested()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00115">SoundEvents.c:115</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a56863ab8e5c2987aacd4cb4e510340f8"><div class="ttname"><a href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a></div><div class="ttdeci">bool CanPlay()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00120">SoundEvents.c:120</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a6bba65cc38cdaed9e5f913f292574b2a"><div class="ttname"><a href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a></div><div class="ttdeci">void ~SoundEventBase()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00090">SoundEvents.c:90</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a70b4d873a188ec1c1cf110e668108020"><div class="ttname"><a href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a></div><div class="ttdeci">int m_ID</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00082">SoundEvents.c:82</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a8be8205879e1a5afc5b6a40317946990"><div class="ttname"><a href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a></div><div class="ttdeci">int m_SoundVoiceAnimEventClassID</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00083">SoundEvents.c:83</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_a97462f25f2f7b826847a9e6535101e01"><div class="ttname"><a href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a></div><div class="ttdeci">int GetSoundEventType()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00143">SoundEvents.c:143</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_aa53f4cb57638c686a687f7bf4ed36ed5"><div class="ttname"><a href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a></div><div class="ttdeci">bool IsSkipForControlled()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00096">SoundEvents.c:96</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_ab9b3623a27a2268b037e3ee72acc8bfc"><div class="ttname"><a href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a></div><div class="ttdeci">bool Play()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00125">SoundEvents.c:125</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_abbf1a6c2f0af66eeeed760f4f9f32e39"><div class="ttname"><a href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a></div><div class="ttdeci">bool m_RequestDestroy</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00084">SoundEvents.c:84</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_ad056e5d88e1e4cefa9567e4b6f840ced"><div class="ttname"><a href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a></div><div class="ttdeci">void OnPlay(PlayerBase player)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_jump_events_8c_source.html#l00046">JumpEvents.c:46</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_ad5d4f6041384e3e7d6c06f91031b28ab"><div class="ttname"><a href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a></div><div class="ttdeci">int GetSoundEventID()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00138">SoundEvents.c:138</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_ae03f63c52aabd4a24ce55f72cb955e7f"><div class="ttname"><a href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a></div><div class="ttdeci">int m_Param</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00087">SoundEvents.c:87</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_aea42a479780faed6ef702bc01984a3d9"><div class="ttname"><a href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a></div><div class="ttdeci">string m_SoundSetNameRoot</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00085">SoundEvents.c:85</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_aecb6bf3c1ba25c28c4e74a76a155e488"><div class="ttname"><a href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a></div><div class="ttdeci">bool m_SkipForControlledCharacter</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00086">SoundEvents.c:86</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_af38532525862791a1a90871a6b17282f"><div class="ttname"><a href="#af38532525862791a1a90871a6b17282f">Tick</a></div><div class="ttdeci">void Tick()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00101">SoundEvents.c:101</a></div></div>
+<div class="ttc" id="a_sound_events_8c_html_af86089df15116fdcd2d2fb25ed6d2119"><div class="ttname"><a href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d0c/_sound_events_8c_source.html#l00132">SoundEvents.c:132</a></div></div>
+<div class="ttc" id="aclass_abstract_wave_html"><div class="ttname"><a href="../../d9/d02/class_abstract_wave.html">AbstractWave</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d03/_sound_8c_source.html#l00118">Sound.c:119</a></div></div>
+<div class="ttc" id="aclass_abstract_wave_html_a8d88cd0db69c9438c8c7cd096ab564e1"><div class="ttname"><a href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">AbstractWave::Stop</a></div><div class="ttdeci">proto void Stop()</div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a97462f25f2f7b826847a9e6535101e01" name="a97462f25f2f7b826847a9e6535101e01"></a>
@@ -262,7 +374,91 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00143">143</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  144</span>{</div>
+<div class="line"><span class="lineno">  145</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  146</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  147</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  148</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  149</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  151</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  152</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  156</span>  {</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  158</span>  }</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  162</span>  {</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  164</span>  }</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  167</span>  {</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  169</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  170</span>  }</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  173</span>  {</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  175</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  178</span>  }</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  181</span>  {</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  188</span>  }</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  191</span>  {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  193</span>  }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  198</span>  {</div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  200</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  204</span>  {</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  206</span>  }</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  209</span>  {</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  214</span>  {</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  216</span>  }</div>
+<div class="line"><span class="lineno">  217</span>}</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  220</span>{</div>
+<div class="line"><span class="lineno">  221</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  222</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  223</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  224</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  225</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  226</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  227</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1bebc7c2d3b344b90c87b2056eea9122" name="a1bebc7c2d3b344b90c87b2056eea9122"></a>
@@ -281,7 +477,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00001">1</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{ <span class="keywordflow">return</span> -1; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2d7349a4ff5c59bab66e6bf1bfda7161" name="a2d7349a4ff5c59bab66e6bf1bfda7161"></a>
@@ -300,7 +497,91 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00148">148</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  149</span>{</div>
+<div class="line"><span class="lineno">  150</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  151</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  152</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  153</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  154</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  156</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  157</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  161</span>  {</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  163</span>  }</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  166</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  167</span>  {</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  169</span>  }</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  172</span>  {</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  174</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  175</span>  }</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  178</span>  {</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  180</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  188</span>  }</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  191</span>  {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  193</span>  }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  196</span>  {</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  198</span>  }</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  203</span>  {</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  205</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  206</span>  }</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  209</span>  {</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  214</span>  {</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  216</span>  }</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  219</span>  {</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  221</span>  }</div>
+<div class="line"><span class="lineno">  222</span>}</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  225</span>{</div>
+<div class="line"><span class="lineno">  226</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  227</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  228</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  229</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  230</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  231</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  232</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a443a4e9b46aa9be812644d68515caade" name="a443a4e9b46aa9be812644d68515caade"></a>
@@ -319,7 +600,91 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00115">115</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  116</span>{</div>
+<div class="line"><span class="lineno">  117</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  118</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  119</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  120</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  121</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  122</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  123</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  124</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  128</span>  {</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  130</span>  }</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  133</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  139</span>  {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  141</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  147</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  153</span>  {</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  155</span>  }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  158</span>  {</div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  160</span>  }</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  163</span>  {</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  170</span>  {</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  172</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  176</span>  {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  178</span>  }</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  181</span>  {</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  188</span>  }</div>
+<div class="line"><span class="lineno">  189</span>}</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  192</span>{</div>
+<div class="line"><span class="lineno">  193</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  194</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  195</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  196</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  197</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  198</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  199</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa53f4cb57638c686a687f7bf4ed36ed5" name="aa53f4cb57638c686a687f7bf4ed36ed5"></a>
@@ -338,7 +703,91 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00096">96</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   97</span>{</div>
+<div class="line"><span class="lineno">   98</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">   99</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  100</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  101</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  102</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  103</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  104</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  105</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  109</span>  {</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  111</span>  }</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  114</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  115</span>  {</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  117</span>  }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  122</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  126</span>  {</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  128</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  131</span>  }</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  139</span>  {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  141</span>  }</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  144</span>  {</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  146</span>  }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  151</span>  {</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  153</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  154</span>  }</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  157</span>  {</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  162</span>  {</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  164</span>  }</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  167</span>  {</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  169</span>  }</div>
+<div class="line"><span class="lineno">  170</span>}</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  173</span>{</div>
+<div class="line"><span class="lineno">  174</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  175</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  176</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  177</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  178</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  179</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  180</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a34d242cd529c350464cf12056830ade6" name="a34d242cd529c350464cf12056830ade6"></a>
@@ -357,6 +806,92 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00107">107</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  111</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  112</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  113</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  114</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  115</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  116</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  122</span>  }</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  125</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  126</span>  {</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  131</span>  {</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  133</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  134</span>  }</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  137</span>  {</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  139</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  152</span>  }</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  155</span>  {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  162</span>  {</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  164</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  168</span>  {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  170</span>  }</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  173</span>  {</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  175</span>  }</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  178</span>  {</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  180</span>  }</div>
+<div class="line"><span class="lineno">  181</span>}</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  184</span>{</div>
+<div class="line"><span class="lineno">  185</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  186</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  187</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  188</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  189</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  190</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  191</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../dd/d00/_player_sound_event_base_8c_source.html#l00079">IsFinished()</a>.</p>
 
 </div>
 </div>
@@ -377,7 +912,57 @@ Variables</h2></td></tr>
 <p>!! beware of the ifdef above , most likely you want to put your code above it, otherwise it might not get executed !!!</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d02/_jump_events_8c_source.html#l00046">46</a> of file <a class="el" href="../../d9/d02/_jump_events_8c_source.html">JumpEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{</div>
+<div class="line"><span class="lineno">   48</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d02/_jump_events_8c.html#a01bc8e7d4b72f1d66e413389e069f9d2">HasPriorityOverCurrent</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <a class="code hl_class" href="../../db/d06/class_param3.html">other_state_id</a>, <a class="code hl_enumeration" href="../../dd/d00/_player_sound_event_base_8c.html#a2f8cbb1a644e4997001af74fb86e1695">EPlayerSoundEventType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">type_other</a>)</div>
+<div class="line"><span class="lineno">   49</span>  {</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   51</span>  }</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d3/d06/_mind_states_8c.html#a1ddaacc332ae7266602be41f358a542e">CanPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">   54</span>  {</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.CanPlay(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>))</div>
+<div class="line"><span class="lineno">   56</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   58</span>  }</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d02/_jump_events_8c.html#a62e42349a46c01b7fedac0152b6aa012">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">   61</span>  {</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlay(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.CanSpawnBreathVaporEffect())</div>
+<div class="line"><span class="lineno">   64</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.SpawnBreathVaporEffect();</div>
+<div class="line"><span class="lineno">   65</span>  }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d02/_jump_events_8c.html#af4c98ebe91383e7f901a6be04bad471b">OnEnd</a>()</div>
+<div class="line"><span class="lineno">   68</span>  {</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEnd();</div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment">//m_Player.GetStaminaSoundHandlerClient().PostponeStamina(1000);</span></div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>)</div>
+<div class="line"><span class="lineno">   72</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">StaminaSoundHandlerClient</a>.Cast(<a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.m_PlayerSoundManagerClient.GetHandler(<a class="code hl_enumeration" href="../../d2/d02/_player_sound_manager_8c.html#a0fd8354912d290f45ba638113305af58">eSoundHandlers</a>.STAMINA)).PostponeStamina(1300);</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
+<div class="line"><span class="lineno">   74</span>}</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span><span class="keyword">class </span><a class="code hl_function" href="../../d9/d02/_jump_events_8c.html#abd4862ca8ec198850ab4d4d48e4158fc">JumpSoundEvent</a> <span class="keyword">extends</span> <a class="code hl_class" href="../../db/d06/class_param3.html">JumpEventsBase</a></div>
+<div class="line"><span class="lineno">   77</span>{</div>
+<div class="line"><span class="lineno">   78</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d02/_jump_events_8c.html#abd4862ca8ec198850ab4d4d48e4158fc">JumpSoundEvent</a>()</div>
+<div class="line"><span class="lineno">   79</span>  {</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="../../dd/d00/_player_sound_event_base_8c.html#a54288b4389af442f91defeacc6262bdd">m_HasPriorityOverTypes</a> = -1;<span class="comment">//-1 for all</span></div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#abfdaa01618f1af01d1a23e2611c0109f">m_Type</a> = <a class="code hl_enumeration" href="../../dd/d00/_player_sound_event_base_8c.html#a2f8cbb1a644e4997001af74fb86e1695">EPlayerSoundEventType</a>.GENERAL;</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_variable" href="../../d5/d0d/_effect_8c.html#a70b4d873a188ec1c1cf110e668108020">m_ID</a> = <a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a>.JUMP;</div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a> = 18;</div>
+<div class="line"><span class="lineno">   84</span>  }</div>
+<div class="line"><span class="lineno">   85</span>}</div>
+<div class="ttc" id="a4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_html_abfdaa01618f1af01d1a23e2611c0109f"><div class="ttname"><a href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#abfdaa01618f1af01d1a23e2611c0109f">m_Type</a></div><div class="ttdeci">eBleedingSourceType m_Type</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_source.html#l00025">BleedingSource.c:25</a></div></div>
+<div class="ttc" id="a_effect_8c_html_a70b4d873a188ec1c1cf110e668108020"><div class="ttname"><a href="../../d5/d0d/_effect_8c.html#a70b4d873a188ec1c1cf110e668108020">m_ID</a></div><div class="ttdeci">int m_ID</div><div class="ttdoc">ID of effect, given by SEffectManager when registered (automatically done when playing through it)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00049">Effect.c:49</a></div></div>
+<div class="ttc" id="a_hand___events_8c_html_a02917914db83b7759e19cb7450c92354"><div class="ttname"><a href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a></div><div class="ttdeci">DayZPlayer m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00042">Hand_Events.c:42</a></div></div>
+<div class="ttc" id="a_jump_events_8c_html_a01bc8e7d4b72f1d66e413389e069f9d2"><div class="ttname"><a href="../../d9/d02/_jump_events_8c.html#a01bc8e7d4b72f1d66e413389e069f9d2">HasPriorityOverCurrent</a></div><div class="ttdeci">override bool HasPriorityOverCurrent(PlayerBase player, EPlayerSoundEventID other_state_id, EPlayerSoundEventType type_other)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_jump_events_8c_source.html#l00034">JumpEvents.c:34</a></div></div>
+<div class="ttc" id="a_jump_events_8c_html_a62e42349a46c01b7fedac0152b6aa012"><div class="ttname"><a href="../../d9/d02/_jump_events_8c.html#a62e42349a46c01b7fedac0152b6aa012">OnPlay</a></div><div class="ttdeci">override void OnPlay(PlayerBase player)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_jump_events_8c_source.html#l00046">JumpEvents.c:46</a></div></div>
+<div class="ttc" id="a_jump_events_8c_html_abd4862ca8ec198850ab4d4d48e4158fc"><div class="ttname"><a href="../../d9/d02/_jump_events_8c.html#abd4862ca8ec198850ab4d4d48e4158fc">JumpSoundEvent</a></div><div class="ttdeci">class JumpEventsBase extends PlayerSoundEventBase JumpSoundEvent()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_jump_events_8c_source.html#l00001">JumpEvents.c:33</a></div></div>
+<div class="ttc" id="a_jump_events_8c_html_af4c98ebe91383e7f901a6be04bad471b"><div class="ttname"><a href="../../d9/d02/_jump_events_8c.html#af4c98ebe91383e7f901a6be04bad471b">OnEnd</a></div><div class="ttdeci">override void OnEnd()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_jump_events_8c_source.html#l00053">JumpEvents.c:53</a></div></div>
+<div class="ttc" id="a_mind_states_8c_html_a1ddaacc332ae7266602be41f358a542e"><div class="ttname"><a href="../../d3/d06/_mind_states_8c.html#a1ddaacc332ae7266602be41f358a542e">CanPlay</a></div><div class="ttdeci">override bool CanPlay()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d06/_mind_states_8c_source.html#l00014">MindStates.c:14</a></div></div>
+<div class="ttc" id="a_player_sound_event_base_8c_html_a2f8cbb1a644e4997001af74fb86e1695"><div class="ttname"><a href="../../dd/d00/_player_sound_event_base_8c.html#a2f8cbb1a644e4997001af74fb86e1695">EPlayerSoundEventType</a></div><div class="ttdeci">EPlayerSoundEventType</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d00/_player_sound_event_base_8c_source.html#l00001">PlayerSoundEventBase.c:2</a></div></div>
+<div class="ttc" id="a_player_sound_event_base_8c_html_a54288b4389af442f91defeacc6262bdd"><div class="ttname"><a href="../../dd/d00/_player_sound_event_base_8c.html#a54288b4389af442f91defeacc6262bdd">m_HasPriorityOverTypes</a></div><div class="ttdeci">EPlayerSoundEventType m_HasPriorityOverTypes</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d00/_player_sound_event_base_8c_source.html#l00040">PlayerSoundEventBase.c:40</a></div></div>
+<div class="ttc" id="a_player_sound_manager_8c_html_a0fd8354912d290f45ba638113305af58"><div class="ttname"><a href="../../d2/d02/_player_sound_manager_8c.html#a0fd8354912d290f45ba638113305af58">eSoundHandlers</a></div><div class="ttdeci">eSoundHandlers</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_player_sound_manager_8c_source.html#l00004">PlayerSoundManager.c:5</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab9b3623a27a2268b037e3ee72acc8bfc" name="ab9b3623a27a2268b037e3ee72acc8bfc"></a>
@@ -396,7 +981,91 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00125">125</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  126</span>{</div>
+<div class="line"><span class="lineno">  127</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  128</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  129</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  130</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  131</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  132</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  133</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  134</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  138</span>  {</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  140</span>  }</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  144</span>  {</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  146</span>  }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  149</span>  {</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  151</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  152</span>  }</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  155</span>  {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  157</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  160</span>  }</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  163</span>  {</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  168</span>  {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  170</span>  }</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  173</span>  {</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  175</span>  }</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  180</span>  {</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  182</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  188</span>  }</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  191</span>  {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  193</span>  }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  196</span>  {</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  198</span>  }</div>
+<div class="line"><span class="lineno">  199</span>}</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  202</span>{</div>
+<div class="line"><span class="lineno">  203</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  204</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  205</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  206</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  207</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  208</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  209</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7b3266351c7452a10159372d3fe2b4af" name="a7b3266351c7452a10159372d3fe2b4af"></a>
@@ -419,7 +1088,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00081">81</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aac23c22dc2fdd1663403a6837d635517" name="aac23c22dc2fdd1663403a6837d635517"></a>
@@ -447,7 +1117,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00082">82</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   82</span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af86089df15116fdcd2d2fb25ed6d2119" name="af86089df15116fdcd2d2fb25ed6d2119"></a>
@@ -466,7 +1137,91 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00132">132</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  133</span>{</div>
+<div class="line"><span class="lineno">  134</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  135</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  136</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  137</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  138</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  139</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  140</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  141</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  151</span>  {</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  153</span>  }</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  156</span>  {</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  158</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  162</span>  {</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  167</span>  }</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  170</span>  {</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  172</span>  }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  175</span>  {</div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  177</span>  }</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  180</span>  {</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  182</span>  }</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  187</span>  {</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  189</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  190</span>  }</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  193</span>  {</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  195</span>  }</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  198</span>  {</div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  200</span>  }</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  203</span>  {</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  205</span>  }</div>
+<div class="line"><span class="lineno">  206</span>}</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  209</span>{</div>
+<div class="line"><span class="lineno">  210</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  211</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  212</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  213</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  214</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  215</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  216</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af38532525862791a1a90871a6b17282f" name="af38532525862791a1a90871a6b17282f"></a>
@@ -485,7 +1240,91 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00101">101</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  102</span>{</div>
+<div class="line"><span class="lineno">  103</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  104</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  105</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  106</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">  107</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  108</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">  109</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  114</span>  {</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  119</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  122</span>  }</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  125</span>  {</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  127</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  131</span>  {</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  133</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  139</span>  {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  141</span>  }</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  144</span>  {</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  146</span>  }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  149</span>  {</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  151</span>  }</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  156</span>  {</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  158</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  159</span>  }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  162</span>  {</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  164</span>  }</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  167</span>  {</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  169</span>  }</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  172</span>  {</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  174</span>  }</div>
+<div class="line"><span class="lineno">  175</span>}</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  178</span>{</div>
+<div class="line"><span class="lineno">  179</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  180</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  181</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  182</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  183</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  184</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  185</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6bba65cc38cdaed9e5f913f292574b2a" name="a6bba65cc38cdaed9e5f913f292574b2a"></a>
@@ -504,7 +1343,91 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00090">90</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   91</span>{</div>
+<div class="line"><span class="lineno">   92</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">   93</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">   95</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#a8be8205879e1a5afc5b6a40317946990">m_SoundVoiceAnimEventClassID</a>;</div>
+<div class="line"><span class="lineno">   96</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">   97</span>  <span class="keywordtype">string</span> <a class="code hl_variable" href="#aea42a479780faed6ef702bc01984a3d9">m_SoundSetNameRoot</a>;</div>
+<div class="line"><span class="lineno">   98</span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">   99</span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="#ae03f63c52aabd4a24ce55f72cb955e7f">m_Param</a>;</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a6bba65cc38cdaed9e5f913f292574b2a">~SoundEventBase</a>()</div>
+<div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>) <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>  <span class="comment">//obsolete function, now possible to set a param</span></div>
+<div class="line"><span class="lineno">  108</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#aa53f4cb57638c686a687f7bf4ed36ed5">IsSkipForControlled</a>()</div>
+<div class="line"><span class="lineno">  109</span>  {</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aecb6bf3c1ba25c28c4e74a76a155e488">m_SkipForControlledCharacter</a>;</div>
+<div class="line"><span class="lineno">  111</span>  }</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af38532525862791a1a90871a6b17282f">Tick</a>()</div>
+<div class="line"><span class="lineno">  114</span>  {</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  116</span>      <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  117</span>  }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a34d242cd529c350464cf12056830ade6">IsSoundCallbackExist</a>()</div>
+<div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  122</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a443a4e9b46aa9be812644d68515caade">IsDestroyRequested</a>()</div>
+<div class="line"><span class="lineno">  128</span>  {</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbf1a6c2f0af66eeeed760f4f9f32e39">m_RequestDestroy</a>;</div>
+<div class="line"><span class="lineno">  130</span>  }</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#a56863ab8e5c2987aacd4cb4e510340f8">CanPlay</a>()</div>
+<div class="line"><span class="lineno">  133</span>  {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  135</span>  }</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="#ab9b3623a27a2268b037e3ee72acc8bfc">Play</a>()</div>
+<div class="line"><span class="lineno">  138</span>  {</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  140</span>  }</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#ad056e5d88e1e4cefa9567e4b6f840ced">OnPlay</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af86089df15116fdcd2d2fb25ed6d2119">Stop</a>()</div>
+<div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>)</div>
+<div class="line"><span class="lineno">  147</span>      <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>.<a class="code hl_function" href="../../d9/d02/class_abstract_wave.html#a8d88cd0db69c9438c8c7cd096ab564e1">Stop</a>();</div>
+<div class="line"><span class="lineno">  148</span>  }</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#ad5d4f6041384e3e7d6c06f91031b28ab">GetSoundEventID</a>()</div>
+<div class="line"><span class="lineno">  151</span>  {</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a70b4d873a188ec1c1cf110e668108020">m_ID</a>;</div>
+<div class="line"><span class="lineno">  153</span>  }</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>()</div>
+<div class="line"><span class="lineno">  156</span>  {</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a23cd83196cbe840c423d33e754dc9413">m_Type</a>;</div>
+<div class="line"><span class="lineno">  158</span>  }</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <a class="code hl_class" href="../../d9/d02/class_abstract_wave.html">AbstractWave</a> <a class="code hl_function" href="#a2d7349a4ff5c59bab66e6bf1bfda7161">GetSoundSetCallback</a>()</div>
+<div class="line"><span class="lineno">  161</span>  {</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a05b9afdb0407e8fc5d6b759763846fa7">m_SoundSetCallback</a>;</div>
+<div class="line"><span class="lineno">  163</span>  }</div>
+<div class="line"><span class="lineno">  164</span>}</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SoundEventHandler</a></div>
+<div class="line"><span class="lineno">  167</span>{</div>
+<div class="line"><span class="lineno">  168</span>  <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="#a97462f25f2f7b826847a9e6535101e01">GetSoundEventType</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  169</span>  <span class="comment">//void OnTick(float delta_time) {}</span></div>
+<div class="line"><span class="lineno">  170</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/d0c/_smpt_anim_meta_8c.html#a1298686b3cdfa075b18f24f6ede82d60">PlayRequest</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><span class="lineno">  171</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d5/d0b/_player_sound_event_handler_8c.html#a69457de8322c541f2671e4df95fe891b">PlayRequestEx</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a> <span class="keywordtype">id</span>, <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sent_from_server</a> = <span class="keyword">false</span>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> = 0) { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
+<div class="line"><span class="lineno">  172</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#aa7f9de653cd121fb2608891ce7dc22fe">GetCurrentStateEventID</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  173</span>  <span class="keywordtype">int</span> <a class="code hl_function" href="../../d5/d04/_infected_sound_event_handler_8c.html#ab514941aa875ea2e8db5576cb39b077f">GetCurrentStateEventType</a>() { <span class="keywordflow">return</span> -1; }</div>
+<div class="line"><span class="lineno">  174</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -537,6 +1460,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00087">87</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d00/_player_sound_event_base_8c_source.html#l00127">InitEx()</a>.</p>
 
 </div>
 </div>
@@ -586,6 +1511,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00080">80</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d0d/_stamina_events_8c_source.html#l00015">PlayerSoundEventBase::OnPlay()</a>, <a class="el" href="../../dd/d00/_player_sound_event_base_8c_source.html#l00093">OnTick()</a>, <a class="el" href="../../d3/d06/_infected_sound_event_base_8c_source.html#l00051">Play()</a>, <a class="el" href="../../d3/d06/_infected_sound_event_base_8c_source.html#l00045">PosUpdate()</a>, <a class="el" href="../../dd/d00/_player_sound_event_base_8c_source.html#l00141">SendEvent()</a>, <a class="el" href="../../d3/d06/_infected_sound_event_base_8c_source.html#l00025">SoftStop()</a>, <a class="el" href="../../d3/d06/_infected_sound_event_base_8c_source.html#l00034">Stop()</a>, <a class="el" href="../../d3/d06/_infected_sound_event_base_8c_source.html#l00015">~InfectedSoundEventBase()</a>, and <a class="el" href="../../dd/d00/_player_sound_event_base_8c_source.html#l00063">~PlayerSoundEventBase()</a>.</p>
+
 </div>
 </div>
 <a id="aea42a479780faed6ef702bc01984a3d9" name="aea42a479780faed6ef702bc01984a3d9"></a>
@@ -602,6 +1529,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00085">85</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d3/d06/_mind_states_8c_source.html#l00063">MindStateSoundEventBase::AlertedMoveSoundEvent()</a>, <a class="el" href="../../d3/d06/_mind_states_8c_source.html#l00023">MindStateSoundEventBase::CalmMoveSoundEvent()</a>, <a class="el" href="../../d3/d06/_mind_states_8c_source.html#l00034">CalmMoveSoundEvent()</a>, <a class="el" href="../../d3/d06/_mind_states_8c_source.html#l00014">CanPlay()</a>, <a class="el" href="../../d3/d06/_mind_states_8c_source.html#l00043">MindStateSoundEventBase::ChaseMoveSoundEvent()</a>, <a class="el" href="../../d3/d06/_mind_states_8c_source.html#l00054">ChaseMoveSoundEvent()</a>, and <a class="el" href="../../d3/d06/_infected_sound_event_base_8c_source.html#l00051">Play()</a>.</p>
+
 </div>
 </div>
 <a id="a8be8205879e1a5afc5b6a40317946990" name="a8be8205879e1a5afc5b6a40317946990"></a>
@@ -617,6 +1546,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d0c/_sound_events_8c_source.html#l00083">83</a> of file <a class="el" href="../../d7/d0c/_sound_events_8c_source.html">SoundEvents.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d07/_drowning_events_8c_source.html#l00023">DrowningEvents()</a>, <a class="el" href="../../d4/d02/_hold_breath_events_8c_source.html#l00035">HoldBreathSoundEventBase::ExhaustedBreathSoundEvent()</a>, <a class="el" href="../../d4/d02/_hold_breath_events_8c_source.html#l00051">ExhaustedBreathSoundEvent()</a>, <a class="el" href="../../d5/d0b/_symptom_events_8c_source.html#l00045">SymptomSoundEventBase::FatigueSoundEvent()</a>, <a class="el" href="../../dd/d00/_player_sound_event_base_8c_source.html#l00069">GetSoundVoiceAnimEventClassID()</a>, <a class="el" href="../../d9/d02/_jump_events_8c_source.html#l00034">HasPriorityOverCurrent()</a>, <a class="el" href="../../d4/d02/_hold_breath_events_8c_source.html#l00019">HoldBreathSoundEventBase()</a>, <a class="el" href="../../db/d00/_heat_comfort_events_8c_source.html#l00027">HeatComfortEventsBase::HotSoundEvent()</a>, <a class="el" href="../../d1/d00/_injury_events_8c_source.html#l00044">InjuryMediumSoundEvent()</a>, <a class="el" href="../../d5/d0b/_symptom_events_8c_source.html#l00026">SymptomSoundEventBase::LaugherSoundEvent()</a>, <a class="el" href="../../d5/d0b/_symptom_events_8c_source.html#l00036">LaugherSoundEvent()</a>, <a class="el" href="../../d4/d05/_melee_attack_8c_source.html#l00032">MeleeAttackSoundEvents()</a>, <a class="el" href="../../db/d05/_misc_events_8c_source.html#l00003">PlayerSoundEventBase::PickupHeavySoundEvent()</a>, <a class="el" href="../../db/d05/_misc_events_8c_source.html#l00015">PickupHeavySoundEvent()</a>, <a class="el" href="../../dd/d00/_player_sound_event_base_8c_source.html#l00164">Play()</a>, <a class="el" href="../../d8/d0d/_stamina_events_8c_source.html#l00057">StaminaSoundEventBase::StaminaDownHeavy()</a>, <a class="el" href="../../d8/d0d/_stamina_events_8c_source.html#l00067">StaminaDownHeavy()</a>, <a class="el" href="../../d8/d0d/_stamina_events_8c_source.html#l00138">StaminaLowFilterBase::StaminaLowFilterLower()</a>, <a class="el" href="../../d8/d0d/_stamina_events_8c_source.html#l00120">StaminaLowFilterBase::StaminaLowFilterUpper()</a>, <a class="el" href="../../d8/d0d/_stamina_events_8c_source.html#l00130">StaminaLowFilterUpper()</a>, <a class="el" href="../../d8/d0d/_stamina_events_8c_source.html#l00075">StaminaSoundEventBase::StaminaUpLight()</a>, <a class="el" href="../../d8/d0d/_stamina_events_8c_source.html#l00085">StaminaUpLight()</a>, and <a class="el" href="../../d5/d0b/_symptom_events_8c_source.html#l00018">SymptomSoundEventBase()</a>.</p>
 
 </div>
 </div>

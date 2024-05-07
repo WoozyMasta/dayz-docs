@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -213,6 +210,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00538">538</a> of file <a class="el" href="../../d2/d05/_action_input_8c_source.html">ActionInput.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  539</span>  {</div>
+<div class="line"><span class="lineno">  540</span>    <a class="code hl_variable" href="../../dc/d07/class_action_input.html#aa19dfee22e7b4072581cbad85f265ba7">m_DetectFromTarget</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  541</span>  }</div>
+<div class="ttc" id="aclass_action_input_html_aa19dfee22e7b4072581cbad85f265ba7"><div class="ttname"><a href="../../dc/d07/class_action_input.html#aa19dfee22e7b4072581cbad85f265ba7">ActionInput::m_DetectFromTarget</a></div><div class="ttdeci">bool m_DetectFromTarget</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00025">ActionInput.c:25</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00025">ActionInput::m_DetectFromTarget</a>.</p>
 
 </div>
 </div>
@@ -241,6 +244,41 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00550">550</a> of file <a class="el" href="../../d2/d05/_action_input_8c_source.html">ActionInput.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  551</span>  {</div>
+<div class="line"><span class="lineno">  552</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../dc/d07/class_action_input.html#adb007ef2aa03b9aa415c7cb223832d4a">ForceActionCheck</a>(<a class="code hl_variable" href="../../dc/d07/class_action_input.html#ae228e1961fc33a3827ceb9252d5f8bd1">m_Player</a>))</div>
+<div class="line"><span class="lineno">  553</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dc/d07/class_action_input.html#a9ee7054fa6521ef8a72a48fbcb07c275">m_ForcedActionData</a>.m_Action;</div>
+<div class="line"><span class="lineno">  554</span> </div>
+<div class="line"><span class="lineno">  555</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dc/d07/class_action_input.html#aa128f18e3ec6441fc6bc30014451c6dc">m_MainItem</a>)</div>
+<div class="line"><span class="lineno">  556</span>    {</div>
+<div class="line"><span class="lineno">  557</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ActionBase_Basic&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">possible_actions</a>;</div>
+<div class="line"><span class="lineno">  558</span>      ActionBase <a class="code hl_class" href="../../db/d06/class_param3.html">action</a>;</div>
+<div class="line"><span class="lineno">  559</span> </div>
+<div class="line"><span class="lineno">  560</span>      <a class="code hl_variable" href="../../dc/d07/class_action_input.html#aa128f18e3ec6441fc6bc30014451c6dc">m_MainItem</a>.GetActions(this.<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>(), possible_actions);</div>
+<div class="line"><span class="lineno">  561</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">possible_actions</a>)</div>
+<div class="line"><span class="lineno">  562</span>      {</div>
+<div class="line"><span class="lineno">  563</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">possible_actions</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  564</span>        {</div>
+<div class="line"><span class="lineno">  565</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">action</a> = ActionBase.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">possible_actions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>));</div>
+<div class="line"><span class="lineno">  566</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action</a>.Can(<a class="code hl_variable" href="../../dc/d07/class_action_input.html#ae228e1961fc33a3827ceb9252d5f8bd1">m_Player</a>, <a class="code hl_variable" href="../../dc/d07/class_action_input.html#ad4a8275171fe1296becdc46c81da9dc7">m_Target</a>, <a class="code hl_variable" href="../../dc/d07/class_action_input.html#aa128f18e3ec6441fc6bc30014451c6dc">m_MainItem</a>, <a class="code hl_variable" href="../../dc/d07/class_action_input.html#a733a6395347eebefdcd92db5eff1a9c6">m_ConditionMask</a>))</div>
+<div class="line"><span class="lineno">  567</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">action</a>;</div>
+<div class="line"><span class="lineno">  568</span>        }</div>
+<div class="line"><span class="lineno">  569</span>      }</div>
+<div class="line"><span class="lineno">  570</span> </div>
+<div class="line"><span class="lineno">  571</span>    }</div>
+<div class="line"><span class="lineno">  572</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  573</span>  }</div>
+<div class="ttc" id="a_json_data_contaminated_area_8c_html_a651a3c9de2e16ff0deca8d09dedbda58"><div class="ttname"><a href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a></div><div class="ttdeci">string Type</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">JsonDataContaminatedArea.c:11</a></div></div>
+<div class="ttc" id="aclass_action_input_html_a733a6395347eebefdcd92db5eff1a9c6"><div class="ttname"><a href="../../dc/d07/class_action_input.html#a733a6395347eebefdcd92db5eff1a9c6">ActionInput::m_ConditionMask</a></div><div class="ttdeci">int m_ConditionMask</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00039">ActionInput.c:39</a></div></div>
+<div class="ttc" id="aclass_action_input_html_a9ee7054fa6521ef8a72a48fbcb07c275"><div class="ttname"><a href="../../dc/d07/class_action_input.html#a9ee7054fa6521ef8a72a48fbcb07c275">ActionInput::m_ForcedActionData</a></div><div class="ttdeci">ref ForcedActionData m_ForcedActionData</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00035">ActionInput.c:35</a></div></div>
+<div class="ttc" id="aclass_action_input_html_aa128f18e3ec6441fc6bc30014451c6dc"><div class="ttname"><a href="../../dc/d07/class_action_input.html#aa128f18e3ec6441fc6bc30014451c6dc">ActionInput::m_MainItem</a></div><div class="ttdeci">ItemBase m_MainItem</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00038">ActionInput.c:38</a></div></div>
+<div class="ttc" id="aclass_action_input_html_ad4a8275171fe1296becdc46c81da9dc7"><div class="ttname"><a href="../../dc/d07/class_action_input.html#ad4a8275171fe1296becdc46c81da9dc7">ActionInput::m_Target</a></div><div class="ttdeci">ref ActionTarget m_Target</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00037">ActionInput.c:37</a></div></div>
+<div class="ttc" id="aclass_action_input_html_adb007ef2aa03b9aa415c7cb223832d4a"><div class="ttname"><a href="../../dc/d07/class_action_input.html#adb007ef2aa03b9aa415c7cb223832d4a">ActionInput::ForceActionCheck</a></div><div class="ttdeci">bool ForceActionCheck(PlayerBase player)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00247">ActionInput.c:247</a></div></div>
+<div class="ttc" id="aclass_action_input_html_ae228e1961fc33a3827ceb9252d5f8bd1"><div class="ttname"><a href="../../dc/d07/class_action_input.html#ae228e1961fc33a3827ceb9252d5f8bd1">ActionInput::m_Player</a></div><div class="ttdeci">PlayerBase m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00031">ActionInput.c:31</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00247">ActionInput::ForceActionCheck()</a>, <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00039">ActionInput::m_ConditionMask</a>, <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00035">ActionInput::m_ForcedActionData</a>, <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00038">ActionInput::m_MainItem</a>, <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00031">ActionInput::m_Player</a>, <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00037">ActionInput::m_Target</a>, and <a class="el" href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">Type</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00575">GetPossibleAction()</a>.</p>
 
 </div>
 </div>
@@ -268,6 +306,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00575">575</a> of file <a class="el" href="../../d2/d05/_action_input_8c_source.html">ActionInput.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  576</span>  {</div>
+<div class="line"><span class="lineno">  577</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#aff6a4daa950d5bf4f1c2c60ed78603c8">GetAction</a>();</div>
+<div class="line"><span class="lineno">  578</span>  }</div>
+<div class="ttc" id="aclass_no_indication_action_input_base_html_aff6a4daa950d5bf4f1c2c60ed78603c8"><div class="ttname"><a href="#aff6a4daa950d5bf4f1c2c60ed78603c8">NoIndicationActionInputBase::GetAction</a></div><div class="ttdeci">override ActionBase GetAction()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00550">ActionInput.c:550</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00550">GetAction()</a>.</p>
 
 </div>
 </div>
@@ -309,6 +353,13 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00543">543</a> of file <a class="el" href="../../d2/d05/_action_input_8c_source.html">ActionInput.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  544</span>  {</div>
+<div class="line"><span class="lineno">  545</span>    <a class="code hl_variable" href="../../dc/d07/class_action_input.html#aa128f18e3ec6441fc6bc30014451c6dc">m_MainItem</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>;</div>
+<div class="line"><span class="lineno">  546</span>    <a class="code hl_variable" href="../../dc/d07/class_action_input.html#ad4a8275171fe1296becdc46c81da9dc7">m_Target</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>;</div>
+<div class="line"><span class="lineno">  547</span>    <a class="code hl_variable" href="../../dc/d07/class_action_input.html#a733a6395347eebefdcd92db5eff1a9c6">m_ConditionMask</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_condition_mask</a>;</div>
+<div class="line"><span class="lineno">  548</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00039">ActionInput::m_ConditionMask</a>, <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00038">ActionInput::m_MainItem</a>, and <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00037">ActionInput::m_Target</a>.</p>
 
 </div>
 </div>

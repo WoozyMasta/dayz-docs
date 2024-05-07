@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -166,6 +163,31 @@ Variables</h2></td></tr>
 <p>pre-init arrays</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00043">43</a> of file <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html">MissionLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>  {</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_variable" href="#a9ad1d5fe009deb8a633eeba4dd97fd16">m_MissionData</a> = <a class="code hl_class" href="../../d6/d02/class_json_mission_loader_data.html">JsonMissionLoaderData</a>.<a class="code hl_function" href="../../d6/d02/class_json_mission_loader_data.html#a6dd0026861832a465a5d2fd8158824d3">GetData</a>();</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_mission_loader.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">TextListboxWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;wgt_lst_missions&quot;</span>));</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_variable" href="#ac9bb0d65d3bc1d28b2ea04994d4566a5">m_WgtBtnMsnPlay</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;wgt_btn_mission_play&quot;</span>));</div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="#ad2aeb6414933e348ee034053f779dcc5">m_WgtBtnMsnClose</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;wgt_btn_mission_close&quot;</span>));</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>: <a class="code hl_variable" href="#a9ad1d5fe009deb8a633eeba4dd97fd16">m_MissionData</a>.MissionPaths)</div>
+<div class="line"><span class="lineno">   54</span>      <a class="code hl_variable" href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a>.AddItem(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, 0);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">   57</span>  }</div>
+<div class="ttc" id="a_mission_loader_8c_html_a9ad1d5fe009deb8a633eeba4dd97fd16"><div class="ttname"><a href="#a9ad1d5fe009deb8a633eeba4dd97fd16">m_MissionData</a></div><div class="ttdeci">ref JsonMissionLoaderData m_MissionData</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_mission_loader_8c_source.html#l00041">MissionLoader.c:41</a></div></div>
+<div class="ttc" id="a_mission_loader_8c_html_ac9bb0d65d3bc1d28b2ea04994d4566a5"><div class="ttname"><a href="#ac9bb0d65d3bc1d28b2ea04994d4566a5">m_WgtBtnMsnPlay</a></div><div class="ttdeci">ButtonWidget m_WgtBtnMsnPlay</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_mission_loader_8c_source.html#l00038">MissionLoader.c:38</a></div></div>
+<div class="ttc" id="a_mission_loader_8c_html_ad2aeb6414933e348ee034053f779dcc5"><div class="ttname"><a href="#ad2aeb6414933e348ee034053f779dcc5">m_WgtBtnMsnClose</a></div><div class="ttdeci">ButtonWidget m_WgtBtnMsnClose</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_mission_loader_8c_source.html#l00039">MissionLoader.c:39</a></div></div>
+<div class="ttc" id="a_mission_loader_8c_html_afb98f2bdc499288251f633ad34e48b54"><div class="ttname"><a href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a></div><div class="ttdeci">class JsonMissionLoaderData m_WgtLstMsnList</div></div>
+<div class="ttc" id="a_option_selector_multistate_8c_html_a46c20eb2a26abeb1e934cd66e1dd6484"><div class="ttname"><a href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a></div><div class="ttdeci">string path</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">OptionSelectorMultistate.c:121</a></div></div>
+<div class="ttc" id="aclass_json_mission_loader_data_html"><div class="ttname"><a href="../../d6/d02/class_json_mission_loader_data.html">JsonMissionLoaderData</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_mission_loader_8c_source.html#l00001">MissionLoader.c:2</a></div></div>
+<div class="ttc" id="aclass_json_mission_loader_data_html_a6dd0026861832a465a5d2fd8158824d3"><div class="ttname"><a href="../../d6/d02/class_json_mission_loader_data.html#a6dd0026861832a465a5d2fd8158824d3">JsonMissionLoaderData::GetData</a></div><div class="ttdeci">static JsonMissionLoaderData GetData()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_mission_loader_8c_source.html#l00005">MissionLoader.c:5</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00005">JsonMissionLoaderData::GetData()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00041">m_MissionData</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00039">m_WgtBtnMsnClose</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00038">m_WgtBtnMsnPlay</a>, <a class="el" href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a>, and <a class="el" href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">path</a>.</p>
 
 </div>
 </div>
@@ -207,6 +229,29 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00059">59</a> of file <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html">MissionLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>  {</div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#ad2aeb6414933e348ee034053f779dcc5">m_WgtBtnMsnClose</a>)</div>
+<div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#ac9bb0d65d3bc1d28b2ea04994d4566a5">m_WgtBtnMsnPlay</a>)</div>
+<div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">rowIndex</a> = <a class="code hl_variable" href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a>.GetSelectedRow();</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">missionPath</a> = <a class="code hl_variable" href="#a9ad1d5fe009deb8a633eeba4dd97fd16">m_MissionData</a>.MissionPaths.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">rowIndex</a>);</div>
+<div class="line"><span class="lineno">   73</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().PlayMission(<a class="code hl_class" href="../../db/d06/class_param3.html">missionPath</a>);</div>
+<div class="line"><span class="lineno">   74</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="a_icon_8c_html_acd41c12fe81446bff0920670641367de"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a></div><div class="ttdeci">Icon y</div></div>
+<div class="ttc" id="a_item_base_8c_html_a604074e02bcee1dc8a5ab6bdbd2e2e84"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a></div><div class="ttdeci">void Close()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00041">m_MissionData</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00039">m_WgtBtnMsnClose</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00038">m_WgtBtnMsnPlay</a>, <a class="el" href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -248,6 +293,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00080">80</a> of file <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html">MissionLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>  {</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a>)</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">rowIndex</a> = <a class="code hl_variable" href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a>.GetSelectedRow();</div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">missionPath</a> = <a class="code hl_variable" href="#a9ad1d5fe009deb8a633eeba4dd97fd16">m_MissionData</a>.MissionPaths.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">rowIndex</a>);</div>
+<div class="line"><span class="lineno">   88</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().PlayMission(<a class="code hl_class" href="../../db/d06/class_param3.html">missionPath</a>);</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   91</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00041">m_MissionData</a>, <a class="el" href="#afb98f2bdc499288251f633ad34e48b54">m_WgtLstMsnList</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -289,6 +347,21 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00093">93</a> of file <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html">MissionLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>  {</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnKeyDown(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">key</a>);</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">key</a>)</div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../de/d08/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a>.KC_ESCAPE:</div>
+<div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  101</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+<div class="ttc" id="agroup___keyboard_html_ga7885f47644a0388f981f416fa20389b2"><div class="ttname"><a href="../../de/d08/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a></div><div class="ttdeci">KeyCode</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d04/_en_system_8c_source.html#l00156">EnSystem.c:157</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close()</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -339,6 +412,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00041">41</a> of file <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html">MissionLoader.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00043">Init()</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00059">OnClick()</a>, and <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00080">OnDoubleClick()</a>.</p>
+
 </div>
 </div>
 <a id="ad2aeb6414933e348ee034053f779dcc5" name="ad2aeb6414933e348ee034053f779dcc5"></a>
@@ -362,6 +437,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00039">39</a> of file <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html">MissionLoader.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00043">Init()</a>, and <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00059">OnClick()</a>.</p>
 
 </div>
 </div>
@@ -387,6 +464,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00038">38</a> of file <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html">MissionLoader.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00043">Init()</a>, and <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00059">OnClick()</a>.</p>
+
 </div>
 </div>
 <a id="afb98f2bdc499288251f633ad34e48b54" name="afb98f2bdc499288251f633ad34e48b54"></a>
@@ -400,6 +479,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00043">Init()</a>, <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00059">OnClick()</a>, and <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00080">OnDoubleClick()</a>.</p>
 
 </div>
 </div>

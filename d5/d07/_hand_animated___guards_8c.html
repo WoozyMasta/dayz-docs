@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -172,6 +169,44 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00137">137</a> of file <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html">HandAnimated_Guards.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>{</div>
+<div class="line"><span class="lineno">  139</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsInTransport())</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] SlotToAnimType - old_src=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">old_src</a>) + <span class="stringliteral">&quot; new_src=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">new_src</a>) + <span class="stringliteral">&quot; old_dst=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">old_dst</a>) + <span class="stringliteral">&quot; new_dst=&quot;</span> + <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>.<a class="code hl_function" href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">DumpToStringNullSafe</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">new_dst</a>));</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">old_src</a>.GetItem().GetHierarchyRootPlayer() == <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">new_src</a>.GetItem().GetHierarchyRootPlayer() == <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">animType1</a> = <a class="code hl_function" href="#a9641120be0ec933c3dfe2e4315ed4a94">SlotToAnimType</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">old_src</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">old_dst</a>);</div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">animType2</a> = <a class="code hl_function" href="#a9641120be0ec933c3dfe2e4315ed4a94">SlotToAnimType</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_src</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_dst</a>);</div>
+<div class="line"><span class="lineno">  148</span>    <span class="comment">//Print(&quot;animType1 = &quot; + animType1);</span></div>
+<div class="line"><span class="lineno">  149</span>    <span class="comment">//Print(&quot;animType2 = &quot; + animType2);</span></div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">animType1</a> != -1 &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">animType2</a> != -1)</div>
+<div class="line"><span class="lineno">  151</span>    {</div>
+<div class="line"><span class="lineno">  152</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] SelectAnimationOfForceSwapInHands guard - selected animType1=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">animType1</a> + <span class="stringliteral">&quot; animType2=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">animType2</a> + <span class="stringliteral">&quot; for old_item=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">old_src</a>.GetItem() + <span class="stringliteral">&quot; for new_item=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">new_src</a>.GetItem());</div>
+<div class="line"><span class="lineno">  153</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+<div class="line"><span class="lineno">  155</span>    <span class="comment">/*else if (animType1 != -1 || animType2 != -1) //HACK</span></div>
+<div class="line"><span class="lineno">  156</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">  157</span><span class="comment">      animType1 = -1;</span></div>
+<div class="line"><span class="lineno">  158</span><span class="comment">      animType2 = -1;</span></div>
+<div class="line"><span class="lineno">  159</span><span class="comment">      return false;</span></div>
+<div class="line"><span class="lineno">  160</span><span class="comment">      }*/</span></div>
+<div class="line"><span class="lineno">  161</span>  }</div>
+<div class="line"><span class="lineno">  162</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] SelectAnimationOfForceSwapInHands - no animation&quot;</span>);</div>
+<div class="line"><span class="lineno">  163</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  164</span>}</div>
+<div class="ttc" id="a_hand_animated___guards_8c_html_a9641120be0ec933c3dfe2e4315ed4a94"><div class="ttname"><a href="#a9641120be0ec933c3dfe2e4315ed4a94">SlotToAnimType</a></div><div class="ttdeci">int SlotToAnimType(notnull Man player, notnull InventoryLocation src, InventoryLocation dst=null)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d07/_hand_animated___guards_8c_source.html#l00001">HandAnimated_Guards.c:1</a></div></div>
+<div class="ttc" id="a_hand_f_s_m_8c_html_a4d1ced2805a0b33fc2d7a5ae1300b53b"><div class="ttname"><a href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a></div><div class="ttdeci">void hndDebugPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">HandFSM.c:1</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html_a1f3b481a816f2bae9fc880483ffca408"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html#a1f3b481a816f2bae9fc880483ffca408">InventoryLocation::DumpToStringNullSafe</a></div><div class="ttdeci">static string DumpToStringNullSafe(InventoryLocation loc)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00218">InventoryLocation.c:218</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a8e070df24bcb6afaf456af7ba270294a"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">LogManager::IsInventoryHFSMLogEnable</a></div><div class="ttdeci">static bool IsInventoryHFSMLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">Debug.c:749</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d02/_inventory_location_8c_source.html#l00218">InventoryLocation::DumpToStringNullSafe()</a>, <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, and <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00001">SlotToAnimType()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00230">HandGuardBase::ProcessSwapEvent()</a>.</p>
 
 </div>
 </div>
@@ -205,6 +240,26 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00119">119</a> of file <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html">HandAnimated_Guards.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>{</div>
+<div class="line"><span class="lineno">  121</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsInTransport())</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetItem().GetHierarchyRootPlayer() == <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  125</span>  {</div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">animType</a> = <a class="code hl_function" href="#a9641120be0ec933c3dfe2e4315ed4a94">SlotToAnimType</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>);</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">animType</a> != -1)</div>
+<div class="line"><span class="lineno">  128</span>    {</div>
+<div class="line"><span class="lineno">  129</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] SelectAnimationOfMoveFromHands guard - selected animType=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">animType</a> + <span class="stringliteral">&quot; for item=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetItem());</div>
+<div class="line"><span class="lineno">  130</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  131</span>    }</div>
+<div class="line"><span class="lineno">  132</span>  }</div>
+<div class="line"><span class="lineno">  133</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] SelectAnimationOfMoveFromHands - no animation&quot;</span>);</div>
+<div class="line"><span class="lineno">  134</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  135</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, and <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00001">SlotToAnimType()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00192">HandGuardBase::GuardCondition()</a>.</p>
 
 </div>
 </div>
@@ -238,6 +293,29 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00099">99</a> of file <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html">HandAnimated_Guards.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{</div>
+<div class="line"><span class="lineno">  101</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.IsInTransport())</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  103</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.GROUND)</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetItem().GetHierarchyRootPlayer() == <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  107</span>  {</div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">animType</a> = <a class="code hl_function" href="#a9641120be0ec933c3dfe2e4315ed4a94">SlotToAnimType</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>);</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">animType</a> != -1)</div>
+<div class="line"><span class="lineno">  110</span>    {</div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] SelectAnimationOfTakeToHands - selected animType=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">animType</a> + <span class="stringliteral">&quot; for item=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetItem());</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+<div class="line"><span class="lineno">  115</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>()) <a class="code hl_function" href="../../d5/d0b/_hand_f_s_m_8c.html#a4d1ced2805a0b33fc2d7a5ae1300b53b">hndDebugPrint</a>(<span class="stringliteral">&quot;[hndfsm] SelectAnimationOfTakeToHands - no animation&quot;</span>);</div>
+<div class="line"><span class="lineno">  116</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  117</span>}</div>
+<div class="ttc" id="a_inventory_location_8c_html_ad09049fb2b99c763369bfe6228aa81b3"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a></div><div class="ttdeci">InventoryLocationType</div><div class="ttdoc">types of Inventory Location</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00003">InventoryLocation.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_hand_f_s_m_8c_source.html#l00001">hndDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, and <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00001">SlotToAnimType()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00171">HandGuardBase::GuardCondition()</a>.</p>
 
 </div>
 </div>
@@ -266,6 +344,107 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00001">1</a> of file <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html">HandAnimated_Guards.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    2</span>{</div>
+<div class="line"><span class="lineno">    3</span>  <span class="comment">//Print(&quot;src.GetType() &quot; + src.GetType());</span></div>
+<div class="line"><span class="lineno">    4</span>  <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">    5</span>  <span class="comment">//InventoryLocation invloc2 = new InventoryLocation;</span></div>
+<div class="line"><span class="lineno">    6</span> </div>
+<div class="line"><span class="lineno">    7</span>  <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>.GetParent() &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>.GetParent().GetHierarchyRootPlayer()) || (<a class="code hl_class" href="../../db/d06/class_param3.html">src</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetParent() &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetParent().GetHierarchyRootPlayer()))</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a> &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.ATTACHMENT || <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.CARGO))</div>
+<div class="line"><span class="lineno">   11</span>  {</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.Copy(<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>);</div>
+<div class="line"><span class="lineno">   13</span>    <span class="comment">//invloc2.Copy(src);</span></div>
+<div class="line"><span class="lineno">   14</span>  }</div>
+<div class="line"><span class="lineno">   15</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.ATTACHMENT || <a class="code hl_class" href="../../db/d06/class_param3.html">src</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.CARGO)</div>
+<div class="line"><span class="lineno">   16</span>  {</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.Copy(<a class="code hl_class" href="../../db/d06/class_param3.html">src</a>);</div>
+<div class="line"><span class="lineno">   18</span>    <span class="comment">//invloc2.Copy(dst);</span></div>
+<div class="line"><span class="lineno">   19</span>  }</div>
+<div class="line"><span class="lineno">   20</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>  <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">val</a> = -1;</div>
+<div class="line"><span class="lineno">   24</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().GetInventoryHandAnimation(<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">val</a>))</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">val</a>;</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>  <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.ATTACHMENT <span class="comment">/*|| src.GetType() == InventoryLocationType.HANDS*/</span>)</div>
+<div class="line"><span class="lineno">   28</span>  {</div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">//return WeaponHideShowTypes.HIDESHOW_SLOT_KNIFEBACK;</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetSlot())</div>
+<div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.SHOULDER:</div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().IsWeapon())</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_RFLLEFTBACK;</div>
+<div class="line"><span class="lineno">   36</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().IsOneHandedBehaviour())</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_1HDLEFTBACK;</div>
+<div class="line"><span class="lineno">   38</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_2HDLEFTBACK;</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.MELEE:</div>
+<div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().IsWeapon())</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_RFLRIGHTBACK;</div>
+<div class="line"><span class="lineno">   44</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().IsOneHandedBehaviour())</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_1HDRIGHTBACK;</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_2HDRIGHTBACK;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.PISTOL:</div>
+<div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">parent_item</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetParent(); <span class="comment">// belt</span></div>
+<div class="line"><span class="lineno">   51</span>      Man <a class="code hl_class" href="../../db/d06/class_param3.html">owner</a>;</div>
+<div class="line"><span class="lineno">   52</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">parent_item</a>)</div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">owner</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">parent_item</a>.GetHierarchyRootPlayer(); <span class="comment">// player</span></div>
+<div class="line"><span class="lineno">   54</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">owner</a>)</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item1</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">owner</a>.GetInventory().FindAttachment(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.HIPS);</div>
+<div class="line"><span class="lineno">   58</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">parent_item</a>.GetHierarchyParent();</div>
+<div class="line"><span class="lineno">   59</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">owner</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">item1</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">item2</a>) <span class="comment">// is the pistol in a belt holster?</span></div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_PISTOLBELT;</div>
+<div class="line"><span class="lineno">   61</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_PISTOLCHEST;</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.KNIFE:</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_KNIFEBACK;</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">/*case InventorySlots.VEST:</span></div>
+<div class="line"><span class="lineno">   67</span><span class="comment">      case InventorySlots.FEET:</span></div>
+<div class="line"><span class="lineno">   68</span><span class="comment">      case InventorySlots.BODY:</span></div>
+<div class="line"><span class="lineno">   69</span><span class="comment">      case InventorySlots.LEGS:</span></div>
+<div class="line"><span class="lineno">   70</span><span class="comment">      case InventorySlots.BACK:</span></div>
+<div class="line"><span class="lineno">   71</span><span class="comment">      case InventorySlots.HIPS:</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">      case InventorySlots.HEADGEAR:</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">      return WeaponHideShowTypes.HIDESHOW_SLOT_INVENTORY;*/</span></div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   76</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_INVENTORY;</div>
+<div class="line"><span class="lineno">   77</span>      <span class="comment">//Print(&quot;[hndfsm] SlotToAnimType -  not animated slot in src_loc=&quot; + InventoryLocation.DumpToStringNullSafe(invloc1));</span></div>
+<div class="line"><span class="lineno">   78</span>    };</div>
+<div class="line"><span class="lineno">   79</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   80</span>    <span class="comment">//if (InventorySlots.GetSlotIdFromString(&quot;Pistol&quot;))</span></div>
+<div class="line"><span class="lineno">   81</span>  }</div>
+<div class="line"><span class="lineno">   82</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.CARGO)</div>
+<div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem() &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().GetInventory().HasInventorySlot(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.SHOULDER) || <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().GetInventory().HasInventorySlot(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.MELEE)))</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      <span class="comment">//Print(&quot;Special inventory anim&quot;);</span></div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().IsWeapon())</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_RFLRIGHTBACK;</div>
+<div class="line"><span class="lineno">   89</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">invloc1</a>.GetItem().IsOneHandedBehaviour())</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_1HDRIGHTBACK;</div>
+<div class="line"><span class="lineno">   91</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_2HDRIGHTBACK;</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span>    <span class="comment">//Print(&quot;Default inventory anim&quot;);</span></div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a>.HIDESHOW_SLOT_INVENTORY; <span class="comment">//default item animation</span></div>
+<div class="line"><span class="lineno">   95</span>  }</div>
+<div class="line"><span class="lineno">   96</span>  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   97</span>}</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html">InventorySlots</a></div><div class="ttdoc">provides access to slot configuration</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/_inventory_slots_8c_source.html#l00005">InventorySlots.c:6</a></div></div>
+<div class="ttc" id="ahuman_8c_html_a6b15728a36ee492cf908f655fd1e7150"><div class="ttname"><a href="../../d4/d0e/human_8c.html#a6b15728a36ee492cf908f655fd1e7150">WeaponHideShowTypes</a></div><div class="ttdeci">WeaponHideShowTypes</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00909">human.c:910</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00137">SelectAnimationOfForceSwapInHands()</a>, <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00119">SelectAnimationOfMoveFromHands()</a>, and <a class="el" href="../../d5/d07/_hand_animated___guards_8c_source.html#l00099">SelectAnimationOfTakeToHands()</a>.</p>
 
 </div>
 </div>

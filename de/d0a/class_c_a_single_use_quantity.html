@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -164,6 +161,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00007">7</a> of file <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html">CASingleUseQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>  {</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_variable" href="#ad646fa99b8ce84dace3c26d391b163d7">m_QuantityUsedPerAction</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_used_per_action</a>;</div>
+<div class="line"><span class="lineno">   10</span>  }</div>
+<div class="ttc" id="aclass_c_a_single_use_quantity_html_ad646fa99b8ce84dace3c26d391b163d7"><div class="ttname"><a href="#ad646fa99b8ce84dace3c26d391b163d7">CASingleUseQuantity::m_QuantityUsedPerAction</a></div><div class="ttdeci">float m_QuantityUsedPerAction</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00003">CASingleUseQuantity.c:3</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00003">m_QuantityUsedPerAction</a>.</p>
 
 </div>
 </div>
@@ -192,6 +196,23 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00033">33</a> of file <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html">CASingleUseQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>  {</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac1faac0af3261ac2e34fa73f0aa93cfc">m_SpentUnits</a>)</div>
+<div class="line"><span class="lineno">   38</span>      {</div>
+<div class="line"><span class="lineno">   39</span>        <a class="code hl_variable" href="#ac1faac0af3261ac2e34fa73f0aa93cfc">m_SpentUnits</a>.param1 = <a class="code hl_variable" href="#ad646fa99b8ce84dace3c26d391b163d7">m_QuantityUsedPerAction</a>;</div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_function" href="../../d0/d00/class_c_a_base.html#a15caa3f387f97bbe79d18e4269dec382">SetACData</a>(<a class="code hl_variable" href="#ac1faac0af3261ac2e34fa73f0aa93cfc">m_SpentUnits</a>);</div>
+<div class="line"><span class="lineno">   41</span>      }</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.AddQuantity(- <a class="code hl_variable" href="#ad646fa99b8ce84dace3c26d391b163d7">m_QuantityUsedPerAction</a>, <span class="keyword">false</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="line"><span class="lineno">   45</span>  }</div>
+<div class="ttc" id="aclass_c_a_base_html_a15caa3f387f97bbe79d18e4269dec382"><div class="ttname"><a href="../../d0/d00/class_c_a_base.html#a15caa3f387f97bbe79d18e4269dec382">CABase::SetACData</a></div><div class="ttdeci">void SetACData(Param units)</div><div class="ttdef"><b>Definition</b> <a href="../../db/d00/_c_a_base_8c_source.html#l00038">CABase.c:38</a></div></div>
+<div class="ttc" id="aclass_c_a_single_use_quantity_html_ac1faac0af3261ac2e34fa73f0aa93cfc"><div class="ttname"><a href="#ac1faac0af3261ac2e34fa73f0aa93cfc">CASingleUseQuantity::m_SpentUnits</a></div><div class="ttdeci">ref Param1&lt; float &gt; m_SpentUnits</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00005">CASingleUseQuantity.c:5</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00003">m_QuantityUsedPerAction</a>, <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00005">m_SpentUnits</a>, and <a class="el" href="../../db/d00/_c_a_base_8c_source.html#l00038">CABase::SetACData()</a>.</p>
 
 </div>
 </div>
@@ -219,6 +240,19 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00021">21</a> of file <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html">CASingleUseQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player)</div>
+<div class="line"><span class="lineno">   24</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga27cc3557ea5e3394f26701d52a0ce245">UA_ERROR</a>;</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="../../d8/d0b/_fireplace_base_8c.html#a6735f79aad084d7400dda52fcbb45b98">CalcAndSetQuantity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga1549e547ab5d53897a986482bf8fafe5">UA_FINISHED</a>;</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="a_fireplace_base_8c_html_a6735f79aad084d7400dda52fcbb45b98"><div class="ttname"><a href="../../d8/d0b/_fireplace_base_8c.html#a6735f79aad084d7400dda52fcbb45b98">CalcAndSetQuantity</a></div><div class="ttdeci">void CalcAndSetQuantity()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0b/_fireplace_base_8c_source.html#l02478">FireplaceBase.c:2478</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga1549e547ab5d53897a986482bf8fafe5"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga1549e547ab5d53897a986482bf8fafe5">UA_FINISHED</a></div><div class="ttdeci">const int UA_FINISHED</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00436">constants.c:436</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga27cc3557ea5e3394f26701d52a0ce245"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga27cc3557ea5e3394f26701d52a0ce245">UA_ERROR</a></div><div class="ttdeci">const int UA_ERROR</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00455">constants.c:455</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l02478">CalcAndSetQuantity()</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00455">UA_ERROR</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00436">UA_FINISHED</a>.</p>
 
 </div>
 </div>
@@ -246,6 +280,16 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00012">12</a> of file <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html">CASingleUseQuantity.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>  {</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ac1faac0af3261ac2e34fa73f0aa93cfc">m_SpentUnits</a>)</div>
+<div class="line"><span class="lineno">   15</span>      <a class="code hl_variable" href="#ac1faac0af3261ac2e34fa73f0aa93cfc">m_SpentUnits</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;float&gt;</a>(0);</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_variable" href="#ac1faac0af3261ac2e34fa73f0aa93cfc">m_SpentUnits</a>.param1 = 0;</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="#a285c1421329ad529fb2669c1f53e3a2d">m_ItemQuantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetQuantity();</div>
+<div class="line"><span class="lineno">   19</span>  }</div>
+<div class="ttc" id="aclass_c_a_single_use_quantity_html_a285c1421329ad529fb2669c1f53e3a2d"><div class="ttname"><a href="#a285c1421329ad529fb2669c1f53e3a2d">CASingleUseQuantity::m_ItemQuantity</a></div><div class="ttdeci">float m_ItemQuantity</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00004">CASingleUseQuantity.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00004">m_ItemQuantity</a>, and <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00005">m_SpentUnits</a>.</p>
 
 </div>
 </div>
@@ -272,6 +316,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00004">4</a> of file <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html">CASingleUseQuantity.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00012">Setup()</a>.</p>
+
 </div>
 </div>
 <a id="ad646fa99b8ce84dace3c26d391b163d7" name="ad646fa99b8ce84dace3c26d391b163d7"></a>
@@ -296,6 +342,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00003">3</a> of file <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html">CASingleUseQuantity.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00033">CalcAndSetQuantity()</a>, <a class="el" href="../../d3/d0e/_c_a_single_use_quantity_edible_8c_source.html#l00008">CASingleUseQuantityEdible::CalcAndSetQuantity()</a>, <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00007">CASingleUseQuantity()</a>, and <a class="el" href="../../d3/d0e/_c_a_single_use_quantity_edible_8c_source.html#l00003">CASingleUseQuantityEdible::CASingleUseQuantityEdible()</a>.</p>
+
 </div>
 </div>
 <a id="ac1faac0af3261ac2e34fa73f0aa93cfc" name="ac1faac0af3261ac2e34fa73f0aa93cfc"></a>
@@ -319,6 +367,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00005">5</a> of file <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html">CASingleUseQuantity.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00033">CalcAndSetQuantity()</a>, <a class="el" href="../../d3/d0e/_c_a_single_use_quantity_edible_8c_source.html#l00008">CASingleUseQuantityEdible::CalcAndSetQuantity()</a>, and <a class="el" href="../../d4/d0f/_c_a_single_use_quantity_8c_source.html#l00012">Setup()</a>.</p>
 
 </div>
 </div>

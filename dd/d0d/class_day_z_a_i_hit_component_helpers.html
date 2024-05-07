@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -164,6 +161,18 @@ Static Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html#l00021">21</a> of file <a class="el" href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html">DayZAIHitComponents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_class" href="../../d8/d08/class_day_z_a_i_hit_component.html">DayZAIHitComponent</a> <a class="code hl_class" href="../../db/d06/class_param3.html">newComponent</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d08/class_day_z_a_i_hit_component.html">DayZAIHitComponent</a>();</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">newComponent</a>.m_Name = <a class="code hl_class" href="../../db/d06/class_param3.html">pName</a>;</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">newComponent</a>.m_Weight = <a class="code hl_class" href="../../db/d06/class_param3.html">pWeight</a>;</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">pHitComponents</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">newComponent</a>);</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="aclass_day_z_a_i_hit_component_html"><div class="ttname"><a href="../../d8/d08/class_day_z_a_i_hit_component.html">DayZAIHitComponent</a></div><div class="ttdoc">holds hit components and its weights for attack from AI (used on each type - DayZPlayerType,...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html#l00002">DayZAIHitComponents.c:3</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d3/d08/dayzplayer_8c_source.html#l00460">RegisterHitComponentsForAI()</a>, <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00839">DayZCreatureAI::RegisterHitComponentsForAI()</a>, and <a class="el" href="../../de/d07/_animal_base_8c_source.html#l00079">AnimalBase::RegisterHitComponentsForAI()</a>.</p>
 
 </div>
 </div>
@@ -195,6 +204,31 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html#l00040">40</a> of file <a class="el" href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html">DayZAIHitComponents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>  {</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">weights</a> = <a class="code hl_function" href="#ab7f8fbfbba9a2cfb6c96c93a9b793fa4">SumOfWeights</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pHitComponents</a>);</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">rnd</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gac34f9f8daa0e311b6a6b40cc21d38226">RandomInt</a>(0, <a class="code hl_class" href="../../db/d06/class_param3.html">weights</a>);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">pHitComponents</a>.Count(); ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>      <a class="code hl_class" href="../../d8/d08/class_day_z_a_i_hit_component.html">DayZAIHitComponent</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hitComp</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">pHitComponents</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   48</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">rnd</a> -= <a class="code hl_class" href="../../db/d06/class_param3.html">hitComp</a>.m_Weight;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">rnd</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">   51</span>      {</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">pHitComponent</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">hitComp</a>.m_Name;</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   54</span>      }</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   58</span>  }</div>
+<div class="ttc" id="aclass_day_z_a_i_hit_component_helpers_html_ab7f8fbfbba9a2cfb6c96c93a9b793fa4"><div class="ttname"><a href="#ab7f8fbfbba9a2cfb6c96c93a9b793fa4">DayZAIHitComponentHelpers::SumOfWeights</a></div><div class="ttdeci">static int SumOfWeights(array&lt; ref DayZAIHitComponent &gt; pHitComponents)</div><div class="ttdoc">Calculates the sum of all entries in DayZAIHitComponent array.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html#l00068">DayZAIHitComponents.c:68</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math_html_gac34f9f8daa0e311b6a6b40cc21d38226"><div class="ttname"><a href="../../d5/d08/group___math.html#gac34f9f8daa0e311b6a6b40cc21d38226">Math::RandomInt</a></div><div class="ttdeci">static proto int RandomInt(int min, int max)</div><div class="ttdoc">Returns a random int number between and min [inclusive] and max [exclusive].</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#gac34f9f8daa0e311b6a6b40cc21d38226">Math::RandomInt()</a>, and <a class="el" href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html#l00068">SumOfWeights()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d3/d08/dayzplayer_8c_source.html#l00482">GetHitComponentForAI()</a>, and <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00850">DayZCreatureAI::GetHitComponentForAI()</a>.</p>
 
 </div>
 </div>
@@ -231,6 +265,19 @@ Static Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Sum of weights of all entries in array </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html#l00068">68</a> of file <a class="el" href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html">DayZAIHitComponents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sum</a> = 0;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">pHitComponents</a>.Count(); ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_class" href="../../d8/d08/class_day_z_a_i_hit_component.html">DayZAIHitComponent</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hitComp</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">pHitComponents</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   75</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">sum</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">hitComp</a>.m_Weight;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">sum</a>;</div>
+<div class="line"><span class="lineno">   79</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d6/d08/_day_z_a_i_hit_components_8c_source.html#l00040">SelectMostProbableHitComponent()</a>.</p>
 
 </div>
 </div>

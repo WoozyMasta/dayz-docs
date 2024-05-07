@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -161,6 +158,22 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html#l00096">96</a> of file <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html">AmmunitionPiles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>  {</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.CanBeActionTarget())</div>
+<div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> parent = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>());</div>
+<div class="line"><span class="lineno">  101</span>      <span class="keywordflow">if</span> (parent)</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> !parent.IsManagingArrows();</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga1d63886deac2f225cc139143f9d79141"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a></div><div class="ttdeci">proto native Widget GetParent()</div><div class="ttdoc">Get parent of the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00389">Effect.c:389</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00389">GetParent()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html#l00090">IsInventoryVisible()</a>.</p>
 
 </div>
 </div>
@@ -188,7 +201,16 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html#l00117">117</a> of file <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html">AmmunitionPiles.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (!parent)</div>
+<div class="line"><span class="lineno">  120</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_class" href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a> = parent.GetArrowManager();</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>)</div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>.RemoveArrow(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+<div class="ttc" id="aclass_arrow_manager_base_html"><div class="ttname"><a href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_arrow_manager_base_8c_source.html#l00001">ArrowManagerBase.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a24d94ecd2ac19c52ad5f920dec1f9a24" name="a24d94ecd2ac19c52ad5f920dec1f9a24"></a>
@@ -215,7 +237,15 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html#l00107">107</a> of file <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html">AmmunitionPiles.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  108</span>  {</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (!parent)</div>
+<div class="line"><span class="lineno">  110</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_class" href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a> = parent.GetArrowManager();</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>)</div>
+<div class="line"><span class="lineno">  114</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>.AddArrow(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a358bf9ea6bb6daa81cd2cbaf1e90d76f" name="a358bf9ea6bb6daa81cd2cbaf1e90d76f"></a>
@@ -243,6 +273,12 @@ Private Member Functions</h2></td></tr>
 <p>omitted super call is intended</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html#l00090">90</a> of file <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html">AmmunitionPiles.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>  {</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a65ec9ac6a6417cb485f0ac0a5fb6dc24">CanBeActionTarget</a>();</div>
+<div class="line"><span class="lineno">   94</span>  }</div>
+<div class="ttc" id="aclass_bolt___base_html_a65ec9ac6a6417cb485f0ac0a5fb6dc24"><div class="ttname"><a href="#a65ec9ac6a6417cb485f0ac0a5fb6dc24">Bolt_Base::CanBeActionTarget</a></div><div class="ttdeci">override bool CanBeActionTarget()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0d/_ammunition_piles_8c_source.html#l00096">AmmunitionPiles.c:96</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html#l00096">CanBeActionTarget()</a>.</p>
 
 </div>
 </div>

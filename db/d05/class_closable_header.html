@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -223,6 +220,51 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00014">14</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>  {</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="#a14f345aac989173e6b041cb49f5bb3f7">m_MovePanel</a> = GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;MovePanel&quot;</span>);</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="#aa6b78d4435c942e50308a66e23d43ce7">m_PanelWidget</a> = GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;PanelWidget&quot;</span>);</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="#a10ac27a06f5d28f57e66003a01e9031c">m_DragRender</a> = GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;Drag_Render&quot;</span>);</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="#a4ce483b422d00f21ff3de8766c1a6eeb">m_MoveUp</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(GetMainWidget().<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga4c60c2c4f7361799eda0405af7eb5342">FindAnyWidget</a>(<span class="stringliteral">&quot;MoveUp&quot;</span>));</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="#ae3bdbf7be6f804445ad8940231d83ca5">m_MoveDown</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(GetMainWidget().<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga4c60c2c4f7361799eda0405af7eb5342">FindAnyWidget</a>(<span class="stringliteral">&quot;MoveDown&quot;</span>));</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnClick(<a class="code hl_variable" href="#a4ce483b422d00f21ff3de8766c1a6eeb">m_MoveUp</a>, <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;MoveContainerUp&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnClick(<a class="code hl_variable" href="#ae3bdbf7be6f804445ad8940231d83ca5">m_MoveDown</a>, <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>, <span class="stringliteral">&quot;MoveContainerDown&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseLeave(<a class="code hl_variable" href="#a4ce483b422d00f21ff3de8766c1a6eeb">m_MoveUp</a>, <span class="keyword">this</span>, <span class="stringliteral">&quot;MouseLeave&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseLeave(<a class="code hl_variable" href="#ae3bdbf7be6f804445ad8940231d83ca5">m_MoveDown</a>, <span class="keyword">this</span>, <span class="stringliteral">&quot;MouseLeave&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDrag(GetMainWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;OnDragHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnDrop(GetMainWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;OnDropHeader&quot;</span>);</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseEnter(GetMainWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;MouseEnter&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnMouseLeave(GetMainWidget(), <span class="keyword">this</span>, <span class="stringliteral">&quot;MouseLeave&quot;</span>);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">temp</a>;</div>
+<div class="line"><span class="lineno">   34</span>    GetMainWidget().GetScreenSize(<a class="code hl_class" href="../../db/d06/class_param3.html">temp</a>, <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>);</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_variable" href="../../d8/d09/class_header.html#aa2ee5b29944edd329dac3fd1da15a165">m_DefaultColor</a> = <a class="code hl_variable" href="#aa6b78d4435c942e50308a66e23d43ce7">m_PanelWidget</a>.GetColor();</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="../../d8/d09/class_header.html#a405b26880e7e5d6779feb5c69911674f">m_DefaultFontSize</a> = 20;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>() &amp;&amp; <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>().<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>() &amp;&amp; <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>().<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>().<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>())</div>
+<div class="line"><span class="lineno">   40</span>      <a class="code hl_variable" href="#ac787bef193bf3b4165ff67160dfe5b30">m_IsInLocalEquipment</a> = <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>().GetParent().GetParent().IsInherited(<a class="code hl_class" href="../../d2/d0d/class_right_area.html">RightArea</a>);</div>
+<div class="line"><span class="lineno">   41</span>  }</div>
+<div class="ttc" id="a_size_to_child_8c_html_a74e413f5a164dfc9b133b21caee53379"><div class="ttname"><a href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a></div><div class="ttdeci">Widget m_Parent</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_size_to_child_8c_source.html#l00086">SizeToChild.c:86</a></div></div>
+<div class="ttc" id="aclass_closable_header_html_a08be86a53f3b922cf4fe70435d7b14ad"><div class="ttname"><a href="#a08be86a53f3b922cf4fe70435d7b14ad">ClosableHeader::m_SquareSize</a></div><div class="ttdeci">float m_SquareSize</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00003">ClosableHeader.c:3</a></div></div>
+<div class="ttc" id="aclass_closable_header_html_a10ac27a06f5d28f57e66003a01e9031c"><div class="ttname"><a href="#a10ac27a06f5d28f57e66003a01e9031c">ClosableHeader::m_DragRender</a></div><div class="ttdeci">Widget m_DragRender</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00008">ClosableHeader.c:8</a></div></div>
+<div class="ttc" id="aclass_closable_header_html_a14f345aac989173e6b041cb49f5bb3f7"><div class="ttname"><a href="#a14f345aac989173e6b041cb49f5bb3f7">ClosableHeader::m_MovePanel</a></div><div class="ttdeci">Widget m_MovePanel</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00006">ClosableHeader.c:6</a></div></div>
+<div class="ttc" id="aclass_closable_header_html_a4ce483b422d00f21ff3de8766c1a6eeb"><div class="ttname"><a href="#a4ce483b422d00f21ff3de8766c1a6eeb">ClosableHeader::m_MoveUp</a></div><div class="ttdeci">ButtonWidget m_MoveUp</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00009">ClosableHeader.c:9</a></div></div>
+<div class="ttc" id="aclass_closable_header_html_aa6b78d4435c942e50308a66e23d43ce7"><div class="ttname"><a href="#aa6b78d4435c942e50308a66e23d43ce7">ClosableHeader::m_PanelWidget</a></div><div class="ttdeci">Widget m_PanelWidget</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00007">ClosableHeader.c:7</a></div></div>
+<div class="ttc" id="aclass_closable_header_html_ac787bef193bf3b4165ff67160dfe5b30"><div class="ttname"><a href="#ac787bef193bf3b4165ff67160dfe5b30">ClosableHeader::m_IsInLocalEquipment</a></div><div class="ttdeci">bool m_IsInLocalEquipment</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00012">ClosableHeader.c:12</a></div></div>
+<div class="ttc" id="aclass_closable_header_html_ae3bdbf7be6f804445ad8940231d83ca5"><div class="ttname"><a href="#ae3bdbf7be6f804445ad8940231d83ca5">ClosableHeader::m_MoveDown</a></div><div class="ttdeci">ButtonWidget m_MoveDown</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00010">ClosableHeader.c:10</a></div></div>
+<div class="ttc" id="aclass_header_html_a405b26880e7e5d6779feb5c69911674f"><div class="ttname"><a href="../../d8/d09/class_header.html#a405b26880e7e5d6779feb5c69911674f">Header::m_DefaultFontSize</a></div><div class="ttdeci">int m_DefaultFontSize</div><div class="ttdef"><b>Definition</b> <a href="../../df/d08/_header_8c_source.html#l00004">Header.c:4</a></div></div>
+<div class="ttc" id="aclass_header_html_aa2ee5b29944edd329dac3fd1da15a165"><div class="ttname"><a href="../../d8/d09/class_header.html#aa2ee5b29944edd329dac3fd1da15a165">Header::m_DefaultColor</a></div><div class="ttdeci">int m_DefaultColor</div><div class="ttdef"><b>Definition</b> <a href="../../df/d08/_header_8c_source.html#l00003">Header.c:3</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_right_area_html"><div class="ttname"><a href="../../d2/d0d/class_right_area.html">RightArea</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d04/_right_area_8c_source.html#l00001">RightArea.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00001">WidgetEventHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html_ad2fdf38578ef5954a19cb7c97ee4f89b"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">WidgetEventHandler::GetInstance</a></div><div class="ttdeci">static WidgetEventHandler GetInstance()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler.c:22</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga1d63886deac2f225cc139143f9d79141"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a></div><div class="ttdeci">proto native Widget GetParent()</div><div class="ttdoc">Get parent of the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00389">Effect.c:389</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga4c60c2c4f7361799eda0405af7eb5342"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga4c60c2c4f7361799eda0405af7eb5342">FindAnyWidget</a></div><div class="ttdeci">proto native Widget FindAnyWidget(string pathname)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga4c60c2c4f7361799eda0405af7eb5342">FindAnyWidget()</a>, <a class="el" href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler::GetInstance()</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00389">GetParent()</a>, <a class="el" href="../../df/d08/_header_8c_source.html#l00003">Header::m_DefaultColor</a>, <a class="el" href="../../df/d08/_header_8c_source.html#l00004">Header::m_DefaultFontSize</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00008">m_DragRender</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00012">m_IsInLocalEquipment</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00010">m_MoveDown</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00006">m_MovePanel</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00009">m_MoveUp</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00007">m_PanelWidget</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00003">m_SquareSize</a>.</p>
 
 </div>
 </div>
@@ -250,6 +292,15 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00043">43</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>  {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>.Cast(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>))</div>
+<div class="line"><span class="lineno">   46</span>      <a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>.Cast(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>).GetOnItemFlipped().Remove(<a class="code hl_function" href="#a86867bc8e1d04c4646beb7c25bcb9dd9">UpdateFlip</a>);</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+<div class="ttc" id="aclass_closable_header_html_a86867bc8e1d04c4646beb7c25bcb9dd9"><div class="ttname"><a href="#a86867bc8e1d04c4646beb7c25bcb9dd9">ClosableHeader::UpdateFlip</a></div><div class="ttdeci">void UpdateFlip(bool flipped)</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00102">ClosableHeader.c:102</a></div></div>
+<div class="ttc" id="aclass_header_html_a2d53484db851334ae6e6a5fdf8392d09"><div class="ttname"><a href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">Header::m_Entity</a></div><div class="ttdeci">EntityAI m_Entity</div><div class="ttdef"><b>Definition</b> <a href="../../df/d08/_header_8c_source.html#l00006">Header.c:6</a></div></div>
+<div class="ttc" id="aclass_inventory_item_html"><div class="ttname"><a href="../../d6/d0e/class_inventory_item.html">InventoryItem</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_item_base_8c_source.html#l00013">ItemBase.c:14</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d08/_header_8c_source.html#l00006">Header::m_Entity</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00102">UpdateFlip()</a>.</p>
 
 </div>
 </div>
@@ -287,6 +338,25 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00143">143</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>  {</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac787bef193bf3b4165ff67160dfe5b30">m_IsInLocalEquipment</a> &amp;&amp; !<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#gae3e58fe472ac6b87418d2b72042d4aac">GetDragWidget</a>())</div>
+<div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  148</span>      <a class="code hl_variable" href="#a14f345aac989173e6b041cb49f5bb3f7">m_MovePanel</a>.Show(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().IsEnabledMouseAndKeyboardEvenOnServer());</div>
+<div class="line"><span class="lineno">  149</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  150</span>      <a class="code hl_variable" href="#a14f345aac989173e6b041cb49f5bb3f7">m_MovePanel</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  151</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+<div class="line"><span class="lineno">  153</span>    PrepareOwnedTooltip(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>);</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  155</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a95221c1a0eabcad6044d1c11a1f4488c"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a></div><div class="ttdeci">ActionInput GetInput()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00989">ActionBase.c:989</a></div></div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="a_icon_8c_html_acd41c12fe81446bff0920670641367de"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a></div><div class="ttdeci">Icon y</div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_gae3e58fe472ac6b87418d2b72042d4aac"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#gae3e58fe472ac6b87418d2b72042d4aac">GetDragWidget</a></div><div class="ttdeci">proto native Widget GetDragWidget()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#gae3e58fe472ac6b87418d2b72042d4aac">GetDragWidget()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00989">GetInput()</a>, <a class="el" href="../../df/d08/_header_8c_source.html#l00006">Header::m_Entity</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00012">m_IsInLocalEquipment</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00006">m_MovePanel</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -328,6 +398,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00157">157</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  158</span>  {</div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">enter_w</a> != <a class="code hl_variable" href="#a4ce483b422d00f21ff3de8766c1a6eeb">m_MoveUp</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">enter_w</a> != <a class="code hl_variable" href="#ae3bdbf7be6f804445ad8940231d83ca5">m_MoveDown</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">enter_w</a> != <a class="code hl_variable" href="../../d8/d09/class_header.html#aa65ff8e579b5d1e68c3ee37b6b371ec1">m_CollapseButton</a>)</div>
+<div class="line"><span class="lineno">  160</span>    {</div>
+<div class="line"><span class="lineno">  161</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac787bef193bf3b4165ff67160dfe5b30">m_IsInLocalEquipment</a>)</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="#a14f345aac989173e6b041cb49f5bb3f7">m_MovePanel</a>.Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="line"><span class="lineno">  164</span>    HideOwnedTooltip();</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  166</span>  }</div>
+<div class="ttc" id="aclass_header_html_aa65ff8e579b5d1e68c3ee37b6b371ec1"><div class="ttname"><a href="../../d8/d09/class_header.html#aa65ff8e579b5d1e68c3ee37b6b371ec1">Header::m_CollapseButton</a></div><div class="ttdeci">Widget m_CollapseButton</div><div class="ttdef"><b>Definition</b> <a href="../../df/d08/_header_8c_source.html#l00008">Header.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d08/_header_8c_source.html#l00008">Header::m_CollapseButton</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00012">m_IsInLocalEquipment</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00010">m_MoveDown</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00006">m_MovePanel</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00009">m_MoveUp</a>.</p>
 
 </div>
 </div>
@@ -364,6 +446,48 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00066">66</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>  {</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_class" href="../../d7/d00/class_closable_container.html">ClosableContainer</a> parent = <a class="code hl_class" href="../../d7/d00/class_closable_container.html">ClosableContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>);</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (parent &amp;&amp; GetMainWidget() &amp;&amp; <a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>)</div>
+<div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>      <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_variable" href="#a10ac27a06f5d28f57e66003a01e9031c">m_DragRender</a>);</div>
+<div class="line"><span class="lineno">   72</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.SetFlags(<a class="code hl_enumeration" href="../../d9/d0e/group___widget_a_p_i.html#ga22177e6e3358b5dae620056212478a75">WidgetFlags</a>.EXACTPOS);</div>
+<div class="line"><span class="lineno">   73</span>      <a class="code hl_variable" href="#a630f9227e62ef68381ad1a0aa9465881">m_DefaultSort</a> = GetRootWidget().GetSort();</div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.GetParent().GetParent().GetParent().GetParent().GetParent().GetParent().GetParent().GetParent().AddChild(GetRootWidget());</div>
+<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a> &amp;&amp; <a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>)</div>
+<div class="line"><span class="lineno">   76</span>      {</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.SetItem(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>);</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.SetView(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>.GetViewIndex());</div>
+<div class="line"><span class="lineno">   79</span>      }</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>      <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().SetIsDragging(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>      parent.HideContent(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>      <a class="code hl_variable" href="#aa6b78d4435c942e50308a66e23d43ce7">m_PanelWidget</a>.Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>)</div>
+<div class="line"><span class="lineno">   87</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ww</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">hh</a>;</div>
+<div class="line"><span class="lineno">   90</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInventoryItemSize(<a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>.Cast(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">ww</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">hh</a>);</div>
+<div class="line"><span class="lineno">   91</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>)</div>
+<div class="line"><span class="lineno">   92</span>      {</div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>.GetOnItemFlipped().Insert(<a class="code hl_function" href="#a86867bc8e1d04c4646beb7c25bcb9dd9">UpdateFlip</a>);</div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>.GetInventory().GetFlipCargo())</div>
+<div class="line"><span class="lineno">   95</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.SetSize(<a class="code hl_class" href="../../db/d06/class_param3.html">hh</a> * <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ww</a> * <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>);</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   97</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.SetSize(<a class="code hl_class" href="../../db/d06/class_param3.html">ww</a> * <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">hh</a> * <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>);</div>
+<div class="line"><span class="lineno">   98</span>      }</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="ttc" id="aclass_closable_container_html"><div class="ttname"><a href="../../d7/d00/class_closable_container.html">ClosableContainer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0a/_container_with_cargo_8c_source.html#l00001">ContainerWithCargo.c:2</a></div></div>
+<div class="ttc" id="aclass_closable_header_html_a630f9227e62ef68381ad1a0aa9465881"><div class="ttname"><a href="#a630f9227e62ef68381ad1a0aa9465881">ClosableHeader::m_DefaultSort</a></div><div class="ttdeci">int m_DefaultSort</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d04/_closable_header_8c_source.html#l00004">ClosableHeader.c:4</a></div></div>
+<div class="ttc" id="aclass_item_manager_html"><div class="ttname"><a href="../../dc/d01/class_item_manager.html">ItemManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_item_manager_8c_source.html#l00001">ItemManager.c:2</a></div></div>
+<div class="ttc" id="aclass_item_manager_html_af8e5f55ed6dda8c630b9b30a6597be36"><div class="ttname"><a href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">ItemManager::GetInstance</a></div><div class="ttdeci">static ItemManager GetInstance()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_item_manager_8c_source.html#l00265">ItemManager.c:265</a></div></div>
+<div class="ttc" id="aclass_item_preview_widget_html"><div class="ttname"><a href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00273">gameplay.c:274</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga22177e6e3358b5dae620056212478a75"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga22177e6e3358b5dae620056212478a75">WidgetFlags</a></div><div class="ttdeci">WidgetFlags</div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00057">EnWidgets.c:58</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00265">ItemManager::GetInstance()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00004">m_DefaultSort</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00008">m_DragRender</a>, <a class="el" href="../../df/d08/_header_8c_source.html#l00006">Header::m_Entity</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00007">m_PanelWidget</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00003">m_SquareSize</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00102">UpdateFlip()</a>.</p>
 
 </div>
 </div>
@@ -391,6 +515,33 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00116">116</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>  {</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_class" href="../../d7/d00/class_closable_container.html">ClosableContainer</a> parent = <a class="code hl_class" href="../../d7/d00/class_closable_container.html">ClosableContainer</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>);</div>
+<div class="line"><span class="lineno">  119</span>    parent.GetMainWidget().AddChild(GetRootWidget());</div>
+<div class="line"><span class="lineno">  120</span>    GetRootWidget().SetSort(0);</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (parent)</div>
+<div class="line"><span class="lineno">  122</span>    {</div>
+<div class="line"><span class="lineno">  123</span>      <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_variable" href="#a10ac27a06f5d28f57e66003a01e9031c">m_DragRender</a>);</div>
+<div class="line"><span class="lineno">  125</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>)</div>
+<div class="line"><span class="lineno">  126</span>      {</div>
+<div class="line"><span class="lineno">  127</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.SetItem(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>); <span class="comment">//TODO: is this safe?</span></div>
+<div class="line"><span class="lineno">  128</span>      }</div>
+<div class="line"><span class="lineno">  129</span>      <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>      <a class="code hl_variable" href="#aa6b78d4435c942e50308a66e23d43ce7">m_PanelWidget</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  132</span>      <a class="code hl_variable" href="#a10ac27a06f5d28f57e66003a01e9031c">m_DragRender</a>.Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>      parent.ShowContent(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>      <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().HideDropzones();</div>
+<div class="line"><span class="lineno">  137</span>      <a class="code hl_class" href="../../dc/d01/class_item_manager.html">ItemManager</a>.<a class="code hl_function" href="../../dc/d01/class_item_manager.html#af8e5f55ed6dda8c630b9b30a6597be36">GetInstance</a>().SetIsDragging(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  138</span>    }</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>.Cast(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>))</div>
+<div class="line"><span class="lineno">  140</span>      <a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>.Cast(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>).GetOnItemFlipped().Remove(<a class="code hl_function" href="#a86867bc8e1d04c4646beb7c25bcb9dd9">UpdateFlip</a>);</div>
+<div class="line"><span class="lineno">  141</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00265">ItemManager::GetInstance()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00008">m_DragRender</a>, <a class="el" href="../../df/d08/_header_8c_source.html#l00006">Header::m_Entity</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00007">m_PanelWidget</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00102">UpdateFlip()</a>.</p>
 
 </div>
 </div>
@@ -418,6 +569,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00168">168</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  169</span>  {</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActive(<a class="code hl_class" href="../../db/d06/class_param3.html">active</a>);</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">active</a>)</div>
+<div class="line"><span class="lineno">  172</span>      <a class="code hl_variable" href="#aa6b78d4435c942e50308a66e23d43ce7">m_PanelWidget</a>.SetColor(<a class="code hl_function" href="../../dc/d0d/proto_8c.html#a4aa1cc36d7e57ee79ba6713313ce7b1b">ARGBF</a>(1, 1, 0, 0));</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  174</span>      <a class="code hl_variable" href="#aa6b78d4435c942e50308a66e23d43ce7">m_PanelWidget</a>.SetColor(<a class="code hl_variable" href="../../d8/d09/class_header.html#aa2ee5b29944edd329dac3fd1da15a165">m_DefaultColor</a>);</div>
+<div class="line"><span class="lineno">  175</span>  }</div>
+<div class="ttc" id="aproto_8c_html_a4aa1cc36d7e57ee79ba6713313ce7b1b"><div class="ttname"><a href="../../dc/d0d/proto_8c.html#a4aa1cc36d7e57ee79ba6713313ce7b1b">ARGBF</a></div><div class="ttdeci">int ARGBF(float fa, float fr, float fg, float fb)</div><div class="ttdoc">Converts &lt;0.0, 1.0&gt; ARGB into color.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/proto_8c_source.html#l00332">proto.c:332</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0d/proto_8c_source.html#l00332">ARGBF()</a>, <a class="el" href="../../df/d08/_header_8c_source.html#l00003">Header::m_DefaultColor</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00007">m_PanelWidget</a>.</p>
 
 </div>
 </div>
@@ -445,6 +606,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00049">49</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>  {</div>
+<div class="line"><span class="lineno">   51</span>    m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#a271981aae96b190a89f20278e54059fa">ClosableHeader</a>;</div>
+<div class="line"><span class="lineno">   52</span>  }</div>
+<div class="ttc" id="aclass_widget_layout_name_html"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00001">WidgetLayoutName.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_a271981aae96b190a89f20278e54059fa"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#a271981aae96b190a89f20278e54059fa">WidgetLayoutName::ClosableHeader</a></div><div class="ttdeci">const string ClosableHeader</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00044">WidgetLayoutName.c:44</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00044">WidgetLayoutName::ClosableHeader</a>.</p>
 
 </div>
 </div>
@@ -472,6 +640,21 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00054">54</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>  {</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.ToUpper();</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="../../d8/d09/class_header.html#ae3c31532e4ba0e9f424622855f6f5343">m_HeaderText</a>.SetText(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>);</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="../../d8/d09/class_header.html#ae3c31532e4ba0e9f424622855f6f5343">m_HeaderText</a>.Update();</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>;</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="../../d8/d09/class_header.html#ae3c31532e4ba0e9f424622855f6f5343">m_HeaderText</a>.GetScreenSize(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>);</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_variable" href="#aa6b78d4435c942e50308a66e23d43ce7">m_PanelWidget</a>.SetSize(1, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a> + <a class="code hl_function" href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a>.GetHeightMultiplied(10));</div>
+<div class="line"><span class="lineno">   64</span>  }</div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad8c6fb88ec9295d5e3b3c7ad4854b647"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a></div><div class="ttdeci">PlayerSpawnPresetDiscreteItemSetSlotData name</div><div class="ttdoc">one set for cargo</div></div>
+<div class="ttc" id="a_inventory_menu_8c_html_ad91f44597d803d249e1b96e7569f8199"><div class="ttname"><a href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a></div><div class="ttdeci">void InventoryMenu()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d00/_inventory_menu_8c_source.html#l00020">InventoryMenu.c:20</a></div></div>
+<div class="ttc" id="aclass_header_html_ae3c31532e4ba0e9f424622855f6f5343"><div class="ttname"><a href="../../d8/d09/class_header.html#ae3c31532e4ba0e9f424622855f6f5343">Header::m_HeaderText</a></div><div class="ttdeci">TextWidget m_HeaderText</div><div class="ttdef"><b>Definition</b> <a href="../../df/d08/_header_8c_source.html#l00011">Header.c:11</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d00/_inventory_menu_8c_source.html#l00020">InventoryMenu()</a>, <a class="el" href="../../df/d08/_header_8c_source.html#l00011">Header::m_HeaderText</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00007">m_PanelWidget</a>, <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -499,6 +682,22 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00102">102</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>  {</div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a> = <a class="code hl_class" href="../../d4/d08/class_item_preview_widget.html">ItemPreviewWidget</a>.Cast(<a class="code hl_variable" href="#a10ac27a06f5d28f57e66003a01e9031c">m_DragRender</a>);</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>.Cast(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>)</div>
+<div class="line"><span class="lineno">  106</span>    {</div>
+<div class="line"><span class="lineno">  107</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ww</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">hh</a>;</div>
+<div class="line"><span class="lineno">  108</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInventoryItemSize(<a class="code hl_class" href="../../d6/d0e/class_inventory_item.html">InventoryItem</a>.Cast(<a class="code hl_variable" href="../../d8/d09/class_header.html#a2d53484db851334ae6e6a5fdf8392d09">m_Entity</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">ww</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">hh</a>);</div>
+<div class="line"><span class="lineno">  109</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">flipped</a>)</div>
+<div class="line"><span class="lineno">  110</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.SetSize(<a class="code hl_class" href="../../db/d06/class_param3.html">hh</a> * <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ww</a> * <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>);</div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  112</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">item_preview_drag</a>.SetSize(<a class="code hl_class" href="../../db/d06/class_param3.html">ww</a> * <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">hh</a> * <a class="code hl_variable" href="#a08be86a53f3b922cf4fe70435d7b14ad">m_SquareSize</a>);</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00008">m_DragRender</a>, <a class="el" href="../../df/d08/_header_8c_source.html#l00006">Header::m_Entity</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00003">m_SquareSize</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00066">OnDragHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00116">OnDropHeader()</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00043">~ClosableHeader()</a>.</p>
 
 </div>
 </div>
@@ -525,6 +724,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00004">4</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00066">OnDragHeader()</a>.</p>
+
 </div>
 </div>
 <a id="a10ac27a06f5d28f57e66003a01e9031c" name="a10ac27a06f5d28f57e66003a01e9031c"></a>
@@ -548,6 +749,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00008">8</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00014">ClosableHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00066">OnDragHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00116">OnDropHeader()</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00102">UpdateFlip()</a>.</p>
 
 </div>
 </div>
@@ -573,6 +776,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00012">12</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00014">ClosableHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00143">MouseEnter()</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00157">MouseLeave()</a>.</p>
+
 </div>
 </div>
 <a id="ae3bdbf7be6f804445ad8940231d83ca5" name="ae3bdbf7be6f804445ad8940231d83ca5"></a>
@@ -596,6 +801,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00010">10</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00014">ClosableHeader()</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00157">MouseLeave()</a>.</p>
 
 </div>
 </div>
@@ -621,6 +828,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00006">6</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00014">ClosableHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00143">MouseEnter()</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00157">MouseLeave()</a>.</p>
+
 </div>
 </div>
 <a id="a4ce483b422d00f21ff3de8766c1a6eeb" name="a4ce483b422d00f21ff3de8766c1a6eeb"></a>
@@ -644,6 +853,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00009">9</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00014">ClosableHeader()</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00157">MouseLeave()</a>.</p>
 
 </div>
 </div>
@@ -669,6 +880,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00007">7</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00014">ClosableHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00066">OnDragHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00116">OnDropHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00168">SetActive()</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00054">SetName()</a>.</p>
+
 </div>
 </div>
 <a id="a08be86a53f3b922cf4fe70435d7b14ad" name="a08be86a53f3b922cf4fe70435d7b14ad"></a>
@@ -692,6 +905,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00003">3</a> of file <a class="el" href="../../d1/d04/_closable_header_8c_source.html">ClosableHeader.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00014">ClosableHeader()</a>, <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00066">OnDragHeader()</a>, and <a class="el" href="../../d1/d04/_closable_header_8c_source.html#l00102">UpdateFlip()</a>.</p>
 
 </div>
 </div>

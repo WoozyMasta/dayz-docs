@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -170,6 +167,31 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_credits_department_element_8c_source.html#l00007">7</a> of file <a class="el" href="../../d6/d04/_credits_department_element_8c_source.html">CreditsDepartmentElement.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>  {</div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/new_ui/credits/department_element/department_element.layout&quot;</span>, parent);</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="#aae79a27741ebe720d610348e9ac68608">m_DepartmentTitle</a> = <a class="code hl_class" href="../../da/d0c/class_text_widget.html">TextWidget</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a>.FindAnyWidget(<span class="stringliteral">&quot;department_title&quot;</span>));</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="#a1a0dfb360ed59c831a138d95b24870ce">m_DepartmentSections</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">GridSpacerWidget</a>.Cast(<a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a>.FindAnyWidget(<span class="stringliteral">&quot;department_sections&quot;</span>));</div>
+<div class="line"><span class="lineno">   12</span> </div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">department_data</a>.DepartmentName != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">   14</span>      <a class="code hl_variable" href="#aae79a27741ebe720d610348e9ac68608">m_DepartmentTitle</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">department_data</a>.DepartmentName);</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_variable" href="#aae79a27741ebe720d610348e9ac68608">m_DepartmentTitle</a>.Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   18</span>      <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a>.FindAnyWidget(<span class="stringliteral">&quot;SeparatorPanel&quot;</span>).Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a>.SetSort(<a class="code hl_class" href="../../db/d06/class_param3.html">index</a>);</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_function" href="#a04f16fee34ad8bd2ec4a688180009d1d">LoadDataAsync</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">department_data</a>.Sections);</div>
+<div class="line"><span class="lineno">   23</span>  }</div>
+<div class="ttc" id="a_size_to_child_8c_html_a0ec6f740a6dab4d3340b0bb999c23a28"><div class="ttname"><a href="../../da/d03/_size_to_child_8c.html#a0ec6f740a6dab4d3340b0bb999c23a28">m_Root</a></div><div class="ttdeci">Widget m_Root</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_size_to_child_8c_source.html#l00085">SizeToChild.c:85</a></div></div>
+<div class="ttc" id="aclass_credits_element_html_a04f16fee34ad8bd2ec4a688180009d1d"><div class="ttname"><a href="#a04f16fee34ad8bd2ec4a688180009d1d">CreditsElement::LoadDataAsync</a></div><div class="ttdeci">void LoadDataAsync(array&lt; ref JsonDataCreditsSection &gt; department_data)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_credits_department_element_8c_source.html#l00025">CreditsDepartmentElement.c:25</a></div></div>
+<div class="ttc" id="aclass_credits_element_html_a1a0dfb360ed59c831a138d95b24870ce"><div class="ttname"><a href="#a1a0dfb360ed59c831a138d95b24870ce">CreditsElement::m_DepartmentSections</a></div><div class="ttdeci">GridSpacerWidget m_DepartmentSections</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_credits_department_element_8c_source.html#l00004">CreditsDepartmentElement.c:4</a></div></div>
+<div class="ttc" id="aclass_credits_element_html_aae79a27741ebe720d610348e9ac68608"><div class="ttname"><a href="#aae79a27741ebe720d610348e9ac68608">CreditsElement::m_DepartmentTitle</a></div><div class="ttdeci">TextWidget m_DepartmentTitle</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_credits_department_element_8c_source.html#l00003">CreditsDepartmentElement.c:3</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_text_widget_html"><div class="ttname"><a href="../../da/d0c/class_text_widget.html">TextWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00219">EnWidgets.c:220</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d6/d04/_credits_department_element_8c_source.html#l00025">LoadDataAsync()</a>, and <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00085">m_Root</a>.</p>
 
 </div>
 </div>
@@ -201,7 +223,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d07/_credits_graphical_element_8c_source.html#l00003">3</a> of file <a class="el" href="../../df/d07/_credits_graphical_element_8c_source.html">CreditsGraphicalElement.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span> </div>
+<div class="line"><span class="lineno">    6</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a04f16fee34ad8bd2ec4a688180009d1d" name="a04f16fee34ad8bd2ec4a688180009d1d"></a>
@@ -228,6 +253,21 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d04/_credits_department_element_8c_source.html#l00025">25</a> of file <a class="el" href="../../d6/d04/_credits_department_element_8c_source.html">CreditsDepartmentElement.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>  {</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 1; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt;= <a class="code hl_class" href="../../db/d06/class_param3.html">department_data</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   28</span>    {</div>
+<div class="line"><span class="lineno">   29</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_function" href="../../d6/d04/_credits_department_element_8c.html#a2c713770fa821de4b9f35d4aafb0f860">CreditsDepartmentSection</a> <a class="code hl_class" href="../../db/d06/class_param3.html">e</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../d6/d04/_credits_department_element_8c.html#a2c713770fa821de4b9f35d4aafb0f860">CreditsDepartmentSection</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_variable" href="#a1a0dfb360ed59c831a138d95b24870ce">m_DepartmentSections</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">department_data</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a> - 1));</div>
+<div class="line"><span class="lineno">   30</span>      <a class="code hl_variable" href="#abc2a093703d54066769475f2c5d8b686">m_DepartmentSectionEntries</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="#a1a0dfb360ed59c831a138d95b24870ce">m_DepartmentSections</a>.Update();</div>
+<div class="line"><span class="lineno">   34</span>  }</div>
+<div class="ttc" id="a_credits_department_element_8c_html_a2c713770fa821de4b9f35d4aafb0f860"><div class="ttname"><a href="../../d6/d04/_credits_department_element_8c.html#a2c713770fa821de4b9f35d4aafb0f860">CreditsDepartmentSection</a></div><div class="ttdeci">void CreditsDepartmentSection(int index, Widget parent, JsonDataCreditsSection section_data)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_credits_department_element_8c_source.html#l00043">CreditsDepartmentElement.c:43</a></div></div>
+<div class="ttc" id="aclass_credits_element_html_abc2a093703d54066769475f2c5d8b686"><div class="ttname"><a href="#abc2a093703d54066769475f2c5d8b686">CreditsElement::m_DepartmentSectionEntries</a></div><div class="ttdeci">ref array&lt; ref CreditsDepartmentSection &gt; m_DepartmentSectionEntries</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_credits_department_element_8c_source.html#l00005">CreditsDepartmentElement.c:5</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d04/_credits_department_element_8c_source.html#l00043">CreditsDepartmentSection()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d04/_credits_department_element_8c_source.html#l00007">CreditsDepartmentElement()</a>, and <a class="el" href="../../d6/d04/_credits_department_element_8c_source.html#l00043">CreditsDepartmentSection()</a>.</p>
 
 </div>
 </div>

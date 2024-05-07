@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -238,6 +235,39 @@ Variables</h2></td></tr>
 <p>Changes material file associated with the script material class. Will be used very rarely, mostly set in C++ anyway. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00344">344</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  345</span>  {</div>
+<div class="line"><span class="lineno">  346</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Contains(type))</div>
+<div class="line"><span class="lineno">  347</span>    {</div>
+<div class="line"><span class="lineno">  348</span>      <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a> = <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Get(type);</div>
+<div class="line"><span class="lineno">  349</span>      <span class="keyword">typename</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a>.Type();</div>
+<div class="line"><span class="lineno">  350</span>      <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">postprocess_capsule</a> = <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a>.Cast(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.Spawn());</div>
+<div class="line"><span class="lineno">  351</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">postprocess_capsule</a>.ChangeMaterialPathUsed(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>);</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">postprocess_capsule</a>.GetMaterial() == 0x0)</div>
+<div class="line"><span class="lineno">  354</span>      {</div>
+<div class="line"><span class="lineno">  355</span>        <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;PPEManager | Invalid material path &quot;</span> + <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> + <span class="stringliteral">&quot; used for &quot;</span> + <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>);</div>
+<div class="line"><span class="lineno">  356</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  357</span>      }</div>
+<div class="line"><span class="lineno">  358</span> </div>
+<div class="line"><span class="lineno">  359</span>      <span class="comment">//m_PPEClassMap.Remove(type);</span></div>
+<div class="line"><span class="lineno">  360</span>      <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Set(type, <a class="code hl_class" href="../../db/d06/class_param3.html">postprocess_capsule</a>);</div>
+<div class="line"><span class="lineno">  361</span>    }</div>
+<div class="line"><span class="lineno">  362</span> </div>
+<div class="line"><span class="lineno">  363</span>    <span class="comment">//can be sent script-side only to adapt to c++ options changes</span></div>
+<div class="line"><span class="lineno">  364</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">scriptside_only</a>)</div>
+<div class="line"><span class="lineno">  365</span>      <a class="code hl_function" href="../../dd/d02/group___camera.html#gaf10ab120d06c5b35d83a3cce12da61ea">SetCameraPostProcessEffect</a>(<a class="code hl_variable" href="#a554a0b106fcf9a5fa152c30efa8cf0ef">CAMERA_ID</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">priority</a>, type, <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>);</div>
+<div class="line"><span class="lineno">  366</span>  }</div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad8c6fb88ec9295d5e3b3c7ad4854b647"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a></div><div class="ttdeci">PlayerSpawnPresetDiscreteItemSetSlotData name</div><div class="ttdoc">one set for cargo</div></div>
+<div class="ttc" id="a_option_selector_multistate_8c_html_a46c20eb2a26abeb1e934cd66e1dd6484"><div class="ttname"><a href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a></div><div class="ttdeci">string path</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">OptionSelectorMultistate.c:121</a></div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a554a0b106fcf9a5fa152c30efa8cf0ef"><div class="ttname"><a href="#a554a0b106fcf9a5fa152c30efa8cf0ef">CAMERA_ID</a></div><div class="ttdeci">class PPEManagerStatic CAMERA_ID</div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a7478f777ee03097ff10a2016485188dd"><div class="ttname"><a href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a></div><div class="ttdeci">ref map&lt; int, ref PPEClassBase &gt; m_PPEClassMap</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">PPEManager.c:58</a></div></div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_ac759558b1dd4e820330546c994a9d840"><div class="ttname"><a href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Debug::Log</a></div><div class="ttdeci">static void Log(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdoc">Prints debug message with normal prio.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug.c:133</a></div></div>
+<div class="ttc" id="aclass_p_p_e_class_base_html"><div class="ttname"><a href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a></div><div class="ttdoc">Created once, on manager init. Script-side representation of C++ material class, separate handling.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0a/_p_p_e_mat_classes_base_8c_source.html#l00002">PPEMatClassesBase.c:3</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___camera_html_gaf10ab120d06c5b35d83a3cce12da61ea"><div class="ttname"><a href="../../dd/d02/group___camera.html#gaf10ab120d06c5b35d83a3cce12da61ea">SetCameraPostProcessEffect</a></div><div class="ttdeci">proto native void SetCameraPostProcessEffect(int cam, int priority, PostProcessEffectType type, string materialPath)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a554a0b106fcf9a5fa152c30efa8cf0ef">CAMERA_ID</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug::Log()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>, <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="el" href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">path</a>, and <a class="el" href="../../dd/d02/group___camera.html#gaf10ab120d06c5b35d83a3cce12da61ea">SetCameraPostProcessEffect()</a>.</p>
 
 </div>
 </div>
@@ -265,6 +295,23 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00070">70</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>  {</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">PPERequesterBank</a>.Cleanup();</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a110e59bd7e4a3f5ab72ce3d6bd3c0032">m_ManagerInitialized</a>)</div>
+<div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Clear();</div>
+<div class="line"><span class="lineno">   77</span>      <a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a>.Clear();</div>
+<div class="line"><span class="lineno">   78</span>      <a class="code hl_variable" href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a>.Clear();</div>
+<div class="line"><span class="lineno">   79</span>      <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Clear();</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span>  }</div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a0fe495c29ec083bfdf607234a063efa9"><div class="ttname"><a href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a></div><div class="ttdeci">ref map&lt; int, ref array&lt; int &gt; &gt; m_PPEMaterialUpdateQueueMap</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00059">PPEManager.c:59</a></div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a110e59bd7e4a3f5ab72ce3d6bd3c0032"><div class="ttname"><a href="#a110e59bd7e4a3f5ab72ce3d6bd3c0032">m_ManagerInitialized</a></div><div class="ttdeci">bool m_ManagerInitialized</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00057">PPEManager.c:57</a></div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a24ffa283b59c14250a624ad3f1967a40"><div class="ttname"><a href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a></div><div class="ttdeci">ref array&lt; ref PPERequesterBase &gt; m_ExistingPostprocessRequests</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00061">PPEManager.c:61</a></div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a87d4fd46849935d83b1a1a2cff4cbd4e"><div class="ttname"><a href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a></div><div class="ttdeci">ref array&lt; ref PPERequesterBase &gt; m_UpdatingRequests</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00062">PPEManager.c:62</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00061">m_ExistingPostprocessRequests</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00057">m_ManagerInitialized</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00059">m_PPEMaterialUpdateQueueMap</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00062">m_UpdatingRequests</a>.</p>
 
 </div>
 </div>
@@ -292,6 +339,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00183">183</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>  {</div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Clear();</div>
+<div class="line"><span class="lineno">  186</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00059">m_PPEMaterialUpdateQueueMap</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00302">ProcessApplyValueChanges()</a>.</p>
 
 </div>
 </div>
@@ -319,7 +373,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00381">381</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  382</span>  {</div>
+<div class="line"><span class="lineno">  383</span>    <span class="comment">//Debug.Log(&quot;&quot;+text);</span></div>
+<div class="line"><span class="lineno">  384</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="acfec04b19badaf40c88be6cab24ce004" name="acfec04b19badaf40c88be6cab24ce004"></a>
@@ -350,6 +407,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00220">220</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  221</span>  {</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">idx</a> = <a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a>.Find(<a class="code hl_class" href="../../db/d06/class_param3.html">PPERequesterBank</a>.GetRequester(<a class="code hl_class" href="../../db/d06/class_param3.html">req</a>));</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">idx</a> &gt; -1)</div>
+<div class="line"><span class="lineno">  224</span>    {</div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ret</a> = <a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">idx</a>);</div>
+<div class="line"><span class="lineno">  226</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  227</span>    }</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  229</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00061">m_ExistingPostprocessRequests</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00231">IsAnyRequesterRunning()</a>.</p>
 
 </div>
 </div>
@@ -383,6 +453,12 @@ Variables</h2></td></tr>
 <p>Returns current values as <a class="el" href="../../de/d00/class_param.html" title="Base Param Class with no parameters. Used as general purpose parameter overloaded with Param1 to Para...">Param</a>. See 'PPEConstants' file for various typedefs used. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00335">335</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  336</span>  {</div>
+<div class="line"><span class="lineno">  337</span>    <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a> = <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">material</a>);</div>
+<div class="line"><span class="lineno">  338</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a>.GetParameterCommandData(<a class="code hl_class" href="../../db/d06/class_param3.html">parameter</a>).GetCurrentValues();</div>
+<div class="line"><span class="lineno">  339</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>.</p>
 
 </div>
 </div>
@@ -416,6 +492,12 @@ Variables</h2></td></tr>
 <p>Returns default values as <a class="el" href="../../de/d00/class_param.html" title="Base Param Class with no parameters. Used as general purpose parameter overloaded with Param1 to Para...">Param</a>. See 'PPEConstants' file for various typedefs used. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00328">328</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  329</span>  {</div>
+<div class="line"><span class="lineno">  330</span>    <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a> = <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">material</a>);</div>
+<div class="line"><span class="lineno">  331</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a>.GetParameterCommandData(<a class="code hl_class" href="../../db/d06/class_param3.html">parameter</a>).GetDefaultValues();</div>
+<div class="line"><span class="lineno">  332</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>.</p>
 
 </div>
 </div>
@@ -445,6 +527,27 @@ Variables</h2></td></tr>
 <p>Launched from 'DayZGame.DeferredInit' to make earlier access, use, and updates impossible (downside of a non-static system) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00084">84</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>  {</div>
+<div class="line"><span class="lineno">   86</span>    <span class="comment">//DbgPrnt(&quot;PPEDebug | PPEManager | m_ManagerInitialized: &quot; + m_ManagerInitialized);</span></div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a110e59bd7e4a3f5ab72ce3d6bd3c0032">m_ManagerInitialized</a>)</div>
+<div class="line"><span class="lineno">   88</span>    {</div>
+<div class="line"><span class="lineno">   89</span>      <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ref array&lt;int&gt;</a>&gt;;</div>
+<div class="line"><span class="lineno">   90</span>      <a class="code hl_variable" href="#a73cd015fcd1230820e1cf98557535761">m_UpdatedMaterials</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a>;</div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ref PPERequesterBase&gt;</a>;</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_variable" href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ref PPERequesterBase&gt;</a>;</div>
+<div class="line"><span class="lineno">   93</span>      <a class="code hl_function" href="#a7a926a173d705efaf8eefef63f26a35f">InitPPEManagerClassMap</a>();</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetUpdateQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaae15173306f94a164b31a4baea73e5eb">CALL_CATEGORY_GUI</a>).Insert(this.<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>); <span class="comment">//can be safely and easily &#39;disabled&#39; here</span></div>
+<div class="line"><span class="lineno">   96</span>      <a class="code hl_variable" href="#a110e59bd7e4a3f5ab72ce3d6bd3c0032">m_ManagerInitialized</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span>  }</div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a73cd015fcd1230820e1cf98557535761"><div class="ttname"><a href="#a73cd015fcd1230820e1cf98557535761">m_UpdatedMaterials</a></div><div class="ttdeci">ref array&lt; int &gt; m_UpdatedMaterials</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00060">PPEManager.c:60</a></div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a7a926a173d705efaf8eefef63f26a35f"><div class="ttname"><a href="#a7a926a173d705efaf8eefef63f26a35f">InitPPEManagerClassMap</a></div><div class="ttdeci">void InitPPEManagerClassMap()</div><div class="ttdoc">Ordered by 'PostProcessEffectType' for easy access through the same enum; ID saved all the same.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00101">PPEManager.c:101</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___tools_html_gaae15173306f94a164b31a4baea73e5eb"><div class="ttname"><a href="../../d9/d03/group___tools.html#gaae15173306f94a164b31a4baea73e5eb">CALL_CATEGORY_GUI</a></div><div class="ttdeci">const int CALL_CATEGORY_GUI</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00009">tools.c:9</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga70ac517aa5d3b3af95f61a2d560d811f"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a></div><div class="ttdeci">proto native volatile void Update()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_player_sound_manager_8c_source.html#l00118">PlayerSoundManager.c:118</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00009">CALL_CATEGORY_GUI</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00101">InitPPEManagerClassMap()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00061">m_ExistingPostprocessRequests</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00057">m_ManagerInitialized</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00059">m_PPEMaterialUpdateQueueMap</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00060">m_UpdatedMaterials</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00062">m_UpdatingRequests</a>, and <a class="el" href="../../d2/d02/_player_sound_manager_8c_source.html#l00118">Update()</a>.</p>
 
 </div>
 </div>
@@ -474,6 +577,67 @@ Variables</h2></td></tr>
 <p>Ordered by 'PostProcessEffectType' for easy access through the same enum; ID saved all the same. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00101">101</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>  {</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>)</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keyword">delete</span> <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>;</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ref PPEClassBase&gt;</a>;</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d4/d02/class_p_p_e_none.html">PPENone</a>()); <span class="comment">//dummy</span></div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../da/d00/class_p_p_e_under_water.html">PPEUnderWater</a>());</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d1/d0a/class_p_p_e_s_s_a_o.html">PPESSAO</a>());</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../db/d07/class_p_p_e_depth_of_field.html">PPEDepthOfField</a>());</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d7/d0b/class_p_p_e_h_b_a_o.html">PPEHBAO</a>());</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../da/d07/class_p_p_e_rot_blur.html">PPERotBlur</a>());</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d5/d0d/class_p_p_e_god_rays.html">PPEGodRays</a>());</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d6/d0a/class_p_p_e_rain.html">PPERain</a>());</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../dd/d06/class_p_p_e_film_grain.html">PPEFilmGrain</a>());</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../de/d0d/class_p_p_e_radial_blur.html">PPERadialBlur</a>());</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d8/d0a/class_p_p_e_chrom_aber.html">PPEChromAber</a>());</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../da/d03/class_p_p_e_wet_distort.html">PPEWetDistort</a>());</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../dd/d0f/class_p_p_e_dynamic_blur.html">PPEDynamicBlur</a>());</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../de/d02/class_p_p_e_color_grading.html">PPEColorGrading</a>());</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0f/class_p_p_e_colors.html">PPEColors</a>());</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../dc/d0c/class_p_p_e_glow.html">PPEGlow</a>());</div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../de/d0a/class_p_p_e_s_m_a_a.html">PPESMAA</a>());</div>
+<div class="line"><span class="lineno">  124</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../de/d03/class_p_p_e_f_x_a_a.html">PPEFXAA</a>());</div>
+<div class="line"><span class="lineno">  125</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../dc/d0c/class_p_p_e_median.html">PPEMedian</a>());</div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../df/d01/class_p_p_e_sun_mask.html">PPESunMask</a>());</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d4/d02/class_p_p_e_gauss_filter.html">PPEGaussFilter</a>());</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d2/d0d/class_p_p_e_exposure_native.html">PPEExposureNative</a>());</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d8/d0f/class_p_p_e_eye_accomodation_native.html">PPEEyeAccomodationNative</a>());</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../d6/d08/class_p_p_e_d_o_f.html">PPEDOF</a>());</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_function" href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a>(<span class="keyword">new</span> <a class="code hl_class" href="../../de/d0b/class_p_p_e_light_intensity_params_native.html">PPELightIntensityParamsNative</a>());</div>
+<div class="line"><span class="lineno">  132</span>  }</div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a9314fd34e8cc7885dd35eabf6a3dc37b"><div class="ttname"><a href="#a9314fd34e8cc7885dd35eabf6a3dc37b">RegisterPPEClass</a></div><div class="ttdeci">void RegisterPPEClass(PPEClassBase material_class)</div><div class="ttdoc">Registeres material class and creates data structure within.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00135">PPEManager.c:135</a></div></div>
+<div class="ttc" id="aclass_p_p_e_chrom_aber_html"><div class="ttname"><a href="../../d8/d0a/class_p_p_e_chrom_aber.html">PPEChromAber</a></div><div class="ttdoc">ChromAber - PostProcessEffectType.ChromAber.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0c/_p_p_e_chrom_aber_8c_source.html#l00002">PPEChromAber.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_color_grading_html"><div class="ttname"><a href="../../de/d02/class_p_p_e_color_grading.html">PPEColorGrading</a></div><div class="ttdoc">ColorGrading - PostProcessEffectType.ColorGrading.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0c/_p_p_e_color_grading_8c_source.html#l00003">PPEColorGrading.c:4</a></div></div>
+<div class="ttc" id="aclass_p_p_e_colors_html"><div class="ttname"><a href="../../d4/d0f/class_p_p_e_colors.html">PPEColors</a></div><div class="ttdoc">Colors - PostProcessEffectType.Colors.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d01/_p_p_e_colors_8c_source.html#l00003">PPEColors.c:4</a></div></div>
+<div class="ttc" id="aclass_p_p_e_d_o_f_html"><div class="ttname"><a href="../../d6/d08/class_p_p_e_d_o_f.html">PPEDOF</a></div><div class="ttdoc">DOF postprocess, does not directly use materials.</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0d/_p_p_e_d_o_f_8c_source.html#l00005">PPEDOF.c:6</a></div></div>
+<div class="ttc" id="aclass_p_p_e_depth_of_field_html"><div class="ttname"><a href="../../db/d07/class_p_p_e_depth_of_field.html">PPEDepthOfField</a></div><div class="ttdoc">DepthOfField - PostProcessEffectType.DepthOfField.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d01/_p_p_e_depth_of_field_8c_source.html#l00003">PPEDepthOfField.c:4</a></div></div>
+<div class="ttc" id="aclass_p_p_e_dynamic_blur_html"><div class="ttname"><a href="../../dd/d0f/class_p_p_e_dynamic_blur.html">PPEDynamicBlur</a></div><div class="ttdoc">DynamicBlur - PostProcessEffectType.DynamicBlur.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_p_p_e_dynamic_blur_8c_source.html#l00002">PPEDynamicBlur.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_exposure_native_html"><div class="ttname"><a href="../../d2/d0d/class_p_p_e_exposure_native.html">PPEExposureNative</a></div><div class="ttdoc">EV postprocess, does not directly use materials.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d00/_p_p_e_exposure_native_8c_source.html#l00005">PPEExposureNative.c:6</a></div></div>
+<div class="ttc" id="aclass_p_p_e_eye_accomodation_native_html"><div class="ttname"><a href="../../d8/d0f/class_p_p_e_eye_accomodation_native.html">PPEEyeAccomodationNative</a></div><div class="ttdoc">Eye Accomodation postprocess, does not directly use materials.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_p_p_e_eye_accomodation_native_8c_source.html#l00005">PPEEyeAccomodationNative.c:6</a></div></div>
+<div class="ttc" id="aclass_p_p_e_f_x_a_a_html"><div class="ttname"><a href="../../de/d03/class_p_p_e_f_x_a_a.html">PPEFXAA</a></div><div class="ttdoc">FXAA - PostProcessEffectType.FXAA.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d03/_p_p_e_f_x_a_a_8c_source.html#l00002">PPEFXAA.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_film_grain_html"><div class="ttname"><a href="../../dd/d06/class_p_p_e_film_grain.html">PPEFilmGrain</a></div><div class="ttdoc">FilmGrain - PostProcessEffectType.FilmGrain.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d04/_p_p_e_film_grain_8c_source.html#l00006">PPEFilmGrain.c:7</a></div></div>
+<div class="ttc" id="aclass_p_p_e_gauss_filter_html"><div class="ttname"><a href="../../d4/d02/class_p_p_e_gauss_filter.html">PPEGaussFilter</a></div><div class="ttdoc">GaussFilter - PostProcessEffectType.GaussFilter.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_p_p_e_gauss_filter_8c_source.html#l00002">PPEGaussFilter.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_glow_html"><div class="ttname"><a href="../../dc/d0c/class_p_p_e_glow.html">PPEGlow</a></div><div class="ttdoc">Glow - PostProcessEffectType.Glow.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d06/_p_p_e_glow_8c_source.html#l00007">PPEGlow.c:8</a></div></div>
+<div class="ttc" id="aclass_p_p_e_god_rays_html"><div class="ttname"><a href="../../d5/d0d/class_p_p_e_god_rays.html">PPEGodRays</a></div><div class="ttdoc">GodRays - PostProcessEffectType.GodRays.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d07/_p_p_e_god_rays_8c_source.html#l00002">PPEGodRays.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_h_b_a_o_html"><div class="ttname"><a href="../../d7/d0b/class_p_p_e_h_b_a_o.html">PPEHBAO</a></div><div class="ttdoc">HBAO - PostProcessEffectType.HBAO.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_p_p_e_h_b_a_o_8c_source.html#l00003">PPEHBAO.c:4</a></div></div>
+<div class="ttc" id="aclass_p_p_e_light_intensity_params_native_html"><div class="ttname"><a href="../../de/d0b/class_p_p_e_light_intensity_params_native.html">PPELightIntensityParamsNative</a></div><div class="ttdoc">g_Game.NightVissionLightParams, does not directly use materials. Controls light multiplication and fi...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d02/_p_p_e_light_intensity_params_native_8c_source.html#l00005">PPELightIntensityParamsNative.c:6</a></div></div>
+<div class="ttc" id="aclass_p_p_e_median_html"><div class="ttname"><a href="../../dc/d0c/class_p_p_e_median.html">PPEMedian</a></div><div class="ttdoc">Median - PostProcessEffectType.Median.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_p_p_e_median_8c_source.html#l00003">PPEMedian.c:4</a></div></div>
+<div class="ttc" id="aclass_p_p_e_none_html"><div class="ttname"><a href="../../d4/d02/class_p_p_e_none.html">PPENone</a></div><div class="ttdoc">Dummy class - PostProcessEffectType.None.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d06/_p_p_e_none_8c_source.html#l00002">PPENone.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_radial_blur_html"><div class="ttname"><a href="../../de/d0d/class_p_p_e_radial_blur.html">PPERadialBlur</a></div><div class="ttdoc">RadialBlur - PostProcessEffectType.RadialBlur.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0e/_p_p_e_radial_blur_8c_source.html#l00002">PPERadialBlur.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_rain_html"><div class="ttname"><a href="../../d6/d0a/class_p_p_e_rain.html">PPERain</a></div><div class="ttdoc">Rain - PostProcessEffectType.Rain.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d01/_p_p_e_rain_8c_source.html#l00002">PPERain.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_rot_blur_html"><div class="ttname"><a href="../../da/d07/class_p_p_e_rot_blur.html">PPERotBlur</a></div><div class="ttdoc">Rotation Blur.</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d01/_p_p_e_rot_blur_8c_source.html#l00002">PPERotBlur.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_s_m_a_a_html"><div class="ttname"><a href="../../de/d0a/class_p_p_e_s_m_a_a.html">PPESMAA</a></div><div class="ttdoc">SMAA - PostProcessEffectType.SMAA.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d08/_p_p_e_s_m_a_a_8c_source.html#l00002">PPESMAA.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_s_s_a_o_html"><div class="ttname"><a href="../../d1/d0a/class_p_p_e_s_s_a_o.html">PPESSAO</a></div><div class="ttdoc">SSAO - PostProcessEffectType.SSAO.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0f/_p_p_e_s_s_a_o_8c_source.html#l00002">PPESSAO.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_sun_mask_html"><div class="ttname"><a href="../../df/d01/class_p_p_e_sun_mask.html">PPESunMask</a></div><div class="ttdoc">SunMask - PostProcessEffectType.SunMask.</div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_p_p_e_sun_mask_8c_source.html#l00003">PPESunMask.c:4</a></div></div>
+<div class="ttc" id="aclass_p_p_e_under_water_html"><div class="ttname"><a href="../../da/d00/class_p_p_e_under_water.html">PPEUnderWater</a></div><div class="ttdoc">UnderWater - PostProcessEffectType.UnderWater.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0b/_p_p_e_under_water_8c_source.html#l00002">PPEUnderWater.c:3</a></div></div>
+<div class="ttc" id="aclass_p_p_e_wet_distort_html"><div class="ttname"><a href="../../da/d03/class_p_p_e_wet_distort.html">PPEWetDistort</a></div><div class="ttdoc">WetDistort - PostProcessEffectType.WetDistort.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d07/_p_p_e_wet_distort_8c_source.html#l00002">PPEWetDistort.c:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00135">RegisterPPEClass()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00084">Init()</a>.</p>
 
 </div>
 </div>
@@ -503,6 +667,12 @@ Variables</h2></td></tr>
 <p>Marks material class as updated and values to be set in the course of update - 'ProcessApplyValueChanges'. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00266">266</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>  {</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a73cd015fcd1230820e1cf98557535761">m_UpdatedMaterials</a>.Find(<a class="code hl_class" href="../../db/d06/class_param3.html">mat_id</a>) == -1)</div>
+<div class="line"><span class="lineno">  269</span>      <a class="code hl_variable" href="#a73cd015fcd1230820e1cf98557535761">m_UpdatedMaterials</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">mat_id</a>);</div>
+<div class="line"><span class="lineno">  270</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00060">m_UpdatedMaterials</a>.</p>
 
 </div>
 </div>
@@ -530,6 +700,21 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00231">231</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>  {</div>
+<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">foreach</span> (<span class="keyword">typename</span> <a class="code hl_class" href="../../db/d06/class_param3.html">requesterType</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">requesters</a>)</div>
+<div class="line"><span class="lineno">  234</span>    {</div>
+<div class="line"><span class="lineno">  235</span>      <a class="code hl_class" href="../../d0/d06/class_p_p_e_requester_base.html">PPERequesterBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ppeRequester</a>;</div>
+<div class="line"><span class="lineno">  236</span>      <a class="code hl_function" href="#acfec04b19badaf40c88be6cab24ce004">GetExistingRequester</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">requesterType</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ppeRequester</a>);</div>
+<div class="line"><span class="lineno">  237</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ppeRequester</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">ppeRequester</a>.IsRequesterRunning())</div>
+<div class="line"><span class="lineno">  238</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  239</span>    }</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_acfec04b19badaf40c88be6cab24ce004"><div class="ttname"><a href="#acfec04b19badaf40c88be6cab24ce004">GetExistingRequester</a></div><div class="ttdeci">bool GetExistingRequester(typename req, out PPERequesterBase ret)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00220">PPEManager.c:220</a></div></div>
+<div class="ttc" id="aclass_p_p_e_requester_base_html"><div class="ttname"><a href="../../d0/d06/class_p_p_e_requester_base.html">PPERequesterBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0e/_p_p_e_request_platforms_base_8c_source.html#l00002">PPERequestPlatformsBase.c:3</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00220">GetExistingRequester()</a>.</p>
 
 </div>
 </div>
@@ -557,6 +742,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00064">64</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>  {</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_variable" href="#a110e59bd7e4a3f5ab72ce3d6bd3c0032">m_ManagerInitialized</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">PPERequesterBank</a>.Init();</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00057">m_ManagerInitialized</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00006">PPEManagerStatic::CreateManagerStatic()</a>.</p>
 
 </div>
 </div>
@@ -584,6 +777,23 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00302">302</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  303</span>  {</div>
+<div class="line"><span class="lineno">  304</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">material_id</a>;</div>
+<div class="line"><span class="lineno">  305</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a73cd015fcd1230820e1cf98557535761">m_UpdatedMaterials</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  306</span>    {</div>
+<div class="line"><span class="lineno">  307</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">material_id</a> = <a class="code hl_variable" href="#a73cd015fcd1230820e1cf98557535761">m_UpdatedMaterials</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  308</span>      <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a> = <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">material_id</a>);</div>
+<div class="line"><span class="lineno">  309</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a>.ApplyValueChanges();</div>
+<div class="line"><span class="lineno">  310</span>    }</div>
+<div class="line"><span class="lineno">  311</span> </div>
+<div class="line"><span class="lineno">  312</span>    <a class="code hl_variable" href="#a73cd015fcd1230820e1cf98557535761">m_UpdatedMaterials</a>.Clear();</div>
+<div class="line"><span class="lineno">  313</span>    <a class="code hl_function" href="#ac03a55e4460fd85c279106e4b2b83a3f">ClearMaterialUpdating</a>();</div>
+<div class="line"><span class="lineno">  314</span>  }</div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_ac03a55e4460fd85c279106e4b2b83a3f"><div class="ttname"><a href="#ac03a55e4460fd85c279106e4b2b83a3f">ClearMaterialUpdating</a></div><div class="ttdeci">void ClearMaterialUpdating()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00183">PPEManager.c:183</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00183">ClearMaterialUpdating()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00060">m_UpdatedMaterials</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00316">Update()</a>.</p>
 
 </div>
 </div>
@@ -611,6 +821,24 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00287">287</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  288</span>  {</div>
+<div class="line"><span class="lineno">  289</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++) <span class="comment">//orders (levels?)</span></div>
+<div class="line"><span class="lineno">  290</span>    {</div>
+<div class="line"><span class="lineno">  291</span>      <span class="comment">//DbgPrnt(&quot;PPEDebug | ProcessMaterialUpdates | GetKey &quot; + i + &quot;: &quot; + m_PPEMaterialUpdateQueueMap.GetKey(i));</span></div>
+<div class="line"><span class="lineno">  292</span>      <span class="comment">//DbgPrnt(&quot;PPEDebug | ProcessMaterialUpdates | GetElement - count &quot; + i + &quot;: &quot; + m_PPEMaterialUpdateQueueMap.GetElement(i).Count());</span></div>
+<div class="line"><span class="lineno">  293</span> </div>
+<div class="line"><span class="lineno">  294</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> &lt; <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.GetElement(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).<a class="code hl_enumvalue" href="../../d6/d05/_random_generator_sync_manager_8c.html#afe3bb26b57097f9a390bb1e8de15d84aa928f33270be19855038d0245a0fa06a1">Count</a>(); <a class="code hl_class" href="../../db/d06/class_param3.html">j</a>++)</div>
+<div class="line"><span class="lineno">  295</span>      {</div>
+<div class="line"><span class="lineno">  296</span>        <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a> = <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Get(<a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.GetElement(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).Get(<a class="code hl_class" href="../../db/d06/class_param3.html">j</a>));</div>
+<div class="line"><span class="lineno">  297</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a>.OnUpdate(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  298</span>      }</div>
+<div class="line"><span class="lineno">  299</span>    }</div>
+<div class="line"><span class="lineno">  300</span>  }</div>
+<div class="ttc" id="a_random_generator_sync_manager_8c_html_afe3bb26b57097f9a390bb1e8de15d84aa928f33270be19855038d0245a0fa06a1"><div class="ttname"><a href="../../d6/d05/_random_generator_sync_manager_8c.html#afe3bb26b57097f9a390bb1e8de15d84aa928f33270be19855038d0245a0fa06a1">Count</a></div><div class="ttdeci">@ Count</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d05/_random_generator_sync_manager_8c_source.html#l00007">RandomGeneratorSyncManager.c:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d05/_random_generator_sync_manager_8c_source.html#l00007">Count</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00059">m_PPEMaterialUpdateQueueMap</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00316">Update()</a>.</p>
 
 </div>
 </div>
@@ -638,6 +866,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00275">275</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  276</span>  {</div>
+<div class="line"><span class="lineno">  277</span>    <a class="code hl_class" href="../../d0/d06/class_p_p_e_requester_base.html">PPERequesterBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">req</a>;</div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  279</span>    {</div>
+<div class="line"><span class="lineno">  280</span>      <span class="comment">//DbgPrnt(&quot;PPEDebug | ProcessRequesterUpdates | m_UpdatingRequests[i]: &quot; + m_UpdatingRequests[i]);</span></div>
+<div class="line"><span class="lineno">  281</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">req</a> = <a class="code hl_variable" href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  282</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">req</a>)</div>
+<div class="line"><span class="lineno">  283</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">req</a>.OnUpdate(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  284</span>    }</div>
+<div class="line"><span class="lineno">  285</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00062">m_UpdatingRequests</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00316">Update()</a>.</p>
 
 </div>
 </div>
@@ -667,6 +909,13 @@ Variables</h2></td></tr>
 <p>Registeres material class and creates data structure within. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00135">135</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>  {</div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Set(<a class="code hl_class" href="../../db/d06/class_param3.html">material_class</a>.GetPostProcessEffectID(), <a class="code hl_class" href="../../db/d06/class_param3.html">material_class</a>);</div>
+<div class="line"><span class="lineno">  138</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00101">InitPPEManagerClassMap()</a>.</p>
 
 </div>
 </div>
@@ -695,6 +944,18 @@ Variables</h2></td></tr>
 <p>/brief Originally designed to rip the requester data from all relevant mat/params, but that proved too costly and volatile. /note Still, it is here, use at your own peril. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00248">248</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  249</span>  {</div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">req</a>.GetActiveRequestStructure().Count();</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_id</a>;</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  253</span>    {</div>
+<div class="line"><span class="lineno">  254</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">mat_id</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">req</a>.GetActiveRequestStructure().GetKey(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  255</span>      <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a> = <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">mat_id</a>);</div>
+<div class="line"><span class="lineno">  256</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a>.RemoveRequest(<a class="code hl_class" href="../../db/d06/class_param3.html">req</a>.GetRequesterIDX());</div>
+<div class="line"><span class="lineno">  257</span>    }</div>
+<div class="line"><span class="lineno">  258</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>.</p>
 
 </div>
 </div>
@@ -728,6 +989,17 @@ Variables</h2></td></tr>
 <p>Currently unused, requests remain in the hierarchy and are used when needed (slightly faster than constantly re-shuffilng the arrays) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00172">172</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>  {</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Contains(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>))</div>
+<div class="line"><span class="lineno">  175</span>    {</div>
+<div class="line"><span class="lineno">  176</span>      <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>).RemoveItem(<a class="code hl_class" href="../../db/d06/class_param3.html">material_id</a>);</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>).Count() == 0)</div>
+<div class="line"><span class="lineno">  179</span>        <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Remove(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>);</div>
+<div class="line"><span class="lineno">  180</span>    }</div>
+<div class="line"><span class="lineno">  181</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00059">m_PPEMaterialUpdateQueueMap</a>.</p>
 
 </div>
 </div>
@@ -757,6 +1029,10 @@ Variables</h2></td></tr>
 <p>Unused cleanup method, should it be ever needed. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00261">261</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  262</span>  {</div>
+<div class="line"><span class="lineno">  263</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00316">Update()</a>.</p>
 
 </div>
 </div>
@@ -784,6 +1060,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00140">140</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>  {</div>
+<div class="line"><span class="lineno">  142</span>    <span class="comment">//DbgPrnt(&quot;DataVerification | m_ColorTarget | SendMaterialValueData: &quot; + PPERequestParamDataColor.Cast(data).m_ColorTarget[0] + &quot;/&quot; + PPERequestParamDataColor.Cast(data).m_ColorTarget[1] + &quot;/&quot; + PPERequestParamDataColor.Cast(data).m_ColorTarget[2] + &quot;/&quot; + PPERequestParamDataColor.Cast(data).m_ColorTarget[3]);</span></div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a> = <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.GetMaterialID());</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a>.InsertParamValueData(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_function" href="#aaca68301fd7adfefb48f0bab6df8f671">SetMaterialParamUpdating</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.GetMaterialID(), <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.GetParameterID(), <a class="code hl_class" href="../../db/d06/class_param3.html">PPEConstants</a>.DEPENDENCY_ORDER_BASE);</div>
+<div class="line"><span class="lineno">  146</span>  }</div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_aaca68301fd7adfefb48f0bab6df8f671"><div class="ttname"><a href="#aaca68301fd7adfefb48f0bab6df8f671">SetMaterialParamUpdating</a></div><div class="ttdeci">void SetMaterialParamUpdating(int material_id, int parameter_id, int order)</div><div class="ttdoc">Queues material/parameter to update (once)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00149">PPEManager.c:149</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00149">SetMaterialParamUpdating()</a>.</p>
 
 </div>
 </div>
@@ -822,6 +1107,30 @@ Variables</h2></td></tr>
 <p>Queues material/parameter to update (once) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00149">149</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">order</a> &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">PPEConstants</a>.DEPENDENCY_ORDER_HIGHEST)</div>
+<div class="line"><span class="lineno">  152</span>    {</div>
+<div class="line"><span class="lineno">  153</span>      <span class="comment">//DbgPrnt(&quot;PPEDebug | PPEManager - SetMaterialParamUpdating | Order higher than max, ignoring! | mat/par/ord: &quot; + material_id + &quot;/&quot; + parameter_id + &quot;/&quot; + order);</span></div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_class" href="../../d3/d0f/class_p_p_e_class_base.html">PPEClassBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a> = <a class="code hl_variable" href="#a7478f777ee03097ff10a2016485188dd">m_PPEClassMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">material_id</a>);</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    <span class="comment">//DbgPrnt(&quot;PPEDebug | PPEManager - SetMaterialParamUpdating | mat/par: &quot; + material_id + &quot;/&quot; + parameter_id);</span></div>
+<div class="line"><span class="lineno">  160</span>    <span class="comment">//insert material into queue</span></div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Contains(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>))</div>
+<div class="line"><span class="lineno">  162</span>      <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Set(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>, <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a>);</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">found</a> = <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>).Find(<a class="code hl_class" href="../../db/d06/class_param3.html">material_id</a>);</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">found</a> == -1)</div>
+<div class="line"><span class="lineno">  166</span>      <a class="code hl_variable" href="#a0fe495c29ec083bfdf607234a063efa9">m_PPEMaterialUpdateQueueMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>).Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">material_id</a>);</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">mat_class</a>.SetParameterUpdating(<a class="code hl_class" href="../../db/d06/class_param3.html">order</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>);</div>
+<div class="line"><span class="lineno">  169</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">m_PPEClassMap</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00059">m_PPEMaterialUpdateQueueMap</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00140">SendMaterialValueData()</a>.</p>
 
 </div>
 </div>
@@ -855,6 +1164,19 @@ Variables</h2></td></tr>
 <p>Marks requester as 'active'. Currently indistinguiishable from 'updating' requester, can potentially be used for intermittently updated requesters. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00189">189</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  190</span>  {</div>
+<div class="line"><span class="lineno">  191</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">found</a> = <a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a>.Find(<a class="code hl_class" href="../../db/d06/class_param3.html">request</a>);</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">active</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">found</a> == -1)</div>
+<div class="line"><span class="lineno">  193</span>      <a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">request</a>);</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">active</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">found</a> &gt; -1) <span class="comment">//should always be found in this case, redundant?</span></div>
+<div class="line"><span class="lineno">  195</span>    {</div>
+<div class="line"><span class="lineno">  196</span>      <span class="comment">//RemoveActiveRequestFromMaterials(request);</span></div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>      <a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a>.Remove(<a class="code hl_class" href="../../db/d06/class_param3.html">found</a>);</div>
+<div class="line"><span class="lineno">  199</span>    }</div>
+<div class="line"><span class="lineno">  200</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00061">m_ExistingPostprocessRequests</a>.</p>
 
 </div>
 </div>
@@ -888,6 +1210,22 @@ Variables</h2></td></tr>
 <p>Marks requester as 'updating' and to be processed on manager update. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00203">203</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>  {</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a>)</div>
+<div class="line"><span class="lineno">  206</span>    {</div>
+<div class="line"><span class="lineno">  207</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;PPEManager | SetRequestUpdating | !m_UpdatingRequests&quot;</span>);</div>
+<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">idx</a> = <a class="code hl_variable" href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a>.Find(<a class="code hl_class" href="../../db/d06/class_param3.html">request</a>);</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">active</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">idx</a> == -1)</div>
+<div class="line"><span class="lineno">  214</span>      <a class="code hl_variable" href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">request</a>);</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">active</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">idx</a> &gt; -1)</div>
+<div class="line"><span class="lineno">  216</span>      <a class="code hl_variable" href="#a87d4fd46849935d83b1a1a2cff4cbd4e">m_UpdatingRequests</a>.Remove(<a class="code hl_class" href="../../db/d06/class_param3.html">idx</a>);</div>
+<div class="line"><span class="lineno">  217</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug::Log()</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00062">m_UpdatingRequests</a>.</p>
 
 </div>
 </div>
@@ -917,6 +1255,18 @@ Variables</h2></td></tr>
 <p>stops all effects of a certain kind </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00369">369</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  370</span>  {</div>
+<div class="line"><span class="lineno">  371</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a>)</div>
+<div class="line"><span class="lineno">  372</span>    {</div>
+<div class="line"><span class="lineno">  373</span>      <span class="keywordflow">foreach</span> (<a class="code hl_class" href="../../d0/d06/class_p_p_e_requester_base.html">PPERequesterBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">requester</a> : <a class="code hl_variable" href="#a24ffa283b59c14250a624ad3f1967a40">m_ExistingPostprocessRequests</a>)</div>
+<div class="line"><span class="lineno">  374</span>      {</div>
+<div class="line"><span class="lineno">  375</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">requester</a>.GetCategoryMask() &amp; <a class="code hl_class" href="../../db/d06/class_param3.html">mask</a>)</div>
+<div class="line"><span class="lineno">  376</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">requester</a>.Stop();</div>
+<div class="line"><span class="lineno">  377</span>      }</div>
+<div class="line"><span class="lineno">  378</span>    }</div>
+<div class="line"><span class="lineno">  379</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00061">m_ExistingPostprocessRequests</a>.</p>
 
 </div>
 </div>
@@ -944,6 +1294,21 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00316">316</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  317</span>  {</div>
+<div class="line"><span class="lineno">  318</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a110e59bd7e4a3f5ab72ce3d6bd3c0032">m_ManagerInitialized</a>)</div>
+<div class="line"><span class="lineno">  319</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>    <a class="code hl_function" href="#a6f94d0e15cc0b71459d58bc2a9750def">ProcessRequesterUpdates</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  322</span>    <a class="code hl_function" href="#acb56dba6b1df7236cfea3d35218f647c">ProcessMaterialUpdates</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  323</span>    <a class="code hl_function" href="#a727e6128167e0ac8c1b750417aaeb4bd">ProcessApplyValueChanges</a>();</div>
+<div class="line"><span class="lineno">  324</span>    <a class="code hl_function" href="#a5cca9e1ccf0a172d3743495594984460">RequestsCleanup</a>(); <span class="comment">//unused</span></div>
+<div class="line"><span class="lineno">  325</span>  }</div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a5cca9e1ccf0a172d3743495594984460"><div class="ttname"><a href="#a5cca9e1ccf0a172d3743495594984460">RequestsCleanup</a></div><div class="ttdeci">void RequestsCleanup()</div><div class="ttdoc">Unused cleanup method, should it be ever needed.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00261">PPEManager.c:261</a></div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a6f94d0e15cc0b71459d58bc2a9750def"><div class="ttname"><a href="#a6f94d0e15cc0b71459d58bc2a9750def">ProcessRequesterUpdates</a></div><div class="ttdeci">void ProcessRequesterUpdates(float timeslice)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00275">PPEManager.c:275</a></div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_a727e6128167e0ac8c1b750417aaeb4bd"><div class="ttname"><a href="#a727e6128167e0ac8c1b750417aaeb4bd">ProcessApplyValueChanges</a></div><div class="ttdeci">void ProcessApplyValueChanges()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00302">PPEManager.c:302</a></div></div>
+<div class="ttc" id="a_p_p_e_manager_8c_html_acb56dba6b1df7236cfea3d35218f647c"><div class="ttname"><a href="#acb56dba6b1df7236cfea3d35218f647c">ProcessMaterialUpdates</a></div><div class="ttdeci">void ProcessMaterialUpdates(float timeslice)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_p_p_e_manager_8c_source.html#l00287">PPEManager.c:287</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00057">m_ManagerInitialized</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00302">ProcessApplyValueChanges()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00287">ProcessMaterialUpdates()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00275">ProcessRequesterUpdates()</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00261">RequestsCleanup()</a>.</p>
 
 </div>
 </div>
@@ -965,6 +1330,8 @@ Variables</h2></td></tr>
 <p>/par Updates the material/parameter structure and calculates the blend values</p>
 <p>/par Sets the final values via native functions (only called once per changed parameter - optimization stonks)</p>
 <p>/note Requester serves as a centralized platform for specific effec/group of effects. Although technically the direct commands to mat/param would be feasible, this allows for easier control of effect groups, /note and clearer command hierarchy (no value setters without clear parentage). </p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00344">ChangePPEMaterial()</a>.</p>
 
 </div>
 </div>
@@ -990,6 +1357,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00061">61</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00070">Cleanup()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00220">GetExistingRequester()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00084">Init()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00189">SetRequestActive()</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00369">StopAllEffects()</a>.</p>
+
 </div>
 </div>
 <a id="a110e59bd7e4a3f5ab72ce3d6bd3c0032" name="a110e59bd7e4a3f5ab72ce3d6bd3c0032"></a>
@@ -1013,6 +1382,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00057">57</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00070">Cleanup()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00084">Init()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00064">PPEManager()</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00316">Update()</a>.</p>
 
 </div>
 </div>
@@ -1038,6 +1409,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00058">58</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00344">ChangePPEMaterial()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00070">Cleanup()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00335">GetPostProcessCurrentValues()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00328">GetPostProcessDefaultValues()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00101">InitPPEManagerClassMap()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00302">ProcessApplyValueChanges()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00287">ProcessMaterialUpdates()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00135">RegisterPPEClass()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00248">RemoveActiveRequestFromMaterials()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00140">SendMaterialValueData()</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00149">SetMaterialParamUpdating()</a>.</p>
+
 </div>
 </div>
 <a id="a0fe495c29ec083bfdf607234a063efa9" name="a0fe495c29ec083bfdf607234a063efa9"></a>
@@ -1061,6 +1434,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00059">59</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00070">Cleanup()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00183">ClearMaterialUpdating()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00084">Init()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00287">ProcessMaterialUpdates()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00172">RemoveMaterialUpdating()</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00149">SetMaterialParamUpdating()</a>.</p>
 
 </div>
 </div>
@@ -1086,6 +1461,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00060">60</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00084">Init()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00266">InsertUpdatedMaterial()</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00302">ProcessApplyValueChanges()</a>.</p>
+
 </div>
 </div>
 <a id="a87d4fd46849935d83b1a1a2cff4cbd4e" name="a87d4fd46849935d83b1a1a2cff4cbd4e"></a>
@@ -1109,6 +1486,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00062">62</a> of file <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html">PPEManager.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00070">Cleanup()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00084">Init()</a>, <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00275">ProcessRequesterUpdates()</a>, and <a class="el" href="../../de/d07/_p_p_e_manager_8c_source.html#l00203">SetRequestUpdating()</a>.</p>
 
 </div>
 </div>

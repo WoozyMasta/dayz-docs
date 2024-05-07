@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -606,7 +603,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d00/_item_book_8c_source.html#l00016">16</a> of file <a class="el" href="../../dc/d00/_item_book_8c_source.html">ItemBook.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">if</span> (GetHierarchyParent()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   21</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af6741e0faa80ade0d9e53b9f0579816e" name="af6741e0faa80ade0d9e53b9f0579816e"></a>
@@ -672,6 +674,31 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00403">403</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  404</span>  {</div>
+<div class="line"><span class="lineno">  405</span>    <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">loc</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>();</div>
+<div class="line"><span class="lineno">  406</span> </div>
+<div class="line"><span class="lineno">  407</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">isPresent</a> = GetInventory().GetCurrentInventoryLocation(<a class="code hl_class" href="../../db/d06/class_param3.html">loc</a>);</div>
+<div class="line"><span class="lineno">  408</span> </div>
+<div class="line"><span class="lineno">  409</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">isPresent</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">loc</a>.GetSlot() == -1)</div>
+<div class="line"><span class="lineno">  410</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  411</span> </div>
+<div class="line"><span class="lineno">  412</span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a> = <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.<a class="code hl_function" href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">GetSlotName</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">loc</a>.GetSlot());</div>
+<div class="line"><span class="lineno">  413</span> </div>
+<div class="line"><span class="lineno">  414</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a> &amp;&amp; <a class="code hl_class" href="../../de/d09/class_car_script.html">CarScript</a>.Cast(parent).<a class="code hl_function" href="../../de/d09/class_car_script.html#a5733487848564efdc3e90a8f741514da">GetCarDoorsState</a>(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>) == <a class="code hl_enumeration" href="../../d5/d01/_car_script_8c.html#a18cb065ee474426aa7bcbee02cdcd134">CarDoorState</a>.DOORS_OPEN)</div>
+<div class="line"><span class="lineno">  415</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  416</span> </div>
+<div class="line"><span class="lineno">  417</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  418</span>  }</div>
+<div class="ttc" id="a_car_script_8c_html_a18cb065ee474426aa7bcbee02cdcd134"><div class="ttname"><a href="../../d5/d01/_car_script_8c.html#a18cb065ee474426aa7bcbee02cdcd134">CarDoorState</a></div><div class="ttdeci">CarDoorState</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d01/_car_script_8c_source.html#l00001">CarScript.c:2</a></div></div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad99b887e4b51af1a438d1fb17e5c54a3"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a></div><div class="ttdeci">PlayerSpawnPreset slotName</div></div>
+<div class="ttc" id="aclass_car_script_html"><div class="ttname"><a href="../../de/d09/class_car_script.html">CarScript</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d07/_civilian_sedan_8c_source.html#l00001">CivilianSedan.c:2</a></div></div>
+<div class="ttc" id="aclass_car_script_html_a5733487848564efdc3e90a8f741514da"><div class="ttname"><a href="../../de/d09/class_car_script.html#a5733487848564efdc3e90a8f741514da">CarScript::GetCarDoorsState</a></div><div class="ttdeci">override int GetCarDoorsState(string slotType)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d07/_civilian_sedan_8c_source.html#l00158">CivilianSedan.c:158</a></div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html">InventorySlots</a></div><div class="ttdoc">provides access to slot configuration</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/_inventory_slots_8c_source.html#l00005">InventorySlots.c:6</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html_a7780f9a2ed7ac70dff2d1b5e277d8f5a"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">InventorySlots::GetSlotName</a></div><div class="ttdeci">static proto native owned string GetSlotName(int id)</div><div class="ttdoc">converts slot_id to string</div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d07/_civilian_sedan_8c_source.html#l00158">CarScript::GetCarDoorsState()</a>, <a class="el" href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">InventorySlots::GetSlotName()</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>.</p>
 
 </div>
 </div>
@@ -727,7 +754,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d00/_item_book_8c_source.html#l00023">23</a> of file <a class="el" href="../../dc/d00/_item_book_8c_source.html">ItemBook.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   24</span>  {</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   26</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a68ffc74abe94fac39dd850063087109c" name="a68ffc74abe94fac39dd850063087109c"></a>
@@ -804,6 +834,14 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01093">1093</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1094</span>  {</div>
+<div class="line"><span class="lineno"> 1095</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">output</a> = <a class="code hl_variable" href="#af11044f1871c761dc2a9469960b7d239">m_Description</a>;</div>
+<div class="line"><span class="lineno"> 1096</span> </div>
+<div class="line"><span class="lineno"> 1097</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1098</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_af11044f1871c761dc2a9469960b7d239"><div class="ttname"><a href="#af11044f1871c761dc2a9469960b7d239">InventoryItemSuper::m_Description</a></div><div class="ttdeci">string m_Description</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00971">InventoryItem.c:971</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d05/_en_entity_8c_source.html#l00842">m_Description</a>.</p>
 
 </div>
 </div>
@@ -831,7 +869,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00173">173</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  174</span>  {</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  176</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a755b567f465144137a7a0fa923e59631" name="a755b567f465144137a7a0fa923e59631"></a>
@@ -858,7 +899,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00441">441</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  442</span>  {</div>
+<div class="line"><span class="lineno">  443</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  444</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a755b567f465144137a7a0fa923e59631" name="a755b567f465144137a7a0fa923e59631"></a>
@@ -885,7 +929,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00655">655</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  656</span>  {</div>
+<div class="line"><span class="lineno">  657</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  658</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1d0aefee066972a242eaf5011917bc42" name="a1d0aefee066972a242eaf5011917bc42"></a>
@@ -971,6 +1018,79 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00183">183</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>  {</div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEHealthLevelChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">oldLevel</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">zone</a>);</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> == <a class="code hl_class" href="../../da/d05/class_game_constants.html">GameConstants</a>.<a class="code hl_variable" href="../../de/d05/group___item_health.html#ga3908fcde0f2e91545d7e3a51fab2d5d0">STATE_RUINED</a>)</div>
+<div class="line"><span class="lineno">  188</span>    {</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  190</span>      <span class="keywordflow">switch</span> (<a class="code hl_function" href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType</a>())</div>
+<div class="line"><span class="lineno">  191</span>      {</div>
+<div class="line"><span class="lineno">  192</span>      <span class="keywordflow">case</span> <span class="stringliteral">&quot;HatchbackWheel&quot;</span>:</div>
+<div class="line"><span class="lineno">  193</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> = <span class="stringliteral">&quot;HatchbackWheel_Ruined&quot;</span>;</div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>      <span class="keywordflow">case</span> <span class="stringliteral">&quot;CivSedanWheel&quot;</span>:</div>
+<div class="line"><span class="lineno">  197</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> = <span class="stringliteral">&quot;CivSedanWheel_Ruined&quot;</span>;</div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>      <span class="keywordflow">case</span> <span class="stringliteral">&quot;Hatchback_02_Wheel&quot;</span>:</div>
+<div class="line"><span class="lineno">  201</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> = <span class="stringliteral">&quot;Hatchback_02_Wheel_Ruined&quot;</span>;</div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>      <span class="keywordflow">case</span> <span class="stringliteral">&quot;Sedan_02_Wheel&quot;</span>:</div>
+<div class="line"><span class="lineno">  205</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> = <span class="stringliteral">&quot;Sedan_02_Wheel_Ruined&quot;</span>;</div>
+<div class="line"><span class="lineno">  206</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">case</span> <span class="stringliteral">&quot;Truck_01_Wheel&quot;</span>:</div>
+<div class="line"><span class="lineno">  209</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> = <span class="stringliteral">&quot;Truck_01_Wheel_Ruined&quot;</span>;</div>
+<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">case</span> <span class="stringliteral">&quot;Truck_01_WheelDouble&quot;</span>:</div>
+<div class="line"><span class="lineno">  213</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> = <span class="stringliteral">&quot;Truck_01_WheelDouble_Ruined&quot;</span>;</div>
+<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>      <span class="keywordflow">case</span> <span class="stringliteral">&quot;Offroad_02_Wheel&quot;</span>:</div>
+<div class="line"><span class="lineno">  217</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> = <span class="stringliteral">&quot;Offroad_02_Wheel_Ruined&quot;</span>;</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  219</span>      }</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  222</span>      {</div>
+<div class="line"><span class="lineno">  223</span>        <span class="comment">//Unlock to allow creating a new item</span></div>
+<div class="line"><span class="lineno">  224</span>        <span class="keywordflow">if</span> (IsLockedInSlot())</div>
+<div class="line"><span class="lineno">  225</span>          <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#acf1b10357a62a4fb78895f76824d3526">UnlockFromParent</a>();</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>        <a class="code hl_class" href="../../dc/d09/class_i_entity.html">IEntity</a> <a class="code hl_class" href="../../db/d06/class_param3.html">child</a> = <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#gafbb92b8168e7054217cfdfd28878d070">GetChildren</a>();</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordflow">while</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">child</a>)</div>
+<div class="line"><span class="lineno">  229</span>        {</div>
+<div class="line"><span class="lineno">  230</span>          <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#gacba9565bda2f27def77467b021c71d1d">RemoveChild</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">child</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  231</span>          <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">matrix</a>[4];</div>
+<div class="line"><span class="lineno">  232</span>          GetTransform(<a class="code hl_class" href="../../db/d06/class_param3.html">matrix</a>);</div>
+<div class="line"><span class="lineno">  233</span>          GetInventory().DropEntityWithTransform(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a>.SERVER, <span class="keyword">this</span>, <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">child</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">matrix</a>);</div>
+<div class="line"><span class="lineno">  234</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">child</a> = <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga0a911c581adec61a446c1c9bf51712d4">GetSibling</a>();</div>
+<div class="line"><span class="lineno">  235</span>        }</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>        <a class="code hl_function" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c.html#a0cfb9f46331dde22485b027569c06d54">ReplaceWheelLambda</a> <a class="code hl_class" href="../../db/d06/class_param3.html">lambda</a> = <span class="keyword">new</span> <a class="code hl_function" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c.html#a0cfb9f46331dde22485b027569c06d54">ReplaceWheelLambda</a>(<span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">newWheel</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  238</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">lambda</a>.SetTransferParams(<span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  239</span>        GetInventory().ReplaceItemWithNew(<a class="code hl_enumeration" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a>.SERVER, <a class="code hl_class" href="../../db/d06/class_param3.html">lambda</a>);</div>
+<div class="line"><span class="lineno">  240</span>      }</div>
+<div class="line"><span class="lineno">  241</span>    }</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+<div class="ttc" id="a3___game_2_systems_2_inventory_2_inventory_8c_html_a5073c77c5d68882860f688a9fc4cba4d"><div class="ttname"><a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c.html#a5073c77c5d68882860f688a9fc4cba4d">InventoryMode</a></div><div class="ttdeci">InventoryMode</div><div class="ttdoc">NOTE: PREDICTIVE is not to be used at all in multiplayer.</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00021">Inventory.c:22</a></div></div>
+<div class="ttc" id="a4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_html_aeb4a6afbec7223ae143aed1d5627dc01"><div class="ttname"><a href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#aeb4a6afbec7223ae143aed1d5627dc01">GetType</a></div><div class="ttdeci">eBleedingSourceType GetType()</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_source.html#l00063">BleedingSource.c:63</a></div></div>
+<div class="ttc" id="a4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_html_a0cfb9f46331dde22485b027569c06d54"><div class="ttname"><a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c.html#a0cfb9f46331dde22485b027569c06d54">ReplaceWheelLambda</a></div><div class="ttdeci">void ReplaceWheelLambda(EntityAI old_item, string new_item_type, PlayerBase player)</div></div>
+<div class="ttc" id="a_item_base_8c_html_acf1b10357a62a4fb78895f76824d3526"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#acf1b10357a62a4fb78895f76824d3526">UnlockFromParent</a></div><div class="ttdeci">void UnlockFromParent()</div><div class="ttdoc">Unlocks this item from its attachment slot of its parent.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_item_base_8c_source.html#l05516">ItemBase.c:5516</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_game_constants_html"><div class="ttname"><a href="../../da/d05/class_game_constants.html">GameConstants</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00611">constants.c:612</a></div></div>
+<div class="ttc" id="aclass_i_entity_html"><div class="ttname"><a href="../../dc/d09/class_i_entity.html">IEntity</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d05/_en_entity_8c_source.html#l00163">EnEntity.c:164</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agroup___item_health_html_ga3908fcde0f2e91545d7e3a51fab2d5d0"><div class="ttname"><a href="../../de/d05/group___item_health.html#ga3908fcde0f2e91545d7e3a51fab2d5d0">GameConstants::STATE_RUINED</a></div><div class="ttdeci">const int STATE_RUINED</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00757">constants.c:757</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga0a911c581adec61a446c1c9bf51712d4"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga0a911c581adec61a446c1c9bf51712d4">GetSibling</a></div><div class="ttdeci">proto native Widget GetSibling()</div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_gacba9565bda2f27def77467b021c71d1d"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#gacba9565bda2f27def77467b021c71d1d">RemoveChild</a></div><div class="ttdeci">proto native void RemoveChild(Widget child)</div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_gafbb92b8168e7054217cfdfd28878d070"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#gafbb92b8168e7054217cfdfd28878d070">GetChildren</a></div><div class="ttdeci">proto native Widget GetChildren()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#gafbb92b8168e7054217cfdfd28878d070">GetChildren()</a>, <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga0a911c581adec61a446c1c9bf51712d4">GetSibling()</a>, <a class="el" href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_source.html#l00063">GetType()</a>, <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#gacba9565bda2f27def77467b021c71d1d">RemoveChild()</a>, <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c.html#a0cfb9f46331dde22485b027569c06d54">ReplaceWheelLambda()</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00757">GameConstants::STATE_RUINED</a>, and <a class="el" href="../../df/d0e/_item_base_8c_source.html#l05516">UnlockFromParent()</a>.</p>
 
 </div>
 </div>
@@ -1007,6 +1127,24 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00425">425</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  426</span>  {</div>
+<div class="line"><span class="lineno">  427</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEHealthLevelChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">oldLevel</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">zone</a>);</div>
+<div class="line"><span class="lineno">  428</span> </div>
+<div class="line"><span class="lineno">  429</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">newLevel</a> == <a class="code hl_class" href="../../da/d05/class_game_constants.html">GameConstants</a>.<a class="code hl_variable" href="../../de/d05/group___item_health.html#ga3908fcde0f2e91545d7e3a51fab2d5d0">STATE_RUINED</a> &amp;&amp; <a class="code hl_variable" href="../../d6/d05/_ui_hint_panel_8c.html#a67543f3b20462b853f968127db0c566e">m_Initialized</a>)</div>
+<div class="line"><span class="lineno">  430</span>    {</div>
+<div class="line"><span class="lineno">  431</span>      <a class="code hl_class" href="../../d9/d09/class_effect_sound.html">EffectSound</a> <a class="code hl_class" href="../../db/d06/class_param3.html">sound_plug</a>;</div>
+<div class="line"><span class="lineno">  432</span>      <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">zone</a>)</div>
+<div class="line"><span class="lineno">  433</span>      {</div>
+<div class="line"><span class="lineno">  434</span>      <span class="keywordflow">case</span> <span class="stringliteral">&quot;Window&quot;</span>:</div>
+<div class="line"><span class="lineno">  435</span>        PlaySoundSet(<a class="code hl_class" href="../../db/d06/class_param3.html">sound_plug</a>, <span class="stringliteral">&quot;offroad_hit_window_small_SoundSet&quot;</span>, 0, 0);</div>
+<div class="line"><span class="lineno">  436</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  437</span>      }</div>
+<div class="line"><span class="lineno">  438</span>    }</div>
+<div class="line"><span class="lineno">  439</span>  }</div>
+<div class="ttc" id="a_ui_hint_panel_8c_html_a67543f3b20462b853f968127db0c566e"><div class="ttname"><a href="../../d6/d05/_ui_hint_panel_8c.html#a67543f3b20462b853f968127db0c566e">m_Initialized</a></div><div class="ttdeci">bool m_Initialized</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d05/_ui_hint_panel_8c_source.html#l00309">UiHintPanel.c:309</a></div></div>
+<div class="ttc" id="aclass_effect_sound_html"><div class="ttname"><a href="../../d9/d09/class_effect_sound.html">EffectSound</a></div><div class="ttdoc">Wrapper class for managing sound through SEffectManager.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d00/_effect_sound_8c_source.html#l00004">EffectSound.c:5</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d05/_ui_hint_panel_8c_source.html#l00309">m_Initialized</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00757">GameConstants::STATE_RUINED</a>.</p>
 
 </div>
 </div>
@@ -1034,6 +1172,32 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00665">665</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  666</span>  {</div>
+<div class="line"><span class="lineno">  667</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">  668</span>    {</div>
+<div class="line"><span class="lineno">  669</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">Car</a> <a class="code hl_class" href="../../db/d06/class_param3.html">car</a>;</div>
+<div class="line"><span class="lineno">  670</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> parent = GetHierarchyParent();</div>
+<div class="line"><span class="lineno">  671</span> </div>
+<div class="line"><span class="lineno">  672</span>      <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">car</a>, parent);</div>
+<div class="line"><span class="lineno">  673</span> </div>
+<div class="line"><span class="lineno">  674</span> </div>
+<div class="line"><span class="lineno">  675</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">car</a>)</div>
+<div class="line"><span class="lineno">  676</span>      {</div>
+<div class="line"><span class="lineno">  677</span>        <span class="keywordtype">float</span> amount = <a class="code hl_class" href="../../db/d06/class_param3.html">car</a>.GetFluidFraction(<a class="code hl_enumeration" href="../../d9/d06/_car_8c.html#a7e3ece2c12d3089c67bc1cc511b5fd3e">CarFluid</a>.COOLANT);</div>
+<div class="line"><span class="lineno">  678</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">newAmount</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">RandomFloat</a>(amount * 0.2, amount * 0.75);</div>
+<div class="line"><span class="lineno">  679</span> </div>
+<div class="line"><span class="lineno">  680</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">car</a>.Leak(<a class="code hl_enumeration" href="../../d9/d06/_car_8c.html#a7e3ece2c12d3089c67bc1cc511b5fd3e">CarFluid</a>.COOLANT, <a class="code hl_class" href="../../db/d06/class_param3.html">newAmount</a>);</div>
+<div class="line"><span class="lineno">  681</span>      }</div>
+<div class="line"><span class="lineno">  682</span>    }</div>
+<div class="line"><span class="lineno">  683</span>  }</div>
+<div class="ttc" id="a_car_8c_html_a7e3ece2c12d3089c67bc1cc511b5fd3e"><div class="ttname"><a href="../../d9/d06/_car_8c.html#a7e3ece2c12d3089c67bc1cc511b5fd3e">CarFluid</a></div><div class="ttdeci">CarFluid</div><div class="ttdoc">Type of vehicle's fluid. (native, do not change or extend)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d06/_car_8c_source.html#l00017">Car.c:18</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+<div class="ttc" id="agroup___math_html_ga892ecb1375c9b373969273223a5841f3"><div class="ttname"><a href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat</a></div><div class="ttdeci">static proto float RandomFloat(float min, float max)</div><div class="ttdoc">Returns a random float number between and min[inclusive] and max[exclusive].</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat()</a>.</p>
 
 </div>
 </div>
@@ -1910,7 +2074,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01027">1027</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno"> 1028</span>  {</div>
+<div class="line"><span class="lineno"> 1029</span>    <span class="keywordflow">if</span> (GetAnimationPhase(<span class="stringliteral">&quot;map_opened&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno"> 1030</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1031</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1032</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a103133af867e2a88a79e26ea7f057910" name="a103133af867e2a88a79e26ea7f057910"></a>
@@ -1937,7 +2106,11 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01106">1106</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno"> 1107</span>  {</div>
+<div class="line"><span class="lineno"> 1108</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a4dfd20034521bd3414a326e3a845d77a">m_MapMarkerArray</a>;</div>
+<div class="line"><span class="lineno"> 1109</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_a4dfd20034521bd3414a326e3a845d77a"><div class="ttname"><a href="#a4dfd20034521bd3414a326e3a845d77a">InventoryItemSuper::m_MapMarkerArray</a></div><div class="ttdeci">ref array&lt; ref MapMarker &gt; m_MapMarkerArray</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00965">InventoryItem.c:965</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a67b81af53e490b2286182b8f00b7b1e5" name="a67b81af53e490b2286182b8f00b7b1e5"></a>
@@ -1996,7 +2169,11 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00244">244</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../df/d04/_e_melee_target_type_8c.html#ab8b6f78a7f1e1f6d1983ba83f8637cf4">EMeleeTargetType</a>.NONALIGNABLE;</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="ttc" id="a_e_melee_target_type_8c_html_ab8b6f78a7f1e1f6d1983ba83f8637cf4"><div class="ttname"><a href="../../df/d04/_e_melee_target_type_8c.html#ab8b6f78a7f1e1f6d1983ba83f8637cf4">EMeleeTargetType</a></div><div class="ttdeci">EMeleeTargetType</div><div class="ttdef"><b>Definition</b> <a href="../../df/d04/_e_melee_target_type_8c_source.html#l00001">EMeleeTargetType.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a292443dd95af2d68107e8d72477648e5" name="a292443dd95af2d68107e8d72477648e5"></a>
@@ -2023,7 +2200,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00420">420</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  421</span>  {</div>
+<div class="line"><span class="lineno">  422</span>    <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../df/d04/_e_melee_target_type_8c.html#ab8b6f78a7f1e1f6d1983ba83f8637cf4">EMeleeTargetType</a>.NONALIGNABLE;</div>
+<div class="line"><span class="lineno">  423</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac2f05a851caec68fcbaf313ac8dc4d15" name="ac2f05a851caec68fcbaf313ac8dc4d15"></a>
@@ -2636,7 +2816,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d00/_item_book_8c_source.html#l00011">11</a> of file <a class="el" href="../../dc/d00/_item_book_8c_source.html">ItemBook.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   14</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a63a82b72553c0ab54f491af66f0a48d4" name="a63a82b72553c0ab54f491af66f0a48d4"></a>
@@ -2690,6 +2873,32 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00978">978</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  979</span>  {</div>
+<div class="line"><span class="lineno">  980</span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> = <span class="stringliteral">&quot;CfgWorlds &quot;</span> + <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorldName();</div>
+<div class="line"><span class="lineno">  981</span> </div>
+<div class="line"><span class="lineno">  982</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetText(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> + <span class="stringliteral">&quot; mapDisplayNameKey&quot;</span>, <a class="code hl_variable" href="#a4f4f3fa66e04101b75cdaeaa654280cf">m_DisplayName</a>);</div>
+<div class="line"><span class="lineno">  983</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetText(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> + <span class="stringliteral">&quot; mapDescriptionKey&quot;</span>, <a class="code hl_variable" href="#af11044f1871c761dc2a9469960b7d239">m_Description</a>);</div>
+<div class="line"><span class="lineno">  984</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetText(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> + <span class="stringliteral">&quot; mapTextureClosed&quot;</span>, <a class="code hl_variable" href="#a84ab5e2df33d6ebf80d5096c0b237f19">m_TextureClosed</a>);</div>
+<div class="line"><span class="lineno">  985</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetText(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> + <span class="stringliteral">&quot; mapTextureOpened&quot;</span>, <a class="code hl_variable" href="#a9e42dd8ca55391413eab4c69fcebfa25">m_TextureOpened</a>);</div>
+<div class="line"><span class="lineno">  986</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetText(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> + <span class="stringliteral">&quot; mapTextureLegend&quot;</span>, <a class="code hl_variable" href="#a4dc69ff3ded2e31683143a63f6a59d58">m_TextureLegend</a>);</div>
+<div class="line"><span class="lineno">  987</span> </div>
+<div class="line"><span class="lineno">  988</span>    SetObjectTexture(0, <a class="code hl_variable" href="#a84ab5e2df33d6ebf80d5096c0b237f19">m_TextureClosed</a>);</div>
+<div class="line"><span class="lineno">  989</span>    SetObjectTexture(1, <a class="code hl_variable" href="#a9e42dd8ca55391413eab4c69fcebfa25">m_TextureOpened</a>);</div>
+<div class="line"><span class="lineno">  990</span>    SetObjectTexture(2, <a class="code hl_variable" href="#a4dc69ff3ded2e31683143a63f6a59d58">m_TextureLegend</a>);</div>
+<div class="line"><span class="lineno">  991</span> </div>
+<div class="line"><span class="lineno">  992</span>    <span class="comment">//m_MarkerArray = new ref array&lt;vector,int,int,string&gt;;</span></div>
+<div class="line"><span class="lineno">  993</span>    <a class="code hl_variable" href="#a4dfd20034521bd3414a326e3a845d77a">m_MapMarkerArray</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ref MapMarker&gt;</a>;</div>
+<div class="line"><span class="lineno">  994</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">  995</span>      <a class="code hl_function" href="#a06fd18d6a7f41d680fbad2ed7debf09d">SyncMapMarkers</a>();</div>
+<div class="line"><span class="lineno">  996</span>  }</div>
+<div class="ttc" id="a_option_selector_multistate_8c_html_a46c20eb2a26abeb1e934cd66e1dd6484"><div class="ttname"><a href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a></div><div class="ttdeci">string path</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">OptionSelectorMultistate.c:121</a></div></div>
+<div class="ttc" id="aclass_inventory_item_super_html_a06fd18d6a7f41d680fbad2ed7debf09d"><div class="ttname"><a href="#a06fd18d6a7f41d680fbad2ed7debf09d">InventoryItemSuper::SyncMapMarkers</a></div><div class="ttdeci">void SyncMapMarkers()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01034">InventoryItem.c:1034</a></div></div>
+<div class="ttc" id="aclass_inventory_item_super_html_a4dc69ff3ded2e31683143a63f6a59d58"><div class="ttname"><a href="#a4dc69ff3ded2e31683143a63f6a59d58">InventoryItemSuper::m_TextureLegend</a></div><div class="ttdeci">string m_TextureLegend</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00969">InventoryItem.c:969</a></div></div>
+<div class="ttc" id="aclass_inventory_item_super_html_a4f4f3fa66e04101b75cdaeaa654280cf"><div class="ttname"><a href="#a4f4f3fa66e04101b75cdaeaa654280cf">InventoryItemSuper::m_DisplayName</a></div><div class="ttdeci">string m_DisplayName</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00970">InventoryItem.c:970</a></div></div>
+<div class="ttc" id="aclass_inventory_item_super_html_a84ab5e2df33d6ebf80d5096c0b237f19"><div class="ttname"><a href="#a84ab5e2df33d6ebf80d5096c0b237f19">InventoryItemSuper::m_TextureClosed</a></div><div class="ttdeci">string m_TextureClosed</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00967">InventoryItem.c:967</a></div></div>
+<div class="ttc" id="aclass_inventory_item_super_html_a9e42dd8ca55391413eab4c69fcebfa25"><div class="ttname"><a href="#a9e42dd8ca55391413eab4c69fcebfa25">InventoryItemSuper::m_TextureOpened</a></div><div class="ttdeci">string m_TextureOpened</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00968">InventoryItem.c:968</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d05/_en_entity_8c_source.html#l00842">m_Description</a>, and <a class="el" href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">path</a>.</p>
 
 </div>
 </div>
@@ -2731,7 +2940,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01100">1100</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno"> 1101</span>  {</div>
+<div class="line"><span class="lineno"> 1102</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../d8/d06/class_map_marker.html">MapMarker</a> <a class="code hl_class" href="../../db/d06/class_param3.html">marker</a> = <a class="code hl_class" href="../../d8/d06/class_map_marker.html">MapMarker</a>(pos, <a class="code hl_class" href="../../db/d06/class_param3.html">text</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">color</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">idx</a>);</div>
+<div class="line"><span class="lineno"> 1103</span>    <a class="code hl_variable" href="#a4dfd20034521bd3414a326e3a845d77a">m_MapMarkerArray</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">marker</a>);</div>
+<div class="line"><span class="lineno"> 1104</span>  }</div>
+<div class="ttc" id="aclass_map_marker_html"><div class="ttname"><a href="../../d8/d06/class_map_marker.html">MapMarker</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01112">InventoryItem.c:1113</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a02b9e60d9f562ca3418b1072646a8e8b" name="a02b9e60d9f562ca3418b1072646a8e8b"></a>
@@ -2921,6 +3135,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0a/_weapon_8c_source.html#l00097">97</a> of file <a class="el" href="../../db/d0a/_weapon_8c_source.html">Weapon.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>  {</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a3798893eb7b88b299302378e273875fc">IsChamberFull</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">muzzleIndex</a>);</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_a3798893eb7b88b299302378e273875fc"><div class="ttname"><a href="#a3798893eb7b88b299302378e273875fc">InventoryItemSuper::IsChamberFull</a></div><div class="ttdeci">proto native bool IsChamberFull(int muzzleIndex)</div><div class="ttdoc">maximum number of cartridges in chamber</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0f/_weapon_stable_state_8c_source.html#l00152">IsChamberFull()</a>.</p>
 
 </div>
 </div>
@@ -3035,7 +3255,10 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if full </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0a/_weapon_8c_source.html#l00122">122</a> of file <a class="el" href="../../db/d0a/_weapon_8c_source.html">Weapon.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  122</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#a308df445665280b5b8a97e54f066b3a1">GetInternalMagazineMaxCartridgeCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">muzzleIndex</a>) == <a class="code hl_function" href="#a4f534724d5e52de9e4782d7d328a4dfa">GetInternalMagazineCartridgeCount</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">muzzleIndex</a>); }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_a308df445665280b5b8a97e54f066b3a1"><div class="ttname"><a href="#a308df445665280b5b8a97e54f066b3a1">InventoryItemSuper::GetInternalMagazineMaxCartridgeCount</a></div><div class="ttdeci">proto native int GetInternalMagazineMaxCartridgeCount(int muzzleIndex)</div></div>
+<div class="ttc" id="aclass_inventory_item_super_html_a4f534724d5e52de9e4782d7d328a4dfa"><div class="ttname"><a href="#a4f534724d5e52de9e4782d7d328a4dfa">InventoryItemSuper::GetInternalMagazineCartridgeCount</a></div><div class="ttdeci">proto native int GetInternalMagazineCartridgeCount(int muzzleIndex)</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abe93e4fd966037fd8866aa52fc4c1e36" name="abe93e4fd966037fd8866aa52fc4c1e36"></a>
@@ -3113,7 +3336,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d00/_item_book_8c_source.html#l00037">37</a> of file <a class="el" href="../../dc/d00/_item_book_8c_source.html">ItemBook.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> Fireplace.CanIgniteEntityAsFireplace(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab6a17fc955c0afc31b3b9fb34f13542d" name="ab6a17fc955c0afc31b3b9fb34f13542d"></a>
@@ -3140,7 +3366,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00055">55</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   56</span>  {</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   58</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7fa24b16b4e8190a131a19196ccf1880" name="a7fa24b16b4e8190a131a19196ccf1880"></a>
@@ -3167,7 +3396,8 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0a/_weapon_8c_source.html#l00006">6</a> of file <a class="el" href="../../db/d0a/_weapon_8c_source.html">Weapon.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    6</span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac511f0f2bee0cdb9db61d31c2d6c6dd9" name="ac511f0f2bee0cdb9db61d31c2d6c6dd9"></a>
@@ -3194,7 +3424,11 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00973">973</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  974</span>  {</div>
+<div class="line"><span class="lineno">  975</span>    <a class="code hl_function" href="#a63261c25374102aacc3e8f31ed9ed4da">InitMapState</a>();</div>
+<div class="line"><span class="lineno">  976</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_a63261c25374102aacc3e8f31ed9ed4da"><div class="ttname"><a href="#a63261c25374102aacc3e8f31ed9ed4da">InventoryItemSuper::InitMapState</a></div><div class="ttdeci">void InitMapState()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00978">InventoryItem.c:978</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a920515e1d4fbc542e291a0f6e0066233" name="a920515e1d4fbc542e291a0f6e0066233"></a>
@@ -3221,7 +3455,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01086">1086</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno"> 1087</span>  {</div>
+<div class="line"><span class="lineno"> 1088</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">output</a> = <a class="code hl_variable" href="#a4f4f3fa66e04101b75cdaeaa654280cf">m_DisplayName</a>;</div>
+<div class="line"><span class="lineno"> 1089</span> </div>
+<div class="line"><span class="lineno"> 1090</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1091</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaa5aa557f92c2db428c5a4e2536344b5" name="aaa5aa557f92c2db428c5a4e2536344b5"></a>
@@ -3248,7 +3487,9 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d00/_item_book_8c_source.html#l00028">28</a> of file <a class="el" href="../../dc/d00/_item_book_8c_source.html">ItemBook.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   29</span>  {</div>
+<div class="line"><span class="lineno">   30</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1ba8ebc03d9924ce45630de37c028b5a" name="a1ba8ebc03d9924ce45630de37c028b5a"></a>
@@ -3275,7 +3516,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d00/_item_book_8c_source.html#l00032">32</a> of file <a class="el" href="../../dc/d00/_item_book_8c_source.html">ItemBook.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   33</span>  {</div>
+<div class="line"><span class="lineno">   34</span>    Fireplace.IgniteEntityAsFireplace(<span class="keyword">this</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">fire_source</a>);</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac38742608b367d6677591d2da8a17c98" name="ac38742608b367d6677591d2da8a17c98"></a>
@@ -3302,7 +3546,16 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00060">60</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   61</span>  {</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnInventoryEnter(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pb</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pb</a> &amp;&amp; <a class="code hl_function" href="#ab6a17fc955c0afc31b3b9fb34f13542d">IsTurnedOn</a>())</div>
+<div class="line"><span class="lineno">   66</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pb</a>.MapNavigationItemInPossession(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   67</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_ab6a17fc955c0afc31b3b9fb34f13542d"><div class="ttname"><a href="#ab6a17fc955c0afc31b3b9fb34f13542d">InventoryItemSuper::IsTurnedOn</a></div><div class="ttdeci">bool IsTurnedOn()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00055">InventoryItem.c:55</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac38742608b367d6677591d2da8a17c98" name="ac38742608b367d6677591d2da8a17c98"></a>
@@ -3329,7 +3582,17 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00106">106</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  107</span>  {</div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnInventoryEnter(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (IsRuined())</div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pb</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pb</a>)</div>
+<div class="line"><span class="lineno">  115</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pb</a>.MapNavigationItemInPossession(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a82c5b4c2c1fe6270b315cc2713c57acf" name="a82c5b4c2c1fe6270b315cc2713c57acf"></a>
@@ -3356,7 +3619,14 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00069">69</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   70</span>  {</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnInventoryExit(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pb</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pb</a>)</div>
+<div class="line"><span class="lineno">   75</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pb</a>.MapNavigationItemNotInPossession(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   76</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a82c5b4c2c1fe6270b315cc2713c57acf" name="a82c5b4c2c1fe6270b315cc2713c57acf"></a>
@@ -3383,7 +3653,17 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00118">118</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  119</span>  {</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnInventoryExit(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> (IsRuined())</div>
+<div class="line"><span class="lineno">  123</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pb</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pb</a>)</div>
+<div class="line"><span class="lineno">  127</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pb</a>.MapNavigationItemNotInPossession(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a938502cf97cea64aa4941ea448a95b34" name="a938502cf97cea64aa4941ea448a95b34"></a>
@@ -3414,7 +3694,13 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00998">998</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  999</span>  {</div>
+<div class="line"><span class="lineno"> 1000</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnItemLocationChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">old_owner</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_owner</a>);</div>
+<div class="line"><span class="lineno"> 1001</span> </div>
+<div class="line"><span class="lineno"> 1002</span>    <a class="code hl_function" href="#a6481e27c061ab06e0d35f68bc1293aa5">SetMapStateOpen</a>(<span class="keyword">false</span>, <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">old_owner</a>));</div>
+<div class="line"><span class="lineno"> 1003</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_a6481e27c061ab06e0d35f68bc1293aa5"><div class="ttname"><a href="#a6481e27c061ab06e0d35f68bc1293aa5">InventoryItemSuper::SetMapStateOpen</a></div><div class="ttdeci">void SetMapStateOpen(bool state, PlayerBase player)</div><div class="ttdoc">displays open/closed selections; 1 == opened</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01006">InventoryItem.c:1006</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5c3bee48155950fdaff9bbc795ec7148" name="a5c3bee48155950fdaff9bbc795ec7148"></a>
@@ -3450,7 +3736,23 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01052">1052</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno"> 1053</span>  {</div>
+<div class="line"><span class="lineno"> 1054</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnRPC(<a class="code hl_class" href="../../db/d06/class_param3.html">sender</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">rpc_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno"> 1055</span> </div>
+<div class="line"><span class="lineno"> 1056</span>    <span class="comment">//array&lt;vector,int,int,string&gt; tmp_array = new array&lt;vector,int,int,string&gt;;</span></div>
+<div class="line"><span class="lineno"> 1057</span>    <span class="comment">//Param1&lt;ref array&lt;vector,int,int,string&gt;&gt; param = new Param1&lt;ref array&lt;vector,int,int,string&gt;&gt;(m_MarkerArray);</span></div>
+<div class="line"><span class="lineno"> 1058</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;ref array&lt;ref MapMarker&gt;</a>&gt; <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;ref array&lt;ref MapMarker&gt;</a>&gt;(<a class="code hl_variable" href="#a4dfd20034521bd3414a326e3a845d77a">m_MapMarkerArray</a>);</div>
+<div class="line"><span class="lineno"> 1059</span> </div>
+<div class="line"><span class="lineno"> 1060</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">rpc_type</a> == <a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SEND_MAP_MARKERS)</div>
+<div class="line"><span class="lineno"> 1061</span>    {</div>
+<div class="line"><span class="lineno"> 1062</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">params</a>))</div>
+<div class="line"><span class="lineno"> 1063</span>      {</div>
+<div class="line"><span class="lineno"> 1064</span>        <span class="comment">//Print(&quot;Map | OnRPC | m_MapMarkerArray_new count: &quot; + m_MapMarkerArray_new.Count());</span></div>
+<div class="line"><span class="lineno"> 1065</span>      }</div>
+<div class="line"><span class="lineno"> 1066</span>    }</div>
+<div class="line"><span class="lineno"> 1067</span>  }</div>
+<div class="ttc" id="a_e_r_p_cs_8c_html_a6ce2d98a3b8fbdba5b450abf2d6eab37"><div class="ttname"><a href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a></div><div class="ttdeci">ERPCs</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d06/_e_r_p_cs_8c_source.html#l00001">ERPCs.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7cbbcd669cb44f3cbd8461756723432a" name="a7cbbcd669cb44f3cbd8461756723432a"></a>
@@ -3481,7 +3783,15 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01069">1069</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno"> 1070</span>  {</div>
+<div class="line"><span class="lineno"> 1071</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnStoreLoad(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, version))</div>
+<div class="line"><span class="lineno"> 1072</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1073</span> </div>
+<div class="line"><span class="lineno"> 1074</span>    <span class="keywordflow">if</span> (version &gt;= 108 &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_variable" href="#a4dfd20034521bd3414a326e3a845d77a">m_MapMarkerArray</a>))</div>
+<div class="line"><span class="lineno"> 1075</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1076</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 1077</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a412333303e06c43e620fac61cfbff7d5" name="a412333303e06c43e620fac61cfbff7d5"></a>
@@ -3508,7 +3818,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01079">1079</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno"> 1080</span>  {</div>
+<div class="line"><span class="lineno"> 1081</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnStoreSave(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno"> 1082</span> </div>
+<div class="line"><span class="lineno"> 1083</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_variable" href="#a4dfd20034521bd3414a326e3a845d77a">m_MapMarkerArray</a>);</div>
+<div class="line"><span class="lineno"> 1084</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad6c990629d265fdae148308a833a5440" name="ad6c990629d265fdae148308a833a5440"></a>
@@ -3535,7 +3850,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d00/_item_book_8c_source.html#l00003">3</a> of file <a class="el" href="../../dc/d00/_item_book_8c_source.html">ItemBook.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">    6</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2548e3db614795ce4260fb64b252d4ab" name="a2548e3db614795ce4260fb64b252d4ab"></a>
@@ -3566,7 +3884,17 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00078">78</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   79</span>  {</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnWasAttached(parent, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(parent);</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (parent.GetHierarchyRoot())</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(parent.GetHierarchyRoot());</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a> &amp;&amp; <a class="code hl_function" href="#ab6a17fc955c0afc31b3b9fb34f13542d">IsTurnedOn</a>())</div>
+<div class="line"><span class="lineno">   87</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.MapNavigationItemInPossession(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   88</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2548e3db614795ce4260fb64b252d4ab" name="a2548e3db614795ce4260fb64b252d4ab"></a>
@@ -3597,7 +3925,20 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00130">130</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  131</span>  {</div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnWasAttached(parent, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">if</span> (IsRuined())</div>
+<div class="line"><span class="lineno">  135</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(parent);</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (parent.GetHierarchyParent())</div>
+<div class="line"><span class="lineno">  139</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(parent.GetHierarchyParent());</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  142</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.MapNavigationItemInPossession(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  143</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2548e3db614795ce4260fb64b252d4ab" name="a2548e3db614795ce4260fb64b252d4ab"></a>
@@ -3628,6 +3969,20 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00256">256</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  257</span>  {</div>
+<div class="line"><span class="lineno">  258</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnWasAttached(parent, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span><span class="preprocessor">#ifndef SERVER</span></div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_class" href="../../d9/d09/class_effect_sound.html">EffectSound</a> <a class="code hl_class" href="../../db/d06/class_param3.html">effect</a> = <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#aa05a7b24ec51456db8c32cf2e4b099ef">PlaySound</a>(<a class="code hl_variable" href="#a31d194f917afba27b2a3195067ad200c">m_AttachSound</a>, <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>());</div>
+<div class="line"><span class="lineno">  262</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">effect</a>.SetAutodestroy(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  263</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  264</span>  }</div>
+<div class="ttc" id="a_underground_area_loader_8c_html_af4b5180d61f839c99de2d15fdcda4568"><div class="ttname"><a href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a></div><div class="ttdeci">class JsonUndergroundAreaTriggerData GetPosition</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0a/_underground_area_loader_8c_source.html#l00001">UndergroundAreaLoader.c:9</a></div></div>
+<div class="ttc" id="aclass_inventory_item_super_html_a31d194f917afba27b2a3195067ad200c"><div class="ttname"><a href="#a31d194f917afba27b2a3195067ad200c">InventoryItemSuper::m_AttachSound</a></div><div class="ttdeci">string m_AttachSound</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00164">InventoryItem.c:164</a></div></div>
+<div class="ttc" id="aclass_s_effect_manager_html"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a></div><div class="ttdoc">Manager class for managing Effect (EffectParticle, EffectSound)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00005">EffectManager.c:6</a></div></div>
+<div class="ttc" id="aclass_s_effect_manager_html_aa05a7b24ec51456db8c32cf2e4b099ef"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html#aa05a7b24ec51456db8c32cf2e4b099ef">SEffectManager::PlaySound</a></div><div class="ttdeci">static EffectSound PlaySound(string sound_set, vector position, float play_fade_in=0, float stop_fade_out=0, bool loop=false)</div><div class="ttdoc">Create and play an EffectSound.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00155">EffectManager.c:155</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0a/_underground_area_loader_8c_source.html#l00009">GetPosition</a>, and <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00155">SEffectManager::PlaySound()</a>.</p>
 
 </div>
 </div>
@@ -3659,7 +4014,17 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00090">90</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   91</span>  {</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnWasDetached(parent, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(parent);</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (parent.GetHierarchyRoot())</div>
+<div class="line"><span class="lineno">   96</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(parent.GetHierarchyRoot());</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">   99</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.MapNavigationItemNotInPossession(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a30c6355cba367b26af050226b7ef9416" name="a30c6355cba367b26af050226b7ef9416"></a>
@@ -3690,7 +4055,20 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00145">145</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  146</span>  {</div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnWasDetached(parent, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">if</span> (IsRuined())</div>
+<div class="line"><span class="lineno">  150</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(parent);</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">if</span> (parent.GetHierarchyParent())</div>
+<div class="line"><span class="lineno">  154</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(parent.GetHierarchyParent());</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  157</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.MapNavigationItemNotInPossession(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  158</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a30c6355cba367b26af050226b7ef9416" name="a30c6355cba367b26af050226b7ef9416"></a>
@@ -3721,6 +4099,17 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00266">266</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>  {</div>
+<div class="line"><span class="lineno">  268</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnWasDetached(parent, <a class="code hl_class" href="../../db/d06/class_param3.html">slot_id</a>);</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span><span class="preprocessor">#ifndef SERVER</span></div>
+<div class="line"><span class="lineno">  271</span>    <a class="code hl_class" href="../../d9/d09/class_effect_sound.html">EffectSound</a> <a class="code hl_class" href="../../db/d06/class_param3.html">effect</a> = <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#aa05a7b24ec51456db8c32cf2e4b099ef">PlaySound</a>(<a class="code hl_variable" href="#acbc8f52e4d4bf0bf83bfdccd8ab1c82b">m_DetachSound</a>, <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>());</div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">effect</a>.SetAutodestroy(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  273</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  274</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_acbc8f52e4d4bf0bf83bfdccd8ab1c82b"><div class="ttname"><a href="#acbc8f52e4d4bf0bf83bfdccd8ab1c82b">InventoryItemSuper::m_DetachSound</a></div><div class="ttdeci">string m_DetachSound</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00165">InventoryItem.c:165</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0a/_underground_area_loader_8c_source.html#l00009">GetPosition</a>, and <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00155">SEffectManager::PlaySound()</a>.</p>
 
 </div>
 </div>
@@ -3992,6 +4381,16 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00249">249</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_function" href="../../df/d0d/_action_detach_8c.html#a0d029c8f8d01c63cca13a523faf40996">ActionDetach</a>);</div>
+<div class="line"><span class="lineno">  253</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../da/d0b/class_action_attach_on_selection.html">ActionAttachOnSelection</a>);</div>
+<div class="line"><span class="lineno">  254</span>  }</div>
+<div class="ttc" id="a_action_detach_8c_html_a0d029c8f8d01c63cca13a523faf40996"><div class="ttname"><a href="../../df/d0d/_action_detach_8c.html#a0d029c8f8d01c63cca13a523faf40996">ActionDetach</a></div><div class="ttdeci">void ActionDetach()</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0d/_action_detach_8c_source.html#l00010">ActionDetach.c:10</a></div></div>
+<div class="ttc" id="a_advanced_communication_8c_html_a033d077df58807906c4dad3101d8768c"><div class="ttname"><a href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a></div><div class="ttdeci">void AddAction(typename actionName)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AdvancedCommunication.c:212</a></div></div>
+<div class="ttc" id="aclass_action_attach_on_selection_html"><div class="ttname"><a href="../../da/d0b/class_action_attach_on_selection.html">ActionAttachOnSelection</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d04/_action_attach_on_selection_8c_source.html#l00001">ActionAttachOnSelection.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0d/_action_detach_8c_source.html#l00010">ActionDetach()</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>.</p>
 
 </div>
 </div>
@@ -4019,6 +4418,14 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00451">451</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  452</span>  {</div>
+<div class="line"><span class="lineno">  453</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  454</span> </div>
+<div class="line"><span class="lineno">  455</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../da/d0b/class_action_attach_on_selection.html">ActionAttachOnSelection</a>);</div>
+<div class="line"><span class="lineno">  456</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_function" href="../../df/d0d/_action_detach_8c.html#a0d029c8f8d01c63cca13a523faf40996">ActionDetach</a>);</div>
+<div class="line"><span class="lineno">  457</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0d/_action_detach_8c_source.html#l00010">ActionDetach()</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>.</p>
 
 </div>
 </div>
@@ -4046,6 +4453,14 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00685">685</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  686</span>  {</div>
+<div class="line"><span class="lineno">  687</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  688</span> </div>
+<div class="line"><span class="lineno">  689</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../da/d0b/class_action_attach_on_selection.html">ActionAttachOnSelection</a>);</div>
+<div class="line"><span class="lineno">  690</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_function" href="../../df/d0d/_action_detach_8c.html#a0d029c8f8d01c63cca13a523faf40996">ActionDetach</a>);</div>
+<div class="line"><span class="lineno">  691</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0d/_action_detach_8c_source.html#l00010">ActionDetach()</a>, and <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>.</p>
 
 </div>
 </div>
@@ -4073,6 +4488,13 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00924">924</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  925</span>  {</div>
+<div class="line"><span class="lineno">  926</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActions();</div>
+<div class="line"><span class="lineno">  927</span>    <a class="code hl_function" href="../../dd/d0d/_advanced_communication_8c.html#a033d077df58807906c4dad3101d8768c">AddAction</a>(<a class="code hl_class" href="../../d9/d0d/class_action_unpack_box.html">ActionUnpackBox</a>);</div>
+<div class="line"><span class="lineno">  928</span>  }</div>
+<div class="ttc" id="aclass_action_unpack_box_html"><div class="ttname"><a href="../../d9/d0d/class_action_unpack_box.html">ActionUnpackBox</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_action_unpack_box_8c_source.html#l00009">ActionUnpackBox.c:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00212">AddAction()</a>.</p>
 
 </div>
 </div>
@@ -4273,7 +4695,26 @@ Private Member Functions</h2></td></tr>
 <p>displays open/closed selections; 1 == opened </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01006">1006</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno"> 1007</span>  {</div>
+<div class="line"><span class="lineno"> 1008</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno"> 1009</span>    {</div>
+<div class="line"><span class="lineno"> 1010</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.SetMapOpen(<a class="code hl_class" href="../../db/d06/class_param3.html">state</a>);</div>
+<div class="line"><span class="lineno"> 1011</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">state</a>)</div>
+<div class="line"><span class="lineno"> 1012</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.OnItemInHandsChanged();</div>
+<div class="line"><span class="lineno"> 1013</span>    }</div>
+<div class="line"><span class="lineno"> 1014</span> </div>
+<div class="line"><span class="lineno"> 1015</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">state</a>)</div>
+<div class="line"><span class="lineno"> 1016</span>    {</div>
+<div class="line"><span class="lineno"> 1017</span>      ShowSelection(<span class="stringliteral">&quot;map_opened&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1018</span>      HideSelection(<span class="stringliteral">&quot;map_closed&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1019</span>    }</div>
+<div class="line"><span class="lineno"> 1020</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1021</span>    {</div>
+<div class="line"><span class="lineno"> 1022</span>      ShowSelection(<span class="stringliteral">&quot;map_closed&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1023</span>      HideSelection(<span class="stringliteral">&quot;map_opened&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1024</span>    }</div>
+<div class="line"><span class="lineno"> 1025</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1ee5897eb3ea99bcf8f8f19f004f1d3d" name="a1ee5897eb3ea99bcf8f8f19f004f1d3d"></a>
@@ -4557,7 +4998,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00178">178</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  179</span>  {</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  181</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab0d1ba6ce44a4187f4c3ae0a83cab635" name="ab0d1ba6ce44a4187f4c3ae0a83cab635"></a>
@@ -4584,7 +5028,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00446">446</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  447</span>  {</div>
+<div class="line"><span class="lineno">  448</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  449</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab0d1ba6ce44a4187f4c3ae0a83cab635" name="ab0d1ba6ce44a4187f4c3ae0a83cab635"></a>
@@ -4611,7 +5058,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00660">660</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  661</span>  {</div>
+<div class="line"><span class="lineno">  662</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  663</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab10cf3a45cad76d40a3f3191f6de58ca" name="ab10cf3a45cad76d40a3f3191f6de58ca"></a>
@@ -4666,7 +5116,13 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0a/_weapon_8c_source.html#l00456">456</a> of file <a class="el" href="../../db/d0a/_weapon_8c_source.html">Weapon.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  457</span>  {</div>
+<div class="line"><span class="lineno">  458</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_function" href="#ac2f05a851caec68fcbaf313ac8dc4d15">GetMuzzleCount</a>(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  459</span>      <a class="code hl_function" href="#ab10cf3a45cad76d40a3f3191f6de58ca">StepZeroingDown</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  460</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_ab10cf3a45cad76d40a3f3191f6de58ca"><div class="ttname"><a href="#ab10cf3a45cad76d40a3f3191f6de58ca">InventoryItemSuper::StepZeroingDown</a></div><div class="ttdeci">proto native bool StepZeroingDown(int muzzleIndex=0)</div><div class="ttdoc">sets zeroing to previous (respective to current) defined value in zeroing config array</div></div>
+<div class="ttc" id="aclass_inventory_item_super_html_ac2f05a851caec68fcbaf313ac8dc4d15"><div class="ttname"><a href="#ac2f05a851caec68fcbaf313ac8dc4d15">InventoryItemSuper::GetMuzzleCount</a></div><div class="ttdeci">proto native int GetMuzzleCount()</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1b2318a37fe3311f8f80ec82f74bd999" name="a1b2318a37fe3311f8f80ec82f74bd999"></a>
@@ -4721,7 +5177,12 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0a/_weapon_8c_source.html#l00450">450</a> of file <a class="el" href="../../db/d0a/_weapon_8c_source.html">Weapon.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  451</span>  {</div>
+<div class="line"><span class="lineno">  452</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_function" href="#ac2f05a851caec68fcbaf313ac8dc4d15">GetMuzzleCount</a>(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  453</span>      <a class="code hl_function" href="#a1b2318a37fe3311f8f80ec82f74bd999">StepZeroingUp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  454</span>  }</div>
+<div class="ttc" id="aclass_inventory_item_super_html_a1b2318a37fe3311f8f80ec82f74bd999"><div class="ttname"><a href="#a1b2318a37fe3311f8f80ec82f74bd999">InventoryItemSuper::StepZeroingUp</a></div><div class="ttdeci">proto native bool StepZeroingUp(int muzzleIndex=0)</div><div class="ttdoc">sets zeroing to next defined (respective to current) value in zeroing config array</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a49d97fd9b234dd5259259c995340b6ff" name="a49d97fd9b234dd5259259c995340b6ff"></a>
@@ -4831,6 +5292,25 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l01034">1034</a> of file <a class="el" href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html">InventoryItem.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1035</span>  {</div>
+<div class="line"><span class="lineno"> 1036</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4dfd20034521bd3414a326e3a845d77a">m_MapMarkerArray</a>.Count() &lt;= 0)</div>
+<div class="line"><span class="lineno"> 1037</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno"> 1038</span> </div>
+<div class="line"><span class="lineno"> 1039</span>    <a class="code hl_class" href="../../df/d01/class_player_identity.html">PlayerIdentity</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pid</a>;</div>
+<div class="line"><span class="lineno"> 1040</span>    <span class="comment">//Param1&lt;ref array&lt;vector,int,int,string&gt;&gt; params = new Param1&lt;ref array&lt;vector,int,int,string&gt;&gt;( m_MarkerArray );</span></div>
+<div class="line"><span class="lineno"> 1041</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;ref array&lt;ref MapMarker&gt;</a>&gt; <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;ref array&lt;ref MapMarker&gt;</a>&gt;(<a class="code hl_variable" href="#a4dfd20034521bd3414a326e3a845d77a">m_MapMarkerArray</a>);</div>
+<div class="line"><span class="lineno"> 1042</span> </div>
+<div class="line"><span class="lineno"> 1043</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() &amp;&amp; GetHierarchyRootPlayer()) <span class="comment">//TODO do we need PlayerIdentity here?</span></div>
+<div class="line"><span class="lineno"> 1044</span>    {</div>
+<div class="line"><span class="lineno"> 1045</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pid</a> = GetHierarchyRootPlayer().GetIdentity();</div>
+<div class="line"><span class="lineno"> 1046</span>      RPCSingleParam(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SEND_MAP_MARKERS, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>, <span class="keyword">true</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">pid</a>);</div>
+<div class="line"><span class="lineno"> 1047</span>    }</div>
+<div class="line"><span class="lineno"> 1048</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1049</span>      RPCSingleParam(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SEND_MAP_MARKERS, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno"> 1050</span>  }</div>
+<div class="ttc" id="aclass_player_identity_html"><div class="ttname"><a href="../../df/d01/class_player_identity.html">PlayerIdentity</a></div><div class="ttdoc">The class that will be instanced (moddable)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00375">gameplay.c:376</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>

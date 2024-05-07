@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -166,6 +163,23 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00011">11</a> of file <a class="el" href="../../d5/d03/_sync_events_8c_source.html">SyncEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">rpc_type</a> == <a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SYNC_EVENT &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">   14</span>    {</div>
+<div class="line"><span class="lineno">   15</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">Param2&lt;ESyncEvent, ref SyncData&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">event_data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param2&lt;ESyncEvent, ref SyncData&gt;</a>(-1, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">event_data</a>))</div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_function" href="#aa3ac4d76233467616626d0aa23848ff2">OnSyncEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">event_data</a>.param1, <a class="code hl_class" href="../../db/d06/class_param3.html">event_data</a>.param2, <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>);</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="line"><span class="lineno">   20</span>  }</div>
+<div class="ttc" id="a_e_r_p_cs_8c_html_a6ce2d98a3b8fbdba5b450abf2d6eab37"><div class="ttname"><a href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a></div><div class="ttdeci">ERPCs</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d06/_e_r_p_cs_8c_source.html#l00001">ERPCs.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_sync_events_html_aa3ac4d76233467616626d0aa23848ff2"><div class="ttname"><a href="#aa3ac4d76233467616626d0aa23848ff2">SyncEvents::OnSyncEvent</a></div><div class="ttdeci">static void OnSyncEvent(ESyncEvent event_type, SyncData data, Object target)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_sync_events_8c_source.html#l00022">SyncEvents.c:22</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00022">OnSyncEvent()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00003">RegisterEvents()</a>.</p>
 
 </div>
 </div>
@@ -202,6 +216,37 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00022">22</a> of file <a class="el" href="../../d5/d03/_sync_events_8c_source.html">SyncEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>  {</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">event_type</a>)</div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d0b/_e_sync_event_8c.html#a3e43561d421c0cccfb76a9854d949cf9">ESyncEvent</a>.PlayerList:</div>
+<div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>      <a class="code hl_class" href="../../d5/d0f/class_client_data.html">ClientData</a>.<a class="code hl_function" href="../../d5/d0f/class_client_data.html#a2401175b5ea69c95e5b062af618e7c28">SyncEvent_PreprocessPlayerList</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_ServerPlayerList);</div>
+<div class="line"><span class="lineno">   29</span>      <a class="code hl_class" href="../../d5/d0f/class_client_data.html">ClientData</a>.<a class="code hl_function" href="../../d5/d0f/class_client_data.html#a9c970c76dbbc37682b9718b473e5e2e4">SyncEvent_OnRecievedPlayerList</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_ServerPlayerList);</div>
+<div class="line"><span class="lineno">   30</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d0b/_e_sync_event_8c.html#a3e43561d421c0cccfb76a9854d949cf9">ESyncEvent</a>.EntityKill:</div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>      <a class="code hl_class" href="../../d5/d0f/class_client_data.html">ClientData</a>.<a class="code hl_variable" href="../../d5/d0f/class_client_data.html#aee555d762fb044be23805de0268be336">SyncEvent_OnEntityKilled</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_EntityKill);</div>
+<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d0b/_e_sync_event_8c.html#a3e43561d421c0cccfb76a9854d949cf9">ESyncEvent</a>.PlayerIgnateFireplayce:</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>      <a class="code hl_class" href="../../d5/d0f/class_client_data.html">ClientData</a>.<a class="code hl_variable" href="../../d5/d0f/class_client_data.html#ab893cdb33e1bf3adca686a4e49be3803">SyncEvent_OnPlayerIgnitedFireplace</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_SyncInt);</div>
+<div class="line"><span class="lineno">   40</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span>  }</div>
+<div class="ttc" id="a_e_sync_event_8c_html_a3e43561d421c0cccfb76a9854d949cf9"><div class="ttname"><a href="../../da/d0b/_e_sync_event_8c.html#a3e43561d421c0cccfb76a9854d949cf9">ESyncEvent</a></div><div class="ttdeci">ESyncEvent</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0b/_e_sync_event_8c_source.html#l00001">ESyncEvent.c:2</a></div></div>
+<div class="ttc" id="aclass_client_data_html"><div class="ttname"><a href="../../d5/d0f/class_client_data.html">ClientData</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_client_data_8c_source.html#l00001">ClientData.c:2</a></div></div>
+<div class="ttc" id="aclass_client_data_html_a2401175b5ea69c95e5b062af618e7c28"><div class="ttname"><a href="../../d5/d0f/class_client_data.html#a2401175b5ea69c95e5b062af618e7c28">ClientData::SyncEvent_PreprocessPlayerList</a></div><div class="ttdeci">static void SyncEvent_PreprocessPlayerList(SyncPlayerList player_list)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_client_data_8c_source.html#l00035">ClientData.c:35</a></div></div>
+<div class="ttc" id="aclass_client_data_html_a9c970c76dbbc37682b9718b473e5e2e4"><div class="ttname"><a href="../../d5/d0f/class_client_data.html#a9c970c76dbbc37682b9718b473e5e2e4">ClientData::SyncEvent_OnRecievedPlayerList</a></div><div class="ttdeci">static void SyncEvent_OnRecievedPlayerList(SyncPlayerList player_list)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_client_data_8c_source.html#l00051">ClientData.c:51</a></div></div>
+<div class="ttc" id="aclass_client_data_html_ab893cdb33e1bf3adca686a4e49be3803"><div class="ttname"><a href="../../d5/d0f/class_client_data.html#ab893cdb33e1bf3adca686a4e49be3803">ClientData::SyncEvent_OnPlayerIgnitedFireplace</a></div><div class="ttdeci">static ref ScriptInvoker SyncEvent_OnPlayerIgnitedFireplace</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_client_data_8c_source.html#l00005">ClientData.c:5</a></div></div>
+<div class="ttc" id="aclass_client_data_html_aee555d762fb044be23805de0268be336"><div class="ttname"><a href="../../d5/d0f/class_client_data.html#aee555d762fb044be23805de0268be336">ClientData::SyncEvent_OnEntityKilled</a></div><div class="ttdeci">static ref ScriptInvoker SyncEvent_OnEntityKilled</div><div class="ttdef"><b>Definition</b> <a href="../../de/d06/_client_data_8c_source.html#l00004">ClientData.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d06/_client_data_8c_source.html#l00004">ClientData::SyncEvent_OnEntityKilled</a>, <a class="el" href="../../de/d06/_client_data_8c_source.html#l00005">ClientData::SyncEvent_OnPlayerIgnitedFireplace</a>, <a class="el" href="../../de/d06/_client_data_8c_source.html#l00051">ClientData::SyncEvent_OnRecievedPlayerList()</a>, and <a class="el" href="../../de/d06/_client_data_8c_source.html#l00035">ClientData::SyncEvent_PreprocessPlayerList()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00011">Event_OnRPC()</a>.</p>
 
 </div>
 </div>
@@ -229,6 +274,18 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00003">3</a> of file <a class="el" href="../../d5/d03/_sync_events_8c_source.html">SyncEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    DayZGame <a class="code hl_class" href="../../db/d06/class_param3.html">dz_game</a> = DayZGame.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>());</div>
+<div class="line"><span class="lineno">    6</span> </div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">dz_game</a>.Event_OnRPC.Insert(<a class="code hl_function" href="#a5c0c2fd61d7a35e56b07b6fa3a7e7526">Event_OnRPC</a>);</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_function" href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a>(<span class="stringliteral">&quot;SyncEvents -&gt; RegisterEvents&quot;</span>);</div>
+<div class="line"><span class="lineno">    9</span>  }</div>
+<div class="ttc" id="aclass_sync_events_html_a5c0c2fd61d7a35e56b07b6fa3a7e7526"><div class="ttname"><a href="#a5c0c2fd61d7a35e56b07b6fa3a7e7526">SyncEvents::Event_OnRPC</a></div><div class="ttdeci">static void Event_OnRPC(PlayerIdentity sender, Object target, int rpc_type, ParamsReadContext ctx)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_sync_events_8c_source.html#l00011">SyncEvents.c:11</a></div></div>
+<div class="ttc" id="agroup___debug_html_gaaa9351d895a1f244a26fd635c378c536"><div class="ttname"><a href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a></div><div class="ttdeci">proto void Print(void var)</div><div class="ttdoc">Prints content of variable to console/log.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00011">Event_OnRPC()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l00052">MissionBase::MissionGameplay()</a>.</p>
 
 </div>
 </div>
@@ -270,6 +327,34 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00054">54</a> of file <a class="el" href="../../d5/d03/_sync_events_8c_source.html">SyncEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>  {</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">victim</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">victim</a>.IsPlayer()) || (<a class="code hl_class" href="../../db/d06/class_param3.html">killer</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">killer</a>.IsPlayer()))</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>      <a class="code hl_class" href="../../df/d00/class_sync_data.html">SyncData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../df/d00/class_sync_data.html">SyncData</a>;</div>
+<div class="line"><span class="lineno">   59</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_EntityKill = <span class="keyword">new</span> <a class="code hl_class" href="../../d9/d00/class_sync_entity_kill_info.html">SyncEntityKillInfo</a>;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_EntityKill.m_EntityVictim = <a class="code hl_class" href="../../db/d06/class_param3.html">victim</a>;</div>
+<div class="line"><span class="lineno">   62</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_EntityKill.m_EntityKiller = <a class="code hl_class" href="../../db/d06/class_param3.html">killer</a>;</div>
+<div class="line"><span class="lineno">   63</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_EntityKill.m_EntitySource = <a class="code hl_class" href="../../db/d06/class_param3.html">source</a>;</div>
+<div class="line"><span class="lineno">   64</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_EntityKill.m_IsHeadShot = <a class="code hl_class" href="../../db/d06/class_param3.html">is_headshot</a>;</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>      Man <a class="code hl_class" href="../../db/d06/class_param3.html">recipient</a>;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">killer</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">killer</a>.IsPlayer() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">victim</a>.GetID() != <a class="code hl_class" href="../../db/d06/class_param3.html">killer</a>.GetID())</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">recipient</a> = Man.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">killer</a>);</div>
+<div class="line"><span class="lineno">   70</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">victim</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">victim</a>.IsPlayer())</div>
+<div class="line"><span class="lineno">   71</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">recipient</a> = Man.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">victim</a>);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>      <a class="code hl_function" href="#ab7345a1db1b892f108c8d279ee7536ce">SendSyncEventEx</a>(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SYNC_EVENT, <a class="code hl_enumeration" href="../../da/d0b/_e_sync_event_8c.html#a3e43561d421c0cccfb76a9854d949cf9">ESyncEvent</a>.EntityKill, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <span class="keyword">true</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">recipient</a>);</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span>  }</div>
+<div class="ttc" id="aclass_sync_data_html"><div class="ttname"><a href="../../df/d00/class_sync_data.html">SyncData</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d08/_sync_data_8c_source.html#l00001">SyncData.c:2</a></div></div>
+<div class="ttc" id="aclass_sync_entity_kill_info_html"><div class="ttname"><a href="../../d9/d00/class_sync_entity_kill_info.html">SyncEntityKillInfo</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/_sync_entity_kill_8c_source.html#l00001">SyncEntityKill.c:2</a></div></div>
+<div class="ttc" id="aclass_sync_events_html_ab7345a1db1b892f108c8d279ee7536ce"><div class="ttname"><a href="#ab7345a1db1b892f108c8d279ee7536ce">SyncEvents::SendSyncEventEx</a></div><div class="ttdeci">static void SendSyncEventEx(ERPCs rpc_event_id, ESyncEvent sync_event_type, SyncData data=null, bool guaranteed=true, Man recipient=null)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_sync_events_8c_source.html#l00094">SyncEvents.c:94</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00094">SendSyncEventEx()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l02590">ManBase::OnCommandHandlerTick()</a>.</p>
 
 </div>
 </div>
@@ -301,6 +386,17 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00077">77</a> of file <a class="el" href="../../d5/d03/_sync_events_8c_source.html">SyncEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>  {</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_class" href="../../df/d00/class_sync_data.html">SyncData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../df/d00/class_sync_data.html">SyncData</a>;</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_SyncInt = <a class="code hl_class" href="../../db/d06/class_param3.html">ignite_type</a>;</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_function" href="#a0acded6048b6f63645ab152a49a7cf35">SendSyncEvent</a>(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SYNC_EVENT, <a class="code hl_enumeration" href="../../da/d0b/_e_sync_event_8c.html#a3e43561d421c0cccfb76a9854d949cf9">ESyncEvent</a>.PlayerIgnateFireplayce, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <span class="keyword">true</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetIdentity());</div>
+<div class="line"><span class="lineno">   83</span>  }</div>
+<div class="ttc" id="aclass_sync_events_html_a0acded6048b6f63645ab152a49a7cf35"><div class="ttname"><a href="#a0acded6048b6f63645ab152a49a7cf35">SyncEvents::SendSyncEvent</a></div><div class="ttdeci">static void SendSyncEvent(ERPCs rpc_event_id, ESyncEvent sync_event_type, SyncData data=null, bool guaranteed=true, PlayerIdentity player_target=null)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d03/_sync_events_8c_source.html#l00085">SyncEvents.c:85</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00085">SendSyncEvent()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0d/_fireplace_8c_source.html#l00557">FireplaceBase::OnIgnitedThis()</a>.</p>
 
 </div>
 </div>
@@ -328,6 +424,18 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00045">45</a> of file <a class="el" href="../../d5/d03/_sync_events_8c_source.html">SyncEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>  {</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_class" href="../../df/d00/class_sync_data.html">SyncData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../df/d00/class_sync_data.html">SyncData</a>;</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_ServerPlayerList = <span class="keyword">new</span> <a class="code hl_class" href="../../d7/d0f/class_sync_player_list.html">SyncPlayerList</a>;</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.m_ServerPlayerList.CreatePlayerList();</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_function" href="#a0acded6048b6f63645ab152a49a7cf35">SendSyncEvent</a>(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.RPC_SYNC_EVENT, <a class="code hl_enumeration" href="../../da/d0b/_e_sync_event_8c.html#a3e43561d421c0cccfb76a9854d949cf9">ESyncEvent</a>.PlayerList, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   52</span>  }</div>
+<div class="ttc" id="aclass_sync_player_list_html"><div class="ttname"><a href="../../d7/d0f/class_sync_player_list.html">SyncPlayerList</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_sync_player_list_8c_source.html#l00001">SyncPlayerList.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00085">SendSyncEvent()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d04/mission_server_8c_source.html#l00246">MissionBase::OnEvent()</a>, and <a class="el" href="../../d5/d04/mission_server_8c_source.html#l00600">MissionBase::PlayerDisconnected()</a>.</p>
 
 </div>
 </div>
@@ -374,6 +482,17 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00085">85</a> of file <a class="el" href="../../d5/d03/_sync_events_8c_source.html">SyncEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>  {</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Param2&lt;ESyncEvent, ref SyncData&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">event_data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param2&lt;ESyncEvent, ref SyncData&gt;</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">sync_event_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">player_target</a>)</div>
+<div class="line"><span class="lineno">   89</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().RPCSingleParam(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">rpc_event_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">event_data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">guaranteed</a>);</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().RPCSingleParam(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">rpc_event_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">event_data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">guaranteed</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">player_target</a>);</div>
+<div class="line"><span class="lineno">   92</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00077">SendPlayerIgnatedFireplace()</a>, <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00045">SendPlayerList()</a>, and <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00094">SendSyncEventEx()</a>.</p>
 
 </div>
 </div>
@@ -420,6 +539,13 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00094">94</a> of file <a class="el" href="../../d5/d03/_sync_events_8c_source.html">SyncEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>  {</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_function" href="#a0acded6048b6f63645ab152a49a7cf35">SendSyncEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">rpc_event_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">sync_event_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">guaranteed</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">recipient</a>.GetIdentity());</div>
+<div class="line"><span class="lineno">   97</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00085">SendSyncEvent()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d03/_sync_events_8c_source.html#l00054">SendEntityKilled()</a>.</p>
 
 </div>
 </div>

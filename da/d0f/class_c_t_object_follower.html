@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -175,7 +172,10 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00030">30</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   31</span>  {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keyword">delete</span> m_FollowerRoot;</div>
+<div class="line"><span class="lineno">   33</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -203,7 +203,15 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00042">42</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   43</span>  {</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(m_FollowedObject);</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.GetInventory().CreateAttachment(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>))</div>
+<div class="line"><span class="lineno">   46</span>      <a class="code hl_variable" href="#ad3b2d3ff5752028e2642493fedbee879">m_Items</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+<div class="ttc" id="aclass_c_t_object_follower_html_ad3b2d3ff5752028e2642493fedbee879"><div class="ttname"><a href="#ad3b2d3ff5752028e2642493fedbee879">CTObjectFollower::m_Items</a></div><div class="ttdeci">ref array&lt; string &gt; m_Items</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0b/_c_t_actor_8c_source.html#l00009">CTActor.c:9</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="add9ab77695f2edd99e45f8b764cae941" name="add9ab77695f2edd99e45f8b764cae941"></a>
@@ -259,6 +267,34 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00013">13</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    m_FollowerRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/camera_tools/event_tracker.layout&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">   16</span>    m_FollowerButton = m_FollowerRoot.FindAnyWidget(<span class="stringliteral">&quot;IconPanel&quot;</span>);</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="#a54e01eda1973a9f4a023ab1a4e2d2e18">m_IndexWidget</a> = <a class="code hl_class" href="../../da/d0c/class_text_widget.html">TextWidget</a>.Cast(m_FollowerRoot.FindAnyWidget(<span class="stringliteral">&quot;Text&quot;</span>));</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="#a4f3a37b9c5804b80056e10558d2a4903">m_Index</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">index</a>;</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="../../d5/d0d/_effect_8c.html#a95d9484423b4997bf70860a1bb683c32">m_Position</a> = pos;</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#ac53f9c284ba6b2a966e2a76a73a2d971">m_Orientation</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">orient</a>;</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="../../d7/d03/_server_browser_tab_8c.html#a8543b3a32aa3e23fede3f7bbd3348917">m_Menu</a> = parent;</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="#a54e01eda1973a9f4a023ab1a4e2d2e18">m_IndexWidget</a>.SetText(<a class="code hl_variable" href="#a4f3a37b9c5804b80056e10558d2a4903">m_Index</a>.ToString());</div>
+<div class="line"><span class="lineno">   24</span>    m_FollowerRoot.SetHandler(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   25</span>    CreateFollowedObject(type);</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="#a0f30f406f833e7cca6d2b0c144c613b5">SetHandsItem</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">hands_item</a>);</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="#aef711b482e4fe747e47b734e4ac18603">SetItems</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">items</a>);</div>
+<div class="line"><span class="lineno">   28</span>  }</div>
+<div class="ttc" id="a4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_html_ac53f9c284ba6b2a966e2a76a73a2d971"><div class="ttname"><a href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c.html#ac53f9c284ba6b2a966e2a76a73a2d971">m_Orientation</a></div><div class="ttdeci">vector m_Orientation</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_source.html#l00015">BleedingSource.c:15</a></div></div>
+<div class="ttc" id="a_effect_8c_html_a95d9484423b4997bf70860a1bb683c32"><div class="ttname"><a href="../../d5/d0d/_effect_8c.html#a95d9484423b4997bf70860a1bb683c32">m_Position</a></div><div class="ttdeci">vector m_Position</div><div class="ttdoc">Cached world position.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00041">Effect.c:41</a></div></div>
+<div class="ttc" id="a_server_browser_tab_8c_html_a8543b3a32aa3e23fede3f7bbd3348917"><div class="ttname"><a href="../../d7/d03/_server_browser_tab_8c.html#a8543b3a32aa3e23fede3f7bbd3348917">m_Menu</a></div><div class="ttdeci">ServerBrowserMenuNew m_Menu</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d03/_server_browser_tab_8c_source.html#l00030">ServerBrowserTab.c:30</a></div></div>
+<div class="ttc" id="aclass_c_t_object_follower_html_a0f30f406f833e7cca6d2b0c144c613b5"><div class="ttname"><a href="#a0f30f406f833e7cca6d2b0c144c613b5">CTObjectFollower::SetHandsItem</a></div><div class="ttdeci">void SetHandsItem(string item)</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0b/_c_t_actor_8c_source.html#l00065">CTActor.c:65</a></div></div>
+<div class="ttc" id="aclass_c_t_object_follower_html_a4f3a37b9c5804b80056e10558d2a4903"><div class="ttname"><a href="#a4f3a37b9c5804b80056e10558d2a4903">CTObjectFollower::m_Index</a></div><div class="ttdeci">int m_Index</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0b/_c_t_actor_8c_source.html#l00003">CTActor.c:3</a></div></div>
+<div class="ttc" id="aclass_c_t_object_follower_html_a54e01eda1973a9f4a023ab1a4e2d2e18"><div class="ttname"><a href="#a54e01eda1973a9f4a023ab1a4e2d2e18">CTObjectFollower::m_IndexWidget</a></div><div class="ttdeci">TextWidget m_IndexWidget</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0b/_c_t_actor_8c_source.html#l00006">CTActor.c:6</a></div></div>
+<div class="ttc" id="aclass_c_t_object_follower_html_aef711b482e4fe747e47b734e4ac18603"><div class="ttname"><a href="#aef711b482e4fe747e47b734e4ac18603">CTObjectFollower::SetItems</a></div><div class="ttdeci">void SetItems(array&lt; string &gt; items)</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0b/_c_t_actor_8c_source.html#l00049">CTActor.c:49</a></div></div>
+<div class="ttc" id="aclass_text_widget_html"><div class="ttname"><a href="../../da/d0c/class_text_widget.html">TextWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00219">EnWidgets.c:220</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/d03/_server_browser_tab_8c_source.html#l00030">m_Menu</a>, <a class="el" href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_source.html#l00015">m_Orientation</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00041">m_Position</a>, <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00065">SetHandsItem()</a>, and <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00049">SetItems()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d06/_c_t_object_follower_8c_source.html#l00135">ScriptedWidgetEventHandler::OnMouseButtonDown()</a>.</p>
 
 </div>
 </div>
@@ -286,7 +322,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00035">35</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   36</span>  {</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (m_FollowedObject)</div>
+<div class="line"><span class="lineno">   38</span>      <span class="keywordflow">return</span> m_FollowedObject.GetType();</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4fbe38fabd60ef21b3d88b0dcdf7345c" name="a4fbe38fabd60ef21b3d88b0dcdf7345c"></a>
@@ -313,6 +354,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00077">77</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>  {</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a402ad4b117df325aea92db23bad80f3c">m_HandsItem</a>;</div>
+<div class="line"><span class="lineno">   80</span>  }</div>
+<div class="ttc" id="aclass_c_t_object_follower_html_a402ad4b117df325aea92db23bad80f3c"><div class="ttname"><a href="#a402ad4b117df325aea92db23bad80f3c">CTObjectFollower::m_HandsItem</a></div><div class="ttdeci">string m_HandsItem</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0b/_c_t_actor_8c_source.html#l00008">CTActor.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00008">m_HandsItem</a>.</p>
 
 </div>
 </div>
@@ -340,6 +387,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00060">60</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>  {</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad3b2d3ff5752028e2642493fedbee879">m_Items</a>;</div>
+<div class="line"><span class="lineno">   63</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00009">m_Items</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00082">Reset()</a>.</p>
 
 </div>
 </div>
@@ -367,6 +421,17 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00082">82</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordtype">string</span> type = m_FollowedObject.GetType();</div>
+<div class="line"><span class="lineno">   85</span>    DestroyFollowedObject();</div>
+<div class="line"><span class="lineno">   86</span>    CreateFollowedObject(type);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="#a0f30f406f833e7cca6d2b0c144c613b5">SetHandsItem</a>(<a class="code hl_variable" href="#a402ad4b117df325aea92db23bad80f3c">m_HandsItem</a>);</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="#aef711b482e4fe747e47b734e4ac18603">SetItems</a>(<a class="code hl_function" href="#a3fcf37359d5fa294e838f1afdbe07853">GetItems</a>());</div>
+<div class="line"><span class="lineno">   90</span>  }</div>
+<div class="ttc" id="aclass_c_t_object_follower_html_a3fcf37359d5fa294e838f1afdbe07853"><div class="ttname"><a href="#a3fcf37359d5fa294e838f1afdbe07853">CTObjectFollower::GetItems</a></div><div class="ttdeci">array&lt; string &gt; GetItems()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0b/_c_t_actor_8c_source.html#l00060">CTActor.c:60</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00060">GetItems()</a>, <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00065">SetHandsItem()</a>, and <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00049">SetItems()</a>.</p>
 
 </div>
 </div>
@@ -394,6 +459,24 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00065">65</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>  {</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_variable" href="#a402ad4b117df325aea92db23bad80f3c">m_HandsItem</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1c4e9f3e0671b32313c1e73cc72fae0f">m_HandsItemObj</a> &amp;&amp; m_FollowedObject)</div>
+<div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>      <a class="code hl_class" href="../../d8/d06/class_human_inventory.html">HumanInventory</a>.Cast(m_FollowedObject.GetInventory()).<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#aa9497219f241f89c02cef90813dc806e">LocalDestroyEntity</a>(<a class="code hl_variable" href="#a1c4e9f3e0671b32313c1e73cc72fae0f">m_HandsItemObj</a>);</div>
+<div class="line"><span class="lineno">   71</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ObjectDelete(<a class="code hl_variable" href="#a1c4e9f3e0671b32313c1e73cc72fae0f">m_HandsItemObj</a>);</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>)</div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_class" href="../../d8/d06/class_human_inventory.html">HumanInventory</a>.Cast(m_FollowedObject.GetInventory()).<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a313bbc773ff4207db5bfffc7cf3a0ae7">CreateInHands</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">   75</span>  }</div>
+<div class="ttc" id="aclass_c_t_object_follower_html_a1c4e9f3e0671b32313c1e73cc72fae0f"><div class="ttname"><a href="#a1c4e9f3e0671b32313c1e73cc72fae0f">CTObjectFollower::m_HandsItemObj</a></div><div class="ttdeci">EntityAI m_HandsItemObj</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0b/_c_t_actor_8c_source.html#l00011">CTActor.c:11</a></div></div>
+<div class="ttc" id="aclass_human_inventory_html"><div class="ttname"><a href="../../d8/d06/class_human_inventory.html">HumanInventory</a></div><div class="ttdoc">inventory for plain man/human</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_human_inventory_8c_source.html#l00009">HumanInventory.c:10</a></div></div>
+<div class="ttc" id="aclass_human_inventory_html_a313bbc773ff4207db5bfffc7cf3a0ae7"><div class="ttname"><a href="../../d8/d06/class_human_inventory.html#a313bbc773ff4207db5bfffc7cf3a0ae7">HumanInventory::CreateInHands</a></div><div class="ttdeci">proto native EntityAI CreateInHands(string typeName)</div><div class="ttdoc">creates new entity in hands</div></div>
+<div class="ttc" id="aclass_human_inventory_html_aa9497219f241f89c02cef90813dc806e"><div class="ttname"><a href="../../d8/d06/class_human_inventory.html#aa9497219f241f89c02cef90813dc806e">HumanInventory::LocalDestroyEntity</a></div><div class="ttdeci">override bool LocalDestroyEntity(notnull EntityAI item)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_human_inventory_8c_source.html#l00421">HumanInventory.c:421</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d06/class_human_inventory.html#a313bbc773ff4207db5bfffc7cf3a0ae7">HumanInventory::CreateInHands()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../de/d07/_human_inventory_8c_source.html#l00421">HumanInventory::LocalDestroyEntity()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00013">CTActor()</a>, and <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00082">Reset()</a>.</p>
 
 </div>
 </div>
@@ -421,6 +504,17 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00049">49</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>  {</div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_variable" href="#ad3b2d3ff5752028e2642493fedbee879">m_Items</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">items</a>;</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(m_FollowedObject);</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">p</a>)</div>
+<div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> : <a class="code hl_class" href="../../db/d06/class_param3.html">items</a>)</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.GetInventory().CreateAttachment(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00013">CTActor()</a>, and <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00082">Reset()</a>.</p>
 
 </div>
 </div>
@@ -446,6 +540,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00008">8</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00077">GetHandsItem()</a>.</p>
 
 </div>
 </div>
@@ -542,6 +638,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00009">9</a> of file <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html">CTActor.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0b/_c_t_actor_8c_source.html#l00060">GetItems()</a>.</p>
 
 </div>
 </div>

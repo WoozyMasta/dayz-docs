@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -142,6 +139,30 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00643">643</a> of file <a class="el" href="../../d6/d01/_hand___events_8c_source.html">Hand_Events.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  644</span>  {</div>
+<div class="line"><span class="lineno">  645</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">test2</a> = <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#ab4cb9090f38af73c17a2e6b63d9dd68f">CanForceSwapEntitiesEx</a>(<a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a504ab69882d7085a6f9891ddb5154d0f">m_Src</a>.GetItem(), m_Dst, m_Src2.GetItem(), m_Dst2); <span class="comment">// null here means &#39;do not search for dst2&#39; (already have valid one from constructor)</span></div>
+<div class="line"><span class="lineno">  646</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">  647</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  648</span>    {</div>
+<div class="line"><span class="lineno">  649</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">test2</a>)</div>
+<div class="line"><span class="lineno">  650</span>        <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#abb9ab64f7a3e90d4494a506ab5bb9738">InventoryHFSMLog</a>(<span class="stringliteral">&quot;CanForceSwapEntitiesEx failed&quot;</span>, <span class="keyword">typename</span>.EnumToString(<a class="code hl_enumeration" href="../../d6/d01/_hand___events_8c.html#ac89b398d47a213a49c37d4c3c26f64fb">HandEventID</a>, <a class="code hl_function" href="../../d6/d01/_hand___events_8c.html#ac4e09da4612d59f9d374c73534237583">GetEventID</a>()), <span class="stringliteral">&quot;n/a&quot;</span>, <span class="stringliteral">&quot;CanPerformEvent&quot;</span>, <a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.ToString());</div>
+<div class="line"><span class="lineno">  651</span>    }</div>
+<div class="line"><span class="lineno">  652</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  653</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">test2</a>;</div>
+<div class="line"><span class="lineno">  654</span>  }</div>
+<div class="ttc" id="a_hand___events_8c_html_a02917914db83b7759e19cb7450c92354"><div class="ttname"><a href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a></div><div class="ttdeci">DayZPlayer m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00042">Hand_Events.c:42</a></div></div>
+<div class="ttc" id="a_hand___events_8c_html_a504ab69882d7085a6f9891ddb5154d0f"><div class="ttname"><a href="../../d6/d01/_hand___events_8c.html#a504ab69882d7085a6f9891ddb5154d0f">m_Src</a></div><div class="ttdeci">ref InventoryLocation m_Src</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00043">Hand_Events.c:43</a></div></div>
+<div class="ttc" id="a_hand___events_8c_html_ac4e09da4612d59f9d374c73534237583"><div class="ttname"><a href="../../d6/d01/_hand___events_8c.html#ac4e09da4612d59f9d374c73534237583">GetEventID</a></div><div class="ttdeci">HandEventID GetEventID()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00053">Hand_Events.c:53</a></div></div>
+<div class="ttc" id="a_hand___events_8c_html_ac89b398d47a213a49c37d4c3c26f64fb"><div class="ttname"><a href="../../d6/d01/_hand___events_8c.html#ac89b398d47a213a49c37d4c3c26f64fb">HandEventID</a></div><div class="ttdeci">HandEventID</div><div class="ttdoc">events</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00006">Hand_Events.c:7</a></div></div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_abb9ab64f7a3e90d4494a506ab5bb9738"><div class="ttname"><a href="../../da/d0d/class_debug.html#abb9ab64f7a3e90d4494a506ab5bb9738">Debug::InventoryHFSMLog</a></div><div class="ttdeci">static void InventoryHFSMLog(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00183">Debug.c:183</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_ab4cb9090f38af73c17a2e6b63d9dd68f"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#ab4cb9090f38af73c17a2e6b63d9dd68f">GameInventory::CanForceSwapEntitiesEx</a></div><div class="ttdeci">static bool CanForceSwapEntitiesEx(notnull EntityAI item1, InventoryLocation item1_dst, notnull EntityAI item2, out InventoryLocation item2_dst)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00645">Inventory.c:645</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a8e070df24bcb6afaf456af7ba270294a"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">LogManager::IsInventoryHFSMLogEnable</a></div><div class="ttdeci">static bool IsInventoryHFSMLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">Debug.c:749</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00645">GameInventory::CanForceSwapEntitiesEx()</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00053">GetEventID()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00183">Debug::InventoryHFSMLog()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, and <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00043">m_Src</a>.</p>
 
 </div>
 </div>
@@ -169,6 +190,28 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00625">625</a> of file <a class="el" href="../../d6/d01/_hand___events_8c_source.html">Hand_Events.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  626</span>  {</div>
+<div class="line"><span class="lineno">  627</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">test1</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  628</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inHands</a> = <a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.GetHumanInventory().GetEntityInHands();</div>
+<div class="line"><span class="lineno">  629</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d6/d01/_hand___events_8c.html#ae5c8cce374dfad27f9e3b3a132f78db3">GetSrcEntity</a>() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">inHands</a> &amp;&amp; m_Dst &amp;&amp; m_Dst.IsValid())</div>
+<div class="line"><span class="lineno">  630</span>    {</div>
+<div class="line"><span class="lineno">  631</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">test1</a> = <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#acfd2893a10d036c3eccfb615209d1790">CheckSwapItemsRequest</a>(<a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>, <a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a504ab69882d7085a6f9891ddb5154d0f">m_Src</a>, m_Src2, m_Dst, m_Dst2, <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_variable" href="../../dc/d01/class_game_inventory.html#ab5d90acd9fa77c1e15c54e4b218487bf">c_MaxItemDistanceRadius</a>);</div>
+<div class="line"><span class="lineno">  632</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">  633</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  634</span>      {</div>
+<div class="line"><span class="lineno">  635</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">test1</a>)</div>
+<div class="line"><span class="lineno">  636</span>          <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#abb9ab64f7a3e90d4494a506ab5bb9738">InventoryHFSMLog</a>(<span class="stringliteral">&quot;CheckSwapItemsRequest failed&quot;</span>, <span class="keyword">typename</span>.EnumToString(<a class="code hl_enumeration" href="../../d6/d01/_hand___events_8c.html#ac89b398d47a213a49c37d4c3c26f64fb">HandEventID</a>, <a class="code hl_function" href="../../d6/d01/_hand___events_8c.html#ac4e09da4612d59f9d374c73534237583">GetEventID</a>()), <span class="stringliteral">&quot;n/a&quot;</span>, <span class="stringliteral">&quot;CheckRequest&quot;</span>, <a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.ToString());</div>
+<div class="line"><span class="lineno">  637</span>      }</div>
+<div class="line"><span class="lineno">  638</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  639</span>    }</div>
+<div class="line"><span class="lineno">  640</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">test1</a>;</div>
+<div class="line"><span class="lineno">  641</span>  }</div>
+<div class="ttc" id="a_hand___events_8c_html_ae5c8cce374dfad27f9e3b3a132f78db3"><div class="ttname"><a href="../../d6/d01/_hand___events_8c.html#ae5c8cce374dfad27f9e3b3a132f78db3">GetSrcEntity</a></div><div class="ttdeci">EntityAI GetSrcEntity()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00081">Hand_Events.c:81</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_ab5d90acd9fa77c1e15c54e4b218487bf"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#ab5d90acd9fa77c1e15c54e4b218487bf">GameInventory::c_MaxItemDistanceRadius</a></div><div class="ttdeci">const float c_MaxItemDistanceRadius</div><div class="ttdoc">anti-cheats</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00788">Inventory.c:788</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_acfd2893a10d036c3eccfb615209d1790"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#acfd2893a10d036c3eccfb615209d1790">GameInventory::CheckSwapItemsRequest</a></div><div class="ttdeci">static proto native bool CheckSwapItemsRequest(notnull Man requestingPlayer, notnull InventoryLocation src1, notnull InventoryLocation src2, notnull InventoryLocation dst1, notnull InventoryLocation dst2, float radius)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00788">GameInventory::c_MaxItemDistanceRadius</a>, <a class="el" href="../../dc/d01/class_game_inventory.html#acfd2893a10d036c3eccfb615209d1790">GameInventory::CheckSwapItemsRequest()</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00053">GetEventID()</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00081">GetSrcEntity()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00183">Debug::InventoryHFSMLog()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, and <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00043">m_Src</a>.</p>
 
 </div>
 </div>
@@ -215,6 +258,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00623">623</a> of file <a class="el" href="../../d6/d01/_hand___events_8c_source.html">Hand_Events.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  623</span>{ <a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#ab4215c09806526ec1b8651c3fe1d94d0">m_EventID</a> = <a class="code hl_enumeration" href="../../d6/d01/_hand___events_8c.html#ac89b398d47a213a49c37d4c3c26f64fb">HandEventID</a>.FORCESWAP; }</div>
+<div class="ttc" id="a_hand___events_8c_html_ab4215c09806526ec1b8651c3fe1d94d0"><div class="ttname"><a href="../../d6/d01/_hand___events_8c.html#ab4215c09806526ec1b8651c3fe1d94d0">m_EventID</a></div><div class="ttdeci">m_EventID</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d01/_hand___events_8c.html#ab4215c09806526ec1b8651c3fe1d94d0">m_EventID</a>.</p>
 
 </div>
 </div>

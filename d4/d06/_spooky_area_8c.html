@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -142,7 +139,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_spooky_area_8c_source.html#l00055">55</a> of file <a class="el" href="../../d4/d06/_spooky_area_8c_source.html">SpookyArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   61</span>  {</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlayerExitServer(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;typename&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">types</a> = {<a class="code hl_class" href="../../d6/d07/class_spooky_player_stalker.html">SpookyPlayerStalker</a>};</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.RemoveAllAttachedChildrenByTypename(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">types</a>);</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+<div class="line"><span class="lineno">   67</span>}</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_spooky_player_stalker_html"><div class="ttname"><a href="../../d6/d07/class_spooky_player_stalker.html">SpookyPlayerStalker</a></div><div class="ttdoc">this entity gets attached to each player while present in the spooky area</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d06/_spooky_area_misc_8c_source.html#l00320">SpookyAreaMisc.c:321</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9b1a10b461d605ffe81a4d651fb0bcbe" name="a9b1a10b461d605ffe81a4d651fb0bcbe"></a>
@@ -161,7 +167,90 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_spooky_area_8c_source.html#l00088">88</a> of file <a class="el" href="../../d4/d06/_spooky_area_8c_source.html">SpookyArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   89</span>                 : <a class="code hl_class" href="../../d5/d04/class_effect_area.html">EffectArea</a></div>
+<div class="line"><span class="lineno">   90</span>{</div>
+<div class="line"><span class="lineno">   91</span>  <span class="comment">// ----------------------------------------------</span></div>
+<div class="line"><span class="lineno">   92</span>  <span class="comment">// INITIAL SETUP</span></div>
+<div class="line"><span class="lineno">   93</span>  <span class="comment">// ----------------------------------------------</span></div>
+<div class="line"><span class="lineno">   94</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a2a76ebd71930a57b9a57067eacd51a51">EEInit</a>()</div>
+<div class="line"><span class="lineno">   95</span>  {</div>
+<div class="line"><span class="lineno">   96</span>    <span class="comment">// We make sure we have the particle array</span></div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (!m_ToxicClouds)</div>
+<div class="line"><span class="lineno">   98</span>      m_ToxicClouds = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;Particle&gt;</a>;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    SetSynchDirty();</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">  103</span>    <span class="comment">// Debugs when placing entity by hand using internal tools</span></div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() &amp;&amp; !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">  105</span>    {</div>
+<div class="line"><span class="lineno">  106</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;YOU CAN IGNORE THE FOLLOWING DUMP&quot;</span>);</div>
+<div class="line"><span class="lineno">  107</span>      InitZone();</div>
+<div class="line"><span class="lineno">  108</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;YOU CAN USE FOLLOWING DATA PROPERLY&quot;</span>);</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
+<div class="line"><span class="lineno">  110</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">  113</span>      InitZone();</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aa09cdf69e2aaf1bcf83616548be973e0">InitZoneServer</a>()</div>
+<div class="line"><span class="lineno">  119</span>  {</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.InitZoneServer();</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="comment">// We create the trigger on server</span></div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> (m_TriggerType != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_function" href="../../dd/d08/_trap_base_8c.html#a56e9fba9303f5e86f50ccf4c54562794">CreateTrigger</a>(<a class="code hl_variable" href="../../d5/d0d/_effect_8c.html#a95d9484423b4997bf70860a1bb683c32">m_Position</a>, <a class="code hl_variable" href="../../d6/d07/_a_i_group_behaviour_8c.html#af3c960f8d8e676c260d328e5f7b32d74">m_Radius</a>);</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a9b1a10b461d605ffe81a4d651fb0bcbe">InitZoneClient</a>()</div>
+<div class="line"><span class="lineno">  128</span>  {</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.InitZoneClient();</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <span class="comment">// We spawn VFX on client</span></div>
+<div class="line"><span class="lineno">  132</span>    PlaceParticles(GetWorldPosition(), <a class="code hl_variable" href="../../d6/d07/_a_i_group_behaviour_8c.html#af3c960f8d8e676c260d328e5f7b32d74">m_Radius</a>, m_InnerRings, m_InnerSpacing, m_OuterRingToggle, m_OuterSpacing, m_OuterRingOffset, m_ParticleID);</div>
+<div class="line"><span class="lineno">  133</span>  }</div>
+<div class="line"><span class="lineno">  134</span>}</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SpookyArea23</a> : <a class="code hl_class" href="../../dc/d0e/class_spooky_area.html">SpookyArea</a></div>
+<div class="line"><span class="lineno">  137</span>{</div>
+<div class="line"><span class="lineno">  138</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d08/_contaminated_area_8c.html#ab0b66bb12d954ad7b50c755131365a5f">OnPlayerEnterServer</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../d6/d0f/class_effect_trigger.html">EffectTrigger</a> <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>)</div>
+<div class="line"><span class="lineno">  139</span>  {</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlayerEnterServer(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">spookyEntity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;SpookyPlayerStalker&quot;</span>, <span class="stringliteral">&quot;0 0 0&quot;</span>, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a5b3ddad7d1af49fda8f9bd4bf67d3938">ECE_SETUP</a>));</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">boneIdx</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetBoneIndexByName(<span class="stringliteral">&quot;Head&quot;</span>);</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.AddChild(<a class="code hl_class" href="../../db/d06/class_param3.html">spookyEntity</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">boneIdx</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  145</span>  }</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d08/_contaminated_area_8c.html#adcb39093b85ad1b1ca41d020799fdda0">OnPlayerExitServer</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../d6/d0f/class_effect_trigger.html">EffectTrigger</a> <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>)</div>
+<div class="line"><span class="lineno">  148</span>  {</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlayerExitServer(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;typename&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">types</a> = {<a class="code hl_class" href="../../d6/d07/class_spooky_player_stalker.html">SpookyPlayerStalker</a>};</div>
+<div class="line"><span class="lineno">  152</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.RemoveAllAttachedChildrenByTypename(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">types</a>);</div>
+<div class="line"><span class="lineno">  153</span>  }</div>
+<div class="line"><span class="lineno">  154</span>}</div>
+<div class="ttc" id="a_a_i_group_behaviour_8c_html_af3c960f8d8e676c260d328e5f7b32d74"><div class="ttname"><a href="../../d6/d07/_a_i_group_behaviour_8c.html#af3c960f8d8e676c260d328e5f7b32d74">m_Radius</a></div><div class="ttdeci">float m_Radius</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d07/_a_i_group_behaviour_8c_source.html#l00010">AIGroupBehaviour.c:10</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_a5b3ddad7d1af49fda8f9bd4bf67d3938"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#a5b3ddad7d1af49fda8f9bd4bf67d3938">ECE_SETUP</a></div><div class="ttdeci">const int ECE_SETUP</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00009">CentralEconomy.c:9</a></div></div>
+<div class="ttc" id="a_contaminated_area_8c_html_ab0b66bb12d954ad7b50c755131365a5f"><div class="ttname"><a href="../../de/d08/_contaminated_area_8c.html#ab0b66bb12d954ad7b50c755131365a5f">OnPlayerEnterServer</a></div><div class="ttdeci">override void OnPlayerEnterServer(PlayerBase player, EffectTrigger trigger)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d08/_contaminated_area_8c_source.html#l00023">ContaminatedArea.c:23</a></div></div>
+<div class="ttc" id="a_contaminated_area_8c_html_adcb39093b85ad1b1ca41d020799fdda0"><div class="ttname"><a href="../../de/d08/_contaminated_area_8c.html#adcb39093b85ad1b1ca41d020799fdda0">OnPlayerExitServer</a></div><div class="ttdeci">override void OnPlayerExitServer(PlayerBase player, EffectTrigger trigger)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d08/_contaminated_area_8c_source.html#l00029">ContaminatedArea.c:29</a></div></div>
+<div class="ttc" id="a_effect_8c_html_a95d9484423b4997bf70860a1bb683c32"><div class="ttname"><a href="../../d5/d0d/_effect_8c.html#a95d9484423b4997bf70860a1bb683c32">m_Position</a></div><div class="ttdeci">vector m_Position</div><div class="ttdoc">Cached world position.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00041">Effect.c:41</a></div></div>
+<div class="ttc" id="a_spooky_area_8c_html_a2a76ebd71930a57b9a57067eacd51a51"><div class="ttname"><a href="#a2a76ebd71930a57b9a57067eacd51a51">EEInit</a></div><div class="ttdeci">override void EEInit()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_spooky_area_8c_source.html#l00055">SpookyArea.c:55</a></div></div>
+<div class="ttc" id="a_spooky_area_8c_html_a9b1a10b461d605ffe81a4d651fb0bcbe"><div class="ttname"><a href="#a9b1a10b461d605ffe81a4d651fb0bcbe">InitZoneClient</a></div><div class="ttdeci">override void InitZoneClient()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_spooky_area_8c_source.html#l00088">SpookyArea.c:88</a></div></div>
+<div class="ttc" id="a_spooky_area_8c_html_aa09cdf69e2aaf1bcf83616548be973e0"><div class="ttname"><a href="#aa09cdf69e2aaf1bcf83616548be973e0">InitZoneServer</a></div><div class="ttdeci">override void InitZoneServer()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_spooky_area_8c_source.html#l00079">SpookyArea.c:79</a></div></div>
+<div class="ttc" id="a_trap_base_8c_html_a56e9fba9303f5e86f50ccf4c54562794"><div class="ttname"><a href="../../dd/d08/_trap_base_8c.html#a56e9fba9303f5e86f50ccf4c54562794">CreateTrigger</a></div><div class="ttdeci">void CreateTrigger()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d08/_trap_base_8c_source.html#l00468">TrapBase.c:468</a></div></div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_ac759558b1dd4e820330546c994a9d840"><div class="ttname"><a href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Debug::Log</a></div><div class="ttdeci">static void Log(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdoc">Prints debug message with normal prio.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00133">Debug.c:133</a></div></div>
+<div class="ttc" id="aclass_effect_area_html"><div class="ttname"><a href="../../d5/d04/class_effect_area.html">EffectArea</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_effect_area_8c_source.html#l00036">EffectArea.c:37</a></div></div>
+<div class="ttc" id="aclass_effect_trigger_html"><div class="ttname"><a href="../../d6/d0f/class_effect_trigger.html">EffectTrigger</a></div><div class="ttdef"><b>Definition</b> <a href="../../d1/d06/_contaminated_trigger_8c_source.html#l00002">ContaminatedTrigger.c:3</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+<div class="ttc" id="aclass_spooky_area_html"><div class="ttname"><a href="../../dc/d0e/class_spooky_area.html">SpookyArea</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d06/_spooky_area_8c_source.html#l00002">SpookyArea.c:3</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa09cdf69e2aaf1bcf83616548be973e0" name="aa09cdf69e2aaf1bcf83616548be973e0"></a>
@@ -180,7 +269,73 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_spooky_area_8c_source.html#l00079">79</a> of file <a class="el" href="../../d4/d06/_spooky_area_8c_source.html">SpookyArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   80</span>                 : <a class="code hl_class" href="../../d5/d04/class_effect_area.html">EffectArea</a></div>
+<div class="line"><span class="lineno">   81</span>{</div>
+<div class="line"><span class="lineno">   82</span>  <span class="comment">// ----------------------------------------------</span></div>
+<div class="line"><span class="lineno">   83</span>  <span class="comment">// INITIAL SETUP</span></div>
+<div class="line"><span class="lineno">   84</span>  <span class="comment">// ----------------------------------------------</span></div>
+<div class="line"><span class="lineno">   85</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a2a76ebd71930a57b9a57067eacd51a51">EEInit</a>()</div>
+<div class="line"><span class="lineno">   86</span>  {</div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment">// We make sure we have the particle array</span></div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span> (!m_ToxicClouds)</div>
+<div class="line"><span class="lineno">   89</span>      m_ToxicClouds = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;Particle&gt;</a>;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    SetSynchDirty();</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">// Debugs when placing entity by hand using internal tools</span></div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() &amp;&amp; !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;YOU CAN IGNORE THE FOLLOWING DUMP&quot;</span>);</div>
+<div class="line"><span class="lineno">   98</span>      InitZone();</div>
+<div class="line"><span class="lineno">   99</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#ac759558b1dd4e820330546c994a9d840">Log</a>(<span class="stringliteral">&quot;YOU CAN USE FOLLOWING DATA PROPERLY&quot;</span>);</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">  104</span>      InitZone();</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.EEInit();</div>
+<div class="line"><span class="lineno">  107</span>  }</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aa09cdf69e2aaf1bcf83616548be973e0">InitZoneServer</a>()</div>
+<div class="line"><span class="lineno">  110</span>  {</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.InitZoneServer();</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <span class="comment">// We create the trigger on server</span></div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">if</span> (m_TriggerType != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  115</span>      <a class="code hl_function" href="../../dd/d08/_trap_base_8c.html#a56e9fba9303f5e86f50ccf4c54562794">CreateTrigger</a>(<a class="code hl_variable" href="../../d5/d0d/_effect_8c.html#a95d9484423b4997bf70860a1bb683c32">m_Position</a>, <a class="code hl_variable" href="../../d6/d07/_a_i_group_behaviour_8c.html#af3c960f8d8e676c260d328e5f7b32d74">m_Radius</a>);</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a9b1a10b461d605ffe81a4d651fb0bcbe">InitZoneClient</a>()</div>
+<div class="line"><span class="lineno">  119</span>  {</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.InitZoneClient();</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="comment">// We spawn VFX on client</span></div>
+<div class="line"><span class="lineno">  123</span>    PlaceParticles(GetWorldPosition(), <a class="code hl_variable" href="../../d6/d07/_a_i_group_behaviour_8c.html#af3c960f8d8e676c260d328e5f7b32d74">m_Radius</a>, m_InnerRings, m_InnerSpacing, m_OuterRingToggle, m_OuterSpacing, m_OuterRingOffset, m_ParticleID);</div>
+<div class="line"><span class="lineno">  124</span>  }</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">SpookyArea23</a> : <a class="code hl_class" href="../../dc/d0e/class_spooky_area.html">SpookyArea</a></div>
+<div class="line"><span class="lineno">  128</span>{</div>
+<div class="line"><span class="lineno">  129</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d08/_contaminated_area_8c.html#ab0b66bb12d954ad7b50c755131365a5f">OnPlayerEnterServer</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../d6/d0f/class_effect_trigger.html">EffectTrigger</a> <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>)</div>
+<div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlayerEnterServer(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">spookyEntity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;SpookyPlayerStalker&quot;</span>, <span class="stringliteral">&quot;0 0 0&quot;</span>, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a5b3ddad7d1af49fda8f9bd4bf67d3938">ECE_SETUP</a>));</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">boneIdx</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetBoneIndexByName(<span class="stringliteral">&quot;Head&quot;</span>);</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.AddChild(<a class="code hl_class" href="../../db/d06/class_param3.html">spookyEntity</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">boneIdx</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d08/_contaminated_area_8c.html#adcb39093b85ad1b1ca41d020799fdda0">OnPlayerExitServer</a>(<a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../d6/d0f/class_effect_trigger.html">EffectTrigger</a> <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>)</div>
+<div class="line"><span class="lineno">  139</span>  {</div>
+<div class="line"><span class="lineno">  140</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlayerExitServer(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;typename&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">types</a> = {<a class="code hl_class" href="../../d6/d07/class_spooky_player_stalker.html">SpookyPlayerStalker</a>};</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.RemoveAllAttachedChildrenByTypename(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">types</a>);</div>
+<div class="line"><span class="lineno">  144</span>  }</div>
+<div class="line"><span class="lineno">  145</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7dc0909f5b443b28956792287ee6c702" name="a7dc0909f5b443b28956792287ee6c702"></a>
@@ -203,7 +358,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_spooky_area_8c_source.html#l00001">1</a> of file <a class="el" href="../../d4/d06/_spooky_area_8c_source.html">SpookyArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   52</span>  {</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlayerEnterServer(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">spookyEntity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;SpookyPlayerStalker&quot;</span>, <span class="stringliteral">&quot;0 0 0&quot;</span>, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a5b3ddad7d1af49fda8f9bd4bf67d3938">ECE_SETUP</a>));</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">boneIdx</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetBoneIndexByName(<span class="stringliteral">&quot;Head&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.AddChild(<a class="code hl_class" href="../../db/d06/class_param3.html">spookyEntity</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">boneIdx</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   58</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a830d821b779c0814e9d378a50b2c896f" name="a830d821b779c0814e9d378a50b2c896f"></a>
@@ -226,7 +388,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d06/_spooky_area_8c_source.html#l00060">60</a> of file <a class="el" href="../../d4/d06/_spooky_area_8c_source.html">SpookyArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   61</span>  {</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnPlayerExitServer(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;typename&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">types</a> = {<a class="code hl_class" href="../../d6/d07/class_spooky_player_stalker.html">SpookyPlayerStalker</a>};</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.RemoveAllAttachedChildrenByTypename(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">types</a>);</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

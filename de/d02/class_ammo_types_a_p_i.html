@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -153,7 +150,8 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_ammo_types_8c_source.html#l00003">3</a> of file <a class="el" href="../../dd/d0f/_ammo_types_8c_source.html">AmmoTypes.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    3</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8948f9e52c0b164022e6ae31def8b3ae" name="a8948f9e52c0b164022e6ae31def8b3ae"></a>
@@ -180,7 +178,8 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_ammo_types_8c_source.html#l00004">4</a> of file <a class="el" href="../../dd/d0f/_ammo_types_8c_source.html">AmmoTypes.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    4</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -208,6 +207,8 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if ammoType exists (registered in cfgAmmoTypes) </p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_ammo_types_8c_source.html#l00012">MagazineTypeToAmmoType()</a>.</p>
 
 </div>
 </div>
@@ -239,6 +240,8 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the default ammoType of a magazine. </p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_ammo_types_8c_source.html#l00012">MagazineTypeToAmmoType()</a>.</p>
 
 </div>
 </div>
@@ -272,6 +275,32 @@ Static Private Member Functions</h2></td></tr>
 <p>Helper method. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_ammo_types_8c_source.html#l00012">12</a> of file <a class="el" href="../../dd/d0f/_ammo_types_8c_source.html">AmmoTypes.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>  {</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../de/d02/class_ammo_types_a_p_i.html">AmmoTypesAPI</a>.<a class="code hl_function" href="#a2da88c381578f94405519b212be75f25">Exists</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">magazineType</a>))</div>
+<div class="line"><span class="lineno">   15</span>    {</div>
+<div class="line"><span class="lineno">   16</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../de/d02/class_ammo_types_a_p_i.html">AmmoTypesAPI</a>.<a class="code hl_function" href="#a424f136f2801720401f5ee217d75f722">GetAmmoType</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">magazineType</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ammoType</a>))</div>
+<div class="line"><span class="lineno">   17</span>      {</div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1 is not a magazineType or ammoType or has no default &#39;ammo&#39; set up in config.&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">magazineType</a>));</div>
+<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   20</span>      }</div>
+<div class="line"><span class="lineno">   21</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   22</span>    }</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>      <span class="comment">// This is already an ammoType</span></div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ammoType</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">magazineType</a>;</div>
+<div class="line"><span class="lineno">   27</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
+<div class="ttc" id="aclass_ammo_types_a_p_i_html"><div class="ttname"><a href="../../de/d02/class_ammo_types_a_p_i.html">AmmoTypesAPI</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_ammo_types_8c_source.html#l00001">AmmoTypes.c:2</a></div></div>
+<div class="ttc" id="aclass_ammo_types_a_p_i_html_a2da88c381578f94405519b212be75f25"><div class="ttname"><a href="#a2da88c381578f94405519b212be75f25">AmmoTypesAPI::Exists</a></div><div class="ttdeci">static proto bool Exists(string ammoType)</div><div class="ttdoc">Check if ammoType exists (registered in cfgAmmoTypes)</div></div>
+<div class="ttc" id="aclass_ammo_types_a_p_i_html_a424f136f2801720401f5ee217d75f722"><div class="ttname"><a href="#a424f136f2801720401f5ee217d75f722">AmmoTypesAPI::GetAmmoType</a></div><div class="ttdeci">static proto bool GetAmmoType(string magazineType, out string ammoType)</div><div class="ttdoc">Get the default ammoType of a magazine.</div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="#a2da88c381578f94405519b212be75f25">Exists()</a>, and <a class="el" href="#a424f136f2801720401f5ee217d75f722">GetAmmoType()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d02/_weapon___base_8c_source.html#l00862">Weapon::FillChamber()</a>, and <a class="el" href="../../de/d02/_weapon___base_8c_source.html#l00796">Weapon::FillInnerMagazine()</a>.</p>
 
 </div>
 </div>

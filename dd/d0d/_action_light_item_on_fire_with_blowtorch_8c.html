@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -155,6 +152,45 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00016">16</a> of file <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html">ActionLightItemOnFireWithBlowtorch.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>  {</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Blowtorch</a> <a class="code hl_class" href="../../db/d06/class_param3.html">bt</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Blowtorch</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">bt</a>.HasEnoughEnergyForRepair(<a class="code hl_class" href="../../d8/d0b/class_u_a_time_spent.html">UATimeSpent</a>.<a class="code hl_variable" href="../../d8/d0b/class_u_a_time_spent.html#aca1d827046a9fe525e73ab8950b06d5e">FIREPLACE_IGNITE</a>))</div>
+<div class="line"><span class="lineno">   20</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject());</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>)</div>
+<div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>      <span class="comment">// when igniting item on the ground with igniter in hands</span></div>
+<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a>.IsIgnited() &amp;&amp; !<a class="code hl_function" href="../../df/d06/_action_light_item_on_fire_8c.html#ac2289e6ee4a3e9b71cd6c809afd53cde">IsItemInCargoOfSomething</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a>.CanBeIgnitedBy(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>))</div>
+<div class="line"><span class="lineno">   27</span>      {</div>
+<div class="line"><span class="lineno">   28</span>        <span class="comment">// oven stage of standard fireplace</span></div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a>.IsKindOf(<span class="stringliteral">&quot;Fireplace&quot;</span>))</div>
+<div class="line"><span class="lineno">   30</span>        {</div>
+<div class="line"><span class="lineno">   31</span>          <span class="keywordflow">if</span> (Fireplace.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a>).IsOven())</div>
+<div class="line"><span class="lineno">   32</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>          <span class="keywordflow">if</span> (Fireplace.CanIgniteEntityAsFireplace(<a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a>))</div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   38</span>        }</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   41</span>      }</div>
+<div class="line"><span class="lineno">   42</span>      <span class="comment">// when igniting item in hands from something on ground</span></div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.IsIgnited() &amp;&amp; !<a class="code hl_function" href="../../df/d06/_action_light_item_on_fire_8c.html#ac2289e6ee4a3e9b71cd6c809afd53cde">IsItemInCargoOfSomething</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a>.CanIgniteItem(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.CanBeIgnitedBy(<a class="code hl_class" href="../../db/d06/class_param3.html">target_item</a>))</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
+<div class="ttc" id="a_action_light_item_on_fire_8c_html_ac2289e6ee4a3e9b71cd6c809afd53cde"><div class="ttname"><a href="../../df/d06/_action_light_item_on_fire_8c.html#ac2289e6ee4a3e9b71cd6c809afd53cde">IsItemInCargoOfSomething</a></div><div class="ttdeci">bool IsItemInCargoOfSomething(ItemBase item)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d06/_action_light_item_on_fire_8c_source.html#l00040">ActionLightItemOnFire.c:40</a></div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_u_a_time_spent_html"><div class="ttname"><a href="../../d8/d0b/class_u_a_time_spent.html">UATimeSpent</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0e/_action_constants_8c_source.html#l00026">ActionConstants.c:27</a></div></div>
+<div class="ttc" id="aclass_u_a_time_spent_html_aca1d827046a9fe525e73ab8950b06d5e"><div class="ttname"><a href="../../d8/d0b/class_u_a_time_spent.html#aca1d827046a9fe525e73ab8950b06d5e">UATimeSpent::FIREPLACE_IGNITE</a></div><div class="ttdeci">const float FIREPLACE_IGNITE</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0e/_action_constants_8c_source.html#l00091">ActionConstants.c:91</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0e/_action_constants_8c_source.html#l00091">UATimeSpent::FIREPLACE_IGNITE</a>, and <a class="el" href="../../df/d06/_action_light_item_on_fire_8c_source.html#l00040">IsItemInCargoOfSomething()</a>.</p>
 
 </div>
 </div>
@@ -174,6 +210,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00001">1</a> of file <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html">ActionLightItemOnFireWithBlowtorch.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    m_CallbackClass = <a class="code hl_class" href="../../d2/d0b/class_action_light_item_on_fire_with_blowtorch_c_b.html">ActionLightItemOnFireWithBlowtorchCB</a>;</div>
+<div class="line"><span class="lineno">   14</span>  }</div>
+<div class="ttc" id="aclass_action_light_item_on_fire_with_blowtorch_c_b_html"><div class="ttname"><a href="../../d2/d0b/class_action_light_item_on_fire_with_blowtorch_c_b.html">ActionLightItemOnFireWithBlowtorchCB</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00001">ActionLightItemOnFireWithBlowtorch.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d9/d0b/_action_constructor_8c_source.html#l00027">ActionConstructor::RegisterActions()</a>, and <a class="el" href="../../d2/d08/_blowtorch_8c_source.html#l00095">ItemBase::SetActions()</a>.</p>
 
 </div>
 </div>
@@ -193,7 +235,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00012">12</a> of file <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html">ActionLightItemOnFireWithBlowtorch.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
+<div class="line"><span class="lineno">   13</span>    m_CallbackClass = <a class="code hl_class" href="../../d2/d0b/class_action_light_item_on_fire_with_blowtorch_c_b.html">ActionLightItemOnFireWithBlowtorchCB</a>;</div>
+<div class="line"><span class="lineno">   14</span>  }</div>
+<div class="line"><span class="lineno">   15</span> </div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2ebf3855cc8960864124ba5ca4949033" name="a2ebf3855cc8960864124ba5ca4949033"></a>
@@ -212,7 +258,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00072">72</a> of file <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html">ActionLightItemOnFireWithBlowtorch.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   73</span>  {</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEndServer(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetCompEM().SwitchOff();</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a26c6922d796bdf663f49119e83fe26f8" name="a26c6922d796bdf663f49119e83fe26f8"></a>
@@ -231,7 +282,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00058">58</a> of file <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html">ActionLightItemOnFireWithBlowtorch.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   59</span>  {</div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnExecuteServer(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetCompEM().SwitchOn();</div>
+<div class="line"><span class="lineno">   63</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a00cda41fe9dd093059da5c4b83b591bc" name="a00cda41fe9dd093059da5c4b83b591bc"></a>
@@ -250,7 +306,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00065">65</a> of file <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html">ActionLightItemOnFireWithBlowtorch.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   66</span>  {</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnFinishProgressServer(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetCompEM().SwitchOff();</div>
+<div class="line"><span class="lineno">   70</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae747a7f7ae5004f6f16e5debad35dcff" name="ae747a7f7ae5004f6f16e5debad35dcff"></a>
@@ -269,6 +330,16 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00050">50</a> of file <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html">ActionLightItemOnFireWithBlowtorch.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>  {</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnUpdate(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_State == <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#gaec2990f2dd7ed9f35d980856442b881b">UA_PROCESSING</a> &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_MainItem.GetCompEM().IsWorking())</div>
+<div class="line"><span class="lineno">   55</span>      <a class="code hl_function" href="../../d5/d09/_action_manager_base_8c.html#ac1c30a63fcff78de5e4924f7ee2b822e">Interrupt</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+<div class="ttc" id="a_action_manager_base_8c_html_ac1c30a63fcff78de5e4924f7ee2b822e"><div class="ttname"><a href="../../d5/d09/_action_manager_base_8c.html#ac1c30a63fcff78de5e4924f7ee2b822e">Interrupt</a></div><div class="ttdeci">void Interrupt()</div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_gaec2990f2dd7ed9f35d980856442b881b"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#gaec2990f2dd7ed9f35d980856442b881b">UA_PROCESSING</a></div><div class="ttdeci">const int UA_PROCESSING</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00434">constants.c:434</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c.html#ac1c30a63fcff78de5e4924f7ee2b822e">Interrupt()</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00434">UA_PROCESSING</a>.</p>
 
 </div>
 </div>

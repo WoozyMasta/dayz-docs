@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -309,6 +306,32 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">19</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>  {</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="#a1b23c9cec8adc25585a7a634d105a794">m_Instance</a> = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="#ad855c8fcccfdbbf2c73bcee9621d5ca3">m_ModuleLocalEnscriptHistory</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">PluginLocalEnscriptHistory</a>.Cast(<a class="code hl_function" href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">PluginLocalEnscriptHistory</a>));</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="#a1618faef2f178b74bd2f3bc6a9d124b7">m_ModuleLocalEnscriptHistoryServer</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">PluginLocalEnscriptHistoryServer</a>.Cast(<a class="code hl_function" href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">PluginLocalEnscriptHistoryServer</a>));</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a> = <a class="code hl_variable" href="#ad855c8fcccfdbbf2c73bcee9621d5ca3">m_ModuleLocalEnscriptHistory</a>.GetAllLines();</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="#a67ce6c232b0b5e62b08677159bd5103f">m_EnscriptConsoleHistoryServer</a> = <a class="code hl_variable" href="#a1618faef2f178b74bd2f3bc6a9d124b7">m_ModuleLocalEnscriptHistoryServer</a>.GetAllLines();</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="#a47baacda741cbc82724260ef75a5ff43">m_EnfScriptEdit</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineEditBoxWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;MultilineEditBoxWidget0&quot;</span>));</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="#ac98b23f9f07ca3d3e68bbd11c187eee0">m_EnfScriptRun</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;RunButton&quot;</span>));</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#a869df8180a4fa5eae741d5c9c67064f9">m_EnfScriptClear</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;ClearButton&quot;</span>));</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="#acf9b21ad98809a2ed8363cfc7ee04504">m_ScriptOutputListbox</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">TextListboxWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;ScriptOutputListbox&quot;</span>));</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="#aa560550d1a1680e644f2a32d7401a36c">m_RunColor</a> = <a class="code hl_variable" href="#ac98b23f9f07ca3d3e68bbd11c187eee0">m_EnfScriptRun</a>.GetColor();</div>
+<div class="line"><span class="lineno">   31</span>  }</div>
+<div class="ttc" id="a_plugin_manager_8c_html_a35050f82bea320b7a5336fc549630eaf"><div class="ttname"><a href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a></div><div class="ttdeci">PluginBase GetPlugin(typename plugin_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">PluginManager.c:300</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a1618faef2f178b74bd2f3bc6a9d124b7"><div class="ttname"><a href="#a1618faef2f178b74bd2f3bc6a9d124b7">ScriptConsoleEnfScriptTab::m_ModuleLocalEnscriptHistoryServer</a></div><div class="ttdeci">PluginLocalEnscriptHistoryServer m_ModuleLocalEnscriptHistoryServer</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00009">ScriptConsoleEnfScriptTab.c:9</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a1b23c9cec8adc25585a7a634d105a794"><div class="ttname"><a href="#a1b23c9cec8adc25585a7a634d105a794">ScriptConsoleEnfScriptTab::m_Instance</a></div><div class="ttdeci">static ScriptConsoleEnfScriptTab m_Instance</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00003">ScriptConsoleEnfScriptTab.c:3</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a47baacda741cbc82724260ef75a5ff43"><div class="ttname"><a href="#a47baacda741cbc82724260ef75a5ff43">ScriptConsoleEnfScriptTab::m_EnfScriptEdit</a></div><div class="ttdeci">MultilineEditBoxWidget m_EnfScriptEdit</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00010">ScriptConsoleEnfScriptTab.c:10</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a67ce6c232b0b5e62b08677159bd5103f"><div class="ttname"><a href="#a67ce6c232b0b5e62b08677159bd5103f">ScriptConsoleEnfScriptTab::m_EnscriptConsoleHistoryServer</a></div><div class="ttdeci">ref TStringArray m_EnscriptConsoleHistoryServer</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00007">ScriptConsoleEnfScriptTab.c:7</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a69519ae1dcb0e32e82664859305f7615"><div class="ttname"><a href="#a69519ae1dcb0e32e82664859305f7615">ScriptConsoleEnfScriptTab::m_EnscriptConsoleHistory</a></div><div class="ttdeci">ref TStringArray m_EnscriptConsoleHistory</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00006">ScriptConsoleEnfScriptTab.c:6</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a869df8180a4fa5eae741d5c9c67064f9"><div class="ttname"><a href="#a869df8180a4fa5eae741d5c9c67064f9">ScriptConsoleEnfScriptTab::m_EnfScriptClear</a></div><div class="ttdeci">ButtonWidget m_EnfScriptClear</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00012">ScriptConsoleEnfScriptTab.c:12</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_aa560550d1a1680e644f2a32d7401a36c"><div class="ttname"><a href="#aa560550d1a1680e644f2a32d7401a36c">ScriptConsoleEnfScriptTab::m_RunColor</a></div><div class="ttdeci">int m_RunColor</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00015">ScriptConsoleEnfScriptTab.c:15</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_ac98b23f9f07ca3d3e68bbd11c187eee0"><div class="ttname"><a href="#ac98b23f9f07ca3d3e68bbd11c187eee0">ScriptConsoleEnfScriptTab::m_EnfScriptRun</a></div><div class="ttdeci">ButtonWidget m_EnfScriptRun</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00011">ScriptConsoleEnfScriptTab.c:11</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_acf9b21ad98809a2ed8363cfc7ee04504"><div class="ttname"><a href="#acf9b21ad98809a2ed8363cfc7ee04504">ScriptConsoleEnfScriptTab::m_ScriptOutputListbox</a></div><div class="ttdeci">TextListboxWidget m_ScriptOutputListbox</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00013">ScriptConsoleEnfScriptTab.c:13</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_ad855c8fcccfdbbf2c73bcee9621d5ca3"><div class="ttname"><a href="#ad855c8fcccfdbbf2c73bcee9621d5ca3">ScriptConsoleEnfScriptTab::m_ModuleLocalEnscriptHistory</a></div><div class="ttdeci">PluginLocalEnscriptHistory m_ModuleLocalEnscriptHistory</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00008">ScriptConsoleEnfScriptTab.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">GetPlugin()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00012">m_EnfScriptClear</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00010">m_EnfScriptEdit</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00011">m_EnfScriptRun</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00006">m_EnscriptConsoleHistory</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00007">m_EnscriptConsoleHistoryServer</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00003">m_Instance</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00008">m_ModuleLocalEnscriptHistory</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00009">m_ModuleLocalEnscriptHistoryServer</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00015">m_RunColor</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00013">m_ScriptOutputListbox</a>.</p>
 
 </div>
 </div>
@@ -336,6 +359,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00033">33</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>  {</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="#a1b23c9cec8adc25585a7a634d105a794">m_Instance</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   36</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00003">m_Instance</a>.</p>
 
 </div>
 </div>
@@ -368,6 +396,26 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00082">82</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">message</a> != <span class="keywordtype">string</span>.<a class="code hl_variable" href="../../d3/d05/_hand___states_8c.html#ac3e3346bc6f9bb504e43495424c91a51">Empty</a>)</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7b9125d22889977ac906c98c41488a1b">m_AllowScriptOutput</a> &amp;&amp; <a class="code hl_variable" href="#acf9b21ad98809a2ed8363cfc7ee04504">m_ScriptOutputListbox</a>)</div>
+<div class="line"><span class="lineno">   87</span>      {</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">isReload</a>)</div>
+<div class="line"><span class="lineno">   89</span>          <a class="code hl_variable" href="#a321ea6898c833aaf9e3d96090e905e47">m_ScriptOutputHistory</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>);</div>
+<div class="line"><span class="lineno">   90</span>        <a class="code hl_variable" href="#acf9b21ad98809a2ed8363cfc7ee04504">m_ScriptOutputListbox</a>.AddItem(<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga7a883b203754a93b0812b058ca80effd">String</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, 0);</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="#acf9b21ad98809a2ed8363cfc7ee04504">m_ScriptOutputListbox</a>.EnsureVisible(<a class="code hl_variable" href="#acf9b21ad98809a2ed8363cfc7ee04504">m_ScriptOutputListbox</a>.GetNumItems());</div>
+<div class="line"><span class="lineno">   92</span>      }</div>
+<div class="line"><span class="lineno">   93</span>    }</div>
+<div class="line"><span class="lineno">   94</span>  }</div>
+<div class="ttc" id="a_hand___states_8c_html_ac3e3346bc6f9bb504e43495424c91a51"><div class="ttname"><a href="../../d3/d05/_hand___states_8c.html#ac3e3346bc6f9bb504e43495424c91a51">Empty</a></div><div class="ttdeci">Empty</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d05/_hand___states_8c_source.html#l00014">Hand_States.c:14</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a321ea6898c833aaf9e3d96090e905e47"><div class="ttname"><a href="#a321ea6898c833aaf9e3d96090e905e47">ScriptConsoleEnfScriptTab::m_ScriptOutputHistory</a></div><div class="ttdeci">static ref TStringArray m_ScriptOutputHistory</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00017">ScriptConsoleEnfScriptTab.c:17</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a7b9125d22889977ac906c98c41488a1b"><div class="ttname"><a href="#a7b9125d22889977ac906c98c41488a1b">ScriptConsoleEnfScriptTab::m_AllowScriptOutput</a></div><div class="ttdeci">bool m_AllowScriptOutput</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00014">ScriptConsoleEnfScriptTab.c:14</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga7a883b203754a93b0812b058ca80effd"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga7a883b203754a93b0812b058ca80effd">String</a></div><div class="ttdeci">string String(string s)</div><div class="ttdoc">Helper for passing string expression to functions with void parameter. Example: Print(String(&quot;Hello &quot;...</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00338">EnScript.c:338</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d05/_hand___states_8c_source.html#l00014">Empty</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00014">m_AllowScriptOutput</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00017">m_ScriptOutputHistory</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00013">m_ScriptOutputListbox</a>, and <a class="el" href="../../d4/d05/_en_script_8c_source.html#l00338">String()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00104">ReloadScriptOutput()</a>.</p>
 
 </div>
 </div>
@@ -395,6 +443,15 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00096">96</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>  {</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">clearFile</a>)</div>
+<div class="line"><span class="lineno">   99</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#a67901e3d3c152b0c413eee1576466a48">ClearLogs</a>();</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="#acf9b21ad98809a2ed8363cfc7ee04504">m_ScriptOutputListbox</a>.ClearItems();</div>
+<div class="line"><span class="lineno">  101</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_a67901e3d3c152b0c413eee1576466a48"><div class="ttname"><a href="../../da/d0d/class_debug.html#a67901e3d3c152b0c413eee1576466a48">Debug::ClearLogs</a></div><div class="ttdeci">static void ClearLogs()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00638">Debug.c:638</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00638">Debug::ClearLogs()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00013">m_ScriptOutputListbox</a>.</p>
 
 </div>
 </div>
@@ -422,6 +479,21 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00143">143</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>  {</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">success</a>)</div>
+<div class="line"><span class="lineno">  146</span>      <a class="code hl_variable" href="#ac98b23f9f07ca3d3e68bbd11c187eee0">m_EnfScriptRun</a>.SetColor(<a class="code hl_function" href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a>(255, 0, 255, 0));</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  148</span>      <a class="code hl_variable" href="#ac98b23f9f07ca3d3e68bbd11c187eee0">m_EnfScriptRun</a>.SetColor(<a class="code hl_function" href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a>(255, 255, 0, 0));</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLater(<a class="code hl_function" href="#a1e57d51cf2b284824e8e922d6e11356e">ResetRunButtonColor</a>, 600);</div>
+<div class="line"><span class="lineno">  150</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a1e57d51cf2b284824e8e922d6e11356e"><div class="ttname"><a href="#a1e57d51cf2b284824e8e922d6e11356e">ScriptConsoleEnfScriptTab::ResetRunButtonColor</a></div><div class="ttdeci">void ResetRunButtonColor()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00152">ScriptConsoleEnfScriptTab.c:152</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___tools_html_gaaf491f3ecd1d9aefb35a16bf96ca420c"><div class="ttname"><a href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a></div><div class="ttdeci">const int CALL_CATEGORY_SYSTEM</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">tools.c:8</a></div></div>
+<div class="ttc" id="aproto_8c_html_a117bd706d35f6f2ae3f5db263b778704"><div class="ttname"><a href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a></div><div class="ttdeci">int ARGB(int a, int r, int g, int b)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/proto_8c_source.html#l00322">proto.c:322</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0d/proto_8c_source.html#l00322">ARGB()</a>, <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00011">m_EnfScriptRun</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00152">ResetRunButtonColor()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00194">OnRPCEx()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">RunEnscript()</a>.</p>
 
 </div>
 </div>
@@ -449,6 +521,22 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00167">167</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>  {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">history_index</a>;</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a47baacda741cbc82724260ef75a5ff43">m_EnfScriptEdit</a>)</div>
+<div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>      <a class="code hl_variable" href="#a1212f9a039520b9c6c8c009b5ad03e74">m_EnscriptHistoryRow</a>++;</div>
+<div class="line"><span class="lineno">  173</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">history_index</a> = <a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.Count() - <a class="code hl_variable" href="#a1212f9a039520b9c6c8c009b5ad03e74">m_EnscriptHistoryRow</a> - 1;</div>
+<div class="line"><span class="lineno">  174</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">history_index</a> &gt; -1)</div>
+<div class="line"><span class="lineno">  175</span>        <a class="code hl_variable" href="#a47baacda741cbc82724260ef75a5ff43">m_EnfScriptEdit</a>.SetText(<a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">history_index</a>));</div>
+<div class="line"><span class="lineno">  176</span>      <span class="keywordflow">else</span> <a class="code hl_variable" href="#a1212f9a039520b9c6c8c009b5ad03e74">m_EnscriptHistoryRow</a>--;</div>
+<div class="line"><span class="lineno">  177</span>    }</div>
+<div class="line"><span class="lineno">  178</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a1212f9a039520b9c6c8c009b5ad03e74"><div class="ttname"><a href="#a1212f9a039520b9c6c8c009b5ad03e74">ScriptConsoleEnfScriptTab::m_EnscriptHistoryRow</a></div><div class="ttdeci">int m_EnscriptHistoryRow</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00004">ScriptConsoleEnfScriptTab.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00010">m_EnfScriptEdit</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00006">m_EnscriptConsoleHistory</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00004">m_EnscriptHistoryRow</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00113">HistoryBack()</a>.</p>
 
 </div>
 </div>
@@ -476,6 +564,21 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00181">181</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>  {</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a47baacda741cbc82724260ef75a5ff43">m_EnfScriptEdit</a>)</div>
+<div class="line"><span class="lineno">  184</span>    {</div>
+<div class="line"><span class="lineno">  185</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">history_index</a>;</div>
+<div class="line"><span class="lineno">  186</span>      <a class="code hl_variable" href="#a1212f9a039520b9c6c8c009b5ad03e74">m_EnscriptHistoryRow</a>--;</div>
+<div class="line"><span class="lineno">  187</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">history_index</a> = <a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.Count() - <a class="code hl_variable" href="#a1212f9a039520b9c6c8c009b5ad03e74">m_EnscriptHistoryRow</a> - 1;</div>
+<div class="line"><span class="lineno">  188</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">history_index</a> &lt; <a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.Count())</div>
+<div class="line"><span class="lineno">  189</span>        <a class="code hl_variable" href="#a47baacda741cbc82724260ef75a5ff43">m_EnfScriptEdit</a>.SetText(<a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">history_index</a>));</div>
+<div class="line"><span class="lineno">  190</span>      <span class="keywordflow">else</span> <a class="code hl_variable" href="#a1212f9a039520b9c6c8c009b5ad03e74">m_EnscriptHistoryRow</a>++;</div>
+<div class="line"><span class="lineno">  191</span>    }</div>
+<div class="line"><span class="lineno">  192</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00010">m_EnfScriptEdit</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00006">m_EnscriptConsoleHistory</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00004">m_EnscriptHistoryRow</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00119">HistoryForward()</a>.</p>
 
 </div>
 </div>
@@ -503,6 +606,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00113">113</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>  {</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_function" href="#a6d6b77aa30f18427d3d8822ddf0df472">EnscriptHistoryBack</a>();</div>
+<div class="line"><span class="lineno">  117</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a6d6b77aa30f18427d3d8822ddf0df472"><div class="ttname"><a href="#a6d6b77aa30f18427d3d8822ddf0df472">ScriptConsoleEnfScriptTab::EnscriptHistoryBack</a></div><div class="ttdeci">void EnscriptHistoryBack()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00167">ScriptConsoleEnfScriptTab.c:167</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00167">EnscriptHistoryBack()</a>.</p>
 
 </div>
 </div>
@@ -530,6 +640,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00119">119</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_function" href="#a71a93ffd0d7af8a87a0160d9e703e59e">EnscriptHistoryForward</a>();</div>
+<div class="line"><span class="lineno">  122</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a71a93ffd0d7af8a87a0160d9e703e59e"><div class="ttname"><a href="#a71a93ffd0d7af8a87a0160d9e703e59e">ScriptConsoleEnfScriptTab::EnscriptHistoryForward</a></div><div class="ttdeci">void EnscriptHistoryForward()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00181">ScriptConsoleEnfScriptTab.c:181</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00181">EnscriptHistoryForward()</a>.</p>
 
 </div>
 </div>
@@ -571,6 +687,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00228">228</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  229</span>  {</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnChange(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">finished</a>);</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="a_icon_8c_html_acd41c12fe81446bff0920670641367de"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a></div><div class="ttdeci">Icon y</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -612,6 +736,25 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00210">210</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>  {</div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#ac98b23f9f07ca3d3e68bbd11c187eee0">m_EnfScriptRun</a>)</div>
+<div class="line"><span class="lineno">  214</span>    {</div>
+<div class="line"><span class="lineno">  215</span>      <a class="code hl_function" href="#aa4a96da464bf6aa645a7a1fb39777f01">RunEnscript</a>();</div>
+<div class="line"><span class="lineno">  216</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  217</span>    }</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#a869df8180a4fa5eae741d5c9c67064f9">m_EnfScriptClear</a>)</div>
+<div class="line"><span class="lineno">  219</span>    {</div>
+<div class="line"><span class="lineno">  220</span>      <a class="code hl_variable" href="#acf9b21ad98809a2ed8363cfc7ee04504">m_ScriptOutputListbox</a>.ClearItems();</div>
+<div class="line"><span class="lineno">  221</span>      <a class="code hl_variable" href="#a321ea6898c833aaf9e3d96090e905e47">m_ScriptOutputHistory</a>.Clear();</div>
+<div class="line"><span class="lineno">  222</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  226</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_aa4a96da464bf6aa645a7a1fb39777f01"><div class="ttname"><a href="#aa4a96da464bf6aa645a7a1fb39777f01">ScriptConsoleEnfScriptTab::RunEnscript</a></div><div class="ttdeci">void RunEnscript()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">ScriptConsoleEnfScriptTab.c:124</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00012">m_EnfScriptClear</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00011">m_EnfScriptRun</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00017">m_ScriptOutputHistory</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00013">m_ScriptOutputListbox</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">RunEnscript()</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -643,6 +786,26 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00194">194</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>  {</div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnRPCEx(<a class="code hl_class" href="../../db/d06/class_param3.html">rpc_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>);</div>
+<div class="line"><span class="lineno">  197</span><span class="preprocessor">#ifdef DIAG_DEVELOPER</span></div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">rpc_type</a>)</div>
+<div class="line"><span class="lineno">  199</span>    {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_RPC_SERVER_SCRIPT_RESULT:</div>
+<div class="line"><span class="lineno">  201</span>    {</div>
+<div class="line"><span class="lineno">  202</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_class" href="../../de/d00/class_cached_objects_params.html">CachedObjectsParams</a>.<a class="code hl_variable" href="../../de/d00/class_cached_objects_params.html#a11173177650647cdb85c6ea6080593e8">PARAM1_BOOL</a>))</div>
+<div class="line"><span class="lineno">  203</span>        <a class="code hl_function" href="#a5fa46e222c529747f6901cd0cbcc739d">ColorRunButton</a>(<a class="code hl_class" href="../../de/d00/class_cached_objects_params.html">CachedObjectsParams</a>.<a class="code hl_variable" href="../../de/d00/class_cached_objects_params.html#a11173177650647cdb85c6ea6080593e8">PARAM1_BOOL</a>.param1);</div>
+<div class="line"><span class="lineno">  204</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  205</span>    }</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  208</span>  }</div>
+<div class="ttc" id="a_e_r_p_cs_8c_html_a6ce2d98a3b8fbdba5b450abf2d6eab37"><div class="ttname"><a href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a></div><div class="ttdeci">ERPCs</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d06/_e_r_p_cs_8c_source.html#l00001">ERPCs.c:2</a></div></div>
+<div class="ttc" id="aclass_cached_objects_params_html"><div class="ttname"><a href="../../de/d00/class_cached_objects_params.html">CachedObjectsParams</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_utility_classes_8c_source.html#l00009">UtilityClasses.c:10</a></div></div>
+<div class="ttc" id="aclass_cached_objects_params_html_a11173177650647cdb85c6ea6080593e8"><div class="ttname"><a href="../../de/d00/class_cached_objects_params.html#a11173177650647cdb85c6ea6080593e8">CachedObjectsParams::PARAM1_BOOL</a></div><div class="ttdeci">static ref Param1&lt; bool &gt; PARAM1_BOOL</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_utility_classes_8c_source.html#l00012">UtilityClasses.c:12</a></div></div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a5fa46e222c529747f6901cd0cbcc739d"><div class="ttname"><a href="#a5fa46e222c529747f6901cd0cbcc739d">ScriptConsoleEnfScriptTab::ColorRunButton</a></div><div class="ttdeci">void ColorRunButton(bool success)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00143">ScriptConsoleEnfScriptTab.c:143</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00143">ColorRunButton()</a>, and <a class="el" href="../../de/d07/_utility_classes_8c_source.html#l00012">CachedObjectsParams::PARAM1_BOOL</a>.</p>
 
 </div>
 </div>
@@ -670,6 +833,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00038">38</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>  {</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">index</a> = <a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.Count() - <a class="code hl_variable" href="#a1212f9a039520b9c6c8c009b5ad03e74">m_EnscriptHistoryRow</a> - 1;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.IsValidIndex(<a class="code hl_class" href="../../db/d06/class_param3.html">index</a>))</div>
+<div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">index</a>);</div>
+<div class="line"><span class="lineno">   44</span>      <a class="code hl_variable" href="#a47baacda741cbc82724260ef75a5ff43">m_EnfScriptEdit</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_function" href="#a424040180a8527263ddca3796a952aa8">ReloadScriptOutput</a>();</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a424040180a8527263ddca3796a952aa8"><div class="ttname"><a href="#a424040180a8527263ddca3796a952aa8">ScriptConsoleEnfScriptTab::ReloadScriptOutput</a></div><div class="ttdeci">void ReloadScriptOutput()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00104">ScriptConsoleEnfScriptTab.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00010">m_EnfScriptEdit</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00006">m_EnscriptConsoleHistory</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00004">m_EnscriptHistoryRow</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00104">ReloadScriptOutput()</a>.</p>
 
 </div>
 </div>
@@ -697,6 +872,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00056">56</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  {</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_function" href="#a1a28431b6dff5f36bde819618294f36d">PrintS</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>.ToString());</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_a1a28431b6dff5f36bde819618294f36d"><div class="ttname"><a href="#a1a28431b6dff5f36bde819618294f36d">ScriptConsoleEnfScriptTab::PrintS</a></div><div class="ttdeci">static void PrintS(string message)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00049">ScriptConsoleEnfScriptTab.c:49</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00049">PrintS()</a>.</p>
 
 </div>
 </div>
@@ -724,6 +905,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00066">66</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>  {</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_function" href="#a1a28431b6dff5f36bde819618294f36d">PrintS</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>.ToString());</div>
+<div class="line"><span class="lineno">   69</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00049">PrintS()</a>.</p>
 
 </div>
 </div>
@@ -751,6 +937,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00061">61</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>  {</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_function" href="#a1a28431b6dff5f36bde819618294f36d">PrintS</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>.ToString());</div>
+<div class="line"><span class="lineno">   64</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00049">PrintS()</a>.</p>
 
 </div>
 </div>
@@ -778,6 +969,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00076">76</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>  {</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_function" href="#a1a28431b6dff5f36bde819618294f36d">PrintS</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>.ToString());</div>
+<div class="line"><span class="lineno">   79</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00049">PrintS()</a>.</p>
 
 </div>
 </div>
@@ -805,6 +1001,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00049">49</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>  {</div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_function" href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>);</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1b23c9cec8adc25585a7a634d105a794">m_Instance</a>)</div>
+<div class="line"><span class="lineno">   53</span>      <a class="code hl_variable" href="#a1b23c9cec8adc25585a7a634d105a794">m_Instance</a>.Add(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>);</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
+<div class="ttc" id="agroup___debug_html_gaaa9351d895a1f244a26fd635c378c536"><div class="ttname"><a href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a></div><div class="ttdeci">proto void Print(void var)</div><div class="ttdoc">Prints content of variable to console/log.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00003">m_Instance</a>, and <a class="el" href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00056">PrintS()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00066">PrintS()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00061">PrintS()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00076">PrintS()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00071">PrintS()</a>.</p>
 
 </div>
 </div>
@@ -832,6 +1038,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00071">71</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>  {</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_function" href="#a1a28431b6dff5f36bde819618294f36d">PrintS</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">message</a>.ToString());</div>
+<div class="line"><span class="lineno">   74</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00049">PrintS()</a>.</p>
 
 </div>
 </div>
@@ -859,6 +1070,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00104">104</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>  {</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_variable" href="#acf9b21ad98809a2ed8363cfc7ee04504">m_ScriptOutputListbox</a>.ClearItems();</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_variable" href="#a7b9125d22889977ac906c98c41488a1b">m_AllowScriptOutput</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">s</a>: <a class="code hl_variable" href="#a321ea6898c833aaf9e3d96090e905e47">m_ScriptOutputHistory</a>)</div>
+<div class="line"><span class="lineno">  109</span>      <a class="code hl_function" href="#ab5b36547e1d6c6acbf6a12db6700fb62">Add</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">s</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">true</a>);</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_variable" href="#a7b9125d22889977ac906c98c41488a1b">m_AllowScriptOutput</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  111</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html_ab5b36547e1d6c6acbf6a12db6700fb62"><div class="ttname"><a href="#ab5b36547e1d6c6acbf6a12db6700fb62">ScriptConsoleEnfScriptTab::Add</a></div><div class="ttdeci">void Add(string message, bool isReload=false)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00082">ScriptConsoleEnfScriptTab.c:82</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00082">Add()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00014">m_AllowScriptOutput</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00017">m_ScriptOutputHistory</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00013">m_ScriptOutputListbox</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00038">OnSelected()</a>.</p>
 
 </div>
 </div>
@@ -886,6 +1109,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00152">152</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>  {</div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_variable" href="#ac98b23f9f07ca3d3e68bbd11c187eee0">m_EnfScriptRun</a>.SetColor(<a class="code hl_variable" href="#aa560550d1a1680e644f2a32d7401a36c">m_RunColor</a>);</div>
+<div class="line"><span class="lineno">  155</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00011">m_EnfScriptRun</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00015">m_RunColor</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00143">ColorRunButton()</a>.</p>
 
 </div>
 </div>
@@ -913,6 +1143,30 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">124</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>  {</div>
+<div class="line"><span class="lineno">  126</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">code</a>;</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_variable" href="#a47baacda741cbc82724260ef75a5ff43">m_EnfScriptEdit</a>.GetText(<a class="code hl_class" href="../../db/d06/class_param3.html">code</a>);</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">codeNoReplace</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">code</a>;</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_variable" href="../../da/d0d/_quick_bar_base_8c.html#a41965ccd4e38d454c96fbd9743173ad3">_player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_variable" href="#a7b9125d22889977ac906c98c41488a1b">m_AllowScriptOutput</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">code</a>.Replace(<span class="stringliteral">&quot;Print(&quot;</span>, <span class="stringliteral">&quot;ScriptConsoleEnfScriptTab.PrintS(&quot;</span>);</div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">code</a>.Replace(<span class="stringliteral">&quot;Print (&quot;</span>, <span class="stringliteral">&quot;ScriptConsoleEnfScriptTab.PrintS(&quot;</span>);</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">success</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ExecuteEnforceScript(<span class="stringliteral">&quot;void scConsMain() \n{\n&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">code</a> + <span class="stringliteral">&quot;\n}\n&quot;</span>, <span class="stringliteral">&quot;scConsMain&quot;</span>);</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_variable" href="#a7b9125d22889977ac906c98c41488a1b">m_AllowScriptOutput</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_function" href="#a5fa46e222c529747f6901cd0cbcc739d">ColorRunButton</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">success</a>);</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_variable" href="#a69519ae1dcb0e32e82664859305f7615">m_EnscriptConsoleHistory</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">codeNoReplace</a>);</div>
+<div class="line"><span class="lineno">  139</span>    <a class="code hl_variable" href="#ad855c8fcccfdbbf2c73bcee9621d5ca3">m_ModuleLocalEnscriptHistory</a>.AddNewLine(<a class="code hl_class" href="../../db/d06/class_param3.html">codeNoReplace</a>);</div>
+<div class="line"><span class="lineno">  140</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  141</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00047">ModifierBase.c:47</a></div></div>
+<div class="ttc" id="a_quick_bar_base_8c_html_a41965ccd4e38d454c96fbd9743173ad3"><div class="ttname"><a href="../../da/d0d/_quick_bar_base_8c.html#a41965ccd4e38d454c96fbd9743173ad3">_player</a></div><div class="ttdeci">PlayerBase _player</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0d/_quick_bar_base_8c_source.html#l00018">QuickBarBase.c:18</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0d/_quick_bar_base_8c_source.html#l00018">_player</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00143">ColorRunButton()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00014">m_AllowScriptOutput</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00010">m_EnfScriptEdit</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00006">m_EnscriptConsoleHistory</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00008">m_ModuleLocalEnscriptHistory</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00210">OnClick()</a>.</p>
 
 </div>
 </div>
@@ -940,6 +1194,17 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00157">157</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  158</span>  {</div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">code</a>;</div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_variable" href="#a47baacda741cbc82724260ef75a5ff43">m_EnfScriptEdit</a>.GetText(<a class="code hl_class" href="../../db/d06/class_param3.html">code</a>);</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_variable" href="#a67ce6c232b0b5e62b08677159bd5103f">m_EnscriptConsoleHistoryServer</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">code</a>);</div>
+<div class="line"><span class="lineno">  162</span>    <a class="code hl_variable" href="#a1618faef2f178b74bd2f3bc6a9d124b7">m_ModuleLocalEnscriptHistoryServer</a>.AddNewLine(<a class="code hl_class" href="../../db/d06/class_param3.html">code</a>);</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_class" href="../../de/d00/class_cached_objects_params.html">CachedObjectsParams</a>.<a class="code hl_variable" href="../../de/d00/class_cached_objects_params.html#a34a0d76c41246b87d238397743d61b26">PARAM1_STRING</a>.param1 = <a class="code hl_class" href="../../db/d06/class_param3.html">code</a>;</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().RPCSingleParam(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>(), <a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_RPC_SERVER_SCRIPT, <a class="code hl_class" href="../../de/d00/class_cached_objects_params.html">CachedObjectsParams</a>.<a class="code hl_variable" href="../../de/d00/class_cached_objects_params.html#a34a0d76c41246b87d238397743d61b26">PARAM1_STRING</a>, <span class="keyword">true</span>, <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetIdentity());</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="ttc" id="aclass_cached_objects_params_html_a34a0d76c41246b87d238397743d61b26"><div class="ttname"><a href="../../de/d00/class_cached_objects_params.html#a34a0d76c41246b87d238397743d61b26">CachedObjectsParams::PARAM1_STRING</a></div><div class="ttdeci">static ref Param1&lt; string &gt; PARAM1_STRING</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_utility_classes_8c_source.html#l00014">UtilityClasses.c:14</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00010">m_EnfScriptEdit</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00007">m_EnscriptConsoleHistoryServer</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00009">m_ModuleLocalEnscriptHistoryServer</a>, and <a class="el" href="../../de/d07/_utility_classes_8c_source.html#l00014">CachedObjectsParams::PARAM1_STRING</a>.</p>
 
 </div>
 </div>
@@ -971,6 +1236,21 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00235">235</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>  {</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordflow">if</span> (!show &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">selectedHandler</a>.Type() == <a class="code hl_class" href="../../d4/d01/class_script_console_enf_script_tab.html">ScriptConsoleEnfScriptTab</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">selectedHandler</a>.Type() == <a class="code hl_class" href="../../db/d06/class_param3.html">ScriptConsoleEnfScriptServerTab</a>))</div>
+<div class="line"><span class="lineno">  238</span>    {</div>
+<div class="line"><span class="lineno">  239</span>      <span class="comment">//do nothing</span></div>
+<div class="line"><span class="lineno">  240</span>    }</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  242</span>    {</div>
+<div class="line"><span class="lineno">  243</span>      <a class="code hl_variable" href="../../d8/d09/class_script_console_tab_base.html#ae6a351a7b4747945bac3f38eec08cd3f">m_Root</a>.Show(show);</div>
+<div class="line"><span class="lineno">  244</span>      <a class="code hl_variable" href="../../d8/d09/class_script_console_tab_base.html#ae6a351a7b4747945bac3f38eec08cd3f">m_Root</a>.Enable(show);</div>
+<div class="line"><span class="lineno">  245</span>    }</div>
+<div class="line"><span class="lineno">  246</span>  }</div>
+<div class="ttc" id="aclass_script_console_enf_script_tab_html"><div class="ttname"><a href="../../d4/d01/class_script_console_enf_script_tab.html">ScriptConsoleEnfScriptTab</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00001">ScriptConsoleEnfScriptTab.c:2</a></div></div>
+<div class="ttc" id="aclass_script_console_tab_base_html_ae6a351a7b4747945bac3f38eec08cd3f"><div class="ttname"><a href="../../d8/d09/class_script_console_tab_base.html#ae6a351a7b4747945bac3f38eec08cd3f">ScriptConsoleTabBase::m_Root</a></div><div class="ttdeci">Widget m_Root</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0e/_script_console_tab_base_8c_source.html#l00006">ScriptConsoleTabBase.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0e/_script_console_tab_base_8c_source.html#l00006">ScriptConsoleTabBase::m_Root</a>.</p>
 
 </div>
 </div>
@@ -997,6 +1277,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00014">14</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00082">Add()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00104">ReloadScriptOutput()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">RunEnscript()</a>.</p>
+
 </div>
 </div>
 <a id="a869df8180a4fa5eae741d5c9c67064f9" name="a869df8180a4fa5eae741d5c9c67064f9"></a>
@@ -1020,6 +1302,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00012">12</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00210">OnClick()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
 
 </div>
 </div>
@@ -1045,6 +1329,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00010">10</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00167">EnscriptHistoryBack()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00181">EnscriptHistoryForward()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00038">OnSelected()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">RunEnscript()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00157">RunEnscriptServer()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
+
 </div>
 </div>
 <a id="ac98b23f9f07ca3d3e68bbd11c187eee0" name="ac98b23f9f07ca3d3e68bbd11c187eee0"></a>
@@ -1068,6 +1354,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00011">11</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00143">ColorRunButton()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00210">OnClick()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00152">ResetRunButtonColor()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
 
 </div>
 </div>
@@ -1093,6 +1381,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00006">6</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00167">EnscriptHistoryBack()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00181">EnscriptHistoryForward()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00038">OnSelected()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">RunEnscript()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
+
 </div>
 </div>
 <a id="a67ce6c232b0b5e62b08677159bd5103f" name="a67ce6c232b0b5e62b08677159bd5103f"></a>
@@ -1117,6 +1407,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00007">7</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00157">RunEnscriptServer()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
+
 </div>
 </div>
 <a id="a1212f9a039520b9c6c8c009b5ad03e74" name="a1212f9a039520b9c6c8c009b5ad03e74"></a>
@@ -1140,6 +1432,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00004">4</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00167">EnscriptHistoryBack()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00181">EnscriptHistoryForward()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00038">OnSelected()</a>.</p>
 
 </div>
 </div>
@@ -1189,6 +1483,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00003">3</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00049">PrintS()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00033">~ScriptConsoleEnfScriptTab()</a>.</p>
+
 </div>
 </div>
 <a id="ad855c8fcccfdbbf2c73bcee9621d5ca3" name="ad855c8fcccfdbbf2c73bcee9621d5ca3"></a>
@@ -1212,6 +1508,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00008">8</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">RunEnscript()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
 
 </div>
 </div>
@@ -1237,6 +1535,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00009">9</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00157">RunEnscriptServer()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
+
 </div>
 </div>
 <a id="aa560550d1a1680e644f2a32d7401a36c" name="aa560550d1a1680e644f2a32d7401a36c"></a>
@@ -1260,6 +1560,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00015">15</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00152">ResetRunButtonColor()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
 
 </div>
 </div>
@@ -1285,6 +1587,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00017">17</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00082">Add()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00210">OnClick()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00104">ReloadScriptOutput()</a>.</p>
+
 </div>
 </div>
 <a id="acf9b21ad98809a2ed8363cfc7ee04504" name="acf9b21ad98809a2ed8363cfc7ee04504"></a>
@@ -1308,6 +1612,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00013">13</a> of file <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html">ScriptConsoleEnfScriptTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00082">Add()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00096">Clear()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00210">OnClick()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00104">ReloadScriptOutput()</a>, and <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00019">ScriptConsoleEnfScriptTab()</a>.</p>
 
 </div>
 </div>

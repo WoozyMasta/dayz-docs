@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -224,6 +221,37 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00026">26</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>  {</div>
+<div class="line"><span class="lineno">   28</span><span class="preprocessor">#ifdef TRIGGER_DEBUG_BASIC</span></div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#aadbb204353ef33a004abf0d6ee1147f2">TriggerLog</a>(<a class="code hl_function" href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a>(insider.<a class="code hl_function" href="../../d2/d09/class_trigger_insider.html#aa302c8deb0d142296c38ff1e8aa5af49">GetObject</a>()), <span class="stringliteral">&quot;TriggerEvents&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Enter&quot;</span>, <a class="code hl_function" href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a>(<span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="#aeaa5ca81c290109566dd0e752a98f39c">OnEnterBeginEvent</a>(insider);</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa16f9fba520bed50fb55613999c7834c">m_OnEnterInvoker</a>)</div>
+<div class="line"><span class="lineno">   35</span>      <a class="code hl_variable" href="#aa16f9fba520bed50fb55613999c7834c">m_OnEnterInvoker</a>.Invoke(insider);</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">   38</span>      <a class="code hl_function" href="#ab24b073dceb7f953e84402ebb01193f6">OnEnterServerEvent</a>(insider);</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   40</span>      <a class="code hl_function" href="#a9472bd17dcebc6ade1348689256072cd">OnEnterClientEvent</a>(insider);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="#ad5fbd3475141948d9a70cf85a468f797">OnEnterEndEvent</a>(insider);</div>
+<div class="line"><span class="lineno">   43</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_aadbb204353ef33a004abf0d6ee1147f2"><div class="ttname"><a href="../../da/d0d/class_debug.html#aadbb204353ef33a004abf0d6ee1147f2">Debug::TriggerLog</a></div><div class="ttdeci">static void TriggerLog(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00223">Debug.c:223</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_a9472bd17dcebc6ade1348689256072cd"><div class="ttname"><a href="#a9472bd17dcebc6ade1348689256072cd">TriggerEvents::OnEnterClientEvent</a></div><div class="ttdeci">void OnEnterClientEvent(TriggerInsider insider)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00046">TriggerEvents.c:46</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_aa16f9fba520bed50fb55613999c7834c"><div class="ttname"><a href="#aa16f9fba520bed50fb55613999c7834c">TriggerEvents::m_OnEnterInvoker</a></div><div class="ttdeci">ref ScriptInvoker m_OnEnterInvoker</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00005">TriggerEvents.c:5</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_ab24b073dceb7f953e84402ebb01193f6"><div class="ttname"><a href="#ab24b073dceb7f953e84402ebb01193f6">TriggerEvents::OnEnterServerEvent</a></div><div class="ttdeci">void OnEnterServerEvent(TriggerInsider insider)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00045">TriggerEvents.c:45</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_ad5fbd3475141948d9a70cf85a468f797"><div class="ttname"><a href="#ad5fbd3475141948d9a70cf85a468f797">TriggerEvents::OnEnterEndEvent</a></div><div class="ttdeci">void OnEnterEndEvent(TriggerInsider insider)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00047">TriggerEvents.c:47</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_aeaa5ca81c290109566dd0e752a98f39c"><div class="ttname"><a href="#aeaa5ca81c290109566dd0e752a98f39c">TriggerEvents::OnEnterBeginEvent</a></div><div class="ttdeci">void OnEnterBeginEvent(TriggerInsider insider)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00044">TriggerEvents.c:44</a></div></div>
+<div class="ttc" id="aclass_trigger_insider_html_aa302c8deb0d142296c38ff1e8aa5af49"><div class="ttname"><a href="../../d2/d09/class_trigger_insider.html#aa302c8deb0d142296c38ff1e8aa5af49">TriggerInsider::GetObject</a></div><div class="ttdeci">Object GetObject()</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d02/_trigger_8c_source.html#l00028">Trigger.c:28</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a2731e77365c090d55fd098fedd5d2b1e"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a></div><div class="ttdeci">override string GetDebugName()</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l01116">dayzplayer.c:1116</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d08/dayzplayer_8c_source.html#l01116">GetDebugName()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/d02/_trigger_8c_source.html#l00028">TriggerInsider::GetObject()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00005">m_OnEnterInvoker</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00044">OnEnterBeginEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00046">OnEnterClientEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00047">OnEnterEndEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00045">OnEnterServerEvent()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00223">Debug::TriggerLog()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d02/_trigger_8c_source.html#l00228">Trigger::AddInsider()</a>.</p>
 
 </div>
 </div>
@@ -251,6 +279,14 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00008">8</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#aa16f9fba520bed50fb55613999c7834c">m_OnEnterInvoker</a>)</div>
+<div class="line"><span class="lineno">   11</span>      <a class="code hl_variable" href="#aa16f9fba520bed50fb55613999c7834c">m_OnEnterInvoker</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0d/class_script_invoker.html">ScriptInvoker</a>;</div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa16f9fba520bed50fb55613999c7834c">m_OnEnterInvoker</a>;</div>
+<div class="line"><span class="lineno">   13</span>  }</div>
+<div class="ttc" id="aclass_script_invoker_html"><div class="ttname"><a href="../../d4/d0d/class_script_invoker.html">ScriptInvoker</a></div><div class="ttdoc">ScriptInvoker Class provide list of callbacks   usage:</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0d/2___game_lib_2tools_8c_source.html#l00115">tools.c:116</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00005">m_OnEnterInvoker</a>.</p>
 
 </div>
 </div>
@@ -278,6 +314,14 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00015">15</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>  {</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#abbd4d5e1e2c60a0f3b3f7005885992f6">m_OnLeaveInvoker</a>)</div>
+<div class="line"><span class="lineno">   18</span>      <a class="code hl_variable" href="#abbd4d5e1e2c60a0f3b3f7005885992f6">m_OnLeaveInvoker</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d4/d0d/class_script_invoker.html">ScriptInvoker</a>;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#abbd4d5e1e2c60a0f3b3f7005885992f6">m_OnLeaveInvoker</a>;</div>
+<div class="line"><span class="lineno">   20</span>  }</div>
+<div class="ttc" id="aclass_trigger_events_html_abbd4d5e1e2c60a0f3b3f7005885992f6"><div class="ttname"><a href="#abbd4d5e1e2c60a0f3b3f7005885992f6">TriggerEvents::m_OnLeaveInvoker</a></div><div class="ttdeci">ref ScriptInvoker m_OnLeaveInvoker</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00006">TriggerEvents.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00006">m_OnLeaveInvoker</a>.</p>
 
 </div>
 </div>
@@ -305,6 +349,31 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00129">129</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span><span class="preprocessor">#ifdef TRIGGER_DEBUG_BASIC</span></div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#aadbb204353ef33a004abf0d6ee1147f2">TriggerLog</a>(<a class="code hl_function" href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a>(insider.<a class="code hl_function" href="../../d2/d09/class_trigger_insider.html#aa302c8deb0d142296c38ff1e8aa5af49">GetObject</a>()), <span class="stringliteral">&quot;TriggerEvents&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Leave&quot;</span>, <a class="code hl_function" href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a>(<span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">  133</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_function" href="#aa985fd38f430bcaec96f7089447bf304">OnLeaveBeginEvent</a>(insider);</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#abbd4d5e1e2c60a0f3b3f7005885992f6">m_OnLeaveInvoker</a>)</div>
+<div class="line"><span class="lineno">  138</span>      <a class="code hl_variable" href="#abbd4d5e1e2c60a0f3b3f7005885992f6">m_OnLeaveInvoker</a>.Invoke(insider);</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">  141</span>      <a class="code hl_function" href="#a7505feac708cafd114724ced7e781768">OnLeaveServerEvent</a>(insider);</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  143</span>      <a class="code hl_function" href="#a57ad5a7a9e556b88b529fa558c56e06a">OnLeaveClientEvent</a>(insider);</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_function" href="#a81cd19869078d02ba3c17842b697b594">OnLeaveEndEvent</a>(insider);</div>
+<div class="line"><span class="lineno">  146</span>  }</div>
+<div class="ttc" id="aclass_trigger_events_html_a57ad5a7a9e556b88b529fa558c56e06a"><div class="ttname"><a href="#a57ad5a7a9e556b88b529fa558c56e06a">TriggerEvents::OnLeaveClientEvent</a></div><div class="ttdeci">void OnLeaveClientEvent(TriggerInsider insider)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00149">TriggerEvents.c:149</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_a7505feac708cafd114724ced7e781768"><div class="ttname"><a href="#a7505feac708cafd114724ced7e781768">TriggerEvents::OnLeaveServerEvent</a></div><div class="ttdeci">void OnLeaveServerEvent(TriggerInsider insider)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00148">TriggerEvents.c:148</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_a81cd19869078d02ba3c17842b697b594"><div class="ttname"><a href="#a81cd19869078d02ba3c17842b697b594">TriggerEvents::OnLeaveEndEvent</a></div><div class="ttdeci">void OnLeaveEndEvent(TriggerInsider insider)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00150">TriggerEvents.c:150</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_aa985fd38f430bcaec96f7089447bf304"><div class="ttname"><a href="#aa985fd38f430bcaec96f7089447bf304">TriggerEvents::OnLeaveBeginEvent</a></div><div class="ttdeci">void OnLeaveBeginEvent(TriggerInsider insider)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00147">TriggerEvents.c:147</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d08/dayzplayer_8c_source.html#l01116">GetDebugName()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/d02/_trigger_8c_source.html#l00028">TriggerInsider::GetObject()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00006">m_OnLeaveInvoker</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00147">OnLeaveBeginEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00149">OnLeaveClientEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00150">OnLeaveEndEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00148">OnLeaveServerEvent()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00223">Debug::TriggerLog()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d02/_trigger_8c_source.html#l00263">Trigger::RemoveInsider()</a>.</p>
 
 </div>
 </div>
@@ -332,6 +401,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00044">44</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00026">Enter()</a>.</p>
 
 </div>
 </div>
@@ -359,6 +431,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00046">46</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00026">Enter()</a>.</p>
 
 </div>
 </div>
@@ -386,6 +461,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00047">47</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00026">Enter()</a>.</p>
 
 </div>
 </div>
@@ -413,6 +491,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00045">45</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00026">Enter()</a>.</p>
 
 </div>
 </div>
@@ -440,6 +521,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00147">147</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00129">Leave()</a>.</p>
 
 </div>
 </div>
@@ -467,6 +551,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00149">149</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00129">Leave()</a>.</p>
 
 </div>
 </div>
@@ -494,6 +581,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00150">150</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00129">Leave()</a>.</p>
 
 </div>
 </div>
@@ -521,6 +611,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00148">148</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00129">Leave()</a>.</p>
 
 </div>
 </div>
@@ -552,6 +645,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00094">94</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00079">Stay()</a>.</p>
 
 </div>
 </div>
@@ -583,6 +679,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00096">96</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00079">Stay()</a>.</p>
 
 </div>
 </div>
@@ -614,6 +713,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00097">97</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00079">Stay()</a>.</p>
 
 </div>
 </div>
@@ -641,6 +743,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00119">119</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00104">StayFinish()</a>.</p>
 
 </div>
 </div>
@@ -668,6 +773,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00121">121</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00104">StayFinish()</a>.</p>
 
 </div>
 </div>
@@ -695,6 +803,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00122">122</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00104">StayFinish()</a>.</p>
 
 </div>
 </div>
@@ -722,6 +833,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00120">120</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00104">StayFinish()</a>.</p>
 
 </div>
 </div>
@@ -753,6 +867,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00095">95</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00079">Stay()</a>.</p>
 
 </div>
 </div>
@@ -780,6 +897,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00069">69</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00054">StayStart()</a>.</p>
 
 </div>
 </div>
@@ -807,6 +927,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00071">71</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00054">StayStart()</a>.</p>
 
 </div>
 </div>
@@ -834,6 +957,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00072">72</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00054">StayStart()</a>.</p>
 
 </div>
 </div>
@@ -861,6 +987,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00070">70</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>{}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00054">StayStart()</a>.</p>
 
 </div>
 </div>
@@ -892,6 +1021,29 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00079">79</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>  {</div>
+<div class="line"><span class="lineno">   81</span><span class="preprocessor">#ifdef TRIGGER_DEBUG_SPAM</span></div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#aadbb204353ef33a004abf0d6ee1147f2">TriggerLog</a>(<a class="code hl_function" href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a>(insider.<a class="code hl_function" href="../../d2/d09/class_trigger_insider.html#aa302c8deb0d142296c38ff1e8aa5af49">GetObject</a>()), <span class="stringliteral">&quot;TriggerEvents&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Stay&quot;</span>, <a class="code hl_function" href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a>(<span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">   83</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="#ac2a87b9b3e177f9807ddcd4694e30da0">OnStayBeginEvent</a>(insider, <a class="code hl_class" href="../../db/d06/class_param3.html">deltaTime</a>);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">   88</span>      <a class="code hl_function" href="#a62f2d9e107553a6233929db9a6fa44e9">OnStayServerEvent</a>(insider, <a class="code hl_class" href="../../db/d06/class_param3.html">deltaTime</a>);</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   90</span>      <a class="code hl_function" href="#a7a0ecbfb1f44742236c67fd113038c2d">OnStayClientEvent</a>(insider, <a class="code hl_class" href="../../db/d06/class_param3.html">deltaTime</a>);</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_function" href="#af90a09113166cfda2b8b2bf3989fc7c9">OnStayEndEvent</a>(insider, <a class="code hl_class" href="../../db/d06/class_param3.html">deltaTime</a>);</div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_a62f2d9e107553a6233929db9a6fa44e9"><div class="ttname"><a href="#a62f2d9e107553a6233929db9a6fa44e9">TriggerEvents::OnStayServerEvent</a></div><div class="ttdeci">void OnStayServerEvent(TriggerInsider insider, float deltaTime)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00095">TriggerEvents.c:95</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_a7a0ecbfb1f44742236c67fd113038c2d"><div class="ttname"><a href="#a7a0ecbfb1f44742236c67fd113038c2d">TriggerEvents::OnStayClientEvent</a></div><div class="ttdeci">void OnStayClientEvent(TriggerInsider insider, float deltaTime)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00096">TriggerEvents.c:96</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_ac2a87b9b3e177f9807ddcd4694e30da0"><div class="ttname"><a href="#ac2a87b9b3e177f9807ddcd4694e30da0">TriggerEvents::OnStayBeginEvent</a></div><div class="ttdeci">void OnStayBeginEvent(TriggerInsider insider, float deltaTime)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00094">TriggerEvents.c:94</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_af90a09113166cfda2b8b2bf3989fc7c9"><div class="ttname"><a href="#af90a09113166cfda2b8b2bf3989fc7c9">TriggerEvents::OnStayEndEvent</a></div><div class="ttdeci">void OnStayEndEvent(TriggerInsider insider, float deltaTime)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00097">TriggerEvents.c:97</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d08/dayzplayer_8c_source.html#l01116">GetDebugName()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/d02/_trigger_8c_source.html#l00028">TriggerInsider::GetObject()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00094">OnStayBeginEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00096">OnStayClientEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00097">OnStayEndEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00095">OnStayServerEvent()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00223">Debug::TriggerLog()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d02/_trigger_8c_source.html#l00297">Trigger::UpdateInsiders()</a>.</p>
 
 </div>
 </div>
@@ -919,6 +1071,28 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00104">104</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>  {</div>
+<div class="line"><span class="lineno">  106</span><span class="preprocessor">#ifdef TRIGGER_DEBUG_SPAM</span></div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#aadbb204353ef33a004abf0d6ee1147f2">TriggerLog</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;TriggerEvents&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;StayFinish&quot;</span>, <a class="code hl_function" href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a>(<span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">  108</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="#a5dfb320d703902cf6579537460138dfb">OnStayFinishBeginEvent</a>();</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">  113</span>      <a class="code hl_function" href="#ad33577ecb759950d17605a9b81965be7">OnStayFinishServerEvent</a>();</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  115</span>      <a class="code hl_function" href="#af716a3dc0bb7fa9b0dc20f1d1f78e3e4">OnStayFinishClientEvent</a>();</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_function" href="#a0603ba7e6112334e0c07478d25f13a3d">OnStayFinishEndEvent</a>();</div>
+<div class="line"><span class="lineno">  118</span>  }</div>
+<div class="ttc" id="aclass_trigger_events_html_a0603ba7e6112334e0c07478d25f13a3d"><div class="ttname"><a href="#a0603ba7e6112334e0c07478d25f13a3d">TriggerEvents::OnStayFinishEndEvent</a></div><div class="ttdeci">void OnStayFinishEndEvent()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00122">TriggerEvents.c:122</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_a5dfb320d703902cf6579537460138dfb"><div class="ttname"><a href="#a5dfb320d703902cf6579537460138dfb">TriggerEvents::OnStayFinishBeginEvent</a></div><div class="ttdeci">void OnStayFinishBeginEvent()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00119">TriggerEvents.c:119</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_ad33577ecb759950d17605a9b81965be7"><div class="ttname"><a href="#ad33577ecb759950d17605a9b81965be7">TriggerEvents::OnStayFinishServerEvent</a></div><div class="ttdeci">void OnStayFinishServerEvent()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00120">TriggerEvents.c:120</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_af716a3dc0bb7fa9b0dc20f1d1f78e3e4"><div class="ttname"><a href="#af716a3dc0bb7fa9b0dc20f1d1f78e3e4">TriggerEvents::OnStayFinishClientEvent</a></div><div class="ttdeci">void OnStayFinishClientEvent()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00121">TriggerEvents.c:121</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d08/dayzplayer_8c_source.html#l01116">GetDebugName()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00119">OnStayFinishBeginEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00121">OnStayFinishClientEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00122">OnStayFinishEndEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00120">OnStayFinishServerEvent()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00223">Debug::TriggerLog()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d02/_trigger_8c_source.html#l00297">Trigger::UpdateInsiders()</a>.</p>
 
 </div>
 </div>
@@ -946,6 +1120,28 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00054">54</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>  {</div>
+<div class="line"><span class="lineno">   56</span><span class="preprocessor">#ifdef TRIGGER_DEBUG_SPAM</span></div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#aadbb204353ef33a004abf0d6ee1147f2">TriggerLog</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">nrOfInsiders</a>.ToString(), <span class="stringliteral">&quot;TriggerEvents&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;StayStart&quot;</span>, <a class="code hl_function" href="../../d3/d08/dayzplayer_8c.html#a2731e77365c090d55fd098fedd5d2b1e">GetDebugName</a>(<span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_function" href="#a576d72d27962e241c95972af8d861e3d">OnStayStartBeginEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">nrOfInsiders</a>);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer())</div>
+<div class="line"><span class="lineno">   63</span>      <a class="code hl_function" href="#a9d085f61fee9d32f679217bd6ca1b399">OnStayStartServerEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">nrOfInsiders</a>);</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_function" href="#ab36a6c0375b64d8b4af6682b5bb3db72">OnStayStartClientEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">nrOfInsiders</a>);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="#a950c5a10f7e0bcea1ea50e50519105b8">OnStayStartEndEvent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">nrOfInsiders</a>);</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+<div class="ttc" id="aclass_trigger_events_html_a576d72d27962e241c95972af8d861e3d"><div class="ttname"><a href="#a576d72d27962e241c95972af8d861e3d">TriggerEvents::OnStayStartBeginEvent</a></div><div class="ttdeci">void OnStayStartBeginEvent(int nrOfInsiders)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00069">TriggerEvents.c:69</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_a950c5a10f7e0bcea1ea50e50519105b8"><div class="ttname"><a href="#a950c5a10f7e0bcea1ea50e50519105b8">TriggerEvents::OnStayStartEndEvent</a></div><div class="ttdeci">void OnStayStartEndEvent(int nrOfInsiders)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00072">TriggerEvents.c:72</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_a9d085f61fee9d32f679217bd6ca1b399"><div class="ttname"><a href="#a9d085f61fee9d32f679217bd6ca1b399">TriggerEvents::OnStayStartServerEvent</a></div><div class="ttdeci">void OnStayStartServerEvent(int nrOfInsiders)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00070">TriggerEvents.c:70</a></div></div>
+<div class="ttc" id="aclass_trigger_events_html_ab36a6c0375b64d8b4af6682b5bb3db72"><div class="ttname"><a href="#ab36a6c0375b64d8b4af6682b5bb3db72">TriggerEvents::OnStayStartClientEvent</a></div><div class="ttdeci">void OnStayStartClientEvent(int nrOfInsiders)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_trigger_events_8c_source.html#l00071">TriggerEvents.c:71</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d08/dayzplayer_8c_source.html#l01116">GetDebugName()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00069">OnStayStartBeginEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00071">OnStayStartClientEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00072">OnStayStartEndEvent()</a>, <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00070">OnStayStartServerEvent()</a>, and <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00223">Debug::TriggerLog()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d02/_trigger_8c_source.html#l00297">Trigger::UpdateInsiders()</a>.</p>
 
 </div>
 </div>
@@ -972,6 +1168,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00005">5</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00026">Enter()</a>, and <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00008">GetOnEnterInvoker()</a>.</p>
+
 </div>
 </div>
 <a id="abbd4d5e1e2c60a0f3b3f7005885992f6" name="abbd4d5e1e2c60a0f3b3f7005885992f6"></a>
@@ -995,6 +1193,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00006">6</a> of file <a class="el" href="../../de/d0b/_trigger_events_8c_source.html">TriggerEvents.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00015">GetOnLeaveInvoker()</a>, and <a class="el" href="../../de/d0b/_trigger_events_8c_source.html#l00129">Leave()</a>.</p>
 
 </div>
 </div>

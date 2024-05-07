@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -173,6 +170,41 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00036">36</a> of file <a class="el" href="../../d4/d0c/_injury_sound_handler_8c_source.html">InjurySoundHandler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>  {</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">level</a> == <a class="code hl_enumeration" href="../../d8/d05/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfa">eInjuryHandlerLevels</a>.PRISTINE)</div>
+<div class="line"><span class="lineno">   39</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a>.NONE;</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.GetMovementState(<a class="code hl_variable" href="#a641f35baf999788500987d715a1d8bfa">m_MovementState</a>);</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">int</span> speed = <a class="code hl_variable" href="#a641f35baf999788500987d715a1d8bfa">m_MovementState</a>.m_iMovement;</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">stance</a> = <a class="code hl_variable" href="#a641f35baf999788500987d715a1d8bfa">m_MovementState</a>.m_iStanceIdx;</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">//int stance_lvl_down = DayZPlayerConstants.STANCEMASK_PRONE | DayZPlayerConstants.STANCEMASK_CROUCH;</span></div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (speed == 0)</div>
+<div class="line"><span class="lineno">   48</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a>.NONE;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">level</a>--;<span class="comment">// shift the level so that we play from higher damage</span></div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">stance</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEIDX_PRONE || <a class="code hl_class" href="../../db/d06/class_param3.html">stance</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.STANCEIDX_CROUCH)</div>
+<div class="line"><span class="lineno">   53</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">level</a>--;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (speed == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.MOVEMENTIDX_WALK)</div>
+<div class="line"><span class="lineno">   56</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">level</a>--;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (speed == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.MOVEMENTIDX_SPRINT)</div>
+<div class="line"><span class="lineno">   58</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">level</a>++;</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">level</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Clamp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">level</a>, <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a>.NONE, <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a>.HEAVY);</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">level</a>;</div>
+<div class="line"><span class="lineno">   61</span>  }</div>
+<div class="ttc" id="a_hand___events_8c_html_a02917914db83b7759e19cb7450c92354"><div class="ttname"><a href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a></div><div class="ttdeci">DayZPlayer m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d01/_hand___events_8c_source.html#l00042">Hand_Events.c:42</a></div></div>
+<div class="ttc" id="a_injury_handler_8c_html_aab851550e71abd27f52bf560e1b32bfa"><div class="ttname"><a href="../../d8/d05/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfa">eInjuryHandlerLevels</a></div><div class="ttdeci">eInjuryHandlerLevels</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/_injury_handler_8c_source.html#l00018">InjuryHandler.c:19</a></div></div>
+<div class="ttc" id="a_injury_sound_handler_8c_html_adc1e5b6a43062dfe7c2fb482b40950fb"><div class="ttname"><a href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a></div><div class="ttdeci">eInjurySoundZones</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00001">InjurySoundHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a641f35baf999788500987d715a1d8bfa"><div class="ttname"><a href="#a641f35baf999788500987d715a1d8bfa">InjurySoundHandlerBase::m_MovementState</a></div><div class="ttdeci">ref HumanMovementState m_MovementState</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00030">InjurySoundHandler.c:30</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+<div class="ttc" id="agroup___math_html_ga939cca08ae6c7facc9293f2dbce3def5"><div class="ttname"><a href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp</a></div><div class="ttdeci">static proto float Clamp(float value, float min, float max)</div><div class="ttdoc">Clamps 'value' to 'min' if it is lower than 'min', or to 'max' if it is higher than 'max'.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp()</a>, <a class="el" href="../../d8/d08/_day_z_player_camera3rd_person_8c_source.html#l00290">m_MovementState</a>, and <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>.</p>
 
 </div>
 </div>
@@ -200,6 +232,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00099">99</a> of file <a class="el" href="../../d4/d0c/_injury_sound_handler_8c_source.html">InjurySoundHandler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>  {</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.<a class="code hl_function" href="../../db/d0e/class_day_z_player.html#a77165d2d26b940293e63da034a24265e">PlaySoundEvent</a>(<a class="code hl_enumeration" href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a>.INJURED_LIGHT);</div>
+<div class="line"><span class="lineno">  102</span>  }</div>
+<div class="ttc" id="a_player_sound_event_handler_8c_html_ae40d08748e52403c01d49f8987673c88"><div class="ttname"><a href="../../d5/d0b/_player_sound_event_handler_8c.html#ae40d08748e52403c01d49f8987673c88">EPlayerSoundEventID</a></div><div class="ttdeci">EPlayerSoundEventID</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_player_sound_event_handler_8c_source.html#l00001">PlayerSoundEventHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_day_z_player_html_a77165d2d26b940293e63da034a24265e"><div class="ttname"><a href="../../db/d0e/class_day_z_player.html#a77165d2d26b940293e63da034a24265e">DayZPlayer::PlaySoundEvent</a></div><div class="ttdeci">bool PlaySoundEvent(EPlayerSoundEventID id, bool from_anim_system=false, bool is_from_server=false)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d02/_day_z_player_implement_8c_source.html#l00395">DayZPlayerImplement.c:395</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, and <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l00395">DayZPlayer::PlaySoundEvent()</a>.</p>
 
 </div>
 </div>
@@ -227,6 +266,41 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00075">75</a> of file <a class="el" href="../../d4/d0c/_injury_sound_handler_8c_source.html">InjurySoundHandler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>  {</div>
+<div class="line"><span class="lineno">   77</span>    <span class="comment">//Print(&quot;injury sound zone:&quot;+ zone);</span></div>
+<div class="line"><span class="lineno">   78</span>    <span class="comment">// process sound here</span></div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d5/d04/_notification_system_8c.html#a8a5888c845f10608a75d9bfd5009089e">GetTime</a>() &gt; <a class="code hl_variable" href="#a8698686dbc473a04c2838a3b863edefe">m_SoundTime</a>)</div>
+<div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">offset_time</a>;</div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">zone</a> == <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a>.NONE)</div>
+<div class="line"><span class="lineno">   83</span>      {</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">offset_time</a> = 3000;</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_variable" href="#a8698686dbc473a04c2838a3b863edefe">m_SoundTime</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetTime() + <a class="code hl_class" href="../../db/d06/class_param3.html">offset_time</a>;</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   87</span>      }</div>
+<div class="line"><span class="lineno">   88</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">zone</a> == <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a>.LIGHT)</div>
+<div class="line"><span class="lineno">   89</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">offset_time</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(<a class="code hl_variable" href="#a94eeb2debc28e0fd1dcc8b09fd362671">SOUND_INTERVALS_LIGHT_MIN</a>, <a class="code hl_variable" href="#a6fd7a92f37de18b409669890c00a919c">SOUND_INTERVALS_LIGHT_MAX</a>) * 1000;</div>
+<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">zone</a> == <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a>.MEDIUM)</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">offset_time</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(<a class="code hl_variable" href="#a6404d331c44a9a323d1153c1ea610070">SOUND_INTERVALS_MEDIUM_MIN</a>, <a class="code hl_variable" href="#a401685729afa2ee1c3921d7cbf57d17f">SOUND_INTERVALS_MEDIUM_MAX</a>) * 1000;</div>
+<div class="line"><span class="lineno">   92</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">zone</a> == <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a>.HEAVY)</div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">offset_time</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(<a class="code hl_variable" href="#a1473f35f71ea40f411ca8376a1515946">SOUND_INTERVALS_HEAVY_MIN</a>, <a class="code hl_variable" href="#acb90a0f3e121889f9782696dc782d020">SOUND_INTERVALS_HEAVY_MAX</a>) * 1000;</div>
+<div class="line"><span class="lineno">   94</span>      <a class="code hl_variable" href="#a8698686dbc473a04c2838a3b863edefe">m_SoundTime</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetTime() + <a class="code hl_class" href="../../db/d06/class_param3.html">offset_time</a>;</div>
+<div class="line"><span class="lineno">   95</span>      <a class="code hl_function" href="../../d8/d0b/_hunger_sound_handler_8c.html#a37a72bb98e9ec48f9c2e65feae17943d">PlaySound</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">zone</a>);</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span>  }</div>
+<div class="ttc" id="a_hunger_sound_handler_8c_html_a37a72bb98e9ec48f9c2e65feae17943d"><div class="ttname"><a href="../../d8/d0b/_hunger_sound_handler_8c.html#a37a72bb98e9ec48f9c2e65feae17943d">PlaySound</a></div><div class="ttdeci">void PlaySound()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0b/_hunger_sound_handler_8c_source.html#l00036">HungerSoundHandler.c:36</a></div></div>
+<div class="ttc" id="a_notification_system_8c_html_a8a5888c845f10608a75d9bfd5009089e"><div class="ttname"><a href="../../d5/d04/_notification_system_8c.html#a8a5888c845f10608a75d9bfd5009089e">GetTime</a></div><div class="ttdeci">float GetTime()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d04/_notification_system_8c_source.html#l00035">NotificationSystem.c:35</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a1473f35f71ea40f411ca8376a1515946"><div class="ttname"><a href="#a1473f35f71ea40f411ca8376a1515946">InjurySoundHandlerBase::SOUND_INTERVALS_HEAVY_MIN</a></div><div class="ttdeci">const float SOUND_INTERVALS_HEAVY_MIN</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00028">InjurySoundHandler.c:28</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a401685729afa2ee1c3921d7cbf57d17f"><div class="ttname"><a href="#a401685729afa2ee1c3921d7cbf57d17f">InjurySoundHandlerBase::SOUND_INTERVALS_MEDIUM_MAX</a></div><div class="ttdeci">const float SOUND_INTERVALS_MEDIUM_MAX</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00027">InjurySoundHandler.c:27</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a6404d331c44a9a323d1153c1ea610070"><div class="ttname"><a href="#a6404d331c44a9a323d1153c1ea610070">InjurySoundHandlerBase::SOUND_INTERVALS_MEDIUM_MIN</a></div><div class="ttdeci">const float SOUND_INTERVALS_MEDIUM_MIN</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00027">InjurySoundHandler.c:27</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a6fd7a92f37de18b409669890c00a919c"><div class="ttname"><a href="#a6fd7a92f37de18b409669890c00a919c">InjurySoundHandlerBase::SOUND_INTERVALS_LIGHT_MAX</a></div><div class="ttdeci">const float SOUND_INTERVALS_LIGHT_MAX</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00026">InjurySoundHandler.c:26</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a8698686dbc473a04c2838a3b863edefe"><div class="ttname"><a href="#a8698686dbc473a04c2838a3b863edefe">InjurySoundHandlerBase::m_SoundTime</a></div><div class="ttdeci">float m_SoundTime</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00033">InjurySoundHandler.c:33</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a94eeb2debc28e0fd1dcc8b09fd362671"><div class="ttname"><a href="#a94eeb2debc28e0fd1dcc8b09fd362671">InjurySoundHandlerBase::SOUND_INTERVALS_LIGHT_MIN</a></div><div class="ttdeci">const float SOUND_INTERVALS_LIGHT_MIN</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00026">InjurySoundHandler.c:26</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_acb90a0f3e121889f9782696dc782d020"><div class="ttname"><a href="#acb90a0f3e121889f9782696dc782d020">InjurySoundHandlerBase::SOUND_INTERVALS_HEAVY_MAX</a></div><div class="ttdeci">const float SOUND_INTERVALS_HEAVY_MAX</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00028">InjurySoundHandler.c:28</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___math_html_ga3a1cf1e09030a73e70d718ee2862cac0"><div class="ttname"><a href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">Math::RandomFloatInclusive</a></div><div class="ttdeci">static float RandomFloatInclusive(float min, float max)</div><div class="ttdoc">Returns a random float number between and min [inclusive] and max [inclusive].</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00106">EnMath.c:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/d04/_notification_system_8c_source.html#l00035">GetTime()</a>, <a class="el" href="../../d8/d0b/_hunger_sound_handler_8c_source.html#l00017">m_SoundTime</a>, <a class="el" href="../../d8/d0b/_hunger_sound_handler_8c_source.html#l00036">PlaySound()</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>, <a class="el" href="../../d8/d0b/_hunger_sound_handler_8c_source.html#l00016">SOUND_INTERVALS_LIGHT_MAX</a>, and <a class="el" href="../../d8/d0b/_hunger_sound_handler_8c.html#a48a9d91bcb3287026d9b94d3716bdeb6">SOUND_INTERVALS_LIGHT_MIN</a>.</p>
 
 </div>
 </div>
@@ -254,6 +328,20 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00064">64</a> of file <a class="el" href="../../d4/d0c/_injury_sound_handler_8c_source.html">InjurySoundHandler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>  {</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_variable" href="#a67a15645f1941427dcbdbaae62bd10b0">m_InjuryLevel</a> = <a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.m_HealthLevel;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a67a15645f1941427dcbdbaae62bd10b0">m_InjuryLevel</a> != <a class="code hl_enumeration" href="../../d8/d05/_injury_handler_8c.html#aab851550e71abd27f52bf560e1b32bfa">eInjuryHandlerLevels</a>.PRISTINE)</div>
+<div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>      <a class="code hl_enumeration" href="../../d4/d0c/_injury_sound_handler_8c.html#adc1e5b6a43062dfe7c2fb482b40950fb">eInjurySoundZones</a> <a class="code hl_class" href="../../db/d06/class_param3.html">zone</a> = <a class="code hl_function" href="#a2793948a16f790061ceb13d4f12ef8b0">DetermineInjuryZone</a>(<a class="code hl_variable" href="../../d6/d01/_hand___events_8c.html#a02917914db83b7759e19cb7450c92354">m_Player</a>.m_HealthLevel);</div>
+<div class="line"><span class="lineno">   71</span>      <a class="code hl_function" href="../../d8/d0b/_hunger_sound_handler_8c.html#aad304592324988361cc11d6bc0bb13d8">ProcessSound</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">zone</a>);</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
+<div class="ttc" id="a_hunger_sound_handler_8c_html_aad304592324988361cc11d6bc0bb13d8"><div class="ttname"><a href="../../d8/d0b/_hunger_sound_handler_8c.html#aad304592324988361cc11d6bc0bb13d8">ProcessSound</a></div><div class="ttdeci">void ProcessSound()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0b/_hunger_sound_handler_8c_source.html#l00026">HungerSoundHandler.c:26</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a2793948a16f790061ceb13d4f12ef8b0"><div class="ttname"><a href="#a2793948a16f790061ceb13d4f12ef8b0">InjurySoundHandlerBase::DetermineInjuryZone</a></div><div class="ttdeci">eInjurySoundZones DetermineInjuryZone(eInjuryHandlerLevels level)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00036">InjurySoundHandler.c:36</a></div></div>
+<div class="ttc" id="aclass_injury_sound_handler_base_html_a67a15645f1941427dcbdbaae62bd10b0"><div class="ttname"><a href="#a67a15645f1941427dcbdbaae62bd10b0">InjurySoundHandlerBase::m_InjuryLevel</a></div><div class="ttdeci">eInjuryHandlerLevels m_InjuryLevel</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_injury_sound_handler_8c_source.html#l00032">InjurySoundHandler.c:32</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, and <a class="el" href="../../d8/d0b/_hunger_sound_handler_8c_source.html#l00026">ProcessSound()</a>.</p>
 
 </div>
 </div>

@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -224,6 +221,32 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00088">88</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>  {</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>;</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_variable" href="#ac67977d1347916fdc27f86a0e11c904b">m_Index</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">index</a>;</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">colorSequenceLastIndex</a> = <a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>.<a class="code hl_function" href="../../d9/d05/class_fireworks_launcher.html#a6219c06b7dbefb25f8aca455bcd19429">GetColorSequence</a>().<a class="code hl_function" href="../../d5/d02/group___strings.html#ga012b133f69754b6a99ba29ce5f11c348">Length</a>() - 1;</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">coloreSequenceIndex</a> = <a class="code hl_variable" href="#ac67977d1347916fdc27f86a0e11c904b">m_Index</a> - 1;<span class="comment">//shot index(m_Index) starts at 1</span></div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">colorSequenceLastIndex</a> &gt;= <a class="code hl_class" href="../../db/d06/class_param3.html">coloreSequenceIndex</a>)</div>
+<div class="line"><span class="lineno">   97</span>      <a class="code hl_variable" href="#a9c89c1cc6c04a487489bd2298efc1472">m_Color</a> = <a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>.<a class="code hl_function" href="../../d9/d05/class_fireworks_launcher.html#a6219c06b7dbefb25f8aca455bcd19429">GetColorSequence</a>().<a class="code hl_function" href="../../d5/d02/group___strings.html#ga259bca42bf6983734aa6b70b137a69ca">Get</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">coloreSequenceIndex</a>);</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#a87dcfbb1acc79bc63ccc7af1476c913d">LogError</a>(<span class="stringliteral">&quot;Failed to obtain color from color sequence&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>      <a class="code hl_variable" href="#a9c89c1cc6c04a487489bd2298efc1472">m_Color</a> = <span class="stringliteral">&quot;B&quot;</span>;</div>
+<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_a87dcfbb1acc79bc63ccc7af1476c913d"><div class="ttname"><a href="../../da/d0d/class_debug.html#a87dcfbb1acc79bc63ccc7af1476c913d">Debug::LogError</a></div><div class="ttdeci">static void LogError(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdoc">Prints debug message as error message.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00341">Debug.c:341</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a129c8fab45ae917f8ac78ac7afd7b606"><div class="ttname"><a href="#a129c8fab45ae917f8ac78ac7afd7b606">FireworksLauncherClientEvent::m_Item</a></div><div class="ttdeci">FireworksLauncher m_Item</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00031">FireworksLauncher.c:31</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a9c89c1cc6c04a487489bd2298efc1472"><div class="ttname"><a href="#a9c89c1cc6c04a487489bd2298efc1472">FireworksLauncherClientEvent::m_Color</a></div><div class="ttdeci">string m_Color</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00041">FireworksLauncher.c:41</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_ac67977d1347916fdc27f86a0e11c904b"><div class="ttname"><a href="#ac67977d1347916fdc27f86a0e11c904b">FireworksLauncherClientEvent::m_Index</a></div><div class="ttdeci">int m_Index</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00032">FireworksLauncher.c:32</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_html_a6219c06b7dbefb25f8aca455bcd19429"><div class="ttname"><a href="../../d9/d05/class_fireworks_launcher.html#a6219c06b7dbefb25f8aca455bcd19429">FireworksLauncher::GetColorSequence</a></div><div class="ttdeci">string GetColorSequence()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00375">FireworksLauncher.c:375</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___strings_html_ga012b133f69754b6a99ba29ce5f11c348"><div class="ttname"><a href="../../d5/d02/group___strings.html#ga012b133f69754b6a99ba29ce5f11c348">string::Length</a></div><div class="ttdeci">proto native int Length()</div><div class="ttdoc">Returns length of string.</div></div>
+<div class="ttc" id="agroup___strings_html_ga259bca42bf6983734aa6b70b137a69ca"><div class="ttname"><a href="../../d5/d02/group___strings.html#ga259bca42bf6983734aa6b70b137a69ca">string::Get</a></div><div class="ttdeci">proto string Get(int index)</div><div class="ttdoc">Gets n-th character from string.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d02/group___strings.html#ga259bca42bf6983734aa6b70b137a69ca">string::Get()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00375">FireworksLauncher::GetColorSequence()</a>, <a class="el" href="../../d5/d02/group___strings.html#ga012b133f69754b6a99ba29ce5f11c348">string::Length()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00341">Debug::LogError()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00041">m_Color</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00032">m_Index</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00031">m_Item</a>.</p>
 
 </div>
 </div>
@@ -251,6 +274,20 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00105">105</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#aec7ef95de317ab1011f04c6c5c496248">DestroyEffect</a>(<a class="code hl_variable" href="#a5a0fc891f17154ff2fa676379665b67b">m_FireSound</a>);</div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#aec7ef95de317ab1011f04c6c5c496248">DestroyEffect</a>(<a class="code hl_variable" href="#aac9b058fc0522a81565bf83bbe52554f">m_ExplosionSound</a>);</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1c923481d88c662061c58f3a02fe9978">m_ParticleAfterBurnEnd</a>)</div>
+<div class="line"><span class="lineno">  110</span>      <a class="code hl_variable" href="#a1c923481d88c662061c58f3a02fe9978">m_ParticleAfterBurnEnd</a>.<a class="code hl_function" href="../../de/d08/class_particle_source.html#a28b58f26c4487d1f79a4edd2d7821713">StopParticle</a>();</div>
+<div class="line"><span class="lineno">  111</span>  }</div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a1c923481d88c662061c58f3a02fe9978"><div class="ttname"><a href="#a1c923481d88c662061c58f3a02fe9978">FireworksLauncherClientEvent::m_ParticleAfterBurnEnd</a></div><div class="ttdeci">ParticleSource m_ParticleAfterBurnEnd</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00040">FireworksLauncher.c:40</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a5a0fc891f17154ff2fa676379665b67b"><div class="ttname"><a href="#a5a0fc891f17154ff2fa676379665b67b">FireworksLauncherClientEvent::m_FireSound</a></div><div class="ttdeci">EffectSound m_FireSound</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00034">FireworksLauncher.c:34</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_aac9b058fc0522a81565bf83bbe52554f"><div class="ttname"><a href="#aac9b058fc0522a81565bf83bbe52554f">FireworksLauncherClientEvent::m_ExplosionSound</a></div><div class="ttdeci">EffectSound m_ExplosionSound</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00035">FireworksLauncher.c:35</a></div></div>
+<div class="ttc" id="aclass_particle_source_html_a28b58f26c4487d1f79a4edd2d7821713"><div class="ttname"><a href="../../de/d08/class_particle_source.html#a28b58f26c4487d1f79a4edd2d7821713">ParticleSource::StopParticle</a></div><div class="ttdeci">override bool StopParticle(int flags=0)</div><div class="ttdoc">Method to tell the particle to stop playing.</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d05/_particle_source_8c_source.html#l00366">ParticleSource.c:366</a></div></div>
+<div class="ttc" id="aclass_s_effect_manager_html"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a></div><div class="ttdoc">Manager class for managing Effect (EffectParticle, EffectSound)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00005">EffectManager.c:6</a></div></div>
+<div class="ttc" id="aclass_s_effect_manager_html_aec7ef95de317ab1011f04c6c5c496248"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html#aec7ef95de317ab1011f04c6c5c496248">SEffectManager::DestroyEffect</a></div><div class="ttdeci">static void DestroyEffect(Effect effect)</div><div class="ttdoc">Unregisters, stops and frees the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00256">EffectManager.c:256</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00256">SEffectManager::DestroyEffect()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00035">m_ExplosionSound</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00034">m_FireSound</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00040">m_ParticleAfterBurnEnd</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00366">ParticleSource::StopParticle()</a>.</p>
 
 </div>
 </div>
@@ -279,6 +316,17 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00151">151</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>  {</div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_variable" href="#ad7329ad5ed4362c4ce6dd76d7019ea05">m_ExplosionPos</a> = <a class="code hl_function" href="#a237416382e0797beb290b4757fb36778">GetShotPos</a>() + <a class="code hl_variable" href="#acd0247434733a89b900d513139f0dd30">m_ShotDir</a> * <a class="code hl_function" href="#a34defd5f2724811454254a1383d1e59a">GetExplosionDistance</a>();</div>
+<div class="line"><span class="lineno">  154</span>  }</div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a237416382e0797beb290b4757fb36778"><div class="ttname"><a href="#a237416382e0797beb290b4757fb36778">FireworksLauncherClientEvent::GetShotPos</a></div><div class="ttdeci">vector GetShotPos()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00133">FireworksLauncher.c:133</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a34defd5f2724811454254a1383d1e59a"><div class="ttname"><a href="#a34defd5f2724811454254a1383d1e59a">FireworksLauncherClientEvent::GetExplosionDistance</a></div><div class="ttdeci">float GetExplosionDistance()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00063">FireworksLauncher.c:63</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_acd0247434733a89b900d513139f0dd30"><div class="ttname"><a href="#acd0247434733a89b900d513139f0dd30">FireworksLauncherClientEvent::m_ShotDir</a></div><div class="ttdeci">vector m_ShotDir</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00038">FireworksLauncher.c:38</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_ad7329ad5ed4362c4ce6dd76d7019ea05"><div class="ttname"><a href="#ad7329ad5ed4362c4ce6dd76d7019ea05">FireworksLauncherClientEvent::m_ExplosionPos</a></div><div class="ttdeci">vector m_ExplosionPos</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00033">FireworksLauncher.c:33</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00063">GetExplosionDistance()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00133">GetShotPos()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00033">m_ExplosionPos</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00038">m_ShotDir</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00156">GetExplosionPosition()</a>.</p>
 
 </div>
 </div>
@@ -306,6 +354,15 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00078">78</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>  {</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(1.5, 1.75);</div>
+<div class="line"><span class="lineno">   81</span>  }</div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math_html_ga3a1cf1e09030a73e70d718ee2862cac0"><div class="ttname"><a href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">Math::RandomFloatInclusive</a></div><div class="ttdeci">static float RandomFloatInclusive(float min, float max)</div><div class="ttdoc">Returns a random float number between and min [inclusive] and max [inclusive].</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00106">EnMath.c:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>.</p>
 
 </div>
 </div>
@@ -333,6 +390,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00063">63</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>  {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(35, 40);</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00151">CalculateExplosionPosition()</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>.</p>
 
 </div>
 </div>
@@ -360,6 +424,16 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00156">156</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>  {</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ad7329ad5ed4362c4ce6dd76d7019ea05">m_ExplosionPos</a>)</div>
+<div class="line"><span class="lineno">  159</span>      <a class="code hl_function" href="#a735a12aa04067d142965218963a2cbd6">CalculateExplosionPosition</a>();</div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad7329ad5ed4362c4ce6dd76d7019ea05">m_ExplosionPos</a>;</div>
+<div class="line"><span class="lineno">  161</span>  }</div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a735a12aa04067d142965218963a2cbd6"><div class="ttname"><a href="#a735a12aa04067d142965218963a2cbd6">FireworksLauncherClientEvent::CalculateExplosionPosition</a></div><div class="ttdeci">void CalculateExplosionPosition()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00151">FireworksLauncher.c:151</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00151">CalculateExplosionPosition()</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00033">m_ExplosionPos</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00261">SpawnLight()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00197">SpawnSecondaryExplosion()</a>, and <a class="el" href="../../d0/d0e/_fireworks_launcher_anniversary_8c_source.html#l00053">AnniversaryFireworksLauncherClientEvent::SpawnSecondaryExplosion()</a>.</p>
 
 </div>
 </div>
@@ -387,6 +461,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00073">73</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;FireworksLauncher_Explosion_SoundSet&quot;</span>;</div>
+<div class="line"><span class="lineno">   76</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00267">PlayExplosionSound()</a>.</p>
 
 </div>
 </div>
@@ -414,6 +493,35 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00211">211</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>  {</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a9c89c1cc6c04a487489bd2298efc1472">m_Color</a>)</div>
+<div class="line"><span class="lineno">  214</span>    {</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;R&quot;</span>:</div>
+<div class="line"><span class="lineno">  216</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#a728394f1f2e752aba6e79d9eac765a3a">FIREWORKS_EXPLOSION_RED</a>;</div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;G&quot;</span>:</div>
+<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#ac939f26491c6c6562a981800c9f5563f">FIREWORKS_EXPLOSION_GREEN</a>;</div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;B&quot;</span>:</div>
+<div class="line"><span class="lineno">  220</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#a5ede7c5bb3dc402cba216e98130271d0">FIREWORKS_EXPLOSION_BLUE</a>;</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;Y&quot;</span>:</div>
+<div class="line"><span class="lineno">  222</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#a3afdfe2bb21b81658e4b67186ef654bb">FIREWORKS_EXPLOSION_YELLOW</a>;</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;P&quot;</span>:</div>
+<div class="line"><span class="lineno">  224</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#afb3a1d305e0418e51bed7d46e4b9d1c7">FIREWORKS_EXPLOSION_PINK</a>;</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  226</span>      <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<span class="stringliteral">&quot;Incorrect explosion particle color in the sequence&quot;</span>);</div>
+<div class="line"><span class="lineno">  227</span>    }</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#a728394f1f2e752aba6e79d9eac765a3a">FIREWORKS_EXPLOSION_RED</a>;</div>
+<div class="line"><span class="lineno">  229</span>  }</div>
+<div class="ttc" id="aclass_particle_list_html"><div class="ttname"><a href="../../dd/d02/class_particle_list.html">ParticleList</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00011">ParticleList.c:12</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_a3afdfe2bb21b81658e4b67186ef654bb"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#a3afdfe2bb21b81658e4b67186ef654bb">ParticleList::FIREWORKS_EXPLOSION_YELLOW</a></div><div class="ttdeci">static const int FIREWORKS_EXPLOSION_YELLOW</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00289">ParticleList.c:289</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_a5ede7c5bb3dc402cba216e98130271d0"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#a5ede7c5bb3dc402cba216e98130271d0">ParticleList::FIREWORKS_EXPLOSION_BLUE</a></div><div class="ttdeci">static const int FIREWORKS_EXPLOSION_BLUE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00288">ParticleList.c:288</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_a728394f1f2e752aba6e79d9eac765a3a"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#a728394f1f2e752aba6e79d9eac765a3a">ParticleList::FIREWORKS_EXPLOSION_RED</a></div><div class="ttdeci">static const int FIREWORKS_EXPLOSION_RED</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00286">ParticleList.c:286</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_ac939f26491c6c6562a981800c9f5563f"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#ac939f26491c6c6562a981800c9f5563f">ParticleList::FIREWORKS_EXPLOSION_GREEN</a></div><div class="ttdeci">static const int FIREWORKS_EXPLOSION_GREEN</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00287">ParticleList.c:287</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_afb3a1d305e0418e51bed7d46e4b9d1c7"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#afb3a1d305e0418e51bed7d46e4b9d1c7">ParticleList::FIREWORKS_EXPLOSION_PINK</a></div><div class="ttdeci">static const int FIREWORKS_EXPLOSION_PINK</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00290">ParticleList.c:290</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00288">ParticleList::FIREWORKS_EXPLOSION_BLUE</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00287">ParticleList::FIREWORKS_EXPLOSION_GREEN</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00290">ParticleList::FIREWORKS_EXPLOSION_PINK</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00286">ParticleList::FIREWORKS_EXPLOSION_RED</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00289">ParticleList::FIREWORKS_EXPLOSION_YELLOW</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00041">m_Color</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>.</p>
 
 </div>
 </div>
@@ -441,6 +549,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00058">58</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>  {</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   61</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>.</p>
 
 </div>
 </div>
@@ -468,7 +581,10 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00163">163</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  164</span>  {</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">return</span> 4;</div>
+<div class="line"><span class="lineno">  166</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a05ebab69290bb59027930c85a6fff129" name="a05ebab69290bb59027930c85a6fff129"></a>
@@ -495,6 +611,14 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00206">206</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  207</span>  {</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gafbc28855d0d24deda2fbdd3229c6bac2">RandomIntInclusive</a>(100, 250);</div>
+<div class="line"><span class="lineno">  209</span>  }</div>
+<div class="ttc" id="agroup___math_html_gafbc28855d0d24deda2fbdd3229c6bac2"><div class="ttname"><a href="../../d5/d08/group___math.html#gafbc28855d0d24deda2fbdd3229c6bac2">Math::RandomIntInclusive</a></div><div class="ttdeci">static int RandomIntInclusive(int min, int max)</div><div class="ttdoc">Returns a random int number between and min [inclusive] and max [inclusive].</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00054">EnMath.c:54</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_en_math_8c_source.html#l00054">Math::RandomIntInclusive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00188">RequestSecondaryExplosion()</a>.</p>
 
 </div>
 </div>
@@ -522,6 +646,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00068">68</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(-25, 25); <span class="comment">//this is rotated 360 degrees around the UP vector too</span></div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>.</p>
 
 </div>
 </div>
@@ -549,6 +680,27 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00133">133</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">memPos</a>;</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">memName</a> = <span class="stringliteral">&quot;Shot_&quot;</span> + <a class="code hl_variable" href="#ac67977d1347916fdc27f86a0e11c904b">m_Index</a>;</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>.MemoryPointExists(<a class="code hl_class" href="../../db/d06/class_param3.html">memName</a>))</div>
+<div class="line"><span class="lineno">  139</span>    {</div>
+<div class="line"><span class="lineno">  140</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">memPos</a> = <a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>.GetMemoryPointPos(<a class="code hl_class" href="../../db/d06/class_param3.html">memName</a>);</div>
+<div class="line"><span class="lineno">  141</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">memPos</a> = <a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>.ModelToWorld(<a class="code hl_class" href="../../db/d06/class_param3.html">memPos</a>);</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  144</span>    {</div>
+<div class="line"><span class="lineno">  145</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">memPos</a> = <a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>.GetPosition();<span class="comment">//fallback to item&#39;s location</span></div>
+<div class="line"><span class="lineno">  146</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#a87dcfbb1acc79bc63ccc7af1476c913d">LogError</a>(<span class="stringliteral">&quot;Missing shot memory point on Fireworks&quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">memPos</a>;</div>
+<div class="line"><span class="lineno">  149</span>  }</div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00341">Debug::LogError()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00032">m_Index</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00031">m_Item</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00151">CalculateExplosionPosition()</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>.</p>
 
 </div>
 </div>
@@ -576,6 +728,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00053">53</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>  {</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>.</p>
 
 </div>
 </div>
@@ -603,6 +760,37 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">169</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>  {</div>
+<div class="line"><span class="lineno">  171</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">m_ShotTrajectory</a>)</div>
+<div class="line"><span class="lineno">  173</span>    {</div>
+<div class="line"><span class="lineno">  174</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">m_ShotTrajectory</a>.Destroy();</div>
+<div class="line"><span class="lineno">  175</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">m_ShotTrajectory</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  176</span>    }</div>
+<div class="line"><span class="lineno">  177</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_variable" href="#a1c923481d88c662061c58f3a02fe9978">m_ParticleAfterBurnEnd</a>.<a class="code hl_function" href="../../de/d05/class_particle.html#ae9d5642dc992c942c1ae2f221e064921">Stop</a>();</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLater(<a class="code hl_function" href="#a6c11b0401e765e1604dc5a1e46007bcd">PlayExplosionSound</a>, <a class="code hl_function" href="#acffebf22916104d74a2eb4fbf5e328b4">GetSoundDelay</a>(), <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLater(<a class="code hl_function" href="#afe4e6f8e546098e70689c4655c2419cb">SpawnLight</a>, <a class="code hl_function" href="#abbe201b65fa66d6d078d28115aec2ec9">GetLightDelay</a>(), <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_variable" href="#a33beeb12b7e874b0c340757a646ae5d7">m_ParticleExplosion</a> = <a class="code hl_function" href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a>.GetInstance().PlayInWorld(<a class="code hl_function" href="#a622f155a679579258a65518e8c02eec3">GetExplParticleFromSequence</a>(), <a class="code hl_function" href="#a94299b85747c1e610cc7bfde36c10190">GetExplosionPosition</a>());</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    <a class="code hl_function" href="#a908e6644337681ea288a2303de3b9cba">RequestSecondaryExplosion</a>();</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>  }</div>
+<div class="ttc" id="a_particle_manager_8c_html_a93ef360e8fc315d276eb8cc256dc3ef8"><div class="ttname"><a href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a></div><div class="ttdeci">void ParticleManager(ParticleManagerSettings settings)</div><div class="ttdoc">Constructor (ctor)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager.c:84</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a33beeb12b7e874b0c340757a646ae5d7"><div class="ttname"><a href="#a33beeb12b7e874b0c340757a646ae5d7">FireworksLauncherClientEvent::m_ParticleExplosion</a></div><div class="ttdeci">ParticleSource m_ParticleExplosion</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00037">FireworksLauncher.c:37</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a622f155a679579258a65518e8c02eec3"><div class="ttname"><a href="#a622f155a679579258a65518e8c02eec3">FireworksLauncherClientEvent::GetExplParticleFromSequence</a></div><div class="ttdeci">int GetExplParticleFromSequence()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00211">FireworksLauncher.c:211</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a6c11b0401e765e1604dc5a1e46007bcd"><div class="ttname"><a href="#a6c11b0401e765e1604dc5a1e46007bcd">FireworksLauncherClientEvent::PlayExplosionSound</a></div><div class="ttdeci">void PlayExplosionSound()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00267">FireworksLauncher.c:267</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a908e6644337681ea288a2303de3b9cba"><div class="ttname"><a href="#a908e6644337681ea288a2303de3b9cba">FireworksLauncherClientEvent::RequestSecondaryExplosion</a></div><div class="ttdeci">void RequestSecondaryExplosion()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00188">FireworksLauncher.c:188</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a94299b85747c1e610cc7bfde36c10190"><div class="ttname"><a href="#a94299b85747c1e610cc7bfde36c10190">FireworksLauncherClientEvent::GetExplosionPosition</a></div><div class="ttdeci">vector GetExplosionPosition()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00156">FireworksLauncher.c:156</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_abbe201b65fa66d6d078d28115aec2ec9"><div class="ttname"><a href="#abbe201b65fa66d6d078d28115aec2ec9">FireworksLauncherClientEvent::GetLightDelay</a></div><div class="ttdeci">int GetLightDelay()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00058">FireworksLauncher.c:58</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_acffebf22916104d74a2eb4fbf5e328b4"><div class="ttname"><a href="#acffebf22916104d74a2eb4fbf5e328b4">FireworksLauncherClientEvent::GetSoundDelay</a></div><div class="ttdeci">int GetSoundDelay()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00053">FireworksLauncher.c:53</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_afe4e6f8e546098e70689c4655c2419cb"><div class="ttname"><a href="#afe4e6f8e546098e70689c4655c2419cb">FireworksLauncherClientEvent::SpawnLight</a></div><div class="ttdeci">void SpawnLight()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00261">FireworksLauncher.c:261</a></div></div>
+<div class="ttc" id="aclass_particle_html_ae9d5642dc992c942c1ae2f221e064921"><div class="ttname"><a href="../../de/d05/class_particle.html#ae9d5642dc992c942c1ae2f221e064921">Particle::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Legacy function for backwards compatibility with 1.14 and below.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00262">Particle.c:262</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___tools_html_gaaf491f3ecd1d9aefb35a16bf96ca420c"><div class="ttname"><a href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a></div><div class="ttdeci">const int CALL_CATEGORY_SYSTEM</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">tools.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00156">GetExplosionPosition()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00211">GetExplParticleFromSequence()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00058">GetLightDelay()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00053">GetSoundDelay()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00040">m_ParticleAfterBurnEnd</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00037">m_ParticleExplosion</a>, <a class="el" href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00267">PlayExplosionSound()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00188">RequestSecondaryExplosion()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00261">SpawnLight()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00262">Particle::Stop()</a>.</p>
 
 </div>
 </div>
@@ -630,6 +818,34 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">113</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>  {</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_variable" href="#a1a43e4cd10c0201f7bf7dbf3958059f1">m_Timer</a>.Run(<a class="code hl_function" href="#a93a2c326a78827ded685562b8a27598a">GetExplosionDelay</a>(), <span class="keyword">this</span>, <span class="stringliteral">&quot;OnExplode&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>.PlaySoundSet(<a class="code hl_variable" href="#a5a0fc891f17154ff2fa676379665b67b">m_FireSound</a>, <span class="stringliteral">&quot;FireworksLauncher_Shot_SoundSet&quot;</span>, 0, 0);</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_variable" href="#ae0fa0f9e354b9aea0317d3d0eebb1bac">m_ParticleShot</a> = <a class="code hl_function" href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a>.GetInstance().PlayInWorld(<a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#ace7efaf7e1088725856f67911d0bcc51">FIREWORKS_SHOT</a>, <a class="code hl_function" href="#a237416382e0797beb290b4757fb36778">GetShotPos</a>());</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_variable" href="#ae0fa0f9e354b9aea0317d3d0eebb1bac">m_ParticleShot</a>.SetYawPitchRoll(<a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(0, 360), <a class="code hl_function" href="#ace917555e43d15f73fca7b3df919de29">GetShotDispersionAngle</a>(), 0));</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_variable" href="#a1c923481d88c662061c58f3a02fe9978">m_ParticleAfterBurnEnd</a> = <a class="code hl_function" href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a>.GetInstance().PlayInWorld(<a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#a21cbaa9078aa80f06a84161ad7d0de0c">FIREWORKS_AFTERBURN_END</a>, <a class="code hl_function" href="#a237416382e0797beb290b4757fb36778">GetShotPos</a>());</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1c923481d88c662061c58f3a02fe9978">m_ParticleAfterBurnEnd</a>)</div>
+<div class="line"><span class="lineno">  122</span>      <a class="code hl_variable" href="#a1c923481d88c662061c58f3a02fe9978">m_ParticleAfterBurnEnd</a>.<a class="code hl_function" href="../../de/d08/class_particle_source.html#a9389522123fbe128cd6aafc9e0b272a8">SetOwner</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_variable" href="#acd0247434733a89b900d513139f0dd30">m_ShotDir</a> = <a class="code hl_variable" href="#ae0fa0f9e354b9aea0317d3d0eebb1bac">m_ParticleShot</a>.GetDirectionUp();</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pts</a>[2];</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">pts</a>[0] = <a class="code hl_function" href="#a237416382e0797beb290b4757fb36778">GetShotPos</a>();</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">pts</a>[1] = <a class="code hl_function" href="#a237416382e0797beb290b4757fb36778">GetShotPos</a>() + <a class="code hl_variable" href="#acd0247434733a89b900d513139f0dd30">m_ShotDir</a> * <a class="code hl_function" href="#a34defd5f2724811454254a1383d1e59a">GetExplosionDistance</a>();</div>
+<div class="line"><span class="lineno">  129</span>    <span class="comment">//m_ShotTrajectory = Shape.CreateLines(COLOR_RED, ShapeFlags.TRANSP|ShapeFlags.NOOUTLINE|ShapeFlags.NOZBUFFER, pts, 2);</span></div>
+<div class="line"><span class="lineno">  130</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  131</span>  }</div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a1a43e4cd10c0201f7bf7dbf3958059f1"><div class="ttname"><a href="#a1a43e4cd10c0201f7bf7dbf3958059f1">FireworksLauncherClientEvent::m_Timer</a></div><div class="ttdeci">ref Timer m_Timer</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00030">FireworksLauncher.c:30</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a93a2c326a78827ded685562b8a27598a"><div class="ttname"><a href="#a93a2c326a78827ded685562b8a27598a">FireworksLauncherClientEvent::GetExplosionDelay</a></div><div class="ttdeci">float GetExplosionDelay()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00078">FireworksLauncher.c:78</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_ace917555e43d15f73fca7b3df919de29"><div class="ttname"><a href="#ace917555e43d15f73fca7b3df919de29">FireworksLauncherClientEvent::GetShotDispersionAngle</a></div><div class="ttdeci">float GetShotDispersionAngle()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00068">FireworksLauncher.c:68</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_ae0fa0f9e354b9aea0317d3d0eebb1bac"><div class="ttname"><a href="#ae0fa0f9e354b9aea0317d3d0eebb1bac">FireworksLauncherClientEvent::m_ParticleShot</a></div><div class="ttdeci">ParticleSource m_ParticleShot</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00036">FireworksLauncher.c:36</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_a21cbaa9078aa80f06a84161ad7d0de0c"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#a21cbaa9078aa80f06a84161ad7d0de0c">ParticleList::FIREWORKS_AFTERBURN_END</a></div><div class="ttdeci">static const int FIREWORKS_AFTERBURN_END</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00294">ParticleList.c:294</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_ace7efaf7e1088725856f67911d0bcc51"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#ace7efaf7e1088725856f67911d0bcc51">ParticleList::FIREWORKS_SHOT</a></div><div class="ttdeci">static const int FIREWORKS_SHOT</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00285">ParticleList.c:285</a></div></div>
+<div class="ttc" id="aclass_particle_source_html_a9389522123fbe128cd6aafc9e0b272a8"><div class="ttname"><a href="../../de/d08/class_particle_source.html#a9389522123fbe128cd6aafc9e0b272a8">ParticleSource::SetOwner</a></div><div class="ttdeci">proto native void SetOwner(Class owner)</div><div class="ttdoc">Set the owner of this ParticleSource.</div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga5bd1deb1c96276d94eeec6fe40955c41"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a></div><div class="ttdeci">proto native vector Vector(float x, float y, float z)</div><div class="ttdoc">Vector constructor from components.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00294">ParticleList::FIREWORKS_AFTERBURN_END</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00285">ParticleList::FIREWORKS_SHOT</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00078">GetExplosionDelay()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00063">GetExplosionDistance()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00068">GetShotDispersionAngle()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00133">GetShotPos()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00034">m_FireSound</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00031">m_Item</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00040">m_ParticleAfterBurnEnd</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00036">m_ParticleShot</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00038">m_ShotDir</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00030">m_Timer</a>, <a class="el" href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager()</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>, <a class="el" href="../../de/d08/class_particle_source.html#a9389522123fbe128cd6aafc9e0b272a8">ParticleSource::SetOwner()</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
 
 </div>
 </div>
@@ -657,6 +873,17 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00267">267</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  268</span>  {</div>
+<div class="line"><span class="lineno">  269</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a5a0fc891f17154ff2fa676379665b67b">m_FireSound</a>)</div>
+<div class="line"><span class="lineno">  270</span>      <a class="code hl_variable" href="#a5a0fc891f17154ff2fa676379665b67b">m_FireSound</a>.<a class="code hl_function" href="../../d9/d09/class_effect_sound.html#aa4b7529d6b4e7ec710ca2589c3168480">Stop</a>();</div>
+<div class="line"><span class="lineno">  271</span>    <a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>.PlaySoundSet(<a class="code hl_variable" href="#aac9b058fc0522a81565bf83bbe52554f">m_ExplosionSound</a>, <a class="code hl_function" href="#a6b1af1e4be05cc351003c529b7392e45">GetExplosionSoundSet</a>(), 0, 0);</div>
+<div class="line"><span class="lineno">  272</span>  }</div>
+<div class="ttc" id="aclass_effect_sound_html_aa4b7529d6b4e7ec710ca2589c3168480"><div class="ttname"><a href="../../d9/d09/class_effect_sound.html#aa4b7529d6b4e7ec710ca2589c3168480">EffectSound::Stop</a></div><div class="ttdeci">override void Stop()</div><div class="ttdoc">Stops sound.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d00/_effect_sound_8c_source.html#l00231">EffectSound.c:231</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a6b1af1e4be05cc351003c529b7392e45"><div class="ttname"><a href="#a6b1af1e4be05cc351003c529b7392e45">FireworksLauncherClientEvent::GetExplosionSoundSet</a></div><div class="ttdeci">string GetExplosionSoundSet()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00073">FireworksLauncher.c:73</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00073">GetExplosionSoundSet()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00035">m_ExplosionSound</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00034">m_FireSound</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00031">m_Item</a>, and <a class="el" href="../../d4/d00/_effect_sound_8c_source.html#l00231">EffectSound::Stop()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>.</p>
 
 </div>
 </div>
@@ -684,6 +911,20 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00188">188</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>  {</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a14ad0438c632f7b803f96daede79addd">m_RemainingExplosions</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  191</span>    {</div>
+<div class="line"><span class="lineno">  192</span>      <a class="code hl_variable" href="#a14ad0438c632f7b803f96daede79addd">m_RemainingExplosions</a>--;</div>
+<div class="line"><span class="lineno">  193</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCallQueue(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>).CallLater(<a class="code hl_function" href="#a3ca566a21d74a72fb722fda44c619db7">SpawnSecondaryExplosion</a>, <a class="code hl_function" href="#a05ebab69290bb59027930c85a6fff129">GetSecondaryExplosionDelay</a>(), <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="line"><span class="lineno">  195</span>  }</div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a05ebab69290bb59027930c85a6fff129"><div class="ttname"><a href="#a05ebab69290bb59027930c85a6fff129">FireworksLauncherClientEvent::GetSecondaryExplosionDelay</a></div><div class="ttdeci">int GetSecondaryExplosionDelay()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00206">FireworksLauncher.c:206</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a14ad0438c632f7b803f96daede79addd"><div class="ttname"><a href="#a14ad0438c632f7b803f96daede79addd">FireworksLauncherClientEvent::m_RemainingExplosions</a></div><div class="ttdeci">int m_RemainingExplosions</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00042">FireworksLauncher.c:42</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a3ca566a21d74a72fb722fda44c619db7"><div class="ttname"><a href="#a3ca566a21d74a72fb722fda44c619db7">FireworksLauncherClientEvent::SpawnSecondaryExplosion</a></div><div class="ttdeci">void SpawnSecondaryExplosion()</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00197">FireworksLauncher.c:197</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00206">GetSecondaryExplosionDelay()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00042">m_RemainingExplosions</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00197">SpawnSecondaryExplosion()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00197">SpawnSecondaryExplosion()</a>, and <a class="el" href="../../d0/d0e/_fireworks_launcher_anniversary_8c_source.html#l00053">AnniversaryFireworksLauncherClientEvent::SpawnSecondaryExplosion()</a>.</p>
 
 </div>
 </div>
@@ -711,6 +952,38 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00231">231</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>  {</div>
+<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a9c89c1cc6c04a487489bd2298efc1472">m_Color</a>)</div>
+<div class="line"><span class="lineno">  234</span>    {</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;R&quot;</span>:</div>
+<div class="line"><span class="lineno">  236</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetDiffuseColor(255, 51, 51);</div>
+<div class="line"><span class="lineno">  237</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetAmbientColor(255, 51, 51);</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;G&quot;</span>:</div>
+<div class="line"><span class="lineno">  241</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetDiffuseColor(0, 255, 128);</div>
+<div class="line"><span class="lineno">  242</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetAmbientColor(0, 255, 128);</div>
+<div class="line"><span class="lineno">  243</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;B&quot;</span>:</div>
+<div class="line"><span class="lineno">  245</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetDiffuseColor(51, 153, 255);</div>
+<div class="line"><span class="lineno">  246</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetAmbientColor(51, 153, 255);</div>
+<div class="line"><span class="lineno">  247</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;Y&quot;</span>:</div>
+<div class="line"><span class="lineno">  249</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetDiffuseColor(255, 255, 51);</div>
+<div class="line"><span class="lineno">  250</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetAmbientColor(255, 255, 51);</div>
+<div class="line"><span class="lineno">  251</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">case</span> <span class="stringliteral">&quot;P&quot;</span>:</div>
+<div class="line"><span class="lineno">  253</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetDiffuseColor(255, 102, 255);</div>
+<div class="line"><span class="lineno">  254</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.SetAmbientColor(255, 102, 255);</div>
+<div class="line"><span class="lineno">  255</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  257</span>      <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<span class="stringliteral">&quot;Incorrect explosion particle color in the sequence&quot;</span>);</div>
+<div class="line"><span class="lineno">  258</span>    }</div>
+<div class="line"><span class="lineno">  259</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00041">m_Color</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00261">SpawnLight()</a>.</p>
 
 </div>
 </div>
@@ -738,6 +1011,18 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00261">261</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  262</span>  {</div>
+<div class="line"><span class="lineno">  263</span>    <a class="code hl_variable" href="#a225b34351447cd3f13138cbba289e4e7">m_ExplosionLight</a> = <a class="code hl_class" href="../../dd/d05/class_explosion_light.html">ExplosionLight</a>.Cast(<a class="code hl_class" href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a>.CreateLight(<a class="code hl_class" href="../../dd/d05/class_explosion_light.html">ExplosionLight</a>, <a class="code hl_function" href="#a94299b85747c1e610cc7bfde36c10190">GetExplosionPosition</a>()));</div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_function" href="#a69aafa8fc835ad8fb9d2767df5642c74">SetupLight</a>(<a class="code hl_variable" href="#a225b34351447cd3f13138cbba289e4e7">m_ExplosionLight</a>);</div>
+<div class="line"><span class="lineno">  265</span>  }</div>
+<div class="ttc" id="aclass_explosion_light_html"><div class="ttname"><a href="../../dd/d05/class_explosion_light.html">ExplosionLight</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00001">FireworksLauncher.c:2</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a225b34351447cd3f13138cbba289e4e7"><div class="ttname"><a href="#a225b34351447cd3f13138cbba289e4e7">FireworksLauncherClientEvent::m_ExplosionLight</a></div><div class="ttdeci">ExplosionLight m_ExplosionLight</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00039">FireworksLauncher.c:39</a></div></div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a69aafa8fc835ad8fb9d2767df5642c74"><div class="ttname"><a href="#a69aafa8fc835ad8fb9d2767df5642c74">FireworksLauncherClientEvent::SetupLight</a></div><div class="ttdeci">void SetupLight(PointLightBase light)</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00231">FireworksLauncher.c:231</a></div></div>
+<div class="ttc" id="aclass_scripted_light_base_html"><div class="ttname"><a href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_point_light_base_8c_source.html#l00001">PointLightBase.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00156">GetExplosionPosition()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00039">m_ExplosionLight</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00231">SetupLight()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>.</p>
 
 </div>
 </div>
@@ -765,6 +1050,18 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00197">197</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  198</span>  {</div>
+<div class="line"><span class="lineno">  199</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FireworksLauncherClientEventSecondary</a> <a class="code hl_class" href="../../db/d06/class_param3.html">evnt</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">FireworksLauncherClientEventSecondary</a>(<a class="code hl_variable" href="#a129c8fab45ae917f8ac78ac7afd7b606">m_Item</a>, <a class="code hl_variable" href="#ac67977d1347916fdc27f86a0e11c904b">m_Index</a>);</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">evnt</a>.Init(<a class="code hl_function" href="#a94299b85747c1e610cc7bfde36c10190">GetExplosionPosition</a>());</div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">evnt</a>.OnExplode();</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_variable" href="#a29d889593c007ed13c6c608246acbbb9">m_Events</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">evnt</a>);</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_function" href="#a908e6644337681ea288a2303de3b9cba">RequestSecondaryExplosion</a>();</div>
+<div class="line"><span class="lineno">  204</span>  }</div>
+<div class="ttc" id="aclass_fireworks_launcher_client_event_html_a29d889593c007ed13c6c608246acbbb9"><div class="ttname"><a href="#a29d889593c007ed13c6c608246acbbb9">FireworksLauncherClientEvent::m_Events</a></div><div class="ttdeci">ref array&lt; ref FireworksLauncherClientEventBase &gt; m_Events</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_fireworks_launcher_8c_source.html#l00043">FireworksLauncher.c:43</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00156">GetExplosionPosition()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00043">m_Events</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00032">m_Index</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00031">m_Item</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00188">RequestSecondaryExplosion()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00188">RequestSecondaryExplosion()</a>.</p>
 
 </div>
 </div>
@@ -791,6 +1088,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00041">41</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00088">FireworksLauncherClientEvent()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00211">GetExplParticleFromSequence()</a>, <a class="el" href="../../d0/d0e/_fireworks_launcher_anniversary_8c_source.html#l00003">AnniversaryFireworksLauncherClientEvent::GetExplParticleFromSequence()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00231">SetupLight()</a>, and <a class="el" href="../../d0/d0e/_fireworks_launcher_anniversary_8c_source.html#l00023">AnniversaryFireworksLauncherClientEvent::SetupLight()</a>.</p>
+
 </div>
 </div>
 <a id="a29d889593c007ed13c6c608246acbbb9" name="a29d889593c007ed13c6c608246acbbb9"></a>
@@ -814,6 +1113,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00043">43</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00197">SpawnSecondaryExplosion()</a>, and <a class="el" href="../../d0/d0e/_fireworks_launcher_anniversary_8c_source.html#l00053">AnniversaryFireworksLauncherClientEvent::SpawnSecondaryExplosion()</a>.</p>
 
 </div>
 </div>
@@ -839,6 +1140,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00039">39</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00261">SpawnLight()</a>.</p>
+
 </div>
 </div>
 <a id="ad7329ad5ed4362c4ce6dd76d7019ea05" name="ad7329ad5ed4362c4ce6dd76d7019ea05"></a>
@@ -862,6 +1165,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00033">33</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00151">CalculateExplosionPosition()</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00156">GetExplosionPosition()</a>.</p>
 
 </div>
 </div>
@@ -887,6 +1192,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00035">35</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00267">PlayExplosionSound()</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00105">~FireworksLauncherClientEvent()</a>.</p>
+
 </div>
 </div>
 <a id="a5a0fc891f17154ff2fa676379665b67b" name="a5a0fc891f17154ff2fa676379665b67b"></a>
@@ -910,6 +1217,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00034">34</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00267">PlayExplosionSound()</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00105">~FireworksLauncherClientEvent()</a>.</p>
 
 </div>
 </div>
@@ -935,6 +1244,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00032">32</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00088">FireworksLauncherClientEvent()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00133">GetShotPos()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00197">SpawnSecondaryExplosion()</a>, and <a class="el" href="../../d0/d0e/_fireworks_launcher_anniversary_8c_source.html#l00053">AnniversaryFireworksLauncherClientEvent::SpawnSecondaryExplosion()</a>.</p>
+
 </div>
 </div>
 <a id="a129c8fab45ae917f8ac78ac7afd7b606" name="a129c8fab45ae917f8ac78ac7afd7b606"></a>
@@ -958,6 +1269,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00031">31</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00088">FireworksLauncherClientEvent()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00133">GetShotPos()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00267">PlayExplosionSound()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00197">SpawnSecondaryExplosion()</a>, and <a class="el" href="../../d0/d0e/_fireworks_launcher_anniversary_8c_source.html#l00053">AnniversaryFireworksLauncherClientEvent::SpawnSecondaryExplosion()</a>.</p>
 
 </div>
 </div>
@@ -983,6 +1296,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00040">40</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00105">~FireworksLauncherClientEvent()</a>.</p>
+
 </div>
 </div>
 <a id="a33beeb12b7e874b0c340757a646ae5d7" name="a33beeb12b7e874b0c340757a646ae5d7"></a>
@@ -1006,6 +1321,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00037">37</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">OnExplode()</a>.</p>
 
 </div>
 </div>
@@ -1031,6 +1348,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00036">36</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>.</p>
+
 </div>
 </div>
 <a id="a14ad0438c632f7b803f96daede79addd" name="a14ad0438c632f7b803f96daede79addd"></a>
@@ -1054,6 +1373,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00042">42</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00188">RequestSecondaryExplosion()</a>.</p>
 
 </div>
 </div>
@@ -1079,6 +1400,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00038">38</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00151">CalculateExplosionPosition()</a>, and <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>.</p>
+
 </div>
 </div>
 <a id="a1a43e4cd10c0201f7bf7dbf3958059f1" name="a1a43e4cd10c0201f7bf7dbf3958059f1"></a>
@@ -1102,6 +1425,8 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00030">30</a> of file <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html">FireworksLauncher.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00113">OnFired()</a>.</p>
 
 </div>
 </div>

@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -374,6 +371,12 @@ Private Member Functions</h2></td></tr>
 <p>ctor </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00061">61</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>  {</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_function" href="#a1a59ef10db9bb7fd461aba789a5b5bf7">ParticleInit</a>();</div>
+<div class="line"><span class="lineno">   64</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a1a59ef10db9bb7fd461aba789a5b5bf7"><div class="ttname"><a href="#a1a59ef10db9bb7fd461aba789a5b5bf7">Particle::ParticleInit</a></div><div class="ttdeci">void ParticleInit()</div><div class="ttdoc">Purely here so that it can be emptied in ParticleSource.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00067">Particle.c:67</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00067">ParticleInit()</a>.</p>
 
 </div>
 </div>
@@ -428,6 +431,49 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00542">542</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  543</span>  {</div>
+<div class="line"><span class="lineno">  544</span>    <span class="keywordflow">if</span> (ToDelete())</div>
+<div class="line"><span class="lineno">  545</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  546</span> </div>
+<div class="line"><span class="lineno">  547</span>    <span class="keywordflow">if</span> (parent)</div>
+<div class="line"><span class="lineno">  548</span>    {</div>
+<div class="line"><span class="lineno">  549</span>      <span class="comment">// AddAsChild method is sometimes called from a timer.</span></div>
+<div class="line"><span class="lineno">  550</span>      <span class="comment">// Due to that it is necesarry to use ToDelete() here to check if the parent object is flagged for deletion or not on client,</span></div>
+<div class="line"><span class="lineno">  551</span>      <span class="comment">// because sometimes this code is executed before the parent&#39;s destructor from where this would normally be handled.</span></div>
+<div class="line"><span class="lineno">  552</span>      <span class="keywordflow">if</span> (!parent.ToDelete())</div>
+<div class="line"><span class="lineno">  553</span>      {</div>
+<div class="line"><span class="lineno">  554</span>        <a class="code hl_function" href="../../d6/d0e/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">local_pos</a>);</div>
+<div class="line"><span class="lineno">  555</span>        SetOrientation(<a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>);</div>
+<div class="line"><span class="lineno">  556</span>        <a class="code hl_variable" href="#aafbb17802156fc5507955e1c7a34bf66">m_ParentObject</a> = parent;</div>
+<div class="line"><span class="lineno">  557</span>        <a class="code hl_variable" href="#a1a8166ddbba5008431c06249f105dd68">m_DefaultPos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">local_pos</a>;</div>
+<div class="line"><span class="lineno">  558</span>        <a class="code hl_variable" href="#a5169480d2be6a38b63b7e22956929fdb">m_ForceOrientationRelativeToWorld</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">force_rotation_to_world</a>;</div>
+<div class="line"><span class="lineno">  559</span> </div>
+<div class="line"><span class="lineno">  560</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  561</span>          <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga33e82262c3fc30a0921094432901b8d3">AddChild</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, -1, <a class="code hl_variable" href="#a5169480d2be6a38b63b7e22956929fdb">m_ForceOrientationRelativeToWorld</a>);</div>
+<div class="line"><span class="lineno">  562</span> </div>
+<div class="line"><span class="lineno">  563</span>        parent.AddChild(<span class="keyword">this</span>, -1, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  564</span>      }</div>
+<div class="line"><span class="lineno">  565</span>    }</div>
+<div class="line"><span class="lineno">  566</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  567</span>    {</div>
+<div class="line"><span class="lineno">  568</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aafbb17802156fc5507955e1c7a34bf66">m_ParentObject</a> &amp;&amp; !<a class="code hl_variable" href="#aafbb17802156fc5507955e1c7a34bf66">m_ParentObject</a>.ToDelete())</div>
+<div class="line"><span class="lineno">  569</span>      {</div>
+<div class="line"><span class="lineno">  570</span>        <a class="code hl_variable" href="#aafbb17802156fc5507955e1c7a34bf66">m_ParentObject</a>.RemoveChild(<span class="keyword">this</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  571</span>        <a class="code hl_variable" href="#aafbb17802156fc5507955e1c7a34bf66">m_ParentObject</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  572</span>      }</div>
+<div class="line"><span class="lineno">  573</span>    }</div>
+<div class="line"><span class="lineno">  574</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_particle_html_a1a8166ddbba5008431c06249f105dd68"><div class="ttname"><a href="#a1a8166ddbba5008431c06249f105dd68">Particle::m_DefaultPos</a></div><div class="ttdeci">vector m_DefaultPos</div><div class="ttdoc">Used for Wiggle API, to restore after unparenting.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00033">Particle.c:33</a></div></div>
+<div class="ttc" id="aclass_particle_html_a2b0d832016c9c88246affb21f3141201"><div class="ttname"><a href="#a2b0d832016c9c88246affb21f3141201">Particle::m_ParticleEffect</a></div><div class="ttdeci">Object m_ParticleEffect</div><div class="ttdoc">The child object which contains the actual particle.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00050">Particle.c:50</a></div></div>
+<div class="ttc" id="aclass_particle_html_a5169480d2be6a38b63b7e22956929fdb"><div class="ttname"><a href="#a5169480d2be6a38b63b7e22956929fdb">Particle::m_ForceOrientationRelativeToWorld</a></div><div class="ttdeci">bool m_ForceOrientationRelativeToWorld</div><div class="ttdoc">Used for Wiggle API, to restore after unparenting.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00029">Particle.c:29</a></div></div>
+<div class="ttc" id="aclass_particle_html_aafbb17802156fc5507955e1c7a34bf66"><div class="ttname"><a href="#aafbb17802156fc5507955e1c7a34bf66">Particle::m_ParentObject</a></div><div class="ttdeci">Object m_ParentObject</div><div class="ttdoc">Parent Object the Particle is child of.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00048">Particle.c:48</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga3aa6cafceab9d573982aa9db5a5d6e34"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a></div><div class="ttdeci">proto native void SetPosition(vector position)</div><div class="ttdoc">Set the world position of the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00420">Effect.c:420</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga33e82262c3fc30a0921094432901b8d3"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga33e82262c3fc30a0921094432901b8d3">AddChild</a></div><div class="ttdeci">proto native void AddChild(Widget child, bool immedUpdate=true)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga33e82262c3fc30a0921094432901b8d3">AddChild()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00033">m_DefaultPos</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00029">m_ForceOrientationRelativeToWorld</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00048">m_ParentObject</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00420">SetPosition()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">RandomizeOrientation()</a>.</p>
 
 </div>
 </div>
@@ -471,6 +517,13 @@ Private Member Functions</h2></td></tr>
 <p>Legacy function for backwards compatibility. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00104">104</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>  {</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a718fd328e04a30f4d7fcade5dfd9da19">CreateOnObject</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parent_obj</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_pos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>);</div>
+<div class="line"><span class="lineno">  107</span>  }</div>
+<div class="ttc" id="a_smoke_simulation_8c_html_a7ccc29a80f5e39e2fa08fabc79bca587"><div class="ttname"><a href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a></div><div class="ttdeci">int particle_id</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">SmokeSimulation.c:28</a></div></div>
+<div class="ttc" id="aclass_particle_html_a718fd328e04a30f4d7fcade5dfd9da19"><div class="ttname"><a href="#a718fd328e04a30f4d7fcade5dfd9da19">Particle::CreateOnObject</a></div><div class="ttdeci">static Particle CreateOnObject(int particle_id, Object parent_obj, vector local_pos=&quot;0 0 0&quot;, vector local_ori=&quot;0 0 0&quot;, bool force_world_rotation=false)</div><div class="ttdoc">Creates a particle emitter and attaches it on the given object.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00088">Particle.c:88</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00088">CreateOnObject()</a>, and <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>.</p>
 
 </div>
 </div>
@@ -509,6 +562,12 @@ Private Member Functions</h2></td></tr>
 <p>Legacy function for backwards compatibility with 1.01 and below. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00129">129</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a478fabd38db10bd255707dd4ae8809a6">CreateInWorld</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">global_pos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">global_ori</a>);</div>
+<div class="line"><span class="lineno">  132</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a478fabd38db10bd255707dd4ae8809a6"><div class="ttname"><a href="#a478fabd38db10bd255707dd4ae8809a6">Particle::CreateInWorld</a></div><div class="ttdeci">static Particle CreateInWorld(int particle_id, vector global_pos, vector global_ori=&quot;0 0 0&quot;, bool force_world_rotation=false)</div><div class="ttdoc">Creates a particle emitter on the given position.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00117">Particle.c:117</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00117">CreateInWorld()</a>, and <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>.</p>
 
 </div>
 </div>
@@ -562,6 +621,20 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../de/d05/class_particle.html" title="Legacy way of using particles in the game.">Particle</a></code> Created particle instance </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00117">117</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_class" href="../../de/d05/class_particle.html">Particle</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a> = <a class="code hl_class" href="../../de/d05/class_particle.html">Particle</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;Particle&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">global_pos</a>, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a3ccbd5dade671e8d228329395ec78ec2">ECE_LOCAL</a>));</div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.SetSource(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>);</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.SetOrientation(<a class="code hl_class" href="../../db/d06/class_param3.html">global_ori</a>);</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.m_ForceOrientationRelativeToWorld = <a class="code hl_class" href="../../db/d06/class_param3.html">force_world_rotation</a>;</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>;</div>
+<div class="line"><span class="lineno">  124</span>  }</div>
+<div class="ttc" id="a_central_economy_8c_html_a3ccbd5dade671e8d228329395ec78ec2"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#a3ccbd5dade671e8d228329395ec78ec2">ECE_LOCAL</a></div><div class="ttdeci">const int ECE_LOCAL</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00024">CentralEconomy.c:24</a></div></div>
+<div class="ttc" id="aclass_particle_html"><div class="ttname"><a href="../../de/d05/class_particle.html">Particle</a></div><div class="ttdoc">Legacy way of using particles in the game.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00006">Particle.c:7</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00024">ECE_LOCAL</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00129">Create()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00088">CreateOnObject()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00173">PlayInWorld()</a>.</p>
 
 </div>
 </div>
@@ -621,6 +694,24 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../de/d05/class_particle.html" title="Legacy way of using particles in the game.">Particle</a></code> Created particle instance </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00088">88</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>  {</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">parent_obj</a>)</div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;ERROR when creating a particle! Parameter parent_obj is NULL!&quot;</span>);</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">global_pos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">parent_obj</a>.GetPosition();</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_class" href="../../de/d05/class_particle.html">Particle</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a> = <a class="code hl_function" href="#a478fabd38db10bd255707dd4ae8809a6">CreateInWorld</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">global_pos</a>, <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0, 0, 0), <a class="code hl_class" href="../../db/d06/class_param3.html">force_world_rotation</a>);</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.AddAsChild(<a class="code hl_class" href="../../db/d06/class_param3.html">parent_obj</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_pos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">force_world_rotation</a>);</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.m_DefaultOri = <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>;</div>
+<div class="line"><span class="lineno">   99</span>  }</div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agroup___debug_html_ga786b160dafbe15abb829786ba345cb15"><div class="ttname"><a href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a></div><div class="ttdeci">void Error(string err)</div><div class="ttdoc">Messagebox with error message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_en_debug_8c_source.html#l00090">EnDebug.c:90</a></div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga5bd1deb1c96276d94eeec6fe40955c41"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a></div><div class="ttdeci">proto native vector Vector(float x, float y, float z)</div><div class="ttdoc">Vector constructor from components.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00117">CreateInWorld()</a>, <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00104">Create()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00151">PlayOnObject()</a>.</p>
 
 </div>
 </div>
@@ -650,6 +741,49 @@ Private Member Functions</h2></td></tr>
 <p>Creates ParticleEffect child, called from UpdateState. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">422</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  423</span>  {</div>
+<div class="line"><span class="lineno">  424</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">  425</span>    {</div>
+<div class="line"><span class="lineno">  426</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">fullPath</a> = <a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_function" href="../../dd/d02/class_particle_list.html#a5e8368fe145ca144b377295e12dbdea4">GetParticleFullPath</a>(<a class="code hl_variable" href="#ab065f888d1a573637a8028b836d6bc4b">m_ParticleID</a>);</div>
+<div class="line"><span class="lineno">  427</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">fullPath</a> == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  428</span>      {</div>
+<div class="line"><span class="lineno">  429</span>        <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<span class="stringliteral">&quot;Could not play Particle as there is no valid particle id assigned.&quot;</span>);</div>
+<div class="line"><span class="lineno">  430</span>        <a class="code hl_variable" href="../../d5/d0d/_effect_8c.html#a2825a78cf2ee156378fc59fc3fa91028">m_IsPlaying</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  431</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  432</span>      }</div>
+<div class="line"><span class="lineno">  433</span> </div>
+<div class="line"><span class="lineno">  434</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>)</div>
+<div class="line"><span class="lineno">  435</span>      {</div>
+<div class="line"><span class="lineno">  436</span>        <a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObjectEx(<span class="stringliteral">&quot;#particlesourceenf&quot;</span>, <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_variable" href="../../d7/d0c/classvector.html#a6f6d5246e38b34f79fa2741a7e72d7e7">Zero</a>, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#a3ccbd5dade671e8d228329395ec78ec2">ECE_LOCAL</a>); <span class="comment">// particle source must be lowercase!</span></div>
+<div class="line"><span class="lineno">  437</span>      }</div>
+<div class="line"><span class="lineno">  438</span> </div>
+<div class="line"><span class="lineno">  439</span>      <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga33e82262c3fc30a0921094432901b8d3">AddChild</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, -1, <a class="code hl_variable" href="#a5169480d2be6a38b63b7e22956929fdb">m_ForceOrientationRelativeToWorld</a>);</div>
+<div class="line"><span class="lineno">  440</span> </div>
+<div class="line"><span class="lineno">  441</span>      <a class="code hl_class" href="../../d3/d0c/classvobject.html">vobject</a> <a class="code hl_class" href="../../db/d06/class_param3.html">vobj</a> = <a class="code hl_function" href="../../d2/d0f/_action_targets_8c.html#aaa4160de65ac77debe2902527ebfc4f2">GetObject</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">fullPath</a>);</div>
+<div class="line"><span class="lineno">  442</span>      <a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>.SetObject(<a class="code hl_class" href="../../db/d06/class_param3.html">vobj</a>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  443</span>      <a class="code hl_function" href="../../d1/d08/group___visual.html#gaf9e341a2578c4863da4c5cf0fd0da018">ReleaseObject</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">vobj</a>);</div>
+<div class="line"><span class="lineno">  444</span> </div>
+<div class="line"><span class="lineno">  445</span>      <a class="code hl_variable" href="#a0168881afd57776c46cefc86cd3c851a">m_IsRepeat</a> = <a class="code hl_function" href="#ac533cdcafb6b715c4d818b991550058d">IsRepeat</a>();</div>
+<div class="line"><span class="lineno">  446</span>      <a class="code hl_variable" href="#a9bf4488689ed05efcb3651a5af3b6ead">m_Lifetime</a> = <a class="code hl_function" href="#a0ddee27a4cdeae4d7019101b79e355e7">GetMaxLifetime</a>();</div>
+<div class="line"><span class="lineno">  447</span>    }</div>
+<div class="line"><span class="lineno">  448</span>  }</div>
+<div class="ttc" id="a_action_targets_8c_html_aaa4160de65ac77debe2902527ebfc4f2"><div class="ttname"><a href="../../d2/d0f/_action_targets_8c.html#aaa4160de65ac77debe2902527ebfc4f2">GetObject</a></div><div class="ttdeci">Object GetObject()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d0f/_action_targets_8c_source.html#l00118">ActionTargets.c:118</a></div></div>
+<div class="ttc" id="a_effect_8c_html_a2825a78cf2ee156378fc59fc3fa91028"><div class="ttname"><a href="../../d5/d0d/_effect_8c.html#a2825a78cf2ee156378fc59fc3fa91028">m_IsPlaying</a></div><div class="ttdeci">bool m_IsPlaying</div><div class="ttdoc">Whether the Effect is currently playing.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00037">Effect.c:37</a></div></div>
+<div class="ttc" id="aclass_particle_html_a0168881afd57776c46cefc86cd3c851a"><div class="ttname"><a href="#a0168881afd57776c46cefc86cd3c851a">Particle::m_IsRepeat</a></div><div class="ttdeci">bool m_IsRepeat</div><div class="ttdoc">Whether this particle repeats.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00017">Particle.c:17</a></div></div>
+<div class="ttc" id="aclass_particle_html_a0ddee27a4cdeae4d7019101b79e355e7"><div class="ttname"><a href="#a0ddee27a4cdeae4d7019101b79e355e7">Particle::GetMaxLifetime</a></div><div class="ttdeci">float GetMaxLifetime()</div><div class="ttdoc">Returns the approx. max lifetime.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00369">Particle.c:369</a></div></div>
+<div class="ttc" id="aclass_particle_html_a9bf4488689ed05efcb3651a5af3b6ead"><div class="ttname"><a href="#a9bf4488689ed05efcb3651a5af3b6ead">Particle::m_Lifetime</a></div><div class="ttdeci">float m_Lifetime</div><div class="ttdoc">Approx. remaining lifetime of particle.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00015">Particle.c:15</a></div></div>
+<div class="ttc" id="aclass_particle_html_ab065f888d1a573637a8028b836d6bc4b"><div class="ttname"><a href="#ab065f888d1a573637a8028b836d6bc4b">Particle::m_ParticleID</a></div><div class="ttdeci">int m_ParticleID</div><div class="ttdoc">ID from ParticleList if assigned.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00013">Particle.c:13</a></div></div>
+<div class="ttc" id="aclass_particle_html_ac533cdcafb6b715c4d818b991550058d"><div class="ttname"><a href="#ac533cdcafb6b715c4d818b991550058d">Particle::IsRepeat</a></div><div class="ttdeci">bool IsRepeat()</div><div class="ttdoc">Returns whether there is a repeating particle.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00345">Particle.c:345</a></div></div>
+<div class="ttc" id="aclass_particle_list_html"><div class="ttname"><a href="../../dd/d02/class_particle_list.html">ParticleList</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00011">ParticleList.c:12</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_a5e8368fe145ca144b377295e12dbdea4"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#a5e8368fe145ca144b377295e12dbdea4">ParticleList::GetParticleFullPath</a></div><div class="ttdeci">static string GetParticleFullPath(int particle_id)</div><div class="ttdoc">Returns particle's full path (with .ptc suffix) based on its ID.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00394">ParticleList.c:394</a></div></div>
+<div class="ttc" id="aclassvector_html_a6f6d5246e38b34f79fa2741a7e72d7e7"><div class="ttname"><a href="../../d7/d0c/classvector.html#a6f6d5246e38b34f79fa2741a7e72d7e7">vector::Zero</a></div><div class="ttdeci">static const vector Zero</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00110">EnConvert.c:110</a></div></div>
+<div class="ttc" id="aclassvobject_html"><div class="ttname"><a href="../../d3/d0c/classvobject.html">vobject</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/proto_8c_source.html#l00048">proto.c:49</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+<div class="ttc" id="agroup___visual_html_gaf9e341a2578c4863da4c5cf0fd0da018"><div class="ttname"><a href="../../d1/d08/group___visual.html#gaf9e341a2578c4863da4c5cf0fd0da018">ReleaseObject</a></div><div class="ttdeci">proto native void ReleaseObject(vobject object, int flag=0)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0e/group___widget_a_p_i.html#ga33e82262c3fc30a0921094432901b8d3">AddChild()</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00024">ECE_LOCAL</a>, <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00369">GetMaxLifetime()</a>, <a class="el" href="../../d2/d0f/_action_targets_8c_source.html#l00118">GetObject()</a>, <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00394">ParticleList::GetParticleFullPath()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00345">IsRepeat()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00029">m_ForceOrientationRelativeToWorld</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00037">m_IsPlaying</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00017">m_IsRepeat</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00015">m_Lifetime</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00013">m_ParticleID</a>, <a class="el" href="../../d1/d08/group___visual.html#gaf9e341a2578c4863da4c5cf0fd0da018">ReleaseObject()</a>, and <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00110">vector::Zero</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00411">UpdateState()</a>.</p>
 
 </div>
 </div>
@@ -680,6 +814,22 @@ Private Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>Does not destroy it immediately As it simply nulls the lifetime Then it will be cleaned up by EOnFrame eventually </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00456">456</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  457</span>  {</div>
+<div class="line"><span class="lineno">  458</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a> &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>())</div>
+<div class="line"><span class="lineno">  459</span>    {</div>
+<div class="line"><span class="lineno">  460</span>      <a class="code hl_function" href="#a9b937645c781f2112e86556633ee5210">SetParameter</a>(-1, <a class="code hl_enumeration" href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a>.LIFETIME, 0);</div>
+<div class="line"><span class="lineno">  461</span>      <a class="code hl_function" href="#a9b937645c781f2112e86556633ee5210">SetParameter</a>(-1, <a class="code hl_enumeration" href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a>.LIFETIME_RND, 0);</div>
+<div class="line"><span class="lineno">  462</span>      <a class="code hl_function" href="#a9b937645c781f2112e86556633ee5210">SetParameter</a>(-1, <a class="code hl_enumeration" href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a>.REPEAT, 0);</div>
+<div class="line"><span class="lineno">  463</span> </div>
+<div class="line"><span class="lineno">  464</span>      <a class="code hl_variable" href="#a0168881afd57776c46cefc86cd3c851a">m_IsRepeat</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  465</span>    }</div>
+<div class="line"><span class="lineno">  466</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a9b937645c781f2112e86556633ee5210"><div class="ttname"><a href="#a9b937645c781f2112e86556633ee5210">Particle::SetParameter</a></div><div class="ttdeci">void SetParameter(int emitter, int parameter, float value)</div><div class="ttdoc">Set the value of a parameter of an emitor in the particle.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00603">Particle.c:603</a></div></div>
+<div class="ttc" id="agroup___particle_effect_html_gae0fed29d09aa06a8ca33de9f2b039e4b"><div class="ttname"><a href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a></div><div class="ttdeci">EmitorParam</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_en_visual_8c_source.html#l00113">EnVisual.c:114</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00017">m_IsRepeat</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00603">SetParameter()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00411">UpdateState()</a>.</p>
 
 </div>
 </div>
@@ -713,6 +863,13 @@ Private Member Functions</h2></td></tr>
 <p>OnFrame update event decrementing the stored approx. lifetime and checking for deletion. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00471">471</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  472</span>  {</div>
+<div class="line"><span class="lineno">  473</span>    <a class="code hl_variable" href="#a9bf4488689ed05efcb3651a5af3b6ead">m_Lifetime</a> -= <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">  474</span>    <a class="code hl_function" href="#a853970c1a07857f95212ff7545397e4c">OnCheckAutoDelete</a>();</div>
+<div class="line"><span class="lineno">  475</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a853970c1a07857f95212ff7545397e4c"><div class="ttname"><a href="#a853970c1a07857f95212ff7545397e4c">Particle::OnCheckAutoDelete</a></div><div class="ttdeci">void OnCheckAutoDelete()</div><div class="ttdoc">Creates ParticleEffect child, called from UpdateState.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00480">Particle.c:480</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00015">m_Lifetime</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>.</p>
 
 </div>
 </div>
@@ -744,6 +901,13 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../d8/d03/class_object.html">Object</a></code> The <a class="el" href="../../d8/d03/class_object.html">Object</a> with the particle component or null </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00302">302</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  303</span>  {</div>
+<div class="line"><span class="lineno">  304</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>;</div>
+<div class="line"><span class="lineno">  305</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/d09/_torch_8c_source.html#l00522">FlammableBase::UpdateLight()</a>.</p>
 
 </div>
 </div>
@@ -774,6 +938,40 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>float</code> The largest lifetime sum among the emitors </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00369">369</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  370</span>  {</div>
+<div class="line"><span class="lineno">  371</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_return</a> = 0;</div>
+<div class="line"><span class="lineno">  372</span> </div>
+<div class="line"><span class="lineno">  373</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  374</span>    {</div>
+<div class="line"><span class="lineno">  375</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_min</a> = 0;</div>
+<div class="line"><span class="lineno">  376</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_random</a> = 0;</div>
+<div class="line"><span class="lineno">  377</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">effect_time</a> = 0;</div>
+<div class="line"><span class="lineno">  378</span> </div>
+<div class="line"><span class="lineno">  379</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_sum</a> = 0;</div>
+<div class="line"><span class="lineno">  380</span> </div>
+<div class="line"><span class="lineno">  381</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a> = <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>);</div>
+<div class="line"><span class="lineno">  382</span> </div>
+<div class="line"><span class="lineno">  383</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  384</span>      {</div>
+<div class="line"><span class="lineno">  385</span>        <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_enumeration" href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a>.LIFETIME, <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_min</a>);</div>
+<div class="line"><span class="lineno">  386</span>        <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_enumeration" href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a>.LIFETIME_RND, <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_random</a>);</div>
+<div class="line"><span class="lineno">  387</span>        <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_enumeration" href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a>.EFFECT_TIME, <a class="code hl_class" href="../../db/d06/class_param3.html">effect_time</a>);</div>
+<div class="line"><span class="lineno">  388</span> </div>
+<div class="line"><span class="lineno">  389</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_sum</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_min</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_random</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">effect_time</a>;</div>
+<div class="line"><span class="lineno">  390</span> </div>
+<div class="line"><span class="lineno">  391</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_sum</a> &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_return</a>)</div>
+<div class="line"><span class="lineno">  392</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_return</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_sum</a>;</div>
+<div class="line"><span class="lineno">  393</span>      }</div>
+<div class="line"><span class="lineno">  394</span>    }</div>
+<div class="line"><span class="lineno">  395</span> </div>
+<div class="line"><span class="lineno">  396</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">lifetime_return</a>;</div>
+<div class="line"><span class="lineno">  397</span>  }</div>
+<div class="ttc" id="agroup___particle_effect_html_gaaf48f6e9cee7070941c9c8a1fd42563d"><div class="ttname"><a href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount</a></div><div class="ttdeci">proto int GetParticleEmitorCount(notnull IEntity ent)</div></div>
+<div class="ttc" id="agroup___particle_effect_html_gaf8b8d0a62c36697a8e34fc9ef2c492e3"><div class="ttname"><a href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a></div><div class="ttdeci">proto void GetParticleParm(notnull IEntity ent, int emitor, EmitorParam parameter, out void value)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount()</a>, <a class="el" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">CreateParticleEffect()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>.</p>
 
 </div>
 </div>
@@ -820,6 +1018,14 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00617">617</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  618</span>  {</div>
+<div class="line"><span class="lineno">  619</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  620</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  621</span> </div>
+<div class="line"><span class="lineno">  622</span>    <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">emitter</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  623</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>.</p>
 
 </div>
 </div>
@@ -861,6 +1067,16 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>float</code> The value </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00631">631</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  632</span>  {</div>
+<div class="line"><span class="lineno">  633</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  634</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  635</span> </div>
+<div class="line"><span class="lineno">  636</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  637</span>    <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">emitter</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  638</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  639</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>.</p>
 
 </div>
 </div>
@@ -892,6 +1108,17 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>int</code> Total count of active particles </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00333">333</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  334</span>  {</div>
+<div class="line"><span class="lineno">  335</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  336</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga98b8ffdf4826099582f15ddc1c81c581">ParticleGetCount</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>);</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  339</span>  }</div>
+<div class="ttc" id="agroup___particle_effect_html_ga98b8ffdf4826099582f15ddc1c81c581"><div class="ttname"><a href="../../da/d03/group___particle_effect.html#ga98b8ffdf4826099582f15ddc1c81c581">ParticleGetCount</a></div><div class="ttdeci">int ParticleGetCount(IEntity ent)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_en_visual_8c_source.html#l00205">EnVisual.c:205</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../d9/d02/_en_visual_8c_source.html#l00205">ParticleGetCount()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>.</p>
 
 </div>
 </div>
@@ -923,6 +1150,13 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>int</code> The last set <a class="el" href="../../de/d05/class_particle.html" title="Legacy way of using particles in the game.">Particle</a> ID registered in <a class="el" href="../../dd/d02/class_particle_list.html">ParticleList</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00292">292</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  293</span>  {</div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab065f888d1a573637a8028b836d6bc4b">m_ParticleID</a>;</div>
+<div class="line"><span class="lineno">  295</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00013">m_ParticleID</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../df/d09/_torch_8c_source.html#l00620">FlammableBase::UpdateParticle()</a>.</p>
 
 </div>
 </div>
@@ -953,6 +1187,11 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../d8/d03/class_object.html">Object</a></code> The registered parent or null </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00311">311</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  312</span>  {</div>
+<div class="line"><span class="lineno">  313</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aafbb17802156fc5507955e1c7a34bf66">m_ParentObject</a>;</div>
+<div class="line"><span class="lineno">  314</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00048">m_ParentObject</a>.</p>
 
 </div>
 </div>
@@ -983,6 +1222,15 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>bool</code> Whether there is any particle active </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00320">320</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  321</span>  {</div>
+<div class="line"><span class="lineno">  322</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  323</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga35656fd70c968d045aa42eb9f3515755">ParticleHasActive</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>);</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  326</span>  }</div>
+<div class="ttc" id="agroup___particle_effect_html_ga35656fd70c968d045aa42eb9f3515755"><div class="ttname"><a href="../../da/d03/group___particle_effect.html#ga35656fd70c968d045aa42eb9f3515755">ParticleHasActive</a></div><div class="ttdeci">bool ParticleHasActive(IEntity ent)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_en_visual_8c_source.html#l00210">EnVisual.c:210</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../d9/d02/_en_visual_8c_source.html#l00210">ParticleHasActive()</a>.</p>
 
 </div>
 </div>
@@ -1024,6 +1272,21 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00705">705</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  706</span>  {</div>
+<div class="line"><span class="lineno">  707</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  708</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  709</span> </div>
+<div class="line"><span class="lineno">  710</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a> = <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>);</div>
+<div class="line"><span class="lineno">  711</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  712</span>    {</div>
+<div class="line"><span class="lineno">  713</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a>;</div>
+<div class="line"><span class="lineno">  714</span>      <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">param</a>);</div>
+<div class="line"><span class="lineno">  715</span>      <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  716</span>    }</div>
+<div class="line"><span class="lineno">  717</span>  }</div>
+<div class="ttc" id="agroup___particle_effect_html_ga0f558e6f6131c3ea48fe470c95dd6e5f"><div class="ttname"><a href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm</a></div><div class="ttdeci">proto void SetParticleParm(notnull IEntity ent, int emitor, EmitorParam parameter, void value)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount()</a>, <a class="el" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm()</a>.</p>
 
 </div>
 </div>
@@ -1065,6 +1328,21 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00685">685</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  686</span>  {</div>
+<div class="line"><span class="lineno">  687</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  688</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  689</span> </div>
+<div class="line"><span class="lineno">  690</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a> = <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>);</div>
+<div class="line"><span class="lineno">  691</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  692</span>    {</div>
+<div class="line"><span class="lineno">  693</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a>;</div>
+<div class="line"><span class="lineno">  694</span>      <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga7cf9b540067b188149be7512b29ceb60">GetParticleParmOriginal</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">param</a>);</div>
+<div class="line"><span class="lineno">  695</span>      <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">param</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  696</span>    }</div>
+<div class="line"><span class="lineno">  697</span>  }</div>
+<div class="ttc" id="agroup___particle_effect_html_ga7cf9b540067b188149be7512b29ceb60"><div class="ttname"><a href="../../da/d03/group___particle_effect.html#ga7cf9b540067b188149be7512b29ceb60">GetParticleParmOriginal</a></div><div class="ttdeci">proto void GetParticleParmOriginal(notnull IEntity ent, int emitor, EmitorParam parameter, out void value)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount()</a>, <a class="el" href="../../da/d03/group___particle_effect.html#ga7cf9b540067b188149be7512b29ceb60">GetParticleParmOriginal()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm()</a>.</p>
 
 </div>
 </div>
@@ -1095,6 +1373,28 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>bool</code> whether there is a repeating particle </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00345">345</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  346</span>  {</div>
+<div class="line"><span class="lineno">  347</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  348</span>    {</div>
+<div class="line"><span class="lineno">  349</span>      <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">repeat</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  350</span> </div>
+<div class="line"><span class="lineno">  351</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a> = <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>);</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  354</span>      {</div>
+<div class="line"><span class="lineno">  355</span>        <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_enumeration" href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a>.REPEAT, <a class="code hl_class" href="../../db/d06/class_param3.html">repeat</a>);</div>
+<div class="line"><span class="lineno">  356</span> </div>
+<div class="line"><span class="lineno">  357</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">repeat</a>)</div>
+<div class="line"><span class="lineno">  358</span>          <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  359</span>      }</div>
+<div class="line"><span class="lineno">  360</span>    }</div>
+<div class="line"><span class="lineno">  361</span> </div>
+<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  363</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount()</a>, <a class="el" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">CreateParticleEffect()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>.</p>
 
 </div>
 </div>
@@ -1124,6 +1424,14 @@ Private Member Functions</h2></td></tr>
 <p>Checks if particle is currently wiggling. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00730">730</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  731</span>  {</div>
+<div class="line"><span class="lineno">  732</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a> &amp;&amp; <a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a>.IsRunning();</div>
+<div class="line"><span class="lineno">  733</span>  }</div>
+<div class="ttc" id="aclass_particle_html_af826cdee8e8cff69617645615154ba42"><div class="ttname"><a href="#af826cdee8e8cff69617645615154ba42">Particle::m_RandomizeOri</a></div><div class="ttdeci">ref Timer m_RandomizeOri</div><div class="ttdoc">Used for Wiggle API, calls the Wiggle functionality.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00044">Particle.c:44</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00044">m_RandomizeOri</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00742">ParticleSource::OnParticleStop()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00913">ParticleSource::SetWiggle()</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00944">ParticleSource::StopWiggle()</a>.</p>
 
 </div>
 </div>
@@ -1153,6 +1461,51 @@ Private Member Functions</h2></td></tr>
 <p>Creates ParticleEffect child, called from UpdateState. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">480</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  481</span>  {</div>
+<div class="line"><span class="lineno">  482</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9bf4488689ed05efcb3651a5af3b6ead">m_Lifetime</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  483</span>    {</div>
+<div class="line"><span class="lineno">  484</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a0fbe907414b254fbe66696bdabf8d762">m_MarkedForDeletion</a>)</div>
+<div class="line"><span class="lineno">  485</span>      {</div>
+<div class="line"><span class="lineno">  486</span>        <a class="code hl_variable" href="#a0168881afd57776c46cefc86cd3c851a">m_IsRepeat</a> = <a class="code hl_function" href="#ac533cdcafb6b715c4d818b991550058d">IsRepeat</a>(); <span class="comment">// It is possible that the REPEAT flag was changed during lifetime, so it needs to be checked again.</span></div>
+<div class="line"><span class="lineno">  487</span> </div>
+<div class="line"><span class="lineno">  488</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0168881afd57776c46cefc86cd3c851a">m_IsRepeat</a>)</div>
+<div class="line"><span class="lineno">  489</span>          <a class="code hl_variable" href="#a9bf4488689ed05efcb3651a5af3b6ead">m_Lifetime</a> = <a class="code hl_function" href="#a0ddee27a4cdeae4d7019101b79e355e7">GetMaxLifetime</a>();</div>
+<div class="line"><span class="lineno">  490</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  491</span>        {</div>
+<div class="line"><span class="lineno">  492</span>          <a class="code hl_function" href="../../d8/d0c/_particle_base_8c.html#aeed9bf4726061707f3123068417307eb">OnParticleStop</a>();</div>
+<div class="line"><span class="lineno">  493</span> </div>
+<div class="line"><span class="lineno">  494</span>          <span class="keywordflow">if</span> (<a class="code hl_function" href="#a55a103d017234bd8a62978817c470a28">GetParticleCount</a>() == 0)</div>
+<div class="line"><span class="lineno">  495</span>          {</div>
+<div class="line"><span class="lineno">  496</span>            <a class="code hl_variable" href="#a0fbe907414b254fbe66696bdabf8d762">m_MarkedForDeletion</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  497</span>            <a class="code hl_function" href="#addc40f1d99adbc41562d966a9a322cd1">OnToDelete</a>();</div>
+<div class="line"><span class="lineno">  498</span>            <a class="code hl_function" href="../../d8/d0c/_particle_base_8c.html#aafebbe5df48a18ab151d53158dd30a94">OnParticleEnd</a>();</div>
+<div class="line"><span class="lineno">  499</span>          }</div>
+<div class="line"><span class="lineno">  500</span>        }</div>
+<div class="line"><span class="lineno">  501</span>      }</div>
+<div class="line"><span class="lineno">  502</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  503</span>      {</div>
+<div class="line"><span class="lineno">  504</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0fbe907414b254fbe66696bdabf8d762">m_MarkedForDeletion</a>)</div>
+<div class="line"><span class="lineno">  505</span>        {</div>
+<div class="line"><span class="lineno">  506</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  507</span>          {</div>
+<div class="line"><span class="lineno">  508</span>            <a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>.Delete();</div>
+<div class="line"><span class="lineno">  509</span>            <a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  510</span>          }</div>
+<div class="line"><span class="lineno">  511</span> </div>
+<div class="line"><span class="lineno">  512</span>          Delete();</div>
+<div class="line"><span class="lineno">  513</span>        }</div>
+<div class="line"><span class="lineno">  514</span>      }</div>
+<div class="line"><span class="lineno">  515</span>    }</div>
+<div class="line"><span class="lineno">  516</span>  }</div>
+<div class="ttc" id="a_particle_base_8c_html_aafebbe5df48a18ab151d53158dd30a94"><div class="ttname"><a href="../../d8/d0c/_particle_base_8c.html#aafebbe5df48a18ab151d53158dd30a94">OnParticleEnd</a></div><div class="ttdeci">void OnParticleEnd()</div><div class="ttdoc">Event when the particle ends.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_particle_base_8c_source.html#l00201">ParticleBase.c:201</a></div></div>
+<div class="ttc" id="a_particle_base_8c_html_aeed9bf4726061707f3123068417307eb"><div class="ttname"><a href="../../d8/d0c/_particle_base_8c.html#aeed9bf4726061707f3123068417307eb">OnParticleStop</a></div><div class="ttdeci">void OnParticleStop()</div><div class="ttdoc">Event when the particle stops.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_particle_base_8c_source.html#l00183">ParticleBase.c:183</a></div></div>
+<div class="ttc" id="aclass_particle_html_a0fbe907414b254fbe66696bdabf8d762"><div class="ttname"><a href="#a0fbe907414b254fbe66696bdabf8d762">Particle::m_MarkedForDeletion</a></div><div class="ttdeci">bool m_MarkedForDeletion</div><div class="ttdoc">Whether this particle is queued for deletion.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00019">Particle.c:19</a></div></div>
+<div class="ttc" id="aclass_particle_html_a55a103d017234bd8a62978817c470a28"><div class="ttname"><a href="#a55a103d017234bd8a62978817c470a28">Particle::GetParticleCount</a></div><div class="ttdeci">int GetParticleCount()</div><div class="ttdoc">Returns the total count of active particles in all emitors.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00333">Particle.c:333</a></div></div>
+<div class="ttc" id="aclass_particle_html_addc40f1d99adbc41562d966a9a322cd1"><div class="ttname"><a href="#addc40f1d99adbc41562d966a9a322cd1">Particle::OnToDelete</a></div><div class="ttdeci">void OnToDelete()</div><div class="ttdoc">Called before deletion from OnCheckAutoDelete.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00521">Particle.c:521</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00369">GetMaxLifetime()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00333">GetParticleCount()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00345">IsRepeat()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00017">m_IsRepeat</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00015">m_Lifetime</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00019">m_MarkedForDeletion</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, <a class="el" href="../../d8/d0c/_particle_base_8c_source.html#l00201">OnParticleEnd()</a>, <a class="el" href="../../d8/d0c/_particle_base_8c_source.html#l00183">OnParticleStop()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00521">OnToDelete()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00471">EOnFrame()</a>.</p>
 
 </div>
 </div>
@@ -1182,6 +1535,11 @@ Private Member Functions</h2></td></tr>
 <p>Called before deletion from OnCheckAutoDelete. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00521">521</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  522</span>  {</div>
+<div class="line"><span class="lineno">  523</span> </div>
+<div class="line"><span class="lineno">  524</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>.</p>
 
 </div>
 </div>
@@ -1211,6 +1569,18 @@ Private Member Functions</h2></td></tr>
 <p>Purely here so that it can be emptied in <a class="el" href="../../de/d08/class_particle_source.html" title="Entity which has the particle instance as an ObjectComponent.">ParticleSource</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00067">67</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>  {</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_function" href="../../d6/d0e/group___debug_shape.html#gaa9ba3114af4e5ecafd82fcdfd3c196b1">SetFlags</a>(<a class="code hl_enumeration" href="../../d3/d04/group___entity_attributes.html#gacda3452546886b2b713c62c4a07fd52a">EntityFlags</a>.VISIBLE, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   70</span>    SetEventMask(<a class="code hl_enumeration" href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a>.INIT);</div>
+<div class="line"><span class="lineno">   71</span>    SetEventMask(<a class="code hl_enumeration" href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a>.FRAME);</div>
+<div class="line"><span class="lineno">   72</span>  }</div>
+<div class="ttc" id="agroup___debug_shape_html_gaa9ba3114af4e5ecafd82fcdfd3c196b1"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#gaa9ba3114af4e5ecafd82fcdfd3c196b1">SetFlags</a></div><div class="ttdeci">proto native void SetFlags(ShapeFlags flags)</div></div>
+<div class="ttc" id="agroup___entity_attributes_html_gaa29339063b04471895b3cb38b17cdb13"><div class="ttname"><a href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a></div><div class="ttdeci">EntityEvent</div><div class="ttdoc">Entity events for event-mask, or throwing event from code.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d05/_en_entity_8c_source.html#l00043">EnEntity.c:44</a></div></div>
+<div class="ttc" id="agroup___entity_attributes_html_gacda3452546886b2b713c62c4a07fd52a"><div class="ttname"><a href="../../d3/d04/group___entity_attributes.html#gacda3452546886b2b713c62c4a07fd52a">EntityFlags</a></div><div class="ttdeci">EntityFlags</div><div class="ttdoc">Entity flags.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d05/_en_entity_8c_source.html#l00113">EnEntity.c:114</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d0e/group___debug_shape.html#gaa9ba3114af4e5ecafd82fcdfd3c196b1">SetFlags()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00061">Particle()</a>.</p>
 
 </div>
 </div>
@@ -1254,6 +1624,12 @@ Private Member Functions</h2></td></tr>
 <p>Legacy function for backwards compatibility with 1.01 and below. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00162">162</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>  {</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a29518a0f9a28ce1e4a3f082c80059a98">PlayOnObject</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parent_obj</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_pos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>);</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a29518a0f9a28ce1e4a3f082c80059a98"><div class="ttname"><a href="#a29518a0f9a28ce1e4a3f082c80059a98">Particle::PlayOnObject</a></div><div class="ttdeci">static Particle PlayOnObject(int particle_id, Object parent_obj, vector local_pos=&quot;0 0 0&quot;, vector local_ori=&quot;0 0 0&quot;, bool force_world_rotation=false)</div><div class="ttdoc">Creates a particle emitter, attaches it on the given object and activates it.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00151">Particle.c:151</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00151">PlayOnObject()</a>.</p>
 
 </div>
 </div>
@@ -1287,6 +1663,12 @@ Private Member Functions</h2></td></tr>
 <p>Legacy function for backwards compatibility with 1.01 and below. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00184">184</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>  {</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a5ec6964f64d31b2672001e99655ea8a0">PlayInWorld</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">global_pos</a>);</div>
+<div class="line"><span class="lineno">  187</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a5ec6964f64d31b2672001e99655ea8a0"><div class="ttname"><a href="#a5ec6964f64d31b2672001e99655ea8a0">Particle::PlayInWorld</a></div><div class="ttdeci">static Particle PlayInWorld(int particle_id, vector global_pos)</div><div class="ttdoc">Creates a particle emitter on the given position and activates it.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00173">Particle.c:173</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00173">PlayInWorld()</a>.</p>
 
 </div>
 </div>
@@ -1322,6 +1704,12 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00229">229</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  230</span>  {</div>
+<div class="line"><span class="lineno">  231</span>    <a class="code hl_function" href="#a6e115cbbef0d51e7eaa32edffa9eab2c">PlayParticle</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>);</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a6e115cbbef0d51e7eaa32edffa9eab2c"><div class="ttname"><a href="#a6e115cbbef0d51e7eaa32edffa9eab2c">Particle::PlayParticle</a></div><div class="ttdeci">override void PlayParticle(int particle_id=-1)</div><div class="ttdoc">Method to tell the particle to start playing.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00201">Particle.c:201</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00201">PlayParticle()</a>.</p>
 
 </div>
 </div>
@@ -1363,6 +1751,16 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../de/d05/class_particle.html" title="Legacy way of using particles in the game.">Particle</a></code> Created particle instance </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00173">173</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>  {</div>
+<div class="line"><span class="lineno">  175</span>    <a class="code hl_class" href="../../de/d05/class_particle.html">Particle</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a> = <a class="code hl_function" href="#a478fabd38db10bd255707dd4ae8809a6">CreateInWorld</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">global_pos</a>);</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.PlayParticle();</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>;</div>
+<div class="line"><span class="lineno">  179</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00117">CreateInWorld()</a>, and <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00184">Play()</a>.</p>
 
 </div>
 </div>
@@ -1422,6 +1820,16 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code><a class="el" href="../../de/d05/class_particle.html" title="Legacy way of using particles in the game.">Particle</a></code> Created particle instance </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00151">151</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>  {</div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_class" href="../../de/d05/class_particle.html">Particle</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a> = <a class="code hl_function" href="#a718fd328e04a30f4d7fcade5dfd9da19">CreateOnObject</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parent_obj</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_pos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">force_world_rotation</a>);</div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.PlayParticle();</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>;</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00088">CreateOnObject()</a>, and <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00162">Play()</a>.</p>
 
 </div>
 </div>
@@ -1457,6 +1865,14 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00201">201</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  202</span>  {</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_function" href="#a7ca400acb7e455a85554fd29a1fa59b2">PlayParticleEx</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>, 0);</div>
+<div class="line"><span class="lineno">  204</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a7ca400acb7e455a85554fd29a1fa59b2"><div class="ttname"><a href="#a7ca400acb7e455a85554fd29a1fa59b2">Particle::PlayParticleEx</a></div><div class="ttdeci">override bool PlayParticleEx(int particle_id=-1, int flags=0)</div><div class="ttdoc">Method to tell the particle to start playing.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00213">Particle.c:213</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00213">PlayParticleEx()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00229">Play()</a>.</p>
 
 </div>
 </div>
@@ -1499,6 +1915,23 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>bool</code> Whether the particle successfully started </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00213">213</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>  {</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a> &gt; -1)</div>
+<div class="line"><span class="lineno">  216</span>      <a class="code hl_function" href="#a61b374432b504a533682a9e5bdeb42cb">SetSource</a>(<a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>);</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_function" href="../../d8/d0c/_particle_base_8c.html#a6aacc15866e1b9cfe43c12df9829caae">OnParticleStart</a>();</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <a class="code hl_function" href="#ac8b7e4855e04e617ce3b5d78e6d36d2e">UpdateState</a>();</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  223</span>  }</div>
+<div class="ttc" id="a_particle_base_8c_html_a6aacc15866e1b9cfe43c12df9829caae"><div class="ttname"><a href="../../d8/d0c/_particle_base_8c.html#a6aacc15866e1b9cfe43c12df9829caae">OnParticleStart</a></div><div class="ttdeci">void OnParticleStart()</div><div class="ttdoc">Event when the particle starts.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_particle_base_8c_source.html#l00174">ParticleBase.c:174</a></div></div>
+<div class="ttc" id="aclass_particle_html_a61b374432b504a533682a9e5bdeb42cb"><div class="ttname"><a href="#a61b374432b504a533682a9e5bdeb42cb">Particle::SetSource</a></div><div class="ttdeci">void SetSource(int particle_id)</div><div class="ttdoc">Sets particle id.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00280">Particle.c:280</a></div></div>
+<div class="ttc" id="aclass_particle_html_ac8b7e4855e04e617ce3b5d78e6d36d2e"><div class="ttname"><a href="#ac8b7e4855e04e617ce3b5d78e6d36d2e">Particle::UpdateState</a></div><div class="ttdeci">void UpdateState()</div><div class="ttdoc">Creates/Destroys ParticleEffect child according to current state.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00411">Particle.c:411</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0c/_particle_base_8c_source.html#l00174">OnParticleStart()</a>, <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00280">SetSource()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00411">UpdateState()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00201">PlayParticle()</a>.</p>
 
 </div>
 </div>
@@ -1528,6 +1961,31 @@ Private Member Functions</h2></td></tr>
 <p>Randomizes a new orientation and applies it. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">774</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  775</span>  {</div>
+<div class="line"><span class="lineno">  776</span>    <a class="code hl_variable" href="#a733b7fcacc372111977b89b4e151b2b2">m_WiggleProcessing</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  777</span> </div>
+<div class="line"><span class="lineno">  778</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aafbb17802156fc5507955e1c7a34bf66">m_ParentObject</a>)</div>
+<div class="line"><span class="lineno">  779</span>    {</div>
+<div class="line"><span class="lineno">  780</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a>.IsRunning())</div>
+<div class="line"><span class="lineno">  781</span>        <a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a>.Run(<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">RandomFloat</a>(0, <a class="code hl_variable" href="#ada3488041094b2b81abb568afee17164">m_MaxOriInterval</a>), <span class="keyword">this</span>, <span class="stringliteral">&quot;RandomizeOrientation&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  782</span> </div>
+<div class="line"><span class="lineno">  783</span>      <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a> <a class="code hl_class" href="../../db/d06/class_param3.html">old_parent</a> = <a class="code hl_variable" href="#aafbb17802156fc5507955e1c7a34bf66">m_ParentObject</a>;</div>
+<div class="line"><span class="lineno">  784</span>      <a class="code hl_function" href="#a6b16971271ed6c9f81257bc3a4658231">AddAsChild</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>);</div>
+<div class="line"><span class="lineno">  785</span>      <a class="code hl_function" href="#a6b16971271ed6c9f81257bc3a4658231">AddAsChild</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">old_parent</a>, <a class="code hl_variable" href="#a1a8166ddbba5008431c06249f105dd68">m_DefaultPos</a>, <a class="code hl_variable" href="#a4383ab618b84352b1fe82343f7408e66">m_DefaultOri</a> + <a class="code hl_function" href="#aa465acab38286d60ef0fcc8632e41a19">RandWiggleVector</a>());</div>
+<div class="line"><span class="lineno">  786</span>    }</div>
+<div class="line"><span class="lineno">  787</span> </div>
+<div class="line"><span class="lineno">  788</span>    <a class="code hl_variable" href="#a733b7fcacc372111977b89b4e151b2b2">m_WiggleProcessing</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  789</span>  }</div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+<div class="ttc" id="aclass_particle_html_a4383ab618b84352b1fe82343f7408e66"><div class="ttname"><a href="#a4383ab618b84352b1fe82343f7408e66">Particle::m_DefaultOri</a></div><div class="ttdeci">vector m_DefaultOri</div><div class="ttdoc">Used for Wiggle API, to restore after unparenting.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00031">Particle.c:31</a></div></div>
+<div class="ttc" id="aclass_particle_html_a6b16971271ed6c9f81257bc3a4658231"><div class="ttname"><a href="#a6b16971271ed6c9f81257bc3a4658231">Particle::AddAsChild</a></div><div class="ttdeci">void AddAsChild(Object parent, vector local_pos=&quot;0 0 0&quot;, vector local_ori=&quot;0 0 0&quot;, bool force_rotation_to_world=false)</div><div class="ttdoc">Attaches this particle onto some object. If null value is provided then the particle will be detached...</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00542">Particle.c:542</a></div></div>
+<div class="ttc" id="aclass_particle_html_a733b7fcacc372111977b89b4e151b2b2"><div class="ttname"><a href="#a733b7fcacc372111977b89b4e151b2b2">Particle::m_WiggleProcessing</a></div><div class="ttdeci">bool m_WiggleProcessing</div><div class="ttdoc">Used for Wiggle API, to signal that wiggle API is currently doing work.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00027">Particle.c:27</a></div></div>
+<div class="ttc" id="aclass_particle_html_aa465acab38286d60ef0fcc8632e41a19"><div class="ttname"><a href="#aa465acab38286d60ef0fcc8632e41a19">Particle::RandWiggleVector</a></div><div class="ttdeci">vector RandWiggleVector()</div><div class="ttdoc">Helper to get a randomized wiggle vector.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00794">Particle.c:794</a></div></div>
+<div class="ttc" id="aclass_particle_html_ada3488041094b2b81abb568afee17164"><div class="ttname"><a href="#ada3488041094b2b81abb568afee17164">Particle::m_MaxOriInterval</a></div><div class="ttdeci">float m_MaxOriInterval</div><div class="ttdoc">Used for Wiggle API, Interval for wiggling [0, m_MaxOriInterval[.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00042">Particle.c:42</a></div></div>
+<div class="ttc" id="agroup___math_html_ga892ecb1375c9b373969273223a5841f3"><div class="ttname"><a href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat</a></div><div class="ttdeci">static proto float RandomFloat(float min, float max)</div><div class="ttdoc">Returns a random float number between and min[inclusive] and max[exclusive].</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00542">AddAsChild()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00031">m_DefaultOri</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00033">m_DefaultPos</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00042">m_MaxOriInterval</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00048">m_ParentObject</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00044">m_RandomizeOri</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00027">m_WiggleProcessing</a>, <a class="el" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00794">RandWiggleVector()</a>.</p>
 
 </div>
 </div>
@@ -1557,6 +2015,15 @@ Private Member Functions</h2></td></tr>
 <p>Helper to get a randomized wiggle float value. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00802">802</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  803</span>  {</div>
+<div class="line"><span class="lineno">  804</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">RandomFloatInclusive</a>(-<a class="code hl_variable" href="#ad658ab8afa78b9591af1cecb56ba0845">m_MaxOriWiggle</a>, <a class="code hl_variable" href="#ad658ab8afa78b9591af1cecb56ba0845">m_MaxOriWiggle</a>);</div>
+<div class="line"><span class="lineno">  805</span>  }</div>
+<div class="ttc" id="aclass_particle_html_ad658ab8afa78b9591af1cecb56ba0845"><div class="ttname"><a href="#ad658ab8afa78b9591af1cecb56ba0845">Particle::m_MaxOriWiggle</a></div><div class="ttdeci">float m_MaxOriWiggle</div><div class="ttdoc">Used for Wiggle API, Wiggle room [-m_MaxOriWiggle, m_MaxOriWiggle].</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00040">Particle.c:40</a></div></div>
+<div class="ttc" id="agroup___math_html_ga3a1cf1e09030a73e70d718ee2862cac0"><div class="ttname"><a href="../../d5/d08/group___math.html#ga3a1cf1e09030a73e70d718ee2862cac0">Math::RandomFloatInclusive</a></div><div class="ttdeci">static float RandomFloatInclusive(float min, float max)</div><div class="ttdoc">Returns a random float number between and min [inclusive] and max [inclusive].</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00106">EnMath.c:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00040">m_MaxOriWiggle</a>, and <a class="el" href="../../da/d04/_en_math_8c_source.html#l00106">Math::RandomFloatInclusive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00794">RandWiggleVector()</a>.</p>
 
 </div>
 </div>
@@ -1586,6 +2053,14 @@ Private Member Functions</h2></td></tr>
 <p>Helper to get a randomized wiggle vector. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00794">794</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  795</span>  {</div>
+<div class="line"><span class="lineno">  796</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(<a class="code hl_function" href="#adc29b2ac6bf35e02b2354f0c65c82774">RandWiggleFloat</a>(), <a class="code hl_function" href="#adc29b2ac6bf35e02b2354f0c65c82774">RandWiggleFloat</a>(), <a class="code hl_function" href="#adc29b2ac6bf35e02b2354f0c65c82774">RandWiggleFloat</a>());</div>
+<div class="line"><span class="lineno">  797</span>  }</div>
+<div class="ttc" id="aclass_particle_html_adc29b2ac6bf35e02b2354f0c65c82774"><div class="ttname"><a href="#adc29b2ac6bf35e02b2354f0c65c82774">Particle::RandWiggleFloat</a></div><div class="ttdeci">float RandWiggleFloat()</div><div class="ttdoc">Helper to get a randomized wiggle float value.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00802">Particle.c:802</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00802">RandWiggleFloat()</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">RandomizeOrientation()</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00966">ParticleSource::RandomizeOrientation()</a>.</p>
 
 </div>
 </div>
@@ -1626,6 +2101,20 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00665">665</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  666</span>  {</div>
+<div class="line"><span class="lineno">  667</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  668</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  669</span> </div>
+<div class="line"><span class="lineno">  670</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a> = <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>);</div>
+<div class="line"><span class="lineno">  671</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  672</span>    {</div>
+<div class="line"><span class="lineno">  673</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  674</span>      <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  675</span>      <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a> * coef);</div>
+<div class="line"><span class="lineno">  676</span>    }</div>
+<div class="line"><span class="lineno">  677</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount()</a>, <a class="el" href="../../da/d03/group___particle_effect.html#gaf8b8d0a62c36697a8e34fc9ef2c492e3">GetParticleParm()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm()</a>.</p>
 
 </div>
 </div>
@@ -1666,6 +2155,22 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00646">646</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  647</span>  {</div>
+<div class="line"><span class="lineno">  648</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  649</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  650</span> </div>
+<div class="line"><span class="lineno">  651</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a> = <a class="code hl_function" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>);</div>
+<div class="line"><span class="lineno">  652</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">emitors</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  653</span>    {</div>
+<div class="line"><span class="lineno">  654</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  655</span>      <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga7cf9b540067b188149be7512b29ceb60">GetParticleParmOriginal</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  656</span>      <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a> * coef);</div>
+<div class="line"><span class="lineno">  657</span>    }</div>
+<div class="line"><span class="lineno">  658</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/group___particle_effect.html#gaaf48f6e9cee7070941c9c8a1fd42563d">GetParticleEmitorCount()</a>, <a class="el" href="../../da/d03/group___particle_effect.html#ga7cf9b540067b188149be7512b29ceb60">GetParticleParmOriginal()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d04/_broom_8c_source.html#l00066">BroomBase::UpdateParticle()</a>, and <a class="el" href="../../df/d09/_torch_8c_source.html#l00620">FlammableBase::UpdateParticle()</a>.</p>
 
 </div>
 </div>
@@ -1712,6 +2217,16 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00603">603</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  604</span>  {</div>
+<div class="line"><span class="lineno">  605</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  606</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  607</span> </div>
+<div class="line"><span class="lineno">  608</span>    <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">emitter</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  609</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l08672">ManBase::ContaminatedParticleAdjustment()</a>, <a class="el" href="../../df/d0e/4___world_2_classes_2_bleeding_sources_2_bleeding_source_8c_source.html#l00083">CreateParticle()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00456">DestroyParticleEffect()</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l01093">ParticleNormalSmokeStart()</a>, <a class="el" href="../../d8/d0b/_fireplace_base_8c_source.html#l01069">ParticleSmallSmokeStart()</a>, <a class="el" href="../../d9/d00/_easter_egg_8c_source.html#l00210">PlayVFX()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l05301">ManBase::SetContaminatedEffectEx()</a>, <a class="el" href="../../dd/d0b/_flare_simulation_8c_source.html#l00059">FlareSimulation::Simulate()</a>, and <a class="el" href="../../dd/d0b/_flare_simulation_8c_source.html#l00094">FlareSimulation::TurnOffDistantLight()</a>.</p>
 
 </div>
 </div>
@@ -1752,6 +2267,14 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00589">589</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  590</span>  {</div>
+<div class="line"><span class="lineno">  591</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  592</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  593</span> </div>
+<div class="line"><span class="lineno">  594</span>    <a class="code hl_function" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm</a>(<a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>, -1, <a class="code hl_class" href="../../db/d06/class_param3.html">parameter_id</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>);</div>
+<div class="line"><span class="lineno">  595</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>, and <a class="el" href="../../da/d03/group___particle_effect.html#ga0f558e6f6131c3ea48fe470c95dd6e5f">SetParticleParm()</a>.</p>
 
 </div>
 </div>
@@ -1788,6 +2311,13 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00280">280</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  281</span>  {</div>
+<div class="line"><span class="lineno">  282</span>    <a class="code hl_variable" href="#ab065f888d1a573637a8028b836d6bc4b">m_ParticleID</a> = <a class="code hl_variable" href="../../db/d0c/_smoke_simulation_8c.html#a7ccc29a80f5e39e2fa08fabc79bca587">particle_id</a>;</div>
+<div class="line"><span class="lineno">  283</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00013">m_ParticleID</a>, and <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00028">particle_id</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00213">PlayParticleEx()</a>.</p>
 
 </div>
 </div>
@@ -1831,6 +2361,28 @@ Calling SetWiggle(0,0) will effectively stop all wiggle functionality </dd></dl>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00742">742</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  743</span>  {</div>
+<div class="line"><span class="lineno">  744</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">random_angle</a> != 0 || <a class="code hl_class" href="../../db/d06/class_param3.html">random_interval</a> != 0)</div>
+<div class="line"><span class="lineno">  745</span>    {</div>
+<div class="line"><span class="lineno">  746</span>      <a class="code hl_variable" href="#ad658ab8afa78b9591af1cecb56ba0845">m_MaxOriWiggle</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">random_angle</a>;</div>
+<div class="line"><span class="lineno">  747</span>      <a class="code hl_variable" href="#ada3488041094b2b81abb568afee17164">m_MaxOriInterval</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">random_interval</a>;</div>
+<div class="line"><span class="lineno">  748</span> </div>
+<div class="line"><span class="lineno">  749</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a>)</div>
+<div class="line"><span class="lineno">  750</span>        <a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d08/class_timer.html">Timer</a>(<a class="code hl_variable" href="../../d9/d03/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a>);</div>
+<div class="line"><span class="lineno">  751</span> </div>
+<div class="line"><span class="lineno">  752</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a>.IsRunning()) <span class="comment">// Makes sure the timer is NOT running already</span></div>
+<div class="line"><span class="lineno">  753</span>        <a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a>.Run(<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">RandomFloat</a>(0, <a class="code hl_variable" href="#ada3488041094b2b81abb568afee17164">m_MaxOriInterval</a>), <span class="keyword">this</span>, <span class="stringliteral">&quot;RandomizeOrientation&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  754</span>    }</div>
+<div class="line"><span class="lineno">  755</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  756</span>      <a class="code hl_function" href="#ae922f3e1a957eb85fcf20c49345ddf92">StopWiggle</a>();</div>
+<div class="line"><span class="lineno">  757</span>  }</div>
+<div class="ttc" id="aclass_particle_html_ae922f3e1a957eb85fcf20c49345ddf92"><div class="ttname"><a href="#ae922f3e1a957eb85fcf20c49345ddf92">Particle::StopWiggle</a></div><div class="ttdeci">void StopWiggle()</div><div class="ttdoc">Stops randomized wiggle.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00762">Particle.c:762</a></div></div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="../../d8/d08/class_timer.html">Timer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d02/_day_z_player_implement_8c_source.html#l00060">DayZPlayerImplement.c:61</a></div></div>
+<div class="ttc" id="agroup___tools_html_ga32e05515215d4ff50969513ff6d88310"><div class="ttname"><a href="../../d9/d03/group___tools.html#ga32e05515215d4ff50969513ff6d88310">CALL_CATEGORY_GAMEPLAY</a></div><div class="ttdeci">const int CALL_CATEGORY_GAMEPLAY</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00010">tools.c:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00010">CALL_CATEGORY_GAMEPLAY</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00042">m_MaxOriInterval</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00040">m_MaxOriWiggle</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00044">m_RandomizeOri</a>, <a class="el" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00762">StopWiggle()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0b/_flare_simulation_8c_source.html#l00023">FlareSimulation::OnActivation()</a>, <a class="el" href="../../d1/d02/_cupids_bolt_simulation_8c_source.html#l00005">CupidsBoltSimulation::OnFire()</a>, <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00011">SmokeSimulation::OnFire()</a>, <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html#l00251">Ammo_40mm_Smoke_ColorBase::OnVariablesSynchronized()</a>, <a class="el" href="../../d9/d00/_easter_egg_8c_source.html#l00210">PlayVFX()</a>, and <a class="el" href="../../d5/d0b/_roadflare_8c_source.html#l00321">Roadflare::UpdateActiveParticles()</a>.</p>
 
 </div>
 </div>
@@ -1860,6 +2412,14 @@ Calling SetWiggle(0,0) will effectively stop all wiggle functionality </dd></dl>
 <p>Legacy function for backwards compatibility with 1.14 and below. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00262">262</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  263</span>  {</div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_function" href="#a1f1ba09a00a51f0cad7cf24fc7f81f99">StopParticle</a>();</div>
+<div class="line"><span class="lineno">  265</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a1f1ba09a00a51f0cad7cf24fc7f81f99"><div class="ttname"><a href="#a1f1ba09a00a51f0cad7cf24fc7f81f99">Particle::StopParticle</a></div><div class="ttdeci">override bool StopParticle(int flags=0)</div><div class="ttdoc">Method to tell the particle to stop playing.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00241">Particle.c:241</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00241">StopParticle()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d00/_dynamic_area___flare_8c_source.html#l00028">DynamicArea_Flare::EEDelete()</a>, <a class="el" href="../../d4/d09/_crash_base_8c_source.html#l00044">House::EEDelete()</a>, <a class="el" href="../../d6/d0d/_bonfire_8c_source.html#l00067">BuildingSuper::EEDelete()</a>, <a class="el" href="../../d8/d0d/_ammunition_piles_8c_source.html#l00285">Ammo_40mm_Smoke_ColorBase::EEDelete()</a>, <a class="el" href="../../df/d0c/_particle_test_8c_source.html#l00029">ItemBase::EEDelete()</a>, <a class="el" href="../../dd/d0b/_flare_simulation_8c_source.html#l00023">FlareSimulation::OnActivation()</a>, <a class="el" href="../../db/d0d/_fireworks_launcher_8c_source.html#l00169">FireworksLauncherClientEvent::OnExplode()</a>, <a class="el" href="../../d1/d02/_cupids_bolt_simulation_8c_source.html#l00005">CupidsBoltSimulation::OnFire()</a>, <a class="el" href="../../d9/d00/_easter_egg_8c_source.html#l00135">OnInventoryEnter()</a>, <a class="el" href="../../df/d09/_torch_8c_source.html#l00654">FlammableBase::OnWorkStop()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l05301">ManBase::SetContaminatedEffectEx()</a>, <a class="el" href="../../d2/d0f/_effect_particle_8c_source.html#l00196">EffectParticle::Stop()</a>, <a class="el" href="../../df/d09/_torch_8c_source.html#l00499">FlammableBase::StopAllParticles()</a>, <a class="el" href="../../df/d09/_torch_8c_source.html#l00620">FlammableBase::UpdateParticle()</a>, <a class="el" href="../../d1/d02/_cupids_bolt_simulation_8c_source.html#l00014">CupidsBoltSimulation::~CupidsBoltSimulation()</a>, <a class="el" href="../../da/d0b/_destruction_effect_base_8c_source.html#l00028">DestructionEffectBase::~DestructionEffectBase()</a>, <a class="el" href="../../d9/d00/_easter_egg_8c_source.html#l00052">~EasterEgg()</a>, <a class="el" href="../../dd/d0b/_flare_simulation_8c_source.html#l00105">FlareSimulation::~FlareSimulation()</a>, and <a class="el" href="../../db/d0c/_smoke_simulation_8c_source.html#l00017">SmokeSimulation::~SmokeSimulation()</a>.</p>
 
 </div>
 </div>
@@ -1899,6 +2459,28 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>bool</code> Whether the particle successfully stopped </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00241">241</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>  {</div>
+<div class="line"><span class="lineno">  243</span>    <a class="code hl_function" href="../../d8/d0c/_particle_base_8c.html#aeed9bf4726061707f3123068417307eb">OnParticleStop</a>();</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <span class="comment">// Without the following we might get an error when a particle parent is despawned client-side.</span></div>
+<div class="line"><span class="lineno">  246</span>    <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a> parent = <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.Cast(<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>());</div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordflow">if</span> (parent &amp;&amp; !ToDelete())</div>
+<div class="line"><span class="lineno">  248</span>    {</div>
+<div class="line"><span class="lineno">  249</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">world_pos</a> = <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>();</div>
+<div class="line"><span class="lineno">  250</span>      parent.RemoveChild(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  251</span>      <a class="code hl_function" href="../../d6/d0e/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">world_pos</a>);</div>
+<div class="line"><span class="lineno">  252</span>    }</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>    <a class="code hl_function" href="#ac8b7e4855e04e617ce3b5d78e6d36d2e">UpdateState</a>();</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  257</span>  }</div>
+<div class="ttc" id="a_underground_area_loader_8c_html_af4b5180d61f839c99de2d15fdcda4568"><div class="ttname"><a href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a></div><div class="ttdeci">class JsonUndergroundAreaTriggerData GetPosition</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0a/_underground_area_loader_8c_source.html#l00001">UndergroundAreaLoader.c:9</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga1d63886deac2f225cc139143f9d79141"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a></div><div class="ttdeci">proto native Widget GetParent()</div><div class="ttdoc">Get parent of the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00389">Effect.c:389</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00389">GetParent()</a>, <a class="el" href="../../d3/d0a/_underground_area_loader_8c_source.html#l00009">GetPosition</a>, <a class="el" href="../../d8/d0c/_particle_base_8c_source.html#l00183">OnParticleStop()</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00420">SetPosition()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00411">UpdateState()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00262">Stop()</a>.</p>
 
 </div>
 </div>
@@ -1928,6 +2510,17 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <p>Stops randomized wiggle. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00762">762</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  763</span>  {</div>
+<div class="line"><span class="lineno">  764</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a>)</div>
+<div class="line"><span class="lineno">  765</span>      <a class="code hl_variable" href="#af826cdee8e8cff69617645615154ba42">m_RandomizeOri</a>.Stop();</div>
+<div class="line"><span class="lineno">  766</span> </div>
+<div class="line"><span class="lineno">  767</span>    <a class="code hl_variable" href="#ad658ab8afa78b9591af1cecb56ba0845">m_MaxOriWiggle</a> = 0;</div>
+<div class="line"><span class="lineno">  768</span>    <a class="code hl_variable" href="#ada3488041094b2b81abb568afee17164">m_MaxOriInterval</a> = 0;</div>
+<div class="line"><span class="lineno">  769</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00042">m_MaxOriInterval</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00040">m_MaxOriWiggle</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00044">m_RandomizeOri</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00742">SetWiggle()</a>.</p>
 
 </div>
 </div>
@@ -1958,6 +2551,18 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Is called from Play/Stop methods </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00411">411</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  412</span>  {</div>
+<div class="line"><span class="lineno">  413</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d5/d0d/_effect_8c.html#a2825a78cf2ee156378fc59fc3fa91028">m_IsPlaying</a> == <span class="keyword">false</span> &amp;&amp; <a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a>)</div>
+<div class="line"><span class="lineno">  414</span>      <a class="code hl_function" href="#aa2ea5057d2c42466501f806e8246eaff">DestroyParticleEffect</a>();</div>
+<div class="line"><span class="lineno">  415</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d5/d0d/_effect_8c.html#a2825a78cf2ee156378fc59fc3fa91028">m_IsPlaying</a> == <span class="keyword">true</span> &amp;&amp; <a class="code hl_variable" href="#a2b0d832016c9c88246affb21f3141201">m_ParticleEffect</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>)</div>
+<div class="line"><span class="lineno">  416</span>      <a class="code hl_function" href="#a857383842cec02402c0b43544767a2dd">CreateParticleEffect</a>();</div>
+<div class="line"><span class="lineno">  417</span>  }</div>
+<div class="ttc" id="aclass_particle_html_a857383842cec02402c0b43544767a2dd"><div class="ttname"><a href="#a857383842cec02402c0b43544767a2dd">Particle::CreateParticleEffect</a></div><div class="ttdeci">void CreateParticleEffect()</div><div class="ttdoc">Creates ParticleEffect child, called from UpdateState.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00422">Particle.c:422</a></div></div>
+<div class="ttc" id="aclass_particle_html_aa2ea5057d2c42466501f806e8246eaff"><div class="ttname"><a href="#aa2ea5057d2c42466501f806e8246eaff">Particle::DestroyParticleEffect</a></div><div class="ttdeci">void DestroyParticleEffect()</div><div class="ttdoc">Destroys ParticleEffect child, called from UpdateState.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00456">Particle.c:456</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">CreateParticleEffect()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00456">DestroyParticleEffect()</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00037">m_IsPlaying</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">m_ParticleEffect</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00213">PlayParticleEx()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00241">StopParticle()</a>.</p>
 
 </div>
 </div>
@@ -1986,6 +2591,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00031">31</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">RandomizeOrientation()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00966">ParticleSource::RandomizeOrientation()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00913">ParticleSource::SetWiggle()</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00944">ParticleSource::StopWiggle()</a>.</p>
+
 </div>
 </div>
 <a id="a1a8166ddbba5008431c06249f105dd68" name="a1a8166ddbba5008431c06249f105dd68"></a>
@@ -2011,6 +2618,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <p>Used for Wiggle API, to restore after unparenting. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00033">33</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00542">AddAsChild()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">RandomizeOrientation()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00966">ParticleSource::RandomizeOrientation()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00913">ParticleSource::SetWiggle()</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00944">ParticleSource::StopWiggle()</a>.</p>
 
 </div>
 </div>
@@ -2038,6 +2647,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00035">35</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00913">ParticleSource::SetWiggle()</a>.</p>
+
 </div>
 </div>
 <a id="a88c05af7a702e6746302f4ec53672645" name="a88c05af7a702e6746302f4ec53672645"></a>
@@ -2064,6 +2675,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00037">37</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00913">ParticleSource::SetWiggle()</a>.</p>
+
 </div>
 </div>
 <a id="a5169480d2be6a38b63b7e22956929fdb" name="a5169480d2be6a38b63b7e22956929fdb"></a>
@@ -2089,6 +2702,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <p>Used for Wiggle API, to restore after unparenting. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00029">29</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00542">AddAsChild()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">CreateParticleEffect()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00966">ParticleSource::RandomizeOrientation()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00913">ParticleSource::SetWiggle()</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00944">ParticleSource::StopWiggle()</a>.</p>
 
 </div>
 </div>
@@ -2142,6 +2757,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00017">17</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">CreateParticleEffect()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00456">DestroyParticleEffect()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>.</p>
+
 </div>
 </div>
 <a id="a9bf4488689ed05efcb3651a5af3b6ead" name="a9bf4488689ed05efcb3651a5af3b6ead"></a>
@@ -2167,6 +2784,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <p>Approx. remaining lifetime of particle. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00015">15</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">CreateParticleEffect()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00471">EOnFrame()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>.</p>
 
 </div>
 </div>
@@ -2194,6 +2813,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00019">19</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>.</p>
+
 </div>
 </div>
 <a id="ada3488041094b2b81abb568afee17164" name="ada3488041094b2b81abb568afee17164"></a>
@@ -2219,6 +2840,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <p>Used for Wiggle API, Interval for wiggling [0, m_MaxOriInterval[. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00042">42</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">RandomizeOrientation()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00966">ParticleSource::RandomizeOrientation()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00742">SetWiggle()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00913">ParticleSource::SetWiggle()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00762">StopWiggle()</a>.</p>
 
 </div>
 </div>
@@ -2246,6 +2869,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00040">40</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00802">RandWiggleFloat()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00742">SetWiggle()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00913">ParticleSource::SetWiggle()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00762">StopWiggle()</a>.</p>
+
 </div>
 </div>
 <a id="aafbb17802156fc5507955e1c7a34bf66" name="aafbb17802156fc5507955e1c7a34bf66"></a>
@@ -2271,6 +2896,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <p>Parent <a class="el" href="../../d8/d03/class_object.html">Object</a> the <a class="el" href="../../de/d05/class_particle.html" title="Legacy way of using particles in the game.">Particle</a> is child of. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00048">48</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00542">AddAsChild()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00311">GetParticleParent()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00709">ParticleSource::OnParticleParented()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">RandomizeOrientation()</a>.</p>
 
 </div>
 </div>
@@ -2298,6 +2925,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00050">50</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00542">AddAsChild()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">CreateParticleEffect()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00456">DestroyParticleEffect()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00302">GetDirectParticleEffect()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00369">GetMaxLifetime()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00617">GetParameter()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00631">GetParameterEx()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00333">GetParticleCount()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00320">HasActiveParticle()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00705">IncrementParticleParam()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00685">IncrementParticleParamFromOriginal()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00345">IsRepeat()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00480">OnCheckAutoDelete()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00126">ParticleSource::ParticleSource()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00665">ScaleParticleParam()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00646">ScaleParticleParamFromOriginal()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00603">SetParameter()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00589">SetParticleParam()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00411">UpdateState()</a>.</p>
+
 </div>
 </div>
 <a id="ab065f888d1a573637a8028b836d6bc4b" name="ab065f888d1a573637a8028b836d6bc4b"></a>
@@ -2323,6 +2952,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <p>ID from <a class="el" href="../../dd/d02/class_particle_list.html">ParticleList</a> if assigned. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00013">13</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00422">CreateParticleEffect()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00292">GetParticleID()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00280">SetSource()</a>.</p>
 
 </div>
 </div>
@@ -2376,6 +3007,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00044">44</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00730">IsWiggling()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00742">ParticleSource::OnParticleStop()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">RandomizeOrientation()</a>, <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00966">ParticleSource::RandomizeOrientation()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00742">SetWiggle()</a>, and <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00762">StopWiggle()</a>.</p>
+
 </div>
 </div>
 <a id="a733b7fcacc372111977b89b4e151b2b2" name="a733b7fcacc372111977b89b4e151b2b2"></a>
@@ -2401,6 +3034,8 @@ Emitors are automatically removed later when its particle count is 0 </dd></dl>
 <p>Used for Wiggle API, to signal that wiggle API is currently doing work. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00027">27</a> of file <a class="el" href="../../d0/d0b/_particle_8c_source.html">Particle.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00719">ParticleSource::OnParticleUnParented()</a>, <a class="el" href="../../d0/d0b/_particle_8c_source.html#l00774">RandomizeOrientation()</a>, and <a class="el" href="../../d7/d05/_particle_source_8c_source.html#l00966">ParticleSource::RandomizeOrientation()</a>.</p>
 
 </div>
 </div>

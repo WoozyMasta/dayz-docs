@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -273,6 +270,47 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">56</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  {</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>)</div>
+<div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_variable" href="#aa8c1143906bb9b38fb1adf1203d861dc">m_SelectableActions</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">TSelectableActionInfoArray</a>();</div>
+<div class="line"><span class="lineno">   62</span>      <a class="code hl_variable" href="#a76ec8e860439a2fe28d52e6f3e3e5c6f">m_SelectedActionIndex</a> = 0;</div>
+<div class="line"><span class="lineno">   63</span>      <a class="code hl_variable" href="#a32a753f49ec10ec146d460af233c5fc9">m_SelectableActionsHasChanged</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_variable" href="#ac43138c232e8a46dc115d3409252443b">m_PendingActionAcknowledgmentID</a> = -1;</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>      <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">   68</span>      <a class="code hl_variable" href="#a000a23b17f99935883093f56369e9388">m_Interrupted</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>      <a class="code hl_class" href="../../da/d06/class_action_constructor.html">ActionConstructor</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ac</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../da/d06/class_action_constructor.html">ActionConstructor</a>();</div>
+<div class="line"><span class="lineno">   71</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ab262940864b461878c4f7d832311e3fc">m_ActionsArray</a>)</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">ac</a>.ConstructActions(<a class="code hl_variable" href="#ab262940864b461878c4f7d832311e3fc">m_ActionsArray</a>, <a class="code hl_variable" href="#af1b886c106f8efa81bda75f2c06c9378">m_ActionNameActionMap</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_variable" href="#ad4366b902e9ffb48e7d650f1d9b013d2">m_ActionWantEndRequest</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   75</span>      <a class="code hl_variable" href="#a97c44713a5dad1098315f6d1cf7396d6">m_ActionInputWantEnd</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_variable" href="#a26766f41017596a9001656fbd186d9ef">m_ActionsEnabled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="#a665b5d74f489d6f18dd7d48b1fa1159a">m_ActionsAvaibale</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   80</span>  }</div>
+<div class="ttc" id="a_action_manager_base_8c_html_a000a23b17f99935883093f56369e9388"><div class="ttname"><a href="#a000a23b17f99935883093f56369e9388">m_Interrupted</a></div><div class="ttdeci">bool m_Interrupted</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00043">ActionManagerBase.c:43</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_a16f2d4ca3fc84e84f05209d83b248d99"><div class="ttname"><a href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a></div><div class="ttdeci">ref ActionData m_CurrentActionData</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00054">ActionManagerBase.c:54</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_a26766f41017596a9001656fbd186d9ef"><div class="ttname"><a href="#a26766f41017596a9001656fbd186d9ef">m_ActionsEnabled</a></div><div class="ttdeci">bool m_ActionsEnabled</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00048">ActionManagerBase.c:48</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_a32a753f49ec10ec146d460af233c5fc9"><div class="ttname"><a href="#a32a753f49ec10ec146d460af233c5fc9">m_SelectableActionsHasChanged</a></div><div class="ttdeci">bool m_SelectableActionsHasChanged</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00042">ActionManagerBase.c:42</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_a665b5d74f489d6f18dd7d48b1fa1159a"><div class="ttname"><a href="#a665b5d74f489d6f18dd7d48b1fa1159a">m_ActionsAvaibale</a></div><div class="ttdeci">bool m_ActionsAvaibale</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00049">ActionManagerBase.c:49</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_a76ec8e860439a2fe28d52e6f3e3e5c6f"><div class="ttname"><a href="#a76ec8e860439a2fe28d52e6f3e3e5c6f">m_SelectedActionIndex</a></div><div class="ttdeci">int m_SelectedActionIndex</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00041">ActionManagerBase.c:41</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_a97c44713a5dad1098315f6d1cf7396d6"><div class="ttname"><a href="#a97c44713a5dad1098315f6d1cf7396d6">m_ActionInputWantEnd</a></div><div class="ttdeci">bool m_ActionInputWantEnd</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00047">ActionManagerBase.c:47</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_aa8c1143906bb9b38fb1adf1203d861dc"><div class="ttname"><a href="#aa8c1143906bb9b38fb1adf1203d861dc">m_SelectableActions</a></div><div class="ttdeci">ref TSelectableActionInfoArray m_SelectableActions</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00040">ActionManagerBase.c:40</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_ab262940864b461878c4f7d832311e3fc"><div class="ttname"><a href="#ab262940864b461878c4f7d832311e3fc">m_ActionsArray</a></div><div class="ttdeci">static ref array&lt; ref ActionBase &gt; m_ActionsArray</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00044">ActionManagerBase.c:44</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_ac43138c232e8a46dc115d3409252443b"><div class="ttname"><a href="#ac43138c232e8a46dc115d3409252443b">m_PendingActionAcknowledgmentID</a></div><div class="ttdeci">int m_PendingActionAcknowledgmentID</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00052">ActionManagerBase.c:52</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_ad4366b902e9ffb48e7d650f1d9b013d2"><div class="ttname"><a href="#ad4366b902e9ffb48e7d650f1d9b013d2">m_ActionWantEndRequest</a></div><div class="ttdeci">bool m_ActionWantEndRequest</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00046">ActionManagerBase.c:46</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_ada2ae7fece52d3ab27a3aa7ea67c369e"><div class="ttname"><a href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a></div><div class="ttdeci">class TSelectableActionInfoArray extends array&lt; ref TSelectableActionInfo &gt; m_Player</div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_af1b886c106f8efa81bda75f2c06c9378"><div class="ttname"><a href="#af1b886c106f8efa81bda75f2c06c9378">m_ActionNameActionMap</a></div><div class="ttdeci">static ref map&lt; typename, ActionBase &gt; m_ActionNameActionMap</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00045">ActionManagerBase.c:45</a></div></div>
+<div class="ttc" id="aclass_action_constructor_html"><div class="ttname"><a href="../../da/d06/class_action_constructor.html">ActionConstructor</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0b/_action_constructor_8c_source.html#l00001">ActionConstructor.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00047">m_ActionInputWantEnd</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00045">m_ActionNameActionMap</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00044">m_ActionsArray</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00049">m_ActionsAvaibale</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00048">m_ActionsEnabled</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00046">m_ActionWantEndRequest</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00043">m_Interrupted</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00052">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00040">m_SelectableActions</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00042">m_SelectableActionsHasChanged</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00041">m_SelectedActionIndex</a>.</p>
 
 </div>
 </div>
@@ -300,6 +338,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00204">204</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>  {</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a26766f41017596a9001656fbd186d9ef">m_ActionsEnabled</a> || <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.IsSprinting() || <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.IsUnconscious() || <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.GetCommandModifier_Action() || <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.GetCommand_Action() || <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.IsEmotePlaying() || <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.GetThrowing().IsThrowingAnimationPlaying() || <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.GetDayZPlayerInventory().IsProcessing() || <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.IsItemsToDelete())</div>
+<div class="line"><span class="lineno">  207</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.GetWeaponManager().IsRunning())</div>
+<div class="line"><span class="lineno">  210</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pCurrentCommandID</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.COMMANDID_ACTION || <a class="code hl_class" href="../../db/d06/class_param3.html">pCurrentCommandID</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.COMMANDID_MOVE || <a class="code hl_class" href="../../db/d06/class_param3.html">pCurrentCommandID</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.COMMANDID_SWIM || <a class="code hl_class" href="../../db/d06/class_param3.html">pCurrentCommandID</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.COMMANDID_LADDER || <a class="code hl_class" href="../../db/d06/class_param3.html">pCurrentCommandID</a> == <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.COMMANDID_VEHICLE);</div>
+<div class="line"><span class="lineno">  213</span>  }</div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l00741">DayZPlayer::GetDayZPlayerInventory()</a>, <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l00194">DayZPlayer::GetThrowing()</a>, <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l00810">DayZPlayer::GetWeaponManager()</a>, <a class="el" href="../../d4/d08/_weapon_manager_8c_source.html#l00787">WeaponManager::IsRunning()</a>, <a class="el" href="../../d1/d02/_day_z_player_implement_throwing_8c_source.html#l00144">DayZPlayerImplementThrowing::IsThrowingAnimationPlaying()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00048">m_ActionsEnabled</a>, and <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00542">ActionManagerClient::ActionStart()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00040">ActionManagerClient::Update()</a>, and <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00183">ActionManagerServer::Update()</a>.</p>
 
 </div>
 </div>
@@ -327,6 +379,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00098">98</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="#a26766f41017596a9001656fbd186d9ef">m_ActionsEnabled</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">enable</a>;</div>
+<div class="line"><span class="lineno">  101</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00048">m_ActionsEnabled</a>.</p>
 
 </div>
 </div>
@@ -404,6 +461,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00164">164</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>  {</div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab262940864b461878c4f7d832311e3fc">m_ActionsArray</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">actionID</a>);</div>
+<div class="line"><span class="lineno">  167</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00044">m_ActionsArray</a>.</p>
 
 </div>
 </div>
@@ -431,6 +493,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00156">156</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>  {</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#af1b886c106f8efa81bda75f2c06c9378">m_ActionNameActionMap</a>)</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#af1b886c106f8efa81bda75f2c06c9378">m_ActionNameActionMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">actionName</a>);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  162</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00045">m_ActionNameActionMap</a>.</p>
 
 </div>
 </div>
@@ -458,6 +528,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00271">271</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  272</span>  {</div>
+<div class="line"><span class="lineno">  273</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>)</div>
+<div class="line"><span class="lineno">  274</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Action.GetProgress(<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>);</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><span class="lineno">  277</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>.</p>
 
 </div>
 </div>
@@ -485,6 +563,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00279">279</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  280</span>  {</div>
+<div class="line"><span class="lineno">  281</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>)</div>
+<div class="line"><span class="lineno">  282</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Action.GetState(<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>);</div>
+<div class="line"><span class="lineno">  283</span> </div>
+<div class="line"><span class="lineno">  284</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga906d727fe47efc365f800be617239f5f">UA_NONE</a>;</div>
+<div class="line"><span class="lineno">  285</span>  }</div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga906d727fe47efc365f800be617239f5f"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga906d727fe47efc365f800be617239f5f">UA_NONE</a></div><div class="ttdeci">const int UA_NONE</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00432">constants.c:432</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00432">UA_NONE</a>.</p>
 
 </div>
 </div>
@@ -512,6 +599,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00223">223</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>  {</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>)</div>
+<div class="line"><span class="lineno">  226</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_State;</div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga906d727fe47efc365f800be617239f5f">UA_NONE</a>;</div>
+<div class="line"><span class="lineno">  228</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00432">UA_NONE</a>.</p>
 
 </div>
 </div>
@@ -539,6 +633,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00140">140</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>  {</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#af1b886c106f8efa81bda75f2c06c9378">m_ActionNameActionMap</a>)</div>
+<div class="line"><span class="lineno">  143</span>    {</div>
+<div class="line"><span class="lineno">  144</span>      ActionBase <a class="code hl_class" href="../../db/d06/class_param3.html">base_action</a> = <a class="code hl_variable" href="#af1b886c106f8efa81bda75f2c06c9378">m_ActionNameActionMap</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">actionName</a>);</div>
+<div class="line"><span class="lineno">  145</span>      ActionBase <a class="code hl_class" href="../../db/d06/class_param3.html">new_action</a> = ActionBase.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">actionName</a>.Spawn());</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">new_action</a>.CreateConditionComponents();</div>
+<div class="line"><span class="lineno">  148</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">new_action</a>.SetID(<a class="code hl_class" href="../../db/d06/class_param3.html">base_action</a>.GetID());</div>
+<div class="line"><span class="lineno">  149</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">new_action</a>.SetInput(<a class="code hl_class" href="../../db/d06/class_param3.html">base_action</a>.GetInput());</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">new_action</a>;</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  154</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00045">m_ActionNameActionMap</a>.</p>
 
 </div>
 </div>
@@ -566,6 +676,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00169">169</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>  {</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#af5377289ad8521df32d8ffa0ace3112f">m_PrimaryAction</a>;</div>
+<div class="line"><span class="lineno">  172</span>  }</div>
+<div class="ttc" id="a_action_manager_base_8c_html_af5377289ad8521df32d8ffa0ace3112f"><div class="ttname"><a href="#af5377289ad8521df32d8ffa0ace3112f">m_PrimaryAction</a></div><div class="ttdeci">ActionBase m_PrimaryAction</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00031">ActionManagerBase.c:31</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00031">m_PrimaryAction</a>.</p>
 
 </div>
 </div>
@@ -593,7 +709,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00287">287</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  288</span>  {</div>
+<div class="line"><span class="lineno">  289</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  290</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6a5a8200f2273b0866c951352ada2694" name="a6a5a8200f2273b0866c951352ada2694"></a>
@@ -622,6 +741,16 @@ Variables</h2></td></tr>
 <p>returns -1 when no action is running or RELOAD,MECHANISM, .... </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00082">82</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>)</div>
+<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Action;</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   88</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l01680">ManBase::CanBeRestrained()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00482">ActionManagerClient::FindContextualUserActions()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l07536">ManBase::HeadingModel()</a>, and <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l04198">ManBase::OnQuickBarSingleUse()</a>.</p>
 
 </div>
 </div>
@@ -649,6 +778,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00090">90</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>  {</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>)</div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_MainItem;</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   96</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>.</p>
 
 </div>
 </div>
@@ -676,6 +813,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00179">179</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>  {</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa8c1143906bb9b38fb1adf1203d861dc">m_SelectableActions</a>;</div>
+<div class="line"><span class="lineno">  182</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00040">m_SelectableActions</a>.</p>
 
 </div>
 </div>
@@ -728,6 +870,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00184">184</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>  {</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a76ec8e860439a2fe28d52e6f3e3e5c6f">m_SelectedActionIndex</a>;</div>
+<div class="line"><span class="lineno">  187</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00041">m_SelectedActionIndex</a>.</p>
 
 </div>
 </div>
@@ -755,6 +902,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00174">174</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>  {</div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a178fff62da692c78ee185e4ba62802db">m_SecondaryAction</a>;</div>
+<div class="line"><span class="lineno">  177</span>  }</div>
+<div class="ttc" id="a_action_manager_base_8c_html_a178fff62da692c78ee185e4ba62802db"><div class="ttname"><a href="#a178fff62da692c78ee185e4ba62802db">m_SecondaryAction</a></div><div class="ttdeci">ActionBase m_SecondaryAction</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00034">ActionManagerBase.c:34</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00034">m_SecondaryAction</a>.</p>
 
 </div>
 </div>
@@ -780,6 +933,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d0d/_action_light_item_on_fire_with_blowtorch_8c_source.html#l00050">OnUpdateServer()</a>.</p>
 
 </div>
 </div>
@@ -807,6 +962,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00198">198</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>  {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a32a753f49ec10ec146d460af233c5fc9">m_SelectableActionsHasChanged</a>;</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00042">m_SelectableActionsHasChanged</a>.</p>
 
 </div>
 </div>
@@ -834,6 +994,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00238">238</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  239</span>  {</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a> &amp;&amp; <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Action)</div>
+<div class="line"><span class="lineno">  241</span>      <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Action.Interrupt(<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>);</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  243</span>      <a class="code hl_variable" href="#a000a23b17f99935883093f56369e9388">m_Interrupted</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  244</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00043">m_Interrupted</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00103">Update()</a>.</p>
 
 </div>
 </div>
@@ -861,6 +1031,26 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00249">249</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#acae9092240f417553e9fb20c0c8797d0">IsActionLogEnable</a>())</div>
+<div class="line"><span class="lineno">  252</span>    {</div>
+<div class="line"><span class="lineno">  253</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>)</div>
+<div class="line"><span class="lineno">  254</span>        <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#afa8a52d35ffa569e2a8b36b4d3026609">ActionLog</a>(<span class="stringliteral">&quot;n/a&quot;</span>, <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Action.ToString(), <span class="stringliteral">&quot;n/a&quot;</span>, <span class="stringliteral">&quot;OnActionEnd&quot;</span>, <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Player.ToString());</div>
+<div class="line"><span class="lineno">  255</span>      <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#afa8a52d35ffa569e2a8b36b4d3026609">ActionLog</a>(<span class="stringliteral">&quot;Action data cleared &quot;</span>, this.<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>(), <span class="stringliteral">&quot;n/a&quot;</span>, <span class="stringliteral">&quot;ActionEnd&quot;</span>, <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Player.ToString());</div>
+<div class="line"><span class="lineno">  256</span>    }</div>
+<div class="line"><span class="lineno">  257</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>)</div>
+<div class="line"><span class="lineno">  258</span>      <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Action.ActionCleanup(<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>);</div>
+<div class="line"><span class="lineno">  259</span>    <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_variable" href="#ada2ae7fece52d3ab27a3aa7ea67c369e">m_Player</a>.ResetActionEndInput();</div>
+<div class="line"><span class="lineno">  262</span>  }</div>
+<div class="ttc" id="a_en_convert_8c_html_afa7657e4f6687b78bc860ddff41c3bef"><div class="ttname"><a href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a></div><div class="ttdeci">proto string ToString()</div></div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_afa8a52d35ffa569e2a8b36b4d3026609"><div class="ttname"><a href="../../da/d0d/class_debug.html#afa8a52d35ffa569e2a8b36b4d3026609">Debug::ActionLog</a></div><div class="ttdeci">static void ActionLog(string message=LOG_DEFAULT, string plugin=LOG_DEFAULT, string author=LOG_DEFAULT, string label=LOG_DEFAULT, string entity=LOG_DEFAULT)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00143">Debug.c:143</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_acae9092240f417553e9fb20c0c8797d0"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#acae9092240f417553e9fb20c0c8797d0">LogManager::IsActionLogEnable</a></div><div class="ttdeci">static bool IsActionLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00719">Debug.c:719</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00143">Debug::ActionLog()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00719">LogManager::IsActionLogEnable()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, and <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>.</p>
 
 </div>
 </div>
@@ -942,7 +1132,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00266">266</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  267</span>  {</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  269</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a66a1f35703d54a47d247eba55c85cae4" name="a66a1f35703d54a47d247eba55c85cae4"></a>
@@ -1077,6 +1270,33 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00116">116</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>  {</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">AcknowledgmentID</a>;</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pJunctureID</a>)</div>
+<div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../d9/d0e/class_day_z_player_sync_junctures.html">DayZPlayerSyncJunctures</a>.<a class="code hl_variable" href="../../d9/d0e/class_day_z_player_sync_junctures.html#ac5b3e0d9eb86639d7edc60f4bc08ca58">SJ_ACTION_ACK_ACCEPT</a>:</div>
+<div class="line"><span class="lineno">  122</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pCtx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">AcknowledgmentID</a>);</div>
+<div class="line"><span class="lineno">  123</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">AcknowledgmentID</a> == <a class="code hl_variable" href="#ac43138c232e8a46dc115d3409252443b">m_PendingActionAcknowledgmentID</a>)</div>
+<div class="line"><span class="lineno">  124</span>        <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_State = <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a>;</div>
+<div class="line"><span class="lineno">  125</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../d9/d0e/class_day_z_player_sync_junctures.html">DayZPlayerSyncJunctures</a>.<a class="code hl_variable" href="../../d9/d0e/class_day_z_player_sync_junctures.html#a1b98feb54f872d631040a987c5dc274b">SJ_ACTION_ACK_REJECT</a>:</div>
+<div class="line"><span class="lineno">  127</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pCtx</a>.Read(<a class="code hl_class" href="../../db/d06/class_param3.html">AcknowledgmentID</a>);</div>
+<div class="line"><span class="lineno">  128</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">AcknowledgmentID</a> == <a class="code hl_variable" href="#ac43138c232e8a46dc115d3409252443b">m_PendingActionAcknowledgmentID</a>)</div>
+<div class="line"><span class="lineno">  129</span>        <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_State = <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga6612d92ddce214fb1f9e6e13e6b96c37">UA_AM_REJECTED</a>;</div>
+<div class="line"><span class="lineno">  130</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">case</span> <a class="code hl_class" href="../../d9/d0e/class_day_z_player_sync_junctures.html">DayZPlayerSyncJunctures</a>.<a class="code hl_variable" href="../../d9/d0e/class_day_z_player_sync_junctures.html#a0e942c5d01a7097027f1f788b4fbbeff">SJ_ACTION_INTERRUPT</a>:</div>
+<div class="line"><span class="lineno">  132</span>      <a class="code hl_variable" href="#a000a23b17f99935883093f56369e9388">m_Interrupted</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  133</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
+<div class="line"><span class="lineno">  135</span>  }</div>
+<div class="ttc" id="aclass_day_z_player_sync_junctures_html"><div class="ttname"><a href="../../d9/d0e/class_day_z_player_sync_junctures.html">DayZPlayerSyncJunctures</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_day_z_player_sync_junctures_8c_source.html#l00004">DayZPlayerSyncJunctures.c:5</a></div></div>
+<div class="ttc" id="aclass_day_z_player_sync_junctures_html_a0e942c5d01a7097027f1f788b4fbbeff"><div class="ttname"><a href="../../d9/d0e/class_day_z_player_sync_junctures.html#a0e942c5d01a7097027f1f788b4fbbeff">DayZPlayerSyncJunctures::SJ_ACTION_INTERRUPT</a></div><div class="ttdeci">static const int SJ_ACTION_INTERRUPT</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_day_z_player_sync_junctures_8c_source.html#l00008">DayZPlayerSyncJunctures.c:8</a></div></div>
+<div class="ttc" id="aclass_day_z_player_sync_junctures_html_a1b98feb54f872d631040a987c5dc274b"><div class="ttname"><a href="../../d9/d0e/class_day_z_player_sync_junctures.html#a1b98feb54f872d631040a987c5dc274b">DayZPlayerSyncJunctures::SJ_ACTION_ACK_REJECT</a></div><div class="ttdeci">static const int SJ_ACTION_ACK_REJECT</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_day_z_player_sync_junctures_8c_source.html#l00013">DayZPlayerSyncJunctures.c:13</a></div></div>
+<div class="ttc" id="aclass_day_z_player_sync_junctures_html_ac5b3e0d9eb86639d7edc60f4bc08ca58"><div class="ttname"><a href="../../d9/d0e/class_day_z_player_sync_junctures.html#ac5b3e0d9eb86639d7edc60f4bc08ca58">DayZPlayerSyncJunctures::SJ_ACTION_ACK_ACCEPT</a></div><div class="ttdeci">static const int SJ_ACTION_ACK_ACCEPT</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0b/_day_z_player_sync_junctures_8c_source.html#l00012">DayZPlayerSyncJunctures.c:12</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga4f9f8e8e9f282dcaaae5a369175d3547"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a></div><div class="ttdeci">const int UA_AM_ACCEPTED</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00447">constants.c:447</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga6612d92ddce214fb1f9e6e13e6b96c37"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga6612d92ddce214fb1f9e6e13e6b96c37">UA_AM_REJECTED</a></div><div class="ttdeci">const int UA_AM_REJECTED</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00448">constants.c:448</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00043">m_Interrupted</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00052">m_PendingActionAcknowledgmentID</a>, <a class="el" href="../../de/d0b/_day_z_player_sync_junctures_8c_source.html#l00012">DayZPlayerSyncJunctures::SJ_ACTION_ACK_ACCEPT</a>, <a class="el" href="../../de/d0b/_day_z_player_sync_junctures_8c_source.html#l00013">DayZPlayerSyncJunctures::SJ_ACTION_ACK_REJECT</a>, <a class="el" href="../../de/d0b/_day_z_player_sync_junctures_8c_source.html#l00008">DayZPlayerSyncJunctures::SJ_ACTION_INTERRUPT</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00447">UA_AM_ACCEPTED</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00448">UA_AM_REJECTED</a>.</p>
 
 </div>
 </div>
@@ -1154,6 +1374,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00481">481</a> of file <a class="el" href="../../d2/d05/_action_input_8c_source.html">ActionInput.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  482</span>  {</div>
+<div class="line"><span class="lineno">  483</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#ac98c9bc58953a70d7d7100bf23b086e1">m_SelectActions</a>.Count())</div>
+<div class="line"><span class="lineno">  484</span>    {</div>
+<div class="line"><span class="lineno">  485</span>      <a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#a33dd73fe8e5bd55d0b83700d31e269f7">m_selectedActionIndex</a>++;</div>
+<div class="line"><span class="lineno">  486</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#ac98c9bc58953a70d7d7100bf23b086e1">m_SelectActions</a>.Count() &lt;= <a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#a33dd73fe8e5bd55d0b83700d31e269f7">m_selectedActionIndex</a>)</div>
+<div class="line"><span class="lineno">  487</span>        <a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#a33dd73fe8e5bd55d0b83700d31e269f7">m_selectedActionIndex</a> = 0;</div>
+<div class="line"><span class="lineno">  488</span>    }</div>
+<div class="line"><span class="lineno">  489</span>  }</div>
+<div class="ttc" id="a_action_input_8c_html_a33dd73fe8e5bd55d0b83700d31e269f7"><div class="ttname"><a href="../../d2/d05/_action_input_8c.html#a33dd73fe8e5bd55d0b83700d31e269f7">m_selectedActionIndex</a></div><div class="ttdeci">int m_selectedActionIndex</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d05/_action_input_8c_source.html#l00287">ActionInput.c:287</a></div></div>
+<div class="ttc" id="a_action_input_8c_html_ac98c9bc58953a70d7d7100bf23b086e1"><div class="ttname"><a href="../../d2/d05/_action_input_8c.html#ac98c9bc58953a70d7d7100bf23b086e1">m_SelectActions</a></div><div class="ttdeci">ActionInput m_SelectActions</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d05/_action_input_8c.html#ac98c9bc58953a70d7d7100bf23b086e1">m_SelectActions</a>, and <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00287">m_selectedActionIndex</a>.</p>
 
 </div>
 </div>
@@ -1206,6 +1438,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00491">491</a> of file <a class="el" href="../../d2/d05/_action_input_8c_source.html">ActionInput.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  492</span>  {</div>
+<div class="line"><span class="lineno">  493</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#ac98c9bc58953a70d7d7100bf23b086e1">m_SelectActions</a>.Count())</div>
+<div class="line"><span class="lineno">  494</span>    {</div>
+<div class="line"><span class="lineno">  495</span>      <a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#a33dd73fe8e5bd55d0b83700d31e269f7">m_selectedActionIndex</a>--;</div>
+<div class="line"><span class="lineno">  496</span>      <span class="keywordflow">if</span> (0 &gt; <a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#a33dd73fe8e5bd55d0b83700d31e269f7">m_selectedActionIndex</a>)</div>
+<div class="line"><span class="lineno">  497</span>        <a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#a33dd73fe8e5bd55d0b83700d31e269f7">m_selectedActionIndex</a> = <a class="code hl_variable" href="../../d2/d05/_action_input_8c.html#ac98c9bc58953a70d7d7100bf23b086e1">m_SelectActions</a>.Count() - 1;</div>
+<div class="line"><span class="lineno">  498</span>    }</div>
+<div class="line"><span class="lineno">  499</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d05/_action_input_8c.html#ac98c9bc58953a70d7d7100bf23b086e1">m_SelectActions</a>, and <a class="el" href="../../d2/d05/_action_input_8c_source.html#l00287">m_selectedActionIndex</a>.</p>
 
 </div>
 </div>
@@ -1262,6 +1504,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00215">215</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  216</span>  {</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_variable" href="#a2db0ea095bafeb929ff9a9ccea841195">m_TestedActionTarget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>;</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_variable" href="#abcec4a542d5c5724402816742a89a837">m_TestedActionItem</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>;</div>
+<div class="line"><span class="lineno">  219</span>  }</div>
+<div class="ttc" id="a_action_manager_base_8c_html_a2db0ea095bafeb929ff9a9ccea841195"><div class="ttname"><a href="#a2db0ea095bafeb929ff9a9ccea841195">m_TestedActionTarget</a></div><div class="ttdeci">ActionTarget m_TestedActionTarget</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00028">ActionManagerBase.c:28</a></div></div>
+<div class="ttc" id="a_action_manager_base_8c_html_abcec4a542d5c5724402816742a89a837"><div class="ttname"><a href="#abcec4a542d5c5724402816742a89a837">m_TestedActionItem</a></div><div class="ttdeci">ItemBase m_TestedActionItem</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00029">ActionManagerBase.c:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00029">m_TestedActionItem</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00028">m_TestedActionTarget</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00482">ActionManagerClient::FindContextualUserActions()</a>.</p>
 
 </div>
 </div>
@@ -1314,6 +1566,21 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00103">103</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>  {</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>)</div>
+<div class="line"><span class="lineno">  106</span>    {</div>
+<div class="line"><span class="lineno">  107</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a000a23b17f99935883093f56369e9388">m_Interrupted</a>)</div>
+<div class="line"><span class="lineno">  108</span>        <a class="code hl_function" href="#a30e6c637fb91e9a1ebc73d205d643a1d">LocalInterrupt</a>();</div>
+<div class="line"><span class="lineno">  109</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_State != <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga9c2343e8e5f2ccc0417e387fc4478e3c">UA_AM_PENDING</a> &amp;&amp; <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_State != <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga6612d92ddce214fb1f9e6e13e6b96c37">UA_AM_REJECTED</a> &amp;&amp; <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_State != <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga4f9f8e8e9f282dcaaae5a369175d3547">UA_AM_ACCEPTED</a>)</div>
+<div class="line"><span class="lineno">  110</span>        <a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>.m_Action.OnUpdate(<a class="code hl_variable" href="#a16f2d4ca3fc84e84f05209d83b248d99">m_CurrentActionData</a>);</div>
+<div class="line"><span class="lineno">  111</span>    }</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a000a23b17f99935883093f56369e9388">m_Interrupted</a>)</div>
+<div class="line"><span class="lineno">  113</span>      <a class="code hl_variable" href="#a000a23b17f99935883093f56369e9388">m_Interrupted</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+<div class="ttc" id="a_action_manager_base_8c_html_a30e6c637fb91e9a1ebc73d205d643a1d"><div class="ttname"><a href="#a30e6c637fb91e9a1ebc73d205d643a1d">LocalInterrupt</a></div><div class="ttdeci">void LocalInterrupt()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d09/_action_manager_base_8c_source.html#l00238">ActionManagerBase.c:238</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga9c2343e8e5f2ccc0417e387fc4478e3c"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga9c2343e8e5f2ccc0417e387fc4478e3c">UA_AM_PENDING</a></div><div class="ttdeci">const int UA_AM_PENDING</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00446">constants.c:446</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00238">LocalInterrupt()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">m_CurrentActionData</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00043">m_Interrupted</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00447">UA_AM_ACCEPTED</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00446">UA_AM_PENDING</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00448">UA_AM_REJECTED</a>.</p>
 
 </div>
 </div>
@@ -1340,6 +1607,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00047">47</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00542">ActionManagerClient::ActionStart()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00252">ActionManagerClient::EndActionInput()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00258">ActionManagerClient::InputsUpdate()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00029">ActionManagerServer::OnInputUserDataProcess()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00331">ActionManagerClient::ProcessActionInputEnd()</a>, and <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00183">ActionManagerServer::Update()</a>.</p>
+
 </div>
 </div>
 <a id="af1b886c106f8efa81bda75f2c06c9378" name="af1b886c106f8efa81bda75f2c06c9378"></a>
@@ -1363,6 +1632,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00045">45</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00156">GetAction()</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00140">GetActionVariant()</a>.</p>
 
 </div>
 </div>
@@ -1388,6 +1659,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00044">44</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00164">GetAction()</a>, and <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00130">ActionManagerClient::RegisterInputs()</a>.</p>
+
 </div>
 </div>
 <a id="a665b5d74f489d6f18dd7d48b1fa1159a" name="a665b5d74f489d6f18dd7d48b1fa1159a"></a>
@@ -1411,6 +1684,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00049">49</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00482">ActionManagerClient::FindContextualUserActions()</a>, and <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00258">ActionManagerClient::InputsUpdate()</a>.</p>
 
 </div>
 </div>
@@ -1436,6 +1711,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00048">48</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00204">ActionPossibilityCheck()</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00098">EnableActions()</a>.</p>
+
 </div>
 </div>
 <a id="ad4366b902e9ffb48e7d650f1d9b013d2" name="ad4366b902e9ffb48e7d650f1d9b013d2"></a>
@@ -1459,6 +1736,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00046">46</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00542">ActionManagerClient::ActionStart()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00029">ActionManagerServer::OnInputUserDataProcess()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00303">ActionManagerClient::ProcessActionRequestEnd()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00246">ActionManagerClient::RequestEndAction()</a>, and <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00183">ActionManagerServer::Update()</a>.</p>
 
 </div>
 </div>
@@ -1484,6 +1763,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00054">54</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00542">ActionManagerClient::ActionStart()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00271">GetActionComponentProgress()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00279">GetActionState()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00223">GetActionState()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00082">GetRunningAction()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00090">GetRunningActionMainitem()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00258">ActionManagerClient::InputsUpdate()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l01186">ActionManagerClient::Interrupt()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00289">ActionManagerServer::Interrupt()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00238">LocalInterrupt()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00249">OnActionEnd()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00698">ActionManagerClient::OnActionEnd()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00166">ActionManagerServer::OnActionEnd()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00655">ActionManagerClient::OnJumpStart()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00015">ActionManagerServer::OnJumpStart()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00116">OnSyncJuncture()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00331">ActionManagerClient::ProcessActionInputEnd()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00303">ActionManagerClient::ProcessActionRequestEnd()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00104">ActionManagerServer::StartDeliveredAction()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00103">Update()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00040">ActionManagerClient::Update()</a>, and <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00183">ActionManagerServer::Update()</a>.</p>
+
 </div>
 </div>
 <a id="a000a23b17f99935883093f56369e9388" name="a000a23b17f99935883093f56369e9388"></a>
@@ -1508,6 +1789,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00043">43</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00542">ActionManagerClient::ActionStart()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l01186">ActionManagerClient::Interrupt()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00238">LocalInterrupt()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00116">OnSyncJuncture()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00104">ActionManagerServer::StartDeliveredAction()</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00103">Update()</a>.</p>
+
 </div>
 </div>
 <a id="ac43138c232e8a46dc115d3409252443b" name="ac43138c232e8a46dc115d3409252443b"></a>
@@ -1531,6 +1814,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00052">52</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00542">ActionManagerClient::ActionStart()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00029">ActionManagerServer::OnInputUserDataProcess()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00655">ActionManagerClient::OnJumpStart()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00015">ActionManagerServer::OnJumpStart()</a>, <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00116">OnSyncJuncture()</a>, <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00104">ActionManagerServer::StartDeliveredAction()</a>, <a class="el" href="../../d2/d0e/_action_manager_client_8c_source.html#l00040">ActionManagerClient::Update()</a>, and <a class="el" href="../../d4/d05/_action_manager_server_8c_source.html#l00183">ActionManagerServer::Update()</a>.</p>
 
 </div>
 </div>
@@ -1569,6 +1854,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00031">31</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00169">GetContinuousAction()</a>.</p>
 
 </div>
 </div>
@@ -1666,6 +1953,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00034">34</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00174">GetSingleUseAction()</a>.</p>
+
 </div>
 </div>
 <a id="a92a348b52a4e73c4793557d7873401a9" name="a92a348b52a4e73c4793557d7873401a9"></a>
@@ -1762,6 +2051,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00040">40</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00179">GetSelectableActions()</a>.</p>
+
 </div>
 </div>
 <a id="a32a753f49ec10ec146d460af233c5fc9" name="a32a753f49ec10ec146d460af233c5fc9"></a>
@@ -1786,6 +2077,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00042">42</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00198">IsSelectableActionsChanged()</a>.</p>
+
 </div>
 </div>
 <a id="a76ec8e860439a2fe28d52e6f3e3e5c6f" name="a76ec8e860439a2fe28d52e6f3e3e5c6f"></a>
@@ -1809,6 +2102,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00041">41</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00056">ActionManagerBase()</a>, and <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00184">GetSelectedActionIndex()</a>.</p>
 
 </div>
 </div>
@@ -1858,6 +2153,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00029">29</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00215">SetActionContext()</a>.</p>
+
 </div>
 </div>
 <a id="a2db0ea095bafeb929ff9a9ccea841195" name="a2db0ea095bafeb929ff9a9ccea841195"></a>
@@ -1881,6 +2178,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00028">28</a> of file <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html">ActionManagerBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d09/_action_manager_base_8c_source.html#l00215">SetActionContext()</a>.</p>
 
 </div>
 </div>

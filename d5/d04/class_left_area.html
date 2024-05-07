@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -409,6 +406,39 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00012">12</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>  {</div>
+<div class="line"><span class="lineno">   14</span>    m_MainWidget.Show(<span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   15</span> </div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="#a6f9e252e1c5cf5a8530fe88631b744f1">m_ContentParent</a> = m_MainWidget.FindAnyWidget(<span class="stringliteral">&quot;ContentParent&quot;</span>);</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="#a6f9e252e1c5cf5a8530fe88631b744f1">m_ContentParent</a>.GetScript(<a class="code hl_variable" href="#adcb420d8e3d9fddcd1de28bb0d5af419">m_ContentResize</a>);</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="#a740a52f617e91cfcf35eff083630d150">m_ScrollWidget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ScrollWidget</a>.Cast(m_MainWidget.FindAnyWidget(<span class="stringliteral">&quot;Scroller&quot;</span>));</div>
+<div class="line"><span class="lineno">   20</span>    m_MainWidget = m_MainWidget.FindAnyWidget(<span class="stringliteral">&quot;Content&quot;</span>);</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="#a7888113f11f6ababb99ae31bfa908d65">m_UpIcon</a> = <a class="code hl_variable" href="../../d1/d03/_plugin_remote_player_debug_client_8c.html#a8ba0557daf8b627a8c8f89783367a683">m_RootWidget</a>.FindAnyWidget(<span class="stringliteral">&quot;Up&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="#aea38bb6b72d697cf293db162ad046d49">m_DownIcon</a> = <a class="code hl_variable" href="../../d1/d03/_plugin_remote_player_debug_client_8c.html#a8ba0557daf8b627a8c8f89783367a683">m_RootWidget</a>.FindAnyWidget(<span class="stringliteral">&quot;Down&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="#ad904b3d6390f16ad5f9573ee7a8e090c">m_VicinityContainer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../dc/d02/class_vicinity_container.html">VicinityContainer</a>(<span class="keyword">this</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   26</span>    m_Body.Insert(<a class="code hl_variable" href="#ad904b3d6390f16ad5f9573ee7a8e090c">m_VicinityContainer</a>);</div>
+<div class="line"><span class="lineno">   27</span>    m_ActiveIndex = 0;</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnChildAdd(m_MainWidget, <span class="keyword">this</span>, <span class="stringliteral">&quot;OnChildAdd&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_class" href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a>.<a class="code hl_function" href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">GetInstance</a>().RegisterOnChildRemove(m_MainWidget, <span class="keyword">this</span>, <span class="stringliteral">&quot;OnChildRemove&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>    RecomputeOpenedContainers();</div>
+<div class="line"><span class="lineno">   32</span>  }</div>
+<div class="ttc" id="a_plugin_remote_player_debug_client_8c_html_a8ba0557daf8b627a8c8f89783367a683"><div class="ttname"><a href="../../d1/d03/_plugin_remote_player_debug_client_8c.html#a8ba0557daf8b627a8c8f89783367a683">m_RootWidget</a></div><div class="ttdeci">ref Widget m_RootWidget[MAX_SIMULTANIOUS_PLAYERS]</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d03/_plugin_remote_player_debug_client_8c_source.html#l00014">PluginRemotePlayerDebugClient.c:14</a></div></div>
+<div class="ttc" id="aclass_left_area_html_a6f9e252e1c5cf5a8530fe88631b744f1"><div class="ttname"><a href="#a6f9e252e1c5cf5a8530fe88631b744f1">LeftArea::m_ContentParent</a></div><div class="ttdeci">Widget m_ContentParent</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00005">LeftArea.c:5</a></div></div>
+<div class="ttc" id="aclass_left_area_html_a740a52f617e91cfcf35eff083630d150"><div class="ttname"><a href="#a740a52f617e91cfcf35eff083630d150">LeftArea::m_ScrollWidget</a></div><div class="ttdeci">ScrollWidget m_ScrollWidget</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00007">LeftArea.c:7</a></div></div>
+<div class="ttc" id="aclass_left_area_html_a7888113f11f6ababb99ae31bfa908d65"><div class="ttname"><a href="#a7888113f11f6ababb99ae31bfa908d65">LeftArea::m_UpIcon</a></div><div class="ttdeci">Widget m_UpIcon</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00003">LeftArea.c:3</a></div></div>
+<div class="ttc" id="aclass_left_area_html_ad904b3d6390f16ad5f9573ee7a8e090c"><div class="ttname"><a href="#ad904b3d6390f16ad5f9573ee7a8e090c">LeftArea::m_VicinityContainer</a></div><div class="ttdeci">ref VicinityContainer m_VicinityContainer</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00006">LeftArea.c:6</a></div></div>
+<div class="ttc" id="aclass_left_area_html_adcb420d8e3d9fddcd1de28bb0d5af419"><div class="ttname"><a href="#adcb420d8e3d9fddcd1de28bb0d5af419">LeftArea::m_ContentResize</a></div><div class="ttdeci">ref SizeToChild m_ContentResize</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00008">LeftArea.c:8</a></div></div>
+<div class="ttc" id="aclass_left_area_html_aea38bb6b72d697cf293db162ad046d49"><div class="ttname"><a href="#aea38bb6b72d697cf293db162ad046d49">LeftArea::m_DownIcon</a></div><div class="ttdeci">Widget m_DownIcon</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00004">LeftArea.c:4</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_vicinity_container_html"><div class="ttname"><a href="../../dc/d02/class_vicinity_container.html">VicinityContainer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d06/_vicinity_container_8c_source.html#l00001">VicinityContainer.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html">WidgetEventHandler</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00001">WidgetEventHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_event_handler_html_ad2fdf38578ef5954a19cb7c97ee4f89b"><div class="ttname"><a href="../../d1/d06/class_widget_event_handler.html#ad2fdf38578ef5954a19cb7c97ee4f89b">WidgetEventHandler::GetInstance</a></div><div class="ttdeci">static WidgetEventHandler GetInstance()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler.c:22</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d04/_widget_event_handler_8c_source.html#l00022">WidgetEventHandler::GetInstance()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00005">m_ContentParent</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00008">m_ContentResize</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00004">m_DownIcon</a>, <a class="el" href="../../d1/d03/_plugin_remote_player_debug_client_8c_source.html#l00014">m_RootWidget</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00007">m_ScrollWidget</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00003">m_UpIcon</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00006">m_VicinityContainer</a>.</p>
 
 </div>
 </div>
@@ -451,6 +481,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00144">144</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="#ad904b3d6390f16ad5f9573ee7a8e090c">m_VicinityContainer</a>.DraggingOverHeader(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>);</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="a_icon_8c_html_acd41c12fe81446bff0920670641367de"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a></div><div class="ttdeci">Icon y</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00006">m_VicinityContainer</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -478,6 +515,17 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00130">130</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>  {</div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a> <a class="code hl_class" href="../../db/d06/class_param3.html">c</a> = GetFocusedContainer();</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">c</a>)</div>
+<div class="line"><span class="lineno">  134</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">c</a>.ExpandCollapseContainer();</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_function" href="#ab4023be8ece4fbd775261f042219ae26">Refresh</a>();</div>
+<div class="line"><span class="lineno">  137</span>  }</div>
+<div class="ttc" id="aclass_container_html"><div class="ttname"><a href="../../d4/d0f/class_container.html">Container</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0c/_cargo_container_8c_source.html#l00002">CargoContainer.c:3</a></div></div>
+<div class="ttc" id="aclass_left_area_html_ab4023be8ece4fbd775261f042219ae26"><div class="ttname"><a href="#ab4023be8ece4fbd775261f042219ae26">LeftArea::Refresh</a></div><div class="ttdeci">override void Refresh()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00198">LeftArea.c:198</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>.</p>
 
 </div>
 </div>
@@ -505,6 +553,24 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00105">105</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_pos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_height</a>;</div>
+<div class="line"><span class="lineno">  108</span>    m_MainWidget.GetScreenPos(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (m_OpenedContainers.IsValidIndex(m_ActiveIndex))</div>
+<div class="line"><span class="lineno">  111</span>    {</div>
+<div class="line"><span class="lineno">  112</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_pos</a> = <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a>.Cast(m_OpenedContainers.Get(m_ActiveIndex)).<a class="code hl_function" href="../../d4/d0f/class_container.html#a9360f39302b916077bf461f3681e8716">GetFocusedContainerYScreenPos</a>();</div>
+<div class="line"><span class="lineno">  113</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_height</a> = <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a>.Cast(m_OpenedContainers.Get(m_ActiveIndex)).<a class="code hl_function" href="../../d4/d0f/class_container.html#a62ff9a38ad38308632676a47750042ee">GetFocusedContainerHeight</a>();</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_pos</a> - <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_height</a>;</div>
+<div class="line"><span class="lineno">  117</span>  }</div>
+<div class="ttc" id="aclass_container_html_a62ff9a38ad38308632676a47750042ee"><div class="ttname"><a href="../../d4/d0f/class_container.html#a62ff9a38ad38308632676a47750042ee">Container::GetFocusedContainerHeight</a></div><div class="ttdeci">override float GetFocusedContainerHeight(bool contents=false)</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0c/_cargo_container_8c_source.html#l00428">CargoContainer.c:428</a></div></div>
+<div class="ttc" id="aclass_container_html_a9360f39302b916077bf461f3681e8716"><div class="ttname"><a href="../../d4/d0f/class_container.html#a9360f39302b916077bf461f3681e8716">Container::GetFocusedContainerYScreenPos</a></div><div class="ttdeci">override float GetFocusedContainerYScreenPos(bool contents=false)</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0c/_cargo_container_8c_source.html#l00448">CargoContainer.c:448</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00428">Container::GetFocusedContainerHeight()</a>, <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00448">Container::GetFocusedContainerYScreenPos()</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00064">UpdateSelectionIcons()</a>.</p>
 
 </div>
 </div>
@@ -532,6 +598,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00095">95</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>  {</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_pos</a>;</div>
+<div class="line"><span class="lineno">   98</span>    m_MainWidget.GetScreenPos(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>);</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (m_OpenedContainers.IsValidIndex(m_ActiveIndex))</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_pos</a> = <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a>.Cast(m_OpenedContainers.Get(m_ActiveIndex)).<a class="code hl_function" href="../../d4/d0f/class_container.html#a9360f39302b916077bf461f3681e8716">GetFocusedContainerYScreenPos</a>();</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">cont_screen_pos</a> - <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>;</div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00448">Container::GetFocusedContainerYScreenPos()</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00064">UpdateSelectionIcons()</a>.</p>
 
 </div>
 </div>
@@ -559,7 +637,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00176">176</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  177</span>  {</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = GetFocusedContainer().GetFocusedItem();</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>;</div>
+<div class="line"><span class="lineno">  180</span>  }</div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a901e135ad7b751a088d7f6009d008469" name="a901e135ad7b751a088d7f6009d008469"></a>
@@ -586,6 +669,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00059">59</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>  {</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a740a52f617e91cfcf35eff083630d150">m_ScrollWidget</a>;</div>
+<div class="line"><span class="lineno">   62</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00007">m_ScrollWidget</a>.</p>
 
 </div>
 </div>
@@ -613,6 +701,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00182">182</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>  {</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad904b3d6390f16ad5f9573ee7a8e090c">m_VicinityContainer</a>;</div>
+<div class="line"><span class="lineno">  185</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00006">m_VicinityContainer</a>.</p>
 
 </div>
 </div>
@@ -640,7 +733,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00044">44</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   45</span>  {</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (m_OpenedContainers.Count() &lt;= m_ActiveIndex)</div>
+<div class="line"><span class="lineno">   47</span>      m_ActiveIndex = 0;</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a> <a class="code hl_class" href="../../db/d06/class_param3.html">active_container</a> = <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a>.Cast(m_OpenedContainers.Get(m_ActiveIndex));</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">active_container</a>.IsActive();</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a11c336fa0ad0f5e06c03b1dc0c73c4fd" name="a11c336fa0ad0f5e06c03b1dc0c73c4fd"></a>
@@ -671,6 +770,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00242">242</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  243</span>  {</div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a1bf0077952a8fe00095e3da53e232605">m_IsProcessing</a>)</div>
+<div class="line"><span class="lineno">  245</span>      <a class="code hl_function" href="#ab4023be8ece4fbd775261f042219ae26">Refresh</a>();</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="ttc" id="aclass_left_area_html_a1bf0077952a8fe00095e3da53e232605"><div class="ttname"><a href="#a1bf0077952a8fe00095e3da53e232605">LeftArea::m_IsProcessing</a></div><div class="ttdeci">bool m_IsProcessing</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00010">LeftArea.c:10</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00010">m_IsProcessing</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>.</p>
 
 </div>
 </div>
@@ -702,6 +809,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00235">235</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>  {</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a1bf0077952a8fe00095e3da53e232605">m_IsProcessing</a>)</div>
+<div class="line"><span class="lineno">  238</span>      <a class="code hl_function" href="#ab4023be8ece4fbd775261f042219ae26">Refresh</a>();</div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  240</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00010">m_IsProcessing</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>.</p>
 
 </div>
 </div>
@@ -743,6 +857,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00139">139</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>  {</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_variable" href="#ad904b3d6390f16ad5f9573ee7a8e090c">m_VicinityContainer</a>.OnLeftPanelDropReceived(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">receiver</a>);</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00006">m_VicinityContainer</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -770,6 +889,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00192">192</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>  {</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnShow();</div>
+<div class="line"><span class="lineno">  195</span>    <a class="code hl_function" href="#ab4023be8ece4fbd775261f042219ae26">Refresh</a>();</div>
+<div class="line"><span class="lineno">  196</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>.</p>
 
 </div>
 </div>
@@ -797,6 +922,22 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">198</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>  {</div>
+<div class="line"><span class="lineno">  200</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Refresh();</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>    m_MainWidget.Update();</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_variable" href="../../d1/d03/_plugin_remote_player_debug_client_8c.html#a8ba0557daf8b627a8c8f89783367a683">m_RootWidget</a>.Update();</div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_variable" href="#a740a52f617e91cfcf35eff083630d150">m_ScrollWidget</a>.Update();</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_function" href="#a99a4a383abb197346e40f1b23622cb15">UpdateSelectionIcons</a>();</div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_variable" href="#aaccadb1c4c1c28193fe66b14e509c967">m_ShouldChangeSize</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  208</span>  }</div>
+<div class="ttc" id="aclass_left_area_html_a99a4a383abb197346e40f1b23622cb15"><div class="ttname"><a href="#a99a4a383abb197346e40f1b23622cb15">LeftArea::UpdateSelectionIcons</a></div><div class="ttdeci">override void UpdateSelectionIcons()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00064">LeftArea.c:64</a></div></div>
+<div class="ttc" id="aclass_left_area_html_aaccadb1c4c1c28193fe66b14e509c967"><div class="ttname"><a href="#aaccadb1c4c1c28193fe66b14e509c967">LeftArea::m_ShouldChangeSize</a></div><div class="ttdeci">bool m_ShouldChangeSize</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00009">LeftArea.c:9</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d03/_plugin_remote_player_debug_client_8c_source.html#l00014">m_RootWidget</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00007">m_ScrollWidget</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00009">m_ShouldChangeSize</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00064">UpdateSelectionIcons()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00130">ExpandCollapseContainer()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00242">OnChildAdd()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00235">OnChildRemove()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00192">OnShow()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00119">SetSameLevelNextActive()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00124">SetSameLevelPreviousActive()</a>.</p>
 
 </div>
 </div>
@@ -824,6 +965,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00052">52</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>  {</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SetActive(<a class="code hl_class" href="../../db/d06/class_param3.html">active</a>);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_function" href="#a99a4a383abb197346e40f1b23622cb15">UpdateSelectionIcons</a>();</div>
+<div class="line"><span class="lineno">   57</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00064">UpdateSelectionIcons()</a>.</p>
 
 </div>
 </div>
@@ -851,6 +999,40 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00149">149</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  152</span>    m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#ae9496100fcb2e5298f74c2a1838f927f">LeftAreaXbox</a>;</div>
+<div class="line"><span class="lineno">  153</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">switch</span> (<a class="code hl_function" href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a>.GetWidthType())</div>
+<div class="line"><span class="lineno">  155</span>    {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dc/d00/_inventory_menu_8c.html#a879ddd8a54b6ad307d11a1ccff69a26f">ScreenWidthType</a>.NARROW:</div>
+<div class="line"><span class="lineno">  157</span>    {</div>
+<div class="line"><span class="lineno">  158</span>      m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#a62afcb092ae9d316a309e6087ef5b0b8">LeftAreaNarrow</a>;</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  160</span>    }</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dc/d00/_inventory_menu_8c.html#a879ddd8a54b6ad307d11a1ccff69a26f">ScreenWidthType</a>.MEDIUM:</div>
+<div class="line"><span class="lineno">  162</span>    {</div>
+<div class="line"><span class="lineno">  163</span>      m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#af7c8190ae63b961f93afc7a018f9ad5c">LeftAreaMedium</a>;</div>
+<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../dc/d00/_inventory_menu_8c.html#a879ddd8a54b6ad307d11a1ccff69a26f">ScreenWidthType</a>.WIDE:</div>
+<div class="line"><span class="lineno">  167</span>    {</div>
+<div class="line"><span class="lineno">  168</span>      m_LayoutName = <a class="code hl_class" href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a>.<a class="code hl_variable" href="../../db/d06/class_widget_layout_name.html#a1e56fca6eb5cc339b58b8b2411a87eaa">LeftAreaWide</a>;</div>
+<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
+<div class="line"><span class="lineno">  172</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>  }</div>
+<div class="ttc" id="a_inventory_menu_8c_html_a879ddd8a54b6ad307d11a1ccff69a26f"><div class="ttname"><a href="../../dc/d00/_inventory_menu_8c.html#a879ddd8a54b6ad307d11a1ccff69a26f">ScreenWidthType</a></div><div class="ttdeci">ScreenWidthType</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d00/_inventory_menu_8c_source.html#l00001">InventoryMenu.c:2</a></div></div>
+<div class="ttc" id="a_inventory_menu_8c_html_ad91f44597d803d249e1b96e7569f8199"><div class="ttname"><a href="../../dc/d00/_inventory_menu_8c.html#ad91f44597d803d249e1b96e7569f8199">InventoryMenu</a></div><div class="ttdeci">void InventoryMenu()</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d00/_inventory_menu_8c_source.html#l00020">InventoryMenu.c:20</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html">WidgetLayoutName</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00001">WidgetLayoutName.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_a1e56fca6eb5cc339b58b8b2411a87eaa"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#a1e56fca6eb5cc339b58b8b2411a87eaa">WidgetLayoutName::LeftAreaWide</a></div><div class="ttdeci">const string LeftAreaWide</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00035">WidgetLayoutName.c:35</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_a62afcb092ae9d316a309e6087ef5b0b8"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#a62afcb092ae9d316a309e6087ef5b0b8">WidgetLayoutName::LeftAreaNarrow</a></div><div class="ttdeci">const string LeftAreaNarrow</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00033">WidgetLayoutName.c:33</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_ae9496100fcb2e5298f74c2a1838f927f"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#ae9496100fcb2e5298f74c2a1838f927f">WidgetLayoutName::LeftAreaXbox</a></div><div class="ttdeci">const string LeftAreaXbox</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00036">WidgetLayoutName.c:36</a></div></div>
+<div class="ttc" id="aclass_widget_layout_name_html_af7c8190ae63b961f93afc7a018f9ad5c"><div class="ttname"><a href="../../db/d06/class_widget_layout_name.html#af7c8190ae63b961f93afc7a018f9ad5c">WidgetLayoutName::LeftAreaMedium</a></div><div class="ttdeci">const string LeftAreaMedium</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0c/_widget_layout_name_8c_source.html#l00034">WidgetLayoutName.c:34</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d00/_inventory_menu_8c_source.html#l00020">InventoryMenu()</a>, <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00034">WidgetLayoutName::LeftAreaMedium</a>, <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00033">WidgetLayoutName::LeftAreaNarrow</a>, <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00035">WidgetLayoutName::LeftAreaWide</a>, and <a class="el" href="../../da/d0c/_widget_layout_name_8c_source.html#l00036">WidgetLayoutName::LeftAreaXbox</a>.</p>
 
 </div>
 </div>
@@ -878,6 +1060,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00187">187</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>  {</div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_variable" href="../../d6/d05/_ui_hint_panel_8c.html#a63e32c322fa8264edf8e0d94a768ba0d">m_ParentWidget</a> = <a class="code hl_variable" href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a>.GetMainWidget().FindAnyWidget(<span class="stringliteral">&quot;LeftPanel&quot;</span>);</div>
+<div class="line"><span class="lineno">  190</span>  }</div>
+<div class="ttc" id="a_size_to_child_8c_html_a74e413f5a164dfc9b133b21caee53379"><div class="ttname"><a href="../../da/d03/_size_to_child_8c.html#a74e413f5a164dfc9b133b21caee53379">m_Parent</a></div><div class="ttdeci">Widget m_Parent</div><div class="ttdef"><b>Definition</b> <a href="../../da/d03/_size_to_child_8c_source.html#l00086">SizeToChild.c:86</a></div></div>
+<div class="ttc" id="a_ui_hint_panel_8c_html_a63e32c322fa8264edf8e0d94a768ba0d"><div class="ttname"><a href="../../d6/d05/_ui_hint_panel_8c.html#a63e32c322fa8264edf8e0d94a768ba0d">m_ParentWidget</a></div><div class="ttdeci">Widget m_ParentWidget</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d05/_ui_hint_panel_8c_source.html#l00310">UiHintPanel.c:310</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d6/d05/_ui_hint_panel_8c_source.html#l00310">m_ParentWidget</a>.</p>
 
 </div>
 </div>
@@ -905,6 +1094,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00119">119</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_variable" href="#ad904b3d6390f16ad5f9573ee7a8e090c">m_VicinityContainer</a>.SetSameLevelNextActive();</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_function" href="#ab4023be8ece4fbd775261f042219ae26">Refresh</a>();</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00006">m_VicinityContainer</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>.</p>
 
 </div>
 </div>
@@ -932,6 +1127,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00124">124</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>  {</div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_variable" href="#ad904b3d6390f16ad5f9573ee7a8e090c">m_VicinityContainer</a>.SetSameLevelPreviousActive();</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_function" href="#ab4023be8ece4fbd775261f042219ae26">Refresh</a>();</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00006">m_VicinityContainer</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>.</p>
 
 </div>
 </div>
@@ -959,7 +1160,15 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00034">34</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   35</span>  {</div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a> <a class="code hl_class" href="../../db/d06/class_param3.html">active_container</a>;</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; m_OpenedContainers.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">active_container</a> = <a class="code hl_class" href="../../d4/d0f/class_container.html">Container</a>.Cast(m_OpenedContainers.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>));</div>
+<div class="line"><span class="lineno">   40</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">active_container</a>.UnfocusGrid();</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0d93b0c0f2da2ff8b7ead13059701e29" name="a0d93b0c0f2da2ff8b7ead13059701e29"></a>
@@ -986,6 +1195,31 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00210">210</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>  {</div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_variable" href="#a1bf0077952a8fe00095e3da53e232605">m_IsProcessing</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  213</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.UpdateInterval();</div>
+<div class="line"><span class="lineno">  214</span>    <a class="code hl_variable" href="#a1bf0077952a8fe00095e3da53e232605">m_IsProcessing</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>;</div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">x2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">y2</a>;</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_variable" href="#a6f9e252e1c5cf5a8530fe88631b744f1">m_ContentParent</a>.GetScreenSize(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>);</div>
+<div class="line"><span class="lineno">  219</span>    m_MainWidget.GetScreenSize(<a class="code hl_class" href="../../db/d06/class_param3.html">x2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">y2</a>);</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">y2</a> != <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>)</div>
+<div class="line"><span class="lineno">  221</span>      <a class="code hl_variable" href="#aaccadb1c4c1c28193fe66b14e509c967">m_ShouldChangeSize</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">changed_size</a>;</div>
+<div class="line"><span class="lineno">  223</span>    <span class="comment">//if ( m_ShouldChangeSize )</span></div>
+<div class="line"><span class="lineno">  224</span>    <a class="code hl_variable" href="#adcb420d8e3d9fddcd1de28bb0d5af419">m_ContentResize</a>.ResizeParentToChild(<a class="code hl_class" href="../../db/d06/class_param3.html">changed_size</a>);</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">changed_size</a> || <a class="code hl_variable" href="#aaccadb1c4c1c28193fe66b14e509c967">m_ShouldChangeSize</a>)</div>
+<div class="line"><span class="lineno">  226</span>    {</div>
+<div class="line"><span class="lineno">  227</span>      m_MainWidget.Update();</div>
+<div class="line"><span class="lineno">  228</span>      <a class="code hl_variable" href="../../d1/d03/_plugin_remote_player_debug_client_8c.html#a8ba0557daf8b627a8c8f89783367a683">m_RootWidget</a>.Update();</div>
+<div class="line"><span class="lineno">  229</span>      <a class="code hl_variable" href="#a740a52f617e91cfcf35eff083630d150">m_ScrollWidget</a>.Update();</div>
+<div class="line"><span class="lineno">  230</span>      <a class="code hl_variable" href="#aaccadb1c4c1c28193fe66b14e509c967">m_ShouldChangeSize</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  231</span>    }</div>
+<div class="line"><span class="lineno">  232</span>    CheckScrollbarVisibility();</div>
+<div class="line"><span class="lineno">  233</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00005">m_ContentParent</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00008">m_ContentResize</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00010">m_IsProcessing</a>, <a class="el" href="../../d1/d03/_plugin_remote_player_debug_client_8c_source.html#l00014">m_RootWidget</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00007">m_ScrollWidget</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00009">m_ShouldChangeSize</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -1013,6 +1247,44 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00064">64</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>  {</div>
+<div class="line"><span class="lineno">   66</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">   67</span>    ScrollToActiveContainer();</div>
+<div class="line"><span class="lineno">   68</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="#a7888113f11f6ababb99ae31bfa908d65">m_UpIcon</a>.Show(<a class="code hl_variable" href="../../de/d0e/_modifier_base_8c.html#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a>);</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="#aea38bb6b72d697cf293db162ad046d49">m_DownIcon</a>.Show(<a class="code hl_variable" href="../../de/d0e/_modifier_base_8c.html#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a>);</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../de/d0e/_modifier_base_8c.html#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a>)</div>
+<div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>      <span class="keywordtype">float</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>;</div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_variable" href="#a7888113f11f6ababb99ae31bfa908d65">m_UpIcon</a>.GetScreenSize(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">top_y</a> = <a class="code hl_function" href="#a6b4c58bef9292314106993308542fed5">GetCurrentContainerTopY</a>();</div>
+<div class="line"><span class="lineno">   77</span>      <a class="code hl_variable" href="#a7888113f11f6ababb99ae31bfa908d65">m_UpIcon</a>.SetPos(0, <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Clamp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">top_y</a>, 0, 99999));</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">#ifndef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">   80</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">x2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">y2</a>;</div>
+<div class="line"><span class="lineno">   81</span>      <a class="code hl_variable" href="#aea38bb6b72d697cf293db162ad046d49">m_DownIcon</a>.GetScreenSize(<a class="code hl_class" href="../../db/d06/class_param3.html">x2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">y2</a>);</div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bottom_y</a> = <a class="code hl_function" href="#a99f7faccbafd7e8efd2e32e27ba19059">GetCurrentContainerBottomY</a>() - <a class="code hl_class" href="../../db/d06/class_param3.html">y2</a>;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">diff</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">bottom_y</a> - (<a class="code hl_class" href="../../db/d06/class_param3.html">top_y</a> + <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>);</div>
+<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">diff</a> &lt; 0)</div>
+<div class="line"><span class="lineno">   86</span>      {</div>
+<div class="line"><span class="lineno">   87</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">top_y</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">diff</a> / 2;</div>
+<div class="line"><span class="lineno">   88</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">bottom_y</a> -= <a class="code hl_class" href="../../db/d06/class_param3.html">diff</a> / 2;</div>
+<div class="line"><span class="lineno">   89</span>      }</div>
+<div class="line"><span class="lineno">   90</span>      <a class="code hl_variable" href="#aea38bb6b72d697cf293db162ad046d49">m_DownIcon</a>.SetPos(0, <a class="code hl_class" href="../../db/d06/class_param3.html">bottom_y</a>);</div>
+<div class="line"><span class="lineno">   91</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a9a3d3c40e1c50b7a9d14cb880b784df2"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a></div><div class="ttdeci">bool m_IsActive</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00020">ModifierBase.c:20</a></div></div>
+<div class="ttc" id="aclass_left_area_html_a6b4c58bef9292314106993308542fed5"><div class="ttname"><a href="#a6b4c58bef9292314106993308542fed5">LeftArea::GetCurrentContainerTopY</a></div><div class="ttdeci">float GetCurrentContainerTopY()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00095">LeftArea.c:95</a></div></div>
+<div class="ttc" id="aclass_left_area_html_a99f7faccbafd7e8efd2e32e27ba19059"><div class="ttname"><a href="#a99f7faccbafd7e8efd2e32e27ba19059">LeftArea::GetCurrentContainerBottomY</a></div><div class="ttdeci">float GetCurrentContainerBottomY()</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_left_area_8c_source.html#l00105">LeftArea.c:105</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math_html_ga939cca08ae6c7facc9293f2dbce3def5"><div class="ttname"><a href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp</a></div><div class="ttdeci">static proto float Clamp(float value, float min, float max)</div><div class="ttdoc">Clamps 'value' to 'min' if it is lower than 'min', or to 'max' if it is higher than 'max'.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00105">GetCurrentContainerBottomY()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00095">GetCurrentContainerTopY()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00004">m_DownIcon</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00020">m_IsActive</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00003">m_UpIcon</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00052">SetActive()</a>.</p>
 
 </div>
 </div>
@@ -1039,6 +1311,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00005">5</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00012">LeftArea()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00210">UpdateInterval()</a>.</p>
+
 </div>
 </div>
 <a id="adcb420d8e3d9fddcd1de28bb0d5af419" name="adcb420d8e3d9fddcd1de28bb0d5af419"></a>
@@ -1062,6 +1336,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00008">8</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00012">LeftArea()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00210">UpdateInterval()</a>.</p>
 
 </div>
 </div>
@@ -1087,6 +1363,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00004">4</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00012">LeftArea()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00064">UpdateSelectionIcons()</a>.</p>
+
 </div>
 </div>
 <a id="a1bf0077952a8fe00095e3da53e232605" name="a1bf0077952a8fe00095e3da53e232605"></a>
@@ -1110,6 +1388,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00010">10</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00242">OnChildAdd()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00235">OnChildRemove()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00210">UpdateInterval()</a>.</p>
 
 </div>
 </div>
@@ -1135,6 +1415,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00007">7</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00059">GetScrollWidget()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00012">LeftArea()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00210">UpdateInterval()</a>.</p>
+
 </div>
 </div>
 <a id="aaccadb1c4c1c28193fe66b14e509c967" name="aaccadb1c4c1c28193fe66b14e509c967"></a>
@@ -1158,6 +1440,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00009">9</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00198">Refresh()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00210">UpdateInterval()</a>.</p>
 
 </div>
 </div>
@@ -1183,6 +1467,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00003">3</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00012">LeftArea()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00064">UpdateSelectionIcons()</a>.</p>
+
 </div>
 </div>
 <a id="ad904b3d6390f16ad5f9573ee7a8e090c" name="ad904b3d6390f16ad5f9573ee7a8e090c"></a>
@@ -1206,6 +1492,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00006">6</a> of file <a class="el" href="../../d9/d04/_left_area_8c_source.html">LeftArea.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00144">DraggingOverHeader()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00182">GetVicinityContainer()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00012">LeftArea()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00139">OnLeftPanelDropReceived()</a>, <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00119">SetSameLevelNextActive()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00124">SetSameLevelPreviousActive()</a>.</p>
 
 </div>
 </div>

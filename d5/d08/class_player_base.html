@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -172,6 +169,15 @@ Static Private Attributes</h2></td></tr>
 <p>Creates PL if it doesn't exist already. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_player_base_client_8c_source.html#l00009">9</a> of file <a class="el" href="../../dd/d03/_player_base_client_8c_source.html">PlayerBaseClient.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>  {</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#adade79cffc2ac289387403a6e433150f">m_PersonalLight</a> &amp;&amp; (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer()))</div>
+<div class="line"><span class="lineno">   12</span>      <a class="code hl_variable" href="#adade79cffc2ac289387403a6e433150f">m_PersonalLight</a> = <a class="code hl_class" href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a>.CreateLight(PersonalLight, <span class="stringliteral">&quot;0 0 0&quot;</span>);</div>
+<div class="line"><span class="lineno">   13</span>  }</div>
+<div class="ttc" id="aclass_player_base_html_adade79cffc2ac289387403a6e433150f"><div class="ttname"><a href="#adade79cffc2ac289387403a6e433150f">PlayerBase::m_PersonalLight</a></div><div class="ttdeci">static ScriptedLightBase m_PersonalLight</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00003">PlayerBaseClient.c:3</a></div></div>
+<div class="ttc" id="aclass_scripted_light_base_html"><div class="ttname"><a href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_point_light_base_8c_source.html#l00001">PointLightBase.c:2</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -199,6 +205,22 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_player_base_client_8c_source.html#l00037">37</a> of file <a class="el" href="../../dd/d03/_player_base_client_8c_source.html">PlayerBaseClient.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnGameplayDataHandlerSync();</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="#aa9b73dc87ba06a9e9b71799234d076d6">m_PersonalLightEnabledOnCurrentServer</a> = !<a class="code hl_class" href="../../d7/d0e/class_cfg_gameplay_handler.html">CfgGameplayHandler</a>.<a class="code hl_function" href="../../d7/d0e/class_cfg_gameplay_handler.html#a0dc5ae411367e844bad3a416580930f0">GetDisablePersonalLight</a>();</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="#ae9ed010329b638e227781f257bb90ffd">UpdatePersonalLight</a>();</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="#a86118831fd7366d5e1a6db962cf532c2">UpdateHitDirectionValues</a>();</div>
+<div class="line"><span class="lineno">   43</span>  }</div>
+<div class="ttc" id="aclass_cfg_gameplay_handler_html"><div class="ttname"><a href="../../d7/d0e/class_cfg_gameplay_handler.html">CfgGameplayHandler</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_cfg_gameplay_handler_8c_source.html#l00001">CfgGameplayHandler.c:2</a></div></div>
+<div class="ttc" id="aclass_cfg_gameplay_handler_html_a0dc5ae411367e844bad3a416580930f0"><div class="ttname"><a href="../../d7/d0e/class_cfg_gameplay_handler.html#a0dc5ae411367e844bad3a416580930f0">CfgGameplayHandler::GetDisablePersonalLight</a></div><div class="ttdeci">static bool GetDisablePersonalLight()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0f/_cfg_gameplay_handler_8c_source.html#l00121">CfgGameplayHandler.c:121</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_player_base_html_a86118831fd7366d5e1a6db962cf532c2"><div class="ttname"><a href="#a86118831fd7366d5e1a6db962cf532c2">PlayerBase::UpdateHitDirectionValues</a></div><div class="ttdeci">static void UpdateHitDirectionValues()</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00070">PlayerBaseClient.c:70</a></div></div>
+<div class="ttc" id="aclass_player_base_html_aa9b73dc87ba06a9e9b71799234d076d6"><div class="ttname"><a href="#aa9b73dc87ba06a9e9b71799234d076d6">PlayerBase::m_PersonalLightEnabledOnCurrentServer</a></div><div class="ttdeci">static bool m_PersonalLightEnabledOnCurrentServer</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00004">PlayerBaseClient.c:4</a></div></div>
+<div class="ttc" id="aclass_player_base_html_ae9ed010329b638e227781f257bb90ffd"><div class="ttname"><a href="#ae9ed010329b638e227781f257bb90ffd">PlayerBase::UpdatePersonalLight</a></div><div class="ttdeci">static void UpdatePersonalLight()</div><div class="ttdoc">Updates state of PL.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00057">PlayerBaseClient.c:57</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d0f/_cfg_gameplay_handler_8c_source.html#l00121">CfgGameplayHandler::GetDisablePersonalLight()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l05504">ManBase::OnSelectPlayer()</a>.</p>
 
 </div>
 </div>
@@ -228,6 +250,16 @@ Static Private Attributes</h2></td></tr>
 <p>Controls the ON/OFF switch of the Personal Light. PL will still shine only if the server allows it. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_player_base_client_8c_source.html#l00047">47</a> of file <a class="el" href="../../dd/d03/_player_base_client_8c_source.html">PlayerBaseClient.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer())</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>      <a class="code hl_variable" href="#a0f6f08e300479f7be7bcacb43bf982b2">m_PersonalLightIsSwitchedOn</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">state</a>;</div>
+<div class="line"><span class="lineno">   52</span>      <a class="code hl_function" href="#ae9ed010329b638e227781f257bb90ffd">UpdatePersonalLight</a>();</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
+<div class="ttc" id="aclass_player_base_html_a0f6f08e300479f7be7bcacb43bf982b2"><div class="ttname"><a href="#a0f6f08e300479f7be7bcacb43bf982b2">PlayerBase::m_PersonalLightIsSwitchedOn</a></div><div class="ttdeci">static bool m_PersonalLightIsSwitchedOn</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00006">PlayerBaseClient.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -255,6 +287,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_player_base_client_8c_source.html#l00070">70</a> of file <a class="el" href="../../dd/d03/_player_base_client_8c_source.html">PlayerBaseClient.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>  {</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_class" href="../../dc/d09/class_hit_direction_effect_base.html">HitDirectionEffectBase</a>.<a class="code hl_function" href="../../dc/d09/class_hit_direction_effect_base.html#ac068798c5d83fd12c903cf88e0c6b6cd">CheckValues</a>();</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
+<div class="ttc" id="aclass_hit_direction_effect_base_html"><div class="ttname"><a href="../../dc/d09/class_hit_direction_effect_base.html">HitDirectionEffectBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d00/_hit_direction_arrow_8c_source.html#l00002">HitDirectionArrow.c:3</a></div></div>
+<div class="ttc" id="aclass_hit_direction_effect_base_html_ac068798c5d83fd12c903cf88e0c6b6cd"><div class="ttname"><a href="../../dc/d09/class_hit_direction_effect_base.html#ac068798c5d83fd12c903cf88e0c6b6cd">HitDirectionEffectBase::CheckValues</a></div><div class="ttdeci">static void CheckValues()</div><div class="ttdoc">range 0..180, randomized offset of direction to make it less acurate</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d00/_hit_direction_base_8c_source.html#l00175">HitDirectionBase.c:175</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d00/_hit_direction_base_8c_source.html#l00175">HitDirectionEffectBase::CheckValues()</a>.</p>
 
 </div>
 </div>
@@ -284,6 +323,22 @@ Static Private Attributes</h2></td></tr>
 <p>Updates state of PL. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_player_base_client_8c_source.html#l00057">57</a> of file <a class="el" href="../../dd/d03/_player_base_client_8c_source.html">PlayerBaseClient.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>  {</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">param</a>;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_function" href="#a2b6f37c6f1850bf74836b0c727108bfe">CreatePersonalLight</a>();</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">// Allow PL unless it&#39;s disabled by debug or client-side starting parameter</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d3/d02/group___system.html#gad7348dce86a327765755d084ff96f22a">GetCLIParam</a>(<span class="stringliteral">&quot;disablePersonalLight&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">param</a>) &amp;&amp; !<a class="code hl_variable" href="#a1b71d04946ffad09c5f64c9f0b272889">m_PersonalLightDisabledByDebug</a> &amp;&amp; <a class="code hl_variable" href="#a0f6f08e300479f7be7bcacb43bf982b2">m_PersonalLightIsSwitchedOn</a>)</div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_variable" href="#adade79cffc2ac289387403a6e433150f">m_PersonalLight</a>.SetEnabled(<a class="code hl_variable" href="#aa9b73dc87ba06a9e9b71799234d076d6">m_PersonalLightEnabledOnCurrentServer</a>);</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   67</span>      <a class="code hl_variable" href="#adade79cffc2ac289387403a6e433150f">m_PersonalLight</a>.SetEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+<div class="ttc" id="aclass_player_base_html_a1b71d04946ffad09c5f64c9f0b272889"><div class="ttname"><a href="#a1b71d04946ffad09c5f64c9f0b272889">PlayerBase::m_PersonalLightDisabledByDebug</a></div><div class="ttdeci">static bool m_PersonalLightDisabledByDebug</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00005">PlayerBaseClient.c:5</a></div></div>
+<div class="ttc" id="aclass_player_base_html_a2b6f37c6f1850bf74836b0c727108bfe"><div class="ttname"><a href="#a2b6f37c6f1850bf74836b0c727108bfe">PlayerBase::CreatePersonalLight</a></div><div class="ttdeci">static void CreatePersonalLight()</div><div class="ttdoc">Creates PL if it doesn't exist already.</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00009">PlayerBaseClient.c:9</a></div></div>
+<div class="ttc" id="agroup___system_html_gad7348dce86a327765755d084ff96f22a"><div class="ttname"><a href="../../d3/d02/group___system.html#gad7348dce86a327765755d084ff96f22a">GetCLIParam</a></div><div class="ttdeci">proto bool GetCLIParam(string param, out string val)</div><div class="ttdoc">Returns command line argument.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d02/group___system.html#gad7348dce86a327765755d084ff96f22a">GetCLIParam()</a>.</p>
 
 </div>
 </div>

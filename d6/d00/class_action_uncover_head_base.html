@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -165,6 +162,53 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d01/_action_uncover_head_self_8c_source.html#l00012">12</a> of file <a class="el" href="../../d4/d01/_action_uncover_head_self_8c_source.html">ActionUncoverHeadSelf.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>  {</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>;</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetInventory().FindAttachment(<a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.HEADGEAR)) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>.GetType() == <span class="stringliteral">&quot;BurlapSackCover&quot;</span>)</div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">new_item</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   18</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.GetHumanInventory().GetEntityInHands())</div>
+<div class="line"><span class="lineno">   19</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">new_item</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../d8/d06/class_human_inventory.html">HumanInventory</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.GetInventory()).<a class="code hl_function" href="../../d8/d06/class_human_inventory.html#a313bbc773ff4207db5bfffc7cf3a0ae7">CreateInHands</a>(<span class="stringliteral">&quot;BurlapSack&quot;</span>));</div>
+<div class="line"><span class="lineno">   20</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   21</span>      {</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">new_item</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.GetInventory().CreateInInventory(<span class="stringliteral">&quot;BurlapSack&quot;</span>))) <span class="comment">//full inventory</span></div>
+<div class="line"><span class="lineno">   23</span>        {</div>
+<div class="line"><span class="lineno">   24</span>          <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">m4</a>[4];</div>
+<div class="line"><span class="lineno">   25</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.GetTransformWS(<a class="code hl_class" href="../../db/d06/class_param3.html">m4</a>);</div>
+<div class="line"><span class="lineno">   26</span>          <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">target_gnd</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">   27</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">target_gnd</a>.SetGround(<a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">m4</a>);</div>
+<div class="line"><span class="lineno">   28</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">new_item</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#af2765cd9720db7ed8b768e7e36838b1b">LocationCreateEntity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">target_gnd</a>, <span class="stringliteral">&quot;BurlapSack&quot;</span>, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a>, <a class="code hl_variable" href="../../db/d05/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a>));</div>
+<div class="line"><span class="lineno">   29</span>        }</div>
+<div class="line"><span class="lineno">   30</span>      }</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">new_item</a>)</div>
+<div class="line"><span class="lineno">   33</span>      {</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.TransferItemProperties(<a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_item</a>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">attachment</a>.Delete();</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.GetSoftSkillsManager().AddSpecialty(<a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a7ac795d34da2b1289e6ba3122c804ac3">m_SpecialtyWeight</a>);</div>
+<div class="line"><span class="lineno">   38</span>      }</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a7ac795d34da2b1289e6ba3122c804ac3"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a7ac795d34da2b1289e6ba3122c804ac3">m_SpecialtyWeight</a></div><div class="ttdeci">float m_SpecialtyWeight</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00068">ActionBase.c:68</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_ad5089ad5627dcc3e6096bb3849d934ff"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#ad5089ad5627dcc3e6096bb3849d934ff">ECE_IN_INVENTORY</a></div><div class="ttdeci">const int ECE_IN_INVENTORY</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00036">CentralEconomy.c:36</a></div></div>
+<div class="ttc" id="a_central_economy_8c_html_ae5cdc0d97e56d85d9f60e2c57c3563bb"><div class="ttname"><a href="../../db/d05/_central_economy_8c.html#ae5cdc0d97e56d85d9f60e2c57c3563bb">RF_DEFAULT</a></div><div class="ttdeci">const int RF_DEFAULT</div><div class="ttdef"><b>Definition</b> <a href="../../db/d05/_central_economy_8c_source.html#l00065">CentralEconomy.c:65</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_af2765cd9720db7ed8b768e7e36838b1b"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#af2765cd9720db7ed8b768e7e36838b1b">GameInventory::LocationCreateEntity</a></div><div class="ttdeci">static proto native EntityAI LocationCreateEntity(notnull InventoryLocation inv_loc, string type, int iSetupFlags, int iRotation)</div><div class="ttdoc">creates new item directly at location</div></div>
+<div class="ttc" id="aclass_human_inventory_html"><div class="ttname"><a href="../../d8/d06/class_human_inventory.html">HumanInventory</a></div><div class="ttdoc">inventory for plain man/human</div><div class="ttdef"><b>Definition</b> <a href="../../de/d07/_human_inventory_8c_source.html#l00009">HumanInventory.c:10</a></div></div>
+<div class="ttc" id="aclass_human_inventory_html_a313bbc773ff4207db5bfffc7cf3a0ae7"><div class="ttname"><a href="../../d8/d06/class_human_inventory.html#a313bbc773ff4207db5bfffc7cf3a0ae7">HumanInventory::CreateInHands</a></div><div class="ttdeci">proto native EntityAI CreateInHands(string typeName)</div><div class="ttdoc">creates new entity in hands</div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html">InventorySlots</a></div><div class="ttdoc">provides access to slot configuration</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/_inventory_slots_8c_source.html#l00005">InventorySlots.c:6</a></div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../d8/d06/class_human_inventory.html#a313bbc773ff4207db5bfffc7cf3a0ae7">HumanInventory::CreateInHands()</a>, <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00036">ECE_IN_INVENTORY</a>, <a class="el" href="../../dc/d01/class_game_inventory.html#af2765cd9720db7ed8b768e7e36838b1b">GameInventory::LocationCreateEntity()</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00068">m_SpecialtyWeight</a>, and <a class="el" href="../../db/d05/_central_economy_8c_source.html#l00065">RF_DEFAULT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d4/d01/_action_uncover_head_self_8c_source.html#l00074">OnFinishProgressServer()</a>, and <a class="el" href="../../d1/d0a/_action_uncover_head_target_8c_source.html#l00042">ActionUncoverHeadTarget::OnFinishProgressServer()</a>.</p>
 
 </div>
 </div>

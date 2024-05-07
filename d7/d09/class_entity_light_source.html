@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -342,7 +339,17 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00053">53</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   54</span>  {</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7643758d4cc47dc49bdbb1e441336378">m_NightTimeOnlyLights</a>)</div>
+<div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">index</a> = <a class="code hl_variable" href="#a7643758d4cc47dc49bdbb1e441336378">m_NightTimeOnlyLights</a>.Find(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">index</a> != -1)</div>
+<div class="line"><span class="lineno">   59</span>        <a class="code hl_variable" href="#a7643758d4cc47dc49bdbb1e441336378">m_NightTimeOnlyLights</a>.Remove(<a class="code hl_class" href="../../db/d06/class_param3.html">index</a>);</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a7643758d4cc47dc49bdbb1e441336378"><div class="ttname"><a href="#a7643758d4cc47dc49bdbb1e441336378">EntityLightSource::m_NightTimeOnlyLights</a></div><div class="ttdeci">static ref set&lt; ScriptedLightBase &gt; m_NightTimeOnlyLights</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00042">ScriptedLightBase.c:42</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -372,7 +379,11 @@ Static Private Attributes</h2></td></tr>
 <p>Prolongs the lifetime of the light in seconds. Use negative number to shorten its lifetime. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00342">342</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  343</span>  {</div>
+<div class="line"><span class="lineno">  344</span>    <a class="code hl_variable" href="#acd8cdb5a5d7ec8502c9b5d2e3fd23374">m_LifetimeEnd</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">life_in_s</a> * 1000;</div>
+<div class="line"><span class="lineno">  345</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_acd8cdb5a5d7ec8502c9b5d2e3fd23374"><div class="ttname"><a href="#acd8cdb5a5d7ec8502c9b5d2e3fd23374">EntityLightSource::m_LifetimeEnd</a></div><div class="ttdeci">float m_LifetimeEnd</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00013">ScriptedLightBase.c:13</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aae38031f754feb035c493daeb673f85b" name="aae38031f754feb035c493daeb673f85b"></a>
@@ -410,6 +421,37 @@ Static Private Attributes</h2></td></tr>
 <p>Attaches this light on the parent entity's memory point, with optional direction target memory point. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00150">150</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>  {</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (parent.MemoryPointExists(<a class="code hl_class" href="../../db/d06/class_param3.html">memory_point_start</a>))</div>
+<div class="line"><span class="lineno">  153</span>    {</div>
+<div class="line"><span class="lineno">  154</span>      <a class="code hl_variable" href="#a1d2a2afd78159f4a40946a4aa0461f62">m_LocalPos</a> = parent.GetMemoryPointPos(<a class="code hl_class" href="../../db/d06/class_param3.html">memory_point_start</a>);</div>
+<div class="line"><span class="lineno">  155</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>;</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">memory_point_target</a> != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><span class="lineno">  158</span>      {</div>
+<div class="line"><span class="lineno">  159</span>        <span class="keywordflow">if</span> (parent.MemoryPointExists(<a class="code hl_class" href="../../db/d06/class_param3.html">memory_point_target</a>))</div>
+<div class="line"><span class="lineno">  160</span>        {</div>
+<div class="line"><span class="lineno">  161</span>          <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">target_pos</a> = parent.GetSelectionPositionLS(<a class="code hl_class" href="../../db/d06/class_param3.html">memory_point_target</a>);</div>
+<div class="line"><span class="lineno">  162</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">target_pos</a> = <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#a95ab7bbe293e66e406d8f0cf1525ea6d">Direction</a>(<a class="code hl_variable" href="#a1d2a2afd78159f4a40946a4aa0461f62">m_LocalPos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">target_pos</a>);</div>
+<div class="line"><span class="lineno">  163</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target_pos</a>.VectorToAngles();</div>
+<div class="line"><span class="lineno">  164</span>        }</div>
+<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  166</span>          <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<span class="stringliteral">&quot;memory point &#39;memory_point_target&#39; not found when attaching light&quot;</span>);</div>
+<div class="line"><span class="lineno">  167</span>      }</div>
+<div class="line"><span class="lineno">  168</span>      <a class="code hl_function" href="#ab24215b5109f0f40667a3d0dba749634">AttachOnObject</a>(parent, <a class="code hl_variable" href="#a1d2a2afd78159f4a40946a4aa0461f62">m_LocalPos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>);</div>
+<div class="line"><span class="lineno">  169</span>      <a class="code hl_function" href="#a9263010824a3b4c00ac88b262666f2ce">UpdateMode</a>();</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  172</span>      <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<span class="stringliteral">&quot;memory point &#39;memory_point_start&#39; not found when attaching light&quot;</span>);</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a1d2a2afd78159f4a40946a4aa0461f62"><div class="ttname"><a href="#a1d2a2afd78159f4a40946a4aa0461f62">EntityLightSource::m_LocalPos</a></div><div class="ttdeci">vector m_LocalPos</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00036">ScriptedLightBase.c:36</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a9263010824a3b4c00ac88b262666f2ce"><div class="ttname"><a href="#a9263010824a3b4c00ac88b262666f2ce">EntityLightSource::UpdateMode</a></div><div class="ttdeci">void UpdateMode()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00079">ScriptedLightBase.c:79</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_ab24215b5109f0f40667a3d0dba749634"><div class="ttname"><a href="#ab24215b5109f0f40667a3d0dba749634">EntityLightSource::AttachOnObject</a></div><div class="ttdeci">void AttachOnObject(Object parent, vector local_pos=&quot;0 0 0&quot;, vector local_ori=&quot;0 0 0&quot;)</div><div class="ttdoc">Attaches this light on the parent entity, with optional position and orientation offset.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00119">ScriptedLightBase.c:119</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="aclassvector_html_a95ab7bbe293e66e406d8f0cf1525ea6d"><div class="ttname"><a href="../../d7/d0c/classvector.html#a95ab7bbe293e66e406d8f0cf1525ea6d">vector::Direction</a></div><div class="ttdeci">static vector Direction(vector p1, vector p2)</div><div class="ttdoc">Returns direction vector from point p1 to point p2.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00220">EnConvert.c:220</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00220">vector::Direction()</a>, <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, and <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00060">m_LocalPos</a>.</p>
 
 </div>
 </div>
@@ -448,6 +490,33 @@ Static Private Attributes</h2></td></tr>
 <p>Attaches this light on the parent entity, with optional position and orientation offset. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00119">119</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (!parent)</div>
+<div class="line"><span class="lineno">  122</span>    {</div>
+<div class="line"><span class="lineno">  123</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>)</div>
+<div class="line"><span class="lineno">  124</span>        <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>.RemoveChild(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  129</span>    {</div>
+<div class="line"><span class="lineno">  130</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>)</div>
+<div class="line"><span class="lineno">  131</span>        <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>.RemoveChild(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a> = parent;</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_variable" href="#a1d2a2afd78159f4a40946a4aa0461f62">m_LocalPos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">local_pos</a>;</div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="#ac851de047c590ae28ac995e471160fbe">m_LocalOri</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>;</div>
+<div class="line"><span class="lineno">  137</span>    SetOrientation(<a class="code hl_class" href="../../db/d06/class_param3.html">local_ori</a>);</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_function" href="../../d6/d0e/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">local_pos</a>);</div>
+<div class="line"><span class="lineno">  139</span>    parent.AddChild(<span class="keyword">this</span>, -1);</div>
+<div class="line"><span class="lineno">  140</span>    parent.Update();</div>
+<div class="line"><span class="lineno">  141</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_aaafdb19e9e5935a3fcc36b8435cafdd8"><div class="ttname"><a href="#aaafdb19e9e5935a3fcc36b8435cafdd8">EntityLightSource::m_Parent</a></div><div class="ttdeci">Object m_Parent</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00035">ScriptedLightBase.c:35</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_ac851de047c590ae28ac995e471160fbe"><div class="ttname"><a href="#ac851de047c590ae28ac995e471160fbe">EntityLightSource::m_LocalOri</a></div><div class="ttdeci">vector m_LocalOri</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00037">ScriptedLightBase.c:37</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga3aa6cafceab9d573982aa9db5a5d6e34"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a></div><div class="ttdeci">proto native void SetPosition(vector position)</div><div class="ttdoc">Set the world position of the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00420">Effect.c:420</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00062">m_LocalOri</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00060">m_LocalPos</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00420">SetPosition()</a>.</p>
 
 </div>
 </div>
@@ -475,7 +544,22 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00576">576</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  577</span>  {</div>
+<div class="line"><span class="lineno">  578</span>    <span class="comment">// Control fade out of the light</span></div>
+<div class="line"><span class="lineno">  579</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1f6f6c3ab3dd0323c982ff72699d2e19">m_FadeOutTime</a> != -1 &amp;&amp; <a class="code hl_variable" href="#acd8cdb5a5d7ec8502c9b5d2e3fd23374">m_LifetimeEnd</a> != -1 &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a> &gt; <a class="code hl_variable" href="#acd8cdb5a5d7ec8502c9b5d2e3fd23374">m_LifetimeEnd</a> - <a class="code hl_variable" href="#a1f6f6c3ab3dd0323c982ff72699d2e19">m_FadeOutTime</a>)</div>
+<div class="line"><span class="lineno">  580</span>    {</div>
+<div class="line"><span class="lineno">  581</span>      <a class="code hl_variable" href="#a1f6f6c3ab3dd0323c982ff72699d2e19">m_FadeOutTime</a> = -1;</div>
+<div class="line"><span class="lineno">  582</span>      <a class="code hl_variable" href="#a0f9046df68c876eb6529192f5617e788">m_FadeInTime</a> = -1; <span class="comment">// Stop fade in process</span></div>
+<div class="line"><span class="lineno">  583</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">time_left_in_s</a> = (<a class="code hl_variable" href="#acd8cdb5a5d7ec8502c9b5d2e3fd23374">m_LifetimeEnd</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a>) * 0.001;</div>
+<div class="line"><span class="lineno">  584</span>      <a class="code hl_function" href="#ac69f2a28e669a1dda3d61a14e0ad2234">FadeBrightnessTo</a>(0, <a class="code hl_class" href="../../db/d06/class_param3.html">time_left_in_s</a>);</div>
+<div class="line"><span class="lineno">  585</span>      <a class="code hl_function" href="#ad4a5a9d55e1be52ab42419f4f424b9cc">FadeRadiusTo</a>(0, <a class="code hl_class" href="../../db/d06/class_param3.html">time_left_in_s</a>);</div>
+<div class="line"><span class="lineno">  586</span>    }</div>
+<div class="line"><span class="lineno">  587</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a0f9046df68c876eb6529192f5617e788"><div class="ttname"><a href="#a0f9046df68c876eb6529192f5617e788">EntityLightSource::m_FadeInTime</a></div><div class="ttdeci">float m_FadeInTime</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00015">ScriptedLightBase.c:15</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a1f6f6c3ab3dd0323c982ff72699d2e19"><div class="ttname"><a href="#a1f6f6c3ab3dd0323c982ff72699d2e19">EntityLightSource::m_FadeOutTime</a></div><div class="ttdeci">float m_FadeOutTime</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00014">ScriptedLightBase.c:14</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_ac69f2a28e669a1dda3d61a14e0ad2234"><div class="ttname"><a href="#ac69f2a28e669a1dda3d61a14e0ad2234">EntityLightSource::FadeBrightnessTo</a></div><div class="ttdeci">void FadeBrightnessTo(float value, float time_in_s)</div><div class="ttdoc">Fades the brightness of the light to the given value.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00259">ScriptedLightBase.c:259</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_ad4a5a9d55e1be52ab42419f4f424b9cc"><div class="ttname"><a href="#ad4a5a9d55e1be52ab42419f4f424b9cc">EntityLightSource::FadeRadiusTo</a></div><div class="ttdeci">void FadeRadiusTo(float value, float time_in_s)</div><div class="ttdoc">Fades the radius of the light to the given value.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00278">ScriptedLightBase.c:278</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a94919b5c792f09740f2e71e7cf3d8a09" name="a94919b5c792f09740f2e71e7cf3d8a09"></a>
@@ -502,6 +586,42 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00530">530</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  531</span>  {</div>
+<div class="line"><span class="lineno">  532</span>    <span class="comment">// TO DO: OPTIMIZE AND REFACTOR! THIS MUST BE HANDLED IN AN EVENT, NOT PER FRAME!</span></div>
+<div class="line"><span class="lineno">  533</span> </div>
+<div class="line"><span class="lineno">  534</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>)</div>
+<div class="line"><span class="lineno">  535</span>    {</div>
+<div class="line"><span class="lineno">  536</span>      <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">parent_EAI</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>);</div>
+<div class="line"><span class="lineno">  537</span> </div>
+<div class="line"><span class="lineno">  538</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">parent_EAI</a>) <span class="comment">// Check if the Cast was successfull</span></div>
+<div class="line"><span class="lineno">  539</span>      {</div>
+<div class="line"><span class="lineno">  540</span>        <a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a> <a class="code hl_class" href="../../db/d06/class_param3.html">GI</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">parent_EAI</a>.GetInventory();</div>
+<div class="line"><span class="lineno">  541</span> </div>
+<div class="line"><span class="lineno">  542</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">GI</a>) <span class="comment">// Prevents handling of light on the parent item when it&#39;s projected in inventory as the item in inventory character&#39;s hands.</span></div>
+<div class="line"><span class="lineno">  543</span>        {</div>
+<div class="line"><span class="lineno">  544</span>          <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">is_in_cargo</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">GI</a>.IsInCargo();</div>
+<div class="line"><span class="lineno">  545</span> </div>
+<div class="line"><span class="lineno">  546</span>          <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">is_in_cargo</a>)</div>
+<div class="line"><span class="lineno">  547</span>          {</div>
+<div class="line"><span class="lineno">  548</span>            <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">parent2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">parent_EAI</a>.GetHierarchyParent();</div>
+<div class="line"><span class="lineno">  549</span> </div>
+<div class="line"><span class="lineno">  550</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">parent2</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">parent2</a>.GetInventory())</div>
+<div class="line"><span class="lineno">  551</span>              <a class="code hl_class" href="../../db/d06/class_param3.html">is_in_cargo</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">parent2</a>.GetInventory().IsInCargo();</div>
+<div class="line"><span class="lineno">  552</span>          }</div>
+<div class="line"><span class="lineno">  553</span> </div>
+<div class="line"><span class="lineno">  554</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">is_in_cargo</a>)</div>
+<div class="line"><span class="lineno">  555</span>            <a class="code hl_function" href="../../d6/d0c/_trap_trigger_8c.html#a1b78554376602d8235900ea585c7b807">SetEnabled</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  556</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  557</span>            <a class="code hl_function" href="../../d6/d0c/_trap_trigger_8c.html#a1b78554376602d8235900ea585c7b807">SetEnabled</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  558</span>        }</div>
+<div class="line"><span class="lineno">  559</span>      }</div>
+<div class="line"><span class="lineno">  560</span>    }</div>
+<div class="line"><span class="lineno">  561</span>  }</div>
+<div class="ttc" id="a_trap_trigger_8c_html_a1b78554376602d8235900ea585c7b807"><div class="ttname"><a href="../../d6/d0c/_trap_trigger_8c.html#a1b78554376602d8235900ea585c7b807">SetEnabled</a></div><div class="ttdeci">void SetEnabled()</div><div class="ttdoc">prevents insider adding in the wrong position, HOTFIX</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d0c/_trap_trigger_8c_source.html#l00107">TrapTrigger.c:107</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d6/d0c/_trap_trigger_8c_source.html#l00107">SetEnabled()</a>.</p>
 
 </div>
 </div>
@@ -529,6 +649,18 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00564">564</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  565</span>  {</div>
+<div class="line"><span class="lineno">  566</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a> &gt; <a class="code hl_variable" href="#acd8cdb5a5d7ec8502c9b5d2e3fd23374">m_LifetimeEnd</a> &amp;&amp; <a class="code hl_variable" href="#acd8cdb5a5d7ec8502c9b5d2e3fd23374">m_LifetimeEnd</a> != -1)</div>
+<div class="line"><span class="lineno">  567</span>    {</div>
+<div class="line"><span class="lineno">  568</span>      <a class="code hl_function" href="#a915883e6cc8fa31c54d5e0a6e27b9f96">Destroy</a>();</div>
+<div class="line"><span class="lineno">  569</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  570</span>    }</div>
+<div class="line"><span class="lineno">  571</span> </div>
+<div class="line"><span class="lineno">  572</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  573</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a915883e6cc8fa31c54d5e0a6e27b9f96"><div class="ttname"><a href="#a915883e6cc8fa31c54d5e0a6e27b9f96">EntityLightSource::Destroy</a></div><div class="ttdeci">void Destroy()</div><div class="ttdoc">Switches off the light and deletes it from memory.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00289">ScriptedLightBase.c:289</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00207">Destroy()</a>.</p>
 
 </div>
 </div>
@@ -558,7 +690,25 @@ Static Private Attributes</h2></td></tr>
 <p>Call this after using SetBrightness(...) to fix light's intensity during daytime. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00240">240</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  241</span>  {</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> &lt; 100)</div>
+<div class="line"><span class="lineno">  243</span>    {</div>
+<div class="line"><span class="lineno">  244</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">v</a> = <a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> * 0.01;</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">v</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  247</span>      {</div>
+<div class="line"><span class="lineno">  248</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">brightness_compesation</a> = 1 / <a class="code hl_class" href="../../db/d06/class_param3.html">v</a>;</div>
+<div class="line"><span class="lineno">  249</span>        <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">compenset_brightness</a> = (<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> * <a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a>) * <a class="code hl_class" href="../../db/d06/class_param3.html">brightness_compesation</a>;</div>
+<div class="line"><span class="lineno">  250</span>        SetBrightness(<a class="code hl_class" href="../../db/d06/class_param3.html">compenset_brightness</a>);</div>
+<div class="line"><span class="lineno">  251</span>        SetPulseCoef(<a class="code hl_class" href="../../db/d06/class_param3.html">v</a>);</div>
+<div class="line"><span class="lineno">  252</span>      }</div>
+<div class="line"><span class="lineno">  253</span>    }</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  255</span>      SetPulseCoef(1);</div>
+<div class="line"><span class="lineno">  256</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a041c0d678ecee34aa454d66a29dd6d3b"><div class="ttname"><a href="#a041c0d678ecee34aa454d66a29dd6d3b">EntityLightSource::m_BrightnessPulse</a></div><div class="ttdeci">float m_BrightnessPulse</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00019">ScriptedLightBase.c:19</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a07bc47e15772e2266a5582ad342c30d9"><div class="ttname"><a href="#a07bc47e15772e2266a5582ad342c30d9">EntityLightSource::m_Brightness</a></div><div class="ttdeci">float m_Brightness</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00018">ScriptedLightBase.c:18</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a797562b19cf0506d841aa58ac2fbfd0b" name="a797562b19cf0506d841aa58ac2fbfd0b"></a>
@@ -596,6 +746,36 @@ Static Private Attributes</h2></td></tr>
 <p>Creates an instance of light on the given position. Optionally, use fade_in_time_in_s parameter to make the light fade into existence. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00204">204</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>  {</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_class" href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">light_instance</a>;</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsServer() || !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsMultiplayer()) <span class="comment">// Client side</span></div>
+<div class="line"><span class="lineno">  209</span>    {</div>
+<div class="line"><span class="lineno">  210</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light_instance</a> = <a class="code hl_class" href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().CreateObject(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.ToString(), <a class="code hl_class" href="../../db/d06/class_param3.html">global_pos</a>, <span class="keyword">true</span>));</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">light_instance</a>)</div>
+<div class="line"><span class="lineno">  213</span>      {</div>
+<div class="line"><span class="lineno">  214</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;Error! Light entity of name &quot;</span> + <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.ToString() + <span class="stringliteral">&quot; cannot be spawned! This name is incorrect or not inherited from ScriptedLightBase.&quot;</span>);</div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  216</span>      }</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">fade_in_time_in_s</a> != 0)</div>
+<div class="line"><span class="lineno">  219</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">light_instance</a>.FadeIn(<a class="code hl_class" href="../../db/d06/class_param3.html">fade_in_time_in_s</a>);</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">else</span> <span class="comment">// Server side</span></div>
+<div class="line"><span class="lineno">  222</span>    {</div>
+<div class="line"><span class="lineno">  223</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsDebug())</div>
+<div class="line"><span class="lineno">  224</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;An instance of ScriptedLightBase was attempted to spawn on server side! Lights are CLIENT SIDE ONLY!&quot;</span>);</div>
+<div class="line"><span class="lineno">  225</span>    }</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">light_instance</a>;</div>
+<div class="line"><span class="lineno">  228</span>  }</div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad8c6fb88ec9295d5e3b3c7ad4854b647"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a></div><div class="ttdeci">PlayerSpawnPresetDiscreteItemSetSlotData name</div><div class="ttdoc">one set for cargo</div></div>
+<div class="ttc" id="aclass_scripted_light_base_html"><div class="ttname"><a href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d06/_point_light_base_8c_source.html#l00001">PointLightBase.c:2</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___debug_html_ga786b160dafbe15abb829786ba345cb15"><div class="ttname"><a href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a></div><div class="ttdeci">void Error(string err)</div><div class="ttdoc">Messagebox with error message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_en_debug_8c_source.html#l00090">EnDebug.c:90</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.</p>
 
 </div>
 </div>
@@ -647,6 +827,18 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00192">192</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>  {</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_class" href="../../dd/d03/class_scripted_light_base.html">ScriptedLightBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>;</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.MemoryPointExists(<a class="code hl_class" href="../../db/d06/class_param3.html">memory_point_start</a>))</div>
+<div class="line"><span class="lineno">  196</span>    {</div>
+<div class="line"><span class="lineno">  197</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a> = <a class="code hl_function" href="../../d0/d0a/_explosives_base_8c.html#a9aa4d96e810c3fd8ce13b4fdf548eae3">CreateLight</a>(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">global_pos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">fade_in_time_in_s</a>);</div>
+<div class="line"><span class="lineno">  198</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>.AttachOnMemoryPoint(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">memory_point_start</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">memory_point_target</a>);</div>
+<div class="line"><span class="lineno">  199</span>    }</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">light</a>;</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+<div class="ttc" id="a_explosives_base_8c_html_a9aa4d96e810c3fd8ce13b4fdf548eae3"><div class="ttname"><a href="../../d0/d0a/_explosives_base_8c.html#a9aa4d96e810c3fd8ce13b4fdf548eae3">CreateLight</a></div><div class="ttdeci">void CreateLight()</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0a/_explosives_base_8c_source.html#l00139">ExplosivesBase.c:139</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00139">CreateLight()</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.</p>
 
 </div>
 </div>
@@ -674,6 +866,11 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00113">113</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>  {</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ObjectDelete(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  116</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -703,6 +900,24 @@ Static Private Attributes</h2></td></tr>
 <p>Correct way of deleting light from memory. It is necesarry to have this delay due to hierarchy. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00098">98</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_function" href="#a97f3b82c48dc7ed3885526cc94373dbb">DetachFromParent</a>(); <span class="comment">// This is the reason for the delay</span></div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>())</div>
+<div class="line"><span class="lineno">  103</span>    {</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#ad8bbf743310e1d1207bf553883d899cc">m_DeleteTimer</a>)</div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_variable" href="#ad8bbf743310e1d1207bf553883d899cc">m_DeleteTimer</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d8/d08/class_timer.html">Timer</a>(<a class="code hl_variable" href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a>);</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>      <a class="code hl_variable" href="#ad8bbf743310e1d1207bf553883d899cc">m_DeleteTimer</a>.Run(0.03, <span class="keyword">this</span>, <span class="stringliteral">&quot;DeleteLightNow&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a97f3b82c48dc7ed3885526cc94373dbb"><div class="ttname"><a href="#a97f3b82c48dc7ed3885526cc94373dbb">EntityLightSource::DetachFromParent</a></div><div class="ttdeci">void DetachFromParent()</div><div class="ttdoc">Detaches this light from its parent entity.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00176">ScriptedLightBase.c:176</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_ad8bbf743310e1d1207bf553883d899cc"><div class="ttname"><a href="#ad8bbf743310e1d1207bf553883d899cc">EntityLightSource::m_DeleteTimer</a></div><div class="ttdeci">ref Timer m_DeleteTimer</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00040">ScriptedLightBase.c:40</a></div></div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="../../d8/d08/class_timer.html">Timer</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d02/_day_z_player_implement_8c_source.html#l00060">DayZPlayerImplement.c:61</a></div></div>
+<div class="ttc" id="agroup___tools_html_gaaf491f3ecd1d9aefb35a16bf96ca420c"><div class="ttname"><a href="../../d9/d03/group___tools.html#gaaf491f3ecd1d9aefb35a16bf96ca420c">CALL_CATEGORY_SYSTEM</a></div><div class="ttdeci">const int CALL_CATEGORY_SYSTEM</div><div class="ttdef"><b>Definition</b> <a href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">tools.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00008">CALL_CATEGORY_SYSTEM</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d0/d0a/_explosives_base_8c_source.html#l00028">m_DeleteTimer</a>.</p>
 
 </div>
 </div>
@@ -732,6 +947,19 @@ Static Private Attributes</h2></td></tr>
 <p>Switches off the light and deletes it from memory. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00289">289</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  290</span>  {</div>
+<div class="line"><span class="lineno">  291</span>    ClearEventMask(<a class="code hl_enumeration" href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a>.FRAME);</div>
+<div class="line"><span class="lineno">  292</span>    <a class="code hl_function" href="../../d6/d0c/_trap_trigger_8c.html#a1b78554376602d8235900ea585c7b807">SetEnabled</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  293</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>)</div>
+<div class="line"><span class="lineno">  294</span>      <a class="code hl_function" href="#a7076ed55750f8a135dc163b386b49ea9">DeleteLightWithDelay</a>();</div>
+<div class="line"><span class="lineno">  295</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  296</span>      <a class="code hl_function" href="#afb71494d1e78a06b9a87be7eab9e6080">DeleteLightNow</a>();</div>
+<div class="line"><span class="lineno">  297</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a7076ed55750f8a135dc163b386b49ea9"><div class="ttname"><a href="#a7076ed55750f8a135dc163b386b49ea9">EntityLightSource::DeleteLightWithDelay</a></div><div class="ttdeci">void DeleteLightWithDelay()</div><div class="ttdoc">Correct way of deleting light from memory. It is necesarry to have this delay due to hierarchy.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00098">ScriptedLightBase.c:98</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_afb71494d1e78a06b9a87be7eab9e6080"><div class="ttname"><a href="#afb71494d1e78a06b9a87be7eab9e6080">EntityLightSource::DeleteLightNow</a></div><div class="ttdeci">void DeleteLightNow()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00113">ScriptedLightBase.c:113</a></div></div>
+<div class="ttc" id="agroup___entity_attributes_html_gaa29339063b04471895b3cb38b17cdb13"><div class="ttname"><a href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a></div><div class="ttdeci">EntityEvent</div><div class="ttdoc">Entity events for event-mask, or throwing event from code.</div><div class="ttdef"><b>Definition</b> <a href="../../de/d05/_en_entity_8c_source.html#l00043">EnEntity.c:44</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d6/d0c/_trap_trigger_8c_source.html#l00107">SetEnabled()</a>.</p>
 
 </div>
 </div>
@@ -761,6 +989,25 @@ Static Private Attributes</h2></td></tr>
 <p>Detaches this light from its parent entity. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00176">176</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>  {</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>)</div>
+<div class="line"><span class="lineno">  179</span>      <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a> = <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.Cast(<a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a>());</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>)</div>
+<div class="line"><span class="lineno">  182</span>    {</div>
+<div class="line"><span class="lineno">  183</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>.ToDelete() &amp;&amp; !ToDelete())</div>
+<div class="line"><span class="lineno">  184</span>        <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>.RemoveChild(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_variable" href="#a1d2a2afd78159f4a40946a4aa0461f62">m_LocalPos</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0, 0, 0);</div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_variable" href="#ac851de047c590ae28ac995e471160fbe">m_LocalOri</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0, 0, 0);</div>
+<div class="line"><span class="lineno">  190</span>  }</div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga5bd1deb1c96276d94eeec6fe40955c41"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a></div><div class="ttdeci">proto native vector Vector(float x, float y, float z)</div><div class="ttdoc">Vector constructor from components.</div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga1d63886deac2f225cc139143f9d79141"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga1d63886deac2f225cc139143f9d79141">GetParent</a></div><div class="ttdeci">proto native Widget GetParent()</div><div class="ttdoc">Get parent of the Effect.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0d/_effect_8c_source.html#l00389">Effect.c:389</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00389">GetParent()</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00062">m_LocalOri</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00060">m_LocalPos</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
 
 </div>
 </div>
@@ -790,7 +1037,11 @@ Static Private Attributes</h2></td></tr>
 <p>Enables some debug functionality of this light. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00402">402</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  403</span>  {</div>
+<div class="line"><span class="lineno">  404</span>    <a class="code hl_variable" href="#a44cec399a505610f8430dcc0117538b9">m_IsDebugEnabled</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">state</a>;</div>
+<div class="line"><span class="lineno">  405</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a44cec399a505610f8430dcc0117538b9"><div class="ttname"><a href="#a44cec399a505610f8430dcc0117538b9">EntityLightSource::m_IsDebugEnabled</a></div><div class="ttdeci">bool m_IsDebugEnabled</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00033">ScriptedLightBase.c:33</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a41311b1250633902d965f6d7dc81328f" name="a41311b1250633902d965f6d7dc81328f"></a>
@@ -823,6 +1074,41 @@ Static Private Attributes</h2></td></tr>
 <p>On frame event. If you want to control your light within your own rules then override the event OnFrameLightSource and put your code there. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00354">354</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  355</span>  {</div>
+<div class="line"><span class="lineno">  356</span>    <span class="comment">// Control lifetime of the light</span></div>
+<div class="line"><span class="lineno">  357</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetTime();</div>
+<div class="line"><span class="lineno">  358</span> </div>
+<div class="line"><span class="lineno">  359</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#af4ed760286c74c0ea82d8ec1fa193187">CheckLifetime</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a>))</div>
+<div class="line"><span class="lineno">  360</span>      SetRadius(<a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a>);</div>
+<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  362</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  363</span> </div>
+<div class="line"><span class="lineno">  364</span>    <a class="code hl_function" href="#ac18c558d7ba551c1ab1ea1e36157f7f3">HandleFlickering</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a> - <a class="code hl_variable" href="#a540cfd0ebe71da1b3ff6fc0e168f0c0a">m_LifetimeStart</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>);</div>
+<div class="line"><span class="lineno">  365</span>    <a class="code hl_function" href="#a8b1a5ca8a8572b6246444e1f698adf8b">HandleDancingShadows</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a> - <a class="code hl_variable" href="#a540cfd0ebe71da1b3ff6fc0e168f0c0a">m_LifetimeStart</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>);</div>
+<div class="line"><span class="lineno">  366</span>    <a class="code hl_function" href="#ae8d7d0f355910bdef48e9336ec70ba58">CheckFadeOut</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a>);</div>
+<div class="line"><span class="lineno">  367</span>    <a class="code hl_function" href="#a01c2f8497d2a58a41e1da2ac693e393d">HandleBrightnessFadeing</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>);</div>
+<div class="line"><span class="lineno">  368</span>    <a class="code hl_function" href="#a5c794b561557cd3638e84c2d05686c17">HandleRadiusFadeing</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>);</div>
+<div class="line"><span class="lineno">  369</span> </div>
+<div class="line"><span class="lineno">  370</span>    <a class="code hl_function" href="#a94919b5c792f09740f2e71e7cf3d8a09">CheckIfParentIsInCargo</a>();</div>
+<div class="line"><span class="lineno">  371</span>    <a class="code hl_function" href="#a53b68b03a294344aefee60114c9b7808">TryShadowOptimization</a>();</div>
+<div class="line"><span class="lineno">  372</span>    <a class="code hl_function" href="#aca43ef58338c4a0767611b9fae59c1a3">OnFrameLightSource</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">other</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>);</div>
+<div class="line"><span class="lineno">  373</span> </div>
+<div class="line"><span class="lineno">  374</span>    <a class="code hl_function" href="#a162c07596e78a67c6d1397a13f322010">HandleBlinking</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">current_time</a>);</div>
+<div class="line"><span class="lineno">  375</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a01c2f8497d2a58a41e1da2ac693e393d"><div class="ttname"><a href="#a01c2f8497d2a58a41e1da2ac693e393d">EntityLightSource::HandleBrightnessFadeing</a></div><div class="ttdeci">void HandleBrightnessFadeing(float timeSlice)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00590">ScriptedLightBase.c:590</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a162c07596e78a67c6d1397a13f322010"><div class="ttname"><a href="#a162c07596e78a67c6d1397a13f322010">EntityLightSource::HandleBlinking</a></div><div class="ttdeci">void HandleBlinking(float time)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00662">ScriptedLightBase.c:662</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a177ecd84fbf49ab7aaa602e127776f6b"><div class="ttname"><a href="#a177ecd84fbf49ab7aaa602e127776f6b">EntityLightSource::m_Radius</a></div><div class="ttdeci">float m_Radius</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00016">ScriptedLightBase.c:16</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a53b68b03a294344aefee60114c9b7808"><div class="ttname"><a href="#a53b68b03a294344aefee60114c9b7808">EntityLightSource::TryShadowOptimization</a></div><div class="ttdeci">void TryShadowOptimization()</div><div class="ttdoc">Optimizes shadows by disabling them on this light source while it's within the given radius around th...</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00505">ScriptedLightBase.c:505</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a540cfd0ebe71da1b3ff6fc0e168f0c0a"><div class="ttname"><a href="#a540cfd0ebe71da1b3ff6fc0e168f0c0a">EntityLightSource::m_LifetimeStart</a></div><div class="ttdeci">float m_LifetimeStart</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00012">ScriptedLightBase.c:12</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a5c794b561557cd3638e84c2d05686c17"><div class="ttname"><a href="#a5c794b561557cd3638e84c2d05686c17">EntityLightSource::HandleRadiusFadeing</a></div><div class="ttdeci">void HandleRadiusFadeing(float timeSlice)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00623">ScriptedLightBase.c:623</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a8b1a5ca8a8572b6246444e1f698adf8b"><div class="ttname"><a href="#a8b1a5ca8a8572b6246444e1f698adf8b">EntityLightSource::HandleDancingShadows</a></div><div class="ttdeci">void HandleDancingShadows(float time, float timeSlice)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00408">ScriptedLightBase.c:408</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a94919b5c792f09740f2e71e7cf3d8a09"><div class="ttname"><a href="#a94919b5c792f09740f2e71e7cf3d8a09">EntityLightSource::CheckIfParentIsInCargo</a></div><div class="ttdeci">void CheckIfParentIsInCargo()</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00530">ScriptedLightBase.c:530</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_ac18c558d7ba551c1ab1ea1e36157f7f3"><div class="ttname"><a href="#ac18c558d7ba551c1ab1ea1e36157f7f3">EntityLightSource::HandleFlickering</a></div><div class="ttdeci">void HandleFlickering(float time, float timeSlice)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00446">ScriptedLightBase.c:446</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_aca43ef58338c4a0767611b9fae59c1a3"><div class="ttname"><a href="#aca43ef58338c4a0767611b9fae59c1a3">EntityLightSource::OnFrameLightSource</a></div><div class="ttdeci">void OnFrameLightSource(IEntity other, float timeSlice)</div><div class="ttdoc">Override this for custom functionality.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00348">ScriptedLightBase.c:348</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_ae8d7d0f355910bdef48e9336ec70ba58"><div class="ttname"><a href="#ae8d7d0f355910bdef48e9336ec70ba58">EntityLightSource::CheckFadeOut</a></div><div class="ttdeci">void CheckFadeOut(int current_time)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00576">ScriptedLightBase.c:576</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_af4ed760286c74c0ea82d8ec1fa193187"><div class="ttname"><a href="#af4ed760286c74c0ea82d8ec1fa193187">EntityLightSource::CheckLifetime</a></div><div class="ttdeci">bool CheckLifetime(int current_time)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00564">ScriptedLightBase.c:564</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d6/d07/_a_i_group_behaviour_8c_source.html#l00010">m_Radius</a>.</p>
 
 </div>
 </div>
@@ -854,6 +1140,19 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00063">63</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>  {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (!IsVisibleDuringDaylight())</div>
+<div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>      <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">   68</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.m_UndergroundPresence)</div>
+<div class="line"><span class="lineno">   69</span>        SetVisibleDuringDaylight(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   70</span>      <a class="code hl_variable" href="#a7643758d4cc47dc49bdbb1e441336378">m_NightTimeOnlyLights</a>.Insert(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+<div class="line"><span class="lineno">   72</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00047">ModifierBase.c:47</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>.</p>
 
 </div>
 </div>
@@ -887,6 +1186,20 @@ Static Private Attributes</h2></td></tr>
 <p>Fades the brightness of the light to the given value. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00259">259</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  260</span>  {</div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_variable" href="#a24ae2ede3c4d8c9c897d2196a92e3b08">m_BrightnessTarget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  262</span> </div>
+<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a> == 0)</div>
+<div class="line"><span class="lineno">  264</span>      <a class="code hl_variable" href="#a378af356347f74eec4f0f3284664c8b2">m_BrightnessSpeedOfChange</a> = 9999;</div>
+<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  266</span>      <a class="code hl_variable" href="#a378af356347f74eec4f0f3284664c8b2">m_BrightnessSpeedOfChange</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> - <a class="code hl_variable" href="#a24ae2ede3c4d8c9c897d2196a92e3b08">m_BrightnessTarget</a>) / <a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a>;</div>
+<div class="line"><span class="lineno">  267</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a24ae2ede3c4d8c9c897d2196a92e3b08"><div class="ttname"><a href="#a24ae2ede3c4d8c9c897d2196a92e3b08">EntityLightSource::m_BrightnessTarget</a></div><div class="ttdeci">float m_BrightnessTarget</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00023">ScriptedLightBase.c:23</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a378af356347f74eec4f0f3284664c8b2"><div class="ttname"><a href="#a378af356347f74eec4f0f3284664c8b2">EntityLightSource::m_BrightnessSpeedOfChange</a></div><div class="ttdeci">float m_BrightnessSpeedOfChange</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00024">ScriptedLightBase.c:24</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math_html_gadf8820d46eee5033af2e12212c22b16e"><div class="ttname"><a href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat</a></div><div class="ttdeci">static proto float AbsFloat(float f)</div><div class="ttdoc">Returns absolute value.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat()</a>.</p>
 
 </div>
 </div>
@@ -916,7 +1229,13 @@ Static Private Attributes</h2></td></tr>
 <p>Makes the light fade into existence. Works only at the moment the light is created. Consider using FadeBrightnessTo(...) and FadeRadiusTo(...) at anytime later during lifetime. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00334">334</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  335</span>  {</div>
+<div class="line"><span class="lineno">  336</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">brightness</a> = <a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a>;</div>
+<div class="line"><span class="lineno">  337</span>    <a class="code hl_function" href="#a63c6b2e803f2002a2b90869ea20e114b">SetBrightnessTo</a>(0);</div>
+<div class="line"><span class="lineno">  338</span>    <a class="code hl_function" href="#ac69f2a28e669a1dda3d61a14e0ad2234">FadeBrightnessTo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">brightness</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a>);</div>
+<div class="line"><span class="lineno">  339</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a63c6b2e803f2002a2b90869ea20e114b"><div class="ttname"><a href="#a63c6b2e803f2002a2b90869ea20e114b">EntityLightSource::SetBrightnessTo</a></div><div class="ttdeci">void SetBrightnessTo(float value)</div><div class="ttdoc">Sets the brightness of the light.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00231">ScriptedLightBase.c:231</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac4dee3142bfa313f2eab0a4602786a02" name="ac4dee3142bfa313f2eab0a4602786a02"></a>
@@ -945,7 +1264,26 @@ Static Private Attributes</h2></td></tr>
 <p>Starts the fade out process and destroys the light when its done. Optional parameter allows you to set time of this fade out in seconds. If not set, then default value (from SetFadeOutTime(...)) is used. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00313">313</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  314</span>  {</div>
+<div class="line"><span class="lineno">  315</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">time_in_ms</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a> * 1000;</div>
+<div class="line"><span class="lineno">  316</span> </div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a> == -1)</div>
+<div class="line"><span class="lineno">  318</span>    {</div>
+<div class="line"><span class="lineno">  319</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">kill_time_in_s</a> = <a class="code hl_variable" href="#a1f6f6c3ab3dd0323c982ff72699d2e19">m_FadeOutTime</a> * 0.001;</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>      <a class="code hl_function" href="#ac69f2a28e669a1dda3d61a14e0ad2234">FadeBrightnessTo</a>(0, <a class="code hl_class" href="../../db/d06/class_param3.html">kill_time_in_s</a>);</div>
+<div class="line"><span class="lineno">  322</span>      <a class="code hl_function" href="#ad4a5a9d55e1be52ab42419f4f424b9cc">FadeRadiusTo</a>(0, <a class="code hl_class" href="../../db/d06/class_param3.html">kill_time_in_s</a>);</div>
+<div class="line"><span class="lineno">  323</span>      <a class="code hl_function" href="#a2bffba5f26ace849312b42b8a3a3a997">SetLifetime</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">kill_time_in_s</a>);</div>
+<div class="line"><span class="lineno">  324</span>    }</div>
+<div class="line"><span class="lineno">  325</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  326</span>    {</div>
+<div class="line"><span class="lineno">  327</span>      <a class="code hl_function" href="#ac69f2a28e669a1dda3d61a14e0ad2234">FadeBrightnessTo</a>(0, <a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a>);</div>
+<div class="line"><span class="lineno">  328</span>      <a class="code hl_function" href="#ad4a5a9d55e1be52ab42419f4f424b9cc">FadeRadiusTo</a>(0, <a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a>);</div>
+<div class="line"><span class="lineno">  329</span>      <a class="code hl_function" href="#a2bffba5f26ace849312b42b8a3a3a997">SetLifetime</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a>);</div>
+<div class="line"><span class="lineno">  330</span>    }</div>
+<div class="line"><span class="lineno">  331</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a2bffba5f26ace849312b42b8a3a3a997"><div class="ttname"><a href="#a2bffba5f26ace849312b42b8a3a3a997">EntityLightSource::SetLifetime</a></div><div class="ttdeci">void SetLifetime(float life_in_s)</div><div class="ttdoc">Makes the light destroy itself after the given time in seconds. The light will fade out if it's set t...</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00300">ScriptedLightBase.c:300</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad4a5a9d55e1be52ab42419f4f424b9cc" name="ad4a5a9d55e1be52ab42419f4f424b9cc"></a>
@@ -978,6 +1316,18 @@ Static Private Attributes</h2></td></tr>
 <p>Fades the radius of the light to the given value. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00278">278</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  279</span>  {</div>
+<div class="line"><span class="lineno">  280</span>    <a class="code hl_variable" href="#a8ffd23faf43a75f9ee60f4ec0a09a079">m_RadiusTarget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a> == 0)</div>
+<div class="line"><span class="lineno">  283</span>      <a class="code hl_variable" href="#a6dce29ab6c7287749c5739b64fc234e7">m_RadiusSpeedOfChange</a> = 9999;</div>
+<div class="line"><span class="lineno">  284</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  285</span>      <a class="code hl_variable" href="#a6dce29ab6c7287749c5739b64fc234e7">m_RadiusSpeedOfChange</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(<a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a> - <a class="code hl_variable" href="#a8ffd23faf43a75f9ee60f4ec0a09a079">m_RadiusTarget</a>) / <a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a>;</div>
+<div class="line"><span class="lineno">  286</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a6dce29ab6c7287749c5739b64fc234e7"><div class="ttname"><a href="#a6dce29ab6c7287749c5739b64fc234e7">EntityLightSource::m_RadiusSpeedOfChange</a></div><div class="ttdeci">float m_RadiusSpeedOfChange</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00025">ScriptedLightBase.c:25</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_a8ffd23faf43a75f9ee60f4ec0a09a079"><div class="ttname"><a href="#a8ffd23faf43a75f9ee60f4ec0a09a079">EntityLightSource::m_RadiusTarget</a></div><div class="ttdeci">float m_RadiusTarget</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00017">ScriptedLightBase.c:17</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat()</a>, and <a class="el" href="../../d6/d07/_a_i_group_behaviour_8c_source.html#l00010">m_Radius</a>.</p>
 
 </div>
 </div>
@@ -1007,6 +1357,11 @@ Static Private Attributes</h2></td></tr>
 <p>Returns attachment parent. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00144">144</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>;</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +1391,11 @@ Static Private Attributes</h2></td></tr>
 <p>Returns the speed of blinks. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00656">656</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  657</span>  {</div>
+<div class="line"><span class="lineno">  658</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a43e898d434dbc93b41f868adec9566b3">m_BlinkingSpeed</a>;</div>
+<div class="line"><span class="lineno">  659</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a43e898d434dbc93b41f868adec9566b3"><div class="ttname"><a href="#a43e898d434dbc93b41f868adec9566b3">EntityLightSource::m_BlinkingSpeed</a></div><div class="ttdeci">float m_BlinkingSpeed</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00031">ScriptedLightBase.c:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aac4d6738cb756d96d8ae4db5e780ad0f" name="aac4d6738cb756d96d8ae4db5e780ad0f"></a>
@@ -1065,7 +1424,11 @@ Static Private Attributes</h2></td></tr>
 <p>Returns max movement range of pointlight within the dancing shadow effect. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00390">390</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  391</span>  {</div>
+<div class="line"><span class="lineno">  392</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#affdc8409fa8ddd34d000b89f438e36c4">m_DancingShadowsAmplitude</a>;</div>
+<div class="line"><span class="lineno">  393</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_affdc8409fa8ddd34d000b89f438e36c4"><div class="ttname"><a href="#affdc8409fa8ddd34d000b89f438e36c4">EntityLightSource::m_DancingShadowsAmplitude</a></div><div class="ttdeci">float m_DancingShadowsAmplitude</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00028">ScriptedLightBase.c:28</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab1b10717ec289d0a57ed5d3927521d8a" name="ab1b10717ec289d0a57ed5d3927521d8a"></a>
@@ -1094,7 +1457,11 @@ Static Private Attributes</h2></td></tr>
 <p>Returns max movement speed of pointlight within the dancing shadow effect. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00396">396</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  397</span>  {</div>
+<div class="line"><span class="lineno">  398</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aea7b86cef74325c05cc571cdc4a9f97f">m_DancingShadowsSpeed</a>;</div>
+<div class="line"><span class="lineno">  399</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_aea7b86cef74325c05cc571cdc4a9f97f"><div class="ttname"><a href="#aea7b86cef74325c05cc571cdc4a9f97f">EntityLightSource::m_DancingShadowsSpeed</a></div><div class="ttdeci">float m_DancingShadowsSpeed</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00029">ScriptedLightBase.c:29</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7e2aef4b837d1b094adaebcf7db8e675" name="a7e2aef4b837d1b094adaebcf7db8e675"></a>
@@ -1123,7 +1490,11 @@ Static Private Attributes</h2></td></tr>
 <p>Returns the range you put inside SetDisableShadowsWithinRadius(...) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00525">525</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  526</span>  {</div>
+<div class="line"><span class="lineno">  527</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ab36fcc7d9e30ee9f3df11dc245855e70">m_OptimizeShadowsRadius</a>;</div>
+<div class="line"><span class="lineno">  528</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_ab36fcc7d9e30ee9f3df11dc245855e70"><div class="ttname"><a href="#ab36fcc7d9e30ee9f3df11dc245855e70">EntityLightSource::m_OptimizeShadowsRadius</a></div><div class="ttdeci">float m_OptimizeShadowsRadius</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00026">ScriptedLightBase.c:26</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab9986edc8f5a6874901850bcf6a9054e" name="ab9986edc8f5a6874901850bcf6a9054e"></a>
@@ -1152,7 +1523,11 @@ Static Private Attributes</h2></td></tr>
 <p>Returns flicker amplitude maximum. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00493">493</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  494</span>  {</div>
+<div class="line"><span class="lineno">  495</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a88ef5633a2e2e599b3f49478124f9958">m_BrightnessPulseAmplitudeMax</a>;</div>
+<div class="line"><span class="lineno">  496</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a88ef5633a2e2e599b3f49478124f9958"><div class="ttname"><a href="#a88ef5633a2e2e599b3f49478124f9958">EntityLightSource::m_BrightnessPulseAmplitudeMax</a></div><div class="ttdeci">float m_BrightnessPulseAmplitudeMax</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00021">ScriptedLightBase.c:21</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9b212a699c075fa780e5895d31ce7a0a" name="a9b212a699c075fa780e5895d31ce7a0a"></a>
@@ -1181,7 +1556,11 @@ Static Private Attributes</h2></td></tr>
 <p>Returns flicker amplitude minimum. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00499">499</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  500</span>  {</div>
+<div class="line"><span class="lineno">  501</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad717dcbbefb6faa4c74ca1591146cb1c">m_BrightnessPulseAmplitudeMin</a>;</div>
+<div class="line"><span class="lineno">  502</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_ad717dcbbefb6faa4c74ca1591146cb1c"><div class="ttname"><a href="#ad717dcbbefb6faa4c74ca1591146cb1c">EntityLightSource::m_BrightnessPulseAmplitudeMin</a></div><div class="ttdeci">float m_BrightnessPulseAmplitudeMin</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00022">ScriptedLightBase.c:22</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab490f007a406cbfcd2cbbcc76e9da398" name="ab490f007a406cbfcd2cbbcc76e9da398"></a>
@@ -1210,7 +1589,11 @@ Static Private Attributes</h2></td></tr>
 <p>Returns flicker speed. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00487">487</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  488</span>  {</div>
+<div class="line"><span class="lineno">  489</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a0922eb80d07064756df8e5d1aa77ccf3">m_BrightnessPulseSpeed</a>;</div>
+<div class="line"><span class="lineno">  490</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_a0922eb80d07064756df8e5d1aa77ccf3"><div class="ttname"><a href="#a0922eb80d07064756df8e5d1aa77ccf3">EntityLightSource::m_BrightnessPulseSpeed</a></div><div class="ttdeci">float m_BrightnessPulseSpeed</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00020">ScriptedLightBase.c:20</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a162c07596e78a67c6d1397a13f322010" name="a162c07596e78a67c6d1397a13f322010"></a>
@@ -1237,6 +1620,22 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00662">662</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  663</span>  {</div>
+<div class="line"><span class="lineno">  664</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a43e898d434dbc93b41f868adec9566b3">m_BlinkingSpeed</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  665</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  666</span> </div>
+<div class="line"><span class="lineno">  667</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">multiplier</a>;</div>
+<div class="line"><span class="lineno">  668</span> </div>
+<div class="line"><span class="lineno">  669</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">multiplier</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga94eedd3910334f450ef989d69ab4e4fd">Sin</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">time</a> * 0.001 * <a class="code hl_variable" href="#a43e898d434dbc93b41f868adec9566b3">m_BlinkingSpeed</a>); <span class="comment">// Oscillate the multiplier overtime (time normalized to sec)</span></div>
+<div class="line"><span class="lineno">  670</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">multiplier</a> = (<a class="code hl_class" href="../../db/d06/class_param3.html">multiplier</a> + 1) / 2; <span class="comment">// Normalized the value to 0-1</span></div>
+<div class="line"><span class="lineno">  671</span> </div>
+<div class="line"><span class="lineno">  672</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">multiplier</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Round</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">multiplier</a>); <span class="comment">// Rounding to 0 or 1 to make it blink instantly</span></div>
+<div class="line"><span class="lineno">  673</span>    SetBrightness(<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">multiplier</a>);</div>
+<div class="line"><span class="lineno">  674</span>  }</div>
+<div class="ttc" id="agroup___math_html_ga7a63fd1bc9f0c95f8021d8ece1b7500f"><div class="ttname"><a href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Math::Round</a></div><div class="ttdeci">static proto float Round(float f)</div><div class="ttdoc">Returns mathematical round of value.</div></div>
+<div class="ttc" id="agroup___math_html_ga94eedd3910334f450ef989d69ab4e4fd"><div class="ttname"><a href="../../d5/d08/group___math.html#ga94eedd3910334f450ef989d69ab4e4fd">Math::Sin</a></div><div class="ttdeci">static proto float Sin(float angle)</div><div class="ttdoc">Returns sinus of angle in radians.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga7a63fd1bc9f0c95f8021d8ece1b7500f">Math::Round()</a>, and <a class="el" href="../../d5/d08/group___math.html#ga94eedd3910334f450ef989d69ab4e4fd">Math::Sin()</a>.</p>
 
 </div>
 </div>
@@ -1264,6 +1663,39 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00590">590</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  591</span>  {</div>
+<div class="line"><span class="lineno">  592</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> != <a class="code hl_variable" href="#a24ae2ede3c4d8c9c897d2196a92e3b08">m_BrightnessTarget</a>)</div>
+<div class="line"><span class="lineno">  593</span>    {</div>
+<div class="line"><span class="lineno">  594</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">brightness_difference</a> = <a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> - <a class="code hl_variable" href="#a24ae2ede3c4d8c9c897d2196a92e3b08">m_BrightnessTarget</a>;</div>
+<div class="line"><span class="lineno">  595</span> </div>
+<div class="line"><span class="lineno">  596</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">brightness_difference</a> &gt; <a class="code hl_variable" href="#a378af356347f74eec4f0f3284664c8b2">m_BrightnessSpeedOfChange</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>)</div>
+<div class="line"><span class="lineno">  597</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">brightness_difference</a> = <a class="code hl_variable" href="#a378af356347f74eec4f0f3284664c8b2">m_BrightnessSpeedOfChange</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">  598</span> </div>
+<div class="line"><span class="lineno">  599</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">brightness_difference</a> &lt; -<a class="code hl_variable" href="#a378af356347f74eec4f0f3284664c8b2">m_BrightnessSpeedOfChange</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>)</div>
+<div class="line"><span class="lineno">  600</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">brightness_difference</a> = -<a class="code hl_variable" href="#a378af356347f74eec4f0f3284664c8b2">m_BrightnessSpeedOfChange</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">  601</span> </div>
+<div class="line"><span class="lineno">  602</span>      <a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> -= <a class="code hl_class" href="../../db/d06/class_param3.html">brightness_difference</a>;</div>
+<div class="line"><span class="lineno">  603</span> </div>
+<div class="line"><span class="lineno">  604</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> &gt; 0 || <a class="code hl_variable" href="#a24ae2ede3c4d8c9c897d2196a92e3b08">m_BrightnessTarget</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  605</span>      {</div>
+<div class="line"><span class="lineno">  606</span>        SetBrightness(<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> * <a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a>);</div>
+<div class="line"><span class="lineno">  607</span>        <a class="code hl_function" href="#ab79a941b7ff0b6dde0e27045afab1a33">CorrectLightPulseDuringDaylight</a>();</div>
+<div class="line"><span class="lineno">  608</span>      }</div>
+<div class="line"><span class="lineno">  609</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  610</span>      {</div>
+<div class="line"><span class="lineno">  611</span>        <a class="code hl_function" href="#a915883e6cc8fa31c54d5e0a6e27b9f96">Destroy</a>();</div>
+<div class="line"><span class="lineno">  612</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  613</span>      }</div>
+<div class="line"><span class="lineno">  614</span>    }</div>
+<div class="line"><span class="lineno">  615</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  616</span>    {</div>
+<div class="line"><span class="lineno">  617</span>      SetBrightness(<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> * <a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a>);</div>
+<div class="line"><span class="lineno">  618</span>      <a class="code hl_function" href="#ab79a941b7ff0b6dde0e27045afab1a33">CorrectLightPulseDuringDaylight</a>();</div>
+<div class="line"><span class="lineno">  619</span>    }</div>
+<div class="line"><span class="lineno">  620</span>  }</div>
+<div class="ttc" id="aclass_entity_light_source_html_ab79a941b7ff0b6dde0e27045afab1a33"><div class="ttname"><a href="#ab79a941b7ff0b6dde0e27045afab1a33">EntityLightSource::CorrectLightPulseDuringDaylight</a></div><div class="ttdeci">void CorrectLightPulseDuringDaylight()</div><div class="ttdoc">Call this after using SetBrightness(...) to fix light's intensity during daytime.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00240">ScriptedLightBase.c:240</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00207">Destroy()</a>.</p>
 
 </div>
 </div>
@@ -1295,6 +1727,51 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00408">408</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  409</span>  {</div>
+<div class="line"><span class="lineno">  410</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#affdc8409fa8ddd34d000b89f438e36c4">m_DancingShadowsAmplitude</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  411</span>    {</div>
+<div class="line"><span class="lineno">  412</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; 3; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  413</span>      {</div>
+<div class="line"><span class="lineno">  414</span>        <a class="code hl_variable" href="#ab36c64792fac8fa27fd34ca1272b75c1">m_DancingShadowsLocalPos</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>] = <a class="code hl_variable" href="#ab36c64792fac8fa27fd34ca1272b75c1">m_DancingShadowsLocalPos</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>] + (<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">RandomFloat</a>(-<a class="code hl_variable" href="#aea7b86cef74325c05cc571cdc4a9f97f">m_DancingShadowsSpeed</a>, <a class="code hl_variable" href="#aea7b86cef74325c05cc571cdc4a9f97f">m_DancingShadowsSpeed</a>) * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>) ;</div>
+<div class="line"><span class="lineno">  415</span> </div>
+<div class="line"><span class="lineno">  416</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ab36c64792fac8fa27fd34ca1272b75c1">m_DancingShadowsLocalPos</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>] &gt; <a class="code hl_variable" href="#affdc8409fa8ddd34d000b89f438e36c4">m_DancingShadowsAmplitude</a>)</div>
+<div class="line"><span class="lineno">  417</span>          <a class="code hl_variable" href="#ab36c64792fac8fa27fd34ca1272b75c1">m_DancingShadowsLocalPos</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>] = <a class="code hl_variable" href="#affdc8409fa8ddd34d000b89f438e36c4">m_DancingShadowsAmplitude</a>;</div>
+<div class="line"><span class="lineno">  418</span> </div>
+<div class="line"><span class="lineno">  419</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ab36c64792fac8fa27fd34ca1272b75c1">m_DancingShadowsLocalPos</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>] &lt; -<a class="code hl_variable" href="#affdc8409fa8ddd34d000b89f438e36c4">m_DancingShadowsAmplitude</a>)</div>
+<div class="line"><span class="lineno">  420</span>          <a class="code hl_variable" href="#ab36c64792fac8fa27fd34ca1272b75c1">m_DancingShadowsLocalPos</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>] = -<a class="code hl_variable" href="#affdc8409fa8ddd34d000b89f438e36c4">m_DancingShadowsAmplitude</a>;</div>
+<div class="line"><span class="lineno">  421</span> </div>
+<div class="line"><span class="lineno">  422</span>      }</div>
+<div class="line"><span class="lineno">  423</span> </div>
+<div class="line"><span class="lineno">  424</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a> &amp;&amp; !<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>.ToDelete())</div>
+<div class="line"><span class="lineno">  425</span>      {</div>
+<div class="line"><span class="lineno">  426</span>        <span class="comment">// In order to move with the light, it must be detached from its parent first</span></div>
+<div class="line"><span class="lineno">  427</span> </div>
+<div class="line"><span class="lineno">  428</span>        <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>.RemoveChild(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  429</span>        <a class="code hl_function" href="../../d6/d0e/group___debug_shape.html#ga3aa6cafceab9d573982aa9db5a5d6e34">SetPosition</a>(<a class="code hl_variable" href="#a1d2a2afd78159f4a40946a4aa0461f62">m_LocalPos</a> + <a class="code hl_variable" href="#ab36c64792fac8fa27fd34ca1272b75c1">m_DancingShadowsLocalPos</a>);</div>
+<div class="line"><span class="lineno">  430</span> </div>
+<div class="line"><span class="lineno">  431</span>        <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>.AddChild(<span class="keyword">this</span>, -1);</div>
+<div class="line"><span class="lineno">  432</span>        <a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>.Update();</div>
+<div class="line"><span class="lineno">  433</span>      }</div>
+<div class="line"><span class="lineno">  434</span> </div>
+<div class="line"><span class="lineno">  435</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a44cec399a505610f8430dcc0117538b9">m_IsDebugEnabled</a>)</div>
+<div class="line"><span class="lineno">  436</span>      {</div>
+<div class="line"><span class="lineno">  437</span>        <a class="code hl_class" href="../../de/d05/class_particle.html">Particle</a> <a class="code hl_class" href="../../db/d06/class_param3.html">p</a> = <a class="code hl_function" href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a>.GetInstance().PlayInWorld(<a class="code hl_class" href="../../dd/d02/class_particle_list.html">ParticleList</a>.<a class="code hl_variable" href="../../dd/d02/class_particle_list.html#ad33e6116e9af4367ffa7ae8951d276ae">DEBUG_DOT</a>, <a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>());</div>
+<div class="line"><span class="lineno">  438</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">p</a>.SetParticleParam(<a class="code hl_enumeration" href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a>.SIZE, 0.01);</div>
+<div class="line"><span class="lineno">  439</span>      }</div>
+<div class="line"><span class="lineno">  440</span>    }</div>
+<div class="line"><span class="lineno">  441</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  442</span>      <a class="code hl_variable" href="#ab36c64792fac8fa27fd34ca1272b75c1">m_DancingShadowsLocalPos</a> = <a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector</a>(0, 0, 0);</div>
+<div class="line"><span class="lineno">  443</span>  }</div>
+<div class="ttc" id="a_particle_manager_8c_html_a93ef360e8fc315d276eb8cc256dc3ef8"><div class="ttname"><a href="../../d8/d0f/_particle_manager_8c.html#a93ef360e8fc315d276eb8cc256dc3ef8">ParticleManager</a></div><div class="ttdeci">void ParticleManager(ParticleManagerSettings settings)</div><div class="ttdoc">Constructor (ctor)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager.c:84</a></div></div>
+<div class="ttc" id="a_underground_area_loader_8c_html_af4b5180d61f839c99de2d15fdcda4568"><div class="ttname"><a href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a></div><div class="ttdeci">class JsonUndergroundAreaTriggerData GetPosition</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0a/_underground_area_loader_8c_source.html#l00001">UndergroundAreaLoader.c:9</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_ab36c64792fac8fa27fd34ca1272b75c1"><div class="ttname"><a href="#ab36c64792fac8fa27fd34ca1272b75c1">EntityLightSource::m_DancingShadowsLocalPos</a></div><div class="ttdeci">vector m_DancingShadowsLocalPos</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_scripted_light_base_8c_source.html#l00038">ScriptedLightBase.c:38</a></div></div>
+<div class="ttc" id="aclass_particle_html"><div class="ttname"><a href="../../de/d05/class_particle.html">Particle</a></div><div class="ttdoc">Legacy way of using particles in the game.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d0b/_particle_8c_source.html#l00006">Particle.c:7</a></div></div>
+<div class="ttc" id="aclass_particle_list_html"><div class="ttname"><a href="../../dd/d02/class_particle_list.html">ParticleList</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00011">ParticleList.c:12</a></div></div>
+<div class="ttc" id="aclass_particle_list_html_ad33e6116e9af4367ffa7ae8951d276ae"><div class="ttname"><a href="../../dd/d02/class_particle_list.html#ad33e6116e9af4367ffa7ae8951d276ae">ParticleList::DEBUG_DOT</a></div><div class="ttdeci">static const int DEBUG_DOT</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0f/_particle_list_8c_source.html#l00023">ParticleList.c:23</a></div></div>
+<div class="ttc" id="agroup___math_html_ga892ecb1375c9b373969273223a5841f3"><div class="ttname"><a href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat</a></div><div class="ttdeci">static proto float RandomFloat(float min, float max)</div><div class="ttdoc">Returns a random float number between and min[inclusive] and max[exclusive].</div></div>
+<div class="ttc" id="agroup___particle_effect_html_gae0fed29d09aa06a8ca33de9f2b039e4b"><div class="ttname"><a href="../../da/d03/group___particle_effect.html#gae0fed29d09aa06a8ca33de9f2b039e4b">EmitorParam</a></div><div class="ttdeci">EmitorParam</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d02/_en_visual_8c_source.html#l00113">EnVisual.c:114</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d0f/_particle_list_8c_source.html#l00023">ParticleList::DEBUG_DOT</a>, <a class="el" href="../../d3/d0a/_underground_area_loader_8c_source.html#l00009">GetPosition</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00060">m_LocalPos</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, <a class="el" href="../../d8/d0f/_particle_manager_8c_source.html#l00084">ParticleManager()</a>, <a class="el" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat()</a>, <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00420">SetPosition()</a>, and <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga5bd1deb1c96276d94eeec6fe40955c41">Vector()</a>.</p>
 
 </div>
 </div>
@@ -1326,6 +1803,23 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00446">446</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  447</span>  {</div>
+<div class="line"><span class="lineno">  448</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a88ef5633a2e2e599b3f49478124f9958">m_BrightnessPulseAmplitudeMax</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  449</span>    {</div>
+<div class="line"><span class="lineno">  450</span>      <a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a> += (<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">RandomFloat</a>(-<a class="code hl_variable" href="#a0922eb80d07064756df8e5d1aa77ccf3">m_BrightnessPulseSpeed</a>, <a class="code hl_variable" href="#a0922eb80d07064756df8e5d1aa77ccf3">m_BrightnessPulseSpeed</a>)) * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">  451</span> </div>
+<div class="line"><span class="lineno">  452</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a> &lt; <a class="code hl_variable" href="#ad717dcbbefb6faa4c74ca1591146cb1c">m_BrightnessPulseAmplitudeMin</a> + 1)</div>
+<div class="line"><span class="lineno">  453</span>        <a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a> = <a class="code hl_variable" href="#ad717dcbbefb6faa4c74ca1591146cb1c">m_BrightnessPulseAmplitudeMin</a> + 1;</div>
+<div class="line"><span class="lineno">  454</span> </div>
+<div class="line"><span class="lineno">  455</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a> &gt; <a class="code hl_variable" href="#a88ef5633a2e2e599b3f49478124f9958">m_BrightnessPulseAmplitudeMax</a> + 1)</div>
+<div class="line"><span class="lineno">  456</span>        <a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a> = <a class="code hl_variable" href="#a88ef5633a2e2e599b3f49478124f9958">m_BrightnessPulseAmplitudeMax</a> + 1;</div>
+<div class="line"><span class="lineno">  457</span> </div>
+<div class="line"><span class="lineno">  458</span>    }</div>
+<div class="line"><span class="lineno">  459</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  460</span>      <a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a> = 1;</div>
+<div class="line"><span class="lineno">  461</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#ga892ecb1375c9b373969273223a5841f3">Math::RandomFloat()</a>.</p>
 
 </div>
 </div>
@@ -1353,6 +1847,32 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00623">623</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  624</span>  {</div>
+<div class="line"><span class="lineno">  625</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a> != <a class="code hl_variable" href="#a8ffd23faf43a75f9ee60f4ec0a09a079">m_RadiusTarget</a>)</div>
+<div class="line"><span class="lineno">  626</span>    {</div>
+<div class="line"><span class="lineno">  627</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">radius_difference</a> = <a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a> - <a class="code hl_variable" href="#a8ffd23faf43a75f9ee60f4ec0a09a079">m_RadiusTarget</a>;</div>
+<div class="line"><span class="lineno">  628</span> </div>
+<div class="line"><span class="lineno">  629</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">radius_difference</a> &gt; <a class="code hl_variable" href="#a6dce29ab6c7287749c5739b64fc234e7">m_RadiusSpeedOfChange</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>)</div>
+<div class="line"><span class="lineno">  630</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">radius_difference</a> = <a class="code hl_variable" href="#a6dce29ab6c7287749c5739b64fc234e7">m_RadiusSpeedOfChange</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">  631</span> </div>
+<div class="line"><span class="lineno">  632</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">radius_difference</a> &lt; -<a class="code hl_variable" href="#a6dce29ab6c7287749c5739b64fc234e7">m_RadiusSpeedOfChange</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>)</div>
+<div class="line"><span class="lineno">  633</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">radius_difference</a> = -<a class="code hl_variable" href="#a6dce29ab6c7287749c5739b64fc234e7">m_RadiusSpeedOfChange</a> * <a class="code hl_class" href="../../db/d06/class_param3.html">timeSlice</a>;</div>
+<div class="line"><span class="lineno">  634</span> </div>
+<div class="line"><span class="lineno">  635</span>      <a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a> -= <a class="code hl_class" href="../../db/d06/class_param3.html">radius_difference</a>;</div>
+<div class="line"><span class="lineno">  636</span> </div>
+<div class="line"><span class="lineno">  637</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a> &gt; 0 || <a class="code hl_variable" href="#a8ffd23faf43a75f9ee60f4ec0a09a079">m_RadiusTarget</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  638</span>        SetRadius(<a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a>);</div>
+<div class="line"><span class="lineno">  639</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  640</span>      {</div>
+<div class="line"><span class="lineno">  641</span>        <a class="code hl_function" href="#a915883e6cc8fa31c54d5e0a6e27b9f96">Destroy</a>();</div>
+<div class="line"><span class="lineno">  642</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  643</span>      }</div>
+<div class="line"><span class="lineno">  644</span>    }</div>
+<div class="line"><span class="lineno">  645</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  646</span>      SetRadius(<a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a>);</div>
+<div class="line"><span class="lineno">  647</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00207">Destroy()</a>, and <a class="el" href="../../d6/d07/_a_i_group_behaviour_8c_source.html#l00010">m_Radius</a>.</p>
 
 </div>
 </div>
@@ -1380,7 +1900,10 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00074">74</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   75</span>  {</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aca43ef58338c4a0767611b9fae59c1a3" name="aca43ef58338c4a0767611b9fae59c1a3"></a>
@@ -1413,7 +1936,10 @@ Static Private Attributes</h2></td></tr>
 <p>Override this for custom functionality. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00348">348</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  349</span>  {</div>
+<div class="line"><span class="lineno">  350</span>    <span class="comment">// ...</span></div>
+<div class="line"><span class="lineno">  351</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a99c59ef150c7426ae28c4b047bf74aba" name="a99c59ef150c7426ae28c4b047bf74aba"></a>
@@ -1442,6 +1968,14 @@ Static Private Attributes</h2></td></tr>
 <p>Constructor. Everything here is executed before the constructor of all children. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00045">45</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>  {</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="#a540cfd0ebe71da1b3ff6fc0e168f0c0a">m_LifetimeStart</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetTime();</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_function" href="../../d6/d0c/_trap_trigger_8c.html#a1b78554376602d8235900ea585c7b807">SetEnabled</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   49</span>    SetEventMask(<a class="code hl_enumeration" href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a>.FRAME);</div>
+<div class="line"><span class="lineno">   50</span>    SetEventMask(<a class="code hl_enumeration" href="../../d3/d04/group___entity_attributes.html#gaa29339063b04471895b3cb38b17cdb13">EntityEvent</a>.INIT);</div>
+<div class="line"><span class="lineno">   51</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d6/d0c/_trap_trigger_8c_source.html#l00107">SetEnabled()</a>.</p>
 
 </div>
 </div>
@@ -1471,7 +2005,10 @@ Static Private Attributes</h2></td></tr>
 <p>Sets blinking speed (no blinking if speed &lt;= 0) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00650">650</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  651</span>  {</div>
+<div class="line"><span class="lineno">  652</span>    <a class="code hl_variable" href="#a43e898d434dbc93b41f868adec9566b3">m_BlinkingSpeed</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">_speed</a>;</div>
+<div class="line"><span class="lineno">  653</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a63c6b2e803f2002a2b90869ea20e114b" name="a63c6b2e803f2002a2b90869ea20e114b"></a>
@@ -1500,7 +2037,13 @@ Static Private Attributes</h2></td></tr>
 <p>Sets the brightness of the light. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00231">231</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  232</span>  {</div>
+<div class="line"><span class="lineno">  233</span>    <a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  234</span>    <a class="code hl_variable" href="#a24ae2ede3c4d8c9c897d2196a92e3b08">m_BrightnessTarget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  235</span>    SetBrightness(<a class="code hl_variable" href="#a07bc47e15772e2266a5582ad342c30d9">m_Brightness</a> * <a class="code hl_variable" href="#a041c0d678ecee34aa454d66a29dd6d3b">m_BrightnessPulse</a>);</div>
+<div class="line"><span class="lineno">  236</span>    <a class="code hl_function" href="#ab79a941b7ff0b6dde0e27045afab1a33">CorrectLightPulseDuringDaylight</a>();</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a938913b850a6584fd7304c5cb8065bd4" name="a938913b850a6584fd7304c5cb8065bd4"></a>
@@ -1529,6 +2072,11 @@ Static Private Attributes</h2></td></tr>
 <p>Sets the maximum range of the point light within the dancing shadows effect. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00378">378</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  379</span>  {</div>
+<div class="line"><span class="lineno">  380</span>    <a class="code hl_variable" href="#affdc8409fa8ddd34d000b89f438e36c4">m_DancingShadowsAmplitude</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">max_deviation_in_meters</a>);</div>
+<div class="line"><span class="lineno">  381</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat()</a>.</p>
 
 </div>
 </div>
@@ -1558,6 +2106,11 @@ Static Private Attributes</h2></td></tr>
 <p>Sets the maximum speed of the point light within the dancing shadows effect. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00384">384</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  385</span>  {</div>
+<div class="line"><span class="lineno">  386</span>    <a class="code hl_variable" href="#aea7b86cef74325c05cc571cdc4a9f97f">m_DancingShadowsSpeed</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">speed_in_meters_per_frame</a>);</div>
+<div class="line"><span class="lineno">  387</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat()</a>.</p>
 
 </div>
 </div>
@@ -1587,7 +2140,10 @@ Static Private Attributes</h2></td></tr>
 <p>When the light source gets within this radius (radius_in_m) around the camera, then it's shadows are disabled. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00519">519</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  520</span>  {</div>
+<div class="line"><span class="lineno">  521</span>    <a class="code hl_variable" href="#ab36fcc7d9e30ee9f3df11dc245855e70">m_OptimizeShadowsRadius</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">radius_in_m</a>;</div>
+<div class="line"><span class="lineno">  522</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3e089aad3b996465531c123f8fc80e56" name="a3e089aad3b996465531c123f8fc80e56"></a>
@@ -1616,7 +2172,10 @@ Static Private Attributes</h2></td></tr>
 <p>Sets the fade out time in seconds. Fade out begins automatically as the light nears the end of its life time, or when method <a class="el" href="#ac4dee3142bfa313f2eab0a4602786a02" title="Starts the fade out process and destroys the light when its done. Optional parameter allows you to se...">FadeOut()</a> is called. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00307">307</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  308</span>  {</div>
+<div class="line"><span class="lineno">  309</span>    <a class="code hl_variable" href="#a1f6f6c3ab3dd0323c982ff72699d2e19">m_FadeOutTime</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">time_in_s</a> * 1000;</div>
+<div class="line"><span class="lineno">  310</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab95c4955e4150f95200ec411aa9e36aa" name="ab95c4955e4150f95200ec411aa9e36aa"></a>
@@ -1645,6 +2204,12 @@ Static Private Attributes</h2></td></tr>
 <p>Sets the change coefficient of flickering light. (0.0 - 1.0 values, result of greater values are period time of light off ) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00470">470</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  471</span>  {</div>
+<div class="line"><span class="lineno">  472</span>    <a class="code hl_variable" href="#a88ef5633a2e2e599b3f49478124f9958">m_BrightnessPulseAmplitudeMax</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(coef);</div>
+<div class="line"><span class="lineno">  473</span>    <a class="code hl_variable" href="#ad717dcbbefb6faa4c74ca1591146cb1c">m_BrightnessPulseAmplitudeMin</a> = -<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(coef);</div>
+<div class="line"><span class="lineno">  474</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat()</a>.</p>
 
 </div>
 </div>
@@ -1672,7 +2237,10 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00476">476</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  477</span>  {</div>
+<div class="line"><span class="lineno">  478</span>    <a class="code hl_variable" href="#a88ef5633a2e2e599b3f49478124f9958">m_BrightnessPulseAmplitudeMax</a> = coef;</div>
+<div class="line"><span class="lineno">  479</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac735bd8928545b662ef2ebcc1c8935c6" name="ac735bd8928545b662ef2ebcc1c8935c6"></a>
@@ -1699,7 +2267,10 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00481">481</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  482</span>  {</div>
+<div class="line"><span class="lineno">  483</span>    <a class="code hl_variable" href="#ad717dcbbefb6faa4c74ca1591146cb1c">m_BrightnessPulseAmplitudeMin</a> = coef;</div>
+<div class="line"><span class="lineno">  484</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa0c8deff44e1b8a945c0f19a97ff83d4" name="aa0c8deff44e1b8a945c0f19a97ff83d4"></a>
@@ -1728,7 +2299,10 @@ Static Private Attributes</h2></td></tr>
 <p>Sets speed of light flickering (random brightness coefficient change per second) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00464">464</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  465</span>  {</div>
+<div class="line"><span class="lineno">  466</span>    <a class="code hl_variable" href="#a0922eb80d07064756df8e5d1aa77ccf3">m_BrightnessPulseSpeed</a> = speed;</div>
+<div class="line"><span class="lineno">  467</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2bffba5f26ace849312b42b8a3a3a997" name="a2bffba5f26ace849312b42b8a3a3a997"></a>
@@ -1757,6 +2331,12 @@ Static Private Attributes</h2></td></tr>
 <p>Makes the light destroy itself after the given time in seconds. The light will fade out if it's set to do so with SetFadeOutTime(...) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00300">300</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  301</span>  {</div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>())</div>
+<div class="line"><span class="lineno">  303</span>      <a class="code hl_variable" href="#acd8cdb5a5d7ec8502c9b5d2e3fd23374">m_LifetimeEnd</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetTime() + <a class="code hl_class" href="../../db/d06/class_param3.html">life_in_s</a> * 1000;</div>
+<div class="line"><span class="lineno">  304</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
 
 </div>
 </div>
@@ -1786,6 +2366,13 @@ Static Private Attributes</h2></td></tr>
 <p>Sets the radius of the light. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00270">270</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  271</span>  {</div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  273</span>    <a class="code hl_variable" href="#a8ffd23faf43a75f9ee60f4ec0a09a079">m_RadiusTarget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">value</a>;</div>
+<div class="line"><span class="lineno">  274</span>    SetRadius(<a class="code hl_variable" href="#a177ecd84fbf49ab7aaa602e127776f6b">m_Radius</a>);</div>
+<div class="line"><span class="lineno">  275</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d07/_a_i_group_behaviour_8c_source.html#l00010">m_Radius</a>.</p>
 
 </div>
 </div>
@@ -1815,6 +2402,20 @@ Static Private Attributes</h2></td></tr>
 <p>Optimizes shadows by disabling them on this light source while it's within the given radius around the camera. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00505">505</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  506</span>  {</div>
+<div class="line"><span class="lineno">  507</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ab36fcc7d9e30ee9f3df11dc245855e70">m_OptimizeShadowsRadius</a> &gt; 0)</div>
+<div class="line"><span class="lineno">  508</span>    {</div>
+<div class="line"><span class="lineno">  509</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">distance_to_camera</a> = <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">Distance</a>(<a class="code hl_variable" href="../../d3/d0a/_underground_area_loader_8c.html#af4b5180d61f839c99de2d15fdcda4568">GetPosition</a>(), <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCurrentCameraPosition());</div>
+<div class="line"><span class="lineno">  510</span> </div>
+<div class="line"><span class="lineno">  511</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">distance_to_camera</a> &lt; <a class="code hl_variable" href="#ab36fcc7d9e30ee9f3df11dc245855e70">m_OptimizeShadowsRadius</a>)</div>
+<div class="line"><span class="lineno">  512</span>        SetCastShadow(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  513</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  514</span>        SetCastShadow(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  515</span>    }</div>
+<div class="line"><span class="lineno">  516</span>  }</div>
+<div class="ttc" id="aclassvector_html_aad57f4c847a6ad08cf88f390961dd2db"><div class="ttname"><a href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">vector::Distance</a></div><div class="ttdeci">static proto native float Distance(vector v1, vector v2)</div><div class="ttdoc">Returns the distance between tips of two 3D vectors.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d0c/classvector.html#aad57f4c847a6ad08cf88f390961dd2db">vector::Distance()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d3/d0a/_underground_area_loader_8c_source.html#l00009">GetPosition</a>.</p>
 
 </div>
 </div>
@@ -1867,6 +2468,29 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00079">79</a> of file <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html">ScriptedLightBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>  {</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">item</a> = <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a>.Cast(<a class="code hl_variable" href="#aaafdb19e9e5935a3fcc36b8435cafdd8">m_Parent</a>);</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>)</div>
+<div class="line"><span class="lineno">   83</span>    {</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">il</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">   85</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>.GetInventory().GetCurrentInventoryLocation(<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>);</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>;</div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>.GetType() == <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a>.GROUND)</div>
+<div class="line"><span class="lineno">   88</span>        <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a> = <span class="stringliteral">&quot;Ground&quot;</span>;</div>
+<div class="line"><span class="lineno">   89</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>.GetSlot() != -1)</div>
+<div class="line"><span class="lineno">   90</span>        <a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a> = <a class="code hl_class" href="../../df/d06/class_inventory_slots.html">InventorySlots</a>.<a class="code hl_function" href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">GetSlotName</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>.GetSlot());</div>
+<div class="line"><span class="lineno">   91</span>      <a class="code hl_function" href="#aeba8483b123c394d3ec139b3d5b66c35">UpdateLightMode</a>(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>);</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad99b887e4b51af1a438d1fb17e5c54a3"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a></div><div class="ttdeci">PlayerSpawnPreset slotName</div></div>
+<div class="ttc" id="a_inventory_location_8c_html_ad09049fb2b99c763369bfe6228aa81b3"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#ad09049fb2b99c763369bfe6228aa81b3">InventoryLocationType</a></div><div class="ttdeci">InventoryLocationType</div><div class="ttdoc">types of Inventory Location</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00003">InventoryLocation.c:4</a></div></div>
+<div class="ttc" id="aclass_entity_light_source_html_aeba8483b123c394d3ec139b3d5b66c35"><div class="ttname"><a href="#aeba8483b123c394d3ec139b3d5b66c35">EntityLightSource::UpdateLightMode</a></div><div class="ttdeci">void UpdateLightMode(string slotName)</div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html">InventorySlots</a></div><div class="ttdoc">provides access to slot configuration</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/_inventory_slots_8c_source.html#l00005">InventorySlots.c:6</a></div></div>
+<div class="ttc" id="aclass_inventory_slots_html_a7780f9a2ed7ac70dff2d1b5e277d8f5a"><div class="ttname"><a href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">InventorySlots::GetSlotName</a></div><div class="ttdeci">static proto native owned string GetSlotName(int id)</div><div class="ttdoc">converts slot_id to string</div></div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d06/class_inventory_slots.html#a7780f9a2ed7ac70dff2d1b5e277d8f5a">InventorySlots::GetSlotName()</a>, <a class="el" href="../../da/d03/_size_to_child_8c_source.html#l00086">m_Parent</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad99b887e4b51af1a438d1fb17e5c54a3">slotName</a>.</p>
 
 </div>
 </div>

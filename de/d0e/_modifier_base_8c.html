@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -245,7 +242,15 @@ Variables</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00001">1</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    2</span>{</div>
+<div class="line"><span class="lineno">    3</span>  <a class="code hl_enumvalue" href="#a676f8ade05004f01037a24bd37fe2dcfac76fba730e428946c013f23b0a987bdd">TICK</a> = 1,</div>
+<div class="line"><span class="lineno">    4</span>  <a class="code hl_enumvalue" href="#a676f8ade05004f01037a24bd37fe2dcfa294daa35d221abeccaca8e0214e991b3">ACTIVATE_CHECK</a> = 2,</div>
+<div class="line"><span class="lineno">    5</span>  <a class="code hl_enumvalue" href="#a676f8ade05004f01037a24bd37fe2dcfad7c6b084d05059ea5d8cb44230e36cd3">DEACTIVATE_CHECK</a> = 4,</div>
+<div class="line"><span class="lineno">    6</span>}</div>
+<div class="ttc" id="a_modifier_base_8c_html_a676f8ade05004f01037a24bd37fe2dcfa294daa35d221abeccaca8e0214e991b3"><div class="ttname"><a href="#a676f8ade05004f01037a24bd37fe2dcfa294daa35d221abeccaca8e0214e991b3">ACTIVATE_CHECK</a></div><div class="ttdeci">@ ACTIVATE_CHECK</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00004">ModifierBase.c:4</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a676f8ade05004f01037a24bd37fe2dcfac76fba730e428946c013f23b0a987bdd"><div class="ttname"><a href="#a676f8ade05004f01037a24bd37fe2dcfac76fba730e428946c013f23b0a987bdd">TICK</a></div><div class="ttdeci">@ TICK</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00003">ModifierBase.c:3</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a676f8ade05004f01037a24bd37fe2dcfad7c6b084d05059ea5d8cb44230e36cd3"><div class="ttname"><a href="#a676f8ade05004f01037a24bd37fe2dcfad7c6b084d05059ea5d8cb44230e36cd3">DEACTIVATE_CHECK</a></div><div class="ttdeci">@ DEACTIVATE_CHECK</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00005">ModifierBase.c:5</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -265,6 +270,24 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00195">195</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>  {</div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_variable" href="#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>.m_SyncedModifiers = (<a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>.m_SyncedModifiers | <a class="code hl_variable" href="#aa13e9ceb481752169c6aa44663e496d6">m_SyncID</a>);</div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac3e751efa3b0bf89b63227e0cee2e250">m_ActivationType</a> == <a class="code hl_enumeration" href="../../d3/d0c/_modifiers_manager_8c.html#a91438892389b25e59441949d005ef1a2">EActivationType</a>.TRIGGER_EVENT_ON_ACTIVATION) <a class="code hl_function" href="../../d4/d0e/human_8c.html#ad88f589957281ee7efebbc581b18bef1">OnActivate</a>(<a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>);</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac3e751efa3b0bf89b63227e0cee2e250">m_ActivationType</a> == <a class="code hl_enumeration" href="../../d3/d0c/_modifiers_manager_8c.html#a91438892389b25e59441949d005ef1a2">EActivationType</a>.TRIGGER_EVENT_ON_CONNECT) <a class="code hl_function" href="#acb7d058521c8fb071a42bb730bfe9d18">OnReconnect</a>(<a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>);</div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>.SetSynchDirty();</div>
+<div class="line"><span class="lineno">  202</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a4db3d46d75d2864daed52041fe1f0973"><div class="ttname"><a href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a></div><div class="ttdeci">PlayerBase m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00017">ModifierBase.c:17</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a9a3d3c40e1c50b7a9d14cb880b784df2"><div class="ttname"><a href="#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a></div><div class="ttdeci">bool m_IsActive</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00020">ModifierBase.c:20</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_aa13e9ceb481752169c6aa44663e496d6"><div class="ttname"><a href="#aa13e9ceb481752169c6aa44663e496d6">m_SyncID</a></div><div class="ttdeci">eModifierSyncIDs m_SyncID</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00029">ModifierBase.c:29</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_ac3e751efa3b0bf89b63227e0cee2e250"><div class="ttname"><a href="#ac3e751efa3b0bf89b63227e0cee2e250">m_ActivationType</a></div><div class="ttdeci">EActivationType m_ActivationType</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00028">ModifierBase.c:28</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_acb7d058521c8fb071a42bb730bfe9d18"><div class="ttname"><a href="#acb7d058521c8fb071a42bb730bfe9d18">OnReconnect</a></div><div class="ttdeci">void OnReconnect(PlayerBase player)</div><div class="ttdoc">is called when a modifier is being re-activated upon player server connection, use to activate system...</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00185">ModifierBase.c:185</a></div></div>
+<div class="ttc" id="a_modifiers_manager_8c_html_a91438892389b25e59441949d005ef1a2"><div class="ttname"><a href="../../d3/d0c/_modifiers_manager_8c.html#a91438892389b25e59441949d005ef1a2">EActivationType</a></div><div class="ttdeci">EActivationType</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/_modifiers_manager_8c_source.html#l00022">ModifiersManager.c:23</a></div></div>
+<div class="ttc" id="ahuman_8c_html_ad88f589957281ee7efebbc581b18bef1"><div class="ttname"><a href="../../d4/d0e/human_8c.html#ad88f589957281ee7efebbc581b18bef1">OnActivate</a></div><div class="ttdeci">class HumanMovementState OnActivate()</div><div class="ttdoc">HumanCommandScript fully scriptable command.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l01105">human.c:1167</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00028">m_ActivationType</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00020">m_IsActive</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00029">m_SyncID</a>, <a class="el" href="../../d4/d0e/human_8c_source.html#l01167">OnActivate()</a>, and <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00025">ModifierBase::OnReconnect()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>, and <a class="el" href="../../d4/d0f/_smoke_grenade_base_8c_source.html#l00156">Unpin()</a>.</p>
 
 </div>
 </div>
@@ -284,7 +307,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00168">168</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  169</span>  {</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  171</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac28402df023315ef1d7ff94b147dfdd1" name="ac28402df023315ef1d7ff94b147dfdd1"></a>
@@ -303,6 +329,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00204">204</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>  {</div>
+<div class="line"><span class="lineno">  206</span>    <a class="code hl_variable" href="#a77065db0317ac406335a69e6fe27753d">m_ShouldBeActive</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_variable" href="#ac3e751efa3b0bf89b63227e0cee2e250">m_ActivationType</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>;</div>
+<div class="line"><span class="lineno">  208</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a77065db0317ac406335a69e6fe27753d"><div class="ttname"><a href="#a77065db0317ac406335a69e6fe27753d">m_ShouldBeActive</a></div><div class="ttdeci">bool m_ShouldBeActive</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00021">ModifierBase.c:21</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00028">m_ActivationType</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00021">m_ShouldBeActive</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
 
 </div>
 </div>
@@ -322,6 +358,22 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00210">210</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>  {</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a>)</div>
+<div class="line"><span class="lineno">  213</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  214</span>    <a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>.m_SyncedModifiers = (<a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>.m_SyncedModifiers &amp; ~m_SyncID);</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_variable" href="#a77065db0317ac406335a69e6fe27753d">m_ShouldBeActive</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_variable" href="#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_variable" href="#a92eca2aaad5eb72f13c39aff3d5f5881">m_ActivatedTime</a> = 0;</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">trigger</a>)</div>
+<div class="line"><span class="lineno">  219</span>      <a class="code hl_function" href="../../d4/d0e/human_8c.html#a3b701e8c012278766c1ce05f921ab16a">OnDeactivate</a>(<a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>);</div>
+<div class="line"><span class="lineno">  220</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a92eca2aaad5eb72f13c39aff3d5f5881"><div class="ttname"><a href="#a92eca2aaad5eb72f13c39aff3d5f5881">m_ActivatedTime</a></div><div class="ttdeci">float m_ActivatedTime</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00014">ModifierBase.c:14</a></div></div>
+<div class="ttc" id="ahuman_8c_html_a3b701e8c012278766c1ce05f921ab16a"><div class="ttname"><a href="../../d4/d0e/human_8c.html#a3b701e8c012278766c1ce05f921ab16a">OnDeactivate</a></div><div class="ttdeci">void OnDeactivate()</div><div class="ttdoc">called when command ends</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l01170">human.c:1170</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00014">m_ActivatedTime</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00020">m_IsActive</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00021">m_ShouldBeActive</a>, and <a class="el" href="../../d4/d0e/human_8c_source.html#l01170">OnDeactivate()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
 
 </div>
 </div>
@@ -341,7 +393,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00173">173</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  174</span>  {</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  176</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a771f17acf34676182be64e41430920e6" name="a771f17acf34676182be64e41430920e6"></a>
@@ -360,6 +415,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00078">78</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>  {</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="#a9f3681cfa34208f711ba22331159bc7a">m_TickType</a> = (<a class="code hl_variable" href="#a9f3681cfa34208f711ba22331159bc7a">m_TickType</a> &amp; <a class="code hl_enumeration" href="#a676f8ade05004f01037a24bd37fe2dcf">~eModifiersTickType</a>.ACTIVATE_CHECK);</div>
+<div class="line"><span class="lineno">   81</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a676f8ade05004f01037a24bd37fe2dcf"><div class="ttname"><a href="#a676f8ade05004f01037a24bd37fe2dcf">eModifiersTickType</a></div><div class="ttdeci">eModifiersTickType</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00001">ModifierBase.c:2</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a9f3681cfa34208f711ba22331159bc7a"><div class="ttname"><a href="#a9f3681cfa34208f711ba22331159bc7a">m_TickType</a></div><div class="ttdeci">int m_TickType</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00025">ModifierBase.c:25</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00025">m_TickType</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_antibiotics_8c_source.html#l00007">AntibioticsMdfr::Init()</a>, <a class="el" href="../../db/d09/_charcoal_mdfr_8c_source.html#l00007">CharcoalMdfr::Init()</a>, <a class="el" href="../../d2/d0b/_area_exposure_8c_source.html#l00020">AreaExposureMdfr::Init()</a>, <a class="el" href="../../d5/d06/_blinded_8c_source.html#l00006">BlindedMdfr::Init()</a>, <a class="el" href="../../d4/d0c/_heart_attack_8c_source.html#l00007">HeartAttackMdfr::Init()</a>, <a class="el" href="../../d5/d00/_hemolytic_reaction_8c_source.html#l00005">HemolyticReactionMdfr::Init()</a>, <a class="el" href="../../d5/d02/_test_disease_8c_source.html#l00006">TestDiseaseMdfr::Init()</a>, <a class="el" href="../../d7/d0c/_disinfect_mdfr_8c_source.html#l00007">DisinfectionMdfr::Init()</a>, <a class="el" href="../../d0/d02/_epinephrine_mdfr_8c_source.html#l00005">EpinephrineMdfr::Init()</a>, <a class="el" href="../../d3/d05/_flies_8c_source.html#l00010">FliesMdfr::Init()</a>, <a class="el" href="../../db/d06/_morphine_mdfr_8c_source.html#l00005">MorphineMdfr::Init()</a>, <a class="el" href="../../df/d0d/_pain_killers_mdfr_8c_source.html#l00005">PainKillersMdfr::Init()</a>, and <a class="el" href="../../dc/d01/_saline_8c_source.html#l00004">SalineMdfr::Init()</a>.</p>
 
 </div>
 </div>
@@ -379,6 +443,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00083">83</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>  {</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_variable" href="#a9f3681cfa34208f711ba22331159bc7a">m_TickType</a> = (<a class="code hl_variable" href="#a9f3681cfa34208f711ba22331159bc7a">m_TickType</a> &amp; <a class="code hl_enumeration" href="#a676f8ade05004f01037a24bd37fe2dcf">~eModifiersTickType</a>.DEACTIVATE_CHECK);</div>
+<div class="line"><span class="lineno">   86</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00025">m_TickType</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00005">ModifierBase::Init()</a>, <a class="el" href="../../d2/d0b/_area_exposure_8c_source.html#l00020">AreaExposureMdfr::Init()</a>, <a class="el" href="../../db/d06/_bleeding_8c_source.html#l00007">BleedingCheckMdfr::Init()</a>, <a class="el" href="../../d4/d0c/_heart_attack_8c_source.html#l00007">HeartAttackMdfr::Init()</a>, <a class="el" href="../../d5/d02/_test_disease_8c_source.html#l00006">TestDiseaseMdfr::Init()</a>, <a class="el" href="../../d3/d05/_flies_8c_source.html#l00010">FliesMdfr::Init()</a>, <a class="el" href="../../d0/d08/_health_8c_source.html#l00007">HealthMdfr::Init()</a>, <a class="el" href="../../dd/d06/_health_regen_8c_source.html#l00003">HealthRegenMdfr::Init()</a>, <a class="el" href="../../d2/d01/_heat_comfort_mdfr_8c_source.html#l00003">HeatComfortMdfr::Init()</a>, <a class="el" href="../../d0/d09/_hunger_8c_source.html#l00007">HungerMdfr::Init()</a>, <a class="el" href="../../d8/d0b/_immune_system_8c_source.html#l00005">ImmuneSystemMdfr::Init()</a>, <a class="el" href="../../d2/d0f/_shock_8c_source.html#l00006">ShockMdfr::Init()</a>, <a class="el" href="../../d3/d0a/_stomach_8c_source.html#l00003">StomachMdfr::Init()</a>, <a class="el" href="../../d0/d00/_thirst_8c_source.html#l00006">ThirstMdfr::Init()</a>, and <a class="el" href="../../d7/d09/_toxicity_8c_source.html#l00006">ToxicityMdfr::Init()</a>.</p>
 
 </div>
 </div>
@@ -398,6 +469,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00144">144</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a92eca2aaad5eb72f13c39aff3d5f5881">m_ActivatedTime</a>;</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00014">m_ActivatedTime</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_antibiotics_8c_source.html#l00060">AntibioticsMdfr::DeactivateCondition()</a>, <a class="el" href="../../db/d09/_charcoal_mdfr_8c_source.html#l00066">CharcoalMdfr::DeactivateCondition()</a>, <a class="el" href="../../d5/d00/_hemolytic_reaction_8c_source.html#l00036">HemolyticReactionMdfr::DeactivateCondition()</a>, <a class="el" href="../../d7/d0c/_disinfect_mdfr_8c_source.html#l00054">DisinfectionMdfr::DeactivateCondition()</a>, <a class="el" href="../../d0/d02/_epinephrine_mdfr_8c_source.html#l00047">EpinephrineMdfr::DeactivateCondition()</a>, <a class="el" href="../../d3/d06/_immunity_boost_8c_source.html#l00052">ImmunityBoost::DeactivateCondition()</a>, <a class="el" href="../../db/d06/_morphine_mdfr_8c_source.html#l00051">MorphineMdfr::DeactivateCondition()</a>, <a class="el" href="../../df/d0d/_pain_killers_mdfr_8c_source.html#l00056">PainKillersMdfr::DeactivateCondition()</a>, <a class="el" href="../../dc/d01/_saline_8c_source.html#l00020">SalineMdfr::DeactivateCondition()</a>, <a class="el" href="../../d2/d04/_testing_8c_source.html#l00037">TestingMdfr::DeactivateCondition()</a>, <a class="el" href="../../d0/d02/_antibiotics_8c_source.html#l00029">AntibioticsMdfr::GetDebugText()</a>, <a class="el" href="../../d7/d0c/_disinfect_mdfr_8c_source.html#l00028">DisinfectionMdfr::GetDebugText()</a>, <a class="el" href="../../d0/d02/_epinephrine_mdfr_8c_source.html#l00025">EpinephrineMdfr::GetDebugText()</a>, <a class="el" href="../../d3/d06/_immunity_boost_8c_source.html#l00027">ImmunityBoost::GetDebugText()</a>, <a class="el" href="../../db/d06/_morphine_mdfr_8c_source.html#l00025">MorphineMdfr::GetDebugText()</a>, <a class="el" href="../../df/d0d/_pain_killers_mdfr_8c_source.html#l00025">PainKillersMdfr::GetDebugText()</a>, <a class="el" href="../../d0/d02/_antibiotics_8c_source.html#l00035">AntibioticsMdfr::GetDebugTextSimple()</a>, <a class="el" href="../../db/d09/_charcoal_mdfr_8c_source.html#l00049">CharcoalMdfr::GetDebugTextSimple()</a>, <a class="el" href="../../d7/d0c/_disinfect_mdfr_8c_source.html#l00033">DisinfectionMdfr::GetDebugTextSimple()</a>, <a class="el" href="../../db/d09/_charcoal_mdfr_8c_source.html#l00076">CharcoalMdfr::OnTick()</a>, <a class="el" href="../../d9/d06/_contamination3_8c_source.html#l00044">ContaminationStage3Mdfr::OnTick()</a>, and <a class="el" href="../../df/d0d/_pain_killers_mdfr_8c_source.html#l00066">PainKillersMdfr::OnTick()</a>.</p>
 
 </div>
 </div>
@@ -417,7 +495,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00068">68</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad884dcdee193a44a106239c033022692" name="ad884dcdee193a44a106239c033022692"></a>
@@ -436,7 +517,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00073">73</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   76</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="acbe1dc29d7ebac0991b4068bd25a8c17" name="acbe1dc29d7ebac0991b4068bd25a8c17"></a>
@@ -455,6 +539,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00154">154</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>  {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a381cc1e1edcfb40ace8358de0ee8cbd4">m_ID</a>;</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a381cc1e1edcfb40ace8358de0ee8cbd4"><div class="ttname"><a href="#a381cc1e1edcfb40ace8358de0ee8cbd4">m_ID</a></div><div class="ttdeci">enum eModifiersTickType m_ID</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0d/_effect_8c_source.html#l00049">m_ID</a>.</p>
 
 </div>
 </div>
@@ -474,6 +564,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">47</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>;</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d09/_plugin_dayz_player_debug_8c_source.html#l00770">Actions_DoCancel()</a>, <a class="el" href="../../da/d09/_plugin_dayz_player_debug_8c_source.html#l00751">Actions_DoInternalCommand()</a>, <a class="el" href="../../da/d09/_plugin_dayz_player_debug_8c_source.html#l00720">Actions_Start()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00343">ActivateModifier()</a>, <a class="el" href="../../d1/d07/_plugin_developer_sync_8c_source.html#l00617">PluginBase::ActivateModifier()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l00874">MissionBase::AddActiveInputRestriction()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00577">LayoutHolder::AddItemToQuickbarRadial()</a>, <a class="el" href="../../de/d06/_client_data_8c_source.html#l00023">ClientData::AddPlayerBase()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l00950">AddQuickbarItem()</a>, <a class="el" href="../../db/d05/_vicinity_item_manager_8c_source.html#l00039">VicinityItemManager::AddVicinityItems()</a>, <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00007">EntityAI::AdvancedCommunication()</a>, <a class="el" href="../../df/d05/_day_z_animal_8c_source.html#l00311">DayZCreature::AttenuateSoundIfNecessary()</a>, <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l03309">DayZPlayer::AttenuateSoundIfNecessary()</a>, <a class="el" href="../../d5/d04/_camera_shake_8c_source.html#l00023">CameraShake::CameraShake()</a>, <a class="el" href="../../df/d09/_camera_tools_menu_8c_source.html#l00061">UIScriptedMenu::CameraToolsMenu()</a>, <a class="el" href="../../d4/d07/_inventory_quickbar_8c_source.html#l00255">InventoryGridController::CanAddItemInHandToInventory()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00562">LayoutHolder::CanAddToQuickbarEx()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00196">Attachments::CanCombine()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00204">Attachments::CanCombineAmmo()</a>, <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00747">Container::CanCombineAmmo()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00076">VicinitySlotsContainer::CanCombineAmmo()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00541">LayoutHolder::CanCombineEx()</a>, <a class="el" href="../../df/d0e/_watchtower_8c_source.html#l00229">BaseBuildingBase::CanDisplayAttachmentCategory()</a>, <a class="el" href="../../df/d0e/_watchtower_8c_source.html#l00194">BaseBuildingBase::CanDisplayAttachmentSlot()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00403">LayoutHolder::CanDropEx()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00470">LayoutHolder::CanEquipEx()</a>, <a class="el" href="../../d4/d0c/_fence_8c_source.html#l00351">BaseBuildingBase::CanReceiveAttachment()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00432">LayoutHolder::CanSwapOrTakeToHandsEx()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00514">LayoutHolder::CanTakeToInventoryEx()</a>, <a class="el" href="../../d2/d02/_player_sound_manager_8c_source.html#l00132">CheckAllowUpdate()</a>, <a class="el" href="../../de/d0e/_radial_quickbar_menu_8c_source.html#l00297">UIScriptedMenu::CheckForLightsAndNVG()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00224">Attachments::Combine()</a>, <a class="el" href="../../d9/d0b/_player_container_8c_source.html#l00555">PlayerContainer::Combine()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00139">VicinitySlotsContainer::Combine()</a>, <a class="el" href="../../d4/d06/_plugin_dayz_player_debug___ctrl_8c_source.html#l00106">PluginDayzPlayerDebug_Ctrl::CommandHandler()</a>, <a class="el" href="../../dc/d03/_plugin_dayz_player_debug___weapons_8c_source.html#l00411">PluginDayzPlayerDebug_Weapons::CommandHandler()</a>, <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l02236">DayZPlayer::CommandHandlerDebug()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l01171">MissionBase::CreateLogoutMenu()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00360">DeactivateModifier()</a>, <a class="el" href="../../d1/d07/_plugin_developer_sync_8c_source.html#l00626">PluginBase::DeactivateModifier()</a>, <a class="el" href="../../d0/d0e/_plugin_dayz_player_debug___other_cmds_8c_source.html#l00127">PluginDayzPlayerDebug_OtherCmds::Death_Start()</a>, <a class="el" href="../../d1/d00/_plugin_scene_manager_8c_source.html#l01015">PluginBase::DeleteSceneObject()</a>, <a class="el" href="../../d3/d0b/_weapon_debug_8c_source.html#l00266">WeaponDebug::DisplayGeneralInfo()</a>, <a class="el" href="../../d7/d05/_ingame_hud_8c_source.html#l00801">Hud::DisplayPresence()</a>, <a class="el" href="../../d7/d05/_ingame_hud_8c_source.html#l00759">Hud::DisplayStance()</a>, <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00062">PoweredOptic_Base::DoMeasurement()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00149">Icon::DoubleClick()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l01319">HandsContainer::DoubleClick()</a>, <a class="el" href="../../d4/d04/_attachment_categories_row_8c_source.html#l00704">AttachmentCategoriesRow::DoubleClick()</a>, <a class="el" href="../../de/d01/_container_with_cargo_and_attachments_8c_source.html#l00601">ClosableContainer::DoubleClick()</a>, <a class="el" href="../../d9/d0b/_player_container_8c_source.html#l00362">PlayerContainer::DoubleClick()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00326">VicinitySlotsContainer::DoubleClick()</a>, <a class="el" href="../../d0/d00/_zombie_container_8c_source.html#l00503">ZombieContainer::DoubleClick()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00333">Icon::DraggingOver()</a>, <a class="el" href="../../d6/d0a/_container_with_cargo_8c_source.html#l00395">ClosableContainer::DraggingOver()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l00498">DraggingOverCenterPanel()</a>, <a class="el" href="../../d6/d0a/_container_with_cargo_8c_source.html#l00229">ClosableContainer::DraggingOverGrid()</a>, <a class="el" href="../../de/d01/_container_with_cargo_and_attachments_8c_source.html#l00654">ClosableContainer::DraggingOverGrid()</a>, <a class="el" href="../../d3/d0f/_hands_area_8c_source.html#l00114">HandsArea::DraggingOverHandsPanel()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00422">HandsContainer::DraggingOverHeader()</a>, <a class="el" href="../../de/d01/_container_with_cargo_and_attachments_8c_source.html#l00722">ClosableContainer::DraggingOverHeader()</a>, <a class="el" href="../../d2/d06/_vicinity_container_8c_source.html#l00087">VicinityContainer::DraggingOverHeader()</a>, <a class="el" href="../../d0/d00/_zombie_container_8c_source.html#l00128">ZombieContainer::DraggingOverHeader()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00241">Icon::DraggingOverSwap()</a>, <a class="el" href="../../df/d0e/_script_console_items_tab_8c_source.html#l00283">ScriptConsoleItemsTab::DrawItems()</a>, <a class="el" href="../../d6/d0a/_container_with_cargo_8c_source.html#l00302">ClosableContainer::DropReceived()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00875">HandsContainer::DropReceived()</a>, <a class="el" href="../../d4/d04/_attachment_categories_row_8c_source.html#l00518">AttachmentCategoriesRow::DropReceived()</a>, <a class="el" href="../../de/d01/_container_with_cargo_and_attachments_8c_source.html#l00433">ClosableContainer::DropReceived()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00821">Icon::DropReceivedFromMain()</a>, <a class="el" href="../../d5/d0b/_scripted_light_base_8c_source.html#l00063">EntityLightSource::EOnInit()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00227">HandsContainer::EquipItem()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00633">ItemManager::EvaluateContainerDragabilityDefault()</a>, <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l01051">DayZPlayer::EvaluateDamageHit()</a>, <a class="el" href="../../db/d04/_plugin_day_z_creature_a_i_debug_8c_source.html#l00555">Event_OnClick()</a>, <a class="el" href="../../d8/d00/_analytics_manager_client_8c_source.html#l00169">AnalyticsManagerClient::Event_OnEntityKilled()</a>, <a class="el" href="../../db/d05/_vicinity_item_manager_8c_source.html#l00084">VicinityItemManager::ExcludeFromContainer_Phase1()</a>, <a class="el" href="../../db/d05/_vicinity_item_manager_8c_source.html#l00139">VicinityItemManager::ExcludeFromContainer_Phase2()</a>, <a class="el" href="../../db/d05/_vicinity_item_manager_8c_source.html#l00165">VicinityItemManager::ExcludeFromContainer_Phase3()</a>, <a class="el" href="../../d7/d0b/_gestures_menu_8c_source.html#l00600">UIScriptedMenu::ExecuteSelectedItem()</a>, <a class="el" href="../../d4/d04/_in_game_menu_8c_source.html#l00308">UIScriptedMenu::GameRespawn()</a>, <a class="el" href="../../d1/d05/_in_game_menu_xbox_8c_source.html#l00313">UIScriptedMenu::GameRetry()</a>, <a class="el" href="../../d7/d0b/_gestures_menu_8c_source.html#l00023">GestureMenuItem()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00671">ItemManager::GetChosenCombinationFlag()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00707">HandsContainer::GetCombinationFlags()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00740">ItemManager::GetCombinationFlags()</a>, <a class="el" href="../../d5/d06/_color_manager_8c_source.html#l00046">ColorManager::GetItemColor()</a>, <a class="el" href="../../de/d0e/_radial_quickbar_menu_8c_source.html#l00279">UIScriptedMenu::GetItems()</a>, <a class="el" href="../../d4/d07/_inventory_quickbar_8c_source.html#l00207">InventoryGridController::GetQuickbarItemColor()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00190">Attachments::GetRecipeCount()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00783">HandsContainer::GetRecipeCount()</a>, <a class="el" href="../../d9/d0b/_player_container_8c_source.html#l00478">PlayerContainer::GetRecipeCount()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00783">ItemManager::GetRecipeCount()</a>, <a class="el" href="../../d3/d04/_action_dismantle_part_8c_source.html#l00051">ActionDismantlePart::GetText()</a>, <a class="el" href="../../dd/d0e/_action_repair_part_8c_source.html#l00064">ActionRepairPart::GetText()</a>, <a class="el" href="../../d3/d05/_action_transfer_liquid_8c_source.html#l00045">ActionTransferLiquid::GetText()</a>, <a class="el" href="../../df/d0e/_action_world_craft_8c_source.html#l00063">ActionWorldCraft::GetText()</a>, <a class="el" href="../../dd/d09/_action_build_shelter_8c_source.html#l00028">ActionBuildShelter::GetText()</a>, <a class="el" href="../../d3/d0b/_weapon_debug_8c_source.html#l00051">WeaponDebug::GetWeaponInHands()</a>, <a class="el" href="../../de/d0e/_radial_quickbar_menu_8c_source.html#l00719">UIScriptedMenu::HandleLights()</a>, <a class="el" href="../../de/d0e/_radial_quickbar_menu_8c_source.html#l00744">UIScriptedMenu::HandleNVG()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00020">HandsContainer::HandsContainer()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l01027">MissionBase::HideInventory()</a>, <a class="el" href="../../d0/d0e/_plugin_dayz_player_debug___other_cmds_8c_source.html#l00143">PluginDayzPlayerDebug_OtherCmds::Hit_Start()</a>, <a class="el" href="../../d2/d0b/_fishing_rod___base_8c_source.html#l00074">Init()</a>, <a class="el" href="../../df/d09/_camera_tools_menu_8c_source.html#l00126">UIScriptedMenu::Init()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00128">ScriptConsoleGeneralTab::Init()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l02017">ManBase::InitEditor()</a>, <a class="el" href="../../d1/d00/_plugin_scene_manager_8c_source.html#l00286">PluginBase::InitLoad()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00357">HandsContainer::InspectItem()</a>, <a class="el" href="../../d0/d0d/_attachments_out_of_reach_8c_source.html#l00005">AttachmentsOutOfReach::IsAttachmentReachable()</a>, <a class="el" href="../../dd/d0e/_man_base_8c_source.html#l00010">DayZPlayerImplement::IsControlledPlayer()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00326">HandsContainer::IsEmpty()</a>, <a class="el" href="../../d5/d01/_car_script_8c_source.html#l02363">IsInventoryVisible()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00308">HandsContainer::IsItemActive()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00317">HandsContainer::IsItemWithQuantityActive()</a>, <a class="el" href="../../d1/d05/_in_game_menu_xbox_8c_source.html#l00345">UIScriptedMenu::IsLocalPlayer()</a>, <a class="el" href="../../d1/d07/_plugin_developer_sync_8c_source.html#l00643">PluginBase::IsModifierLocked()</a>, <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l01221">IsObjectObstructed()</a>, <a class="el" href="../../dc/d08/_misc_gameplay_functions_8c_source.html#l01301">IsObjectObstructedFilterEx()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00199">ScriptConsoleGeneralTab::LateInit()</a>, <a class="el" href="../../d6/d0f/_plugin_config_scene_8c_source.html#l00493">PluginConfigHandler::LoadScenePlayer()</a>, <a class="el" href="../../d1/d07/_plugin_developer_sync_8c_source.html#l00635">PluginBase::LockModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00377">LockModifier()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00762">Icon::MouseClick()</a>, <a class="el" href="../../d4/d04/_attachment_categories_row_8c_source.html#l00767">AttachmentCategoriesRow::MouseClick()</a>, <a class="el" href="../../d9/d0b/_player_container_8c_source.html#l00224">PlayerContainer::MouseClick()</a>, <a class="el" href="../../d0/d00/_zombie_container_8c_source.html#l00335">ZombieContainer::MouseClick()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l01269">HandsContainer::MouseClick2()</a>, <a class="el" href="../../de/d01/_container_with_cargo_and_attachments_8c_source.html#l00370">ClosableContainer::MouseClick2()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l01363">MoveFocusByArea()</a>, <a class="el" href="../../d6/d0c/_action_menu_8c_source.html#l00096">ActionMenu::NextAction()</a>, <a class="el" href="../../d6/d0c/_action_menu_8c_source.html#l00116">ActionMenu::NextActionCategory()</a>, <a class="el" href="../../d7/d03/_trap___land_mine_8c_source.html#l00067">OnActivate()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l00401">OnCenterPanelDropReceived()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00400">ScriptConsoleGeneralTab::OnChange()</a>, <a class="el" href="../../dd/d04/_hud_debug_win_char_stats_8c_source.html#l00219">HudDebugWinBase::OnChange()</a>, <a class="el" href="../../dc/d03/_plugin_dayz_player_debug___weapons_8c_source.html#l00337">PluginDayzPlayerDebug_Weapons::OnClick()</a>, <a class="el" href="../../d4/d04/_in_game_menu_8c_source.html#l00153">UIScriptedMenu::OnClick()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00477">ScriptConsoleGeneralTab::OnClick()</a>, <a class="el" href="../../df/d0e/_script_console_items_tab_8c_source.html#l01103">ScriptConsoleItemsTab::OnClick()</a>, <a class="el" href="../../df/d0a/_scene_editor_menu_8c_source.html#l00461">UIScriptedMenu::OnDoubleClick()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00446">ScriptConsoleGeneralTab::OnDoubleClick()</a>, <a class="el" href="../../df/d0e/_script_console_items_tab_8c_source.html#l01339">ScriptConsoleItemsTab::OnDoubleClick()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l01061">Icon::OnDraggingOverBackground()</a>, <a class="el" href="../../d9/d0b/_player_container_8c_source.html#l00843">PlayerContainer::OnDropReceivedFromGhostArea()</a>, <a class="el" href="../../d0/d00/_zombie_container_8c_source.html#l00157">ZombieContainer::OnDropReceivedFromGhostArea()</a>, <a class="el" href="../../d4/d04/_attachment_categories_row_8c_source.html#l00299">AttachmentCategoriesRow::OnDropReceivedFromHeader()</a>, <a class="el" href="../../d6/d0a/_container_with_cargo_8c_source.html#l00420">ClosableContainer::OnDropReceivedFromHeader()</a>, <a class="el" href="../../d2/d06/_vicinity_container_8c_source.html#l00233">VicinityContainer::OnDropReceivedFromHeader()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00500">VicinitySlotsContainer::OnDropReceivedFromHeader()</a>, <a class="el" href="../../d2/d06/_vicinity_container_8c_source.html#l00172">VicinityContainer::OnDropReceivedFromIcon()</a>, <a class="el" href="../../dc/d0c/_flash_grenade_8c_source.html#l00005">Grenade_Base::OnExplosionEffects()</a>, <a class="el" href="../../de/d0f/_plugin_sound_debug_8c_source.html#l00030">PluginBase::OnGUITimer()</a>, <a class="el" href="../../d3/d0f/_hands_area_8c_source.html#l00148">HandsArea::OnHandsPanelDropReceived()</a>, <a class="el" href="../../de/d03/_slots_icon_8c_source.html#l00693">SlotsIcon::OnIconDrag()</a>, <a class="el" href="../../d4/d07/_inventory_quickbar_8c_source.html#l00196">InventoryGridController::OnItemDrag()</a>, <a class="el" href="../../d4/d07/_inventory_quickbar_8c_source.html#l00180">InventoryGridController::OnItemDrop()</a>, <a class="el" href="../../d4/d07/_inventory_quickbar_8c_source.html#l00142">InventoryGridController::OnItemDropReceived()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l00212">MissionBase::OnMissionFinish()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00368">ScriptConsoleGeneralTab::OnMouseButtonDown()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00234">ScriptConsoleSoundsTab::OnMouseButtonDown()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00408">Icon::OnPerformCombination()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00559">HandsContainer::OnPerformCombination()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00635">Icon::OnPerformRecipe()</a>, <a class="el" href="../../df/d0e/_item_base_8c_source.html#l01907">InventoryItem::OnRightClick()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l00372">OnRightPanelDropReceived()</a>, <a class="el" href="../../d5/d0d/_notifiers_manager_8c_source.html#l00097">OnScheduledTick()</a>, <a class="el" href="../../da/d0d/_plugin_item_diagnostic_8c_source.html#l00224">OnSelectAction()</a>, <a class="el" href="../../d3/d04/_script_console_vicinity_tab_8c_source.html#l00144">ScriptConsoleVicinityTab::OnSelectAction()</a>, <a class="el" href="../../d0/d0e/_layout_holder_8c_source.html#l00025">ScriptedWidgetEventHandler::OnSelectAction()</a>, <a class="el" href="../../d0/d0e/_layout_holder_8c_source.html#l00033">ScriptedWidgetEventHandler::OnSelectActionEx()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l01043">OnShow()</a>, <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l02777">DayZPlayer::OnStepEvent()</a>, <a class="el" href="../../d1/d00/_plugin_scene_manager_8c_source.html#l00080">PluginBase::OnUIEditorOpened()</a>, <a class="el" href="../../d8/d0f/_day_z_player_camera_ironsights_8c_source.html#l00128">DayZPlayerCameraBase::OnUpdate()</a>, <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00018">PoweredOptic_Base::OnWorkStart()</a>, <a class="el" href="../../de/d06/_rangefinder_8c_source.html#l00030">PoweredOptic_Base::OnWorkStop()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l01115">MissionBase::Pause()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00460">Icon::PerformCombination()</a>, <a class="el" href="../../df/d09/_camera_tools_menu_8c_source.html#l00377">UIScriptedMenu::Play()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l00738">MissionBase::PlayerControlDisable()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l00689">MissionBase::PlayerControlEnable()</a>, <a class="el" href="../../d7/d08/_player_preview_8c_source.html#l00011">PlayerPreview::PlayerPreview()</a>, <a class="el" href="../../da/d09/_plugin_dayz_player_debug_8c_source.html#l00814">PlayerSyncDelete()</a>, <a class="el" href="../../dc/d03/_plugin_dayz_player_debug___weapons_8c_source.html#l00177">PluginDayzPlayerDebug_Weapons::PluginDayzPlayerDebug_Weapons()</a>, <a class="el" href="../../d6/d0c/_action_menu_8c_source.html#l00106">ActionMenu::PrevAction()</a>, <a class="el" href="../../d6/d0c/_action_menu_8c_source.html#l00126">ActionMenu::PrevActionCategory()</a>, <a class="el" href="../../de/d0e/_radial_quickbar_menu_8c_source.html#l00633">UIScriptedMenu::PrimaryAction()</a>, <a class="el" href="../../d7/d0b/_gestures_menu_8c_source.html#l00271">UIScriptedMenu::ProcessEmoteConditionRequest()</a>, <a class="el" href="../../d6/d0c/_action_menu_8c_source.html#l00145">ActionMenu::Refresh()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00290">ScriptConsoleGeneralTab::RefreshPlayerPosEditBoxes()</a>, <a class="el" href="../../d7/d05/_ingame_hud_8c_source.html#l01278">Hud::RefreshPlayerTags()</a>, <a class="el" href="../../db/d05/_vicinity_item_manager_8c_source.html#l00199">VicinityItemManager::RefreshVicinityItems()</a>, <a class="el" href="../../d4/d07/_inventory_quickbar_8c_source.html#l00058">InventoryGridController::Remove()</a>, <a class="el" href="../../dd/d0d/_advanced_communication_8c_source.html#l00115">EntityAI::RemoveAction()</a>, <a class="el" href="../../d6/d08/4___world_2_entities_2_game_2_super_2_building_8c_source.html#l00076">RemoveAction()</a>, <a class="el" href="../../df/d0e/_item_base_8c_source.html#l00362">InventoryItem::RemoveAction()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00326">RequestDetailedInfo()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00312">ResetModifiers()</a>, <a class="el" href="../../dd/d04/_hud_debug_win_char_stats_8c_source.html#l00255">HudDebugWinBase::ResetStats()</a>, <a class="el" href="../../d7/d04/_right_area_8c_source.html#l00014">RightArea::RightArea()</a>, <a class="el" href="../../dd/d04/_hud_debug_win_char_stats_8c_source.html#l00266">HudDebugWinBase::RPCChangeStat()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00124">ScriptConsoleEnfScriptTab::RunEnscript()</a>, <a class="el" href="../../dd/d0f/_script_console_enf_script_tab_8c_source.html#l00157">ScriptConsoleEnfScriptTab::RunEnscriptServer()</a>, <a class="el" href="../../db/d00/_scene_object_8c_source.html#l00489">SceneObject::SceneObjectSynch()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab::ScriptConsoleSoundsTab()</a>, <a class="el" href="../../de/d0e/_radial_quickbar_menu_8c_source.html#l00685">UIScriptedMenu::SecondaryAction()</a>, <a class="el" href="../../dc/d0c/_hands_preview_8c_source.html#l00147">HandsPreview::Select()</a>, <a class="el" href="../../d9/d0b/_player_container_8c_source.html#l00575">PlayerContainer::Select()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00152">VicinitySlotsContainer::Select()</a>, <a class="el" href="../../d0/d00/_zombie_container_8c_source.html#l00631">ZombieContainer::Select()</a>, <a class="el" href="../../d1/d00/_plugin_scene_manager_8c_source.html#l00825">PluginBase::SelectAndFocusPlayerObject()</a>, <a class="el" href="../../d2/d0a/_script_console_weather_tab_8c_source.html#l00526">ScriptConsoleWeatherTab::SendRPC()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00253">HandsContainer::SetActive()</a>, <a class="el" href="../../d6/d02/_plugin_developer_8c_source.html#l00872">PluginBase::SetDeveloperItemClient()</a>, <a class="el" href="../../d6/d02/_plugin_developer_8c_source.html#l00850">PluginBase::SetDeveloperItemClientEx()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00280">HandsContainer::SetLastActive()</a>, <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00178">Container::SetLock()</a>, <a class="el" href="../../df/d0a/_scene_editor_menu_8c_source.html#l00250">UIScriptedMenu::SetPreset()</a>, <a class="el" href="../../d7/d05/_ingame_hud_8c_source.html#l00709">Hud::SetStamina()</a>, <a class="el" href="../../d8/d0d/_hud_debug_win_char_agents_8c_source.html#l00057">SetUpdate()</a>, <a class="el" href="../../df/d02/_hud_debug_win_char_levels_8c_source.html#l00059">HudDebugWinBase::SetUpdate()</a>, <a class="el" href="../../d0/d0e/_layout_holder_8c_source.html#l00041">ScriptedWidgetEventHandler::ShowActionMenu()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l01008">MissionBase::ShowInventory()</a>, <a class="el" href="../../d2/d0f/_item_manager_8c_source.html#l00277">ItemManager::ShowSourceDropzone()</a>, <a class="el" href="../../d7/d05/_ingame_hud_8c_source.html#l00832">Hud::ShowVehicleInfo()</a>, <a class="el" href="../../d6/d02/_plugin_developer_8c_source.html#l00483">PluginBase::SpawnEntityInInventory()</a>, <a class="el" href="../../d6/d02/_plugin_developer_8c_source.html#l00648">PluginBase::SpawnFromClipboard()</a>, <a class="el" href="../../db/d0f/_plugin_day_z_infected_debug_8c_source.html#l00361">PluginBase::SpawnNewInfectedEntity()</a>, <a class="el" href="../../df/d0e/_script_console_items_tab_8c_source.html#l00535">ScriptConsoleItemsTab::SpawnPreset()</a>, <a class="el" href="../../df/d0e/_item_base_8c_source.html#l01522">InventoryItem::SplitIntoStackMaxClient()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00208">HandsContainer::SplitItem()</a>, <a class="el" href="../../dd/d0b/_icon_8c_source.html#l00902">Icon::Swap()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l01001">HandsContainer::TakeAsAttachment()</a>, <a class="el" href="../../de/d01/_container_with_cargo_and_attachments_8c_source.html#l00503">ClosableContainer::TakeAsAttachment()</a>, <a class="el" href="../../da/d0f/_developer_teleport_8c_source.html#l00005">DeveloperTeleport::TeleportAtCursor()</a>, <a class="el" href="../../da/d0f/_developer_teleport_8c_source.html#l00041">DeveloperTeleport::TeleportAtCursorEx()</a>, <a class="el" href="../../de/d0d/_p_m_t_creation_and_cleanup_8c_source.html#l00067">TestOwnership()</a>, <a class="el" href="../../da/d09/_plugin_dayz_player_debug_8c_source.html#l00530">Tick()</a>, <a class="el" href="../../dc/d03/_plugin_dayz_player_debug___weapons_8c_source.html#l00231">PluginDayzPlayerDebug_Weapons::Tick()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l00186">MissionBase::TickScheduler()</a>, <a class="el" href="../../da/d0d/_plugin_item_diagnostic_8c_source.html#l00244">ToggleDebugWindowEvent()</a>, <a class="el" href="../../d6/d02/_plugin_developer_8c_source.html#l00032">PluginBase::ToggleFreeCamera()</a>, <a class="el" href="../../d6/d02/_plugin_developer_8c_source.html#l00026">PluginBase::ToggleFreeCameraBackPos()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00185">HandsContainer::TransferItem()</a>, <a class="el" href="../../d4/d04/_attachment_categories_row_8c_source.html#l00127">AttachmentCategoriesRow::TransferItem()</a>, <a class="el" href="../../d3/d09/_vicinity_slots_container_8c_source.html#l00117">VicinitySlotsContainer::TransferItem()</a>, <a class="el" href="../../d5/d0b/5___mission_2_g_u_i_2_inventory_new_2_attachments_8c_source.html#l00283">Attachments::TransferItemToVicinity()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00332">HandsContainer::TransferItemToVicinity()</a>, <a class="el" href="../../d4/d04/_attachment_categories_row_8c_source.html#l00143">AttachmentCategoriesRow::TransferItemToVicinity()</a>, <a class="el" href="../../d0/d0e/_plugin_dayz_player_debug___other_cmds_8c_source.html#l00169">PluginDayzPlayerDebug_OtherCmds::Uncon_End()</a>, <a class="el" href="../../d0/d0e/_plugin_dayz_player_debug___other_cmds_8c_source.html#l00157">PluginDayzPlayerDebug_OtherCmds::Uncon_Start()</a>, <a class="el" href="../../db/d03/_hud_debug_win_char_debug_8c_source.html#l00027">HudDebugWinBase::Update()</a>, <a class="el" href="../../df/d09/_camera_tools_menu_8c_source.html#l00482">UIScriptedMenu::Update()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00667">ScriptConsoleGeneralTab::Update()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00184">ScriptConsoleSoundsTab::Update()</a>, <a class="el" href="../../d7/d05/_ingame_hud_8c_source.html#l01250">Hud::UpdateBloodName()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l01211">UpdateConsoleToolbar()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l01262">MissionBase::UpdateDebugMonitor()</a>, <a class="el" href="../../da/d0c/_logout_menu_8c_source.html#l00141">UIScriptedMenu::UpdateInfo()</a>, <a class="el" href="../../db/d0a/_hands_header_8c_source.html#l00023">HandsHeader::UpdateInterval()</a>, <a class="el" href="../../d2/d06/_vicinity_container_8c_source.html#l00282">VicinityContainer::UpdateInterval()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l00636">UpdateInterval()</a>, <a class="el" href="../../d7/d08/_player_preview_8c_source.html#l00075">PlayerPreview::UpdateInterval()</a>, <a class="el" href="../../d4/d07/_inventory_quickbar_8c_source.html#l00019">InventoryGridController::UpdateItems()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00334">ScriptConsoleGeneralTab::UpdateMousePos()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">ScriptConsoleSoundsTab::UpdateMousePos()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l01096">UpdateSpecialtyMeter()</a>, <a class="el" href="../../d1/d07/_plugin_developer_sync_8c_source.html#l00422">PluginBase::UpdateStatsLocal()</a>, <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00299">ScriptConsoleGeneralTab::UpdateTime()</a>, <a class="el" href="../../d6/d0c/_action_menu_8c_source.html#l00044">ActionMenu::UpdateWidgets()</a>, <a class="el" href="../../df/d09/_camera_tools_menu_8c_source.html#l00073">UIScriptedMenu::~CameraToolsMenu()</a>, <a class="el" href="../../df/d0e/_item_base_8c_source.html#l00726">InventoryItem::~ItemBase()</a>, <a class="el" href="../../db/d00/_scene_object_8c_source.html#l00338">SceneObject::~SceneObject()</a>, and <a class="el" href="../../dd/d0d/_script_console_general_tab_8c_source.html#l00119">ScriptConsoleGeneralTab::~ScriptConsoleGeneralTab()</a>.</p>
 
 </div>
 </div>
@@ -495,7 +592,8 @@ Variables</h2></td></tr>
 <p>Launched from 'DayZGame.DeferredInit' to make earlier access, use, and updates impossible (downside of a non-static system) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00044">44</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a47706b4a038ab21995bc1b331cd42164" name="a47706b4a038ab21995bc1b331cd42164"></a>
@@ -518,6 +616,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00037">37</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_variable" href="#a30d63017a9f01517dc55d70e098b89b8">m_Manager</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">manager</a>;</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>;</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="#a1e3b6d38df0786ccf7f938d60e386aae">Init</a>();</div>
+<div class="line"><span class="lineno">   42</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a1e3b6d38df0786ccf7f938d60e386aae"><div class="ttname"><a href="#a1e3b6d38df0786ccf7f938d60e386aae">Init</a></div><div class="ttdeci">void Init()</div><div class="ttdoc">Launched from 'DayZGame.DeferredInit' to make earlier access, use, and updates impossible (downside o...</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00044">ModifierBase.c:44</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a30d63017a9f01517dc55d70e098b89b8"><div class="ttname"><a href="#a30d63017a9f01517dc55d70e098b89b8">m_Manager</a></div><div class="ttdeci">ModifiersManager m_Manager</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00012">ModifierBase.c:12</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00005">ModifierBase::Init()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00012">m_Manager</a>, and <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>.</p>
 
 </div>
 </div>
@@ -537,6 +644,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00124">124</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>  {</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a>;</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00020">m_IsActive</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00178">IsActivable()</a>, <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00164">IsInactive()</a>, <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00170">IsTakeable()</a>, <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00496">OnItemLocationChanged()</a>, <a class="el" href="../../da/d0d/_plugin_item_diagnostic_8c_source.html#l00326">OnRPC()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00924">LayoutHolder::RecomputeOpenedContainers()</a>, <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00336">RefreshState()</a>, <a class="el" href="../../d6/d0d/_trap_spawn_base_8c_source.html#l00252">ItemBase::SetActive()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00701">LayoutHolder::SetFirstActive()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00665">LayoutHolder::SetLastActive()</a>, and <a class="el" href="../../d2/d0b/_universal_temperature_source_8c_source.html#l00167">UniversalTemperatureSourceDebug::Update()</a>.</p>
 
 </div>
 </div>
@@ -556,6 +670,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00134">134</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>  {</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a78ba1865a3e39379bcede97665de0d41">m_IsLocked</a>;</div>
+<div class="line"><span class="lineno">  137</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a78ba1865a3e39379bcede97665de0d41"><div class="ttname"><a href="#a78ba1865a3e39379bcede97665de0d41">m_IsLocked</a></div><div class="ttdeci">bool m_IsLocked</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00027">ModifierBase.c:27</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00027">m_IsLocked</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d01/_combination_lock_8c_source.html#l00344">IsLockedOnGate()</a>, <a class="el" href="../../d6/d0f/mission_gameplay_8c_source.html#l00233">MissionBase::OnUpdate()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
 
 </div>
 </div>
@@ -575,6 +697,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00052">52</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>  {</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#ae8326cd63358abd4d8bfa7c8538fecd4">m_IsPersistent</a>;</div>
+<div class="line"><span class="lineno">   55</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_ae8326cd63358abd4d8bfa7c8538fecd4"><div class="ttname"><a href="#ae8326cd63358abd4d8bfa7c8538fecd4">m_IsPersistent</a></div><div class="ttdeci">bool m_IsPersistent</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00016">ModifierBase.c:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00016">m_IsPersistent</a>.</p>
 
 </div>
 </div>
@@ -594,6 +722,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00139">139</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>  {</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a04ae6d90cb75d3086c27e65cddd358a0">m_TrackActivatedTime</a>;</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a04ae6d90cb75d3086c27e65cddd358a0"><div class="ttname"><a href="#a04ae6d90cb75d3086c27e65cddd358a0">m_TrackActivatedTime</a></div><div class="ttdeci">bool m_TrackActivatedTime</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00015">ModifierBase.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00015">m_TrackActivatedTime</a>.</p>
 
 </div>
 </div>
@@ -613,6 +747,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00057">57</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>  {</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="#a30d63017a9f01517dc55d70e098b89b8">m_Manager</a>.m_ParamList.Insert(<span class="keywordtype">object</span>);</div>
+<div class="line"><span class="lineno">   60</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00012">m_Manager</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d02/_test_disease_8c_source.html#l00006">TestDiseaseMdfr::Init()</a>, and <a class="el" href="../../d1/d0f/_blindness_state_8c_source.html#l00008">SymptomBase::OnInit()</a>.</p>
 
 </div>
 </div>
@@ -632,6 +773,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00032">32</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>  {</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_class" href="../../d4/d04/class_class.html">Class</a>.<a class="code hl_function" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">CastTo</a>(<a class="code hl_variable" href="#af725073fee975b834ffbf029b1e97b70">m_ModulePlayerStatus</a>, <a class="code hl_function" href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a>(PluginPlayerStatus));</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_af725073fee975b834ffbf029b1e97b70"><div class="ttname"><a href="#af725073fee975b834ffbf029b1e97b70">m_ModulePlayerStatus</a></div><div class="ttdeci">PluginPlayerStatus m_ModulePlayerStatus</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00030">ModifierBase.c:30</a></div></div>
+<div class="ttc" id="a_plugin_manager_8c_html_a35050f82bea320b7a5336fc549630eaf"><div class="ttname"><a href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a></div><div class="ttdeci">PluginBase GetPlugin(typename plugin_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">PluginManager.c:300</a></div></div>
+<div class="ttc" id="aclass_class_html"><div class="ttname"><a href="../../d4/d04/class_class.html">Class</a></div><div class="ttdoc">Super root of all classes in Enforce script.</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00010">EnScript.c:11</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga253ceb932745ea74ca4a4d3d9e8c12d7"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo</a></div><div class="ttdeci">static proto bool CastTo(out Class to, Class from)</div><div class="ttdoc">Try to safely down-cast base class to child class.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___enforce.html#ga253ceb932745ea74ca4a4d3d9e8c12d7">Class::CastTo()</a>, <a class="el" href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">GetPlugin()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00030">m_ModulePlayerStatus</a>.</p>
 
 </div>
 </div>
@@ -653,7 +803,10 @@ Variables</h2></td></tr>
 <p>is called when an inactive modifier gets activated during gameplay, is NOT called on activation upon player server connection(see OnReconnect) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00179">179</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  180</span>  {</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aca9bdf3a9820e956414c1c95cb1bcf8b" name="aca9bdf3a9820e956414c1c95cb1bcf8b"></a>
@@ -672,7 +825,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00190">190</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  191</span>  {</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="acb7d058521c8fb071a42bb730bfe9d18" name="acb7d058521c8fb071a42bb730bfe9d18"></a>
@@ -693,7 +849,10 @@ Variables</h2></td></tr>
 <p>is called when a modifier is being re-activated upon player server connection, use to activate systems which are not persistent and need to run alongside active modifiers </p>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00185">185</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  186</span>  {</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad975050d7a080cca462e74c604f404a2" name="ad975050d7a080cca462e74c604f404a2"></a>
@@ -712,7 +871,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00223">223</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  224</span>  {</div>
+<div class="line"><span class="lineno">  225</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8ffa49989eac67f48e338afbbc128e51" name="a8ffa49989eac67f48e338afbbc128e51"></a>
@@ -743,7 +904,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00228">228</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  229</span>  {</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a89faf32949abaf245f7b506f01351292" name="a89faf32949abaf245f7b506f01351292"></a>
@@ -762,6 +926,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00063">63</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>  {</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_variable" href="#a978d545fd7b03e57181c61fcb8ab3b44">m_LastTickedActive</a> = 0;</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a978d545fd7b03e57181c61fcb8ab3b44"><div class="ttname"><a href="#a978d545fd7b03e57181c61fcb8ab3b44">m_LastTickedActive</a></div><div class="ttdeci">float m_LastTickedActive</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00024">ModifierBase.c:24</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00024">m_LastTickedActive</a>.</p>
 
 </div>
 </div>
@@ -781,6 +951,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00149">149</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_variable" href="#a92eca2aaad5eb72f13c39aff3d5f5881">m_ActivatedTime</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">time</a>;</div>
+<div class="line"><span class="lineno">  152</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00014">m_ActivatedTime</a>.</p>
 
 </div>
 </div>
@@ -800,6 +975,13 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00129">129</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_variable" href="#a78ba1865a3e39379bcede97665de0d41">m_IsLocked</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">state</a>;</div>
+<div class="line"><span class="lineno">  132</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00027">m_IsLocked</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00239">Container::SetEntity()</a>, and <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00052">Container::~CargoContainer()</a>.</p>
 
 </div>
 </div>
@@ -819,6 +1001,53 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">88</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>  {</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a> &amp;&amp; <a class="code hl_variable" href="#a77065db0317ac406335a69e6fe27753d">m_ShouldBeActive</a>)</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_function" href="#ae8753efaeea05f65094a4875a694a368">Activate</a>();</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9a3d3c40e1c50b7a9d14cb880b784df2">m_IsActive</a>)</div>
+<div class="line"><span class="lineno">   95</span>    {</div>
+<div class="line"><span class="lineno">   96</span>      <a class="code hl_variable" href="#a4c17a64f57c5921e4fb31dfacefcaf2f">m_AccumulatedTimeActive</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">delta_time</a>;</div>
+<div class="line"><span class="lineno">   97</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4c17a64f57c5921e4fb31dfacefcaf2f">m_AccumulatedTimeActive</a> &gt; <a class="code hl_variable" href="#aa9aa2d760c0099abe3d671d7c4c6368f">m_TickIntervalActive</a>)</div>
+<div class="line"><span class="lineno">   98</span>      {</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9f3681cfa34208f711ba22331159bc7a">m_TickType</a> &amp; <a class="code hl_enumeration" href="#a676f8ade05004f01037a24bd37fe2dcf">eModifiersTickType</a>.DEACTIVATE_CHECK &amp;&amp; <a class="code hl_function" href="#a8879cef16fda96986b90ccfea1af00d4">DeactivateCondition</a>(<a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>) &amp;&amp; !<a class="code hl_function" href="#a9c5ca6db77e6e3d30a98b7b98a7dafc8">IsLocked</a>())</div>
+<div class="line"><span class="lineno">  100</span>          <a class="code hl_function" href="#ad612d0926324764327bf72adae591dbd">Deactivate</a>();</div>
+<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">else</span><span class="comment">//if(m_TickType &amp; eModifiersTickType.TICK)</span></div>
+<div class="line"><span class="lineno">  102</span>        {</div>
+<div class="line"><span class="lineno">  103</span>          <a class="code hl_variable" href="#a92eca2aaad5eb72f13c39aff3d5f5881">m_ActivatedTime</a> += <a class="code hl_variable" href="#a4c17a64f57c5921e4fb31dfacefcaf2f">m_AccumulatedTimeActive</a>;</div>
+<div class="line"><span class="lineno">  104</span>          <a class="code hl_function" href="#a8ffa49989eac67f48e338afbbc128e51">OnTick</a>(<a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>, <a class="code hl_variable" href="#a4c17a64f57c5921e4fb31dfacefcaf2f">m_AccumulatedTimeActive</a>);</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span>        <a class="code hl_variable" href="#a4c17a64f57c5921e4fb31dfacefcaf2f">m_AccumulatedTimeActive</a> = 0;</div>
+<div class="line"><span class="lineno">  107</span>      }</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9f3681cfa34208f711ba22331159bc7a">m_TickType</a> &amp; <a class="code hl_enumeration" href="#a676f8ade05004f01037a24bd37fe2dcf">eModifiersTickType</a>.ACTIVATE_CHECK)</div>
+<div class="line"><span class="lineno">  110</span>    {</div>
+<div class="line"><span class="lineno">  111</span>      <a class="code hl_variable" href="#a3fb679b8e90e81e1e525edb05fe938a5">m_AccumulatedTimeInactive</a> += <a class="code hl_class" href="../../db/d06/class_param3.html">delta_time</a>;</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a3fb679b8e90e81e1e525edb05fe938a5">m_AccumulatedTimeInactive</a> &gt; <a class="code hl_variable" href="#aad5f52b5eb22d81599e8a25ec6055d22">m_TickIntervalInactive</a>)</div>
+<div class="line"><span class="lineno">  113</span>      {</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3bae3eb1a0de40f1e9920e7bd7cdb8b2">ActivateCondition</a>(<a class="code hl_variable" href="#a4db3d46d75d2864daed52041fe1f0973">m_Player</a>))</div>
+<div class="line"><span class="lineno">  115</span>        {</div>
+<div class="line"><span class="lineno">  116</span>          <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a9c5ca6db77e6e3d30a98b7b98a7dafc8">IsLocked</a>())</div>
+<div class="line"><span class="lineno">  117</span>            <a class="code hl_function" href="#ac28402df023315ef1d7ff94b147dfdd1">ActivateRequest</a>(<a class="code hl_enumeration" href="../../d3/d0c/_modifiers_manager_8c.html#a91438892389b25e59441949d005ef1a2">EActivationType</a>.TRIGGER_EVENT_ON_ACTIVATION);</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <a class="code hl_variable" href="#a3fb679b8e90e81e1e525edb05fe938a5">m_AccumulatedTimeInactive</a> = 0;</div>
+<div class="line"><span class="lineno">  120</span>      }</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  122</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_a3bae3eb1a0de40f1e9920e7bd7cdb8b2"><div class="ttname"><a href="#a3bae3eb1a0de40f1e9920e7bd7cdb8b2">ActivateCondition</a></div><div class="ttdeci">bool ActivateCondition(PlayerBase player)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00168">ModifierBase.c:168</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a3fb679b8e90e81e1e525edb05fe938a5"><div class="ttname"><a href="#a3fb679b8e90e81e1e525edb05fe938a5">m_AccumulatedTimeInactive</a></div><div class="ttdeci">float m_AccumulatedTimeInactive</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00023">ModifierBase.c:23</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a4c17a64f57c5921e4fb31dfacefcaf2f"><div class="ttname"><a href="#a4c17a64f57c5921e4fb31dfacefcaf2f">m_AccumulatedTimeActive</a></div><div class="ttdeci">float m_AccumulatedTimeActive</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00022">ModifierBase.c:22</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a8879cef16fda96986b90ccfea1af00d4"><div class="ttname"><a href="#a8879cef16fda96986b90ccfea1af00d4">DeactivateCondition</a></div><div class="ttdeci">bool DeactivateCondition(PlayerBase player)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00173">ModifierBase.c:173</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a8ffa49989eac67f48e338afbbc128e51"><div class="ttname"><a href="#a8ffa49989eac67f48e338afbbc128e51">OnTick</a></div><div class="ttdeci">void OnTick(PlayerBase player, float deltaT)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00228">ModifierBase.c:228</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_a9c5ca6db77e6e3d30a98b7b98a7dafc8"><div class="ttname"><a href="#a9c5ca6db77e6e3d30a98b7b98a7dafc8">IsLocked</a></div><div class="ttdeci">bool IsLocked()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00134">ModifierBase.c:134</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_aa9aa2d760c0099abe3d671d7c4c6368f"><div class="ttname"><a href="#aa9aa2d760c0099abe3d671d7c4c6368f">m_TickIntervalActive</a></div><div class="ttdeci">float m_TickIntervalActive</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00019">ModifierBase.c:19</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_aad5f52b5eb22d81599e8a25ec6055d22"><div class="ttname"><a href="#aad5f52b5eb22d81599e8a25ec6055d22">m_TickIntervalInactive</a></div><div class="ttdeci">float m_TickIntervalInactive</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00018">ModifierBase.c:18</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_ac28402df023315ef1d7ff94b147dfdd1"><div class="ttname"><a href="#ac28402df023315ef1d7ff94b147dfdd1">ActivateRequest</a></div><div class="ttdeci">void ActivateRequest(EActivationType trigger)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00204">ModifierBase.c:204</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_ad612d0926324764327bf72adae591dbd"><div class="ttname"><a href="#ad612d0926324764327bf72adae591dbd">Deactivate</a></div><div class="ttdeci">void Deactivate(bool trigger=true)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00210">ModifierBase.c:210</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_ae8753efaeea05f65094a4875a694a368"><div class="ttname"><a href="#ae8753efaeea05f65094a4875a694a368">Activate</a></div><div class="ttdeci">void Activate()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00195">ModifierBase.c:195</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00195">Activate()</a>, <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00015">ModifierBase::ActivateCondition()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00204">ActivateRequest()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00210">Deactivate()</a>, <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00020">ModifierBase::DeactivateCondition()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00134">IsLocked()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00022">m_AccumulatedTimeActive</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00023">m_AccumulatedTimeInactive</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00014">m_ActivatedTime</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00020">m_IsActive</a>, <a class="el" href="../../d6/d01/_hand___events_8c_source.html#l00042">m_Player</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00021">m_ShouldBeActive</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00019">m_TickIntervalActive</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00018">m_TickIntervalInactive</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00025">m_TickType</a>, and <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00041">ModifierBase::OnTick()</a>.</p>
 
 </div>
 </div>
@@ -837,6 +1066,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00022">22</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
+
 </div>
 </div>
 <a id="a3fb679b8e90e81e1e525edb05fe938a5" name="a3fb679b8e90e81e1e525edb05fe938a5"></a>
@@ -852,6 +1083,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00023">23</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
 
 </div>
 </div>
@@ -869,6 +1102,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00014">14</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00210">Deactivate()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00144">GetAttachedTime()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00149">SetAttachedTime()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
+
 </div>
 </div>
 <a id="ac3e751efa3b0bf89b63227e0cee2e250" name="ac3e751efa3b0bf89b63227e0cee2e250"></a>
@@ -884,6 +1119,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00028">28</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00195">Activate()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00204">ActivateRequest()</a>, and <a class="el" href="../../d8/d0e/_broken_legs_8c_source.html#l00012">BrokenLegsMdfr::Init()</a>.</p>
 
 </div>
 </div>
@@ -915,6 +1152,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00020">20</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00195">Activate()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00035">LayoutHolder::Container()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00210">Deactivate()</a>, <a class="el" href="../../db/d04/_plugin_day_z_creature_a_i_debug_8c_source.html#l00555">Event_OnClick()</a>, <a class="el" href="../../db/d04/_plugin_day_z_creature_a_i_debug_8c_source.html#l00548">Hide()</a>, <a class="el" href="../../db/d0f/_plugin_day_z_infected_debug_8c_source.html#l00177">PluginBase::Hide()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00124">IsActive()</a>, <a class="el" href="../../d6/d0d/_trap_spawn_base_8c_source.html#l00140">ItemBase::IsActive()</a>, <a class="el" href="../../d0/d0e/_layout_holder_8c_source.html#l00155">ScriptedWidgetEventHandler::IsActive()</a>, <a class="el" href="../../d7/d04/_right_area_8c_source.html#l00177">RightArea::MoveUpDownIcons()</a>, <a class="el" href="../../db/d04/_plugin_day_z_creature_a_i_debug_8c_source.html#l00517">OnGUITimer()</a>, <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00128">OnStoreSave()</a>, <a class="el" href="../../d6/d0d/_trap_spawn_base_8c_source.html#l00086">ItemBase::OnStoreSave()</a>, <a class="el" href="../../db/d0f/_plugin_day_z_infected_debug_8c_source.html#l00194">PluginBase::OnUpdate()</a>, <a class="el" href="../../da/d0d/_plugin_item_diagnostic_8c_source.html#l00418">OnUpdate()</a>, <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00094">OnVariablesSynchronized()</a>, <a class="el" href="../../d9/d0b/_hands_container_8c_source.html#l00302">HandsContainer::Refresh()</a>, <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00409">SetActive()</a>, <a class="el" href="../../d6/d0d/_trap_spawn_base_8c_source.html#l00252">ItemBase::SetActive()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00725">LayoutHolder::SetActive()</a>, <a class="el" href="../../d0/d0e/_layout_holder_8c_source.html#l00147">ScriptedWidgetEventHandler::SetActive()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00701">LayoutHolder::SetFirstActive()</a>, <a class="el" href="../../d6/d0d/_trap_spawn_base_8c_source.html#l00273">ItemBase::SetInactive()</a>, <a class="el" href="../../dd/d08/_trap_base_8c_source.html#l00452">SetInactive()</a>, <a class="el" href="../../df/d0c/_container_8c_source.html#l00665">LayoutHolder::SetLastActive()</a>, <a class="el" href="../../d6/d0d/_trap_spawn_base_8c_source.html#l00288">ItemBase::SetUsed()</a>, <a class="el" href="../../db/d04/_plugin_day_z_creature_a_i_debug_8c_source.html#l00540">Show()</a>, <a class="el" href="../../db/d0f/_plugin_day_z_infected_debug_8c_source.html#l00161">PluginBase::Show()</a>, <a class="el" href="../../da/d0d/_plugin_item_diagnostic_8c_source.html#l00215">ShowWidgets()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>, <a class="el" href="../../da/d0d/_plugin_item_diagnostic_8c_source.html#l00244">ToggleDebugWindowEvent()</a>, <a class="el" href="../../da/d09/_plugin_dayz_player_debug_8c_source.html#l00389">ToggleDebugWindowEventOld()</a>, <a class="el" href="../../da/d09/_plugin_dayz_player_debug_8c_source.html#l00405">ToggleDebugWindowEventP()</a>, <a class="el" href="../../d0/d0c/_cargo_container_8c_source.html#l00458">Container::UpdateSelection()</a>, and <a class="el" href="../../d9/d04/_left_area_8c_source.html#l00064">LeftArea::UpdateSelectionIcons()</a>.</p>
+
 </div>
 </div>
 <a id="a78ba1865a3e39379bcede97665de0d41" name="a78ba1865a3e39379bcede97665de0d41"></a>
@@ -930,6 +1169,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00027">27</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d01/_combination_lock_8c_source.html#l00339">CheckLockedStateServer()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00134">IsLocked()</a>, <a class="el" href="../../d2/d01/_combination_lock_8c_source.html#l00045">SetBaseLockValues()</a>, <a class="el" href="../../dc/d07/_combination_lock4_8c_source.html#l00003">CombinationLock::SetBaseLockValues()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00129">SetLock()</a>.</p>
 
 </div>
 </div>
@@ -947,6 +1188,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00016">16</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_antibiotics_8c_source.html#l00007">AntibioticsMdfr::Init()</a>, <a class="el" href="../../db/d09/_charcoal_mdfr_8c_source.html#l00007">CharcoalMdfr::Init()</a>, <a class="el" href="../../d8/d0e/_broken_legs_8c_source.html#l00012">BrokenLegsMdfr::Init()</a>, <a class="el" href="../../d4/d0c/_heart_attack_8c_source.html#l00007">HeartAttackMdfr::Init()</a>, <a class="el" href="../../d5/d00/_hemolytic_reaction_8c_source.html#l00005">HemolyticReactionMdfr::Init()</a>, <a class="el" href="../../d4/d0d/_poisoning_8c_source.html#l00012">PoisoningMdfr::Init()</a>, <a class="el" href="../../d7/d0c/_disinfect_mdfr_8c_source.html#l00007">DisinfectionMdfr::Init()</a>, <a class="el" href="../../d0/d02/_epinephrine_mdfr_8c_source.html#l00005">EpinephrineMdfr::Init()</a>, <a class="el" href="../../d3/d06/_immunity_boost_8c_source.html#l00007">ImmunityBoost::Init()</a>, <a class="el" href="../../db/d06/_morphine_mdfr_8c_source.html#l00005">MorphineMdfr::Init()</a>, <a class="el" href="../../df/d0d/_pain_killers_mdfr_8c_source.html#l00005">PainKillersMdfr::Init()</a>, <a class="el" href="../../dc/d01/_saline_8c_source.html#l00004">SalineMdfr::Init()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00052">IsPersistent()</a>, and <a class="el" href="../../d1/d0f/_blindness_state_8c_source.html#l00008">SymptomBase::OnInit()</a>.</p>
+
 </div>
 </div>
 <a id="a978d545fd7b03e57181c61fcb8ab3b44" name="a978d545fd7b03e57181c61fcb8ab3b44"></a>
@@ -962,6 +1205,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00024">24</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00063">ResetLastTickTime()</a>.</p>
 
 </div>
 </div>
@@ -995,6 +1240,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00012">12</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d1/d04/_vomit_state_8c_source.html#l00059">SymptomBase::CanActivate()</a>, <a class="el" href="../../d1/d06/_contaminated_trigger_8c_source.html#l00091">ContaminatedTrigger_Dynamic()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00037">InitBase()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00057">MakeParamObjectPersistent()</a>, <a class="el" href="../../d6/d02/_cough_state_8c_source.html#l00046">SymptomBase::OnGetActivatedServer()</a>, and <a class="el" href="../../d6/d08/_mask_8c_source.html#l00035">MaskMdfr::OnTick()</a>.</p>
+
 </div>
 </div>
 <a id="af725073fee975b834ffbf029b1e97b70" name="af725073fee975b834ffbf029b1e97b70"></a>
@@ -1010,6 +1257,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00030">30</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d07/_display_status_8c_source.html#l00215">Debug()</a>, <a class="el" href="../../d3/d01/_display_element_base_8c_source.html#l00017">MessageReceiverBase::DisplayElementBase()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l00290">ManBase::Init()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00032">ModifierBase()</a>, <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l01621">ManBase::SetStamina()</a>, and <a class="el" href="../../df/d0e/_display_element_badge_8c_source.html#l00008">DisplayElementBase::UpdateHUD()</a>.</p>
 
 </div>
 </div>
@@ -1043,6 +1292,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00021">21</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00204">ActivateRequest()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00210">Deactivate()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
+
 </div>
 </div>
 <a id="aa13e9ceb481752169c6aa44663e496d6" name="aa13e9ceb481752169c6aa44663e496d6"></a>
@@ -1058,6 +1309,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00029">29</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00195">Activate()</a>, <a class="el" href="../../d2/d0b/_area_exposure_8c_source.html#l00020">AreaExposureMdfr::Init()</a>, <a class="el" href="../../d8/d00/_fever_8c_source.html#l00010">FeverMdfr::Init()</a>, <a class="el" href="../../d0/d03/_contamination_8c_source.html#l00012">ContaminationStage1Mdfr::Init()</a>, <a class="el" href="../../d3/d05/_contamination2_8c_source.html#l00019">ContaminationStage2Mdfr::Init()</a>, <a class="el" href="../../d9/d06/_contamination3_8c_source.html#l00008">ContaminationStage3Mdfr::Init()</a>, <a class="el" href="../../dc/d0b/_wound_infection_8c_source.html#l00025">WoundInfectStage1Mdfr::Init()</a>, <a class="el" href="../../dc/d01/_wound_infection2_8c_source.html#l00015">WoundInfectStage2Mdfr::Init()</a>, and <a class="el" href="../../d0/d09/_drowning_8c_source.html#l00006">DrowningMdfr::Init()</a>.</p>
 
 </div>
 </div>
@@ -1075,6 +1328,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00013">13</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d3/d01/_display_element_base_8c_source.html#l00017">MessageReceiverBase::DisplayElementBase()</a>.</p>
+
 </div>
 </div>
 <a id="aa9aa2d760c0099abe3d671d7c4c6368f" name="aa9aa2d760c0099abe3d671d7c4c6368f"></a>
@@ -1090,6 +1345,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00019">19</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_antibiotics_8c_source.html#l00007">AntibioticsMdfr::Init()</a>, <a class="el" href="../../da/d09/_blood_regen_8c_source.html#l00003">BloodRegenMdfr::Init()</a>, <a class="el" href="../../d5/d04/_bone_regen_8c_source.html#l00009">BoneRegenMdfr::Init()</a>, <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00005">ModifierBase::Init()</a>, <a class="el" href="../../db/d09/_charcoal_mdfr_8c_source.html#l00007">CharcoalMdfr::Init()</a>, <a class="el" href="../../d2/d0b/_area_exposure_8c_source.html#l00020">AreaExposureMdfr::Init()</a>, <a class="el" href="../../db/d06/_bleeding_8c_source.html#l00007">BleedingCheckMdfr::Init()</a>, <a class="el" href="../../d5/d06/_blinded_8c_source.html#l00006">BlindedMdfr::Init()</a>, <a class="el" href="../../d4/d0b/_broken_arms_8c_source.html#l00005">BrokenArmsMdfr::Init()</a>, <a class="el" href="../../d8/d0e/_broken_legs_8c_source.html#l00012">BrokenLegsMdfr::Init()</a>, <a class="el" href="../../d4/d07/_burning_8c_source.html#l00006">BurningMdfr::Init()</a>, <a class="el" href="../../d1/d01/_fatigue_8c_source.html#l00011">FatigueMdfr::Init()</a>, <a class="el" href="../../d8/d00/_fever_8c_source.html#l00010">FeverMdfr::Init()</a>, <a class="el" href="../../d4/d0c/_heart_attack_8c_source.html#l00007">HeartAttackMdfr::Init()</a>, <a class="el" href="../../d9/d0c/_heat_buffer_8c_source.html#l00006">HeatBufferMdfr::Init()</a>, <a class="el" href="../../d5/d00/_hemolytic_reaction_8c_source.html#l00005">HemolyticReactionMdfr::Init()</a>, <a class="el" href="../../d4/d0d/_poisoning_8c_source.html#l00012">PoisoningMdfr::Init()</a>, <a class="el" href="../../db/d00/_stuffed_stomach_8c_source.html#l00004">StuffedStomachMdfr::Init()</a>, <a class="el" href="../../d5/d02/_tremor_8c_source.html#l00005">TremorMdfr::Init()</a>, <a class="el" href="../../dd/d00/_vomit_stuffed_8c_source.html#l00003">VomitStuffedMdfr::Init()</a>, <a class="el" href="../../d8/d05/_wet_8c_source.html#l00003">WetMdfr::Init()</a>, <a class="el" href="../../df/d0d/_brain_disease_8c_source.html#l00012">BrainDiseaseMdfr::Init()</a>, <a class="el" href="../../d4/d06/_cholera_8c_source.html#l00014">CholeraMdfr::Init()</a>, <a class="el" href="../../d9/d0d/_common_cold_8c_source.html#l00005">CommonColdMdfr::Init()</a>, <a class="el" href="../../d0/d03/_contamination_8c_source.html#l00012">ContaminationStage1Mdfr::Init()</a>, <a class="el" href="../../d3/d05/_contamination2_8c_source.html#l00019">ContaminationStage2Mdfr::Init()</a>, <a class="el" href="../../d9/d06/_contamination3_8c_source.html#l00008">ContaminationStage3Mdfr::Init()</a>, <a class="el" href="../../df/d0d/_influenza_8c_source.html#l00006">InfluenzaMdfr::Init()</a>, <a class="el" href="../../d7/d06/_salmonella_8c_source.html#l00019">SalmonellaMdfr::Init()</a>, <a class="el" href="../../d5/d02/_test_disease_8c_source.html#l00006">TestDiseaseMdfr::Init()</a>, <a class="el" href="../../dc/d0b/_wound_infection_8c_source.html#l00025">WoundInfectStage1Mdfr::Init()</a>, <a class="el" href="../../dc/d01/_wound_infection2_8c_source.html#l00015">WoundInfectStage2Mdfr::Init()</a>, <a class="el" href="../../d7/d0c/_disinfect_mdfr_8c_source.html#l00007">DisinfectionMdfr::Init()</a>, <a class="el" href="../../d0/d09/_drowning_8c_source.html#l00006">DrowningMdfr::Init()</a>, <a class="el" href="../../d0/d02/_epinephrine_mdfr_8c_source.html#l00005">EpinephrineMdfr::Init()</a>, <a class="el" href="../../d3/d05/_flies_8c_source.html#l00010">FliesMdfr::Init()</a>, <a class="el" href="../../d0/d08/_health_8c_source.html#l00007">HealthMdfr::Init()</a>, <a class="el" href="../../dd/d06/_health_regen_8c_source.html#l00003">HealthRegenMdfr::Init()</a>, <a class="el" href="../../d2/d01/_heat_comfort_mdfr_8c_source.html#l00003">HeatComfortMdfr::Init()</a>, <a class="el" href="../../d0/d09/_hunger_8c_source.html#l00007">HungerMdfr::Init()</a>, <a class="el" href="../../d8/d0b/_immune_system_8c_source.html#l00005">ImmuneSystemMdfr::Init()</a>, <a class="el" href="../../d3/d06/_immunity_boost_8c_source.html#l00007">ImmunityBoost::Init()</a>, <a class="el" href="../../d6/d08/_mask_8c_source.html#l00017">MaskMdfr::Init()</a>, <a class="el" href="../../db/d06/_morphine_mdfr_8c_source.html#l00005">MorphineMdfr::Init()</a>, <a class="el" href="../../df/d0d/_pain_killers_mdfr_8c_source.html#l00005">PainKillersMdfr::Init()</a>, <a class="el" href="../../dc/d01/_saline_8c_source.html#l00004">SalineMdfr::Init()</a>, <a class="el" href="../../d2/d0f/_shock_8c_source.html#l00006">ShockMdfr::Init()</a>, <a class="el" href="../../de/d0f/_shock_damage_8c_source.html#l00004">ShockDamageMdfr::Init()</a>, <a class="el" href="../../d3/d0a/_stomach_8c_source.html#l00003">StomachMdfr::Init()</a>, <a class="el" href="../../d2/d04/_testing_8c_source.html#l00005">TestingMdfr::Init()</a>, <a class="el" href="../../d0/d00/_thirst_8c_source.html#l00006">ThirstMdfr::Init()</a>, <a class="el" href="../../d7/d09/_toxicity_8c_source.html#l00006">ToxicityMdfr::Init()</a>, <a class="el" href="../../d0/d08/_unconsciousness_8c_source.html#l00005">UnconsciousnessMdfr::Init()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
 
 </div>
 </div>
@@ -1107,6 +1364,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00018">18</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_antibiotics_8c_source.html#l00007">AntibioticsMdfr::Init()</a>, <a class="el" href="../../da/d09/_blood_regen_8c_source.html#l00003">BloodRegenMdfr::Init()</a>, <a class="el" href="../../d5/d04/_bone_regen_8c_source.html#l00009">BoneRegenMdfr::Init()</a>, <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00005">ModifierBase::Init()</a>, <a class="el" href="../../db/d09/_charcoal_mdfr_8c_source.html#l00007">CharcoalMdfr::Init()</a>, <a class="el" href="../../d2/d0b/_area_exposure_8c_source.html#l00020">AreaExposureMdfr::Init()</a>, <a class="el" href="../../db/d06/_bleeding_8c_source.html#l00007">BleedingCheckMdfr::Init()</a>, <a class="el" href="../../d5/d06/_blinded_8c_source.html#l00006">BlindedMdfr::Init()</a>, <a class="el" href="../../d4/d0b/_broken_arms_8c_source.html#l00005">BrokenArmsMdfr::Init()</a>, <a class="el" href="../../d8/d0e/_broken_legs_8c_source.html#l00012">BrokenLegsMdfr::Init()</a>, <a class="el" href="../../d4/d07/_burning_8c_source.html#l00006">BurningMdfr::Init()</a>, <a class="el" href="../../d1/d01/_fatigue_8c_source.html#l00011">FatigueMdfr::Init()</a>, <a class="el" href="../../d8/d00/_fever_8c_source.html#l00010">FeverMdfr::Init()</a>, <a class="el" href="../../d4/d0c/_heart_attack_8c_source.html#l00007">HeartAttackMdfr::Init()</a>, <a class="el" href="../../d9/d0c/_heat_buffer_8c_source.html#l00006">HeatBufferMdfr::Init()</a>, <a class="el" href="../../d5/d00/_hemolytic_reaction_8c_source.html#l00005">HemolyticReactionMdfr::Init()</a>, <a class="el" href="../../d4/d0d/_poisoning_8c_source.html#l00012">PoisoningMdfr::Init()</a>, <a class="el" href="../../db/d00/_stuffed_stomach_8c_source.html#l00004">StuffedStomachMdfr::Init()</a>, <a class="el" href="../../d5/d02/_tremor_8c_source.html#l00005">TremorMdfr::Init()</a>, <a class="el" href="../../dd/d00/_vomit_stuffed_8c_source.html#l00003">VomitStuffedMdfr::Init()</a>, <a class="el" href="../../d8/d05/_wet_8c_source.html#l00003">WetMdfr::Init()</a>, <a class="el" href="../../df/d0d/_brain_disease_8c_source.html#l00012">BrainDiseaseMdfr::Init()</a>, <a class="el" href="../../d4/d06/_cholera_8c_source.html#l00014">CholeraMdfr::Init()</a>, <a class="el" href="../../d9/d0d/_common_cold_8c_source.html#l00005">CommonColdMdfr::Init()</a>, <a class="el" href="../../d0/d03/_contamination_8c_source.html#l00012">ContaminationStage1Mdfr::Init()</a>, <a class="el" href="../../d3/d05/_contamination2_8c_source.html#l00019">ContaminationStage2Mdfr::Init()</a>, <a class="el" href="../../d9/d06/_contamination3_8c_source.html#l00008">ContaminationStage3Mdfr::Init()</a>, <a class="el" href="../../df/d0d/_influenza_8c_source.html#l00006">InfluenzaMdfr::Init()</a>, <a class="el" href="../../d7/d06/_salmonella_8c_source.html#l00019">SalmonellaMdfr::Init()</a>, <a class="el" href="../../d5/d02/_test_disease_8c_source.html#l00006">TestDiseaseMdfr::Init()</a>, <a class="el" href="../../dc/d0b/_wound_infection_8c_source.html#l00025">WoundInfectStage1Mdfr::Init()</a>, <a class="el" href="../../dc/d01/_wound_infection2_8c_source.html#l00015">WoundInfectStage2Mdfr::Init()</a>, <a class="el" href="../../d7/d0c/_disinfect_mdfr_8c_source.html#l00007">DisinfectionMdfr::Init()</a>, <a class="el" href="../../d0/d09/_drowning_8c_source.html#l00006">DrowningMdfr::Init()</a>, <a class="el" href="../../d0/d02/_epinephrine_mdfr_8c_source.html#l00005">EpinephrineMdfr::Init()</a>, <a class="el" href="../../d3/d05/_flies_8c_source.html#l00010">FliesMdfr::Init()</a>, <a class="el" href="../../d0/d08/_health_8c_source.html#l00007">HealthMdfr::Init()</a>, <a class="el" href="../../dd/d06/_health_regen_8c_source.html#l00003">HealthRegenMdfr::Init()</a>, <a class="el" href="../../d2/d01/_heat_comfort_mdfr_8c_source.html#l00003">HeatComfortMdfr::Init()</a>, <a class="el" href="../../d0/d09/_hunger_8c_source.html#l00007">HungerMdfr::Init()</a>, <a class="el" href="../../d8/d0b/_immune_system_8c_source.html#l00005">ImmuneSystemMdfr::Init()</a>, <a class="el" href="../../d3/d06/_immunity_boost_8c_source.html#l00007">ImmunityBoost::Init()</a>, <a class="el" href="../../d6/d08/_mask_8c_source.html#l00017">MaskMdfr::Init()</a>, <a class="el" href="../../db/d06/_morphine_mdfr_8c_source.html#l00005">MorphineMdfr::Init()</a>, <a class="el" href="../../df/d0d/_pain_killers_mdfr_8c_source.html#l00005">PainKillersMdfr::Init()</a>, <a class="el" href="../../dc/d01/_saline_8c_source.html#l00004">SalineMdfr::Init()</a>, <a class="el" href="../../d2/d0f/_shock_8c_source.html#l00006">ShockMdfr::Init()</a>, <a class="el" href="../../de/d0f/_shock_damage_8c_source.html#l00004">ShockDamageMdfr::Init()</a>, <a class="el" href="../../d3/d0a/_stomach_8c_source.html#l00003">StomachMdfr::Init()</a>, <a class="el" href="../../d2/d04/_testing_8c_source.html#l00005">TestingMdfr::Init()</a>, <a class="el" href="../../d0/d00/_thirst_8c_source.html#l00006">ThirstMdfr::Init()</a>, <a class="el" href="../../d7/d09/_toxicity_8c_source.html#l00006">ToxicityMdfr::Init()</a>, <a class="el" href="../../d0/d08/_unconsciousness_8c_source.html#l00005">UnconsciousnessMdfr::Init()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
+
 </div>
 </div>
 <a id="a9f3681cfa34208f711ba22331159bc7a" name="a9f3681cfa34208f711ba22331159bc7a"></a>
@@ -1123,6 +1382,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00025">25</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00078">DisableActivateCheck()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00083">DisableDeactivateCheck()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00088">Tick()</a>.</p>
+
 </div>
 </div>
 <a id="a04ae6d90cb75d3086c27e65cddd358a0" name="a04ae6d90cb75d3086c27e65cddd358a0"></a>
@@ -1138,6 +1399,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00015">15</a> of file <a class="el" href="../../de/d0e/_modifier_base_8c_source.html">ModifierBase.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d02/_antibiotics_8c_source.html#l00007">AntibioticsMdfr::Init()</a>, <a class="el" href="../../da/d09/_blood_regen_8c_source.html#l00003">BloodRegenMdfr::Init()</a>, <a class="el" href="../../d5/d04/_bone_regen_8c_source.html#l00009">BoneRegenMdfr::Init()</a>, <a class="el" href="../../db/d04/_breath_vapour_mdfr_8c_source.html#l00005">ModifierBase::Init()</a>, <a class="el" href="../../db/d09/_charcoal_mdfr_8c_source.html#l00007">CharcoalMdfr::Init()</a>, <a class="el" href="../../d2/d0b/_area_exposure_8c_source.html#l00020">AreaExposureMdfr::Init()</a>, <a class="el" href="../../db/d06/_bleeding_8c_source.html#l00007">BleedingCheckMdfr::Init()</a>, <a class="el" href="../../d5/d06/_blinded_8c_source.html#l00006">BlindedMdfr::Init()</a>, <a class="el" href="../../d4/d0b/_broken_arms_8c_source.html#l00005">BrokenArmsMdfr::Init()</a>, <a class="el" href="../../d8/d0e/_broken_legs_8c_source.html#l00012">BrokenLegsMdfr::Init()</a>, <a class="el" href="../../d4/d07/_burning_8c_source.html#l00006">BurningMdfr::Init()</a>, <a class="el" href="../../d1/d01/_fatigue_8c_source.html#l00011">FatigueMdfr::Init()</a>, <a class="el" href="../../d8/d00/_fever_8c_source.html#l00010">FeverMdfr::Init()</a>, <a class="el" href="../../d4/d0c/_heart_attack_8c_source.html#l00007">HeartAttackMdfr::Init()</a>, <a class="el" href="../../d9/d0c/_heat_buffer_8c_source.html#l00006">HeatBufferMdfr::Init()</a>, <a class="el" href="../../d5/d00/_hemolytic_reaction_8c_source.html#l00005">HemolyticReactionMdfr::Init()</a>, <a class="el" href="../../d4/d0d/_poisoning_8c_source.html#l00012">PoisoningMdfr::Init()</a>, <a class="el" href="../../db/d00/_stuffed_stomach_8c_source.html#l00004">StuffedStomachMdfr::Init()</a>, <a class="el" href="../../d5/d02/_tremor_8c_source.html#l00005">TremorMdfr::Init()</a>, <a class="el" href="../../dd/d00/_vomit_stuffed_8c_source.html#l00003">VomitStuffedMdfr::Init()</a>, <a class="el" href="../../d8/d05/_wet_8c_source.html#l00003">WetMdfr::Init()</a>, <a class="el" href="../../df/d0d/_brain_disease_8c_source.html#l00012">BrainDiseaseMdfr::Init()</a>, <a class="el" href="../../d4/d06/_cholera_8c_source.html#l00014">CholeraMdfr::Init()</a>, <a class="el" href="../../d9/d0d/_common_cold_8c_source.html#l00005">CommonColdMdfr::Init()</a>, <a class="el" href="../../d9/d06/_contamination3_8c_source.html#l00008">ContaminationStage3Mdfr::Init()</a>, <a class="el" href="../../df/d0d/_influenza_8c_source.html#l00006">InfluenzaMdfr::Init()</a>, <a class="el" href="../../d7/d06/_salmonella_8c_source.html#l00019">SalmonellaMdfr::Init()</a>, <a class="el" href="../../d5/d02/_test_disease_8c_source.html#l00006">TestDiseaseMdfr::Init()</a>, <a class="el" href="../../dc/d0b/_wound_infection_8c_source.html#l00025">WoundInfectStage1Mdfr::Init()</a>, <a class="el" href="../../dc/d01/_wound_infection2_8c_source.html#l00015">WoundInfectStage2Mdfr::Init()</a>, <a class="el" href="../../d7/d0c/_disinfect_mdfr_8c_source.html#l00007">DisinfectionMdfr::Init()</a>, <a class="el" href="../../d0/d09/_drowning_8c_source.html#l00006">DrowningMdfr::Init()</a>, <a class="el" href="../../d0/d02/_epinephrine_mdfr_8c_source.html#l00005">EpinephrineMdfr::Init()</a>, <a class="el" href="../../d3/d05/_flies_8c_source.html#l00010">FliesMdfr::Init()</a>, <a class="el" href="../../d0/d08/_health_8c_source.html#l00007">HealthMdfr::Init()</a>, <a class="el" href="../../dd/d06/_health_regen_8c_source.html#l00003">HealthRegenMdfr::Init()</a>, <a class="el" href="../../d2/d01/_heat_comfort_mdfr_8c_source.html#l00003">HeatComfortMdfr::Init()</a>, <a class="el" href="../../d0/d09/_hunger_8c_source.html#l00007">HungerMdfr::Init()</a>, <a class="el" href="../../d8/d0b/_immune_system_8c_source.html#l00005">ImmuneSystemMdfr::Init()</a>, <a class="el" href="../../d3/d06/_immunity_boost_8c_source.html#l00007">ImmunityBoost::Init()</a>, <a class="el" href="../../d6/d08/_mask_8c_source.html#l00017">MaskMdfr::Init()</a>, <a class="el" href="../../db/d06/_morphine_mdfr_8c_source.html#l00005">MorphineMdfr::Init()</a>, <a class="el" href="../../df/d0d/_pain_killers_mdfr_8c_source.html#l00005">PainKillersMdfr::Init()</a>, <a class="el" href="../../dc/d01/_saline_8c_source.html#l00004">SalineMdfr::Init()</a>, <a class="el" href="../../de/d0f/_shock_damage_8c_source.html#l00004">ShockDamageMdfr::Init()</a>, <a class="el" href="../../d3/d0a/_stomach_8c_source.html#l00003">StomachMdfr::Init()</a>, <a class="el" href="../../d2/d04/_testing_8c_source.html#l00005">TestingMdfr::Init()</a>, <a class="el" href="../../d0/d00/_thirst_8c_source.html#l00006">ThirstMdfr::Init()</a>, <a class="el" href="../../d7/d09/_toxicity_8c_source.html#l00006">ToxicityMdfr::Init()</a>, <a class="el" href="../../d0/d08/_unconsciousness_8c_source.html#l00005">UnconsciousnessMdfr::Init()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00139">IsTrackAttachedTime()</a>.</p>
 
 </div>
 </div>

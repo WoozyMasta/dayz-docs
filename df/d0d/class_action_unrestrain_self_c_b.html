@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -156,6 +153,29 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_action_unrestrain_self_8c_source.html#l00005">5</a> of file <a class="el" href="../../db/d0d/_action_unrestrain_self_8c_source.html">ActionUnrestrainSelf.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">time</a> = <a class="code hl_variable" href="#a54ee153558a0d316a993616aa44bc2be">DEFAULT_STRUGGLE_TIME</a>;</div>
+<div class="line"><span class="lineno">    8</span> </div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a9a0ce93560b1c945b7e44d5f4bbddfe8">m_ActionData</a>.<a class="code hl_variable" href="../../da/d0a/class_action_data.html#adbe781e3bcf840ec9eeaa2d0d005eb6f">m_MainItem</a>.ConfigIsExisting(<span class="stringliteral">&quot;StruggleLength&quot;</span>))</div>
+<div class="line"><span class="lineno">   10</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">time</a> = <a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a9a0ce93560b1c945b7e44d5f4bbddfe8">m_ActionData</a>.<a class="code hl_variable" href="../../da/d0a/class_action_data.html#adbe781e3bcf840ec9eeaa2d0d005eb6f">m_MainItem</a>.ConfigGetFloat(<span class="stringliteral">&quot;StruggleLength&quot;</span>);</div>
+<div class="line"><span class="lineno">   11</span> </div>
+<div class="line"><span class="lineno">   12</span><span class="preprocessor">#ifdef DEVELOPER</span></div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a9a0ce93560b1c945b7e44d5f4bbddfe8">m_ActionData</a>.<a class="code hl_variable" href="../../da/d0a/class_action_data.html#a219946226b0958a6dfaf2c880ff576e9">m_Player</a>.IsQuickRestrain())</div>
+<div class="line"><span class="lineno">   14</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">time</a> = <a class="code hl_variable" href="../../d2/d08/group___emote_i_ds.html#ga692dccfb9e58a77d15b61c5be3a7bd52">DEBUG_QUICK_UNRESTRAIN_TIME</a>;</div>
+<div class="line"><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a9a0ce93560b1c945b7e44d5f4bbddfe8">m_ActionData</a>.<a class="code hl_variable" href="../../da/d0a/class_action_data.html#a82934edb9e2ee84d9c8a45aa66242075">m_ActionComponent</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d1/d02/class_c_a_continuous_time.html">CAContinuousTime</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">time</a>);</div>
+<div class="line"><span class="lineno">   18</span>  }</div>
+<div class="ttc" id="aclass_action_base_c_b_html_a9a0ce93560b1c945b7e44d5f4bbddfe8"><div class="ttname"><a href="../../dd/d0f/class_action_base_c_b.html#a9a0ce93560b1c945b7e44d5f4bbddfe8">ActionBaseCB::m_ActionData</a></div><div class="ttdeci">ActionData m_ActionData</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0d/_animated_action_base_8c_source.html#l00003">AnimatedActionBase.c:3</a></div></div>
+<div class="ttc" id="aclass_action_data_html_a219946226b0958a6dfaf2c880ff576e9"><div class="ttname"><a href="../../da/d0a/class_action_data.html#a219946226b0958a6dfaf2c880ff576e9">ActionData::m_Player</a></div><div class="ttdeci">PlayerBase m_Player</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00033">ActionBase.c:33</a></div></div>
+<div class="ttc" id="aclass_action_data_html_a82934edb9e2ee84d9c8a45aa66242075"><div class="ttname"><a href="../../da/d0a/class_action_data.html#a82934edb9e2ee84d9c8a45aa66242075">ActionData::m_ActionComponent</a></div><div class="ttdeci">ref CABase m_ActionComponent</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00030">ActionBase.c:30</a></div></div>
+<div class="ttc" id="aclass_action_data_html_adbe781e3bcf840ec9eeaa2d0d005eb6f"><div class="ttname"><a href="../../da/d0a/class_action_data.html#adbe781e3bcf840ec9eeaa2d0d005eb6f">ActionData::m_MainItem</a></div><div class="ttdeci">ItemBase m_MainItem</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00028">ActionBase.c:28</a></div></div>
+<div class="ttc" id="aclass_action_unrestrain_self_c_b_html_a54ee153558a0d316a993616aa44bc2be"><div class="ttname"><a href="#a54ee153558a0d316a993616aa44bc2be">ActionUnrestrainSelfCB::DEFAULT_STRUGGLE_TIME</a></div><div class="ttdeci">const float DEFAULT_STRUGGLE_TIME</div><div class="ttdef"><b>Definition</b> <a href="../../db/d0d/_action_unrestrain_self_8c_source.html#l00003">ActionUnrestrainSelf.c:3</a></div></div>
+<div class="ttc" id="aclass_c_a_continuous_time_html"><div class="ttname"><a href="../../d1/d02/class_c_a_continuous_time.html">CAContinuousTime</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0a/_c_a_continuous_time_8c_source.html#l00001">CAContinuousTime.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___emote_i_ds_html_ga692dccfb9e58a77d15b61c5be3a7bd52"><div class="ttname"><a href="../../d2/d08/group___emote_i_ds.html#ga692dccfb9e58a77d15b61c5be3a7bd52">DEBUG_QUICK_UNRESTRAIN_TIME</a></div><div class="ttdeci">const float DEBUG_QUICK_UNRESTRAIN_TIME</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00598">constants.c:598</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00598">DEBUG_QUICK_UNRESTRAIN_TIME</a>, <a class="el" href="../../db/d0d/_action_unrestrain_self_8c_source.html#l00003">DEFAULT_STRUGGLE_TIME</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00030">ActionData::m_ActionComponent</a>, <a class="el" href="../../df/d0d/_animated_action_base_8c_source.html#l00003">ActionBaseCB::m_ActionData</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00028">ActionData::m_MainItem</a>, and <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00033">ActionData::m_Player</a>.</p>
 
 </div>
 </div>
@@ -183,6 +203,33 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_action_unrestrain_self_8c_source.html#l00020">20</a> of file <a class="el" href="../../db/d0d/_action_unrestrain_self_8c_source.html">ActionUnrestrainSelf.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>  {</div>
+<div class="line"><span class="lineno">   22</span>    <span class="comment">// TODO for second type animation SetCommand(DayZPlayerConstants.CMD_ACTIONINT_FINISH);</span></div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a9a0ce93560b1c945b7e44d5f4bbddfe8">m_ActionData</a>.<a class="code hl_variable" href="../../da/d0a/class_action_data.html#ac1e0ce4566aafcf4a9faf829080267c8">m_State</a> == <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga1549e547ab5d53897a986482bf8fafe5">UA_FINISHED</a>)</div>
+<div class="line"><span class="lineno">   24</span>      <a class="code hl_function" href="../../dd/d0f/class_action_base_c_b.html#a3c5d45da90c7b09cd521c54723181314">SetCommand</a>(<a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONINT_END);</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a9a0ce93560b1c945b7e44d5f4bbddfe8">m_ActionData</a>.<a class="code hl_variable" href="../../da/d0a/class_action_data.html#ac1e0ce4566aafcf4a9faf829080267c8">m_State</a> == <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#gaf0a0748e044bd01fc3bb29aeba3b55e6">UA_CANCEL</a>)</div>
+<div class="line"><span class="lineno">   26</span>    {</div>
+<div class="line"><span class="lineno">   27</span>      <a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a216ac13ebf5a6d0d6619c1c97c82c027">m_Canceled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   28</span>      <a class="code hl_function" href="../../dd/d0f/class_action_base_c_b.html#a3c5d45da90c7b09cd521c54723181314">SetCommand</a>(<a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONINT_INTERRUPT);</div>
+<div class="line"><span class="lineno">   29</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   30</span>      <span class="comment">//Cancel();</span></div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>      <a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a216ac13ebf5a6d0d6619c1c97c82c027">m_Canceled</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   35</span>      <a class="code hl_function" href="../../dd/d0f/class_action_base_c_b.html#a3c5d45da90c7b09cd521c54723181314">SetCommand</a>(<a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.CMD_ACTIONINT_INTERRUPT);</div>
+<div class="line"><span class="lineno">   36</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="../../dd/d0f/class_action_base_c_b.html#a9a0ce93560b1c945b7e44d5f4bbddfe8">m_ActionData</a>.<a class="code hl_variable" href="../../da/d0a/class_action_data.html#ac1e0ce4566aafcf4a9faf829080267c8">m_State</a> = <a class="code hl_variable" href="../../dd/d00/group___u_a_i_ds.html#ga1549e547ab5d53897a986482bf8fafe5">UA_FINISHED</a>;</div>
+<div class="line"><span class="lineno">   39</span>  }</div>
+<div class="ttc" id="aclass_action_base_c_b_html_a216ac13ebf5a6d0d6619c1c97c82c027"><div class="ttname"><a href="../../dd/d0f/class_action_base_c_b.html#a216ac13ebf5a6d0d6619c1c97c82c027">ActionBaseCB::m_Canceled</a></div><div class="ttdeci">bool m_Canceled</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0d/_animated_action_base_8c_source.html#l00005">AnimatedActionBase.c:5</a></div></div>
+<div class="ttc" id="aclass_action_base_c_b_html_a3c5d45da90c7b09cd521c54723181314"><div class="ttname"><a href="../../dd/d0f/class_action_base_c_b.html#a3c5d45da90c7b09cd521c54723181314">ActionBaseCB::SetCommand</a></div><div class="ttdeci">void SetCommand(int command_uid)</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0d/_animated_action_base_8c_source.html#l00042">AnimatedActionBase.c:42</a></div></div>
+<div class="ttc" id="aclass_action_data_html_ac1e0ce4566aafcf4a9faf829080267c8"><div class="ttname"><a href="../../da/d0a/class_action_data.html#ac1e0ce4566aafcf4a9faf829080267c8">ActionData::m_State</a></div><div class="ttdeci">int m_State</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00031">ActionBase.c:31</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_ga1549e547ab5d53897a986482bf8fafe5"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#ga1549e547ab5d53897a986482bf8fafe5">UA_FINISHED</a></div><div class="ttdeci">const int UA_FINISHED</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00436">constants.c:436</a></div></div>
+<div class="ttc" id="agroup___u_a_i_ds_html_gaf0a0748e044bd01fc3bb29aeba3b55e6"><div class="ttname"><a href="../../dd/d00/group___u_a_i_ds.html#gaf0a0748e044bd01fc3bb29aeba3b55e6">UA_CANCEL</a></div><div class="ttdeci">const int UA_CANCEL</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00437">constants.c:437</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0d/_animated_action_base_8c_source.html#l00003">ActionBaseCB::m_ActionData</a>, <a class="el" href="../../df/d0d/_animated_action_base_8c_source.html#l00005">ActionBaseCB::m_Canceled</a>, <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00031">ActionData::m_State</a>, <a class="el" href="../../df/d0d/_animated_action_base_8c_source.html#l00042">ActionBaseCB::SetCommand()</a>, <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00437">UA_CANCEL</a>, and <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00436">UA_FINISHED</a>.</p>
 
 </div>
 </div>
@@ -208,6 +255,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../db/d0d/_action_unrestrain_self_8c_source.html#l00003">3</a> of file <a class="el" href="../../db/d0d/_action_unrestrain_self_8c_source.html">ActionUnrestrainSelf.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d0d/_action_unrestrain_self_8c_source.html#l00005">CreateActionComponent()</a>.</p>
 
 </div>
 </div>

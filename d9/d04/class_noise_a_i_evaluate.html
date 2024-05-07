@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -155,6 +152,26 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00005">5</a> of file <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html">SensesAIEvaluate.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">speedNoise</a> = <a class="code hl_function" href="#a63082487bbde90bf1a97fc7f373c2b95">GetNoiseMultiplierByPlayerSpeed</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">playerImplement</a>);</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">shoesNoise</a> = <a class="code hl_function" href="#a99a6af42f1b9253267110f65f203fad1">GetNoiseMultiplierByShoes</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">playerImplement</a>);</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">surfaceNoise</a> = <a class="code hl_function" href="#a86e5fcad08e36ff0a5b02afad9ba5453">GetNoiseMultiplierBySurface</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">playerImplement</a>);</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">surfaceNoise</a> *= <a class="code hl_variable" href="#add98769113ad293477eaab78bcb5b5a4">SURFACE_NOISE_WEIGHT</a>;</div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">avgNoise</a> = (<a class="code hl_class" href="../../db/d06/class_param3.html">shoesNoise</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">surfaceNoise</a>) / (1 + <a class="code hl_variable" href="#add98769113ad293477eaab78bcb5b5a4">SURFACE_NOISE_WEIGHT</a>);</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">avgNoise</a> *= <a class="code hl_class" href="../../db/d06/class_param3.html">speedNoise</a>;</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">avgNoise</a>;</div>
+<div class="line"><span class="lineno">   16</span>  }</div>
+<div class="ttc" id="aclass_noise_a_i_evaluate_html_a63082487bbde90bf1a97fc7f373c2b95"><div class="ttname"><a href="#a63082487bbde90bf1a97fc7f373c2b95">NoiseAIEvaluate::GetNoiseMultiplierByPlayerSpeed</a></div><div class="ttdeci">static float GetNoiseMultiplierByPlayerSpeed(DayZPlayerImplement playerImplement)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00019">SensesAIEvaluate.c:19</a></div></div>
+<div class="ttc" id="aclass_noise_a_i_evaluate_html_a86e5fcad08e36ff0a5b02afad9ba5453"><div class="ttname"><a href="#a86e5fcad08e36ff0a5b02afad9ba5453">NoiseAIEvaluate::GetNoiseMultiplierBySurface</a></div><div class="ttdeci">static float GetNoiseMultiplierBySurface(DayZPlayerImplement playerImplement)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00074">SensesAIEvaluate.c:74</a></div></div>
+<div class="ttc" id="aclass_noise_a_i_evaluate_html_a99a6af42f1b9253267110f65f203fad1"><div class="ttname"><a href="#a99a6af42f1b9253267110f65f203fad1">NoiseAIEvaluate::GetNoiseMultiplierByShoes</a></div><div class="ttdeci">static float GetNoiseMultiplierByShoes(DayZPlayerImplement playerImplement)</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00055">SensesAIEvaluate.c:55</a></div></div>
+<div class="ttc" id="aclass_noise_a_i_evaluate_html_add98769113ad293477eaab78bcb5b5a4"><div class="ttname"><a href="#add98769113ad293477eaab78bcb5b5a4">NoiseAIEvaluate::SURFACE_NOISE_WEIGHT</a></div><div class="ttdeci">static float SURFACE_NOISE_WEIGHT</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00003">SensesAIEvaluate.c:3</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00019">GetNoiseMultiplierByPlayerSpeed()</a>, <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00055">GetNoiseMultiplierByShoes()</a>, <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00074">GetNoiseMultiplierBySurface()</a>, and <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00003">SURFACE_NOISE_WEIGHT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d02/_day_z_player_implement_8c_source.html#l02777">DayZPlayer::OnStepEvent()</a>, and <a class="el" href="../../df/d02/_plugin_presence_notifier_8c_source.html#l00208">ProcessNoiseComponents()</a>.</p>
 
 </div>
 </div>
@@ -182,6 +199,53 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00019">19</a> of file <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html">SensesAIEvaluate.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>  {</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_class" href="../../d2/d0b/class_human_movement_state.html">HumanMovementState</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hms</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d2/d0b/class_human_movement_state.html">HumanMovementState</a>();</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">playerImplement</a>.GetMovementState(<a class="code hl_class" href="../../db/d06/class_param3.html">hms</a>);</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerImplement</a>.GetCommand_Move() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">playerImplement</a>.GetCommand_Move().IsInRoll())</div>
+<div class="line"><span class="lineno">   26</span>    {</div>
+<div class="line"><span class="lineno">   27</span>      <span class="comment">// When rolling we are prone, so we load that Noise value, hence we multiply</span></div>
+<div class="line"><span class="lineno">   28</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#ace00e2daa82a2a3d21c4a5144d8cdd9a">AI_NOISE_ROLL</a>;</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../d7/d0e/class_a_i_target_callbacks_player.html">AITargetCallbacksPlayer</a>.<a class="code hl_function" href="../../d7/d0e/class_a_i_target_callbacks_player.html#a6cb142c30c929917633a47bfd5883fe4">StanceToMovementIdxTranslation</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">hms</a>))</div>
+<div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.MOVEMENTIDX_IDLE:</div>
+<div class="line"><span class="lineno">   34</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#aba7b67da93198d46abce70a8b3df306e">AI_NOISE_IDLE</a>;</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.MOVEMENTIDX_WALK:</div>
+<div class="line"><span class="lineno">   37</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#ad308b8f48eaf67d2817afab760f30f40">AI_NOISE_WALK</a>;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.MOVEMENTIDX_CROUCH_RUN:</div>
+<div class="line"><span class="lineno">   40</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#a52c0ecd8437f78762eb15f841401a92b">AI_NOISE_CROUCH_RUN</a>;</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.MOVEMENTIDX_RUN:</div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#a3037c24c0c4df975c8226f479ded7e2a">AI_NOISE_RUN</a>;</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a>.MOVEMENTIDX_SPRINT:</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#a946e44a0c7dc636a66c696eeeb143f67">AI_NOISE_SPRINT</a>;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="comment">//Default return</span></div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#a946e44a0c7dc636a66c696eeeb143f67">AI_NOISE_SPRINT</a>;</div>
+<div class="line"><span class="lineno">   51</span>  }</div>
+<div class="ttc" id="aclass_a_i_target_callbacks_player_html"><div class="ttname"><a href="../../d7/d0e/class_a_i_target_callbacks_player.html">AITargetCallbacksPlayer</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0f/_a_i_target_callbacks_player_8c_source.html#l00001">AITargetCallbacksPlayer.c:2</a></div></div>
+<div class="ttc" id="aclass_a_i_target_callbacks_player_html_a6cb142c30c929917633a47bfd5883fe4"><div class="ttname"><a href="../../d7/d0e/class_a_i_target_callbacks_player.html#a6cb142c30c929917633a47bfd5883fe4">AITargetCallbacksPlayer::StanceToMovementIdxTranslation</a></div><div class="ttdeci">static int StanceToMovementIdxTranslation(HumanMovementState pState)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0f/_a_i_target_callbacks_player_8c_source.html#l00085">AITargetCallbacksPlayer.c:85</a></div></div>
+<div class="ttc" id="aclass_human_movement_state_html"><div class="ttname"><a href="../../d2/d0b/class_human_movement_state.html">HumanMovementState</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l01112">human.c:1113</a></div></div>
+<div class="ttc" id="aclass_player_constants_html"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html">PlayerConstants</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00001">PlayerConstants.c:2</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_a3037c24c0c4df975c8226f479ded7e2a"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#a3037c24c0c4df975c8226f479ded7e2a">PlayerConstants::AI_NOISE_RUN</a></div><div class="ttdeci">static const float AI_NOISE_RUN</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00227">PlayerConstants.c:227</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_a52c0ecd8437f78762eb15f841401a92b"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#a52c0ecd8437f78762eb15f841401a92b">PlayerConstants::AI_NOISE_CROUCH_RUN</a></div><div class="ttdeci">static const float AI_NOISE_CROUCH_RUN</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00228">PlayerConstants.c:228</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_a946e44a0c7dc636a66c696eeeb143f67"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#a946e44a0c7dc636a66c696eeeb143f67">PlayerConstants::AI_NOISE_SPRINT</a></div><div class="ttdeci">static const float AI_NOISE_SPRINT</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00226">PlayerConstants.c:226</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_aba7b67da93198d46abce70a8b3df306e"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#aba7b67da93198d46abce70a8b3df306e">PlayerConstants::AI_NOISE_IDLE</a></div><div class="ttdeci">static const float AI_NOISE_IDLE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00230">PlayerConstants.c:230</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_ace00e2daa82a2a3d21c4a5144d8cdd9a"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#ace00e2daa82a2a3d21c4a5144d8cdd9a">PlayerConstants::AI_NOISE_ROLL</a></div><div class="ttdeci">static const float AI_NOISE_ROLL</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00225">PlayerConstants.c:225</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_ad308b8f48eaf67d2817afab760f30f40"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#ad308b8f48eaf67d2817afab760f30f40">PlayerConstants::AI_NOISE_WALK</a></div><div class="ttdeci">static const float AI_NOISE_WALK</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00229">PlayerConstants.c:229</a></div></div>
+<div class="ttc" id="adayzplayer_8c_html_a6fd289b7043f1412362529ab769d7881"><div class="ttname"><a href="../../d3/d08/dayzplayer_8c.html#a6fd289b7043f1412362529ab769d7881">DayZPlayerConstants</a></div><div class="ttdeci">DayZPlayerConstants</div><div class="ttdoc">defined in C++</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d08/dayzplayer_8c_source.html#l00596">dayzplayer.c:597</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00228">PlayerConstants::AI_NOISE_CROUCH_RUN</a>, <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00230">PlayerConstants::AI_NOISE_IDLE</a>, <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00225">PlayerConstants::AI_NOISE_ROLL</a>, <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00227">PlayerConstants::AI_NOISE_RUN</a>, <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00226">PlayerConstants::AI_NOISE_SPRINT</a>, <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00229">PlayerConstants::AI_NOISE_WALK</a>, and <a class="el" href="../../dc/d0f/_a_i_target_callbacks_player_8c_source.html#l00085">AITargetCallbacksPlayer::StanceToMovementIdxTranslation()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00005">GetNoiseMultiplier()</a>, and <a class="el" href="../../df/d02/_plugin_presence_notifier_8c_source.html#l00125">ShowCoefsDbg()</a>.</p>
 
 </div>
 </div>
@@ -209,6 +273,30 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00055">55</a> of file <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html">SensesAIEvaluate.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>  {</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerImplement</a>.GetBootsType())</div>
+<div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d1/d0d/_day_z_anim_events_8c.html#abf5c5e3e198bab13b000991b2ea0bf8b">AnimBootsType</a>.None:</div>
+<div class="line"><span class="lineno">   60</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#a5713d9e2f432e428b222697f7261251b">AI_NOISE_SHOES_NONE</a>;</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d1/d0d/_day_z_anim_events_8c.html#abf5c5e3e198bab13b000991b2ea0bf8b">AnimBootsType</a>.Sneakers:</div>
+<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#ae5954ace34cac860eba66b1733755def">AI_NOISE_SHOES_SNEAKERS</a>;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../d1/d0d/_day_z_anim_events_8c.html#abf5c5e3e198bab13b000991b2ea0bf8b">AnimBootsType</a>.Boots:</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#a4395f26469e96c172508e13bb8391e68">AI_NOISE_SHOES_BOOTS</a>;</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">//Default return</span></div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d3/d0f/class_player_constants.html">PlayerConstants</a>.<a class="code hl_variable" href="../../d3/d0f/class_player_constants.html#a4395f26469e96c172508e13bb8391e68">AI_NOISE_SHOES_BOOTS</a>;</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+<div class="ttc" id="a_day_z_anim_events_8c_html_abf5c5e3e198bab13b000991b2ea0bf8b"><div class="ttname"><a href="../../d1/d0d/_day_z_anim_events_8c.html#abf5c5e3e198bab13b000991b2ea0bf8b">AnimBootsType</a></div><div class="ttdeci">AnimBootsType</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d0d/_day_z_anim_events_8c_source.html#l00097">DayZAnimEvents.c:98</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_a4395f26469e96c172508e13bb8391e68"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#a4395f26469e96c172508e13bb8391e68">PlayerConstants::AI_NOISE_SHOES_BOOTS</a></div><div class="ttdeci">static const float AI_NOISE_SHOES_BOOTS</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00231">PlayerConstants.c:231</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_a5713d9e2f432e428b222697f7261251b"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#a5713d9e2f432e428b222697f7261251b">PlayerConstants::AI_NOISE_SHOES_NONE</a></div><div class="ttdeci">static const float AI_NOISE_SHOES_NONE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00233">PlayerConstants.c:233</a></div></div>
+<div class="ttc" id="aclass_player_constants_html_ae5954ace34cac860eba66b1733755def"><div class="ttname"><a href="../../d3/d0f/class_player_constants.html#ae5954ace34cac860eba66b1733755def">PlayerConstants::AI_NOISE_SHOES_SNEAKERS</a></div><div class="ttdeci">static const float AI_NOISE_SHOES_SNEAKERS</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d04/_player_constants_8c_source.html#l00232">PlayerConstants.c:232</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00231">PlayerConstants::AI_NOISE_SHOES_BOOTS</a>, <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00233">PlayerConstants::AI_NOISE_SHOES_NONE</a>, and <a class="el" href="../../dd/d04/_player_constants_8c_source.html#l00232">PlayerConstants::AI_NOISE_SHOES_SNEAKERS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00005">GetNoiseMultiplier()</a>, and <a class="el" href="../../df/d02/_plugin_presence_notifier_8c_source.html#l00125">ShowCoefsDbg()</a>.</p>
 
 </div>
 </div>
@@ -236,6 +324,11 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00074">74</a> of file <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html">SensesAIEvaluate.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>  {</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">playerImplement</a>.GetSurfaceNoise();</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00005">GetNoiseMultiplier()</a>, and <a class="el" href="../../df/d02/_plugin_presence_notifier_8c_source.html#l00125">ShowCoefsDbg()</a>.</p>
 
 </div>
 </div>
@@ -261,6 +354,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00003">3</a> of file <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html">SensesAIEvaluate.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0e/_senses_a_i_evaluate_8c_source.html#l00005">GetNoiseMultiplier()</a>.</p>
 
 </div>
 </div>

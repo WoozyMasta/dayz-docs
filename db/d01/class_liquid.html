@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -200,6 +197,46 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00136">136</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>  {</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">container</a>)</div>
+<div class="line"><span class="lineno">  139</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">is_container_full</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">container</a>.IsFullQuantity();</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">is_container_full</a> &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">ignore_fullness_check</a>)</div>
+<div class="line"><span class="lineno">  144</span>    {</div>
+<div class="line"><span class="lineno">  145</span>      <span class="comment">//Debug.Log(&quot;container is full&quot;, &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">  146</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    }</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">container_mask</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">container</a>.ConfigGetFloat(<span class="stringliteral">&quot;liquidContainerType&quot;</span>);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">container_mask</a> == 0)</div>
+<div class="line"><span class="lineno">  152</span>    {</div>
+<div class="line"><span class="lineno">  153</span>      <span class="comment">//Debug.Log(&quot;target is not a container&quot;, &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;<span class="comment">//if the target liquidContainerType is set to 0</span></div>
+<div class="line"><span class="lineno">  155</span>    }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a> &amp; <a class="code hl_class" href="../../db/d06/class_param3.html">container_mask</a>) == 0)</div>
+<div class="line"><span class="lineno">  158</span>    {</div>
+<div class="line"><span class="lineno">  159</span>      <span class="comment">//Debug.Log(&quot;target liquidContainerType does not support this liquid type&quot;, &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">container_quantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">container</a>.GetQuantity();</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">container_liquid_type</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">container</a>.GetLiquidType();</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">container_quantity</a> &gt; 0 &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">container_liquid_type</a> != <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>)</div>
+<div class="line"><span class="lineno">  168</span>    {</div>
+<div class="line"><span class="lineno">  169</span>      <span class="comment">//Debug.Log(&quot;target is not empty AND is of different liquid type than liquid_type added in&quot;, &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">  170</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d0/d01/_action_world_liquid_action_switch_8c_source.html#l00024">ActionWorldLiquidActionSwitch::ActionCondition()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00079">CanTransfer()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00116">FillContainer()</a>, and <a class="el" href="../../d1/d06/_action_fill_bottle_base_8c_source.html#l00087">ActionFillBottleBase::GetLiquidType()</a>.</p>
 
 </div>
 </div>
@@ -231,6 +268,48 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00079">79</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>  {</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a> || !<a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>)</div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a>.IsItemBase() || !<a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>.IsItemBase())</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      <span class="comment">//Debug.Log(&quot;One of the Items is not of ItemBase type&quot;, &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_class" href="../../de/d03/class_barrel___color_base.html">Barrel_ColorBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">barrelTarget</a> = <a class="code hl_class" href="../../de/d03/class_barrel___color_base.html">Barrel_ColorBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>);</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_class" href="../../de/d03/class_barrel___color_base.html">Barrel_ColorBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">barrelSource</a> = <a class="code hl_class" href="../../de/d03/class_barrel___color_base.html">Barrel_ColorBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a>);</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">barrelTarget</a> &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">barrelTarget</a>.IsOpen()) || (<a class="code hl_class" href="../../db/d06/class_param3.html">barrelSource</a> &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">barrelSource</a>.IsOpen()))</div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">source_quantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a>.GetQuantity();</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">source_quantity</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>      <span class="comment">//Debug.Log(&quot;source has no quantity&quot;, &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;<span class="comment">//if there is nothing to transfer</span></div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">source_liquid_type</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a>.GetLiquidType();</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">source_liquid_type</a> &lt; 1)</div>
+<div class="line"><span class="lineno">  105</span>    {</div>
+<div class="line"><span class="lineno">  106</span>      <span class="comment">//Debug.Log(&quot;source has some quantity, but does not have a valid liquidType set, liquidType = &quot;+ToString(source_liquid_type), &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">  107</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;<span class="comment">//if source is not a container</span></div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#abac69444e7428359a00dcb6e58c85031">CanFillContainer</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">source_liquid_type</a>))</div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="ttc" id="aclass_barrel___color_base_html"><div class="ttname"><a href="../../de/d03/class_barrel___color_base.html">Barrel_ColorBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d0e/_barrel___color_base_8c_source.html#l00001">Barrel_ColorBase.c:2</a></div></div>
+<div class="ttc" id="aclass_liquid_html_abac69444e7428359a00dcb6e58c85031"><div class="ttname"><a href="#abac69444e7428359a00dcb6e58c85031">Liquid::CanFillContainer</a></div><div class="ttdeci">static bool CanFillContainer(ItemBase container, int liquid_type, bool ignore_fullness_check=false)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00136">Liquid.c:136</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00136">CanFillContainer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../db/d02/_action_drain_liquid_8c_source.html#l00033">ActionDrainLiquid::ActionCondition()</a>, <a class="el" href="../../dc/d0e/_action_pour_liquid_8c_source.html#l00033">ActionPourLiquid::ActionCondition()</a>, <a class="el" href="../../d3/d05/_action_transfer_liquid_8c_source.html#l00054">ActionTransferLiquid::ActionCondition()</a>, <a class="el" href="../../d8/d06/_drain_liquid_8c_source.html#l00070">RecipeBase::CanDo()</a>, and <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00037">Transfer()</a>.</p>
 
 </div>
 </div>
@@ -267,6 +346,18 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00116">116</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>  {</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#abac69444e7428359a00dcb6e58c85031">CanFillContainer</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">container</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>))</div>
+<div class="line"><span class="lineno">  119</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  120</span>    <span class="comment">//filling</span></div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">container</a>.SetLiquidType(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">container</a>.AddQuantity(amount);</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00136">CanFillContainer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00126">FillContainerEnviro()</a>, and <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00037">Transfer()</a>.</p>
 
 </div>
 </div>
@@ -308,6 +399,21 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00126">126</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>  {</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_function" href="#a9e5cc86b20bd1c0aef67057c66c42775">FillContainer</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">container</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, amount);</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">inject_agents</a>)</div>
+<div class="line"><span class="lineno">  130</span>    {</div>
+<div class="line"><span class="lineno">  131</span>      PluginTransmissionAgents <a class="code hl_class" href="../../db/d06/class_param3.html">plugin</a> = PluginTransmissionAgents.Cast(<a class="code hl_function" href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a>(PluginTransmissionAgents));</div>
+<div class="line"><span class="lineno">  132</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">plugin</a>.TransmitAgents(<a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">container</a>, <a class="code hl_variable" href="../../dc/d0f/group___a_g_t_i_ds.html#ga9d088e55ed90b2549ca5f6e9d3a95e97">AGT_WATER_POND</a>, amount);</div>
+<div class="line"><span class="lineno">  133</span>    }</div>
+<div class="line"><span class="lineno">  134</span>  }</div>
+<div class="ttc" id="a_plugin_manager_8c_html_a35050f82bea320b7a5336fc549630eaf"><div class="ttname"><a href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a></div><div class="ttdeci">PluginBase GetPlugin(typename plugin_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">PluginManager.c:300</a></div></div>
+<div class="ttc" id="aclass_liquid_html_a9e5cc86b20bd1c0aef67057c66c42775"><div class="ttname"><a href="#a9e5cc86b20bd1c0aef67057c66c42775">Liquid::FillContainer</a></div><div class="ttdeci">static void FillContainer(ItemBase container, int liquid_type, float amount)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00116">Liquid.c:116</a></div></div>
+<div class="ttc" id="agroup___a_g_t_i_ds_html_ga9d088e55ed90b2549ca5f6e9d3a95e97"><div class="ttname"><a href="../../dc/d0f/group___a_g_t_i_ds.html#ga9d088e55ed90b2549ca5f6e9d3a95e97">AGT_WATER_POND</a></div><div class="ttdeci">const int AGT_WATER_POND</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00471">constants.c:471</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00471">AGT_WATER_POND</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00116">FillContainer()</a>, and <a class="el" href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">GetPlugin()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d01/_c_a_continuous_fill_8c_source.html#l00094">CAContinuousFill::CalcAndSetQuantity()</a>, <a class="el" href="../../d8/d0f/_rain_procurement_component_8c_source.html#l00055">RainProcurementComponentBase::ProcureLiquid()</a>, and <a class="el" href="../../d1/d04/_rain_procurement_manager_8c_source.html#l00029">RainProcurementManager::RainProcurementCheck()</a>.</p>
 
 </div>
 </div>
@@ -335,6 +441,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00229">229</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  230</span>  {</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;agents&quot;</span>, <span class="keyword">true</span>).ToInt();</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="ttc" id="aclass_liquid_html"><div class="ttname"><a href="../../db/d01/class_liquid.html">Liquid</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00001">Liquid.c:2</a></div></div>
+<div class="ttc" id="aclass_liquid_html_aa02ea9379c27b321a3d2bcd3ccaa32a3"><div class="ttname"><a href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">Liquid::GetLiquidConfigProperty</a></div><div class="ttdeci">static string GetLiquidConfigProperty(int liquid_type, string property_name, bool is_nutrition_property=false)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00175">Liquid.c:175</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
 
 </div>
 </div>
@@ -362,6 +475,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00269">269</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  270</span>  {</div>
+<div class="line"><span class="lineno">  271</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;digestibility&quot;</span>, <span class="keyword">true</span>).ToFloat();</div>
+<div class="line"><span class="lineno">  272</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00215">SetUpNutritionalProfile()</a>.</p>
 
 </div>
 </div>
@@ -389,6 +509,11 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00244">244</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;energy&quot;</span>, <span class="keyword">true</span>).ToFloat();</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
 
 </div>
 </div>
@@ -416,6 +541,11 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00259">259</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  260</span>  {</div>
+<div class="line"><span class="lineno">  261</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;flammability&quot;</span>).ToFloat();</div>
+<div class="line"><span class="lineno">  262</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
 
 </div>
 </div>
@@ -443,6 +573,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00264">264</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  265</span>  {</div>
+<div class="line"><span class="lineno">  266</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;fullnessIndex&quot;</span>, <span class="keyword">true</span>).ToFloat();</div>
+<div class="line"><span class="lineno">  267</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00215">SetUpNutritionalProfile()</a>.</p>
 
 </div>
 </div>
@@ -470,6 +607,19 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00008">8</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_class" href="../../d5/d05/class_nutritional_profile.html">NutritionalProfile</a> <a class="code hl_class" href="../../db/d06/class_param3.html">liquid</a> = <a class="code hl_variable" href="#acb28f2352d1b81486fff873377cba59f">m_AllLiquidsByType</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">liquid</a>)</div>
+<div class="line"><span class="lineno">   12</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">liquid</a>.GetLiquidClassname();</div>
+<div class="line"><span class="lineno">   13</span> </div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   15</span>  }</div>
+<div class="ttc" id="aclass_liquid_html_acb28f2352d1b81486fff873377cba59f"><div class="ttname"><a href="#acb28f2352d1b81486fff873377cba59f">Liquid::m_AllLiquidsByType</a></div><div class="ttdeci">static ref map&lt; int, ref NutritionalProfile &gt; m_AllLiquidsByType</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00003">Liquid.c:3</a></div></div>
+<div class="ttc" id="aclass_nutritional_profile_html"><div class="ttname"><a href="../../d5/d05/class_nutritional_profile.html">NutritionalProfile</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_nutritional_profile_8c_source.html#l00001">NutritionalProfile.c:2</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00003">m_AllLiquidsByType</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dc/d0a/_player_base_8c_source.html#l06778">ManBase::Consume()</a>.</p>
 
 </div>
 </div>
@@ -506,6 +656,40 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">175</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>  {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">cfg_classname</a> = <span class="stringliteral">&quot;cfgLiquidDefinitions&quot;</span>;</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">property_value</a> = <span class="stringliteral">&quot;NULL_PROPERTY&quot;</span>;</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">cfg_item_count</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetChildrenCount(<a class="code hl_class" href="../../db/d06/class_param3.html">cfg_classname</a>);</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">cfg_item_count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  182</span>    {</div>
+<div class="line"><span class="lineno">  183</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>;</div>
+<div class="line"><span class="lineno">  184</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetChildName(<a class="code hl_class" href="../../db/d06/class_param3.html">cfg_classname</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>);</div>
+<div class="line"><span class="lineno">  185</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_full_path</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1 %2&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">cfg_classname</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>);</div>
+<div class="line"><span class="lineno">  186</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">config_liquid_type</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetInt(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1 type&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_full_path</a>));</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">config_liquid_type</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>)<span class="comment">// found the specific class, now lets extract the values</span></div>
+<div class="line"><span class="lineno">  189</span>      {</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">is_nutrition_property</a>)</div>
+<div class="line"><span class="lineno">  191</span>        {</div>
+<div class="line"><span class="lineno">  192</span>          <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetText(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1 %2&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_full_path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">property_name</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">property_value</a>);</div>
+<div class="line"><span class="lineno">  193</span>          <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">property_value</a>;</div>
+<div class="line"><span class="lineno">  194</span>        }</div>
+<div class="line"><span class="lineno">  195</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  196</span>        {</div>
+<div class="line"><span class="lineno">  197</span>          <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetText(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1 Nutrition %2&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_full_path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">property_name</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">property_value</a>);</div>
+<div class="line"><span class="lineno">  198</span>          <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">property_value</a>;</div>
+<div class="line"><span class="lineno">  199</span>        }</div>
+<div class="line"><span class="lineno">  200</span>      }</div>
+<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="line"><span class="lineno">  202</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">property_value</a>;</div>
+<div class="line"><span class="lineno">  203</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a5b4f7935d7cbb89f7a4610452d633707"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a></div><div class="ttdeci">DayZGame g_Game</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03528">DayZGame.c:3528</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, and <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00229">GetAgents()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00269">GetDigestibility()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00244">GetEnergy()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00259">GetFlammability()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00264">GetFullness()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00254">GetName()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00249">GetNutritionalIndex()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00234">GetToxicity()</a>, and <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00239">GetWaterContent()</a>.</p>
 
 </div>
 </div>
@@ -533,6 +717,11 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00254">254</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  255</span>  {</div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;name&quot;</span>);</div>
+<div class="line"><span class="lineno">  257</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
 
 </div>
 </div>
@@ -560,6 +749,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00249">249</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;nutritionalIndex&quot;</span>, <span class="keyword">true</span>).ToFloat();</div>
+<div class="line"><span class="lineno">  252</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00215">SetUpNutritionalProfile()</a>.</p>
 
 </div>
 </div>
@@ -587,6 +783,15 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00210">210</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>  {</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa3eea643b98b9001434d604c73706a37">m_AllLiquidsByName</a>.Get(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a6e64693a765afc8a0b5442acfb2ba262">class_name</a>);</div>
+<div class="line"><span class="lineno">  213</span>  }</div>
+<div class="ttc" id="a_option_selector_multistate_8c_html_a6e64693a765afc8a0b5442acfb2ba262"><div class="ttname"><a href="../../d1/d08/_option_selector_multistate_8c.html#a6e64693a765afc8a0b5442acfb2ba262">class_name</a></div><div class="ttdeci">class OptionSelectorMultistate extends OptionSelector class_name</div></div>
+<div class="ttc" id="aclass_liquid_html_aa3eea643b98b9001434d604c73706a37"><div class="ttname"><a href="#aa3eea643b98b9001434d604c73706a37">Liquid::m_AllLiquidsByName</a></div><div class="ttdeci">static ref map&lt; string, ref NutritionalProfile &gt; m_AllLiquidsByName</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00004">Liquid.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d1/d08/_option_selector_multistate_8c.html#a6e64693a765afc8a0b5442acfb2ba262">class_name</a>, and <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00004">m_AllLiquidsByName</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0c/_player_stomach_8c_source.html#l00310">AddToStomach()</a>.</p>
 
 </div>
 </div>
@@ -614,6 +819,11 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00205">205</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  206</span>  {</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#acb28f2352d1b81486fff873377cba59f">m_AllLiquidsByType</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  208</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00003">m_AllLiquidsByType</a>.</p>
 
 </div>
 </div>
@@ -641,6 +851,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00234">234</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  235</span>  {</div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;toxicity&quot;</span>, <span class="keyword">true</span>).ToFloat();</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00215">SetUpNutritionalProfile()</a>.</p>
 
 </div>
 </div>
@@ -668,6 +885,13 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00239">239</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  240</span>  {</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#aa02ea9379c27b321a3d2bcd3ccaa32a3">GetLiquidConfigProperty</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <span class="stringliteral">&quot;water&quot;</span>, <span class="keyword">true</span>).ToFloat();</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00175">GetLiquidConfigProperty()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00215">SetUpNutritionalProfile()</a>.</p>
 
 </div>
 </div>
@@ -695,6 +919,26 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00017">17</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>  {</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">cfg_classname</a> = <span class="stringliteral">&quot;cfgLiquidDefinitions&quot;</span>;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">property_value</a> = <span class="stringliteral">&quot;NULL_PROPERTY&quot;</span>;</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">cfg_item_count</a> = <a class="code hl_variable" href="../../d8/d08/_day_z_game_8c.html#a5b4f7935d7cbb89f7a4610452d633707">g_Game</a>.ConfigGetChildrenCount(<a class="code hl_class" href="../../db/d06/class_param3.html">cfg_classname</a>);</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">cfg_item_count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>;</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetChildName(<a class="code hl_class" href="../../db/d06/class_param3.html">cfg_classname</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>);</div>
+<div class="line"><span class="lineno">   27</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_full_path</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1 %2&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">cfg_classname</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>);</div>
+<div class="line"><span class="lineno">   28</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">config_liquid_type</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetInt(<span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1 type&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_full_path</a>));</div>
+<div class="line"><span class="lineno">   29</span>      <a class="code hl_variable" href="#acb28f2352d1b81486fff873377cba59f">m_AllLiquidsByType</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">config_liquid_type</a>, <a class="code hl_function" href="#a63c6f95e72c5b3a0dab9b3865da91e5b">SetUpNutritionalProfile</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">config_liquid_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>));</div>
+<div class="line"><span class="lineno">   30</span>      <a class="code hl_variable" href="#aa3eea643b98b9001434d604c73706a37">m_AllLiquidsByName</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>, <a class="code hl_function" href="#a63c6f95e72c5b3a0dab9b3865da91e5b">SetUpNutritionalProfile</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">config_liquid_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>));</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    }</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   34</span>  }</div>
+<div class="ttc" id="aclass_liquid_html_a63c6f95e72c5b3a0dab9b3865da91e5b"><div class="ttname"><a href="#a63c6f95e72c5b3a0dab9b3865da91e5b">Liquid::SetUpNutritionalProfile</a></div><div class="ttdeci">static NutritionalProfile SetUpNutritionalProfile(int liquid_type, string liquid_class_name)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00215">Liquid.c:215</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03528">g_Game</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00004">m_AllLiquidsByName</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00003">m_AllLiquidsByType</a>, and <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00215">SetUpNutritionalProfile()</a>.</p>
 
 </div>
 </div>
@@ -726,6 +970,29 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00215">215</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  216</span>  {</div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">energy</a> = <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#aa6fc02a54f4df8b0b2a8ef2efa33757e">GetEnergy</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">nutritional_index</a> = <a class="code hl_function" href="#a08be166e0a54ae8781f87cbbd192db96">GetNutritionalIndex</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  219</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">volume</a> = <a class="code hl_function" href="#a52a2f8f01c1c72e05ee0d95ea195ad0f">GetFullness</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">water_content</a> = <a class="code hl_function" href="#a5961bbbca1f511aaa62e7aa7e4fcf029">GetWaterContent</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toxicity</a> = <a class="code hl_function" href="#a2944d3a3bc7029e4c2d9d1c96a80d10a">GetToxicity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">agents</a> = <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#ab4c196082c5e8166266ffc6ccfc6481b">GetAgents</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">digest</a> = <a class="code hl_function" href="#ae7768ab5b5c1a1fb1b27f27d49022465">GetDigestibility</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>);</div>
+<div class="line"><span class="lineno">  224</span>    <a class="code hl_class" href="../../d5/d05/class_nutritional_profile.html">NutritionalProfile</a> <a class="code hl_class" href="../../db/d06/class_param3.html">profile</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d5/d05/class_nutritional_profile.html">NutritionalProfile</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">energy</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">water_content</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">nutritional_index</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">volume</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">toxicity</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">agents</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">digest</a>);</div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">profile</a>.MarkAsLiquid(<a class="code hl_class" href="../../db/d06/class_param3.html">liquid_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">liquid_class_name</a>);</div>
+<div class="line"><span class="lineno">  226</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">profile</a>;</div>
+<div class="line"><span class="lineno">  227</span>  }</div>
+<div class="ttc" id="a_item_base_8c_html_aa6fc02a54f4df8b0b2a8ef2efa33757e"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#aa6fc02a54f4df8b0b2a8ef2efa33757e">GetEnergy</a></div><div class="ttdeci">float GetEnergy()</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_item_base_8c_source.html#l08140">ItemBase.c:8140</a></div></div>
+<div class="ttc" id="a_item_base_8c_html_ab4c196082c5e8166266ffc6ccfc6481b"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#ab4c196082c5e8166266ffc6ccfc6481b">GetAgents</a></div><div class="ttdeci">override int GetAgents()</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0e/_item_base_8c_source.html#l08554">ItemBase.c:8554</a></div></div>
+<div class="ttc" id="aclass_liquid_html_a08be166e0a54ae8781f87cbbd192db96"><div class="ttname"><a href="#a08be166e0a54ae8781f87cbbd192db96">Liquid::GetNutritionalIndex</a></div><div class="ttdeci">static float GetNutritionalIndex(int liquid_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00249">Liquid.c:249</a></div></div>
+<div class="ttc" id="aclass_liquid_html_a2944d3a3bc7029e4c2d9d1c96a80d10a"><div class="ttname"><a href="#a2944d3a3bc7029e4c2d9d1c96a80d10a">Liquid::GetToxicity</a></div><div class="ttdeci">static float GetToxicity(int liquid_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00234">Liquid.c:234</a></div></div>
+<div class="ttc" id="aclass_liquid_html_a52a2f8f01c1c72e05ee0d95ea195ad0f"><div class="ttname"><a href="#a52a2f8f01c1c72e05ee0d95ea195ad0f">Liquid::GetFullness</a></div><div class="ttdeci">static float GetFullness(int liquid_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00264">Liquid.c:264</a></div></div>
+<div class="ttc" id="aclass_liquid_html_a5961bbbca1f511aaa62e7aa7e4fcf029"><div class="ttname"><a href="#a5961bbbca1f511aaa62e7aa7e4fcf029">Liquid::GetWaterContent</a></div><div class="ttdeci">static float GetWaterContent(int liquid_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00239">Liquid.c:239</a></div></div>
+<div class="ttc" id="aclass_liquid_html_ae7768ab5b5c1a1fb1b27f27d49022465"><div class="ttname"><a href="#ae7768ab5b5c1a1fb1b27f27d49022465">Liquid::GetDigestibility</a></div><div class="ttdeci">static float GetDigestibility(int liquid_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00269">Liquid.c:269</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d0e/_item_base_8c_source.html#l08554">GetAgents()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00269">GetDigestibility()</a>, <a class="el" href="../../df/d0e/_item_base_8c_source.html#l08140">GetEnergy()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00264">GetFullness()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00249">GetNutritionalIndex()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00234">GetToxicity()</a>, and <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00239">GetWaterContent()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00017">InitAllLiquids()</a>.</p>
 
 </div>
 </div>
@@ -762,6 +1029,56 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00037">37</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#ae4feb09d06d7d018b0b1f3f67e187193">CanTransfer</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>))</div>
+<div class="line"><span class="lineno">   40</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">source</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a>;</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_class" href="../../de/d0a/class_item_base.html">ItemBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">target</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>;</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">// Debug.Log(&quot;Transfer, source:&quot;+source.ToString()+&quot; target: &quot;+target.ToString(), &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">source_quantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.GetQuantity();</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">target_quantity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetQuantity();</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">source_liquid_type</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.GetLiquidType();</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">target_liquid_type</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetLiquidType();</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">target_mask</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>.ConfigGetFloat(<span class="stringliteral">&quot;liquidContainerType&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">source_mask</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a>.ConfigGetFloat(<span class="stringliteral">&quot;liquidContainerType&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">available_capacity</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetQuantityMax() - <a class="code hl_class" href="../../db/d06/class_param3.html">target_quantity</a>;</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">// Debug.Log(&quot;target_mask =&quot;+target_mask.ToString(), &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">   57</span>    <span class="comment">// Debug.Log(&quot;source_mask =&quot;+source_mask.ToString(), &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">   58</span>    <span class="comment">// Debug.Log(&quot;source_liquid_type =&quot;+source_liquid_type.ToString(), &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">   59</span>    <span class="comment">// Debug.Log(&quot;target_liquid_type =&quot;+target_liquid_type.ToString(), &quot;LiquidTransfer&quot;);</span></div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="comment">//target.GetBloodType(source_liquid_type);//override target liquidType</span></div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_to_transfer</a>;</div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">//transfers all</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a> == -1)</div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_to_transfer</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Clamp</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">source_quantity</a>, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">available_capacity</a>);</div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">//transfers exact ammount</span></div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   68</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_to_transfer</a> = <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Clamp</a>(<a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Min</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">source_quantity</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">quantity</a>), 0, <a class="code hl_class" href="../../db/d06/class_param3.html">available_capacity</a>);</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment">//target.AddQuantity(quantity_to_transfer);</span></div>
+<div class="line"><span class="lineno">   71</span>    PluginTransmissionAgents <a class="code hl_class" href="../../db/d06/class_param3.html">m_mta</a> = PluginTransmissionAgents.Cast(<a class="code hl_function" href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a>(PluginTransmissionAgents));</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">m_mta</a>.TransmitAgents(<a class="code hl_class" href="../../db/d06/class_param3.html">source_ent</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>, <a class="code hl_variable" href="../../dc/d0f/group___a_g_t_i_ds.html#ga85c3a07738821bcf7448069749af7ac7">AGT_TRANSFER_COPY</a>);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">source</a>.AddQuantity(-<a class="code hl_class" href="../../db/d06/class_param3.html">quantity_to_transfer</a>);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_class" href="../../db/d01/class_liquid.html">Liquid</a>.<a class="code hl_function" href="#a9e5cc86b20bd1c0aef67057c66c42775">FillContainer</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">target_ent</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">source_liquid_type</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">quantity_to_transfer</a>);</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+<div class="ttc" id="aclass_item_base_html"><div class="ttname"><a href="../../de/d0a/class_item_base.html">ItemBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d5/d02/4___world_2_entities_2_core_2_inherited_2_inventory_item_8c_source.html#l00696">InventoryItem.c:697</a></div></div>
+<div class="ttc" id="aclass_liquid_html_ae4feb09d06d7d018b0b1f3f67e187193"><div class="ttname"><a href="#ae4feb09d06d7d018b0b1f3f67e187193">Liquid::CanTransfer</a></div><div class="ttdeci">static bool CanTransfer(ItemBase source_ent, ItemBase target_ent)</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0b/_liquid_8c_source.html#l00079">Liquid.c:79</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___a_g_t_i_ds_html_ga85c3a07738821bcf7448069749af7ac7"><div class="ttname"><a href="../../dc/d0f/group___a_g_t_i_ds.html#ga85c3a07738821bcf7448069749af7ac7">AGT_TRANSFER_COPY</a></div><div class="ttdeci">const int AGT_TRANSFER_COPY</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00469">constants.c:469</a></div></div>
+<div class="ttc" id="agroup___math_html_ga56eafa8f245b4dc543abbf857f1bc41a"><div class="ttname"><a href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Math::Min</a></div><div class="ttdeci">static proto float Min(float x, float y)</div><div class="ttdoc">Returns smaller of two given values.</div></div>
+<div class="ttc" id="agroup___math_html_ga939cca08ae6c7facc9293f2dbce3def5"><div class="ttname"><a href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp</a></div><div class="ttdeci">static proto float Clamp(float value, float min, float max)</div><div class="ttdoc">Clamps 'value' to 'min' if it is lower than 'min', or to 'max' if it is higher than 'max'.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00469">AGT_TRANSFER_COPY</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00079">CanTransfer()</a>, <a class="el" href="../../d5/d08/group___math.html#ga939cca08ae6c7facc9293f2dbce3def5">Math::Clamp()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00116">FillContainer()</a>, <a class="el" href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">GetPlugin()</a>, and <a class="el" href="../../d5/d08/group___math.html#ga56eafa8f245b4dc543abbf857f1bc41a">Math::Min()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d05/_c_a_continuous_quantity_liquid_transfer_8c_source.html#l00109">CAContinuousQuantityLiquidTransfer::CalcAndSetQuantity()</a>, and <a class="el" href="../../d8/d06/_drain_liquid_8c_source.html#l00089">RecipeBase::Do()</a>.</p>
 
 </div>
 </div>
@@ -788,6 +1105,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00004">4</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00210">GetNutritionalProfileByName()</a>, and <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00017">InitAllLiquids()</a>.</p>
+
 </div>
 </div>
 <a id="acb28f2352d1b81486fff873377cba59f" name="acb28f2352d1b81486fff873377cba59f"></a>
@@ -811,6 +1130,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00003">3</a> of file <a class="el" href="../../d5/d0b/_liquid_8c_source.html">Liquid.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00008">GetLiquidClassname()</a>, <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00205">GetNutritionalProfileByType()</a>, and <a class="el" href="../../d5/d0b/_liquid_8c_source.html#l00017">InitAllLiquids()</a>.</p>
 
 </div>
 </div>

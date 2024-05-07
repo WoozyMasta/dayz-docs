@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -159,6 +156,24 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00075">75</a> of file <a class="el" href="../../d7/d01/_bit_array_8c_source.html">BitArray.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>  {</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#a8ba987eb3174bb6208755e90b32815d7">IDToNumOfItems</a>(<span class="keywordtype">id</span>) &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Count())</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">num_of_items</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#a8ba987eb3174bb6208755e90b32815d7">IDToNumOfItems</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bit</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#addd3016adef7f764b93622a91ff42bfc">IDToMask</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   83</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">new_mask</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">num_of_items</a>) | <a class="code hl_class" href="../../db/d06/class_param3.html">bit</a>;</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Set(<a class="code hl_class" href="../../db/d06/class_param3.html">num_of_items</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_mask</a>);</div>
+<div class="line"><span class="lineno">   85</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span>  }</div>
+<div class="ttc" id="aclass_bit_array_html"><div class="ttname"><a href="../../d7/d0a/class_bit_array.html">BitArray</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d01/_bit_array_8c_source.html#l00005">BitArray.c:6</a></div></div>
+<div class="ttc" id="aclass_bit_array_html_a8ba987eb3174bb6208755e90b32815d7"><div class="ttname"><a href="#a8ba987eb3174bb6208755e90b32815d7">BitArray::IDToNumOfItems</a></div><div class="ttdeci">static int IDToNumOfItems(int id)</div><div class="ttdoc">Returns number of INTs required to hold this ID minus 1(ie for 32, the result is 0,...</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d01/_bit_array_8c_source.html#l00038">BitArray.c:38</a></div></div>
+<div class="ttc" id="aclass_bit_array_html_addd3016adef7f764b93622a91ff42bfc"><div class="ttname"><a href="#addd3016adef7f764b93622a91ff42bfc">BitArray::IDToMask</a></div><div class="ttdeci">static int IDToMask(int id)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d01/_bit_array_8c_source.html#l00014">BitArray.c:14</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00014">IDToMask()</a>, and <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00038">IDToNumOfItems()</a>.</p>
 
 </div>
 </div>
@@ -186,6 +201,19 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00045">45</a> of file <a class="el" href="../../d7/d01/_bit_array_8c_source.html">BitArray.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>  {</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#a8ba987eb3174bb6208755e90b32815d7">IDToNumOfItems</a>(<span class="keywordtype">id</span>);<span class="comment">//TODO: check for too big id</span></div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bit</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#addd3016adef7f764b93622a91ff42bfc">IDToMask</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a>;</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt;= <a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   53</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Insert(0);</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Set(<a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">bit</a>);</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>;</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00014">IDToMask()</a>, and <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00038">IDToNumOfItems()</a>.</p>
 
 </div>
 </div>
@@ -215,6 +243,17 @@ Static Private Member Functions</h2></td></tr>
 <p>Creates an array which will be able to accomodate 'size' number of unique IDs. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00021">21</a> of file <a class="el" href="../../d7/d01/_bit_array_8c_source.html">BitArray.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>  {</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#a8ba987eb3174bb6208755e90b32815d7">IDToNumOfItems</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">size</a>);</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a>;</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt;= <a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   27</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Insert(0);</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>;</div>
+<div class="line"><span class="lineno">   30</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00038">IDToNumOfItems()</a>.</p>
 
 </div>
 </div>
@@ -244,6 +283,12 @@ Static Private Member Functions</h2></td></tr>
 <p>Returns number of bits this array can hold. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00032">32</a> of file <a class="el" href="../../d7/d01/_bit_array_8c_source.html">BitArray.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>  {</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Count()) * <a class="code hl_variable" href="../../d7/d01/_bit_array_8c.html#a1105a596a265ca46eee73e2d8cddbdc3">BIT_INT_SIZE</a>);</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
+<div class="ttc" id="a_bit_array_8c_html_a1105a596a265ca46eee73e2d8cddbdc3"><div class="ttname"><a href="../../d7/d01/_bit_array_8c.html#a1105a596a265ca46eee73e2d8cddbdc3">BIT_INT_SIZE</a></div><div class="ttdeci">const int BIT_INT_SIZE</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d01/_bit_array_8c_source.html#l00004">BitArray.c:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00004">BIT_INT_SIZE</a>.</p>
 
 </div>
 </div>
@@ -271,6 +316,15 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00007">7</a> of file <a class="el" href="../../d7/d01/_bit_array_8c_source.html">BitArray.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>  {</div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#a8ba987eb3174bb6208755e90b32815d7">IDToNumOfItems</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">index</a> = (<span class="keywordtype">id</span> - (<a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a> * <a class="code hl_variable" href="../../d7/d01/_bit_array_8c.html#a1105a596a265ca46eee73e2d8cddbdc3">BIT_INT_SIZE</a>)) - 1;</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">index</a>;</div>
+<div class="line"><span class="lineno">   12</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00004">BIT_INT_SIZE</a>, and <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00038">IDToNumOfItems()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00014">IDToMask()</a>.</p>
 
 </div>
 </div>
@@ -298,6 +352,16 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00014">14</a> of file <a class="el" href="../../d7/d01/_bit_array_8c_source.html">BitArray.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>  {</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">index</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#a04e6e1086bd53f223674fb71872df114">IDToIndex</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bit</a> = 1 &lt;&lt; <a class="code hl_class" href="../../db/d06/class_param3.html">index</a>;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bit</a>;</div>
+<div class="line"><span class="lineno">   19</span>  }</div>
+<div class="ttc" id="aclass_bit_array_html_a04e6e1086bd53f223674fb71872df114"><div class="ttname"><a href="#a04e6e1086bd53f223674fb71872df114">BitArray::IDToIndex</a></div><div class="ttdeci">static int IDToIndex(int id)</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d01/_bit_array_8c_source.html#l00007">BitArray.c:7</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00007">IDToIndex()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00075">AddIDToMask()</a>, <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00045">CreateArrayWithID()</a>, and <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00058">IsMaskContainID()</a>.</p>
 
 </div>
 </div>
@@ -327,6 +391,15 @@ Static Private Member Functions</h2></td></tr>
 <p>Returns number of INTs required to hold this ID minus 1(ie for 32, the result is 0, for 33, the result is 1) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00038">38</a> of file <a class="el" href="../../d7/d01/_bit_array_8c_source.html">BitArray.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>  {</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a> = <span class="keywordtype">id</span> / <a class="code hl_variable" href="../../d7/d01/_bit_array_8c.html#a1105a596a265ca46eee73e2d8cddbdc3">BIT_INT_SIZE</a>;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (<span class="keywordtype">id</span> % <a class="code hl_variable" href="../../d7/d01/_bit_array_8c.html#a1105a596a265ca46eee73e2d8cddbdc3">BIT_INT_SIZE</a> == 0) <a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a>--;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">m_NumOfItems</a>;</div>
+<div class="line"><span class="lineno">   43</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00004">BIT_INT_SIZE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00075">AddIDToMask()</a>, <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00045">CreateArrayWithID()</a>, <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00021">CreateMaskArray()</a>, <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00007">IDToIndex()</a>, and <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00058">IsMaskContainID()</a>.</p>
 
 </div>
 </div>
@@ -358,6 +431,23 @@ Static Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00058">58</a> of file <a class="el" href="../../d7/d01/_bit_array_8c_source.html">BitArray.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>  {</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#a8ba987eb3174bb6208755e90b32815d7">IDToNumOfItems</a>(<span class="keywordtype">id</span>) &gt; <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Count())</div>
+<div class="line"><span class="lineno">   61</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">index_mask</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#addd3016adef7f764b93622a91ff42bfc">IDToMask</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   65</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">num_of_items</a> = <a class="code hl_class" href="../../d7/d0a/class_bit_array.html">BitArray</a>.<a class="code hl_function" href="#a8ba987eb3174bb6208755e90b32815d7">IDToNumOfItems</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array_mask</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">bit_array</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">num_of_items</a>);</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">index_mask</a> &amp; <a class="code hl_class" href="../../db/d06/class_param3.html">array_mask</a>)</div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   70</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00014">IDToMask()</a>, and <a class="el" href="../../d7/d01/_bit_array_8c_source.html#l00038">IDToNumOfItems()</a>.</p>
 
 </div>
 </div>

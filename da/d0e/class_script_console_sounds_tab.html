@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -287,6 +284,56 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">22</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>  {</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="#a092802b9efb7c46c5aaf4639293eebe5">m_MouseCurPos</a> = <a class="code hl_class" href="../../da/d0c/class_text_widget.html">TextWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;MapSoundsPos&quot;</span>));</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="#acefee41878251b6ad9313121093f69bc">m_MapDistWidget</a> = <a class="code hl_class" href="../../da/d0c/class_text_widget.html">TextWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;MapSoundsDistance&quot;</span>));</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="#a01dba49785ecf4dbc3e228c61264e9e5">m_MapHeadingWidget</a> = <a class="code hl_class" href="../../da/d0c/class_text_widget.html">TextWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;MapHeadingSounds&quot;</span>));</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#a5580a05864da4e4692b7fe5f23da8f9a">m_CopySoundset</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;SoundsetCopy&quot;</span>));</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="#afb81bee65d5ff41c1c61ccfe80ab12d2">m_PlaySoundset</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;PlaySoundset&quot;</span>));</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="#a201417067305b597ffefb8215f6557d8">m_PlaySoundsetLooped</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;PlaySoundsetLooped&quot;</span>));</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="#ac3228057c9b7e96e70cc6c03e27236ca">m_StopSoundset</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;StopSoundset&quot;</span>));</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a> = <a class="code hl_class" href="../../d7/d0a/class_map_widget.html">MapWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;MapSounds&quot;</span>));</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="#a89cdeff58cce17d84b0fc24266dee464">m_SoundFilter</a> = <a class="code hl_class" href="../../d0/d0b/class_edit_box_widget.html">EditBoxWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;SoundsFilter&quot;</span>));</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_variable" href="#aa9b1d33bfd0e43b08f8d7285e9ce7c15">m_SoundsTextListbox</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">TextListboxWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">root</a>.FindAnyWidget(<span class="stringliteral">&quot;SoundsList&quot;</span>));</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="#a89cdeff58cce17d84b0fc24266dee464">m_SoundFilter</a>.SetText(<a class="code hl_variable" href="../../d8/d09/class_script_console_tab_base.html#a3fc11010e74022e58c63350ab113cb01">m_ConfigDebugProfile</a>.GetSoundsetFilter());</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="#a749b262854b8820993c8da8ceb78d434">ChangeFilterSound</a>();</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>())</div>
+<div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>      <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>.<a class="code hl_function" href="../../d7/d0a/class_map_widget.html#a3d5556a6935fc8a1ce54ec776d928482">SetScale</a>(<a class="code hl_variable" href="#ad7d3e46e876851a2c1803db3d17d3100">DEBUG_MAP_ZOOM</a>);</div>
+<div class="line"><span class="lineno">   45</span>      <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>.<a class="code hl_function" href="../../d7/d0a/class_map_widget.html#a73641cb070d745e0eb6e8dcf4eb7517b">SetMapPos</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetWorldPosition());</div>
+<div class="line"><span class="lineno">   46</span>      <a class="code hl_function" href="#aa4847f71597636ba94d8a52dbfb9ed68">SetMapPos</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetWorldPosition());</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
+<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00047">ModifierBase.c:47</a></div></div>
+<div class="ttc" id="aclass_edit_box_widget_html"><div class="ttname"><a href="../../d0/d0b/class_edit_box_widget.html">EditBoxWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00353">EnWidgets.c:354</a></div></div>
+<div class="ttc" id="aclass_map_widget_html"><div class="ttname"><a href="../../d7/d0a/class_map_widget.html">MapWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00319">gameplay.c:320</a></div></div>
+<div class="ttc" id="aclass_map_widget_html_a3d5556a6935fc8a1ce54ec776d928482"><div class="ttname"><a href="../../d7/d0a/class_map_widget.html#a3d5556a6935fc8a1ce54ec776d928482">MapWidget::SetScale</a></div><div class="ttdeci">proto native void SetScale(float scale)</div></div>
+<div class="ttc" id="aclass_map_widget_html_a73641cb070d745e0eb6e8dcf4eb7517b"><div class="ttname"><a href="../../d7/d0a/class_map_widget.html#a73641cb070d745e0eb6e8dcf4eb7517b">MapWidget::SetMapPos</a></div><div class="ttdeci">proto native void SetMapPos(vector worldPos)</div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a01dba49785ecf4dbc3e228c61264e9e5"><div class="ttname"><a href="#a01dba49785ecf4dbc3e228c61264e9e5">ScriptConsoleSoundsTab::m_MapHeadingWidget</a></div><div class="ttdeci">TextWidget m_MapHeadingWidget</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00020">ScriptConsoleSoundsTab.c:20</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a092802b9efb7c46c5aaf4639293eebe5"><div class="ttname"><a href="#a092802b9efb7c46c5aaf4639293eebe5">ScriptConsoleSoundsTab::m_MouseCurPos</a></div><div class="ttdeci">TextWidget m_MouseCurPos</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00019">ScriptConsoleSoundsTab.c:19</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a1dfaf4f50e82146a5ccfc5f96eaf53cd"><div class="ttname"><a href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">ScriptConsoleSoundsTab::m_DebugMapWidget</a></div><div class="ttdeci">MapWidget m_DebugMapWidget</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00017">ScriptConsoleSoundsTab.c:17</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a201417067305b597ffefb8215f6557d8"><div class="ttname"><a href="#a201417067305b597ffefb8215f6557d8">ScriptConsoleSoundsTab::m_PlaySoundsetLooped</a></div><div class="ttdeci">ButtonWidget m_PlaySoundsetLooped</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00008">ScriptConsoleSoundsTab.c:8</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a5580a05864da4e4692b7fe5f23da8f9a"><div class="ttname"><a href="#a5580a05864da4e4692b7fe5f23da8f9a">ScriptConsoleSoundsTab::m_CopySoundset</a></div><div class="ttdeci">ButtonWidget m_CopySoundset</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00006">ScriptConsoleSoundsTab.c:6</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a749b262854b8820993c8da8ceb78d434"><div class="ttname"><a href="#a749b262854b8820993c8da8ceb78d434">ScriptConsoleSoundsTab::ChangeFilterSound</a></div><div class="ttdeci">void ChangeFilterSound()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00305">ScriptConsoleSoundsTab.c:305</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a89cdeff58cce17d84b0fc24266dee464"><div class="ttname"><a href="#a89cdeff58cce17d84b0fc24266dee464">ScriptConsoleSoundsTab::m_SoundFilter</a></div><div class="ttdeci">EditBoxWidget m_SoundFilter</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00011">ScriptConsoleSoundsTab.c:11</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_aa4847f71597636ba94d8a52dbfb9ed68"><div class="ttname"><a href="#aa4847f71597636ba94d8a52dbfb9ed68">ScriptConsoleSoundsTab::SetMapPos</a></div><div class="ttdeci">void SetMapPos(vector pos)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00224">ScriptConsoleSoundsTab.c:224</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_aa9b1d33bfd0e43b08f8d7285e9ce7c15"><div class="ttname"><a href="#aa9b1d33bfd0e43b08f8d7285e9ce7c15">ScriptConsoleSoundsTab::m_SoundsTextListbox</a></div><div class="ttdeci">TextListboxWidget m_SoundsTextListbox</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00012">ScriptConsoleSoundsTab.c:12</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_ac3228057c9b7e96e70cc6c03e27236ca"><div class="ttname"><a href="#ac3228057c9b7e96e70cc6c03e27236ca">ScriptConsoleSoundsTab::m_StopSoundset</a></div><div class="ttdeci">ButtonWidget m_StopSoundset</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00009">ScriptConsoleSoundsTab.c:9</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_acefee41878251b6ad9313121093f69bc"><div class="ttname"><a href="#acefee41878251b6ad9313121093f69bc">ScriptConsoleSoundsTab::m_MapDistWidget</a></div><div class="ttdeci">TextWidget m_MapDistWidget</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00018">ScriptConsoleSoundsTab.c:18</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_ad7d3e46e876851a2c1803db3d17d3100"><div class="ttname"><a href="#ad7d3e46e876851a2c1803db3d17d3100">ScriptConsoleSoundsTab::DEBUG_MAP_ZOOM</a></div><div class="ttdeci">static float DEBUG_MAP_ZOOM</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00004">ScriptConsoleSoundsTab.c:4</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_afb81bee65d5ff41c1c61ccfe80ab12d2"><div class="ttname"><a href="#afb81bee65d5ff41c1c61ccfe80ab12d2">ScriptConsoleSoundsTab::m_PlaySoundset</a></div><div class="ttdeci">ButtonWidget m_PlaySoundset</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00007">ScriptConsoleSoundsTab.c:7</a></div></div>
+<div class="ttc" id="aclass_script_console_tab_base_html_a3fc11010e74022e58c63350ab113cb01"><div class="ttname"><a href="../../d8/d09/class_script_console_tab_base.html#a3fc11010e74022e58c63350ab113cb01">ScriptConsoleTabBase::m_ConfigDebugProfile</a></div><div class="ttdeci">PluginConfigDebugProfile m_ConfigDebugProfile</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0e/_script_console_tab_base_8c_source.html#l00010">ScriptConsoleTabBase.c:10</a></div></div>
+<div class="ttc" id="aclass_text_widget_html"><div class="ttname"><a href="../../da/d0c/class_text_widget.html">TextWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00219">EnWidgets.c:220</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00305">ChangeFilterSound()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00004">DEBUG_MAP_ZOOM</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../dc/d0e/_script_console_tab_base_8c_source.html#l00010">ScriptConsoleTabBase::m_ConfigDebugProfile</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00006">m_CopySoundset</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00017">m_DebugMapWidget</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00018">m_MapDistWidget</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00020">m_MapHeadingWidget</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00019">m_MouseCurPos</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00007">m_PlaySoundset</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00008">m_PlaySoundsetLooped</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00011">m_SoundFilter</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00012">m_SoundsTextListbox</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00009">m_StopSoundset</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00224">SetMapPos()</a>, <a class="el" href="../../d7/d0a/class_map_widget.html#a73641cb070d745e0eb6e8dcf4eb7517b">MapWidget::SetMapPos()</a>, and <a class="el" href="../../d7/d0a/class_map_widget.html#a3d5556a6935fc8a1ce54ec776d928482">MapWidget::SetScale()</a>.</p>
 
 </div>
 </div>
@@ -314,6 +361,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00050">50</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>  {</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="#ad7d3e46e876851a2c1803db3d17d3100">DEBUG_MAP_ZOOM</a> = <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>.<a class="code hl_function" href="../../d7/d0a/class_map_widget.html#a5cfd94054032b1b5d7f2138097c9f86a">GetScale</a>();</div>
+<div class="line"><span class="lineno">   53</span>  }</div>
+<div class="ttc" id="aclass_map_widget_html_a5cfd94054032b1b5d7f2138097c9f86a"><div class="ttname"><a href="../../d7/d0a/class_map_widget.html#a5cfd94054032b1b5d7f2138097c9f86a">MapWidget::GetScale</a></div><div class="ttdeci">proto native float GetScale()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00004">DEBUG_MAP_ZOOM</a>, <a class="el" href="../../d7/d0a/class_map_widget.html#a5cfd94054032b1b5d7f2138097c9f86a">MapWidget::GetScale()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00017">m_DebugMapWidget</a>.</p>
 
 </div>
 </div>
@@ -361,6 +414,82 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00113">113</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>  {</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>.ClearItems();</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_class" href="../../d2/d01/classarray.html">TStringArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">filters</a>;</div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="#af8b213cef5b71b57b8a8fce7ce469c84">PrepareFilters</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">filterWidget</a>.GetText(), <a class="code hl_class" href="../../db/d06/class_param3.html">filters</a>);</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;string, ref TStringArray&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">itemsByFilters</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;string, ref TStringArray&gt;</a>();</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_class" href="../../d2/d01/classarray.html">TStringArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">itemsArray</a> = <a class="code hl_typedef" href="../../d5/d08/group___enforce.html#ga28845e68ed8329715e29aded7542ca15">TStringArray</a>();</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">classes</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  125</span>    {</div>
+<div class="line"><span class="lineno">  126</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">config_path</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">classes</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">objects_count</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetChildrenCount(<a class="code hl_class" href="../../db/d06/class_param3.html">config_path</a>);</div>
+<div class="line"><span class="lineno">  129</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">objects_count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a>++)</div>
+<div class="line"><span class="lineno">  130</span>      {</div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">child_name</a>;</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">add</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  133</span>        <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().ConfigGetChildName(<a class="code hl_class" href="../../db/d06/class_param3.html">config_path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">j</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">child_name</a>);</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">filters</a>.Count())</div>
+<div class="line"><span class="lineno">  136</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">add</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  138</span>        {</div>
+<div class="line"><span class="lineno">  139</span>          <span class="keywordflow">foreach</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">indx</a>, <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">filter</a>: <a class="code hl_class" href="../../db/d06/class_param3.html">filters</a>)</div>
+<div class="line"><span class="lineno">  140</span>          {</div>
+<div class="line"><span class="lineno">  141</span>            <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">child_name_lower</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">child_name</a>;</div>
+<div class="line"><span class="lineno">  142</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">child_name_lower</a>.ToLower();</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">child_name_lower</a>.Contains(<a class="code hl_class" href="../../db/d06/class_param3.html">filter</a>))</div>
+<div class="line"><span class="lineno">  145</span>            {</div>
+<div class="line"><span class="lineno">  146</span>              <a class="code hl_class" href="../../db/d06/class_param3.html">add</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  147</span>              <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  148</span>            }</div>
+<div class="line"><span class="lineno">  149</span>          }</div>
+<div class="line"><span class="lineno">  150</span>        }</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">add</a>)</div>
+<div class="line"><span class="lineno">  152</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">itemsArray</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">child_name</a>);</div>
+<div class="line"><span class="lineno">  153</span>      }</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">itemsArray</a>)</div>
+<div class="line"><span class="lineno">  157</span>    {</div>
+<div class="line"><span class="lineno">  158</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">itemsArray</a>.Sort();</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">it</a>: <a class="code hl_class" href="../../db/d06/class_param3.html">itemsArray</a>)</div>
+<div class="line"><span class="lineno">  160</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>.AddItem(<a class="code hl_class" href="../../db/d06/class_param3.html">it</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, 0);</div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">filters</a>)</div>
+<div class="line"><span class="lineno">  164</span>    {</div>
+<div class="line"><span class="lineno">  165</span>      <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  166</span><span class="comment">        if (m_FilterOrderReversed)</span></div>
+<div class="line"><span class="lineno">  167</span><span class="comment">        filters.Invert();</span></div>
+<div class="line"><span class="lineno">  168</span><span class="comment">      */</span></div>
+<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">f</a>: <a class="code hl_class" href="../../db/d06/class_param3.html">filters</a>)</div>
+<div class="line"><span class="lineno">  170</span>      {</div>
+<div class="line"><span class="lineno">  171</span>        <a class="code hl_class" href="../../d2/d01/classarray.html">TStringArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">arr2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">itemsByFilters</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">f</a>);</div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">arr2</a>)</div>
+<div class="line"><span class="lineno">  173</span>        {</div>
+<div class="line"><span class="lineno">  174</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">arr2</a>.Sort();</div>
+<div class="line"><span class="lineno">  175</span>          <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">itm</a>: <a class="code hl_class" href="../../db/d06/class_param3.html">arr2</a>)</div>
+<div class="line"><span class="lineno">  176</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">int</a> <a class="code hl_class" href="../../db/d06/class_param3.html">row</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>.AddItem(<a class="code hl_class" href="../../db/d06/class_param3.html">itm</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, 0);</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+<div class="line"><span class="lineno">  178</span>      }</div>
+<div class="line"><span class="lineno">  179</span>    }</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>  }</div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_af8b213cef5b71b57b8a8fce7ce469c84"><div class="ttname"><a href="#af8b213cef5b71b57b8a8fce7ce469c84">ScriptConsoleSoundsTab::PrepareFilters</a></div><div class="ttdeci">void PrepareFilters(string filter, out TStringArray filters)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00098">ScriptConsoleSoundsTab.c:98</a></div></div>
+<div class="ttc" id="aclassarray_html"><div class="ttname"><a href="../../d2/d01/classarray.html">array&lt; string &gt;</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga28845e68ed8329715e29aded7542ca15"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga28845e68ed8329715e29aded7542ca15">TStringArray</a></div><div class="ttdeci">array&lt; string &gt; TStringArray</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00666">EnScript.c:666</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00098">PrepareFilters()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00305">ChangeFilterSound()</a>.</p>
 
 </div>
 </div>
@@ -388,6 +517,16 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00305">305</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  306</span>  {</div>
+<div class="line"><span class="lineno">  307</span>    <a class="code hl_variable" href="../../d8/d09/class_script_console_tab_base.html#a3fc11010e74022e58c63350ab113cb01">m_ConfigDebugProfile</a>.SetSoundsetFilter(<a class="code hl_variable" href="#a89cdeff58cce17d84b0fc24266dee464">m_SoundFilter</a>.GetText());</div>
+<div class="line"><span class="lineno">  308</span>    <a class="code hl_function" href="#a5b34059f97a774fdc01f7867b3dbd24d">ChangeFilter</a>(<a class="code hl_function" href="#ab7fd2cbe97f1630f2d91a0d809e814ae">GetSoundClasses</a>(), <a class="code hl_variable" href="#aa9b1d33bfd0e43b08f8d7285e9ce7c15">m_SoundsTextListbox</a>, <a class="code hl_variable" href="#a89cdeff58cce17d84b0fc24266dee464">m_SoundFilter</a>, 0, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  309</span>  }</div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a5b34059f97a774fdc01f7867b3dbd24d"><div class="ttname"><a href="#a5b34059f97a774fdc01f7867b3dbd24d">ScriptConsoleSoundsTab::ChangeFilter</a></div><div class="ttdeci">void ChangeFilter(TStringArray classes, TextListboxWidget widget, EditBoxWidget filterWidget, int categoryMask=-1, bool ignoreScope=false)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00113">ScriptConsoleSoundsTab.c:113</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_ab7fd2cbe97f1630f2d91a0d809e814ae"><div class="ttname"><a href="#ab7fd2cbe97f1630f2d91a0d809e814ae">ScriptConsoleSoundsTab::GetSoundClasses</a></div><div class="ttdeci">TStringArray GetSoundClasses()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00300">ScriptConsoleSoundsTab.c:300</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00113">ChangeFilter()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00300">GetSoundClasses()</a>, <a class="el" href="../../dc/d0e/_script_console_tab_base_8c_source.html#l00010">ScriptConsoleTabBase::m_ConfigDebugProfile</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00011">m_SoundFilter</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00012">m_SoundsTextListbox</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>.</p>
 
 </div>
 </div>
@@ -415,6 +554,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00229">229</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  230</span>  {</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a7753b0d1a4663e7cd9ccf852b30611b5">m_MapPos</a>;</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a7753b0d1a4663e7cd9ccf852b30611b5"><div class="ttname"><a href="#a7753b0d1a4663e7cd9ccf852b30611b5">ScriptConsoleSoundsTab::m_MapPos</a></div><div class="ttdeci">vector m_MapPos</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00005">ScriptConsoleSoundsTab.c:5</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00005">m_MapPos</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00204">HandleKeys()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00184">Update()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">UpdateMousePos()</a>.</p>
 
 </div>
 </div>
@@ -442,6 +589,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00300">300</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  301</span>  {</div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">return</span> {<a class="code hl_variable" href="../../d7/d0f/group___menu_i_d.html#ga211a517afa656faa4d6f2eed798e267d">CFG_SOUND_SETS</a>};</div>
+<div class="line"><span class="lineno">  303</span>  }</div>
+<div class="ttc" id="agroup___menu_i_d_html_ga211a517afa656faa4d6f2eed798e267d"><div class="ttname"><a href="../../d7/d0f/group___menu_i_d.html#ga211a517afa656faa4d6f2eed798e267d">CFG_SOUND_SETS</a></div><div class="ttdeci">const string CFG_SOUND_SETS</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00217">constants.c:217</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00217">CFG_SOUND_SETS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00305">ChangeFilterSound()</a>.</p>
 
 </div>
 </div>
@@ -469,6 +624,34 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00204">204</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>  {</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">playRequested</a> = <a class="code hl_function" href="../../de/d08/group___keyboard.html#gad3fc79faa10da550d02574707ca915ed">KeyState</a>(<a class="code hl_enumeration" href="../../de/d08/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a>.KC_P) != 0;</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playRequested</a>)</div>
+<div class="line"><span class="lineno">  208</span>    {</div>
+<div class="line"><span class="lineno">  209</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">selected_row_index</a> = <a class="code hl_variable" href="#aa9b1d33bfd0e43b08f8d7285e9ce7c15">m_SoundsTextListbox</a>.GetSelectedRow();</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a>)</div>
+<div class="line"><span class="lineno">  212</span>        <a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a>.Stop();</div>
+<div class="line"><span class="lineno">  213</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">selected_row_index</a> != -1)</div>
+<div class="line"><span class="lineno">  214</span>      {</div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">soundSetName</a>;</div>
+<div class="line"><span class="lineno">  216</span>        <a class="code hl_variable" href="#aa9b1d33bfd0e43b08f8d7285e9ce7c15">m_SoundsTextListbox</a>.GetItemText(<a class="code hl_class" href="../../db/d06/class_param3.html">selected_row_index</a>, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">soundSetName</a>);</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>        <a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a> = <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#a0d3128b8934177ace943d7ddbc27a36d">PlaySoundEnviroment</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">soundSetName</a>, <a class="code hl_function" href="#a28972347327e04431e4e5e877eabe407">GetMapPos</a>());</div>
+<div class="line"><span class="lineno">  219</span>        <a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a>.SetAutodestroy(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  220</span>      }</div>
+<div class="line"><span class="lineno">  221</span>    }</div>
+<div class="line"><span class="lineno">  222</span>  }</div>
+<div class="ttc" id="aclass_s_effect_manager_html"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a></div><div class="ttdoc">Manager class for managing Effect (EffectParticle, EffectSound)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00005">EffectManager.c:6</a></div></div>
+<div class="ttc" id="aclass_s_effect_manager_html_a0d3128b8934177ace943d7ddbc27a36d"><div class="ttname"><a href="../../d2/d03/class_s_effect_manager.html#a0d3128b8934177ace943d7ddbc27a36d">SEffectManager::PlaySoundEnviroment</a></div><div class="ttdeci">static EffectSound PlaySoundEnviroment(string sound_set, vector position, float play_fade_in=0, float stop_fade_out=0, bool loop=false)</div><div class="ttdoc">Create and play an EffectSound, updating environment variables.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_effect_manager_8c_source.html#l00214">EffectManager.c:214</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a28972347327e04431e4e5e877eabe407"><div class="ttname"><a href="#a28972347327e04431e4e5e877eabe407">ScriptConsoleSoundsTab::GetMapPos</a></div><div class="ttdeci">vector GetMapPos()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00229">ScriptConsoleSoundsTab.c:229</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a794470573dc7dd07601601a6a0ef4a87"><div class="ttname"><a href="#a794470573dc7dd07601601a6a0ef4a87">ScriptConsoleSoundsTab::m_SoundSet</a></div><div class="ttdeci">static EffectSound m_SoundSet</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00014">ScriptConsoleSoundsTab.c:14</a></div></div>
+<div class="ttc" id="agroup___keyboard_html_ga7885f47644a0388f981f416fa20389b2"><div class="ttname"><a href="../../de/d08/group___keyboard.html#ga7885f47644a0388f981f416fa20389b2">KeyCode</a></div><div class="ttdeci">KeyCode</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d04/_en_system_8c_source.html#l00156">EnSystem.c:157</a></div></div>
+<div class="ttc" id="agroup___keyboard_html_gad3fc79faa10da550d02574707ca915ed"><div class="ttname"><a href="../../de/d08/group___keyboard.html#gad3fc79faa10da550d02574707ca915ed">KeyState</a></div><div class="ttdeci">proto native int KeyState(KeyCode key)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00229">GetMapPos()</a>, <a class="el" href="../../de/d08/group___keyboard.html#gad3fc79faa10da550d02574707ca915ed">KeyState()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00014">m_SoundSet</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00012">m_SoundsTextListbox</a>, and <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00214">SEffectManager::PlaySoundEnviroment()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00184">Update()</a>.</p>
 
 </div>
 </div>
@@ -510,6 +693,21 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00055">55</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>  {</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnChange(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">finished</a>);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#a89cdeff58cce17d84b0fc24266dee464">m_SoundFilter</a>)</div>
+<div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_variable" href="#a08f2f86a38e8054621b7fd86571ba0b6">m_RefreshFilterTimer</a>.Run(0.85, <span class="keyword">this</span>, <span class="stringliteral">&quot;ChangeFilterSound&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   62</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   65</span>  }</div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="a_icon_8c_html_acd41c12fe81446bff0920670641367de"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a></div><div class="ttdeci">Icon y</div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a08f2f86a38e8054621b7fd86571ba0b6"><div class="ttname"><a href="#a08f2f86a38e8054621b7fd86571ba0b6">ScriptConsoleSoundsTab::m_RefreshFilterTimer</a></div><div class="ttdeci">ref Timer m_RefreshFilterTimer</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00015">ScriptConsoleSoundsTab.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00015">m_RefreshFilterTimer</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00011">m_SoundFilter</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -551,6 +749,47 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">259</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  260</span>  {</div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  262</span> </div>
+<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#a5580a05864da4e4692b7fe5f23da8f9a">m_CopySoundset</a>)</div>
+<div class="line"><span class="lineno">  264</span>    {</div>
+<div class="line"><span class="lineno">  265</span>      <a class="code hl_function" href="../../d8/d09/class_script_console_tab_base.html#a5bbaac59fd93ec711d6762ddfecbc53e">AddItemToClipboard</a>(<a class="code hl_variable" href="#aa9b1d33bfd0e43b08f8d7285e9ce7c15">m_SoundsTextListbox</a>);</div>
+<div class="line"><span class="lineno">  266</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  267</span>    }</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#afb81bee65d5ff41c1c61ccfe80ab12d2">m_PlaySoundset</a> || <a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#a201417067305b597ffefb8215f6557d8">m_PlaySoundsetLooped</a>)</div>
+<div class="line"><span class="lineno">  269</span>    {</div>
+<div class="line"><span class="lineno">  270</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">selected_row_index</a> = <a class="code hl_variable" href="#aa9b1d33bfd0e43b08f8d7285e9ce7c15">m_SoundsTextListbox</a>.GetSelectedRow();</div>
+<div class="line"><span class="lineno">  271</span>      <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">soundSetName</a>;</div>
+<div class="line"><span class="lineno">  272</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a>)</div>
+<div class="line"><span class="lineno">  273</span>        <a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a>.Stop();</div>
+<div class="line"><span class="lineno">  274</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">selected_row_index</a> != -1)</div>
+<div class="line"><span class="lineno">  275</span>      {</div>
+<div class="line"><span class="lineno">  276</span>        <a class="code hl_variable" href="#aa9b1d33bfd0e43b08f8d7285e9ce7c15">m_SoundsTextListbox</a>.GetItemText(<a class="code hl_class" href="../../db/d06/class_param3.html">selected_row_index</a>, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">soundSetName</a>);</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>        <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">looped</a> = (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#a201417067305b597ffefb8215f6557d8">m_PlaySoundsetLooped</a>);</div>
+<div class="line"><span class="lineno">  279</span>        <a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a> = <a class="code hl_class" href="../../d2/d03/class_s_effect_manager.html">SEffectManager</a>.<a class="code hl_function" href="../../d2/d03/class_s_effect_manager.html#a0d3128b8934177ace943d7ddbc27a36d">PlaySoundEnviroment</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">soundSetName</a>, <a class="code hl_function" href="#a28972347327e04431e4e5e877eabe407">GetMapPos</a>(), 0, 0, <a class="code hl_class" href="../../db/d06/class_param3.html">looped</a>);</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>      }</div>
+<div class="line"><span class="lineno">  282</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  283</span>    }</div>
+<div class="line"><span class="lineno">  284</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#ac3228057c9b7e96e70cc6c03e27236ca">m_StopSoundset</a>)</div>
+<div class="line"><span class="lineno">  285</span>    {</div>
+<div class="line"><span class="lineno">  286</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a>)</div>
+<div class="line"><span class="lineno">  287</span>        <a class="code hl_variable" href="#a794470573dc7dd07601601a6a0ef4a87">m_SoundSet</a>.Stop();</div>
+<div class="line"><span class="lineno">  288</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  289</span>    }</div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#a89cdeff58cce17d84b0fc24266dee464">m_SoundFilter</a>)</div>
+<div class="line"><span class="lineno">  291</span>    {</div>
+<div class="line"><span class="lineno">  292</span>      <a class="code hl_function" href="#a749b262854b8820993c8da8ceb78d434">ChangeFilterSound</a>();</div>
+<div class="line"><span class="lineno">  293</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  294</span>    }</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  297</span>  }</div>
+<div class="ttc" id="aclass_script_console_tab_base_html_a5bbaac59fd93ec711d6762ddfecbc53e"><div class="ttname"><a href="../../d8/d09/class_script_console_tab_base.html#a5bbaac59fd93ec711d6762ddfecbc53e">ScriptConsoleTabBase::AddItemToClipboard</a></div><div class="ttdeci">void AddItemToClipboard(TextListboxWidget text_listbox_widget)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0e/_script_console_tab_base_8c_source.html#l00084">ScriptConsoleTabBase.c:84</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0e/_script_console_tab_base_8c_source.html#l00084">ScriptConsoleTabBase::AddItemToClipboard()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00305">ChangeFilterSound()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00229">GetMapPos()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00006">m_CopySoundset</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00007">m_PlaySoundset</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00008">m_PlaySoundsetLooped</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00011">m_SoundFilter</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00014">m_SoundSet</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00012">m_SoundsTextListbox</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00009">m_StopSoundset</a>, <a class="el" href="../../d9/d0d/_effect_manager_8c_source.html#l00214">SEffectManager::PlaySoundEnviroment()</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -592,6 +831,35 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00234">234</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  235</span>  {</div>
+<div class="line"><span class="lineno">  236</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnMouseButtonDown(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a> == <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>)</div>
+<div class="line"><span class="lineno">  239</span>    {</div>
+<div class="line"><span class="lineno">  240</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">button</a> == 0)</div>
+<div class="line"><span class="lineno">  241</span>      {</div>
+<div class="line"><span class="lineno">  242</span>        <a class="code hl_variable" href="#ae87b11a6ead5b1898765ee6b759ab23c">m_PlayerPosRefreshBlocked</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  243</span>        <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mouseX</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mouseY</a>;</div>
+<div class="line"><span class="lineno">  244</span>        <a class="code hl_function" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">mouseX</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mouseY</a>);</div>
+<div class="line"><span class="lineno">  245</span>        <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mousePos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>;</div>
+<div class="line"><span class="lineno">  246</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">mousePos</a>[0] = <a class="code hl_class" href="../../db/d06/class_param3.html">mouseX</a>;</div>
+<div class="line"><span class="lineno">  247</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">mousePos</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">mouseY</a>;</div>
+<div class="line"><span class="lineno">  248</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a> = <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>.<a class="code hl_function" href="../../d7/d0a/class_map_widget.html#a796d0306d5aa7e2d750943ba547f0b0b">ScreenToMap</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">mousePos</a>);</div>
+<div class="line"><span class="lineno">  249</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[1] = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceY(<a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[0], <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[2]);</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>        <a class="code hl_function" href="#aa4847f71597636ba94d8a52dbfb9ed68">SetMapPos</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>);</div>
+<div class="line"><span class="lineno">  252</span>      }</div>
+<div class="line"><span class="lineno">  253</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">button</a> == 1 &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>())</div>
+<div class="line"><span class="lineno">  254</span>        <a class="code hl_function" href="#aa4847f71597636ba94d8a52dbfb9ed68">SetMapPos</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>().GetWorldPosition());</div>
+<div class="line"><span class="lineno">  255</span>    }</div>
+<div class="line"><span class="lineno">  256</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  257</span>  }</div>
+<div class="ttc" id="aclass_map_widget_html_a796d0306d5aa7e2d750943ba547f0b0b"><div class="ttname"><a href="../../d7/d0a/class_map_widget.html#a796d0306d5aa7e2d750943ba547f0b0b">MapWidget::ScreenToMap</a></div><div class="ttdeci">proto native vector ScreenToMap(vector screenPos)</div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_ae87b11a6ead5b1898765ee6b759ab23c"><div class="ttname"><a href="#ae87b11a6ead5b1898765ee6b759ab23c">ScriptConsoleSoundsTab::m_PlayerPosRefreshBlocked</a></div><div class="ttdeci">bool m_PlayerPosRefreshBlocked</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00003">ScriptConsoleSoundsTab.c:3</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agroup___mouse_html_gaf2e4a5118e1e02f8cded38993c713be8"><div class="ttname"><a href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos</a></div><div class="ttdeci">proto void GetMousePos(out int x, out int y)</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00017">m_DebugMapWidget</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00003">m_PlayerPosRefreshBlocked</a>, <a class="el" href="../../d7/d0a/class_map_widget.html#a796d0306d5aa7e2d750943ba547f0b0b">MapWidget::ScreenToMap()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00224">SetMapPos()</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
 
 </div>
 </div>
@@ -623,6 +891,20 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00098">98</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">filter</a>.Trim();</div>
+<div class="line"><span class="lineno">  101</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">filter</a>.ToLower();</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">filters</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d08/group___enforce.html#ga28845e68ed8329715e29aded7542ca15">TStringArray</a>;</div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_class" href="../../d2/d01/classarray.html">TStringArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">rawFilters</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d08/group___enforce.html#ga28845e68ed8329715e29aded7542ca15">TStringArray</a>;</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">filter</a>.Split(<span class="stringliteral">&quot; &quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">rawFilters</a>);</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">foreach</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">f</a>: <a class="code hl_class" href="../../db/d06/class_param3.html">rawFilters</a>)</div>
+<div class="line"><span class="lineno">  108</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">filters</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">f</a>);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00113">ChangeFilter()</a>.</p>
 
 </div>
 </div>
@@ -650,6 +932,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00224">224</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>  {</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_variable" href="#a7753b0d1a4663e7cd9ccf852b30611b5">m_MapPos</a> = pos;</div>
+<div class="line"><span class="lineno">  227</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00005">m_MapPos</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00234">OnMouseButtonDown()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>.</p>
 
 </div>
 </div>
@@ -677,6 +966,33 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00184">184</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>  {</div>
+<div class="line"><span class="lineno">  186</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_function" href="#a4da44d97009bba59aeafbe2f04aaf7e2">HandleKeys</a>();</div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>.<a class="code hl_function" href="../../d7/d0a/class_map_widget.html#a811d102654008cc56516eb23f35ebd00">ClearUserMarks</a>();</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  194</span>    {</div>
+<div class="line"><span class="lineno">  195</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">playerPos</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetWorldPosition();</div>
+<div class="line"><span class="lineno">  196</span>      <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>.<a class="code hl_function" href="../../d7/d0a/class_map_widget.html#ac27ce91aa4dbb0ee8fad7df297ed82f7">AddUserMark</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">playerPos</a>, <span class="stringliteral">&quot;You&quot;</span>, <a class="code hl_variable" href="../../dd/d03/group___colors.html#ga67e1e0c1b9c65f5fd2a68c9323808c03">COLOR_RED</a>, <span class="stringliteral">&quot;\\dz\\gear\\navigation\\data\\map_tree_ca.paa&quot;</span>);</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">playerPos</a> != <a class="code hl_function" href="#a28972347327e04431e4e5e877eabe407">GetMapPos</a>())</div>
+<div class="line"><span class="lineno">  199</span>        <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>.<a class="code hl_function" href="../../d7/d0a/class_map_widget.html#ac27ce91aa4dbb0ee8fad7df297ed82f7">AddUserMark</a>(<a class="code hl_function" href="#a28972347327e04431e4e5e877eabe407">GetMapPos</a>(), <span class="stringliteral">&quot;Source&quot;</span>, <a class="code hl_variable" href="../../dd/d03/group___colors.html#ga99b2555651fb3bdd7bca23e5b6553968">COLOR_GREEN</a>, <span class="stringliteral">&quot;\\dz\\gear\\navigation\\data\\map_tree_ca.paa&quot;</span>);</div>
+<div class="line"><span class="lineno">  200</span>    }</div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_function" href="#a8b049def5465fd262a1226d64db36ba3">UpdateMousePos</a>();</div>
+<div class="line"><span class="lineno">  202</span>  }</div>
+<div class="ttc" id="aclass_map_widget_html_a811d102654008cc56516eb23f35ebd00"><div class="ttname"><a href="../../d7/d0a/class_map_widget.html#a811d102654008cc56516eb23f35ebd00">MapWidget::ClearUserMarks</a></div><div class="ttdeci">proto native void ClearUserMarks()</div></div>
+<div class="ttc" id="aclass_map_widget_html_ac27ce91aa4dbb0ee8fad7df297ed82f7"><div class="ttname"><a href="../../d7/d0a/class_map_widget.html#ac27ce91aa4dbb0ee8fad7df297ed82f7">MapWidget::AddUserMark</a></div><div class="ttdeci">proto native void AddUserMark(vector pos, string text, int color, string texturePath)</div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a4da44d97009bba59aeafbe2f04aaf7e2"><div class="ttname"><a href="#a4da44d97009bba59aeafbe2f04aaf7e2">ScriptConsoleSoundsTab::HandleKeys</a></div><div class="ttdeci">void HandleKeys()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00204">ScriptConsoleSoundsTab.c:204</a></div></div>
+<div class="ttc" id="aclass_script_console_sounds_tab_html_a8b049def5465fd262a1226d64db36ba3"><div class="ttname"><a href="#a8b049def5465fd262a1226d64db36ba3">ScriptConsoleSoundsTab::UpdateMousePos</a></div><div class="ttdeci">void UpdateMousePos()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">ScriptConsoleSoundsTab.c:67</a></div></div>
+<div class="ttc" id="agroup___colors_html_ga67e1e0c1b9c65f5fd2a68c9323808c03"><div class="ttname"><a href="../../dd/d03/group___colors.html#ga67e1e0c1b9c65f5fd2a68c9323808c03">COLOR_RED</a></div><div class="ttdeci">const int COLOR_RED</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0a/1___core_2constants_8c_source.html#l00064">constants.c:64</a></div></div>
+<div class="ttc" id="agroup___colors_html_ga99b2555651fb3bdd7bca23e5b6553968"><div class="ttname"><a href="../../dd/d03/group___colors.html#ga99b2555651fb3bdd7bca23e5b6553968">COLOR_GREEN</a></div><div class="ttdeci">const int COLOR_GREEN</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d0a/1___core_2constants_8c_source.html#l00065">constants.c:65</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d7/d0a/class_map_widget.html#ac27ce91aa4dbb0ee8fad7df297ed82f7">MapWidget::AddUserMark()</a>, <a class="el" href="../../d7/d0a/class_map_widget.html#a811d102654008cc56516eb23f35ebd00">MapWidget::ClearUserMarks()</a>, <a class="el" href="../../d5/d0a/1___core_2constants_8c_source.html#l00065">COLOR_GREEN</a>, <a class="el" href="../../d5/d0a/1___core_2constants_8c_source.html#l00064">COLOR_RED</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00229">GetMapPos()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00204">HandleKeys()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00017">m_DebugMapWidget</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">UpdateMousePos()</a>.</p>
 
 </div>
 </div>
@@ -704,6 +1020,43 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">67</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>  {</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>())</div>
+<div class="line"><span class="lineno">   70</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>;</div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos</a>(<a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>);</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mousePos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>;</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">mousePos</a>[0] = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>;</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">mousePos</a>[1] = <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>;</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a> = <a class="code hl_variable" href="#a1dfaf4f50e82146a5ccfc5f96eaf53cd">m_DebugMapWidget</a>.<a class="code hl_function" href="../../d7/d0a/class_map_widget.html#a796d0306d5aa7e2d750943ba547f0b0b">ScreenToMap</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">mousePos</a>);</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">playerPos</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetPlayer().GetWorldPosition();</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#a28972347327e04431e4e5e877eabe407">GetMapPos</a>() != <a class="code hl_class" href="../../db/d06/class_param3.html">playerPos</a>)</div>
+<div class="line"><span class="lineno">   79</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a> = <a class="code hl_function" href="#a28972347327e04431e4e5e877eabe407">GetMapPos</a>();</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[1] = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().SurfaceY(<a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[0], <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[2]);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a092802b9efb7c46c5aaf4639293eebe5">m_MouseCurPos</a>)</div>
+<div class="line"><span class="lineno">   83</span>      <a class="code hl_variable" href="#a092802b9efb7c46c5aaf4639293eebe5">m_MouseCurPos</a>.SetText(<span class="stringliteral">&quot;Mouse: &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.TruncateToS(<a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[0]) + <span class="stringliteral">&quot;, &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.TruncateToS(<a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[1]) + <span class="stringliteral">&quot;, &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.TruncateToS(<a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>[2]));</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#acefee41878251b6ad9313121093f69bc">m_MapDistWidget</a> &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>())</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">dst</a> = (<a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a> - <a class="code hl_class" href="../../db/d06/class_param3.html">playerPos</a>).Length();</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>      <a class="code hl_variable" href="#acefee41878251b6ad9313121093f69bc">m_MapDistWidget</a>.SetText(<span class="stringliteral">&quot;Distance: &quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">MiscGameplayFunctions</a>.TruncateToS(<a class="code hl_class" href="../../db/d06/class_param3.html">dst</a>));</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a01dba49785ecf4dbc3e228c61264e9e5">m_MapHeadingWidget</a>)</div>
+<div class="line"><span class="lineno">   91</span>    {</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">playerCamDir</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetCurrentCameraDirection();</div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">heading</a> = <a class="code hl_class" href="../../da/d04/class_math3_d.html">Math3D</a>.<a class="code hl_function" href="../../d5/d08/group___math3_d_a_p_i.html#ga6355d439d382de23a6bde149dce4ce27">AngleFromPosition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">playerPos</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">playerCamDir</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">worldPos</a>) * <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_variable" href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">RAD2DEG</a>;</div>
+<div class="line"><span class="lineno">   94</span>      <a class="code hl_variable" href="#a01dba49785ecf4dbc3e228c61264e9e5">m_MapHeadingWidget</a>.SetText(<span class="stringliteral">&quot;Heading:&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">heading</a>.ToString());</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="line"><span class="lineno">   96</span>  }</div>
+<div class="ttc" id="aclass_math3_d_html"><div class="ttname"><a href="../../da/d04/class_math3_d.html">Math3D</a></div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/_en_math3_d_8c_source.html#l00027">EnMath3D.c:28</a></div></div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="agroup___math3_d_a_p_i_html_ga6355d439d382de23a6bde149dce4ce27"><div class="ttname"><a href="../../d5/d08/group___math3_d_a_p_i.html#ga6355d439d382de23a6bde149dce4ce27">Math3D::AngleFromPosition</a></div><div class="ttdeci">static proto float AngleFromPosition(vector origin, vector originDir, vector target)</div><div class="ttdoc">Angle that a target is from the direction of an origin.</div></div>
+<div class="ttc" id="agroup___math_html_gad73851cb23a468ee6eb705d0ec76e141"><div class="ttname"><a href="../../d5/d08/group___math.html#gad73851cb23a468ee6eb705d0ec76e141">Math::RAD2DEG</a></div><div class="ttdeci">static const float RAD2DEG</div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00016">EnMath.c:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math3_d_a_p_i.html#ga6355d439d382de23a6bde149dce4ce27">Math3D::AngleFromPosition()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00229">GetMapPos()</a>, <a class="el" href="../../d7/d00/group___mouse.html#gaf2e4a5118e1e02f8cded38993c713be8">GetMousePos()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00017">m_DebugMapWidget</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00018">m_MapDistWidget</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00020">m_MapHeadingWidget</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00019">m_MouseCurPos</a>, <a class="el" href="../../da/d04/_en_math_8c_source.html#l00016">Math::RAD2DEG</a>, <a class="el" href="../../d7/d0a/class_map_widget.html#a796d0306d5aa7e2d750943ba547f0b0b">MapWidget::ScreenToMap()</a>, <a class="el" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, and <a class="el" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00184">Update()</a>.</p>
 
 </div>
 </div>
@@ -730,6 +1083,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00004">4</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00050">~ScriptConsoleSoundsTab()</a>.</p>
+
 </div>
 </div>
 <a id="a5580a05864da4e4692b7fe5f23da8f9a" name="a5580a05864da4e4692b7fe5f23da8f9a"></a>
@@ -753,6 +1108,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00006">6</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>.</p>
 
 </div>
 </div>
@@ -778,6 +1135,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00017">17</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00234">OnMouseButtonDown()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00184">Update()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">UpdateMousePos()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00050">~ScriptConsoleSoundsTab()</a>.</p>
+
 </div>
 </div>
 <a id="acefee41878251b6ad9313121093f69bc" name="acefee41878251b6ad9313121093f69bc"></a>
@@ -801,6 +1160,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00018">18</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">UpdateMousePos()</a>.</p>
 
 </div>
 </div>
@@ -826,6 +1187,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00020">20</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">UpdateMousePos()</a>.</p>
+
 </div>
 </div>
 <a id="a7753b0d1a4663e7cd9ccf852b30611b5" name="a7753b0d1a4663e7cd9ccf852b30611b5"></a>
@@ -849,6 +1212,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00005">5</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00229">GetMapPos()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00224">SetMapPos()</a>.</p>
 
 </div>
 </div>
@@ -874,6 +1239,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00019">19</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00067">UpdateMousePos()</a>.</p>
+
 </div>
 </div>
 <a id="ae87b11a6ead5b1898765ee6b759ab23c" name="ae87b11a6ead5b1898765ee6b759ab23c"></a>
@@ -897,6 +1264,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00003">3</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00234">OnMouseButtonDown()</a>.</p>
 
 </div>
 </div>
@@ -922,6 +1291,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00007">7</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>.</p>
+
 </div>
 </div>
 <a id="a201417067305b597ffefb8215f6557d8" name="a201417067305b597ffefb8215f6557d8"></a>
@@ -945,6 +1316,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00008">8</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>.</p>
 
 </div>
 </div>
@@ -970,6 +1343,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00015">15</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00055">OnChange()</a>.</p>
+
 </div>
 </div>
 <a id="a89cdeff58cce17d84b0fc24266dee464" name="a89cdeff58cce17d84b0fc24266dee464"></a>
@@ -993,6 +1368,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00011">11</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00305">ChangeFilterSound()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00055">OnChange()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>.</p>
 
 </div>
 </div>
@@ -1018,6 +1395,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00014">14</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00204">HandleKeys()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>.</p>
+
 </div>
 </div>
 <a id="aa9b1d33bfd0e43b08f8d7285e9ce7c15" name="aa9b1d33bfd0e43b08f8d7285e9ce7c15"></a>
@@ -1042,6 +1421,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00012">12</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00305">ChangeFilterSound()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00204">HandleKeys()</a>, <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>.</p>
+
 </div>
 </div>
 <a id="ac3228057c9b7e96e70cc6c03e27236ca" name="ac3228057c9b7e96e70cc6c03e27236ca"></a>
@@ -1065,6 +1446,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00009">9</a> of file <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html">ScriptConsoleSoundsTab.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00259">OnClick()</a>, and <a class="el" href="../../d2/d02/_script_console_sounds_tab_8c_source.html#l00022">ScriptConsoleSoundsTab()</a>.</p>
 
 </div>
 </div>

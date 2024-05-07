@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -194,6 +191,29 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00343">343</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  344</span>  {</div>
+<div class="line"><span class="lineno">  345</span>    <span class="comment">//Disable update on server (PluginDeveloperSync)</span></div>
+<div class="line"><span class="lineno">  346</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  347</span> </div>
+<div class="line"><span class="lineno">  348</span>    <span class="comment">//if client, send RPC</span></div>
+<div class="line"><span class="lineno">  349</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">  350</span>    {</div>
+<div class="line"><span class="lineno">  351</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;int&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;int&gt;</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  352</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  353</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.RPCSingleParam(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_RPC_MODS_ACTIVATE, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  354</span>    }</div>
+<div class="line"><span class="lineno">  355</span>    <span class="comment">//else set directly</span></div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  357</span>      <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.ActivateModifier(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  358</span>  }</div>
+<div class="ttc" id="a_e_r_p_cs_8c_html_a6ce2d98a3b8fbdba5b450abf2d6eab37"><div class="ttname"><a href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a></div><div class="ttdeci">ERPCs</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d06/_e_r_p_cs_8c_source.html#l00001">ERPCs.c:2</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a93e051f4df1347369c55ce234c7f90ca"><div class="ttname"><a href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a></div><div class="ttdeci">PluginDeveloperSync m_PluginDeveloperSync</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">HudDebugWinCharModifiers.c:28</a></div></div>
+<div class="ttc" id="a_modifier_base_8c_html_aaf6ee4d1f067be1038b7a662af6af1bf"><div class="ttname"><a href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a></div><div class="ttdeci">PlayerBase GetPlayer()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0e/_modifier_base_8c_source.html#l00047">ModifierBase.c:47</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_player_base_html"><div class="ttname"><a href="../../d5/d08/class_player_base.html">PlayerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_player_base_client_8c_source.html#l00001">PlayerBaseClient.c:2</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>.</p>
 
 </div>
 </div>
@@ -235,6 +255,55 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00171">171</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>  {</div>
+<div class="line"><span class="lineno">  173</span>    <span class="comment">//create widget</span></div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">widget</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/debug/day_z_hud_debug_modifier.layout&quot;</span>, <a class="code hl_variable" href="#a88e627469f8632e3b2ce5baea56bd280">m_WgtModifiersContent</a>);</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <span class="comment">//add to widget array (for clearing purposes)</span></div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_variable" href="#aa86b03650a22f74c4c1376d50c7a8fb3">m_ModifierWidgets</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>);</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>    <span class="comment">//set widget name</span></div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mod_name_text</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>.FindAnyWidget(<span class="stringliteral">&quot;TextModifierName&quot;</span>));</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">mod_name_text</a>.SetText(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>);</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">active</a>)</div>
+<div class="line"><span class="lineno">  183</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">mod_name_text</a>.SetTextColor(<a class="code hl_function" href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a>(255, 0, 255, 0));</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  185</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">mod_name_text</a>.SetTextColor(<a class="code hl_function" href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a>(255, 255, 0, 0));</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>    <span class="comment">//set set data for interactive parts (modifier ID should be enough)</span></div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_class" href="../../da/d09/class_debug_modifier_data.html">DebugModifierData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../da/d09/class_debug_modifier_data.html">DebugModifierData</a>(<a class="code hl_variable" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>, <span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">modifier_button</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>.FindAnyWidget(<span class="stringliteral">&quot;TextModifierName&quot;</span>);</div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">modifier_button</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  192</span>    <span class="comment">//Activate button</span></div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">activate_button</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>.FindAnyWidget(<span class="stringliteral">&quot;ButtonModifierActivate&quot;</span>);</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">activate_button</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    <span class="comment">//Deactivate button</span></div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">deactivate_button</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>.FindAnyWidget(<span class="stringliteral">&quot;ButtonModifierDeactivate&quot;</span>);</div>
+<div class="line"><span class="lineno">  198</span>    <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">deactivate_button</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>    <span class="comment">//Lock checkbox</span></div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">checkbox_widget</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">widget</a>.FindAnyWidget(<span class="stringliteral">&quot;CheckBoxLock&quot;</span>);</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">checkbox_widget</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>);</div>
+<div class="line"><span class="lineno">  203</span>    <span class="comment">//set lock based on checkbox value</span></div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">CheckBoxWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">checkbox</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">CheckBoxWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">checkbox_widget</a>);</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">checkbox</a>.SetChecked(<a class="code hl_class" href="../../db/d06/class_param3.html">locked</a>);</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_class" href="../../d7/d0d/class_auto_height_spacer.html">AutoHeightSpacer</a> <a class="code hl_class" href="../../db/d06/class_param3.html">WgtModifiersContent_panel_script</a>;</div>
+<div class="line"><span class="lineno">  208</span>    <a class="code hl_variable" href="#a88e627469f8632e3b2ce5baea56bd280">m_WgtModifiersContent</a>.GetScript(<a class="code hl_class" href="../../db/d06/class_param3.html">WgtModifiersContent_panel_script</a>);</div>
+<div class="line"><span class="lineno">  209</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">WgtModifiersContent_panel_script</a>.Update();</div>
+<div class="line"><span class="lineno">  210</span>  }</div>
+<div class="ttc" id="a_cfg_player_spawn_data_json_8c_html_ad8c6fb88ec9295d5e3b3c7ad4854b647"><div class="ttname"><a href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a></div><div class="ttdeci">PlayerSpawnPresetDiscreteItemSetSlotData name</div><div class="ttdoc">one set for cargo</div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a6adf217470a6e5875e52c8632b2ba73f"><div class="ttname"><a href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a></div><div class="ttdeci">ref map&lt; Widget, ref DebugModifierData &gt; m_ModifierWidgetData</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00027">HudDebugWinCharModifiers.c:27</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a88e627469f8632e3b2ce5baea56bd280"><div class="ttname"><a href="#a88e627469f8632e3b2ce5baea56bd280">m_WgtModifiersContent</a></div><div class="ttdeci">class DebugModifierData m_WgtModifiersContent</div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_aa86b03650a22f74c4c1376d50c7a8fb3"><div class="ttname"><a href="#aa86b03650a22f74c4c1376d50c7a8fb3">m_ModifierWidgets</a></div><div class="ttdeci">ref array&lt; ref Widget &gt; m_ModifierWidgets</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00026">HudDebugWinCharModifiers.c:26</a></div></div>
+<div class="ttc" id="aclass_auto_height_spacer_html"><div class="ttname"><a href="../../d7/d0d/class_auto_height_spacer.html">AutoHeightSpacer</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d00/_auto_height_spacer_8c_source.html#l00002">AutoHeightSpacer.c:3</a></div></div>
+<div class="ttc" id="aclass_debug_modifier_data_html"><div class="ttname"><a href="../../da/d09/class_debug_modifier_data.html">DebugModifierData</a></div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00001">HudDebugWinCharModifiers.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="../../dd/d0a/class_widget.html">Widget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00189">EnWidgets.c:190</a></div></div>
+<div class="ttc" id="aproto_8c_html_a117bd706d35f6f2ae3f5db263b778704"><div class="ttname"><a href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a></div><div class="ttdeci">int ARGB(int a, int r, int g, int b)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/proto_8c_source.html#l00322">proto.c:322</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0d/proto_8c_source.html#l00322">ARGB()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00027">m_ModifierWidgetData</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00026">m_ModifierWidgets</a>, <a class="el" href="#a88e627469f8632e3b2ce5baea56bd280">m_WgtModifiersContent</a>, and <a class="el" href="../../d0/d04/_cfg_player_spawn_data_json_8c.html#ad8c6fb88ec9295d5e3b3c7ad4854b647">name</a>.</p>
 
 </div>
 </div>
@@ -262,6 +331,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00212">212</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>  {</div>
+<div class="line"><span class="lineno">  214</span>    <span class="comment">//clear widget data</span></div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Clear();</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>    <span class="comment">//destroy all modifier widgets</span></div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#aa86b03650a22f74c4c1376d50c7a8fb3">m_ModifierWidgets</a>.Count(); ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  219</span>      <span class="keyword">delete</span> <a class="code hl_variable" href="#aa86b03650a22f74c4c1376d50c7a8fb3">m_ModifierWidgets</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  220</span>    <a class="code hl_variable" href="#aa86b03650a22f74c4c1376d50c7a8fb3">m_ModifierWidgets</a>.Clear();</div>
+<div class="line"><span class="lineno">  221</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00027">m_ModifierWidgetData</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00026">m_ModifierWidgets</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00153">SetModifiers()</a>.</p>
 
 </div>
 </div>
@@ -289,6 +371,23 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00360">360</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  361</span>  {</div>
+<div class="line"><span class="lineno">  362</span>    <span class="comment">//Disable update on server (PluginDeveloperSync)</span></div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  364</span> </div>
+<div class="line"><span class="lineno">  365</span>    <span class="comment">//if client, send RPC</span></div>
+<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">  367</span>    {</div>
+<div class="line"><span class="lineno">  368</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;int&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;int&gt;</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  369</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  370</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.RPCSingleParam(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_RPC_MODS_DEACTIVATE, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  371</span>    }</div>
+<div class="line"><span class="lineno">  372</span>    <span class="comment">//else set directly</span></div>
+<div class="line"><span class="lineno">  373</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  374</span>      <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.DeactivateModifier(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  375</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>.</p>
 
 </div>
 </div>
@@ -316,6 +415,29 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00128">128</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>  {</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">title_size</a> = 20;</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">spacing</a> = 20;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">//get wgt content size values</span></div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">wgt_content_size_x</a>;</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">wgt_content_size_y</a>;</div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="#a88e627469f8632e3b2ce5baea56bd280">m_WgtModifiersContent</a>.GetSize(<a class="code hl_class" href="../../db/d06/class_param3.html">wgt_content_size_x</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">wgt_content_size_y</a>);</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    <span class="comment">//get wgt root size values</span></div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">wgt_root_size_x</a>;</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">wgt_root_size_y</a>;</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_variable" href="../../d8/d06/_hud_debug_8c.html#affd50c5c1389d0d7aa3e7e901303bedc">m_WgtRoot</a>.GetSize(<a class="code hl_class" href="../../db/d06/class_param3.html">wgt_root_size_x</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">wgt_root_size_y</a>);</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>    <span class="comment">//calculate new Y size</span></div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">new_size_y</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">title_size</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">wgt_content_size_y</a> + <a class="code hl_class" href="../../db/d06/class_param3.html">spacing</a>;</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    <span class="comment">//set size</span></div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_variable" href="../../d8/d06/_hud_debug_8c.html#affd50c5c1389d0d7aa3e7e901303bedc">m_WgtRoot</a>.SetSize(<a class="code hl_class" href="../../db/d06/class_param3.html">wgt_root_size_x</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">new_size_y</a>);</div>
+<div class="line"><span class="lineno">  148</span>  }</div>
+<div class="ttc" id="a_hud_debug_8c_html_affd50c5c1389d0d7aa3e7e901303bedc"><div class="ttname"><a href="../../d8/d06/_hud_debug_8c.html#affd50c5c1389d0d7aa3e7e901303bedc">m_WgtRoot</a></div><div class="ttdeci">Widget m_WgtRoot</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d06/_hud_debug_8c_source.html#l00092">HudDebug.c:92</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a88e627469f8632e3b2ce5baea56bd280">m_WgtModifiersContent</a>, and <a class="el" href="../../d8/d06/_hud_debug_8c_source.html#l00092">m_WgtRoot</a>.</p>
 
 </div>
 </div>
@@ -343,6 +465,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00055">55</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>  {</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="../../d8/d06/_hud_debug_8c.html#af52fba056325c71e0a210bf9abde5dc9">HudDebug</a>.HUD_WIN_CHAR_MODIFIERS;</div>
+<div class="line"><span class="lineno">   58</span>  }</div>
+<div class="ttc" id="a_hud_debug_8c_html_af52fba056325c71e0a210bf9abde5dc9"><div class="ttname"><a href="../../d8/d06/_hud_debug_8c.html#af52fba056325c71e0a210bf9abde5dc9">HudDebug</a></div><div class="ttdeci">void HudDebug()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d06/_hud_debug_8c_source.html#l00104">HudDebug.c:104</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d06/_hud_debug_8c_source.html#l00104">HudDebug()</a>.</p>
 
 </div>
 </div>
@@ -370,6 +498,16 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00105">105</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Hide();</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="comment">//Print(&quot;Hide()&quot;);</span></div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_function" href="#a18f91c2f28458f76d982865ecad720a5">SetUpdate</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  112</span>  }</div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a18f91c2f28458f76d982865ecad720a5"><div class="ttname"><a href="#a18f91c2f28458f76d982865ecad720a5">SetUpdate</a></div><div class="ttdeci">override void SetUpdate(bool state)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00063">HudDebugWinCharModifiers.c:63</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d02/class_hud_debug_win_base.html#a82a7977e27833769df90efdfb3670b2f">HudDebugWinBase::SetUpdate()</a>.</p>
 
 </div>
 </div>
@@ -397,6 +535,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00038">38</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>  {</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="../../d8/d06/_hud_debug_8c.html#affd50c5c1389d0d7aa3e7e901303bedc">m_WgtRoot</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">widget_root</a>;</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="#a88e627469f8632e3b2ce5baea56bd280">m_WgtModifiersContent</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.Cast(<a class="code hl_variable" href="../../d8/d06/_hud_debug_8c.html#affd50c5c1389d0d7aa3e7e901303bedc">m_WgtRoot</a>.FindAnyWidget(<span class="stringliteral">&quot;pnl_CharModifiers_Values&quot;</span>));</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_variable" href="#aa86b03650a22f74c4c1376d50c7a8fb3">m_ModifierWidgets</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;ref Widget&gt;</a>;</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;Widget, ref DebugModifierData&gt;</a>;</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a> = PluginDeveloperSync.Cast(<a class="code hl_function" href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a>(PluginDeveloperSync));</div>
+<div class="line"><span class="lineno">   45</span>  }</div>
+<div class="ttc" id="a_plugin_manager_8c_html_a35050f82bea320b7a5336fc549630eaf"><div class="ttname"><a href="../../d9/d0d/_plugin_manager_8c.html#a35050f82bea320b7a5336fc549630eaf">GetPlugin</a></div><div class="ttdeci">PluginBase GetPlugin(typename plugin_type)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">PluginManager.c:300</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d9/d0d/_plugin_manager_8c_source.html#l00300">GetPlugin()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00027">m_ModifierWidgetData</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00026">m_ModifierWidgets</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>, <a class="el" href="#a88e627469f8632e3b2ce5baea56bd280">m_WgtModifiersContent</a>, and <a class="el" href="../../d8/d06/_hud_debug_8c_source.html#l00092">m_WgtRoot</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d06/_hud_debug_8c_source.html#l00120">Init()</a>.</p>
 
 </div>
 </div>
@@ -428,6 +578,25 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00377">377</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  378</span>  {</div>
+<div class="line"><span class="lineno">  379</span>    <span class="comment">//Disable update on server (PluginDeveloperSync)</span></div>
+<div class="line"><span class="lineno">  380</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  381</span> </div>
+<div class="line"><span class="lineno">  382</span>    <span class="comment">//if client, send RPC</span></div>
+<div class="line"><span class="lineno">  383</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">  384</span>    {</div>
+<div class="line"><span class="lineno">  385</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">Param2&lt;int, bool&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param2&lt;int, bool&gt;</a>(<span class="keywordtype">id</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">state</a>);</div>
+<div class="line"><span class="lineno">  386</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  387</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.RPCSingleParam(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_RPC_MODS_LOCK, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  388</span>    }</div>
+<div class="line"><span class="lineno">  389</span>    <span class="comment">//else set directly</span></div>
+<div class="line"><span class="lineno">  390</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  391</span>      <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.LockModifier(<span class="keywordtype">id</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">state</a>);</div>
+<div class="line"><span class="lineno">  392</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">OnClick()</a>.</p>
 
 </div>
 </div>
@@ -469,6 +638,96 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">226</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>  {</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>)</div>
+<div class="line"><span class="lineno">  229</span>    {</div>
+<div class="line"><span class="lineno">  230</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName() == <span class="stringliteral">&quot;TextModifierName&quot;</span>)</div>
+<div class="line"><span class="lineno">  231</span>      {</div>
+<div class="line"><span class="lineno">  232</span>        <span class="comment">//Print(&quot;clicked&quot;);</span></div>
+<div class="line"><span class="lineno">  233</span>        <a class="code hl_class" href="../../da/d09/class_debug_modifier_data.html">DebugModifierData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">bc_data</a> = <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>);</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>        <span class="comment">//Print( bc_data.GetID() );</span></div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">bc_data</a>.GetID() == <a class="code hl_variable" href="#a9bf229abb76f309ba6b0555a992b994b">m_DetailedInfoIndex</a>) <span class="comment">//repeated request --&gt; hide</span></div>
+<div class="line"><span class="lineno">  238</span>        {</div>
+<div class="line"><span class="lineno">  239</span>          <span class="keywordflow">if</span> (<a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a> &amp;&amp; <a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a>.IsVisible())</div>
+<div class="line"><span class="lineno">  240</span>            <a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a>.Show(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  241</span>          <a class="code hl_variable" href="#a9bf229abb76f309ba6b0555a992b994b">m_DetailedInfoIndex</a> = 0;</div>
+<div class="line"><span class="lineno">  242</span>        }</div>
+<div class="line"><span class="lineno">  243</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  244</span>        {</div>
+<div class="line"><span class="lineno">  245</span>          <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a>)</div>
+<div class="line"><span class="lineno">  246</span>            <a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a> = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/debug/day_z_hud_debug_modifier_detailed.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  247</span>          <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a>.IsVisible())</div>
+<div class="line"><span class="lineno">  248</span>            <a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  249</span>          <a class="code hl_variable" href="#a9bf229abb76f309ba6b0555a992b994b">m_DetailedInfoIndex</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">bc_data</a>.GetID();</div>
+<div class="line"><span class="lineno">  250</span>        }</div>
+<div class="line"><span class="lineno">  251</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a8300a8d166722d3b9ee4e50c854a9a53">m_WgtDetailedInfoText</a>)</div>
+<div class="line"><span class="lineno">  252</span>          <a class="code hl_variable" href="#a8300a8d166722d3b9ee4e50c854a9a53">m_WgtDetailedInfoText</a>.SetText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  253</span>        <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.m_PlayerModsDetailedSynced = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  254</span>        <a class="code hl_function" href="#a959bc31155e5bd8b87a0b54f4850dfb7">RequestDetailedInfo</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">bc_data</a>.GetID());</div>
+<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  256</span>      }</div>
+<div class="line"><span class="lineno">  257</span>      <span class="comment">//Button activate</span></div>
+<div class="line"><span class="lineno">  258</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName() == <span class="stringliteral">&quot;ButtonModifierActivate&quot;</span>)</div>
+<div class="line"><span class="lineno">  259</span>      {</div>
+<div class="line"><span class="lineno">  260</span>        <a class="code hl_class" href="../../da/d09/class_debug_modifier_data.html">DebugModifierData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ba_data</a> = <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>);</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>        <span class="comment">//activate</span></div>
+<div class="line"><span class="lineno">  263</span>        <a class="code hl_function" href="#a6a8fa53b9a7d1df412f4812068a9a642">ActivateModifier</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">ba_data</a>.GetID());</div>
+<div class="line"><span class="lineno">  264</span> </div>
+<div class="line"><span class="lineno">  265</span>        <span class="comment">//force update</span></div>
+<div class="line"><span class="lineno">  266</span>        <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.Update();</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  269</span>      }</div>
+<div class="line"><span class="lineno">  270</span>      <span class="comment">//Button deactivate</span></div>
+<div class="line"><span class="lineno">  271</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName() == <span class="stringliteral">&quot;ButtonModifierDeactivate&quot;</span>)</div>
+<div class="line"><span class="lineno">  272</span>      {</div>
+<div class="line"><span class="lineno">  273</span>        <a class="code hl_class" href="../../da/d09/class_debug_modifier_data.html">DebugModifierData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">bd_data</a> = <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>);</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span>        <span class="comment">//deactivate</span></div>
+<div class="line"><span class="lineno">  276</span>        <a class="code hl_function" href="#a4ef1d3d679450f6a70df629362c22a71">DeactivateModifier</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">bd_data</a>.GetID());</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>        <span class="comment">//force update</span></div>
+<div class="line"><span class="lineno">  279</span>        <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.Update();</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  282</span>      }</div>
+<div class="line"><span class="lineno">  283</span>      <span class="comment">//Lock checkbox</span></div>
+<div class="line"><span class="lineno">  284</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName() == <span class="stringliteral">&quot;CheckBoxLock&quot;</span>)</div>
+<div class="line"><span class="lineno">  285</span>      {</div>
+<div class="line"><span class="lineno">  286</span>        <a class="code hl_class" href="../../da/d09/class_debug_modifier_data.html">DebugModifierData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">lcb_data</a> = <a class="code hl_variable" href="#a6adf217470a6e5875e52c8632b2ba73f">m_ModifierWidgetData</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>);</div>
+<div class="line"><span class="lineno">  287</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">CheckBoxWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">checkbox</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">CheckBoxWidget</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>);</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>        <span class="comment">//set lock</span></div>
+<div class="line"><span class="lineno">  290</span>        <a class="code hl_function" href="#ade1c99a7140af872db7a155e4f495e3a">LockModifier</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">lcb_data</a>.GetID(), <a class="code hl_class" href="../../db/d06/class_param3.html">checkbox</a>.IsChecked());</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>        <span class="comment">//force update</span></div>
+<div class="line"><span class="lineno">  293</span>        <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.Update();</div>
+<div class="line"><span class="lineno">  294</span> </div>
+<div class="line"><span class="lineno">  295</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  296</span>      }</div>
+<div class="line"><span class="lineno">  297</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetName() == <span class="stringliteral">&quot;ResetModifiers&quot;</span>)</div>
+<div class="line"><span class="lineno">  298</span>      {</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>        <a class="code hl_function" href="#a7ddf92ac74f73f3af7a1a966fe9a43a2">ResetModifiers</a>();</div>
+<div class="line"><span class="lineno">  301</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  302</span>      }</div>
+<div class="line"><span class="lineno">  303</span>    }</div>
+<div class="line"><span class="lineno">  304</span> </div>
+<div class="line"><span class="lineno">  305</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  306</span>  }</div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a4ef1d3d679450f6a70df629362c22a71"><div class="ttname"><a href="#a4ef1d3d679450f6a70df629362c22a71">DeactivateModifier</a></div><div class="ttdeci">void DeactivateModifier(int id)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00360">HudDebugWinCharModifiers.c:360</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a6a8fa53b9a7d1df412f4812068a9a642"><div class="ttname"><a href="#a6a8fa53b9a7d1df412f4812068a9a642">ActivateModifier</a></div><div class="ttdeci">void ActivateModifier(int id)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00343">HudDebugWinCharModifiers.c:343</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a7ddf92ac74f73f3af7a1a966fe9a43a2"><div class="ttname"><a href="#a7ddf92ac74f73f3af7a1a966fe9a43a2">ResetModifiers</a></div><div class="ttdeci">void ResetModifiers()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00312">HudDebugWinCharModifiers.c:312</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a8300a8d166722d3b9ee4e50c854a9a53"><div class="ttname"><a href="#a8300a8d166722d3b9ee4e50c854a9a53">m_WgtDetailedInfoText</a></div><div class="ttdeci">TextWidget m_WgtDetailedInfoText</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00030">HudDebugWinCharModifiers.c:30</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a959bc31155e5bd8b87a0b54f4850dfb7"><div class="ttname"><a href="#a959bc31155e5bd8b87a0b54f4850dfb7">RequestDetailedInfo</a></div><div class="ttdeci">void RequestDetailedInfo(int id)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00326">HudDebugWinCharModifiers.c:326</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a9bf229abb76f309ba6b0555a992b994b"><div class="ttname"><a href="#a9bf229abb76f309ba6b0555a992b994b">m_DetailedInfoIndex</a></div><div class="ttdeci">int m_DetailedInfoIndex</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00031">HudDebugWinCharModifiers.c:31</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_abc6fa5f8401187c5ccf789bbc61eee78"><div class="ttname"><a href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a></div><div class="ttdeci">Widget m_WgtDetailedInfo</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00029">HudDebugWinCharModifiers.c:29</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_ade1c99a7140af872db7a155e4f495e3a"><div class="ttname"><a href="#ade1c99a7140af872db7a155e4f495e3a">LockModifier</a></div><div class="ttdeci">void LockModifier(int id, bool state)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00377">HudDebugWinCharModifiers.c:377</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/_modifiers_manager_8c_source.html#l00210">ActivateModifier()</a>, <a class="el" href="../../d3/d0c/_modifiers_manager_8c_source.html#l00215">DeactivateModifier()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00377">LockModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00031">m_DetailedInfoIndex</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00027">m_ModifierWidgetData</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00029">m_WgtDetailedInfo</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00030">m_WgtDetailedInfoText</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00326">RequestDetailedInfo()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00312">ResetModifiers()</a>.</p>
 
 </div>
 </div>
@@ -496,6 +755,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00114">114</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>  {</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_function" href="#a99fc4710840475be3b3590716d9322ed">SetModifiers</a>();</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a> &amp;&amp; <a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a>.IsVisible())</div>
+<div class="line"><span class="lineno">  118</span>    {</div>
+<div class="line"><span class="lineno">  119</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a8300a8d166722d3b9ee4e50c854a9a53">m_WgtDetailedInfoText</a>)</div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_variable" href="#a8300a8d166722d3b9ee4e50c854a9a53">m_WgtDetailedInfoText</a> = <a class="code hl_class" href="../../da/d0c/class_text_widget.html">TextWidget</a>.Cast(<a class="code hl_variable" href="#abc6fa5f8401187c5ccf789bbc61eee78">m_WgtDetailedInfo</a>.FindAnyWidget(<span class="stringliteral">&quot;TextWidget&quot;</span>));</div>
+<div class="line"><span class="lineno">  121</span>      <a class="code hl_variable" href="#a8300a8d166722d3b9ee4e50c854a9a53">m_WgtDetailedInfoText</a>.SetText(<a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.m_PlayerModsDetailedSynced);</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a99fc4710840475be3b3590716d9322ed"><div class="ttname"><a href="#a99fc4710840475be3b3590716d9322ed">SetModifiers</a></div><div class="ttdeci">void SetModifiers()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00153">HudDebugWinCharModifiers.c:153</a></div></div>
+<div class="ttc" id="aclass_text_widget_html"><div class="ttname"><a href="../../da/d0c/class_text_widget.html">TextWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00219">EnWidgets.c:220</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00029">m_WgtDetailedInfo</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00030">m_WgtDetailedInfoText</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00153">SetModifiers()</a>.</p>
 
 </div>
 </div>
@@ -523,6 +795,25 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00326">326</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>  {</div>
+<div class="line"><span class="lineno">  328</span>    <span class="comment">//Disable update on server (PluginDeveloperSync)</span></div>
+<div class="line"><span class="lineno">  329</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  330</span> </div>
+<div class="line"><span class="lineno">  331</span>    <span class="comment">//if client, send RPC</span></div>
+<div class="line"><span class="lineno">  332</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">  333</span>    {</div>
+<div class="line"><span class="lineno">  334</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;int&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;int&gt;</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">  335</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  336</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.RPCSingleParam(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_RPC_MODS_DETAILED, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  337</span>    }</div>
+<div class="line"><span class="lineno">  338</span>    <span class="comment">//else set directly</span></div>
+<div class="line"><span class="lineno">  339</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  340</span>      <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.RequestDetailedInfo(<span class="keywordtype">id</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">  341</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">OnClick()</a>.</p>
 
 </div>
 </div>
@@ -550,6 +841,21 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00312">312</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  313</span>  {</div>
+<div class="line"><span class="lineno">  314</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">  315</span> </div>
+<div class="line"><span class="lineno">  316</span>    <span class="comment">//if client, send RPC</span></div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;bool&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;bool&gt;</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  319</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">  320</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.RPCSingleParam(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_RPC_MODS_RESET, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span> </div>
+<div class="line"><span class="lineno">  323</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">OnClick()</a>.</p>
 
 </div>
 </div>
@@ -577,6 +883,30 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00153">153</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>  {</div>
+<div class="line"><span class="lineno">  155</span>    <span class="comment">//clear window</span></div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_function" href="#a17f688e43f406f020950af5758c4bef4">ClearModifiers</a>();</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.m_PlayerModsSynced.Count() &gt; 0)</div>
+<div class="line"><span class="lineno">  159</span>    {</div>
+<div class="line"><span class="lineno">  160</span>      <span class="comment">//set active mods</span></div>
+<div class="line"><span class="lineno">  161</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.m_PlayerModsSynced.Count(); ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  162</span>      {</div>
+<div class="line"><span class="lineno">  163</span>        <a class="code hl_class" href="../../d4/d04/class_synced_value_modifier.html">SyncedValueModifier</a> <a class="code hl_class" href="../../db/d06/class_param3.html">synced_value</a> = <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.m_PlayerModsSynced.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  164</span>        <a class="code hl_function" href="#a19e68cf59c44db93b97c8b6c843e9ccd">AddModifier</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">synced_value</a>.GetName(), <a class="code hl_class" href="../../db/d06/class_param3.html">synced_value</a>.GetID(), <a class="code hl_class" href="../../db/d06/class_param3.html">synced_value</a>.GetActive(), <a class="code hl_class" href="../../db/d06/class_param3.html">synced_value</a>.GetLocked());</div>
+<div class="line"><span class="lineno">  165</span>      }</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_function" href="#a574a1ad69744c4cfab5e203a2010ee3c">FitWindow</a>();</div>
+<div class="line"><span class="lineno">  169</span>  }</div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a17f688e43f406f020950af5758c4bef4"><div class="ttname"><a href="#a17f688e43f406f020950af5758c4bef4">ClearModifiers</a></div><div class="ttdeci">void ClearModifiers()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00212">HudDebugWinCharModifiers.c:212</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a19e68cf59c44db93b97c8b6c843e9ccd"><div class="ttname"><a href="#a19e68cf59c44db93b97c8b6c843e9ccd">AddModifier</a></div><div class="ttdeci">void AddModifier(string name, int id, bool active, bool locked)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00171">HudDebugWinCharModifiers.c:171</a></div></div>
+<div class="ttc" id="a_hud_debug_win_char_modifiers_8c_html_a574a1ad69744c4cfab5e203a2010ee3c"><div class="ttname"><a href="#a574a1ad69744c4cfab5e203a2010ee3c">FitWindow</a></div><div class="ttdeci">void FitWindow()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00128">HudDebugWinCharModifiers.c:128</a></div></div>
+<div class="ttc" id="aclass_synced_value_modifier_html"><div class="ttname"><a href="../../d4/d04/class_synced_value_modifier.html">SyncedValueModifier</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d05/_synced_value_8c_source.html#l00067">SyncedValue.c:68</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/_modifiers_manager_8c_source.html#l00177">AddModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00212">ClearModifiers()</a>, <a class="el" href="../../df/d02/_hud_debug_win_char_levels_8c_source.html#l00128">HudDebugWinBase::FitWindow()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00114">Refresh()</a>.</p>
 
 </div>
 </div>
@@ -604,6 +934,29 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00063">63</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>  {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">//Disable update on server (PluginDeveloperSync)</span></div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">player</a> = <a class="code hl_class" href="../../d5/d08/class_player_base.html">PlayerBase</a>.Cast(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../de/d0e/_modifier_base_8c.html#aaf6ee4d1f067be1038b7a662af6af1bf">GetPlayer</a>());</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">//if client, send RPC</span></div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().IsClient())</div>
+<div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">ref</a> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;bool&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">params</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">Param1&lt;bool&gt;</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">state</a>);</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>)</div>
+<div class="line"><span class="lineno">   73</span>      {</div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.RPCSingleParam(<a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_MODS_UPDATE, <a class="code hl_class" href="../../db/d06/class_param3.html">params</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   75</span>        SetRPCSent();</div>
+<div class="line"><span class="lineno">   76</span>      }</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span>    <span class="comment">//else set directly</span></div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>)</div>
+<div class="line"><span class="lineno">   82</span>        <a class="code hl_variable" href="#a93e051f4df1347369c55ce234c7f90ca">m_PluginDeveloperSync</a>.EnableUpdate(<a class="code hl_class" href="../../db/d06/class_param3.html">state</a>, <a class="code hl_enumeration" href="../../d0/d06/_e_r_p_cs_8c.html#a6ce2d98a3b8fbdba5b450abf2d6eab37">ERPCs</a>.DEV_MODS_UPDATE, <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>);</div>
+<div class="line"><span class="lineno">   83</span>    }</div>
+<div class="line"><span class="lineno">   84</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../de/d0e/_modifier_base_8c_source.html#l00047">GetPlayer()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">m_PluginDeveloperSync</a>, and <a class="el" href="../../d6/d0f/_hud_debug_win_base_8c_source.html#l00037">HudDebugWinBase::SetRPCSent()</a>.</p>
 
 </div>
 </div>
@@ -631,6 +984,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00096">96</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>  {</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Show();</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">//Print(&quot;Show()&quot;);</span></div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_function" href="#a18f91c2f28458f76d982865ecad720a5">SetUpdate</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d02/class_hud_debug_win_base.html#a82a7977e27833769df90efdfb3670b2f">HudDebugWinBase::SetUpdate()</a>.</p>
 
 </div>
 </div>
@@ -658,6 +1020,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00047">47</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="#a18f91c2f28458f76d982865ecad720a5">SetUpdate</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d02/class_hud_debug_win_base.html#a82a7977e27833769df90efdfb3670b2f">HudDebugWinBase::SetUpdate()</a>.</p>
 
 </div>
 </div>
@@ -684,6 +1051,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00031">31</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">OnClick()</a>.</p>
+
 </div>
 </div>
 <a id="a6adf217470a6e5875e52c8632b2ba73f" name="a6adf217470a6e5875e52c8632b2ba73f"></a>
@@ -707,6 +1076,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00027">27</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00171">AddModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00212">ClearModifiers()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00038">HudDebugWinCharModifiers()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">OnClick()</a>.</p>
 
 </div>
 </div>
@@ -732,6 +1103,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00026">26</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00171">AddModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00212">ClearModifiers()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00038">HudDebugWinCharModifiers()</a>.</p>
+
 </div>
 </div>
 <a id="a93e051f4df1347369c55ce234c7f90ca" name="a93e051f4df1347369c55ce234c7f90ca"></a>
@@ -755,6 +1128,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00028">28</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00343">ActivateModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00360">DeactivateModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00038">HudDebugWinCharModifiers()</a>, <a class="el" href="../../db/d05/_hud_debug_win_temperature_8c_source.html#l00010">HudDebugWinBase::HudDebugWinTemperature()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00377">LockModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">OnClick()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00114">Refresh()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00326">RequestDetailedInfo()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00153">SetModifiers()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00063">SetUpdate()</a>, and <a class="el" href="../../db/d05/_hud_debug_win_temperature_8c_source.html#l00027">HudDebugWinBase::SetUpdate()</a>.</p>
 
 </div>
 </div>
@@ -780,6 +1155,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00029">29</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">OnClick()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00114">Refresh()</a>.</p>
+
 </div>
 </div>
 <a id="a8300a8d166722d3b9ee4e50c854a9a53" name="a8300a8d166722d3b9ee4e50c854a9a53"></a>
@@ -804,6 +1181,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00030">30</a> of file <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html">HudDebugWinCharModifiers.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00226">OnClick()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00114">Refresh()</a>.</p>
+
 </div>
 </div>
 <a id="a88e627469f8632e3b2ce5baea56bd280" name="a88e627469f8632e3b2ce5baea56bd280"></a>
@@ -817,6 +1196,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00171">AddModifier()</a>, <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00128">FitWindow()</a>, and <a class="el" href="../../d2/d04/_hud_debug_win_char_modifiers_8c_source.html#l00038">HudDebugWinCharModifiers()</a>.</p>
 
 </div>
 </div>

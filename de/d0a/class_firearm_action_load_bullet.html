@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -160,7 +157,11 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html#l00003">3</a> of file <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html">FirearmActionLoadBullet.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    4</span>  {</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_variable" href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a> = <span class="stringliteral">&quot;#load_bullet&quot;</span>;</div>
+<div class="line"><span class="lineno">    6</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a11fc80cdcb775f018854049236528029"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a11fc80cdcb775f018854049236528029">m_Text</a></div><div class="ttdeci">string m_Text</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00049">ActionBase.c:49</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -197,7 +198,35 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html#l00013">13</a> of file <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html">FirearmActionLoadBullet.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   14</span>  {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.ActionCondition(<a class="code hl_class" href="../../db/d06/class_param3.html">player</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">target</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">item</a>))</div>
+<div class="line"><span class="lineno">   16</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   17</span> </div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_class" href="../../da/d00/class_human_command_weapons.html">HumanCommandWeapons</a> <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetCommandModifier_Weapons();</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject())</div>
+<div class="line"><span class="lineno">   20</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject());</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsManagingArrows() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsDamageDestroyed())</div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>      <a class="code hl_class" href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a> = <a class="code hl_class" href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.GetArrowManager());</div>
+<div class="line"><span class="lineno">   27</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>)</div>
+<div class="line"><span class="lineno">   28</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>.GetFirstArrow());</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   31</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject());</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a> <a class="code hl_class" href="../../db/d06/class_param3.html">weapon</a> = <a class="code hl_class" href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">item</a>);</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">player</a>.GetWeaponManager().CanLoadBullet(<a class="code hl_class" href="../../db/d06/class_param3.html">weapon</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a>) &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">hcw</a>.GetRunningAction() != <a class="code hl_enumeration" href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a>.CHAMBERING;</div>
+<div class="line"><span class="lineno">   35</span>  }</div>
+<div class="ttc" id="aclass_arrow_manager_base_html"><div class="ttname"><a href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d9/d04/_arrow_manager_base_8c_source.html#l00001">ArrowManagerBase.c:2</a></div></div>
+<div class="ttc" id="aclass_entity_a_i_html"><div class="ttname"><a href="../../df/d09/class_entity_a_i.html">EntityAI</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/3___game_2_entities_2_building_8c_source.html#l00005">Building.c:6</a></div></div>
+<div class="ttc" id="aclass_human_command_weapons_html"><div class="ttname"><a href="../../da/d00/class_human_command_weapons.html">HumanCommandWeapons</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00973">human.c:974</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_weapon___base_html"><div class="ttname"><a href="../../d3/d0c/class_weapon___base.html">Weapon_Base</a></div><div class="ttdoc">shorthand</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d02/_bolt_action_rifle___base_8c_source.html#l00005">BoltActionRifle_Base.c:6</a></div></div>
+<div class="ttc" id="ahuman_8c_html_a70aa34d22d03160ea5e3d5248cd37093"><div class="ttname"><a href="../../d4/d0e/human_8c.html#a70aa34d22d03160ea5e3d5248cd37093">WeaponActions</a></div><div class="ttdeci">WeaponActions</div><div class="ttdoc">actions</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0e/human_8c_source.html#l00795">human.c:796</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae6e6462255cac5742091854e67e0dac3" name="ae6e6462255cac5742091854e67e0dac3"></a>
@@ -224,7 +253,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html#l00068">68</a> of file <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html">FirearmActionLoadBullet.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a61e08fa16525ebe91b871206985aa73f" name="a61e08fa16525ebe91b871206985aa73f"></a>
@@ -251,7 +283,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html#l00073">73</a> of file <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html">FirearmActionLoadBullet.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   76</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a00a12cfbd11642eaa653cd25ead42d19" name="a00a12cfbd11642eaa653cd25ead42d19"></a>
@@ -278,7 +313,11 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html#l00008">8</a> of file <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html">FirearmActionLoadBullet.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../dd/d01/4___world_2_classes_2_user_actions_component_2__constants_8c.html#a4eb1e98494181fa7bcd7ed24381d61e6">AC_SINGLE_USE</a>;</div>
+<div class="line"><span class="lineno">   11</span>  }</div>
+<div class="ttc" id="a4___world_2_classes_2_user_actions_component_2__constants_8c_html_a4eb1e98494181fa7bcd7ed24381d61e6"><div class="ttname"><a href="../../dd/d01/4___world_2_classes_2_user_actions_component_2__constants_8c.html#a4eb1e98494181fa7bcd7ed24381d61e6">AC_SINGLE_USE</a></div><div class="ttdeci">const int AC_SINGLE_USE</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d01/4___world_2_classes_2_user_actions_component_2__constants_8c_source.html#l00002">_constants.c:2</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae56ab17014922c09a92b099be44f8881" name="ae56ab17014922c09a92b099be44f8881"></a>
@@ -309,7 +348,18 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html#l00055">55</a> of file <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html">FirearmActionLoadBullet.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   56</span>  {</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">target</a>.GetObject());</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a> || (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsManagingArrows() &amp;&amp; !<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsDamageDestroyed()))</div>
+<div class="line"><span class="lineno">   59</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_class" href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.GetArrowManager();</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>)</div>
+<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>.GetFirstArrow();</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab4811af44e520c6b0b2e926d3ba9f1c1" name="ab4811af44e520c6b0b2e926d3ba9f1c1"></a>
@@ -336,7 +386,23 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html#l00037">37</a> of file <a class="el" href="../../df/d02/_firearm_action_load_bullet_8c_source.html">FirearmActionLoadBullet.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   38</span>  {</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Start(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>);</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a> <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a>;</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a> <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a> = <a class="code hl_class" href="../../df/d09/class_entity_a_i.html">EntityAI</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject());</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsManagingArrows() &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.IsDamageDestroyed())</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>      <a class="code hl_class" href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a> = <a class="code hl_class" href="../../df/d0f/class_arrow_manager_base.html">ArrowManagerBase</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">entity</a>.GetArrowManager());</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>)</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">arrowManager</a>.AcquireFirstArrow(<span class="keyword">false</span>));</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   50</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">mag</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">Magazine</a>.Cast(<a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Target.GetObject());</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">action_data</a>.m_Player.GetWeaponManager().LoadBullet(<a class="code hl_class" href="../../db/d06/class_param3.html">mag</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   53</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -299,6 +296,40 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00107">107</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>  {</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">color</a> = <a class="code hl_function" href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a>(20, 0, 255, 0);</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">transform</a>[4];</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>;</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[0] = <a class="code hl_class" href="../../db/d06/class_param3.html">horizontalExtents</a>;</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">playerHeight</a>;</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[2] = <a class="code hl_class" href="../../db/d06/class_param3.html">horizontalExtents</a>;</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordtype">float</span> speed = <a class="code hl_function" href="#a4a5f739ae1d537cbeaf85a7822f8a99a">GetSpeedometerAbsolute</a>();</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> (speed &gt; 8)</div>
+<div class="line"><span class="lineno">  121</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[2] = <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[2] * 6;</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> (speed &gt; 8)</div>
+<div class="line"><span class="lineno">  123</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[0] = 2;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#ab7463c8bd3c95e6a622c2599738caf1f">IsAreaAtDoorFree</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">currentSeat</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">maxAllowedObjHeight</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">transform</a>))</div>
+<div class="line"><span class="lineno">  126</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">color</a> = <a class="code hl_function" href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a>(20, 255, 0, 0);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_variable" href="../../dc/d09/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d">Shape</a> <a class="code hl_class" href="../../db/d06/class_param3.html">shape</a> = <a class="code hl_class" href="../../da/d0d/class_debug.html">Debug</a>.<a class="code hl_function" href="../../da/d0d/class_debug.html#a541bc3d8e091df322f3b75e82753d098">DrawBox</a>(-<a class="code hl_class" href="../../db/d06/class_param3.html">extents</a> * 0.5, <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a> * 0.5, <a class="code hl_class" href="../../db/d06/class_param3.html">color</a>);</div>
+<div class="line"><span class="lineno">  129</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">shape</a>.SetMatrix(<a class="code hl_class" href="../../db/d06/class_param3.html">transform</a>);</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">shape</a>;</div>
+<div class="line"><span class="lineno">  131</span>  }</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="../../da/d0d/class_debug.html">Debug</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00013">Debug.c:14</a></div></div>
+<div class="ttc" id="aclass_debug_html_a541bc3d8e091df322f3b75e82753d098"><div class="ttname"><a href="../../da/d0d/class_debug.html#a541bc3d8e091df322f3b75e82753d098">Debug::DrawBox</a></div><div class="ttdeci">static Shape DrawBox(vector pos1, vector pos2, int color=0x1fff7f7f)</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00401">Debug.c:401</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_transport_html_a4a5f739ae1d537cbeaf85a7822f8a99a"><div class="ttname"><a href="#a4a5f739ae1d537cbeaf85a7822f8a99a">Transport::GetSpeedometerAbsolute</a></div><div class="ttdeci">float GetSpeedometerAbsolute()</div><div class="ttdoc">Returns the current speed of the vehicle in km/h. Value is absolute.</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d06/_car_8c_source.html#l00083">Car.c:83</a></div></div>
+<div class="ttc" id="aclass_transport_html_ab7463c8bd3c95e6a622c2599738caf1f"><div class="ttname"><a href="#ab7463c8bd3c95e6a622c2599738caf1f">Transport::IsAreaAtDoorFree</a></div><div class="ttdeci">override bool IsAreaAtDoorFree(int currentSeat, float maxAllowedObjHeight=0.5, float horizontalExtents=0.5, float playerHeight=1.7)</div><div class="ttdef"><b>Definition</b> <a href="../../d9/d06/_car_8c_source.html#l00088">Car.c:88</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="agroup___diag_menu_html_ga6eaf263a07e0b8a8895ed494afceed7d"><div class="ttname"><a href="../../dc/d09/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d">Shape</a></div><div class="ttdeci">class DiagMenu Shape</div><div class="ttdoc">don't call destructor directly. Use Destroy() instead</div></div>
+<div class="ttc" id="aproto_8c_html_a117bd706d35f6f2ae3f5db263b778704"><div class="ttname"><a href="../../dc/d0d/proto_8c.html#a117bd706d35f6f2ae3f5db263b778704">ARGB</a></div><div class="ttdeci">int ARGB(int a, int r, int g, int b)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/proto_8c_source.html#l00322">proto.c:322</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../dc/d0d/proto_8c_source.html#l00322">ARGB()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00401">Debug::DrawBox()</a>, and <a class="el" href="../../dc/d09/group___diag_menu.html#ga6eaf263a07e0b8a8895ed494afceed7d">Shape</a>.</p>
 
 </div>
 </div>
@@ -930,7 +961,10 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00133">133</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">EInventoryIconVisibility</a>.HIDE_VICINITY;</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abc8ed14a1acb29a64730cd32db69e34f" name="abc8ed14a1acb29a64730cd32db69e34f"></a>
@@ -986,6 +1020,14 @@ Private Member Functions</h2></td></tr>
 <p>Returns the current speed of the vehicle in km/h. Value is absolute. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00083">83</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>  {</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d4/d04/class_math.html">Math</a>.<a class="code hl_function" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">AbsFloat</a>(<a class="code hl_function" href="#abc8ed14a1acb29a64730cd32db69e34f">GetSpeedometer</a>());</div>
+<div class="line"><span class="lineno">   86</span>  }</div>
+<div class="ttc" id="aclass_math_html"><div class="ttname"><a href="../../d4/d04/class_math.html">Math</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d04/_en_math_8c_source.html#l00006">EnMath.c:7</a></div></div>
+<div class="ttc" id="aclass_transport_html_abc8ed14a1acb29a64730cd32db69e34f"><div class="ttname"><a href="#abc8ed14a1acb29a64730cd32db69e34f">Transport::GetSpeedometer</a></div><div class="ttdeci">proto native float GetSpeedometer()</div><div class="ttdoc">Returns the current speed of the vehicle in km/h.</div></div>
+<div class="ttc" id="agroup___math_html_gadf8820d46eee5033af2e12212c22b16e"><div class="ttname"><a href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat</a></div><div class="ttdeci">static proto float AbsFloat(float f)</div><div class="ttdoc">Returns absolute value.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d08/group___math.html#gadf8820d46eee5033af2e12212c22b16e">Math::AbsFloat()</a>.</p>
 
 </div>
 </div>
@@ -1135,6 +1177,25 @@ Private Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00088">88</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>  {</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">transform</a>[4];</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a> <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[0] = <a class="code hl_class" href="../../db/d06/class_param3.html">horizontalExtents</a>;</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[1] = <a class="code hl_class" href="../../db/d06/class_param3.html">playerHeight</a>;</div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[2] = <a class="code hl_class" href="../../db/d06/class_param3.html">horizontalExtents</a>;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordtype">float</span> speed = <a class="code hl_function" href="#a4a5f739ae1d537cbeaf85a7822f8a99a">GetSpeedometerAbsolute</a>();</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (speed &gt; 8)</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[2] = <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[2] * 6;</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (speed &gt; 8)</div>
+<div class="line"><span class="lineno">  102</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>[0] = 2;</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#ab7463c8bd3c95e6a622c2599738caf1f">IsAreaAtDoorFree</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">currentSeat</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">maxAllowedObjHeight</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">extents</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">transform</a>);</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../df/d04/_transport_8c_source.html#l00272">EntityAI::DebugFreeAreaAtDoor()</a>, and <a class="el" href="../../df/d04/_transport_8c_source.html#l00260">EntityAI::IsAreaAtDoorFree()</a>.</p>
 
 </div>
 </div>
@@ -1222,7 +1283,11 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true if the engine can start, false otherwise. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00274">274</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  275</span>  {</div>
+<div class="line"><span class="lineno">  276</span>    <span class="comment">// engine can start by default</span></div>
+<div class="line"><span class="lineno">  277</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  278</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab8418127ee84bef9a3839302a5e708bd" name="ab8418127ee84bef9a3839302a5e708bd"></a>
@@ -1273,7 +1338,8 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00353">353</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  353</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af0255db797cbabe221705dd29353b602" name="af0255db797cbabe221705dd29353b602"></a>
@@ -1302,7 +1368,8 @@ Private Member Functions</h2></td></tr>
 <p>Is called every time the engine starts. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00281">281</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  281</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3636972715aec329ad08d66577e43b78" name="a3636972715aec329ad08d66577e43b78"></a>
@@ -1331,7 +1398,8 @@ Private Member Functions</h2></td></tr>
 <p>Is called every time the engine stops. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00287">287</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  287</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aff56d635c8fd2675b3f7ae2f2e24093a" name="aff56d635c8fd2675b3f7ae2f2e24093a"></a>
@@ -1382,7 +1450,8 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00241">241</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  241</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae3145c4b9840cae0204585703dd6f102" name="ae3145c4b9840cae0204585703dd6f102"></a>
@@ -1421,7 +1490,9 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00315">315</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  316</span>  {</div>
+<div class="line"><span class="lineno">  317</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1daea56cb1ced6927f8766374fc132a5" name="a1daea56cb1ced6927f8766374fc132a5"></a>
@@ -1456,7 +1527,8 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00377">377</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  377</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a06d2cbb8d64b5ff50cf5d59eeafe76eb" name="a06d2cbb8d64b5ff50cf5d59eeafe76eb"></a>
@@ -1502,7 +1574,11 @@ Private Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>new value of the specified sound controller. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00363">363</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  364</span>  {</div>
+<div class="line"><span class="lineno">  365</span>    <span class="comment">// just use the computed value by the game code</span></div>
+<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">oldValue</a>;</div>
+<div class="line"><span class="lineno">  367</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2a678b81fe0629d098c1a404f3a099fd" name="a2a678b81fe0629d098c1a404f3a099fd"></a>
@@ -1535,7 +1611,8 @@ Private Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d9/d06/_car_8c_source.html#l00383">383</a> of file <a class="el" href="../../d9/d06/_car_8c_source.html">Car.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  383</span>{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6121e961e2f5fbb3ca284a3016010930" name="a6121e961e2f5fbb3ca284a3016010930"></a>

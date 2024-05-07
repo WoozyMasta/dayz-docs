@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -213,7 +210,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00035">35</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   36</span>  {</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="#a6a762dd67c2f067d1697331904e07bb8">m_OwnerState</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ownerState</a>;</div>
+<div class="line"><span class="lineno">   38</span>  }</div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_a6a762dd67c2f067d1697331904e07bb8"><div class="ttname"><a href="#a6a762dd67c2f067d1697331904e07bb8">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::m_OwnerState</a></div><div class="ttdeci">FSMStateBase m_OwnerState</div><div class="ttdoc">current fsm state</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00030">HFSMBase.c:30</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -241,6 +243,24 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00128">128</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>  {</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  131</span>      <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] &quot;</span> + this.<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>() + <span class="stringliteral">&quot;::Abort(&quot;</span> + abort_event.ToString() + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#ab276d664450effaf946f531162ac603b">IsRunning</a>())</div>
+<div class="line"><span class="lineno">  134</span>    {</div>
+<div class="line"><span class="lineno">  135</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">abort_event</a>);</div>
+<div class="line"><span class="lineno">  136</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="line"><span class="lineno">  138</span>  }</div>
+<div class="ttc" id="a_en_convert_8c_html_afa7657e4f6687b78bc860ddff41c3bef"><div class="ttname"><a href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a></div><div class="ttdeci">proto string ToString()</div></div>
+<div class="ttc" id="a_h_f_s_m_base_8c_html_a8d311d98f081cd5719e56b2814d7bb85"><div class="ttname"><a href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a></div><div class="ttdeci">void fsmDebugPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">HFSMBase.c:1</a></div></div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_a24f93c5bd9811c8909016a214f6f0e93"><div class="ttname"><a href="#a24f93c5bd9811c8909016a214f6f0e93">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::m_State</a></div><div class="ttdeci">ref FSMStateBase m_State</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00029">HFSMBase.c:29</a></div></div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_ab276d664450effaf946f531162ac603b"><div class="ttname"><a href="#ab276d664450effaf946f531162ac603b">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::IsRunning</a></div><div class="ttdeci">bool IsRunning()</div><div class="ttdoc">returns true if machine is in running state</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00113">HFSMBase.c:113</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a8e070df24bcb6afaf456af7ba270294a"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">LogManager::IsInventoryHFSMLogEnable</a></div><div class="ttdeci">static bool IsInventoryHFSMLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">Debug.c:749</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">fsmDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00252">IsRunning()</a>, <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>, and <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>.</p>
 
 </div>
 </div>
@@ -270,6 +290,20 @@ Protected Attributes</h2></td></tr>
 <p>adds transition into transition table </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00082">82</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>);</div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">//if (LogManager.IsWeaponLogEnable()) fsmDebugSpam(&quot;[hfsm] +++ ow=&quot; + this.GetOwnerState() + &quot; this=&quot; + this + &quot; t=&quot; + t + &quot; state=&quot; + t.m_srcState + &quot;-------- event=&quot; + t.m_event + &quot;[G=&quot; + t.m_guard +&quot;]/A=&quot; + t.m_action + &quot; --------|&gt; dst=&quot; + t.m_dstState);</span></div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_event == <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>)</div>
+<div class="line"><span class="lineno">   87</span>    {</div>
+<div class="line"><span class="lineno">   88</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a>(<span class="stringliteral">&quot;Warning (performance): FSM &quot;</span> + <span class="keyword">this</span> + <span class="stringliteral">&quot; has completion transition for src=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState + <span class="stringliteral">&quot; ---NULL----|&gt; dst=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState);</div>
+<div class="line"><span class="lineno">   89</span>      <a class="code hl_variable" href="#ac4e2826a58ef769657b9c3f7697da463">m_HasCompletions</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
+<div class="line"><span class="lineno">   91</span>  }</div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_a8009eb5813ec444f349061cbcfb4eaf2"><div class="ttname"><a href="#a8009eb5813ec444f349061cbcfb4eaf2">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::m_Transitions</a></div><div class="ttdeci">ref array&lt; ref FSMTransition&lt; FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase &gt; &gt; m_Transitions</div><div class="ttdoc">configurable initial state of the machine</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00032">HFSMBase.c:32</a></div></div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_ac4e2826a58ef769657b9c3f7697da463"><div class="ttname"><a href="#ac4e2826a58ef769657b9c3f7697da463">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::m_HasCompletions</a></div><div class="ttdeci">bool m_HasCompletions</div><div class="ttdoc">fsm transition table</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00033">HFSMBase.c:33</a></div></div>
+<div class="ttc" id="agroup___debug_html_gaaa9351d895a1f244a26fd635c378c536"><div class="ttname"><a href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print</a></div><div class="ttdeci">proto void Print(void var)</div><div class="ttdoc">Prints content of variable to console/log.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d0/d02/group___debug.html#gaaa9351d895a1f244a26fd635c378c536">Print()</a>.</p>
 
 </div>
 </div>
@@ -312,6 +346,43 @@ FSM_TERMINATED state machine has terminated </dd>
 FSM_ABORTED state machine has aborted </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00191">191</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>  {</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  194</span>    {</div>
+<div class="line"><span class="lineno">  195</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>())</div>
+<div class="line"><span class="lineno">  196</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] SUB! &quot;</span> + <a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>().<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>().<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>() + <span class="stringliteral">&quot;::FindAbortDestinationState(&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString() + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><span class="lineno">  197</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  198</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] root::FindAbortDestinationState(&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString() + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><span class="lineno">  199</span>    }</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>    <span class="comment">// 1) look in submachine first (if any)</span></div>
+<div class="line"><span class="lineno">  202</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> &amp;&amp; <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.HasFSM())</div>
+<div class="line"><span class="lineno">  203</span>    {</div>
+<div class="line"><span class="lineno">  204</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">HFSMBase&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> a = <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.GetFSM();</div>
+<div class="line"><span class="lineno">  205</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FSMStateBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">abort_dst</a> = a.FindAbortDestinationState(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">abort_dst</a>)</div>
+<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">abort_dst</a>;</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="comment">// 2) local transitions</span></div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = <a class="code hl_function" href="#acf37094446fe7d887389c310b72edb0b">FindFirstUnguardedTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">i</a> == -1)</div>
+<div class="line"><span class="lineno">  214</span>    {</div>
+<div class="line"><span class="lineno">  215</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  216</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] abort event has no transition: src=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString() + <span class="stringliteral">&quot; e=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString());</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState;</div>
+<div class="line"><span class="lineno">  223</span>  }</div>
+<div class="ttc" id="a_json_data_contaminated_area_8c_html_a651a3c9de2e16ff0deca8d09dedbda58"><div class="ttname"><a href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a></div><div class="ttdeci">string Type</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">JsonDataContaminatedArea.c:11</a></div></div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_a3d6651dc5480e63e7e77bf8933ef4c9c"><div class="ttname"><a href="#a3d6651dc5480e63e7e77bf8933ef4c9c">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::GetOwnerState</a></div><div class="ttdeci">FSMStateBase GetOwnerState()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00050">HFSMBase.c:50</a></div></div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_acf37094446fe7d887389c310b72edb0b"><div class="ttname"><a href="#acf37094446fe7d887389c310b72edb0b">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::FindFirstUnguardedTransition</a></div><div class="ttdeci">int FindFirstUnguardedTransition(FSMEventBase e)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00413">HFSMBase.c:413</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">fsmDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>, <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00003">bool::ToString()</a>, <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>, and <a class="el" href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">Type</a>.</p>
 
 </div>
 </div>
@@ -339,6 +410,29 @@ FSM_ABORTED state machine has aborted </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00465">465</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  466</span>  {</div>
+<div class="line"><span class="lineno">  467</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#ab276d664450effaf946f531162ac603b">IsRunning</a>())</div>
+<div class="line"><span class="lineno">  468</span>    {</div>
+<div class="line"><span class="lineno">  469</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FSMStateBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">curr_state</a> = <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>;</div>
+<div class="line"><span class="lineno">  470</span> </div>
+<div class="line"><span class="lineno">  471</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Count();</div>
+<div class="line"><span class="lineno">  472</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  473</span>      {</div>
+<div class="line"><span class="lineno">  474</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  475</span> </div>
+<div class="line"><span class="lineno">  476</span>        <span class="comment">//if (LogManager.IsInventoryHFSMLogEnable()) fsmDebugPrint(&quot;[hfsm] (local) matching state=&quot; + t.m_srcState + &quot;-------- event=&quot; + t.m_event + &quot;[G=&quot; + t.m_guard +&quot;]/A=&quot; + t.m_action + &quot; --------|&gt; dst=&quot; + t.m_dstState);</span></div>
+<div class="line"><span class="lineno">  477</span>        <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState.Type() == <a class="code hl_class" href="../../db/d06/class_param3.html">curr_state</a>.Type()) &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_event == <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>))</div>
+<div class="line"><span class="lineno">  478</span>        {</div>
+<div class="line"><span class="lineno">  479</span>          <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_guard != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  480</span>          <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> || (<a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_guard.GuardCondition(<a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>))) <span class="comment">// 1) exec guard (if any)</span></div>
+<div class="line"><span class="lineno">  481</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>;</div>
+<div class="line"><span class="lineno">  482</span>        }</div>
+<div class="line"><span class="lineno">  483</span>      }</div>
+<div class="line"><span class="lineno">  484</span>    }</div>
+<div class="line"><span class="lineno">  485</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  486</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00252">IsRunning()</a>, and <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>.</p>
 
 </div>
 </div>
@@ -366,6 +460,26 @@ FSM_ABORTED state machine has aborted </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00413">413</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  414</span>  {</div>
+<div class="line"><span class="lineno">  415</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FSMStateBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">curr_state</a> = <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>;</div>
+<div class="line"><span class="lineno">  416</span> </div>
+<div class="line"><span class="lineno">  417</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Count();</div>
+<div class="line"><span class="lineno">  418</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  419</span>    {</div>
+<div class="line"><span class="lineno">  420</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  421</span>      <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState == <a class="code hl_class" href="../../db/d06/class_param3.html">curr_state</a>) &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_event != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>) &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_event.Type() == <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type()))</div>
+<div class="line"><span class="lineno">  422</span>      {</div>
+<div class="line"><span class="lineno">  423</span>        <span class="comment">//if (LogManager.IsWeaponLogEnable()) fsmDebugSpam(&quot;[hfsm] [&quot; + i + &quot;/&quot; + count + &quot;] *** matched! t=&quot; + t + &quot; state=&quot; + t.m_srcState + &quot;-------- event=&quot; + t.m_event + &quot;[G=&quot; + t.m_guard +&quot;]/A=&quot; + t.m_action + &quot; --------|&gt; dst=&quot; + t.m_dstState);</span></div>
+<div class="line"><span class="lineno">  424</span>        <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_guard != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  425</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> || (<a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_guard.GuardCondition(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>))) <span class="comment">// 1) exec guard (if any)</span></div>
+<div class="line"><span class="lineno">  426</span>          <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>;</div>
+<div class="line"><span class="lineno">  427</span>      }</div>
+<div class="line"><span class="lineno">  428</span>      <span class="comment">//else if (LogManager.IsWeaponLogEnable()) fsmDebugSpam(&quot;[hfsm][&quot; + i + &quot;/&quot; + count + &quot;] ... matching  t=&quot; + t + &quot; state=&quot; + t.m_srcState + &quot;-------- event=&quot; + t.m_event + &quot;[G=&quot; + t.m_guard +&quot;]/A=&quot; + t.m_action + &quot; --------|&gt; dst=&quot; + t.m_dstState);</span></div>
+<div class="line"><span class="lineno">  429</span>    }</div>
+<div class="line"><span class="lineno">  430</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  431</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>.</p>
 
 </div>
 </div>
@@ -397,7 +511,23 @@ FSM_ABORTED state machine has aborted </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00447">447</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  448</span>  {</div>
+<div class="line"><span class="lineno">  449</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FSMStateBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">curr_state</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">s</a>;</div>
+<div class="line"><span class="lineno">  450</span> </div>
+<div class="line"><span class="lineno">  451</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Count();</div>
+<div class="line"><span class="lineno">  452</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  453</span>    {</div>
+<div class="line"><span class="lineno">  454</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  455</span>      <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState == <a class="code hl_class" href="../../db/d06/class_param3.html">curr_state</a>) &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_event != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>) &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_event.Type() == <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type()))</div>
+<div class="line"><span class="lineno">  456</span>      {</div>
+<div class="line"><span class="lineno">  457</span>        <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_guard != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  458</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> || (<a class="code hl_class" href="../../db/d06/class_param3.html">hasGuard</a> &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_guard.GuardCondition(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>))) <span class="comment">// 1) exec guard (if any)</span></div>
+<div class="line"><span class="lineno">  459</span>          <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState;</div>
+<div class="line"><span class="lineno">  460</span>      }</div>
+<div class="line"><span class="lineno">  461</span>    }</div>
+<div class="line"><span class="lineno">  462</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  463</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6d565922afcf11aedf73da35c80410bc" name="a6d565922afcf11aedf73da35c80410bc"></a>
@@ -428,7 +558,19 @@ FSM_ABORTED state machine has aborted </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00433">433</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  434</span>  {</div>
+<div class="line"><span class="lineno">  435</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FSMStateBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">curr_state</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">s</a>;</div>
+<div class="line"><span class="lineno">  436</span> </div>
+<div class="line"><span class="lineno">  437</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Count();</div>
+<div class="line"><span class="lineno">  438</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; ++<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>)</div>
+<div class="line"><span class="lineno">  439</span>    {</div>
+<div class="line"><span class="lineno">  440</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  441</span>      <span class="keywordflow">if</span> ((<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState == <a class="code hl_class" href="../../db/d06/class_param3.html">curr_state</a>) &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_event != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>) &amp;&amp; (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_event.Type() == <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type()))</div>
+<div class="line"><span class="lineno">  442</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState;</div>
+<div class="line"><span class="lineno">  443</span>    }</div>
+<div class="line"><span class="lineno">  444</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>;</div>
+<div class="line"><span class="lineno">  445</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad997e02325061feb58f414322aeace0f" name="ad997e02325061feb58f414322aeace0f"></a>
@@ -456,6 +598,11 @@ FSM_ABORTED state machine has aborted </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>returns currently active state within this machine (i.e. not hierarchic state) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00043">43</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>  {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>;</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>.</p>
 
 </div>
 </div>
@@ -497,6 +644,18 @@ FSM_ABORTED state machine has aborted </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true if current state returned in path argument, false otherwise </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00060">60</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>  {</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FSMStateBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">curr</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">state</a>;</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">while</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">curr</a>)</div>
+<div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>      <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">curr</a>);</div>
+<div class="line"><span class="lineno">   66</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">curr</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">curr</a>.GetParentState();</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>.Count() &gt; 0;</div>
+<div class="line"><span class="lineno">   69</span>  }</div>
+<div class="ttc" id="a_option_selector_multistate_8c_html_a46c20eb2a26abeb1e934cd66e1dd6484"><div class="ttname"><a href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a></div><div class="ttdeci">string path</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">OptionSelectorMultistate.c:121</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d02/group___strings.html#ga49364fad071247556d5b85bbffa18115">string::Insert()</a>, and <a class="el" href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">path</a>.</p>
 
 </div>
 </div>
@@ -525,7 +684,10 @@ FSM_ABORTED state machine has aborted </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>returns state that is owner of this fsm submachine. returns null if this is a root machine. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00050">50</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   51</span>  {</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a6a762dd67c2f067d1697331904e07bb8">m_OwnerState</a>;</div>
+<div class="line"><span class="lineno">   53</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab276d664450effaf946f531162ac603b" name="ab276d664450effaf946f531162ac603b"></a>
@@ -554,6 +716,9 @@ FSM_ABORTED state machine has aborted </dd></dl>
 <p>returns true if machine is in running state </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00113">113</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>.</p>
 
 </div>
 </div>
@@ -585,7 +750,14 @@ FSM_ABORTED state machine has aborted </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00535">535</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  536</span>  {</div>
+<div class="line"><span class="lineno">  537</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  538</span>    <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a> <a class="code hl_class" href="../../db/d06/class_param3.html">ret</a> = <a class="code hl_function" href="#af3273a9e1acbdc597e963889e3432516">ProcessLocalTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  539</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ret</a>;</div>
+<div class="line"><span class="lineno">  540</span>  }</div>
+<div class="ttc" id="a_f_s_m_base_8c_html_a09f6ec45b8f9309647a7b1eb893bc29f"><div class="ttname"><a href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a></div><div class="ttdeci">ProcessEventResult</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/_f_s_m_base_8c_source.html#l00040">FSMBase.c:41</a></div></div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_af3273a9e1acbdc597e963889e3432516"><div class="ttname"><a href="#af3273a9e1acbdc597e963889e3432516">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::ProcessLocalTransition</a></div><div class="ttdeci">ProcessEventResult ProcessLocalTransition(FSMTransition&lt; FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase &gt; t, FSMEventBase e)</div><div class="ttdoc">instructs the state machine to process the event locally - no hierarchy is crossed</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00495">HFSMBase.c:495</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac1e5ba3f1dc04ea5e754aa8383022bb8" name="ac1e5ba3f1dc04ea5e754aa8383022bb8"></a>
@@ -631,6 +803,110 @@ FSM_TERMINATED state machine has terminated </dd>
 FSM_ABORTED state machine has aborted </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00233">233</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span>  {</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  236</span>    {</div>
+<div class="line"><span class="lineno">  237</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>())</div>
+<div class="line"><span class="lineno">  238</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] SUB! &quot;</span> + <a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>().<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>().<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>() + <span class="stringliteral">&quot;::ProcessAbortEvent(&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString() + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><span class="lineno">  239</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  240</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] root::ProcessAbortEvent(&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString() + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><span class="lineno">  241</span>    }</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>    <span class="comment">// 1) look in submachine first (if any)</span></div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> &amp;&amp; <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.HasFSM())</div>
+<div class="line"><span class="lineno">  245</span>    {</div>
+<div class="line"><span class="lineno">  246</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">HFSMBase&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> a = <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.GetFSM();</div>
+<div class="line"><span class="lineno">  247</span>      <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a> <a class="code hl_class" href="../../db/d06/class_param3.html">subfsm_res</a>;</div>
+<div class="line"><span class="lineno">  248</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FSMStateBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">abort_dst</a> = a.ProcessAbortEvent(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">subfsm_res</a>);</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>      <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">subfsm_res</a>)</div>
+<div class="line"><span class="lineno">  251</span>      {</div>
+<div class="line"><span class="lineno">  252</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_OK:</div>
+<div class="line"><span class="lineno">  253</span>      {</div>
+<div class="line"><span class="lineno">  254</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  255</span>          <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] event processed by sub machine=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString());</div>
+<div class="line"><span class="lineno">  256</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">result</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">subfsm_res</a>; <span class="comment">// 1.1) submachine accepted event</span></div>
+<div class="line"><span class="lineno">  257</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  258</span>      }</div>
+<div class="line"><span class="lineno">  259</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_ABORTED:</div>
+<div class="line"><span class="lineno">  260</span>      {</div>
+<div class="line"><span class="lineno">  261</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  262</span>          <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] aborted sub machine=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString());</div>
+<div class="line"><span class="lineno">  263</span>        <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// 1.2) submachine aborted, abort submachine owner (i.e. this)</span></div>
+<div class="line"><span class="lineno">  264</span> </div>
+<div class="line"><span class="lineno">  265</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>() == <a class="code hl_class" href="../../db/d06/class_param3.html">abort_dst</a>.GetParentState())</div>
+<div class="line"><span class="lineno">  266</span>        {</div>
+<div class="line"><span class="lineno">  267</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  268</span>            <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] aborted sub machine=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString() + <span class="stringliteral">&quot; &amp; abort destination reached.&quot;</span>);</div>
+<div class="line"><span class="lineno">  269</span>          <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">abort_dst</a>;</div>
+<div class="line"><span class="lineno">  270</span>          <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// 1.3) submachine aborted, call onEntry on new state (cross-hierarchy transition)</span></div>
+<div class="line"><span class="lineno">  271</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">result</a> = <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_OK;</div>
+<div class="line"><span class="lineno">  272</span>          <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  273</span>        }</div>
+<div class="line"><span class="lineno">  274</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  275</span>        {</div>
+<div class="line"><span class="lineno">  276</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">result</a> = <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_ABORTED; <span class="comment">// 1.4) submachine has aborted, look for destination state in parent</span></div>
+<div class="line"><span class="lineno">  277</span>          <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  278</span>        }</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  281</span>      }</div>
+<div class="line"><span class="lineno">  282</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_TERMINATED:</div>
+<div class="line"><span class="lineno">  283</span>      {</div>
+<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">break</span>; <span class="comment">// submachine has finished, look for local transitions from exited submachine</span></div>
+<div class="line"><span class="lineno">  285</span>      }</div>
+<div class="line"><span class="lineno">  286</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_NO_TRANSITION:</div>
+<div class="line"><span class="lineno">  287</span>      {</div>
+<div class="line"><span class="lineno">  288</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  289</span>          <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] aborted (but no transition) sub machine=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString());</div>
+<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">break</span>; <span class="comment">// submachine has no transition, look for transitions in local machine</span></div>
+<div class="line"><span class="lineno">  291</span>      }</div>
+<div class="line"><span class="lineno">  292</span>      }</div>
+<div class="line"><span class="lineno">  293</span>    }</div>
+<div class="line"><span class="lineno">  294</span> </div>
+<div class="line"><span class="lineno">  295</span>    <span class="comment">// 2) local transitions</span></div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = <a class="code hl_function" href="#acf37094446fe7d887389c310b72edb0b">FindFirstUnguardedTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  297</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">i</a> == -1)</div>
+<div class="line"><span class="lineno">  298</span>    {</div>
+<div class="line"><span class="lineno">  299</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  300</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] abort event has no transition: src=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString() + <span class="stringliteral">&quot; e=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString());</div>
+<div class="line"><span class="lineno">  301</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">result</a> = <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_NO_TRANSITION;</div>
+<div class="line"><span class="lineno">  302</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  303</span>    }</div>
+<div class="line"><span class="lineno">  304</span> </div>
+<div class="line"><span class="lineno">  305</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  306</span>    <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a> <a class="code hl_class" href="../../db/d06/class_param3.html">res</a> = <a class="code hl_function" href="#a18a279db350fee60b1276f063aa19d8b">ProcessAbortTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  307</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">result</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">res</a>;</div>
+<div class="line"><span class="lineno">  308</span>    <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">res</a>)</div>
+<div class="line"><span class="lineno">  309</span>    {</div>
+<div class="line"><span class="lineno">  310</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_OK:</div>
+<div class="line"><span class="lineno">  311</span>    {</div>
+<div class="line"><span class="lineno">  312</span>      <span class="comment">//if (LogManager.IsWeaponLogEnable()) fsmDebugSpam(&quot;[hfsm] abort event processed by machine=&quot; + m_State.ToString());</span></div>
+<div class="line"><span class="lineno">  313</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>; <span class="comment">// machine accepted event</span></div>
+<div class="line"><span class="lineno">  314</span>    }</div>
+<div class="line"><span class="lineno">  315</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_ABORTED:</div>
+<div class="line"><span class="lineno">  316</span>    {</div>
+<div class="line"><span class="lineno">  317</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  318</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] aborted sub machine=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString() + <span class="stringliteral">&quot; will fall-through to dst=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState);</div>
+<div class="line"><span class="lineno">  319</span>      <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState; <span class="comment">// store destination state for parent(s)</span></div>
+<div class="line"><span class="lineno">  320</span>    }</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_TERMINATED:</div>
+<div class="line"><span class="lineno">  323</span>    {</div>
+<div class="line"><span class="lineno">  324</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  325</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] aborted &amp; terminated sub machine=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString());</div>
+<div class="line"><span class="lineno">  326</span>      <span class="keywordflow">break</span>; <span class="comment">// submachine has finished, look for local transitions from exited submachine</span></div>
+<div class="line"><span class="lineno">  327</span>    }</div>
+<div class="line"><span class="lineno">  328</span>    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_NO_TRANSITION:</div>
+<div class="line"><span class="lineno">  329</span>    {</div>
+<div class="line"><span class="lineno">  330</span>      <span class="keywordflow">break</span>; <span class="comment">// submachine has no transition, look for transitions in local machine</span></div>
+<div class="line"><span class="lineno">  331</span>    }</div>
+<div class="line"><span class="lineno">  332</span>    }</div>
+<div class="line"><span class="lineno">  333</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  334</span>  }</div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_a18a279db350fee60b1276f063aa19d8b"><div class="ttname"><a href="#a18a279db350fee60b1276f063aa19d8b">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::ProcessAbortTransition</a></div><div class="ttdeci">ProcessEventResult ProcessAbortTransition(FSMTransition&lt; FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase &gt; t, FSMEventBase e)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00148">HFSMBase.c:148</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">fsmDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>, <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00003">bool::ToString()</a>, <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>, and <a class="el" href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">Type</a>.</p>
 
 </div>
 </div>
@@ -662,6 +938,41 @@ FSM_ABORTED state machine has aborted </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00148">148</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>  {</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  151</span>      <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] (local abort) state=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState.ToString() + <span class="stringliteral">&quot;-------- ABORT event=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.ToString() + <span class="stringliteral">&quot;[G=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_guard.ToString() + <span class="stringliteral">&quot;]/A=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_action.ToString() + <span class="stringliteral">&quot; --------|&gt; dst=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState.ToString());</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// 1) call onAbort on old state</span></div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_action)</div>
+<div class="line"><span class="lineno">  156</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_action.Action(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// 2) execute transition action (if any)</span></div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="keyword">auto</span> <a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState.GetParentState();</div>
+<div class="line"><span class="lineno">  159</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">tmp</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState.GetParentState())</div>
+<div class="line"><span class="lineno">  160</span>    {</div>
+<div class="line"><span class="lineno">  161</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState; <span class="comment">// 3) change state to new (or NULL)</span></div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>)</div>
+<div class="line"><span class="lineno">  164</span>      {</div>
+<div class="line"><span class="lineno">  165</span>        <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// 4a1) call onEntry on new state (see 4a2) )</span></div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_OK;</div>
+<div class="line"><span class="lineno">  167</span>      }</div>
+<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  169</span>      {</div>
+<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  171</span>          <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] abort &amp; terminating fsm: state=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState.ToString() + <span class="stringliteral">&quot; event=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.ToString());</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_TERMINATED; <span class="comment">// 4b) or terminate</span></div>
+<div class="line"><span class="lineno">  174</span>      }</div>
+<div class="line"><span class="lineno">  175</span>    }</div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  177</span>    {</div>
+<div class="line"><span class="lineno">  178</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  179</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_ABORTED; <span class="comment">// 4c) or signal abort to parent (with appropriate transition)</span></div>
+<div class="line"><span class="lineno">  180</span>    }</div>
+<div class="line"><span class="lineno">  181</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">fsmDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, and <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>.</p>
 
 </div>
 </div>
@@ -689,6 +1000,40 @@ FSM_ABORTED state machine has aborted </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00542">542</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  543</span>  {</div>
+<div class="line"><span class="lineno">  544</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">completionIdx</a> = <a class="code hl_function" href="#abc13d040d667b0b8997f488a91139884">FindFirstCompletionTransition</a>();</div>
+<div class="line"><span class="lineno">  545</span>    <span class="keywordflow">while</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">completionIdx</a> != -1)</div>
+<div class="line"><span class="lineno">  546</span>    {</div>
+<div class="line"><span class="lineno">  547</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">row</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">completionIdx</a>);</div>
+<div class="line"><span class="lineno">  548</span>      <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a> <a class="code hl_class" href="../../db/d06/class_param3.html">res</a>;</div>
+<div class="line"><span class="lineno">  549</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">row</a>.m_dstState != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>)</div>
+<div class="line"><span class="lineno">  550</span>      {</div>
+<div class="line"><span class="lineno">  551</span>        <span class="comment">// this is regular completion transition</span></div>
+<div class="line"><span class="lineno">  552</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">row</a>.m_srcState.GetParentState() == <a class="code hl_class" href="../../db/d06/class_param3.html">row</a>.m_dstState.GetParentState())</div>
+<div class="line"><span class="lineno">  553</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">res</a> = <a class="code hl_function" href="#aa1e854d733dd94717816ce24dc052778">LocalTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">completionIdx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>); <span class="comment">// transition is within this state machine</span></div>
+<div class="line"><span class="lineno">  554</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  555</span>          <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;cross-hierarchy transition or misconfigured transition detected!&quot;</span>);</div>
+<div class="line"><span class="lineno">  556</span>        <span class="comment">//res = HierarchicTransition(completionIdx, NULL); // transition has to cross hierarchy</span></div>
+<div class="line"><span class="lineno">  557</span>      }</div>
+<div class="line"><span class="lineno">  558</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  559</span>      {</div>
+<div class="line"><span class="lineno">  560</span>        <span class="comment">// this is terminating completion transition</span></div>
+<div class="line"><span class="lineno">  561</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">row</a>.m_srcState.GetParentState() == <a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>())</div>
+<div class="line"><span class="lineno">  562</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">res</a> = <a class="code hl_function" href="#aa1e854d733dd94717816ce24dc052778">LocalTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">completionIdx</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>); <span class="comment">// terminating transition is within this state machine</span></div>
+<div class="line"><span class="lineno">  563</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  564</span>          <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;cross-hierarchy transition or misconfigured transition detected!&quot;</span>);</div>
+<div class="line"><span class="lineno">  565</span>        <span class="comment">//res = HierarchicTransition(completionIdx, NULL); // source node crosses hierarchy (terminate lies always within this machine)</span></div>
+<div class="line"><span class="lineno">  566</span>      }</div>
+<div class="line"><span class="lineno">  567</span> </div>
+<div class="line"><span class="lineno">  568</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">completionIdx</a> = <a class="code hl_function" href="#abc13d040d667b0b8997f488a91139884">FindFirstCompletionTransition</a>();</div>
+<div class="line"><span class="lineno">  569</span>    }</div>
+<div class="line"><span class="lineno">  570</span>    <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_NO_TRANSITION;</div>
+<div class="line"><span class="lineno">  571</span>  }</div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_aa1e854d733dd94717816ce24dc052778"><div class="ttname"><a href="#aa1e854d733dd94717816ce24dc052778">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::LocalTransition</a></div><div class="ttdeci">ProcessEventResult LocalTransition(int i, FSMEventBase e)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00535">HFSMBase.c:535</a></div></div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_abc13d040d667b0b8997f488a91139884"><div class="ttname"><a href="#abc13d040d667b0b8997f488a91139884">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::FindFirstCompletionTransition</a></div><div class="ttdeci">int FindFirstCompletionTransition()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00465">HFSMBase.c:465</a></div></div>
+<div class="ttc" id="agroup___debug_html_ga786b160dafbe15abb829786ba345cb15"><div class="ttname"><a href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a></div><div class="ttdeci">void Error(string err)</div><div class="ttdoc">Messagebox with error message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_en_debug_8c_source.html#l00090">EnDebug.c:90</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>.</p>
 
 </div>
 </div>
@@ -729,6 +1074,78 @@ FSM_NO_TRANSITION if no unguarded transition found in submachine or local machin
 FSM_TERMINATED state machine has terminated </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00344">344</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  345</span>  {</div>
+<div class="line"><span class="lineno">  346</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  347</span>    {</div>
+<div class="line"><span class="lineno">  348</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>())</div>
+<div class="line"><span class="lineno">  349</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] SUB!::&quot;</span> + <a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>().<a class="code hl_variable" href="../../d4/d0c/_json_data_contaminated_area_8c.html#a651a3c9de2e16ff0deca8d09dedbda58">Type</a>().<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>() + <span class="stringliteral">&quot;::ProcessEvent(&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString() + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><span class="lineno">  350</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  351</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] root::ProcessEvent(&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString() + <span class="stringliteral">&quot; =&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.DumpToString());</div>
+<div class="line"><span class="lineno">  352</span>    }</div>
+<div class="line"><span class="lineno">  353</span> </div>
+<div class="line"><span class="lineno">  354</span>    <span class="comment">// 1) completion transitions have priority (if any)</span></div>
+<div class="line"><span class="lineno">  355</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac4e2826a58ef769657b9c3f7697da463">m_HasCompletions</a>)</div>
+<div class="line"><span class="lineno">  356</span>      <a class="code hl_function" href="#a41430814c6d52a552d95eefb59edf9f0">ProcessCompletionTransitions</a>();</div>
+<div class="line"><span class="lineno">  357</span> </div>
+<div class="line"><span class="lineno">  358</span>    <span class="comment">// 2) submachine then (if any)</span></div>
+<div class="line"><span class="lineno">  359</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> &amp;&amp; <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.HasFSM())</div>
+<div class="line"><span class="lineno">  360</span>    {</div>
+<div class="line"><span class="lineno">  361</span>      <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a> <a class="code hl_class" href="../../db/d06/class_param3.html">subfsm_res</a> = <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ProcessEvent(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  362</span> </div>
+<div class="line"><span class="lineno">  363</span>      <span class="keywordflow">switch</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">subfsm_res</a>)</div>
+<div class="line"><span class="lineno">  364</span>      {</div>
+<div class="line"><span class="lineno">  365</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_OK:</div>
+<div class="line"><span class="lineno">  366</span>      {</div>
+<div class="line"><span class="lineno">  367</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">IsWeaponLogEnable</a>()) <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a42ec7b4847da51d422f4b048151c94a1">fsmDebugSpam</a>(<span class="stringliteral">&quot;[hfsm] event processed by sub machine=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString());</div>
+<div class="line"><span class="lineno">  368</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">subfsm_res</a>; <span class="comment">// submachine accepted event</span></div>
+<div class="line"><span class="lineno">  369</span>      }</div>
+<div class="line"><span class="lineno">  370</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_TERMINATED:</div>
+<div class="line"><span class="lineno">  371</span>      {</div>
+<div class="line"><span class="lineno">  372</span>        <span class="keywordflow">break</span>; <span class="comment">// submachine has finished, look for local transitions from exited submachine</span></div>
+<div class="line"><span class="lineno">  373</span>      }</div>
+<div class="line"><span class="lineno">  374</span>      <span class="keywordflow">case</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_NO_TRANSITION:</div>
+<div class="line"><span class="lineno">  375</span>      {</div>
+<div class="line"><span class="lineno">  376</span>        <span class="keywordflow">break</span>; <span class="comment">// submachine has no transition, look for transitions in local machine</span></div>
+<div class="line"><span class="lineno">  377</span>      }</div>
+<div class="line"><span class="lineno">  378</span>      }</div>
+<div class="line"><span class="lineno">  379</span>    }</div>
+<div class="line"><span class="lineno">  380</span> </div>
+<div class="line"><span class="lineno">  381</span>    <span class="comment">// 3) local transitions</span></div>
+<div class="line"><span class="lineno">  382</span>    <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = <a class="code hl_function" href="#acf37094446fe7d887389c310b72edb0b">FindFirstUnguardedTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  383</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">i</a> == -1)</div>
+<div class="line"><span class="lineno">  384</span>    {</div>
+<div class="line"><span class="lineno">  385</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  386</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] event has no transition: src=&quot;</span> + <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.ToString() + <span class="stringliteral">&quot; e=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.Type().ToString());</div>
+<div class="line"><span class="lineno">  387</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_NO_TRANSITION;</div>
+<div class="line"><span class="lineno">  388</span>    }</div>
+<div class="line"><span class="lineno">  389</span> </div>
+<div class="line"><span class="lineno">  390</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">FSMTransition&lt;FSMStateBase, FSMEventBase, FSMActionBase, FSMGuardBase&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">row</a> = <a class="code hl_variable" href="#a8009eb5813ec444f349061cbcfb4eaf2">m_Transitions</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">  391</span>    <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a> <a class="code hl_class" href="../../db/d06/class_param3.html">res</a>;</div>
+<div class="line"><span class="lineno">  392</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">row</a>.m_dstState != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>)</div>
+<div class="line"><span class="lineno">  393</span>    {</div>
+<div class="line"><span class="lineno">  394</span>      <span class="comment">// this is regular transition</span></div>
+<div class="line"><span class="lineno">  395</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">row</a>.m_srcState.GetParentState() == <a class="code hl_class" href="../../db/d06/class_param3.html">row</a>.m_dstState.GetParentState())</div>
+<div class="line"><span class="lineno">  396</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">res</a> = <a class="code hl_function" href="#aa1e854d733dd94717816ce24dc052778">LocalTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// transition is within this state machine</span></div>
+<div class="line"><span class="lineno">  397</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  398</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;cross-hierarchy transition or misconfigured transition detected!&quot;</span>);</div>
+<div class="line"><span class="lineno">  399</span>      <span class="comment">//res = HierarchicTransition(i, e); // transition has to cross hierarchy</span></div>
+<div class="line"><span class="lineno">  400</span>    }</div>
+<div class="line"><span class="lineno">  401</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  402</span>    {</div>
+<div class="line"><span class="lineno">  403</span>      <span class="comment">// this is terminating transition</span></div>
+<div class="line"><span class="lineno">  404</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">row</a>.m_srcState.GetParentState() == <a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>())</div>
+<div class="line"><span class="lineno">  405</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">res</a> = <a class="code hl_function" href="#aa1e854d733dd94717816ce24dc052778">LocalTransition</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// terminating transition is within this state machine</span></div>
+<div class="line"><span class="lineno">  406</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  407</span>        <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;cross-hierarchy transition or misconfigured transition detected!&quot;</span>);</div>
+<div class="line"><span class="lineno">  408</span>      <span class="comment">//res = HierarchicTransition(i, e); // source node crosses hierarchy (terminate lies always within this machine)</span></div>
+<div class="line"><span class="lineno">  409</span>    }</div>
+<div class="line"><span class="lineno">  410</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">res</a>;</div>
+<div class="line"><span class="lineno">  411</span>  }</div>
+<div class="ttc" id="a_h_f_s_m_base_8c_html_a42ec7b4847da51d422f4b048151c94a1"><div class="ttname"><a href="../../d4/d09/_h_f_s_m_base_8c.html#a42ec7b4847da51d422f4b048151c94a1">fsmDebugSpam</a></div><div class="ttdeci">void fsmDebugSpam(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00009">HFSMBase.c:9</a></div></div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_a41430814c6d52a552d95eefb59edf9f0"><div class="ttname"><a href="#a41430814c6d52a552d95eefb59edf9f0">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::ProcessCompletionTransitions</a></div><div class="ttdeci">ProcessEventResult ProcessCompletionTransitions()</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00542">HFSMBase.c:542</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a1936dba0ee4da1a581859d6603178326"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">LogManager::IsWeaponLogEnable</a></div><div class="ttdeci">static bool IsWeaponLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00799">Debug.c:799</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">fsmDebugPrint()</a>, <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00009">fsmDebugSpam()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00799">LogManager::IsWeaponLogEnable()</a>, <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>, <a class="el" href="../../d0/d03/_en_convert_8c_source.html#l00003">bool::ToString()</a>, <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>, and <a class="el" href="../../d4/d0c/_json_data_contaminated_area_8c_source.html#l00011">Type</a>.</p>
 
 </div>
 </div>
@@ -770,6 +1187,41 @@ FSM_TERMINATED state machine has terminated </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>FSM_OK or FSM_TERMINATED </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00495">495</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  496</span>  {</div>
+<div class="line"><span class="lineno">  497</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  498</span>      <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] (local) state=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState.ToString() + <span class="stringliteral">&quot;-------- event=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.ToString() + <span class="stringliteral">&quot;[G=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_guard.ToString() + <span class="stringliteral">&quot;]/A=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_action.ToString() + <span class="stringliteral">&quot; --------|&gt; dst=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState.ToString());</div>
+<div class="line"><span class="lineno">  499</span> </div>
+<div class="line"><span class="lineno">  500</span>    <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// 1) call onExit on old state</span></div>
+<div class="line"><span class="lineno">  501</span> </div>
+<div class="line"><span class="lineno">  502</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_action)</div>
+<div class="line"><span class="lineno">  503</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_action.Action(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// 2) execute transition action (if any)</span></div>
+<div class="line"><span class="lineno">  504</span> </div>
+<div class="line"><span class="lineno">  505</span>    <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState; <span class="comment">// 3) change state to new</span></div>
+<div class="line"><span class="lineno">  506</span> </div>
+<div class="line"><span class="lineno">  507</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState != <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>)</div>
+<div class="line"><span class="lineno">  508</span>    {</div>
+<div class="line"><span class="lineno">  509</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>); <span class="comment">// 4a) call onEntry on new state</span></div>
+<div class="line"><span class="lineno">  510</span> </div>
+<div class="line"><span class="lineno">  511</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>())</div>
+<div class="line"><span class="lineno">  512</span>        <a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>().OnSubMachineChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState, <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState); <span class="comment">// 5a) notify owner state about change in submachine</span></div>
+<div class="line"><span class="lineno">  513</span> </div>
+<div class="line"><span class="lineno">  514</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>)</div>
+<div class="line"><span class="lineno">  515</span>        <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnStateChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState, <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_dstState); <span class="comment">// 5b) notify current state about change in machine</span></div>
+<div class="line"><span class="lineno">  516</span> </div>
+<div class="line"><span class="lineno">  517</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_OK;</div>
+<div class="line"><span class="lineno">  518</span>    }</div>
+<div class="line"><span class="lineno">  519</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  520</span>    {</div>
+<div class="line"><span class="lineno">  521</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  522</span>        <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] terminating fsm: state=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState.ToString() + <span class="stringliteral">&quot; event=&quot;</span> + <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.ToString());</div>
+<div class="line"><span class="lineno">  523</span> </div>
+<div class="line"><span class="lineno">  524</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>())</div>
+<div class="line"><span class="lineno">  525</span>        <a class="code hl_function" href="#a3d6651dc5480e63e7e77bf8933ef4c9c">GetOwnerState</a>().OnSubMachineChanged(<a class="code hl_class" href="../../db/d06/class_param3.html">t</a>.m_srcState, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>); <span class="comment">// 5) notify owner state about change in submachine</span></div>
+<div class="line"><span class="lineno">  526</span>      <span class="keywordflow">return</span> <a class="code hl_enumeration" href="../../da/d01/_f_s_m_base_8c.html#a09f6ec45b8f9309647a7b1eb893bc29f">ProcessEventResult</a>.FSM_TERMINATED; <span class="comment">// 4b) or terminate</span></div>
+<div class="line"><span class="lineno">  527</span>    }</div>
+<div class="line"><span class="lineno">  528</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">fsmDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, and <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>.</p>
 
 </div>
 </div>
@@ -804,7 +1256,11 @@ FSM_TERMINATED state machine has terminated </dd></dl>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00075">75</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   76</span>  {</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_variable" href="#a240a0a8cbc32c622c1ddf2593223438f">m_InitialState</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">initial_state</a>;</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
+<div class="ttc" id="aclass_h_f_s_m_base_3_01_class_01_f_s_m_state_base_00_01_class_01_f_s_m_event_base_00_01_class_0169e08c7cedb5408c09ad076c1297a189_html_a240a0a8cbc32c622c1ddf2593223438f"><div class="ttname"><a href="#a240a0a8cbc32c622c1ddf2593223438f">HFSMBase&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::m_InitialState</a></div><div class="ttdeci">ref FSMStateBase m_InitialState</div><div class="ttdoc">state that owns this fsm (or null if root)</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00031">HFSMBase.c:31</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aabcd626a034b1f8f211546da74470e51" name="aabcd626a034b1f8f211546da74470e51"></a>
@@ -843,6 +1299,20 @@ FSM_TERMINATED state machine has terminated </dd></dl>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00097">97</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>  {</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  100</span>      <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] &quot;</span> + this.<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>() + <span class="stringliteral">&quot;::Start(&quot;</span> + initial_event.ToString() + <span class="stringliteral">&quot;), init_state=&quot;</span> + <a class="code hl_variable" href="#a240a0a8cbc32c622c1ddf2593223438f">m_InitialState</a>.ToString());</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">useExistingState</a>)</div>
+<div class="line"><span class="lineno">  103</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> = <a class="code hl_variable" href="#a240a0a8cbc32c622c1ddf2593223438f">m_InitialState</a>;</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">initial_event</a>);</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac4e2826a58ef769657b9c3f7697da463">m_HasCompletions</a>)</div>
+<div class="line"><span class="lineno">  108</span>      <a class="code hl_function" href="#a41430814c6d52a552d95eefb59edf9f0">ProcessCompletionTransitions</a>();</div>
+<div class="line"><span class="lineno">  109</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">fsmDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>, and <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>.</p>
 
 </div>
 </div>
@@ -872,6 +1342,18 @@ FSM_TERMINATED state machine has terminated </dd></dl>
 <p>terminates the state machine </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00117">117</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a8e070df24bcb6afaf456af7ba270294a">IsInventoryHFSMLogEnable</a>())</div>
+<div class="line"><span class="lineno">  120</span>      <a class="code hl_function" href="../../d4/d09/_h_f_s_m_base_8c.html#a8d311d98f081cd5719e56b2814d7bb85">fsmDebugPrint</a>(<span class="stringliteral">&quot;[hfsm] &quot;</span> + this.<a class="code hl_function" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString</a>() + <span class="stringliteral">&quot;::Terminate(&quot;</span> + terminal_event.ToString() + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#ab276d664450effaf946f531162ac603b">IsRunning</a>())</div>
+<div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnExit(<a class="code hl_class" href="../../db/d06/class_param3.html">terminal_event</a>);</div>
+<div class="line"><span class="lineno">  125</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00001">fsmDebugPrint()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00749">LogManager::IsInventoryHFSMLogEnable()</a>, <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00252">IsRunning()</a>, <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>, and <a class="el" href="../../d0/d03/_en_convert_8c.html#afa7657e4f6687b78bc860ddff41c3bef">ToString()</a>.</p>
 
 </div>
 </div>
@@ -901,6 +1383,12 @@ FSM_TERMINATED state machine has terminated </dd></dl>
 <p>if machine running, call <a class="el" href="../../d9/d03/group___tools.html#ga77491714662f827ac632c2eee20f8963">OnUpdate()</a> on current state </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html#l00142">142</a> of file <a class="el" href="../../d4/d09/_h_f_s_m_base_8c_source.html">HFSMBase.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>  {</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#ab276d664450effaf946f531162ac603b">IsRunning</a>())</div>
+<div class="line"><span class="lineno">  145</span>      <a class="code hl_variable" href="#a24f93c5bd9811c8909016a214f6f0e93">m_State</a>.OnUpdate(<a class="code hl_class" href="../../db/d06/class_param3.html">dt</a>);</div>
+<div class="line"><span class="lineno">  146</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../df/d02/3___game_2tools_2tools_8c_source.html#l00252">IsRunning()</a>, and <a class="el" href="../../d5/d0b/_stamina_handler_8c_source.html#l00020">m_State</a>.</p>
 
 </div>
 </div>

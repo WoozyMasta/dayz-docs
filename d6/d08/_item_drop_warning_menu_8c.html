@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -163,7 +160,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00001">1</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  116</span>  {</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  118</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae3e418070eacba5f392e75442ae00a87" name="ae3e418070eacba5f392e75442ae00a87"></a>
@@ -193,7 +193,165 @@ Variables</h2></td></tr>
 <p>pre-init arrays</p>
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00144">144</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  144</span>                      : <a class="code hl_class" href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div>
+<div class="line"><span class="lineno">  145</span>{</div>
+<div class="line"><span class="lineno">  146</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>;</div>
+<div class="line"><span class="lineno">  147</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a> <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  152</span>    {</div>
+<div class="line"><span class="lineno">  153</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  156</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span>  }</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  161</span>  {</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  163</span>    {</div>
+<div class="line"><span class="lineno">  164</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  167</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  170</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
+<div class="line"><span class="lineno">  172</span>  }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>  <span class="keyword">override</span> <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_function" href="#ae3e418070eacba5f392e75442ae00a87">Init</a>()</div>
+<div class="line"><span class="lineno">  175</span>  {</div>
+<div class="line"><span class="lineno">  176</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  177</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>());</div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  185</span>    {</div>
+<div class="line"><span class="lineno">  186</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  187</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  188</span>    }</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">  193</span>  }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  196</span>  {</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  198</span>  }</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a>(<a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>)</div>
+<div class="line"><span class="lineno">  201</span>  {</div>
+<div class="line"><span class="lineno">  202</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">  205</span>    {</div>
+<div class="line"><span class="lineno">  206</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  207</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  208</span>    }</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>)</div>
+<div class="line"><span class="lineno">  214</span>  {</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">  219</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  220</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  221</span>  }</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>()</div>
+<div class="line"><span class="lineno">  224</span>  {</div>
+<div class="line"><span class="lineno">  225</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  227</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  228</span>  }</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>)</div>
+<div class="line"><span class="lineno">  231</span>  {</div>
+<div class="line"><span class="lineno">  232</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  233</span>    <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">  234</span>  }</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>()</div>
+<div class="line"><span class="lineno">  237</span>  {</div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">  239</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>()</div>
+<div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  247</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  249</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  253</span>  }</div>
+<div class="line"><span class="lineno">  254</span>}</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ItemDropWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  257</span>{</div>
+<div class="line"><span class="lineno">  258</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a>()</div>
+<div class="line"><span class="lineno">  259</span>  {</div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  261</span>  }</div>
+<div class="line"><span class="lineno">  262</span>}</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span><span class="keyword">class </span><a class="code hl_class" href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  265</span>{</div>
+<div class="line"><span class="lineno">  266</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">GetText</a>()</div>
+<div class="line"><span class="lineno">  267</span>  {</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  269</span>  }</div>
+<div class="line"><span class="lineno">  270</span>}</div>
+<div class="ttc" id="a_action_base_8c_html_a95221c1a0eabcad6044d1c11a1f4488c"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a></div><div class="ttdeci">ActionInput GetInput()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00989">ActionBase.c:989</a></div></div>
+<div class="ttc" id="a_action_base_8c_html_ad37cd855eec1e2636806ff274469540a"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a></div><div class="ttdeci">string GetText()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00264">ActionBase.c:264</a></div></div>
+<div class="ttc" id="a_icon_8c_html_a2970c38de5fbde060cc7a0ed546e674f"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a></div><div class="ttdeci">Icon x</div></div>
+<div class="ttc" id="a_icon_8c_html_acd41c12fe81446bff0920670641367de"><div class="ttname"><a href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a></div><div class="ttdeci">Icon y</div></div>
+<div class="ttc" id="a_item_base_8c_html_a604074e02bcee1dc8a5ab6bdbd2e2e84"><div class="ttname"><a href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a></div><div class="ttdeci">void Close()</div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_a082343a1c686820290ba4c8d20a280fa"><div class="ttname"><a href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a></div><div class="ttdeci">void ~WarningMenuBase()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00130">ItemDropWarningMenu.c:130</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_a0e319a3807525f81eaa63849b5e2bfc9"><div class="ttname"><a href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a></div><div class="ttdeci">void UpdateControlsElementVisibility()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00214">ItemDropWarningMenu.c:214</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_a249e808e6fb9abd52108ceb48848ff12"><div class="ttname"><a href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a></div><div class="ttdeci">void OnInputDeviceChanged(EInputDeviceType pInputDeviceType)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00200">ItemDropWarningMenu.c:200</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_a4b65dcc0f0ff3c8961b0a79b81124400"><div class="ttname"><a href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a></div><div class="ttdeci">void OnInputPresetChanged()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00193">ItemDropWarningMenu.c:193</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_a60717312cf1029c5b9d4853ca428997f"><div class="ttname"><a href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a></div><div class="ttdeci">ButtonWidget m_OkButton</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00116">ItemDropWarningMenu.c:116</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_a660c7c5019fc65b593075c8b7dcfb12e"><div class="ttname"><a href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a></div><div class="ttdeci">WarningMenuBase UIScriptedMenu GetText()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00001">ItemDropWarningMenu.c:115</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_a907b9e1e828b5aed6d8ea6b88bb205df"><div class="ttname"><a href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a></div><div class="ttdeci">override bool OnClick(Widget w, int x, int y, int button)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00170">ItemDropWarningMenu.c:170</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_aa3923d60cd9cfc0d877235bf22045c96"><div class="ttname"><a href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a></div><div class="ttdeci">MultilineTextWidget m_Description</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00117">ItemDropWarningMenu.c:117</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_aca91439f757a428e9e5fcc3050f1ed8e"><div class="ttname"><a href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a></div><div class="ttdeci">void UpdateControlsElements()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00206">ItemDropWarningMenu.c:206</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_ae3e418070eacba5f392e75442ae00a87"><div class="ttname"><a href="#ae3e418070eacba5f392e75442ae00a87">Init</a></div><div class="ttdeci">override Widget Init()</div><div class="ttdoc">Launched from 'DayZGame.DeferredInit' to make earlier access, use, and updates impossible (downside o...</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00144">ItemDropWarningMenu.c:144</a></div></div>
+<div class="ttc" id="a_item_drop_warning_menu_8c_html_af66467e93d04391a9d72c7c781130e68"><div class="ttname"><a href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a></div><div class="ttdeci">void WarningMenuBase()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00119">ItemDropWarningMenu.c:119</a></div></div>
+<div class="ttc" id="a_u_a_input_8c_html_a616105f49c02ce570dbb5acb4b9b17f8"><div class="ttname"><a href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a></div><div class="ttdeci">proto native UAInputAPI GetUApi()</div></div>
+<div class="ttc" id="aclass_input_utils_html"><div class="ttname"><a href="../../d8/d01/class_input_utils.html">InputUtils</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00001">InputUtils.c:2</a></div></div>
+<div class="ttc" id="aclass_input_utils_html_a795ff30103ebb2fae58995e90a07c589"><div class="ttname"><a href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">InputUtils::GetRichtextButtonIconFromInputAction</a></div><div class="ttdeci">static string GetRichtextButtonIconFromInputAction(notnull UAInput pInput, string pLocalizedDescription, int pInputDeviceType=EUAINPUT_DEVICE_CONTROLLER, float pScale=ICON_SCALE_NORMAL, bool pVertical=false)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00151">InputUtils.c:151</a></div></div>
+<div class="ttc" id="aclass_input_utils_html_ab6346bb500d2d731181d0eec5ca345a1"><div class="ttname"><a href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">InputUtils::ICON_SCALE_TOOLBAR</a></div><div class="ttdeci">static const float ICON_SCALE_TOOLBAR</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00015">InputUtils.c:15</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_player_reposition_warning_menu_html"><div class="ttname"><a href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00121">ItemDropWarningMenu.c:122</a></div></div>
+<div class="ttc" id="aclass_player_reposition_warning_menu_html_ae23878666c5bcbfbda7ba62848e796ef"><div class="ttname"><a href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">PlayerRepositionWarningMenu::GetText</a></div><div class="ttdeci">override string GetText()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00123">ItemDropWarningMenu.c:123</a></div></div>
+<div class="ttc" id="aclass_rich_text_widget_html"><div class="ttname"><a href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/gameplay_8c_source.html#l00313">gameplay.c:314</a></div></div>
+<div class="ttc" id="aclass_u_i_scripted_menu_html"><div class="ttname"><a href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l00063">DayZGame.c:64</a></div></div>
+<div class="ttc" id="aclass_warning_menu_base_html"><div class="ttname"><a href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div><div class="ttdef"><b>Definition</b> <a href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00001">ItemDropWarningMenu.c:2</a></div></div>
+<div class="ttc" id="aclass_widget_html"><div class="ttname"><a href="../../dd/d0a/class_widget.html">Widget</a></div><div class="ttdef"><b>Definition</b> <a href="../../db/d03/_en_widgets_8c_source.html#l00189">EnWidgets.c:190</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___u_i_html_gafd2ff576b89077f07ebac93270f2e24f"><div class="ttname"><a href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a></div><div class="ttdeci">const int IDC_OK</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00127">constants.c:127</a></div></div>
+<div class="ttc" id="agroup___widget_a_p_i_html_ga70ac517aa5d3b3af95f61a2d560d811f"><div class="ttname"><a href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a></div><div class="ttdeci">proto native volatile void Update()</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d02/_player_sound_manager_8c_source.html#l00118">PlayerSoundManager.c:118</a></div></div>
+<div class="ttc" id="ainput_8c_html_a541a84e06cfb332b5f5d061c2dba4d86"><div class="ttname"><a href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a></div><div class="ttdeci">EInputDeviceType</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d06/input_8c_source.html#l00002">input.c:3</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a907b9e1e828b5aed6d8ea6b88bb205df" name="a907b9e1e828b5aed6d8ea6b88bb205df"></a>
@@ -234,7 +392,134 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00170">170</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  170</span>                      : <a class="code hl_class" href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div>
+<div class="line"><span class="lineno">  171</span>{</div>
+<div class="line"><span class="lineno">  172</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>;</div>
+<div class="line"><span class="lineno">  173</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a> <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>;</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  176</span>  {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  178</span>    {</div>
+<div class="line"><span class="lineno">  179</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  182</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  183</span>    }</div>
+<div class="line"><span class="lineno">  184</span>  }</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  187</span>  {</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  189</span>    {</div>
+<div class="line"><span class="lineno">  190</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  193</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  196</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  197</span>    }</div>
+<div class="line"><span class="lineno">  198</span>  }</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>  <span class="keyword">override</span> <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_function" href="#ae3e418070eacba5f392e75442ae00a87">Init</a>()</div>
+<div class="line"><span class="lineno">  201</span>  {</div>
+<div class="line"><span class="lineno">  202</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>());</div>
+<div class="line"><span class="lineno">  208</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  211</span>    {</div>
+<div class="line"><span class="lineno">  212</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  213</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">  219</span>  }</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  222</span>  {</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  224</span>  }</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a>(<a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>)</div>
+<div class="line"><span class="lineno">  227</span>  {</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">  231</span>    {</div>
+<div class="line"><span class="lineno">  232</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  233</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  234</span>    }</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>)</div>
+<div class="line"><span class="lineno">  240</span>  {</div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">  245</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  246</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>()</div>
+<div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  253</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  254</span>  }</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>)</div>
+<div class="line"><span class="lineno">  257</span>  {</div>
+<div class="line"><span class="lineno">  258</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  259</span>    <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">  260</span>  }</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>()</div>
+<div class="line"><span class="lineno">  263</span>  {</div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">  265</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">  266</span> </div>
+<div class="line"><span class="lineno">  267</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">  268</span>  }</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>()</div>
+<div class="line"><span class="lineno">  271</span>  {</div>
+<div class="line"><span class="lineno">  272</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  273</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  274</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  275</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  276</span> </div>
+<div class="line"><span class="lineno">  277</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  278</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  279</span>  }</div>
+<div class="line"><span class="lineno">  280</span>}</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ItemDropWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  283</span>{</div>
+<div class="line"><span class="lineno">  284</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a>()</div>
+<div class="line"><span class="lineno">  285</span>  {</div>
+<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  287</span>  }</div>
+<div class="line"><span class="lineno">  288</span>}</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span><span class="keyword">class </span><a class="code hl_class" href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  291</span>{</div>
+<div class="line"><span class="lineno">  292</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">GetText</a>()</div>
+<div class="line"><span class="lineno">  293</span>  {</div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  295</span>  }</div>
+<div class="line"><span class="lineno">  296</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a249e808e6fb9abd52108ceb48848ff12" name="a249e808e6fb9abd52108ceb48848ff12"></a>
@@ -261,7 +546,134 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00200">200</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  200</span>                      : <a class="code hl_class" href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div>
+<div class="line"><span class="lineno">  201</span>{</div>
+<div class="line"><span class="lineno">  202</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>;</div>
+<div class="line"><span class="lineno">  203</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a> <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>;</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  206</span>  {</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  208</span>    {</div>
+<div class="line"><span class="lineno">  209</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  212</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  213</span>    }</div>
+<div class="line"><span class="lineno">  214</span>  }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  217</span>  {</div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  219</span>    {</div>
+<div class="line"><span class="lineno">  220</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  223</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  226</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  227</span>    }</div>
+<div class="line"><span class="lineno">  228</span>  }</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>  <span class="keyword">override</span> <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_function" href="#ae3e418070eacba5f392e75442ae00a87">Init</a>()</div>
+<div class="line"><span class="lineno">  231</span>  {</div>
+<div class="line"><span class="lineno">  232</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  233</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">  234</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">  235</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>());</div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  241</span>    {</div>
+<div class="line"><span class="lineno">  242</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  243</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  244</span>    }</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>    <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">  249</span>  }</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  252</span>  {</div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  254</span>  }</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a>(<a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>)</div>
+<div class="line"><span class="lineno">  257</span>  {</div>
+<div class="line"><span class="lineno">  258</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">  261</span>    {</div>
+<div class="line"><span class="lineno">  262</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  263</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  264</span>    }</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  267</span>  }</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>)</div>
+<div class="line"><span class="lineno">  270</span>  {</div>
+<div class="line"><span class="lineno">  271</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  274</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">  275</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  276</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  277</span>  }</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>()</div>
+<div class="line"><span class="lineno">  280</span>  {</div>
+<div class="line"><span class="lineno">  281</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  282</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  283</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  284</span>  }</div>
+<div class="line"><span class="lineno">  285</span> </div>
+<div class="line"><span class="lineno">  286</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>)</div>
+<div class="line"><span class="lineno">  287</span>  {</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  289</span>    <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">  290</span>  }</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>()</div>
+<div class="line"><span class="lineno">  293</span>  {</div>
+<div class="line"><span class="lineno">  294</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">  295</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">  298</span>  }</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>()</div>
+<div class="line"><span class="lineno">  301</span>  {</div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  303</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  304</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  305</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  308</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  309</span>  }</div>
+<div class="line"><span class="lineno">  310</span>}</div>
+<div class="line"><span class="lineno">  311</span> </div>
+<div class="line"><span class="lineno">  312</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ItemDropWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  313</span>{</div>
+<div class="line"><span class="lineno">  314</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a>()</div>
+<div class="line"><span class="lineno">  315</span>  {</div>
+<div class="line"><span class="lineno">  316</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  317</span>  }</div>
+<div class="line"><span class="lineno">  318</span>}</div>
+<div class="line"><span class="lineno">  319</span> </div>
+<div class="line"><span class="lineno">  320</span><span class="keyword">class </span><a class="code hl_class" href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  321</span>{</div>
+<div class="line"><span class="lineno">  322</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">GetText</a>()</div>
+<div class="line"><span class="lineno">  323</span>  {</div>
+<div class="line"><span class="lineno">  324</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  325</span>  }</div>
+<div class="line"><span class="lineno">  326</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4b65dcc0f0ff3c8961b0a79b81124400" name="a4b65dcc0f0ff3c8961b0a79b81124400"></a>
@@ -288,7 +700,134 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00193">193</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  193</span>                      : <a class="code hl_class" href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div>
+<div class="line"><span class="lineno">  194</span>{</div>
+<div class="line"><span class="lineno">  195</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>;</div>
+<div class="line"><span class="lineno">  196</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a> <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>;</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  199</span>  {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  201</span>    {</div>
+<div class="line"><span class="lineno">  202</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  205</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span>  }</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  210</span>  {</div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  212</span>    {</div>
+<div class="line"><span class="lineno">  213</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  216</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  219</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+<div class="line"><span class="lineno">  221</span>  }</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>  <span class="keyword">override</span> <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_function" href="#ae3e418070eacba5f392e75442ae00a87">Init</a>()</div>
+<div class="line"><span class="lineno">  224</span>  {</div>
+<div class="line"><span class="lineno">  225</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  226</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>());</div>
+<div class="line"><span class="lineno">  231</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  234</span>    {</div>
+<div class="line"><span class="lineno">  235</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  236</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  237</span>    }</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a>(<a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>)</div>
+<div class="line"><span class="lineno">  250</span>  {</div>
+<div class="line"><span class="lineno">  251</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">  254</span>    {</div>
+<div class="line"><span class="lineno">  255</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  256</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  257</span>    }</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  260</span>  }</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>)</div>
+<div class="line"><span class="lineno">  263</span>  {</div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  267</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">  268</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  269</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  270</span>  }</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>()</div>
+<div class="line"><span class="lineno">  273</span>  {</div>
+<div class="line"><span class="lineno">  274</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  275</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  276</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  277</span>  }</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>)</div>
+<div class="line"><span class="lineno">  280</span>  {</div>
+<div class="line"><span class="lineno">  281</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  282</span>    <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">  283</span>  }</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>()</div>
+<div class="line"><span class="lineno">  286</span>  {</div>
+<div class="line"><span class="lineno">  287</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">  291</span>  }</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>()</div>
+<div class="line"><span class="lineno">  294</span>  {</div>
+<div class="line"><span class="lineno">  295</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  296</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  298</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  301</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  302</span>  }</div>
+<div class="line"><span class="lineno">  303</span>}</div>
+<div class="line"><span class="lineno">  304</span> </div>
+<div class="line"><span class="lineno">  305</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ItemDropWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  306</span>{</div>
+<div class="line"><span class="lineno">  307</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a>()</div>
+<div class="line"><span class="lineno">  308</span>  {</div>
+<div class="line"><span class="lineno">  309</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  310</span>  }</div>
+<div class="line"><span class="lineno">  311</span>}</div>
+<div class="line"><span class="lineno">  312</span> </div>
+<div class="line"><span class="lineno">  313</span><span class="keyword">class </span><a class="code hl_class" href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  314</span>{</div>
+<div class="line"><span class="lineno">  315</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">GetText</a>()</div>
+<div class="line"><span class="lineno">  316</span>  {</div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  318</span>  }</div>
+<div class="line"><span class="lineno">  319</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aafbdc45313f3f17e16ee557320c27b65" name="aafbdc45313f3f17e16ee557320c27b65"></a>
@@ -315,7 +854,134 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00183">183</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  183</span>                      : <a class="code hl_class" href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div>
+<div class="line"><span class="lineno">  184</span>{</div>
+<div class="line"><span class="lineno">  185</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>;</div>
+<div class="line"><span class="lineno">  186</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a> <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>;</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  189</span>  {</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  191</span>    {</div>
+<div class="line"><span class="lineno">  192</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  195</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+<div class="line"><span class="lineno">  197</span>  }</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  200</span>  {</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  202</span>    {</div>
+<div class="line"><span class="lineno">  203</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  206</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  209</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  210</span>    }</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>  <span class="keyword">override</span> <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_function" href="#ae3e418070eacba5f392e75442ae00a87">Init</a>()</div>
+<div class="line"><span class="lineno">  214</span>  {</div>
+<div class="line"><span class="lineno">  215</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  216</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">  217</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>());</div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  224</span>    {</div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  226</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  227</span>    }</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>    <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  235</span>  {</div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a>(<a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>)</div>
+<div class="line"><span class="lineno">  240</span>  {</div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">  244</span>    {</div>
+<div class="line"><span class="lineno">  245</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  246</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  247</span>    }</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  250</span>  }</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>)</div>
+<div class="line"><span class="lineno">  253</span>  {</div>
+<div class="line"><span class="lineno">  254</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  257</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">  258</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  259</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  260</span>  }</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>()</div>
+<div class="line"><span class="lineno">  263</span>  {</div>
+<div class="line"><span class="lineno">  264</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  265</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  266</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  267</span>  }</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>)</div>
+<div class="line"><span class="lineno">  270</span>  {</div>
+<div class="line"><span class="lineno">  271</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">  273</span>  }</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>()</div>
+<div class="line"><span class="lineno">  276</span>  {</div>
+<div class="line"><span class="lineno">  277</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">  281</span>  }</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>()</div>
+<div class="line"><span class="lineno">  284</span>  {</div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  286</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  287</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  288</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  292</span>  }</div>
+<div class="line"><span class="lineno">  293</span>}</div>
+<div class="line"><span class="lineno">  294</span> </div>
+<div class="line"><span class="lineno">  295</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ItemDropWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  296</span>{</div>
+<div class="line"><span class="lineno">  297</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a>()</div>
+<div class="line"><span class="lineno">  298</span>  {</div>
+<div class="line"><span class="lineno">  299</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  300</span>  }</div>
+<div class="line"><span class="lineno">  301</span>}</div>
+<div class="line"><span class="lineno">  302</span> </div>
+<div class="line"><span class="lineno">  303</span><span class="keyword">class </span><a class="code hl_class" href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  304</span>{</div>
+<div class="line"><span class="lineno">  305</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">GetText</a>()</div>
+<div class="line"><span class="lineno">  306</span>  {</div>
+<div class="line"><span class="lineno">  307</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  308</span>  }</div>
+<div class="line"><span class="lineno">  309</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aca91439f757a428e9e5fcc3050f1ed8e" name="aca91439f757a428e9e5fcc3050f1ed8e"></a>
@@ -342,6 +1008,135 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00206">206</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  206</span>                      : <a class="code hl_class" href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div>
+<div class="line"><span class="lineno">  207</span>{</div>
+<div class="line"><span class="lineno">  208</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>;</div>
+<div class="line"><span class="lineno">  209</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a> <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>;</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  212</span>  {</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  214</span>    {</div>
+<div class="line"><span class="lineno">  215</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  218</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span>  }</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  223</span>  {</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  225</span>    {</div>
+<div class="line"><span class="lineno">  226</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  229</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  232</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  233</span>    }</div>
+<div class="line"><span class="lineno">  234</span>  }</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>  <span class="keyword">override</span> <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_function" href="#ae3e418070eacba5f392e75442ae00a87">Init</a>()</div>
+<div class="line"><span class="lineno">  237</span>  {</div>
+<div class="line"><span class="lineno">  238</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  239</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">  241</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>());</div>
+<div class="line"><span class="lineno">  244</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  247</span>    {</div>
+<div class="line"><span class="lineno">  248</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  249</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  250</span>    }</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">  255</span>  }</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  258</span>  {</div>
+<div class="line"><span class="lineno">  259</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  260</span>  }</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a>(<a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>)</div>
+<div class="line"><span class="lineno">  263</span>  {</div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">  267</span>    {</div>
+<div class="line"><span class="lineno">  268</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  269</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  270</span>    }</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  273</span>  }</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>)</div>
+<div class="line"><span class="lineno">  276</span>  {</div>
+<div class="line"><span class="lineno">  277</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  280</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">  281</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  282</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  283</span>  }</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>()</div>
+<div class="line"><span class="lineno">  286</span>  {</div>
+<div class="line"><span class="lineno">  287</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  289</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  290</span>  }</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>)</div>
+<div class="line"><span class="lineno">  293</span>  {</div>
+<div class="line"><span class="lineno">  294</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  295</span>    <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">  296</span>  }</div>
+<div class="line"><span class="lineno">  297</span> </div>
+<div class="line"><span class="lineno">  298</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>()</div>
+<div class="line"><span class="lineno">  299</span>  {</div>
+<div class="line"><span class="lineno">  300</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">  301</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">  302</span> </div>
+<div class="line"><span class="lineno">  303</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">  304</span>  }</div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>()</div>
+<div class="line"><span class="lineno">  307</span>  {</div>
+<div class="line"><span class="lineno">  308</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  309</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  310</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  311</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  312</span> </div>
+<div class="line"><span class="lineno">  313</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  314</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  315</span>  }</div>
+<div class="line"><span class="lineno">  316</span>}</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ItemDropWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  319</span>{</div>
+<div class="line"><span class="lineno">  320</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a>()</div>
+<div class="line"><span class="lineno">  321</span>  {</div>
+<div class="line"><span class="lineno">  322</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  323</span>  }</div>
+<div class="line"><span class="lineno">  324</span>}</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span><span class="keyword">class </span><a class="code hl_class" href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  327</span>{</div>
+<div class="line"><span class="lineno">  328</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">GetText</a>()</div>
+<div class="line"><span class="lineno">  329</span>  {</div>
+<div class="line"><span class="lineno">  330</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  331</span>  }</div>
+<div class="line"><span class="lineno">  332</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../de/d0e/_radial_quickbar_menu_8c_source.html#l00503">UIScriptedMenu::ChangeCurrentCategory()</a>, <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00393">UIScriptedMenu::Init()</a>, <a class="el" href="../../d5/d06/_tabber_u_i_8c_source.html#l00042">ScriptedWidgetEventHandler::Init()</a>, <a class="el" href="../../d3/d02/_main_menu_consoles_8c_source.html#l00094">UIScriptedMenu::LoadMods()</a>, <a class="el" href="../../dd/d08/_map_menu_8c_source.html#l00209">UIScriptedMenu::OnInputDeviceChanged()</a>, <a class="el" href="../../d5/d06/_tabber_u_i_8c_source.html#l00026">ScriptedWidgetEventHandler::OnInputDeviceChanged()</a>, <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00063">UIScriptedMenu::OnInputPresetChanged()</a>, <a class="el" href="../../d5/d06/_tabber_u_i_8c_source.html#l00019">ScriptedWidgetEventHandler::OnInputPresetChanged()</a>, <a class="el" href="../../dd/d08/_map_menu_8c_source.html#l00173">UIScriptedMenu::OnShow()</a>, <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00560">UIScriptedMenu::PerformSwitchPreset()</a>, and <a class="el" href="../../d7/d0b/_gestures_menu_8c_source.html#l00284">UIScriptedMenu::RefreshGestures()</a>.</p>
 
 </div>
 </div>
@@ -369,6 +1164,135 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00214">214</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>                      : <a class="code hl_class" href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div>
+<div class="line"><span class="lineno">  215</span>{</div>
+<div class="line"><span class="lineno">  216</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>;</div>
+<div class="line"><span class="lineno">  217</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a> <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>;</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  220</span>  {</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  222</span>    {</div>
+<div class="line"><span class="lineno">  223</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  226</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  227</span>    }</div>
+<div class="line"><span class="lineno">  228</span>  }</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  231</span>  {</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  233</span>    {</div>
+<div class="line"><span class="lineno">  234</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  237</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  240</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  241</span>    }</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>  <span class="keyword">override</span> <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_function" href="#ae3e418070eacba5f392e75442ae00a87">Init</a>()</div>
+<div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  247</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">  248</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">  249</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  250</span> </div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>());</div>
+<div class="line"><span class="lineno">  252</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  255</span>    {</div>
+<div class="line"><span class="lineno">  256</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  257</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  258</span>    }</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>    <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">  263</span>  }</div>
+<div class="line"><span class="lineno">  264</span> </div>
+<div class="line"><span class="lineno">  265</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  266</span>  {</div>
+<div class="line"><span class="lineno">  267</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  268</span>  }</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a>(<a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>)</div>
+<div class="line"><span class="lineno">  271</span>  {</div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">  275</span>    {</div>
+<div class="line"><span class="lineno">  276</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  277</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  278</span>    }</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  281</span>  }</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>)</div>
+<div class="line"><span class="lineno">  284</span>  {</div>
+<div class="line"><span class="lineno">  285</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">  289</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  290</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  291</span>  }</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>()</div>
+<div class="line"><span class="lineno">  294</span>  {</div>
+<div class="line"><span class="lineno">  295</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  296</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  297</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  298</span>  }</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>)</div>
+<div class="line"><span class="lineno">  301</span>  {</div>
+<div class="line"><span class="lineno">  302</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  303</span>    <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">  304</span>  }</div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>()</div>
+<div class="line"><span class="lineno">  307</span>  {</div>
+<div class="line"><span class="lineno">  308</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">  309</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">  310</span> </div>
+<div class="line"><span class="lineno">  311</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">  312</span>  }</div>
+<div class="line"><span class="lineno">  313</span> </div>
+<div class="line"><span class="lineno">  314</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>()</div>
+<div class="line"><span class="lineno">  315</span>  {</div>
+<div class="line"><span class="lineno">  316</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  317</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  318</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  319</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  322</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  323</span>  }</div>
+<div class="line"><span class="lineno">  324</span>}</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ItemDropWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  327</span>{</div>
+<div class="line"><span class="lineno">  328</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a>()</div>
+<div class="line"><span class="lineno">  329</span>  {</div>
+<div class="line"><span class="lineno">  330</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  331</span>  }</div>
+<div class="line"><span class="lineno">  332</span>}</div>
+<div class="line"><span class="lineno">  333</span> </div>
+<div class="line"><span class="lineno">  334</span><span class="keyword">class </span><a class="code hl_class" href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  335</span>{</div>
+<div class="line"><span class="lineno">  336</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">GetText</a>()</div>
+<div class="line"><span class="lineno">  337</span>  {</div>
+<div class="line"><span class="lineno">  338</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  339</span>  }</div>
+<div class="line"><span class="lineno">  340</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00393">UIScriptedMenu::Init()</a>, <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00071">UIScriptedMenu::OnInputDeviceChanged()</a>, <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00063">UIScriptedMenu::OnInputPresetChanged()</a>, and <a class="el" href="../../dd/d08/_map_menu_8c_source.html#l00173">UIScriptedMenu::OnShow()</a>.</p>
 
 </div>
 </div>
@@ -396,7 +1320,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00119">119</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  121</span>                                  : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  122</span>{</div>
+<div class="line"><span class="lineno">  123</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  124</span>  {</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  126</span>  }</div>
+<div class="line"><span class="lineno">  127</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a082343a1c686820290ba4c8d20a280fa" name="a082343a1c686820290ba4c8d20a280fa"></a>
@@ -423,7 +1354,134 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00130">130</a> of file <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html">ItemDropWarningMenu.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  130</span>                      : <a class="code hl_class" href="../../d1/d0b/class_u_i_scripted_menu.html">UIScriptedMenu</a></div>
+<div class="line"><span class="lineno">  131</span>{</div>
+<div class="line"><span class="lineno">  132</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a> <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>;</div>
+<div class="line"><span class="lineno">  133</span>  <span class="keyword">protected</span> <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a> <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>;</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#af66467e93d04391a9d72c7c781130e68">WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  136</span>  {</div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  138</span>    {</div>
+<div class="line"><span class="lineno">  139</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().AddActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>});</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  142</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="line"><span class="lineno">  144</span>  }</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="#a082343a1c686820290ba4c8d20a280fa">~WarningMenuBase</a>()</div>
+<div class="line"><span class="lineno">  147</span>  {</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>() &amp;&amp; <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  149</span>    {</div>
+<div class="line"><span class="lineno">  150</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().RemoveActiveInputExcludes({<span class="stringliteral">&quot;menu&quot;</span>}, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowHudUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  153</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetHud().ShowQuickbarUI(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Remove(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  156</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Remove(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="line"><span class="lineno">  158</span>  }</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <span class="keyword">override</span> <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_function" href="#ae3e418070eacba5f392e75442ae00a87">Init</a>()</div>
+<div class="line"><span class="lineno">  161</span>  {</div>
+<div class="line"><span class="lineno">  162</span>    layoutRoot = <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetWorkspace().CreateWidgets(<span class="stringliteral">&quot;gui/layouts/day_z_dropped_items.layout&quot;</span>);</div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">ButtonWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;bOK&quot;</span>));</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">MultilineTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;txtDescription&quot;</span>));</div>
+<div class="line"><span class="lineno">  165</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">text</a> = <a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a>.TranslateString(<a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>());</div>
+<div class="line"><span class="lineno">  168</span>    <a class="code hl_variable" href="#aa3923d60cd9cfc0d877235bf22045c96">m_Description</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">text</a>);</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission())</div>
+<div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputPresetChanged().Insert(<a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>);</div>
+<div class="line"><span class="lineno">  173</span>      <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetMission().GetOnInputDeviceChanged().Insert(<a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>);</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetCurrentInputDevice());</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">return</span> layoutRoot;</div>
+<div class="line"><span class="lineno">  179</span>  }</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>  <span class="keywordtype">string</span> <a class="code hl_function" href="#a660c7c5019fc65b593075c8b7dcfb12e">GetText</a>()</div>
+<div class="line"><span class="lineno">  182</span>  {</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  184</span>  }</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>  <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="#a907b9e1e828b5aed6d8ea6b88bb205df">OnClick</a>(<a class="code hl_class" href="../../dd/d0a/class_widget.html">Widget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>)</div>
+<div class="line"><span class="lineno">  187</span>  {</div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnClick(<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#a2970c38de5fbde060cc7a0ed546e674f">x</a>, <a class="code hl_variable" href="../../dd/d0b/_icon_8c.html#acd41c12fe81446bff0920670641367de">y</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">button</a>);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">w</a>.GetUserID() == <a class="code hl_variable" href="../../da/d0c/group___u_i.html#gafd2ff576b89077f07ebac93270f2e24f">IDC_OK</a>)</div>
+<div class="line"><span class="lineno">  191</span>    {</div>
+<div class="line"><span class="lineno">  192</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  193</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  197</span>  }</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/d0e/group___widget_a_p_i.html#ga70ac517aa5d3b3af95f61a2d560d811f">Update</a>(<span class="keywordtype">float</span> <a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>)</div>
+<div class="line"><span class="lineno">  200</span>  {</div>
+<div class="line"><span class="lineno">  201</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.Update(<a class="code hl_class" href="../../db/d06/class_param3.html">timeslice</a>);</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">UAUISelect</a>).LocalPress())</div>
+<div class="line"><span class="lineno">  205</span>      <a class="code hl_function" href="../../df/d0e/_item_base_8c.html#a604074e02bcee1dc8a5ab6bdbd2e2e84">Close</a>();</div>
+<div class="line"><span class="lineno">  206</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  207</span>  }</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a4b65dcc0f0ff3c8961b0a79b81124400">OnInputPresetChanged</a>()</div>
+<div class="line"><span class="lineno">  210</span>  {</div>
+<div class="line"><span class="lineno">  211</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  212</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  213</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  214</span>  }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a249e808e6fb9abd52108ceb48848ff12">OnInputDeviceChanged</a>(<a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a> <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>)</div>
+<div class="line"><span class="lineno">  217</span>  {</div>
+<div class="line"><span class="lineno">  218</span>    <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>();</div>
+<div class="line"><span class="lineno">  219</span>    <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>();</div>
+<div class="line"><span class="lineno">  220</span>  }</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#aca91439f757a428e9e5fcc3050f1ed8e">UpdateControlsElements</a>()</div>
+<div class="line"><span class="lineno">  223</span>  {</div>
+<div class="line"><span class="lineno">  224</span>    <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a> = <a class="code hl_class" href="../../db/d06/class_rich_text_widget.html">RichTextWidget</a>.Cast(layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;ContextToolbarText&quot;</span>));</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">context</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot; %1&quot;</span>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="../../d8/d01/class_input_utils.html#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<span class="stringliteral">&quot;UAUISelect&quot;</span>, <span class="stringliteral">&quot;#early_access_alpha_understand&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">EUAINPUT_DEVICE_CONTROLLER</a>, <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_variable" href="../../d8/d01/class_input_utils.html#ab6346bb500d2d731181d0eec5ca345a1">ICON_SCALE_TOOLBAR</a>));</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarText</a>.SetText(<a class="code hl_class" href="../../db/d06/class_param3.html">context</a>);</div>
+<div class="line"><span class="lineno">  228</span>  }</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>  <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#a0e319a3807525f81eaa63849b5e2bfc9">UpdateControlsElementVisibility</a>()</div>
+<div class="line"><span class="lineno">  231</span>  {</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  233</span><span class="preprocessor">#ifdef PLATFORM_CONSOLE</span></div>
+<div class="line"><span class="lineno">  234</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a> = !<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().IsEnabledMouseAndKeyboard() || <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetCurrentInputDevice() == <a class="code hl_enumeration" href="../../d1/d06/input_8c.html#a541a84e06cfb332b5f5d061c2dba4d86">EInputDeviceType</a>.CONTROLLER;</div>
+<div class="line"><span class="lineno">  235</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    layoutRoot.FindAnyWidget(<span class="stringliteral">&quot;BottomConsoleToolbar&quot;</span>).Show(<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  238</span>    <a class="code hl_variable" href="#a60717312cf1029c5b9d4853ca428997f">m_OkButton</a>.Show(!<a class="code hl_class" href="../../db/d06/class_param3.html">toolbarShow</a>);</div>
+<div class="line"><span class="lineno">  239</span>  }</div>
+<div class="line"><span class="lineno">  240</span>}</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span><span class="keyword">class </span><a class="code hl_class" href="../../db/d06/class_param3.html">ItemDropWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  243</span>{</div>
+<div class="line"><span class="lineno">  244</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../d6/d09/_action_base_8c.html#ad37cd855eec1e2636806ff274469540a">GetText</a>()</div>
+<div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_item_drop_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="line"><span class="lineno">  248</span>}</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span><span class="keyword">class </span><a class="code hl_class" href="../../df/d00/class_player_reposition_warning_menu.html">PlayerRepositionWarningMenu</a> : <a class="code hl_class" href="../../d8/d08/class_warning_menu_base.html">WarningMenuBase</a></div>
+<div class="line"><span class="lineno">  251</span>{</div>
+<div class="line"><span class="lineno">  252</span>  <span class="keyword">override</span> <span class="keywordtype">string</span> <a class="code hl_function" href="../../df/d00/class_player_reposition_warning_menu.html#ae23878666c5bcbfbda7ba62848e796ef">GetText</a>()</div>
+<div class="line"><span class="lineno">  253</span>  {</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;#str_position_change_notification&quot;</span>;</div>
+<div class="line"><span class="lineno">  255</span>  }</div>
+<div class="line"><span class="lineno">  256</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>

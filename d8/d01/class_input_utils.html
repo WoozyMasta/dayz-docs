@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -198,6 +195,39 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00071">71</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>  {</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">buttonIcons</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a>();</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">pInput</a>.AlternativeCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pInput</a>.SelectAlternative(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">done</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   79</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">bk</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">bk</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">pInput</a>.BindKeyCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">bk</a>++)</div>
+<div class="line"><span class="lineno">   80</span>      {</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pInput</a>.CheckBindDevice(0, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>))</div>
+<div class="line"><span class="lineno">   82</span>        {</div>
+<div class="line"><span class="lineno">   83</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">buttonIcons</a>.Insert(<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetButtonIcon(<a class="code hl_class" href="../../db/d06/class_param3.html">pInput</a>.Binding(<a class="code hl_class" href="../../db/d06/class_param3.html">bk</a>)));</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">bk</a> == <a class="code hl_class" href="../../db/d06/class_param3.html">pInput</a>.BindKeyCount() - 1)</div>
+<div class="line"><span class="lineno">   86</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">done</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   87</span>        }</div>
+<div class="line"><span class="lineno">   88</span>      }</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">done</a>)</div>
+<div class="line"><span class="lineno">   91</span>      {</div>
+<div class="line"><span class="lineno">   92</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">buttonIcons</a>.Invert();</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">buttonIcons</a>;</div>
+<div class="line"><span class="lineno">   94</span>      }</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">buttonIcons</a>;</div>
+<div class="line"><span class="lineno">   98</span>  }</div>
+<div class="ttc" id="a_u_a_input_8c_html_a616105f49c02ce570dbb5acb4b9b17f8"><div class="ttname"><a href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a></div><div class="ttdeci">proto native UAInputAPI GetUApi()</div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00100">GetButtonIconPathFromInput()</a>, and <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00110">GetImagesetAndIconFromInputAction()</a>.</p>
 
 </div>
 </div>
@@ -229,6 +259,19 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00100">100</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>  {</div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_class" href="../../d4/d04/class_u_a_input.html">UAInput</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByName(<a class="code hl_class" href="../../db/d06/class_param3.html">pInputName</a>);</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">buttonIcons</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a>();</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">buttonIcons</a> = <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="#a8a70dc405a01b602dc9206395bde8896">GetButtonIconPathFromInput</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>);</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">buttonIcons</a>;</div>
+<div class="line"><span class="lineno">  108</span>  }</div>
+<div class="ttc" id="aclass_input_utils_html"><div class="ttname"><a href="../../d8/d01/class_input_utils.html">InputUtils</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00001">InputUtils.c:2</a></div></div>
+<div class="ttc" id="aclass_input_utils_html_a8a70dc405a01b602dc9206395bde8896"><div class="ttname"><a href="#a8a70dc405a01b602dc9206395bde8896">InputUtils::GetButtonIconPathFromInput</a></div><div class="ttdeci">static array&lt; string &gt; GetButtonIconPathFromInput(notnull UAInput pInput, int pInputDeviceType=EUAINPUT_DEVICE_CONTROLLER)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00071">InputUtils.c:71</a></div></div>
+<div class="ttc" id="aclass_u_a_input_html"><div class="ttname"><a href="../../d4/d04/class_u_a_input.html">UAInput</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d0a/_u_a_input_8c_source.html#l00023">UAInput.c:24</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00071">GetButtonIconPathFromInput()</a>, and <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>.</p>
 
 </div>
 </div>
@@ -260,6 +303,21 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00017">17</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>  {</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_class" href="../../d4/d04/class_u_a_input.html">UAInput</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByName(<a class="code hl_class" href="../../db/d06/class_param3.html">pInputName</a>);</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.AlternativeCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.SelectAlternative(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   23</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.CheckBindDevice(0, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>))</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetButtonName(<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.GetBindKey(0));</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   28</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d2/d0c/_action_targets_cursor_8c_source.html#l01153">ActionTargetsCursor::SetInteractActionIcon()</a>.</p>
 
 </div>
 </div>
@@ -293,6 +351,50 @@ Static Private Attributes</h2></td></tr>
 <p>returns a map of button names, combo or not </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00031">31</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>  {</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="../../d4/d04/class_u_a_input.html">UAInput</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByName(<a class="code hl_class" href="../../db/d06/class_param3.html">pInputName</a>);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_class" href="../../d2/d01/classarray.html">TStringArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>;</div>
+<div class="line"><span class="lineno">   35</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ref TStringArray&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">output</a>; <span class="comment">//&lt;alternativeIDX&lt;button_array&gt;&gt;</span></div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.AlternativeCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.SelectAlternative(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>);</div>
+<div class="line"><span class="lineno">   39</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.BindingCount() &gt; 0 &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.Binding(0) != 0 &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.CheckBindDevice(0, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>))</div>
+<div class="line"><span class="lineno">   40</span>      {</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d08/group___enforce.html#ga28845e68ed8329715e29aded7542ca15">TStringArray</a>;</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.IsCombo())</div>
+<div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>.Insert(<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetButtonName(<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.Binding(0)));</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> = 1; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.BindingCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">j</a>++)</div>
+<div class="line"><span class="lineno">   47</span>          {</div>
+<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.Binding(<a class="code hl_class" href="../../db/d06/class_param3.html">j</a>) != 0 &amp;&amp; <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.CheckBindDevice(<a class="code hl_class" href="../../db/d06/class_param3.html">j</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>))</div>
+<div class="line"><span class="lineno">   49</span>              <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>.Insert(<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetButtonName(<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.Binding(<a class="code hl_class" href="../../db/d06/class_param3.html">j</a>)));</div>
+<div class="line"><span class="lineno">   50</span>          }</div>
+<div class="line"><span class="lineno">   51</span>          <span class="comment">//return buttons;</span></div>
+<div class="line"><span class="lineno">   52</span>        }</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   54</span>        {</div>
+<div class="line"><span class="lineno">   55</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>.Insert(<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetButtonName(<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.GetBindKey(0)));</div>
+<div class="line"><span class="lineno">   56</span>          <span class="comment">//return buttons;</span></div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>.Count() &gt; 0)</div>
+<div class="line"><span class="lineno">   60</span>        {</div>
+<div class="line"><span class="lineno">   61</span>          <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">output</a>)</div>
+<div class="line"><span class="lineno">   62</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">output</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ref TStringArray&gt;</a>;</div>
+<div class="line"><span class="lineno">   63</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">output</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>);</div>
+<div class="line"><span class="lineno">   64</span>        }</div>
+<div class="line"><span class="lineno">   65</span>      }</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">output</a>;</div>
+<div class="line"><span class="lineno">   69</span>  }</div>
+<div class="ttc" id="aclassarray_html"><div class="ttname"><a href="../../d2/d01/classarray.html">array&lt; string &gt;</a></div></div>
+<div class="ttc" id="agroup___enforce_html_ga28845e68ed8329715e29aded7542ca15"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga28845e68ed8329715e29aded7542ca15">TStringArray</a></div><div class="ttdeci">array&lt; string &gt; TStringArray</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00666">EnScript.c:666</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d0b/_gestures_menu_8c_source.html#l00040">GetBoundButtonText()</a>.</p>
 
 </div>
 </div>
@@ -320,6 +422,14 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00198">198</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>  {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a4936983a19653c9bf3769dcbe02e5fae">m_CurrentPresetIDConsole</a>;</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+<div class="ttc" id="aclass_input_utils_html_a4936983a19653c9bf3769dcbe02e5fae"><div class="ttname"><a href="#a4936983a19653c9bf3769dcbe02e5fae">InputUtils::m_CurrentPresetIDConsole</a></div><div class="ttdeci">static int m_CurrentPresetIDConsole</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00008">InputUtils.c:8</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00008">m_CurrentPresetIDConsole</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00081">UIScriptedMenu::UpdateTabContent()</a>.</p>
 
 </div>
 </div>
@@ -362,6 +472,42 @@ Static Private Attributes</h2></td></tr>
 <p>Asia vs Europe/N.America controller layout</p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00110">110</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>  {</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a> = <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="#a8a70dc405a01b602dc9206395bde8896">GetButtonIconPathFromInput</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pInput</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>);</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>.Count() == 0)</div>
+<div class="line"><span class="lineno">  114</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  117</span>    {</div>
+<div class="line"><span class="lineno">  118</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">parts</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a>;</div>
+<div class="line"><span class="lineno">  119</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">buttons</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>).Split(<span class="stringliteral">&quot;:&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>);</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>.Count() &lt; 2)</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pImageSet</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[1].SubstringInverted(<a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[1], <a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[1].Length() - 6, <a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[1].Length()));</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  127</span><span class="preprocessor">#ifdef PLATFORM_PS4</span></div>
+<div class="line"><span class="lineno">  128</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().<a class="code hl_function" href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a>().GetEnterButton() == <a class="code hl_enumeration" href="../../d4/d06/group___gamepad.html#ga7a2d71f78acae0c6efa38d7f1fea596f">GamepadButton</a>.B)</div>
+<div class="line"><span class="lineno">  129</span>      {</div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[2] == <span class="stringliteral">&quot;cross&quot;</span>)</div>
+<div class="line"><span class="lineno">  132</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[2] = <span class="stringliteral">&quot;circle&quot;</span>;</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[2] == <span class="stringliteral">&quot;circle&quot;</span>)</div>
+<div class="line"><span class="lineno">  136</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[2] = <span class="stringliteral">&quot;cross&quot;</span>;</div>
+<div class="line"><span class="lineno">  137</span>      }</div>
+<div class="line"><span class="lineno">  138</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">pIconName</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">parts</a>[2]);</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="line"><span class="lineno">  142</span>  }</div>
+<div class="ttc" id="a_action_base_8c_html_a95221c1a0eabcad6044d1c11a1f4488c"><div class="ttname"><a href="../../d6/d09/_action_base_8c.html#a95221c1a0eabcad6044d1c11a1f4488c">GetInput</a></div><div class="ttdeci">ActionInput GetInput()</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d09/_action_base_8c_source.html#l00989">ActionBase.c:989</a></div></div>
+<div class="ttc" id="agameplay_8c_html_aebb1fa6632d513bc849994e7b6c9c93d"><div class="ttname"><a href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a></div><div class="ttdeci">proto native CGame GetGame()</div></div>
+<div class="ttc" id="agroup___gamepad_html_ga7a2d71f78acae0c6efa38d7f1fea596f"><div class="ttname"><a href="../../d4/d06/group___gamepad.html#ga7a2d71f78acae0c6efa38d7f1fea596f">GamepadButton</a></div><div class="ttdeci">GamepadButton</div><div class="ttdef"><b>Definition</b> <a href="../../d7/d04/_en_system_8c_source.html#l00340">EnSystem.c:341</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00071">GetButtonIconPathFromInput()</a>, <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, and <a class="el" href="../../d6/d09/_action_base_8c_source.html#l00989">GetInput()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00144">GetImagesetAndIconFromInputAction()</a>, <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00151">GetRichtextButtonIconFromInputAction()</a>, and <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00176">GetRichtextButtonIconFromInputAction()</a>.</p>
 
 </div>
 </div>
@@ -403,6 +549,14 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00144">144</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_class" href="../../d4/d04/class_u_a_input.html">UAInput</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByName(<a class="code hl_class" href="../../db/d06/class_param3.html">pInputAction</a>);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="#ae7f2c89cc5ef1c53965f429d83bb25eb">GetImagesetAndIconFromInputAction</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pImageSet</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pIconName</a>);</div>
+<div class="line"><span class="lineno">  149</span>  }</div>
+<div class="ttc" id="aclass_input_utils_html_ae7f2c89cc5ef1c53965f429d83bb25eb"><div class="ttname"><a href="#ae7f2c89cc5ef1c53965f429d83bb25eb">InputUtils::GetImagesetAndIconFromInputAction</a></div><div class="ttdeci">static void GetImagesetAndIconFromInputAction(notnull UAInput pInput, int pInputDeviceType, out array&lt; string &gt; pImageSet, out array&lt; string &gt; pIconName)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00110">InputUtils.c:110</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00110">GetImagesetAndIconFromInputAction()</a>, and <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>.</p>
 
 </div>
 </div>
@@ -430,6 +584,14 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00203">203</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>  {</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a1351cbd58957ef854e67e58252319073">m_InputActionSortingMap</a>;</div>
+<div class="line"><span class="lineno">  206</span>  }</div>
+<div class="ttc" id="aclass_input_utils_html_a1351cbd58957ef854e67e58252319073"><div class="ttname"><a href="#a1351cbd58957ef854e67e58252319073">InputUtils::m_InputActionSortingMap</a></div><div class="ttdeci">ref map&lt; int, ref array&lt; int &gt; &gt; m_InputActionSortingMap</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00011">InputUtils.c:11</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00011">m_InputActionSortingMap</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d04/_keybindings_container_8c_source.html#l00053">array::AddSubgroup()</a>, <a class="el" href="../../dd/d04/_keybindings_container_8c_source.html#l00072">array::CreateSubgroups()</a>, and <a class="el" href="../../d1/d0f/_keybindings_menu_8c_source.html#l00082">UIScriptedMenu::CreateTabs()</a>.</p>
 
 </div>
 </div>
@@ -477,6 +639,32 @@ Static Private Attributes</h2></td></tr>
 <p>first element is already taken</p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00151">151</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>  {</div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a>();</div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">iconNames</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a>();</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="#ae7f2c89cc5ef1c53965f429d83bb25eb">GetImagesetAndIconFromInputAction</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">pInput</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">iconNames</a>);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a>.Count() == 0)</div>
+<div class="line"><span class="lineno">  158</span>      <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">result</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;&lt;image set=\&quot;%1\&quot; name=\&quot;%2\&quot; scale=\&quot;%3\&quot; /&gt;&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a>.Get(0), <a class="code hl_class" href="../../db/d06/class_param3.html">iconNames</a>.Get(0), <a class="code hl_class" href="../../db/d06/class_param3.html">pScale</a>);</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">divider</a> = <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">pVertical</a>)</div>
+<div class="line"><span class="lineno">  164</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">divider</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;\n%1\n&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">divider</a>);</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a>.Count() &gt; 1)</div>
+<div class="line"><span class="lineno">  167</span>    {</div>
+<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 1; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  170</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">result</a> = <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1%2&lt;image set=\&quot;%3\&quot; name=\&quot;%4\&quot; scale=\&quot;%5\&quot; /&gt;&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">result</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">divider</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">iconNames</a>.Get(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>), <a class="code hl_class" href="../../db/d06/class_param3.html">pScale</a>);</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">return</span> <span class="keywordtype">string</span>.Format(<span class="stringliteral">&quot;%1 %2&quot;</span>, <a class="code hl_class" href="../../db/d06/class_param3.html">result</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pLocalizedDescription</a>);</div>
+<div class="line"><span class="lineno">  174</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00110">GetImagesetAndIconFromInputAction()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00176">GetRichtextButtonIconFromInputAction()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00120">Init()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00220">LoginScreenBase::Init()</a>, <a class="el" href="../../da/d0c/_logout_menu_8c_source.html#l00030">UIScriptedMenu::Init()</a>, <a class="el" href="../../d9/d01/5___mission_2_g_u_i_2_inventory_new_2_inventory_8c_source.html#l00076">Inventory()</a>, <a class="el" href="../../d2/d0c/_action_targets_cursor_8c_source.html#l00137">ActionTargetsCursor::SetControllerIcon()</a>, <a class="el" href="../../da/d04/_item_actions_widget_8c_source.html#l00070">ScriptedWidgetEventHandler::SetControllerIcon()</a>, <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00712">UIScriptedMenu::UpdateControlsElements()</a>, <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00093">WarningMenuBase::UpdateControlsElements()</a>, <a class="el" href="../../d5/d06/_tabber_u_i_8c_source.html#l00434">ScriptedWidgetEventHandler::UpdateControlsElements()</a>, and <a class="el" href="../../da/d09/_credits_menu_8c_source.html#l00115">UIScriptedMenu::UpdateInfoPanelText()</a>.</p>
 
 </div>
 </div>
@@ -523,6 +711,18 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00176">176</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>  {</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_class" href="../../d4/d04/class_u_a_input.html">UAInput</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByName(<a class="code hl_class" href="../../db/d06/class_param3.html">pInputAction</a>);</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a>();</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">iconNames</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;string&gt;</a>();</div>
+<div class="line"><span class="lineno">  182</span>    <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="#ae7f2c89cc5ef1c53965f429d83bb25eb">GetImagesetAndIconFromInputAction</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">imageSets</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">iconNames</a>);</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../d8/d01/class_input_utils.html">InputUtils</a>.<a class="code hl_function" href="#a795ff30103ebb2fae58995e90a07c589">GetRichtextButtonIconFromInputAction</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pLocalizedDescription</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pInputDeviceType</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pScale</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">pVertical</a>);</div>
+<div class="line"><span class="lineno">  185</span>  }</div>
+<div class="ttc" id="aclass_input_utils_html_a795ff30103ebb2fae58995e90a07c589"><div class="ttname"><a href="#a795ff30103ebb2fae58995e90a07c589">InputUtils::GetRichtextButtonIconFromInputAction</a></div><div class="ttdeci">static string GetRichtextButtonIconFromInputAction(notnull UAInput pInput, string pLocalizedDescription, int pInputDeviceType=EUAINPUT_DEVICE_CONTROLLER, float pScale=ICON_SCALE_NORMAL, bool pVertical=false)</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00151">InputUtils.c:151</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00110">GetImagesetAndIconFromInputAction()</a>, <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00151">GetRichtextButtonIconFromInputAction()</a>, and <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>.</p>
 
 </div>
 </div>
@@ -550,6 +750,14 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00208">208</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>  {</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a83605c2d9a5856d26e7c9872c34aa09d">m_UnsortedInputActions</a>;</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="ttc" id="aclass_input_utils_html_a83605c2d9a5856d26e7c9872c34aa09d"><div class="ttname"><a href="#a83605c2d9a5856d26e7c9872c34aa09d">InputUtils::m_UnsortedInputActions</a></div><div class="ttdeci">ref array&lt; int &gt; m_UnsortedInputActions</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00012">InputUtils.c:12</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00012">m_UnsortedInputActions</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d04/_keybindings_container_8c_source.html#l00053">array::AddSubgroup()</a>, <a class="el" href="../../dd/d04/_keybindings_container_8c_source.html#l00072">array::CreateSubgroups()</a>, and <a class="el" href="../../d1/d0f/_keybindings_menu_8c_source.html#l00082">UIScriptedMenu::CreateTabs()</a>.</p>
 
 </div>
 </div>
@@ -577,6 +785,53 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00213">213</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>  {</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a1351cbd58957ef854e67e58252319073">m_InputActionSortingMap</a>)</div>
+<div class="line"><span class="lineno">  216</span>    {</div>
+<div class="line"><span class="lineno">  217</span>      <a class="code hl_variable" href="#a1351cbd58957ef854e67e58252319073">m_InputActionSortingMap</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">map&lt;int, ref array&lt;int&gt;</a>&gt;;</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>      <a class="code hl_class" href="../../d2/d01/classarray.html">TIntArray</a> <a class="code hl_class" href="../../db/d06/class_param3.html">sorted_actions</a> = <span class="keyword">new</span> <a class="code hl_typedef" href="../../d5/d08/group___enforce.html#ga62db042ecba76039a4391153a4660c2c">TIntArray</a>;</div>
+<div class="line"><span class="lineno">  220</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a83605c2d9a5856d26e7c9872c34aa09d">m_UnsortedInputActions</a>)</div>
+<div class="line"><span class="lineno">  221</span>        <a class="code hl_variable" href="#a83605c2d9a5856d26e7c9872c34aa09d">m_UnsortedInputActions</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a>;</div>
+<div class="line"><span class="lineno">  222</span>      <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetActiveInputs(<a class="code hl_variable" href="#a83605c2d9a5856d26e7c9872c34aa09d">m_UnsortedInputActions</a>);</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>      <a class="code hl_class" href="../../d4/d04/class_u_a_input.html">UAInput</a> <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>;</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().SortingCount(); <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  227</span>      {</div>
+<div class="line"><span class="lineno">  228</span>        <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">input_id</a>;</div>
+<div class="line"><span class="lineno">  229</span>        <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a> <a class="code hl_class" href="../../db/d06/class_param3.html">sorting_content</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">array&lt;int&gt;</a>;</div>
+<div class="line"><span class="lineno">  230</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">j</a> &lt; <a class="code hl_variable" href="#a83605c2d9a5856d26e7c9872c34aa09d">m_UnsortedInputActions</a>.Count(); <a class="code hl_class" href="../../db/d06/class_param3.html">j</a>++)</div>
+<div class="line"><span class="lineno">  231</span>        {</div>
+<div class="line"><span class="lineno">  232</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">input_id</a> = <a class="code hl_variable" href="#a83605c2d9a5856d26e7c9872c34aa09d">m_UnsortedInputActions</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">j</a>];</div>
+<div class="line"><span class="lineno">  233</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">inp</a> = <a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().GetInputByID(<a class="code hl_class" href="../../db/d06/class_param3.html">input_id</a>);</div>
+<div class="line"><span class="lineno">  234</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">inp</a>.HasSorting(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>))</div>
+<div class="line"><span class="lineno">  235</span>          {</div>
+<div class="line"><span class="lineno">  236</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">sorting_content</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">input_id</a>);</div>
+<div class="line"><span class="lineno">  237</span>            <a class="code hl_class" href="../../db/d06/class_param3.html">sorted_actions</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">input_id</a>);</div>
+<div class="line"><span class="lineno">  238</span>          }</div>
+<div class="line"><span class="lineno">  239</span>        }</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">sorting_content</a>.Count() &gt; 0)</div>
+<div class="line"><span class="lineno">  242</span>        {</div>
+<div class="line"><span class="lineno">  243</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">sorting_content</a>.Sort();</div>
+<div class="line"><span class="lineno">  244</span>          <a class="code hl_variable" href="#a1351cbd58957ef854e67e58252319073">m_InputActionSortingMap</a>.Insert(<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">sorting_content</a>);</div>
+<div class="line"><span class="lineno">  245</span>        }</div>
+<div class="line"><span class="lineno">  246</span>      }</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>      <span class="comment">//remove sorted used inputs</span></div>
+<div class="line"><span class="lineno">  249</span>      <span class="keywordtype">int</span> <a class="code hl_class" href="../../db/d06/class_param3.html">count</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">sorted_actions</a>.Count();</div>
+<div class="line"><span class="lineno">  250</span>      <span class="keywordflow">for</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">i</a> = 0; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a> &lt; <a class="code hl_class" href="../../db/d06/class_param3.html">count</a>; <a class="code hl_class" href="../../db/d06/class_param3.html">i</a>++)</div>
+<div class="line"><span class="lineno">  251</span>        <a class="code hl_variable" href="#a83605c2d9a5856d26e7c9872c34aa09d">m_UnsortedInputActions</a>.RemoveItem(<a class="code hl_class" href="../../db/d06/class_param3.html">sorted_actions</a>[<a class="code hl_class" href="../../db/d06/class_param3.html">i</a>]);</div>
+<div class="line"><span class="lineno">  252</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  253</span>    }</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  255</span>  }</div>
+<div class="ttc" id="agroup___enforce_html_ga62db042ecba76039a4391153a4660c2c"><div class="ttname"><a href="../../d5/d08/group___enforce.html#ga62db042ecba76039a4391153a4660c2c">TIntArray</a></div><div class="ttdeci">array&lt; int &gt; TIntArray</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d05/_en_script_8c_source.html#l00668">EnScript.c:668</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>, <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00011">m_InputActionSortingMap</a>, and <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00012">m_UnsortedInputActions</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/d0f/_keybindings_menu_8c_source.html#l00431">UIScriptedMenu::InitInputSortingMap()</a>.</p>
 
 </div>
 </div>
@@ -604,6 +859,22 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00187">187</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>  {</div>
+<div class="line"><span class="lineno">  189</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">profile_name</a>;</div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_function" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame</a>().GetInput().GetProfileName(<a class="code hl_function" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi</a>().PresetCurrent(), <a class="code hl_class" href="../../db/d06/class_param3.html">profile_name</a>);</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">profile_name</a> == <a class="code hl_variable" href="#a373025365e242bc961e3be6c87747675">PRESET_OLD</a>)</div>
+<div class="line"><span class="lineno">  193</span>      <a class="code hl_variable" href="#a4936983a19653c9bf3769dcbe02e5fae">m_CurrentPresetIDConsole</a> = <a class="code hl_variable" href="#adecd521bb4e004bd01c0467906f50b29">VARIANT_OLD</a>;</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  195</span>      <a class="code hl_variable" href="#a4936983a19653c9bf3769dcbe02e5fae">m_CurrentPresetIDConsole</a> = <a class="code hl_variable" href="#a06be60cd7f3280fe618646071ada45cf">VARIANT_NEW</a>;</div>
+<div class="line"><span class="lineno">  196</span>  }</div>
+<div class="ttc" id="aclass_input_utils_html_a06be60cd7f3280fe618646071ada45cf"><div class="ttname"><a href="#a06be60cd7f3280fe618646071ada45cf">InputUtils::VARIANT_NEW</a></div><div class="ttdeci">static const int VARIANT_NEW</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00007">InputUtils.c:7</a></div></div>
+<div class="ttc" id="aclass_input_utils_html_a373025365e242bc961e3be6c87747675"><div class="ttname"><a href="#a373025365e242bc961e3be6c87747675">InputUtils::PRESET_OLD</a></div><div class="ttdeci">static const string PRESET_OLD</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00004">InputUtils.c:4</a></div></div>
+<div class="ttc" id="aclass_input_utils_html_adecd521bb4e004bd01c0467906f50b29"><div class="ttname"><a href="#adecd521bb4e004bd01c0467906f50b29">InputUtils::VARIANT_OLD</a></div><div class="ttdeci">static const int VARIANT_OLD</div><div class="ttdef"><b>Definition</b> <a href="../../da/d0f/_input_utils_8c_source.html#l00006">InputUtils.c:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d08/gameplay_8c.html#aebb1fa6632d513bc849994e7b6c9c93d">GetGame()</a>, <a class="el" href="../../d4/d0a/_u_a_input_8c.html#a616105f49c02ce570dbb5acb4b9b17f8">GetUApi()</a>, <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00008">m_CurrentPresetIDConsole</a>, <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00004">PRESET_OLD</a>, <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00007">VARIANT_NEW</a>, and <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00006">VARIANT_OLD</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00518">UIScriptedMenu::ComposeData()</a>, and <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00560">UIScriptedMenu::PerformSwitchPreset()</a>.</p>
 
 </div>
 </div>
@@ -654,6 +925,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00015">15</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00120">Init()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l00220">LoginScreenBase::Init()</a>, <a class="el" href="../../da/d0c/_logout_menu_8c_source.html#l00030">UIScriptedMenu::Init()</a>, <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00712">UIScriptedMenu::UpdateControlsElements()</a>, <a class="el" href="../../d6/d08/_item_drop_warning_menu_8c_source.html#l00093">WarningMenuBase::UpdateControlsElements()</a>, <a class="el" href="../../d5/d06/_tabber_u_i_8c_source.html#l00434">ScriptedWidgetEventHandler::UpdateControlsElements()</a>, and <a class="el" href="../../da/d09/_credits_menu_8c_source.html#l00115">UIScriptedMenu::UpdateInfoPanelText()</a>.</p>
+
 </div>
 </div>
 <a id="a4936983a19653c9bf3769dcbe02e5fae" name="a4936983a19653c9bf3769dcbe02e5fae"></a>
@@ -677,6 +950,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00008">8</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00198">GetConsolePresetID()</a>, and <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00187">UpdateConsolePresetID()</a>.</p>
 
 </div>
 </div>
@@ -702,6 +977,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00011">11</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00203">GetInputActionSortingMap()</a>, and <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00213">InitInputMetadata()</a>.</p>
+
 </div>
 </div>
 <a id="a83605c2d9a5856d26e7c9872c34aa09d" name="a83605c2d9a5856d26e7c9872c34aa09d"></a>
@@ -725,6 +1002,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00012">12</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00208">GetUnsortedInputActions()</a>, and <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00213">InitInputMetadata()</a>.</p>
 
 </div>
 </div>
@@ -750,6 +1029,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00005">5</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00586">UIScriptedMenu::UpdateToolbarText()</a>.</p>
+
 </div>
 </div>
 <a id="a373025365e242bc961e3be6c87747675" name="a373025365e242bc961e3be6c87747675"></a>
@@ -773,6 +1054,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00004">4</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00187">UpdateConsolePresetID()</a>, and <a class="el" href="../../d6/d0f/_controls_xbox_new_8c_source.html#l00586">UIScriptedMenu::UpdateToolbarText()</a>.</p>
 
 </div>
 </div>
@@ -798,6 +1081,8 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00007">7</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00187">UpdateConsolePresetID()</a>.</p>
+
 </div>
 </div>
 <a id="adecd521bb4e004bd01c0467906f50b29" name="adecd521bb4e004bd01c0467906f50b29"></a>
@@ -821,6 +1106,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00006">6</a> of file <a class="el" href="../../da/d0f/_input_utils_8c_source.html">InputUtils.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_input_utils_8c_source.html#l00187">UpdateConsolePresetID()</a>.</p>
 
 </div>
 </div>

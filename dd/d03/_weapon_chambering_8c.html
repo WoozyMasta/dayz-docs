@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -204,6 +201,72 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">635</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  636</span>  {</div>
+<div class="line"><span class="lineno">  637</span>    <a class="code hl_variable" href="#a9088984af4ef30aa23a15d4c50db9458">m_action</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">action</a>;</div>
+<div class="line"><span class="lineno">  638</span>    <a class="code hl_variable" href="#a2af60ccdc5fa5a945df80a5995e4a413">m_startActionType</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">startActionType</a>;</div>
+<div class="line"><span class="lineno">  639</span>    <a class="code hl_variable" href="#a31ba4723c187888c7009eee8ab61d4aa">m_endActionType</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">endActionType</a>;</div>
+<div class="line"><span class="lineno">  640</span> </div>
+<div class="line"><span class="lineno">  641</span>    <span class="comment">// setup nested state machine</span></div>
+<div class="line"><span class="lineno">  642</span>    <a class="code hl_variable" href="#a8714c06879ff0c6f3a3b75822e24288d">m_start</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">WeaponChambering_Start</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <span class="keyword">this</span>, <a class="code hl_variable" href="#a9088984af4ef30aa23a15d4c50db9458">m_action</a>, <a class="code hl_variable" href="#a2af60ccdc5fa5a945df80a5995e4a413">m_startActionType</a>);</div>
+<div class="line"><span class="lineno">  643</span>    <a class="code hl_variable" href="#af5506923bf44e6afb580185e707a0dac">m_eject</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../df/d01/class_weapon_eject_casing_multi_muzzle.html">WeaponEjectCasingMultiMuzzle</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  644</span>    <a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">WeaponChambering_MultiMuzzle_W4T</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  645</span>    <a class="code hl_variable" href="#ab3ab4098e2471d66ac3d997479aa29ce">m_chamber_end</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">WeaponChambering_MultiMuzzle_W4T</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  646</span>    <a class="code hl_variable" href="#a20f345b27baf67b3647a323a403e534b">m_w4sb2</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">LoopedChambering_Wait4ShowBullet2</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  647</span>    <a class="code hl_variable" href="#af64fe4b9fb926da0af7f5dc9dba6ce5f">m_showB</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">BulletShow_W4T</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  648</span>    <a class="code hl_variable" href="#a2205c5d2d97e53f7f2e931d091cc2be2">m_showB2</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">BulletShow2_W4T</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  649</span> </div>
+<div class="line"><span class="lineno">  650</span>    <a class="code hl_variable" href="#a59b68c0298282227579d794a54ae83cf">m_endLoop</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">WeaponEndAction</a>(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>, <span class="keyword">this</span>, <a class="code hl_variable" href="#a9088984af4ef30aa23a15d4c50db9458">m_action</a>, <a class="code hl_variable" href="#a31ba4723c187888c7009eee8ab61d4aa">m_endActionType</a>); <span class="comment">// @NOTE: termination playing action - dummy?</span></div>
+<div class="line"><span class="lineno">  651</span>    <span class="comment">// events</span></div>
+<div class="line"><span class="lineno">  652</span>    <a class="code hl_class" href="../../d7/d07/class_weapon_event_base.html">WeaponEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a> = <span class="keyword">new</span> WeaponEventHumanCommandActionFinished;</div>
+<div class="line"><span class="lineno">  653</span>    WeaponEventContinuousLoadBulletStart <a class="code hl_class" href="../../db/d06/class_param3.html">__lS_</a> = <span class="keyword">new</span> WeaponEventContinuousLoadBulletStart;</div>
+<div class="line"><span class="lineno">  654</span>    WeaponEventContinuousLoadBulletEnd <a class="code hl_class" href="../../db/d06/class_param3.html">__lE_</a> = <span class="keyword">new</span> WeaponEventContinuousLoadBulletEnd;</div>
+<div class="line"><span class="lineno">  655</span>    WeaponEventAnimBulletShow <a class="code hl_class" href="../../db/d06/class_param3.html">__bs_</a> = <span class="keyword">new</span> WeaponEventAnimBulletShow;</div>
+<div class="line"><span class="lineno">  656</span>    WeaponEventAnimBulletShow2 <a class="code hl_class" href="../../db/d06/class_param3.html">_bs2_</a> = <span class="keyword">new</span> WeaponEventAnimBulletShow2;</div>
+<div class="line"><span class="lineno">  657</span>    WeaponEventAnimBulletHide <a class="code hl_class" href="../../db/d06/class_param3.html">__bh_</a> = <span class="keyword">new</span> WeaponEventAnimBulletHide;</div>
+<div class="line"><span class="lineno">  658</span>    WeaponEventAnimBulletEject <a class="code hl_class" href="../../db/d06/class_param3.html">__be_</a> = <span class="keyword">new</span> WeaponEventAnimBulletEject;</div>
+<div class="line"><span class="lineno">  659</span>    WeaponEventAnimBulletInChamber <a class="code hl_class" href="../../db/d06/class_param3.html">__bc_</a> = <span class="keyword">new</span> WeaponEventAnimBulletInChamber;</div>
+<div class="line"><span class="lineno">  660</span> </div>
+<div class="line"><span class="lineno">  661</span>    m_fsm = <span class="keyword">new</span> <a class="code hl_class" href="../../dc/d03/class_weapon_f_s_m.html">WeaponFSM</a>(<span class="keyword">this</span>); <span class="comment">// @NOTE: set owner of the submachine fsm</span></div>
+<div class="line"><span class="lineno">  662</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#a8714c06879ff0c6f3a3b75822e24288d">m_start</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__be_</a>, <a class="code hl_variable" href="#af5506923bf44e6afb580185e707a0dac">m_eject</a>));</div>
+<div class="line"><span class="lineno">  663</span> </div>
+<div class="line"><span class="lineno">  664</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#a8714c06879ff0c6f3a3b75822e24288d">m_start</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__bs_</a>, <a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a>));</div>
+<div class="line"><span class="lineno">  665</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#af5506923bf44e6afb580185e707a0dac">m_eject</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__bs_</a>, <a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a>));</div>
+<div class="line"><span class="lineno">  666</span> </div>
+<div class="line"><span class="lineno">  667</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__bc_</a>, <a class="code hl_variable" href="#a20f345b27baf67b3647a323a403e534b">m_w4sb2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>, <span class="keyword">new</span> GuardAnd(<span class="keyword">new</span> GuardAnd(<span class="keyword">new</span> WeaponGuardHasAmmoInLoopedState(<a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a>), <span class="keyword">new</span> WeaponGuardChamberMultiHasRoomBulltet(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>)), <span class="keyword">new</span> <a class="code hl_class" href="../../db/d06/class_param3.html">WeaponGuardWeaponManagerWantContinue</a>())));</div>
+<div class="line"><span class="lineno">  668</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__bc_</a>, <a class="code hl_variable" href="#a59b68c0298282227579d794a54ae83cf">m_endLoop</a>));</div>
+<div class="line"><span class="lineno">  669</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#a20f345b27baf67b3647a323a403e534b">m_w4sb2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">__bs_</a>, <a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a>));</div>
+<div class="line"><span class="lineno">  670</span> </div>
+<div class="line"><span class="lineno">  671</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#a20f345b27baf67b3647a323a403e534b">m_w4sb2</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>));</div>
+<div class="line"><span class="lineno">  672</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>));</div>
+<div class="line"><span class="lineno">  673</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#a59b68c0298282227579d794a54ae83cf">m_endLoop</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>));</div>
+<div class="line"><span class="lineno">  674</span> </div>
+<div class="line"><span class="lineno">  675</span>    <span class="comment">// Safety exits</span></div>
+<div class="line"><span class="lineno">  676</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#af5506923bf44e6afb580185e707a0dac">m_eject</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">  677</span>    m_fsm.AddTransition(<span class="keyword">new</span> <a class="code hl_typedef" href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a>(<a class="code hl_variable" href="#a8714c06879ff0c6f3a3b75822e24288d">m_start</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">_fin_</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">null</a>));</div>
+<div class="line"><span class="lineno">  678</span> </div>
+<div class="line"><span class="lineno">  679</span>    m_fsm.SetInitialState(<a class="code hl_variable" href="#a8714c06879ff0c6f3a3b75822e24288d">m_start</a>);</div>
+<div class="line"><span class="lineno">  680</span>  }</div>
+<div class="ttc" id="a_guards_8c_html_a0bae26f5106cf38f652c51861f0f8948"><div class="ttname"><a href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a></div><div class="ttdeci">class WeaponGuardIsDestroyed extends WeaponGuardBase m_weapon</div><div class="ttdef"><b>Definition</b> <a href="../../de/d03/_guards_8c_source.html#l00602">Guards.c:602</a></div></div>
+<div class="ttc" id="a_weapon___base_8c_html_aad9c748f817f5536f4f2bfd213b4afc1"><div class="ttname"><a href="../../de/d02/_weapon___base_8c.html#aad9c748f817f5536f4f2bfd213b4afc1">WeaponTransition</a></div><div class="ttdeci">enum FSMTransition WeaponTransition</div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a20f345b27baf67b3647a323a403e534b"><div class="ttname"><a href="#a20f345b27baf67b3647a323a403e534b">m_w4sb2</a></div><div class="ttdeci">ref LoopedChambering_Wait4ShowBullet2 m_w4sb2</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00630">WeaponChambering.c:630</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a2205c5d2d97e53f7f2e931d091cc2be2"><div class="ttname"><a href="#a2205c5d2d97e53f7f2e931d091cc2be2">m_showB2</a></div><div class="ttdeci">ref BulletShow2_W4T m_showB2</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00633">WeaponChambering.c:633</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a2af60ccdc5fa5a945df80a5995e4a413"><div class="ttname"><a href="#a2af60ccdc5fa5a945df80a5995e4a413">m_startActionType</a></div><div class="ttdeci">int m_startActionType</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00621">WeaponChambering.c:621</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a31ba4723c187888c7009eee8ab61d4aa"><div class="ttname"><a href="#a31ba4723c187888c7009eee8ab61d4aa">m_endActionType</a></div><div class="ttdeci">int m_endActionType</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00622">WeaponChambering.c:622</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a59b68c0298282227579d794a54ae83cf"><div class="ttname"><a href="#a59b68c0298282227579d794a54ae83cf">m_endLoop</a></div><div class="ttdeci">ref WeaponEndAction m_endLoop</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00631">WeaponChambering.c:631</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a8714c06879ff0c6f3a3b75822e24288d"><div class="ttname"><a href="#a8714c06879ff0c6f3a3b75822e24288d">m_start</a></div><div class="ttdeci">ref WeaponStateBase m_start</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00626">WeaponChambering.c:626</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a9088984af4ef30aa23a15d4c50db9458"><div class="ttname"><a href="#a9088984af4ef30aa23a15d4c50db9458">m_action</a></div><div class="ttdeci">class WeaponEndAction extends WeaponStartAction m_action</div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_aaf31e31e29477cf69155d42c33e899e1"><div class="ttname"><a href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a></div><div class="ttdeci">ref WeaponChambering_Base m_chamber</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00628">WeaponChambering.c:628</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_ab3ab4098e2471d66ac3d997479aa29ce"><div class="ttname"><a href="#ab3ab4098e2471d66ac3d997479aa29ce">m_chamber_end</a></div><div class="ttdeci">ref WeaponChambering_Base m_chamber_end</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00629">WeaponChambering.c:629</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_af5506923bf44e6afb580185e707a0dac"><div class="ttname"><a href="#af5506923bf44e6afb580185e707a0dac">m_eject</a></div><div class="ttdeci">ref WeaponEjectCasingMultiMuzzle m_eject</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00627">WeaponChambering.c:627</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_af64fe4b9fb926da0af7f5dc9dba6ce5f"><div class="ttname"><a href="#af64fe4b9fb926da0af7f5dc9dba6ce5f">m_showB</a></div><div class="ttdeci">ref BulletShow_W4T m_showB</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00632">WeaponChambering.c:632</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="aclass_weapon_eject_casing_multi_muzzle_html"><div class="ttname"><a href="../../df/d01/class_weapon_eject_casing_multi_muzzle.html">WeaponEjectCasingMultiMuzzle</a></div><div class="ttdef"><b>Definition</b> <a href="../../dc/d01/_weapon_eject_casing_and_chamber_from_att_mag_8c_source.html#l00049">WeaponEjectCasingAndChamberFromAttMag.c:50</a></div></div>
+<div class="ttc" id="aclass_weapon_event_base_html"><div class="ttname"><a href="../../d7/d07/class_weapon_event_base.html">WeaponEventBase</a></div><div class="ttdoc">signalize mechanism manipulation</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0a/_events_8c_source.html#l00034">Events.c:35</a></div></div>
+<div class="ttc" id="aclass_weapon_f_s_m_html"><div class="ttname"><a href="../../dc/d03/class_weapon_f_s_m.html">WeaponFSM</a></div><div class="ttdoc">weapon finite state machine</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="#a9088984af4ef30aa23a15d4c50db9458">m_action</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00628">m_chamber</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00629">m_chamber_end</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00627">m_eject</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00622">m_endActionType</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00631">m_endLoop</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00632">m_showB</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00633">m_showB2</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00626">m_start</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00621">m_startActionType</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00630">m_w4sb2</a>, <a class="el" href="../../de/d03/_guards_8c_source.html#l00602">m_weapon</a>, and <a class="el" href="../../dc/d01/_weapon_eject_casing_and_chamber_from_att_mag_8c_source.html#l00023">WeaponStateBase::WeaponEjectCasingMultiMuzzle()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../da/d0f/_double_barrel___base_8c_source.html#l00129">DoubleBarrel_Base::InitStateMachine()</a>.</p>
 
 </div>
 </div>
@@ -227,6 +290,30 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00856">856</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  857</span>  {</div>
+<div class="line"><span class="lineno">  858</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.LoadCurrentFSMState(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>, version))</div>
+<div class="line"><span class="lineno">  859</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  860</span> </div>
+<div class="line"><span class="lineno">  861</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Read(<a class="code hl_variable" href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a>))</div>
+<div class="line"><span class="lineno">  862</span>    {</div>
+<div class="line"><span class="lineno">  863</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet.LoadCurrentFSMState: cannot read m_srcMagazine for weapon=&quot;</span> + <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>);</div>
+<div class="line"><span class="lineno">  864</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  865</span>    }</div>
+<div class="line"><span class="lineno">  866</span> </div>
+<div class="line"><span class="lineno">  867</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d6/d02/_inventory_location_8c.html#acd983560cdc1ee3f9aaf3973617f1a86">OptionalLocationReadFromContext</a>(<a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>))</div>
+<div class="line"><span class="lineno">  868</span>    {</div>
+<div class="line"><span class="lineno">  869</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet.LoadCurrentFSMState: cannot read m_srcMagazinePrevLocation for weapon=&quot;</span> + <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>);</div>
+<div class="line"><span class="lineno">  870</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  871</span>    }</div>
+<div class="line"><span class="lineno">  872</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  873</span>  }</div>
+<div class="ttc" id="a_inventory_location_8c_html_acd983560cdc1ee3f9aaf3973617f1a86"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#acd983560cdc1ee3f9aaf3973617f1a86">OptionalLocationReadFromContext</a></div><div class="ttdeci">bool OptionalLocationReadFromContext(out InventoryLocation loc, notnull ParamsReadContext ctx)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00605">InventoryLocation.c:605</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a32147b58d22d578c09548f9e20398c18"><div class="ttname"><a href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a></div><div class="ttdeci">Magazine m_srcMagazine</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00623">WeaponChambering.c:623</a></div></div>
+<div class="ttc" id="a_weapon_chambering_8c_html_a51df11c13563b7c321a0ced419f70058"><div class="ttname"><a href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a></div><div class="ttdeci">ref InventoryLocation m_srcMagazinePrevLocation</div><div class="ttdoc">source of the cartridge</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00624">WeaponChambering.c:624</a></div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="../../d8/d03/class_object.html">Object</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/d08/_object_typed_8c_source.html#l00001">ObjectTyped.c:2</a></div></div>
+<div class="ttc" id="agroup___debug_html_ga786b160dafbe15abb829786ba345cb15"><div class="ttname"><a href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a></div><div class="ttdeci">void Error(string err)</div><div class="ttdoc">Messagebox with error message.</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d09/_en_debug_8c_source.html#l00090">EnDebug.c:90</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00623">m_srcMagazine</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00624">m_srcMagazinePrevLocation</a>, <a class="el" href="../../de/d03/_guards_8c_source.html#l00602">m_weapon</a>, and <a class="el" href="../../d6/d02/_inventory_location_8c_source.html#l00605">OptionalLocationReadFromContext()</a>.</p>
 
 </div>
 </div>
@@ -246,6 +333,79 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00777">777</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  778</span>  {</div>
+<div class="line"><span class="lineno">  779</span>    <span class="keywordtype">bool</span> <a class="code hl_class" href="../../db/d06/class_param3.html">done</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  780</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a>)</div>
+<div class="line"><span class="lineno">  781</span>    {</div>
+<div class="line"><span class="lineno">  782</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_player.GetInventory().ClearInventoryReservationEx(<a class="code hl_variable" href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a>, <a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a>);</div>
+<div class="line"><span class="lineno">  783</span> </div>
+<div class="line"><span class="lineno">  784</span>      <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">leftHandIl</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  785</span>      <a class="code hl_variable" href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a>.GetInventory().GetCurrentInventoryLocation(<a class="code hl_class" href="../../db/d06/class_param3.html">leftHandIl</a>);</div>
+<div class="line"><span class="lineno">  786</span>      <span class="keywordflow">if</span> (<a class="code hl_class" href="../../db/d06/class_param3.html">leftHandIl</a>.IsValid())</div>
+<div class="line"><span class="lineno">  787</span>      {</div>
+<div class="line"><span class="lineno">  788</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a> &amp;&amp; <a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a>.IsValid())</div>
+<div class="line"><span class="lineno">  789</span>        {</div>
+<div class="line"><span class="lineno">  790</span>          <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d7/d0c/classvector.html">vector</a>.<a class="code hl_function" href="../../d7/d0c/classvector.html#a21d8662c860e105943718b2da59349e7">DistanceSq</a>(<a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a>.GetPos(), <a class="code hl_class" href="../../db/d06/class_param3.html">leftHandIl</a>.GetPos()) &lt; <a class="code hl_class" href="../../d3/d0b/class_weapon_manager.html">WeaponManager</a>.<a class="code hl_variable" href="../../d3/d0b/class_weapon_manager.html#a7f636d2e1ef216dc6f68e7769a040601">MAX_DROP_MAGAZINE_DISTANCE_SQ</a>)</div>
+<div class="line"><span class="lineno">  791</span>          {</div>
+<div class="line"><span class="lineno">  792</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#afaa447545304ba3777276e0943b82e73">LocationCanMoveEntity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">leftHandIl</a>, <a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a>))</div>
+<div class="line"><span class="lineno">  793</span>            {</div>
+<div class="line"><span class="lineno">  794</span>              <span class="keywordflow">if</span> (<a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#ae5e8d93d03255a7a80fb2f73f3854bc0">LocationSyncMoveEntity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">leftHandIl</a>, <a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a>))</div>
+<div class="line"><span class="lineno">  795</span>              {</div>
+<div class="line"><span class="lineno">  796</span>                <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">IsWeaponLogEnable</a>()) <a class="code hl_function" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#afa33033805ea8cbc9b91ae2d002ffcd7">wpnDebugPrint</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet, ok - ammo pile removed from left hand to previous location (LHand-&gt;inv) - abort&quot;</span>);</div>
+<div class="line"><span class="lineno">  797</span>                <a class="code hl_class" href="../../db/d06/class_param3.html">done</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  798</span>              }</div>
+<div class="line"><span class="lineno">  799</span>            }</div>
+<div class="line"><span class="lineno">  800</span>          }</div>
+<div class="line"><span class="lineno">  801</span>        }</div>
+<div class="line"><span class="lineno">  802</span> </div>
+<div class="line"><span class="lineno">  803</span>        <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">done</a>)</div>
+<div class="line"><span class="lineno">  804</span>        {</div>
+<div class="line"><span class="lineno">  805</span>          <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a> <a class="code hl_class" href="../../db/d06/class_param3.html">il</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d05/class_inventory_location.html">InventoryLocation</a>;</div>
+<div class="line"><span class="lineno">  806</span>          <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_player.GetInventory().FindFreeLocationFor(<a class="code hl_variable" href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a>, <a class="code hl_enumeration" href="../../d6/d02/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a>.CARGO, <a class="code hl_class" href="../../db/d06/class_param3.html">il</a>);</div>
+<div class="line"><span class="lineno">  807</span> </div>
+<div class="line"><span class="lineno">  808</span>          <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">il</a> || !<a class="code hl_class" href="../../db/d06/class_param3.html">il</a>.IsValid())</div>
+<div class="line"><span class="lineno">  809</span>          {</div>
+<div class="line"><span class="lineno">  810</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d8/d05/_day_z_player_utils_8c.html#a086bbead0425d0fcc89314512bce4098">DayZPlayerUtils</a>.HandleDropMagazine(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>.m_player, <a class="code hl_variable" href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a>))</div>
+<div class="line"><span class="lineno">  811</span>            {</div>
+<div class="line"><span class="lineno">  812</span>              <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">IsWeaponLogEnable</a>()) <a class="code hl_function" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#afa33033805ea8cbc9b91ae2d002ffcd7">wpnDebugPrint</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet, ok - no inventory space for ammo pile - dropped to ground - abort&quot;</span>);</div>
+<div class="line"><span class="lineno">  813</span>            }</div>
+<div class="line"><span class="lineno">  814</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  815</span>              <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet, error - cannot drop ammo pile from left hand after not found inventory space for ammo pile - abort&quot;</span>);</div>
+<div class="line"><span class="lineno">  816</span> </div>
+<div class="line"><span class="lineno">  817</span>          }</div>
+<div class="line"><span class="lineno">  818</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  819</span>          {</div>
+<div class="line"><span class="lineno">  820</span>            <span class="keywordflow">if</span> (<a class="code hl_class" href="../../dc/d01/class_game_inventory.html">GameInventory</a>.<a class="code hl_function" href="../../dc/d01/class_game_inventory.html#ae5e8d93d03255a7a80fb2f73f3854bc0">LocationSyncMoveEntity</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">leftHandIl</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">il</a>))</div>
+<div class="line"><span class="lineno">  821</span>            {</div>
+<div class="line"><span class="lineno">  822</span>              <span class="keywordflow">if</span> (<a class="code hl_class" href="../../d9/d07/class_log_manager.html">LogManager</a>.<a class="code hl_function" href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">IsWeaponLogEnable</a>()) <a class="code hl_function" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#afa33033805ea8cbc9b91ae2d002ffcd7">wpnDebugPrint</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet, ok - ammo pile removed from left hand (LHand-&gt;inv) - abort&quot;</span>);</div>
+<div class="line"><span class="lineno">  823</span>            }</div>
+<div class="line"><span class="lineno">  824</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  825</span>              <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet, error - cannot remove ammo pile from wpn - abort&quot;</span>);</div>
+<div class="line"><span class="lineno">  826</span>          }</div>
+<div class="line"><span class="lineno">  827</span>        }</div>
+<div class="line"><span class="lineno">  828</span>      }</div>
+<div class="line"><span class="lineno">  829</span>    }</div>
+<div class="line"><span class="lineno">  830</span> </div>
+<div class="line"><span class="lineno">  831</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnAbort(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  832</span>    <a class="code hl_variable" href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  833</span>    <a class="code hl_variable" href="#aaf31e31e29477cf69155d42c33e899e1">m_chamber</a>.m_srcMagazine = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  834</span>    <a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a> = <a class="code hl_class" href="../../db/d06/class_param3.html">NULL</a>;</div>
+<div class="line"><span class="lineno">  835</span>  }</div>
+<div class="ttc" id="a4___world_2_entities_2_firearms_2_debug_8c_html_afa33033805ea8cbc9b91ae2d002ffcd7"><div class="ttname"><a href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c.html#afa33033805ea8cbc9b91ae2d002ffcd7">wpnDebugPrint</a></div><div class="ttdeci">void wpnDebugPrint(string s)</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c_source.html#l00009">Debug.c:9</a></div></div>
+<div class="ttc" id="a_day_z_player_utils_8c_html_a086bbead0425d0fcc89314512bce4098"><div class="ttname"><a href="../../d8/d05/_day_z_player_utils_8c.html#a086bbead0425d0fcc89314512bce4098">DayZPlayerUtils</a></div><div class="ttdeci">void DayZPlayerUtils()</div><div class="ttdoc">cannot be instantiated</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d05/_day_z_player_utils_8c_source.html#l00441">DayZPlayerUtils.c:441</a></div></div>
+<div class="ttc" id="a_inventory_location_8c_html_a71733d54d455853550df7ae602bf23dd"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#a71733d54d455853550df7ae602bf23dd">FindInventoryLocationType</a></div><div class="ttdeci">FindInventoryLocationType</div><div class="ttdoc">flags for searching locations in inventory</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00015">InventoryLocation.c:16</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html">GameInventory</a></div><div class="ttdoc">script counterpart to engine's class Inventory</div><div class="ttdef"><b>Definition</b> <a href="../../dc/d03/3___game_2_systems_2_inventory_2_inventory_8c_source.html#l00078">Inventory.c:79</a></div></div>
+<div class="ttc" id="aclass_game_inventory_html_ae5e8d93d03255a7a80fb2f73f3854bc0"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#ae5e8d93d03255a7a80fb2f73f3854bc0">GameInventory::LocationSyncMoveEntity</a></div><div class="ttdeci">static proto native bool LocationSyncMoveEntity(notnull InventoryLocation src_loc, notnull InventoryLocation dst_loc)</div><div class="ttdoc">synchronously removes item from current inventory location and adds it to destination no anims involv...</div></div>
+<div class="ttc" id="aclass_game_inventory_html_afaa447545304ba3777276e0943b82e73"><div class="ttname"><a href="../../dc/d01/class_game_inventory.html#afaa447545304ba3777276e0943b82e73">GameInventory::LocationCanMoveEntity</a></div><div class="ttdeci">static proto native bool LocationCanMoveEntity(notnull InventoryLocation src, notnull InventoryLocation dst)</div><div class="ttdoc">queries if the entity contained in inv_loc.m_item can be moved to another location This is a shorthan...</div></div>
+<div class="ttc" id="aclass_inventory_location_html"><div class="ttname"><a href="../../d6/d05/class_inventory_location.html">InventoryLocation</a></div><div class="ttdoc">InventoryLocation.</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00027">InventoryLocation.c:28</a></div></div>
+<div class="ttc" id="aclass_log_manager_html"><div class="ttname"><a href="../../d9/d07/class_log_manager.html">LogManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00674">Debug.c:675</a></div></div>
+<div class="ttc" id="aclass_log_manager_html_a1936dba0ee4da1a581859d6603178326"><div class="ttname"><a href="../../d9/d07/class_log_manager.html#a1936dba0ee4da1a581859d6603178326">LogManager::IsWeaponLogEnable</a></div><div class="ttdeci">static bool IsWeaponLogEnable()</div><div class="ttdef"><b>Definition</b> <a href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00799">Debug.c:799</a></div></div>
+<div class="ttc" id="aclass_weapon_manager_html"><div class="ttname"><a href="../../d3/d0b/class_weapon_manager.html">WeaponManager</a></div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/_weapon_manager_8c_source.html#l00001">WeaponManager.c:2</a></div></div>
+<div class="ttc" id="aclass_weapon_manager_html_a7f636d2e1ef216dc6f68e7769a040601"><div class="ttname"><a href="../../d3/d0b/class_weapon_manager.html#a7f636d2e1ef216dc6f68e7769a040601">WeaponManager::MAX_DROP_MAGAZINE_DISTANCE_SQ</a></div><div class="ttdeci">const float MAX_DROP_MAGAZINE_DISTANCE_SQ</div><div class="ttdef"><b>Definition</b> <a href="../../d4/d08/_weapon_manager_8c_source.html#l00003">WeaponManager.c:3</a></div></div>
+<div class="ttc" id="aclassvector_html"><div class="ttname"><a href="../../d7/d0c/classvector.html">vector</a></div><div class="ttdef"><b>Definition</b> <a href="../../d0/d03/_en_convert_8c_source.html#l00105">EnConvert.c:106</a></div></div>
+<div class="ttc" id="aclassvector_html_a21d8662c860e105943718b2da59349e7"><div class="ttname"><a href="../../d7/d0c/classvector.html#a21d8662c860e105943718b2da59349e7">vector::DistanceSq</a></div><div class="ttdeci">static proto native float DistanceSq(vector v1, vector v2)</div><div class="ttdoc">Returns the square distance between tips of two 3D vectors.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d8/d05/_day_z_player_utils_8c_source.html#l00441">DayZPlayerUtils()</a>, <a class="el" href="../../d7/d0c/classvector.html#a21d8662c860e105943718b2da59349e7">vector::DistanceSq()</a>, <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../de/d0c/3___game_2tools_2_debug_8c_source.html#l00799">LogManager::IsWeaponLogEnable()</a>, <a class="el" href="../../dc/d01/class_game_inventory.html#afaa447545304ba3777276e0943b82e73">GameInventory::LocationCanMoveEntity()</a>, <a class="el" href="../../dc/d01/class_game_inventory.html#ae5e8d93d03255a7a80fb2f73f3854bc0">GameInventory::LocationSyncMoveEntity()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00628">m_chamber</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00623">m_srcMagazine</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00624">m_srcMagazinePrevLocation</a>, <a class="el" href="../../de/d03/_guards_8c_source.html#l00602">m_weapon</a>, <a class="el" href="../../d4/d08/_weapon_manager_8c_source.html#l00003">WeaponManager::MAX_DROP_MAGAZINE_DISTANCE_SQ</a>, and <a class="el" href="../../dc/d0d/4___world_2_entities_2_firearms_2_debug_8c_source.html#l00009">wpnDebugPrint()</a>.</p>
 
 </div>
 </div>
@@ -265,7 +425,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00187">187</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  188</span>  {</div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>    <span class="comment">/*for(int i = 0; i &lt; m_weapon.GetMuzzleCount(); i++ )</span></div>
+<div class="line"><span class="lineno">  192</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">  193</span><span class="comment">      if(!m_weapon.IsChamberFull(i))</span></div>
+<div class="line"><span class="lineno">  194</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">  195</span><span class="comment">        m_weapon.ShowBullet(i);</span></div>
+<div class="line"><span class="lineno">  196</span><span class="comment">        m_weapon.EffectBulletShow(i, m_damage, m_type);</span></div>
+<div class="line"><span class="lineno">  197</span><span class="comment">        return;</span></div>
+<div class="line"><span class="lineno">  198</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">  199</span><span class="comment">      }*/</span></div>
+<div class="line"><span class="lineno">  200</span>  }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad1ce17c776cd4615067d099f52625271" name="ad1ce17c776cd4615067d099f52625271"></a>
@@ -284,7 +457,25 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00187">187</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  188</span>  {</div>
+<div class="line"><span class="lineno">  189</span>    <a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.OnEntry(<a class="code hl_class" href="../../db/d06/class_param3.html">e</a>);</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>    <span class="comment">/*for(int i = 0; i &lt; m_weapon.GetMuzzleCount(); i++ )</span></div>
+<div class="line"><span class="lineno">  192</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">  193</span><span class="comment">      if(!m_weapon.IsChamberFull(i))</span></div>
+<div class="line"><span class="lineno">  194</span><span class="comment">      {</span></div>
+<div class="line"><span class="lineno">  195</span><span class="comment">        m_weapon.ShowBullet(i);</span></div>
+<div class="line"><span class="lineno">  196</span><span class="comment">        m_weapon.EffectBulletShow(i, m_damage, m_type);</span></div>
+<div class="line"><span class="lineno">  197</span><span class="comment">        return;</span></div>
+<div class="line"><span class="lineno">  198</span><span class="comment">      }</span></div>
+<div class="line"><span class="lineno">  199</span><span class="comment">      }*/</span></div>
+<div class="line"><span class="lineno">  200</span>  }</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>  <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="#ad1ce17c776cd4615067d099f52625271">OnExit</a>(<a class="code hl_class" href="../../d7/d07/class_weapon_event_base.html">WeaponEventBase</a> <a class="code hl_class" href="../../db/d06/class_param3.html">e</a>)</div>
+<div class="line"><span class="lineno">  203</span>  {</div>
+<div class="line"><span class="lineno">  204</span>    <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>.SelectionBulletHide();</div>
+<div class="ttc" id="a_weapon_chambering_8c_html_ad1ce17c776cd4615067d099f52625271"><div class="ttname"><a href="#ad1ce17c776cd4615067d099f52625271">OnExit</a></div><div class="ttdeci">override void OnExit(WeaponEventBase e)</div><div class="ttdef"><b>Definition</b> <a href="../../dd/d03/_weapon_chambering_8c_source.html#l00187">WeaponChambering.c:187</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afa92256a8653f03cce6c105c786d24f0" name="afa92256a8653f03cce6c105c786d24f0"></a>
@@ -303,6 +494,26 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00837">837</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  838</span>  {</div>
+<div class="line"><span class="lineno">  839</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">super</a>.SaveCurrentFSMState(<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>))</div>
+<div class="line"><span class="lineno">  840</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  841</span> </div>
+<div class="line"><span class="lineno">  842</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>.Write(<a class="code hl_variable" href="#a32147b58d22d578c09548f9e20398c18">m_srcMagazine</a>))</div>
+<div class="line"><span class="lineno">  843</span>    {</div>
+<div class="line"><span class="lineno">  844</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet.SaveCurrentFSMState: cannot save m_srcMagazine for weapon=&quot;</span> + <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>);</div>
+<div class="line"><span class="lineno">  845</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  846</span>    }</div>
+<div class="line"><span class="lineno">  847</span> </div>
+<div class="line"><span class="lineno">  848</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d6/d02/_inventory_location_8c.html#ad12db73d28b1b3de5cad36e8b5ab7d21">OptionalLocationWriteToContext</a>(<a class="code hl_variable" href="#a51df11c13563b7c321a0ced419f70058">m_srcMagazinePrevLocation</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">ctx</a>))</div>
+<div class="line"><span class="lineno">  849</span>    {</div>
+<div class="line"><span class="lineno">  850</span>      <a class="code hl_function" href="../../d0/d02/group___debug.html#ga786b160dafbe15abb829786ba345cb15">Error</a>(<span class="stringliteral">&quot;[wpnfsm] &quot;</span> + <a class="code hl_class" href="../../d8/d03/class_object.html">Object</a>.GetDebugName(<a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>) + <span class="stringliteral">&quot; ChamberMultiBullet.SaveCurrentFSMState: cannot write m_srcMagazinePrevLocation for weapon=&quot;</span> + <a class="code hl_variable" href="../../de/d03/_guards_8c.html#a0bae26f5106cf38f652c51861f0f8948">m_weapon</a>);</div>
+<div class="line"><span class="lineno">  851</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  852</span>    }</div>
+<div class="line"><span class="lineno">  853</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  854</span>  }</div>
+<div class="ttc" id="a_inventory_location_8c_html_ad12db73d28b1b3de5cad36e8b5ab7d21"><div class="ttname"><a href="../../d6/d02/_inventory_location_8c.html#ad12db73d28b1b3de5cad36e8b5ab7d21">OptionalLocationWriteToContext</a></div><div class="ttdeci">bool OptionalLocationWriteToContext(InventoryLocation loc, notnull ParamsWriteContext ctx)</div><div class="ttdef"><b>Definition</b> <a href="../../d6/d02/_inventory_location_8c_source.html#l00583">InventoryLocation.c:583</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d09/_en_debug_8c_source.html#l00090">Error()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00623">m_srcMagazine</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00624">m_srcMagazinePrevLocation</a>, <a class="el" href="../../de/d03/_guards_8c_source.html#l00602">m_weapon</a>, and <a class="el" href="../../d6/d02/_inventory_location_8c_source.html#l00583">OptionalLocationWriteToContext()</a>.</p>
 
 </div>
 </div>
@@ -320,7 +531,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00161">161</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  186</span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9088984af4ef30aa23a15d4c50db9458" name="a9088984af4ef30aa23a15d4c50db9458"></a>
@@ -334,6 +546,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>, <a class="el" href="../../da/d01/_f_s_m_base_8c_source.html#l00030">FSMTransition&lt; Class FSMStateBase, Class FSMEventBase, Class FSMActionBase, Class FSMGuardBase &gt;::FSMTransition()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00027">WeaponStateBase::LoopedChambering()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00282">WeaponStateBase::LoopedChamberingEjectLast()</a>, <a class="el" href="../../d7/d05/_weapon_start_action_8c_source.html#l00015">WeaponStateBase::OnEntry()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00012">WeaponStateBase::RifleChambering()</a>, <a class="el" href="../../d4/d0e/_rifle_eject_casing_8c_source.html#l00010">WeaponStateBase::RifleEjectCasing()</a>, <a class="el" href="../../d5/d04/_rifle_re_chambering_8c_source.html#l00013">WeaponStateBase::RifleReChambering()</a>, <a class="el" href="../../df/d03/_weapon_attach_magazine_8c_source.html#l00125">WeaponStateBase::WeaponAttachMagazine()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00375">WeaponStateBase::WeaponChambering()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00015">WeaponStateBase::WeaponCharging()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00216">WeaponStateBase::WeaponChargingInnerMag()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00291">WeaponStateBase::WeaponChargingMultiple()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00358">WeaponStateBase::WeaponChargingStretch()</a>, <a class="el" href="../../d6/d09/_weapon_detaching_mag_8c_source.html#l00108">WeaponStateBase::WeaponDetachingMag()</a>, <a class="el" href="../../d1/d0e/_weapon_eject_bullet_8c_source.html#l00050">WeaponStateBase::WeaponEjectBullet()</a>, <a class="el" href="../../dd/d07/_weapon_fire_and_chamber_next_8c_source.html#l00009">WeaponStateBase::WeaponFireAndChamberNext()</a>, <a class="el" href="../../dc/d0f/_weapon_fire_and_chamber_next_from_inner_mag_8c_source.html#l00009">WeaponStateBase::WeaponFireAndChamberNextFromInnerMag()</a>, <a class="el" href="../../da/d0a/_weapon_fire_last_8c_source.html#l00010">WeaponStateBase::WeaponFireLast()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00933">WeaponStateBase::WeaponMagnumChambering()</a>, <a class="el" href="../../db/d0e/_weapon_replacing_mag_and_chamber_next_8c_source.html#l00355">WeaponStateBase::WeaponReplacingMagAndChamberNext()</a>, <a class="el" href="../../d7/d05/_weapon_start_action_8c_source.html#l00009">WeaponStateBase::WeaponStartAction()</a>, and <a class="el" href="../../da/d0c/_weapon_unjamming_8c_source.html#l00180">WeaponStateBase::WeaponUnjamming()</a>.</p>
 
 </div>
 </div>
@@ -351,6 +565,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00628">628</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00027">WeaponStateBase::LoopedChambering()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00282">WeaponStateBase::LoopedChamberingEjectLast()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00448">WeaponStateBase::OnAbort()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00777">OnAbort()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00042">WeaponStateBase::OnEntry()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00508">WeaponStateBase::OnExit()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00012">WeaponStateBase::RifleChambering()</a>, <a class="el" href="../../d5/d04/_rifle_re_chambering_8c_source.html#l00013">WeaponStateBase::RifleReChambering()</a>, <a class="el" href="../../df/d03/_weapon_attach_magazine_8c_source.html#l00125">WeaponStateBase::WeaponAttachMagazine()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00375">WeaponStateBase::WeaponChambering()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00015">WeaponStateBase::WeaponCharging()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00216">WeaponStateBase::WeaponChargingInnerMag()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00291">WeaponStateBase::WeaponChargingMultiple()</a>, <a class="el" href="../../d1/d0e/_weapon_eject_bullet_8c_source.html#l00050">WeaponStateBase::WeaponEjectBullet()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00933">WeaponStateBase::WeaponMagnumChambering()</a>, <a class="el" href="../../db/d0e/_weapon_replacing_mag_and_chamber_next_8c_source.html#l00355">WeaponStateBase::WeaponReplacingMagAndChamberNext()</a>, and <a class="el" href="../../da/d0c/_weapon_unjamming_8c_source.html#l00180">WeaponStateBase::WeaponUnjamming()</a>.</p>
+
 </div>
 </div>
 <a id="ab3ab4098e2471d66ac3d997479aa29ce" name="ab3ab4098e2471d66ac3d997479aa29ce"></a>
@@ -366,6 +582,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00629">629</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>.</p>
 
 </div>
 </div>
@@ -383,6 +601,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00627">627</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00027">WeaponStateBase::LoopedChambering()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00282">WeaponStateBase::LoopedChamberingEjectLast()</a>, <a class="el" href="../../d5/d04/_rifle_re_chambering_8c_source.html#l00043">WeaponStateBase::OnEntry()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00012">WeaponStateBase::RifleChambering()</a>, <a class="el" href="../../d4/d0e/_rifle_eject_casing_8c_source.html#l00010">WeaponStateBase::RifleEjectCasing()</a>, <a class="el" href="../../d5/d04/_rifle_re_chambering_8c_source.html#l00013">WeaponStateBase::RifleReChambering()</a>, <a class="el" href="../../df/d03/_weapon_attach_magazine_8c_source.html#l00125">WeaponStateBase::WeaponAttachMagazine()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00375">WeaponStateBase::WeaponChambering()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00015">WeaponStateBase::WeaponCharging()</a>, <a class="el" href="../../d1/d0e/_weapon_eject_bullet_8c_source.html#l00050">WeaponStateBase::WeaponEjectBullet()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00933">WeaponStateBase::WeaponMagnumChambering()</a>, <a class="el" href="../../db/d0e/_weapon_replacing_mag_and_chamber_next_8c_source.html#l00355">WeaponStateBase::WeaponReplacingMagAndChamberNext()</a>, and <a class="el" href="../../da/d0c/_weapon_unjamming_8c_source.html#l00180">WeaponStateBase::WeaponUnjamming()</a>.</p>
+
 </div>
 </div>
 <a id="a31ba4723c187888c7009eee8ab61d4aa" name="a31ba4723c187888c7009eee8ab61d4aa"></a>
@@ -398,6 +618,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00622">622</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00027">WeaponStateBase::LoopedChambering()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00282">WeaponStateBase::LoopedChamberingEjectLast()</a>, and <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00933">WeaponStateBase::WeaponMagnumChambering()</a>.</p>
 
 </div>
 </div>
@@ -415,6 +637,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00631">631</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00027">WeaponStateBase::LoopedChambering()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00282">WeaponStateBase::LoopedChamberingEjectLast()</a>, and <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00933">WeaponStateBase::WeaponMagnumChambering()</a>.</p>
+
 </div>
 </div>
 <a id="af64fe4b9fb926da0af7f5dc9dba6ce5f" name="af64fe4b9fb926da0af7f5dc9dba6ce5f"></a>
@@ -430,6 +654,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00632">632</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>.</p>
 
 </div>
 </div>
@@ -447,6 +673,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00633">633</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>.</p>
+
 </div>
 </div>
 <a id="a32147b58d22d578c09548f9e20398c18" name="a32147b58d22d578c09548f9e20398c18"></a>
@@ -462,6 +690,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00623">623</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00087">WeaponStateBase::LoadCurrentFSMState()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00856">LoadCurrentFSMState()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00062">WeaponStateBase::OnAbort()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00777">OnAbort()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00042">WeaponStateBase::OnEntry()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00088">WeaponChambering_Base::OnEntry()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00068">WeaponStateBase::OnExit()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00074">WeaponStateBase::SaveCurrentFSMState()</a>, and <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00837">SaveCurrentFSMState()</a>.</p>
 
 </div>
 </div>
@@ -481,6 +711,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00624">624</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00587">WeaponStateBase::LoadCurrentFSMState()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00856">LoadCurrentFSMState()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00448">WeaponStateBase::OnAbort()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00777">OnAbort()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00411">WeaponStateBase::OnEntry()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00508">WeaponStateBase::OnExit()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00568">WeaponStateBase::SaveCurrentFSMState()</a>, and <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00837">SaveCurrentFSMState()</a>.</p>
+
 </div>
 </div>
 <a id="a8714c06879ff0c6f3a3b75822e24288d" name="a8714c06879ff0c6f3a3b75822e24288d"></a>
@@ -496,6 +728,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00626">626</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00027">WeaponStateBase::LoopedChambering()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00282">WeaponStateBase::LoopedChamberingEjectLast()</a>, <a class="el" href="../../da/d0c/_weapon_unjamming_8c_source.html#l00212">WeaponStateBase::OnEntry()</a>, <a class="el" href="../../d9/d00/_rifle_chambering_8c_source.html#l00012">WeaponStateBase::RifleChambering()</a>, <a class="el" href="../../d4/d0e/_rifle_eject_casing_8c_source.html#l00010">WeaponStateBase::RifleEjectCasing()</a>, <a class="el" href="../../d5/d04/_rifle_re_chambering_8c_source.html#l00013">WeaponStateBase::RifleReChambering()</a>, <a class="el" href="../../df/d03/_weapon_attach_magazine_8c_source.html#l00125">WeaponStateBase::WeaponAttachMagazine()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00375">WeaponStateBase::WeaponChambering()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00015">WeaponStateBase::WeaponCharging()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00216">WeaponStateBase::WeaponChargingInnerMag()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00291">WeaponStateBase::WeaponChargingMultiple()</a>, <a class="el" href="../../de/d00/_weapon_charging_8c_source.html#l00358">WeaponStateBase::WeaponChargingStretch()</a>, <a class="el" href="../../d6/d09/_weapon_detaching_mag_8c_source.html#l00108">WeaponStateBase::WeaponDetachingMag()</a>, <a class="el" href="../../d1/d0e/_weapon_eject_bullet_8c_source.html#l00050">WeaponStateBase::WeaponEjectBullet()</a>, <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00933">WeaponStateBase::WeaponMagnumChambering()</a>, <a class="el" href="../../db/d0e/_weapon_replacing_mag_and_chamber_next_8c_source.html#l00355">WeaponStateBase::WeaponReplacingMagAndChamberNext()</a>, and <a class="el" href="../../da/d0c/_weapon_unjamming_8c_source.html#l00180">WeaponStateBase::WeaponUnjamming()</a>.</p>
 
 </div>
 </div>
@@ -513,6 +747,8 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00621">621</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00027">WeaponStateBase::LoopedChambering()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00282">WeaponStateBase::LoopedChamberingEjectLast()</a>, and <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00933">WeaponStateBase::WeaponMagnumChambering()</a>.</p>
+
 </div>
 </div>
 <a id="a20f345b27baf67b3647a323a403e534b" name="a20f345b27baf67b3647a323a403e534b"></a>
@@ -528,6 +764,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00630">630</a> of file <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html">WeaponChambering.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00635">ChamberMultiBullet()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00027">WeaponStateBase::LoopedChambering()</a>, <a class="el" href="../../dc/d02/_weapon_chambering_looped_8c_source.html#l00282">WeaponStateBase::LoopedChamberingEjectLast()</a>, and <a class="el" href="../../dd/d03/_weapon_chambering_8c_source.html#l00933">WeaponStateBase::WeaponMagnumChambering()</a>.</p>
 
 </div>
 </div>

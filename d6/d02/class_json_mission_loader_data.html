@@ -11,9 +11,7 @@
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
-<script type="text/javascript" src="../../awesome-darkmode-toggle.js"></script>
-<script type="text/javascript" src="../../awesome-paragraph-link.js"></script>
-<script type="text/javascript" src="../../awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../custom.js"></script>
 <script type="text/javascript">DoxygenAwesomeDarkModeToggle.init();DoxygenAwesomeParagraphLink.init();DoxygenAwesomeInteractiveToc.init();</script>
 <link href="../../navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../resize.js"></script>
@@ -24,7 +22,6 @@
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../awesome.css" rel="stylesheet" type="text/css"/>
 <link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -149,6 +146,44 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00005">5</a> of file <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html">MissionLoader.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>  {</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_class" href="../../d6/d02/class_json_mission_loader_data.html">JsonMissionLoaderData</a> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>;</div>
+<div class="line"><span class="lineno">    8</span> </div>
+<div class="line"><span class="lineno">    9</span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>;</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordtype">string</span> <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>;</div>
+<div class="line"><span class="lineno">   11</span> </div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d3/d02/group___system.html#gad7348dce86a327765755d084ff96f22a">GetCLIParam</a>(<span class="stringliteral">&quot;missionLoaderPath&quot;</span>, <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>) == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   13</span>      <a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a> = <a class="code hl_variable" href="../../d0/d03/group___c_f_g_constants.html#ga4001015f31822e84af3ed4dd3af0390f">CFG_FILE_MISSION_LIST</a>;</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist</a>(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>))</div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>      DayZGame <a class="code hl_class" href="../../db/d06/class_param3.html">dzg</a> = <a class="code hl_function" href="../../d8/d08/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame</a>();</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">data</a> = <span class="keyword">new</span> <a class="code hl_class" href="../../d6/d02/class_json_mission_loader_data.html">JsonMissionLoaderData</a>();</div>
+<div class="line"><span class="lineno">   20</span>      <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>.MissionPaths = {<a class="code hl_class" href="../../db/d06/class_param3.html">dzg</a>.GetMissionFolderPath()};</div>
+<div class="line"><span class="lineno">   21</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">JsonFileLoader&lt;JsonMissionLoaderData&gt;</a>.SaveFile(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>))</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>);</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">if</span> (!<a class="code hl_class" href="../../db/d06/class_param3.html">JsonFileLoader&lt;JsonMissionLoaderData&gt;</a>.LoadFile(<a class="code hl_variable" href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>, <a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>))</div>
+<div class="line"><span class="lineno">   27</span>        <a class="code hl_variable" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>(<a class="code hl_class" href="../../db/d06/class_param3.html">errorMessage</a>);</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="../../db/d06/class_param3.html">data</a>;</div>
+<div class="line"><span class="lineno">   31</span>  }</div>
+<div class="ttc" id="a_day_z_game_8c_html_a92f5918ec5d632d5159c9d1f52fe7758"><div class="ttname"><a href="../../d8/d08/_day_z_game_8c.html#a92f5918ec5d632d5159c9d1f52fe7758">GetDayZGame</a></div><div class="ttdeci">DayZGame GetDayZGame()</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d08/_day_z_game_8c_source.html#l03530">DayZGame.c:3530</a></div></div>
+<div class="ttc" id="a_option_selector_multistate_8c_html_a46c20eb2a26abeb1e934cd66e1dd6484"><div class="ttname"><a href="../../d1/d08/_option_selector_multistate_8c.html#a46c20eb2a26abeb1e934cd66e1dd6484">path</a></div><div class="ttdeci">string path</div><div class="ttdef"><b>Definition</b> <a href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">OptionSelectorMultistate.c:121</a></div></div>
+<div class="ttc" id="aclass_json_mission_loader_data_html"><div class="ttname"><a href="../../d6/d02/class_json_mission_loader_data.html">JsonMissionLoaderData</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d0c/_mission_loader_8c_source.html#l00001">MissionLoader.c:2</a></div></div>
+<div class="ttc" id="aclass_param3_html"><div class="ttname"><a href="../../db/d06/class_param3.html">Param3</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d02/3___game_2_entities_2_entity_a_i_8c_source.html#l00095">EntityAI.c:95</a></div></div>
+<div class="ttc" id="agroup___c_f_g_constants_html_ga4001015f31822e84af3ed4dd3af0390f"><div class="ttname"><a href="../../d0/d03/group___c_f_g_constants.html#ga4001015f31822e84af3ed4dd3af0390f">CFG_FILE_MISSION_LIST</a></div><div class="ttdeci">const string CFG_FILE_MISSION_LIST</div><div class="ttdef"><b>Definition</b> <a href="../../d3/d0c/3___game_2constants_8c_source.html#l00240">constants.c:240</a></div></div>
+<div class="ttc" id="agroup___debug_shape_html_ga30f13400906443efe9fb79540dc674b5"><div class="ttname"><a href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a></div><div class="ttdeci">enum ShapeType ErrorEx</div></div>
+<div class="ttc" id="agroup___file_html_gac8ac6334d3ec51a5537c4ea4f6c57e04"><div class="ttname"><a href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist</a></div><div class="ttdeci">proto bool FileExist(string name)</div><div class="ttdoc">Check existence of file.</div></div>
+<div class="ttc" id="agroup___system_html_gad7348dce86a327765755d084ff96f22a"><div class="ttname"><a href="../../d3/d02/group___system.html#gad7348dce86a327765755d084ff96f22a">GetCLIParam</a></div><div class="ttdeci">proto bool GetCLIParam(string param, out string val)</div><div class="ttdoc">Returns command line argument.</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="../../d3/d0c/3___game_2constants_8c_source.html#l00240">CFG_FILE_MISSION_LIST</a>, <a class="el" href="../../d6/d0e/group___debug_shape.html#ga30f13400906443efe9fb79540dc674b5">ErrorEx</a>, <a class="el" href="../../d5/d06/group___file.html#gac8ac6334d3ec51a5537c4ea4f6c57e04">FileExist()</a>, <a class="el" href="../../d3/d02/group___system.html#gad7348dce86a327765755d084ff96f22a">GetCLIParam()</a>, <a class="el" href="../../d8/d08/_day_z_game_8c_source.html#l03530">GetDayZGame()</a>, and <a class="el" href="../../d1/d08/_option_selector_multistate_8c_source.html#l00121">path</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/d0c/_mission_loader_8c_source.html#l00043">Init()</a>.</p>
 
 </div>
 </div>
