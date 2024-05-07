@@ -1,0 +1,28 @@
+var class_notification_system =
+[
+    [ "NotificationSystem", "d8/d0d/class_notification_system.html#adf618ab8cfabc3d79cbc3f35c26621fa", null ],
+    [ "AddNotification", "d8/d0d/class_notification_system.html#ae7e705691ea84eaf201e629d1643d7c4", null ],
+    [ "AddNotificationExtended", "d8/d0d/class_notification_system.html#a8801348912f09d638199bf0596cbe7d8", null ],
+    [ "CleanupInstance", "d8/d0d/class_notification_system.html#aa8b1653edd65689745953f32c2f206bf", null ],
+    [ "GetInstance", "d8/d0d/class_notification_system.html#a9b7970e6156b05338dcd79020b95f798", null ],
+    [ "GetNotificationData", "d8/d0d/class_notification_system.html#a18c00685b21800d6b1f4712ac23a37da", null ],
+    [ "InitInstance", "d8/d0d/class_notification_system.html#a99adcc78382f0c548d62498ad66f1d18", null ],
+    [ "LoadNotificationData", "d8/d0d/class_notification_system.html#a07f1bafadece3a8c6d114a987924c408", null ],
+    [ "SendNotificationToPlayer", "d8/d0d/class_notification_system.html#a1c7d6fb167abfdbdd4eb31f8715ebdf4", null ],
+    [ "SendNotificationToPlayerExtended", "d8/d0d/class_notification_system.html#a3e6bc3f389d05081eff4c46a85e4c0e7", null ],
+    [ "SendNotificationToPlayerIdentity", "d8/d0d/class_notification_system.html#ac63f365098df3610099b710a80b939f9", null ],
+    [ "SendNotificationToPlayerIdentityExtended", "d8/d0d/class_notification_system.html#af38241f43138ced69a912cbc0cf36b28", null ],
+    [ "Update", "d8/d0d/class_notification_system.html#af5398c705e25a566eed46024a86fdb71", null ],
+    [ "DEFAULT_TIME_DISPLAYED", "d8/d0d/class_notification_system.html#accfe578deaa48fa121af33c412ec284e", null ],
+    [ "JSON_FILE_PATH", "d8/d0d/class_notification_system.html#a062de653d9bc1897ac5d941d2dd3ea4a", null ],
+    [ "m_DataArray", "d8/d0d/class_notification_system.html#a275df175e38371c8308945b2a2eb9573", null ],
+    [ "m_DeferredArray", "d8/d0d/class_notification_system.html#a45c8097a8afdf6507e1325ab758d29b8", null ],
+    [ "m_Instance", "d8/d0d/class_notification_system.html#a95cf2f46a5676d1c88f3af24617a069f", null ],
+    [ "m_OnNotificationAdded", "d8/d0d/class_notification_system.html#a049cdb213c55d938468f91a71a93b68a", null ],
+    [ "m_OnNotificationRemoved", "d8/d0d/class_notification_system.html#a0cf680af9cab781cb36938fe3c1c53c2", null ],
+    [ "m_TimeArray", "d8/d0d/class_notification_system.html#abcd521177b5f367646158e8e88037f5c", null ],
+    [ "m_TimeElapsed", "d8/d0d/class_notification_system.html#a6d42fa2ef16c2164d083a4cb9324dceb", null ],
+    [ "MAX_NOTIFICATIONS", "d8/d0d/class_notification_system.html#abcfd2841375904a18f2a15a3b5b322c9", null ],
+    [ "NOTIFICATION_FADE_TIME", "d8/d0d/class_notification_system.html#a3b90bfc3e05f0f15a792bc4d7b81d651", null ],
+    [ "UPDATE_INTERVAL_THRESHOLD", "d8/d0d/class_notification_system.html#a667c88d6c4fae5866cd773ecf2b2cc47", null ]
+];
